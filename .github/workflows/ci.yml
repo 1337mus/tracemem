@@ -67,7 +67,8 @@ jobs:
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
             tests/test_longmemeval_file.py tests/test_longmemeval_selection.py \
             tests/test_retention.py tests/test_retention_report.py tests/test_synthetic_qa.py \
-            tests/test_modal_synthetic_qa.py tests/test_synthetic_qa_analysis.py "$test_dir/"
+            tests/test_modal_synthetic_qa.py tests/test_synthetic_qa_analysis.py \
+            tests/test_token_budget.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
           cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py \
             experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \

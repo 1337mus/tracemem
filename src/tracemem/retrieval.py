@@ -274,6 +274,19 @@ class Retriever:
         return scored
 
 
+def _context_line(hit: SearchHit) -> str:
+    citation = hit.citation
+    text = hit.record.text
+    role = hit.record.role
+    recorded_at = hit.record.recorded_at
+    content_kind = hit.record.content_kind
+    if not all(isinstance(value, str) for value in (citation, text, role, content_kind)):
+        raise TypeError("hits must provide string citations and evidence metadata")
+    timestamp = "unknown" if recorded_at is None else str(recorded_at)
+    timestamp = timestamp.replace("\r", " ").replace("\n", " ")
+    return f"{citation} [role={role} recorded_at={timestamp} content_kind={content_kind}] {text}"
+
+
 def _pack_context(hits: Sequence[SearchHit], max_bytes: int) -> PackedContext:
     if isinstance(max_bytes, bool) or not isinstance(max_bytes, int) or max_bytes < 0:
         raise ValueError("max_bytes must be a non-negative integer")
@@ -282,18 +295,7 @@ def _pack_context(hits: Sequence[SearchHit], max_bytes: int) -> PackedContext:
     selected_hits: list[SearchHit] = []
     used_bytes = 0
     for hit in hits:
-        citation = hit.citation
-        text = hit.record.text
-        role = hit.record.role
-        recorded_at = hit.record.recorded_at
-        content_kind = hit.record.content_kind
-        if not all(isinstance(value, str) for value in (citation, text, role, content_kind)):
-            raise TypeError("hits must provide string citations and evidence metadata")
-        timestamp = "unknown" if recorded_at is None else str(recorded_at)
-        timestamp = timestamp.replace("\r", " ").replace("\n", " ")
-        line = (
-            f"{citation} [role={role} recorded_at={timestamp} content_kind={content_kind}] {text}"
-        )
+        line = _context_line(hit)
         line_bytes = len(line.encode("utf-8"))
         separator_bytes = 1 if lines else 0
         if used_bytes + separator_bytes + line_bytes <= max_bytes:
