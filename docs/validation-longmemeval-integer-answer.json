@@ -1,0 +1,170 @@
+{
+  "artifact_sha256": {
+    ".local/integer-answer-focused-tests-20261014T235010Z.log": "60082f99365d61a061cfce80348f913bc69e150a7567920c0a7a2a80b887a92e",
+    ".local/integer-answer-focused-tests-20261014T235100Z.log": "f73cec58889ec1d48b191c2a9665e530636a1e208903fe0a08937791e9d6fedb",
+    ".local/integer-answer-green-20261014T235000Z.log": "a145c464dd8dee60f53608cc9af51b4d81a6a59a58f895cacfcebf8facad972e",
+    ".local/integer-answer-installed-20261014T235455Z.log": "61f1dea229af1e7ec144824efae16a1d63fef403331756b3ec8a0729f20806c8",
+    ".local/integer-answer-red-20261014T234900Z.log": "9b46d99f4c3ad7ace97819812ebabb4fd4e2710a96d10cc2ec80775dbae0887d",
+    ".local/integer-answer-red-20261014T234901Z.log": "d698759a84e6ab5aecfbae38006abb24f371671df2b08f404da13e15fd8f3156",
+    ".local/integer-answer-red-20261014T234902Z.log": "d00b98f9678dcfe5639ea4fbdc53907f9687ba41a7c2645e2a82c3dfc75ad97f",
+    ".local/integer-answer-red-20261014T234903Z.log": "e3322e3d245cdbb23b474badd6f6c3dd3b062ab5605e7d537d3796b8f589bf0c",
+    ".local/integer-answer-root-full-check.log": "a9f22c62fdff0b1429cf78640544604c3f7439d0dae9d51abead60ddf8c697c5",
+    ".local/integer-answer-root-package.log": "dc7511b1ef9903e82a7627228cc4f492076d8b461d5d4f126e2ab1abd0c02a92",
+    ".local/integer-answer-ruff-check-20261014T235010Z.log": "f08bdda4e29585b184a7de565669337094d783aee0e7c6c64433c32ccf809250",
+    ".local/integer-answer-ruff-check-20261014T235100Z.log": "f08bdda4e29585b184a7de565669337094d783aee0e7c6c64433c32ccf809250",
+    ".local/integer-answer-ruff-format-20261014T235010Z.log": "c91ca65fe489cdc35d214ec1267636712ce583fa786128e43119070b532fba52",
+    ".local/integer-answer-ruff-format-20261014T235100Z.log": "c91ca65fe489cdc35d214ec1267636712ce583fa786128e43119070b532fba52",
+    ".local/integer-answer-source-mypy-20261014T235010Z.log": "d598f0527cf6c697f1434f4cd7d5dd8b84a9db60c112f161e4be26dba585333f",
+    ".local/integer-answer-source-mypy-20261014T235100Z.log": "d598f0527cf6c697f1434f4cd7d5dd8b84a9db60c112f161e4be26dba585333f",
+    ".local/integer-answer-source-signature.log": "2129a3b6c6daa1ff86ea9cf2e094ba5bdd260888eac895367f76e46cfb2cfa68",
+    ".local/integer-answer-upstream-replay-20261014T235000Z.log": "0c7ccc65542c369ef361b987765ee93ad2d3d5e64df198997e0f31ce3bafcb0d"
+  },
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "log": ".local/integer-answer-root-full-check.log",
+    "mypy_source_files": 32,
+    "ruff_files": 102,
+    "seconds": 15.085,
+    "skips": 1,
+    "tests_attempted": 472
+  },
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "70fa402c654b0125870b73f254e8763f49a7c8f4",
+    "installed_seconds": 18.607,
+    "installed_skips": 2,
+    "installed_tests_attempted": 220,
+    "local_raw_log": ".local/integer-answer-source-ci-38657047378.log",
+    "local_raw_log_sha256": "8e3390c8d3761af23edc193bda2343e6a3d6a79638e5b5a1e9dc67ac6724022f",
+    "run_id": 38657047378,
+    "source_seconds": 46.289,
+    "source_skips": 1,
+    "source_tests_attempted": 472,
+    "status": "completed",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38657047378"
+  },
+  "installed_wheel": {
+    "adapter_import_verified_in_site_packages": true,
+    "fictional_evaluator_exit_code": 0,
+    "focused_receipt_path": ".local/integer-answer-installed-20261014T235455Z.receipt.json",
+    "focused_receipt_sha256": "ed8ed69e66e9b482525e9a7bda53097536609a302c4744e9c3e6861f4afeb3dc",
+    "package_receipt_path": ".local/package-smoke-fts-v3-chatgpt-20261014T235229531844Z.json",
+    "package_receipt_sha256": "fa20e2ecad30e004d0dde6157160a49b6a9561896e490df5ba5839886760ef53",
+    "runtime_files_matching_exactly": 37,
+    "source_imports_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "test_exit_code": 0,
+    "tests_attempted": 69,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "limitations": [
+    "One pinned public oracle object only; real S/M releases untested.",
+    "Format compatibility does not establish upstream evaluator or QA metric equivalence, retrieval quality, rights or independent labels.",
+    "Clone/two-scanner timing and process peak RSS are observations, not isolated parser benchmarks.",
+    "No benchmark text or record identifiers committed.",
+    "Gate A remains unmet; no model selected or trained."
+  ],
+  "operational": {
+    "active_modal_jobs": 0,
+    "gpu_calls": 0,
+    "modal_inventory": ".local/integer-answer-modal-inventory-corrected.json",
+    "modal_inventory_correction": "Initial summary used wrong key case; preserved invalid receipt is superseded by inspected raw snake_case rows, three stopped apps and zero tasks. Initial workspace import attempt also failed locally before any request.",
+    "model_calls": 0,
+    "original_context_kit_and_llm_context": "read-only",
+    "private_data_uploads": 0,
+    "training_runs": 0
+  },
+  "recorded_at_utc": "2026-10-14T23:58:20.884256+00:00",
+  "root_review": {
+    "approved": true,
+    "findings": "Exact type excludes bool; same small converter validates and constructs metadata; no evidence or identity construction changes; scanner delegates to shared adapter. Rejection-reason, integer, evidence-equality and scanner regressions inspected.",
+    "independent_oracle": "500 objects match transient clone; first-five nonempty scanner selection matches bytes parser.",
+    "original_sources_unchanged": true
+  },
+  "schema_version": 1,
+  "scope": "Normalize exact JSON integer answer metadata to decimal strings; preserve original strings and evidence; retain strict rejection of other answer types.",
+  "source_base_commit": "912420347c67d93fb3a19037ef2a5015243d3a0d",
+  "source_commit": "70fa402c654b0125870b73f254e8763f49a7c8f4",
+  "source_pushed_privately": true,
+  "source_sha256": {
+    "src/tracemem/adapters/longmemeval.py": "dc292e7f3eeb0eeb4ee253f7227c92c3b36eb8ea2e85ff2e14a75dd2d2b8551e",
+    "tests/test_longmemeval_adapter.py": "9413fe09435fe5cdd39732832c4b4f836b182e8ba25632e0e6dc9d03dbd69221",
+    "tests/test_longmemeval_file.py": "187d9cd01f4310bf001d3e5f7cc7adf9355c8860060abd07ec9c4105d2f86b44"
+  },
+  "source_signature_verified_locally": true,
+  "tdd": {
+    "focused_exit_code": 0,
+    "focused_tests": 69,
+    "green": {
+      "exit_code": 0,
+      "path": ".local/integer-answer-green-20261014T235000Z.log"
+    },
+    "required_red": {
+      "cause": "int answer rejected at schema guard before source edit",
+      "exit_code": 1,
+      "path": ".local/integer-answer-red-20261014T234903Z.log"
+    },
+    "setup_failures": {
+      "global_pytest": "apipkg AttributeError __spec__",
+      "pytest_in_venv": "not installed",
+      "restored_logs": "Implementer removed three current setup-attempt logs then restored from captured tool outputs; root did not independently verify their original hashes. Valid schema RED was retained.",
+      "shell_variable": "zsh status is read-only"
+    }
+  },
+  "upstream_replay": {
+    "aggregate": {
+      "clone_object_equality_count": 500,
+      "ended_at_utc": "2026-10-14T23:52:09.723459+00:00",
+      "expected_sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+      "expected_size": 15388478,
+      "input_path": ".local/benchmarks/longmemeval-oracle-98d7416c/longmemeval_oracle.json",
+      "integer_answer_count": 32,
+      "observed_peak_rss": {
+        "label": "observed process peak RSS; not a guarantee",
+        "unit": "bytes",
+        "value": 226820096
+      },
+      "observed_wall_seconds": 3.160915,
+      "probe": "integer-answer-upstream-replay",
+      "question_count": 500,
+      "result": "compatible",
+      "runtime_source_sha256": {
+        "tracemem": "ceabe786c2dfdb38d9132b38a93b5543c33e4d5dba3076475a86fea594d913db",
+        "tracemem.adapters": "ae7184fc1b7954c4e59dcba51d3df43317dcd8b4691158e572bef076fb028d3e",
+        "tracemem.adapters._transcript_source": "5cde85b095b02de69fbbf945063e643814da4bdce30d27918b100e311fb56fa4",
+        "tracemem.adapters.longmemeval": "dc292e7f3eeb0eeb4ee253f7227c92c3b36eb8ea2e85ff2e14a75dd2d2b8551e",
+        "tracemem.adapters.longmemeval_file": "943fc789e75fdee3c7bc96088396df188f9bc47f349f2d5b4e6df53f0b46c924",
+        "tracemem.schema": "d67abaf132d3d8c1471e9f1e1cb706d66c4347c5519757015e34474b08b05530",
+        "tracemem.storage": "cf7d94d27044b81b47853bf262787b74b5e1a32b6fe2086a6d61cac3188f3d37"
+      },
+      "script_sha256": "50c2b90f4c93f86caf4e4f3f1e87c84dfa3abdbb234b7eef1c19265ab26df5d3",
+      "selected_ids_or_content_persisted": false,
+      "selected_parser_equality": true,
+      "selected_scan_count": 5,
+      "source_after": {
+        "mode": "0o600",
+        "mtime_ns": 1792021407600700589,
+        "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+        "size": 15388478
+      },
+      "source_before": {
+        "mode": "0o600",
+        "mtime_ns": 1792021407600700589,
+        "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+        "size": 15388478
+      },
+      "source_unchanged": true,
+      "started_at_utc": "2026-10-14T23:52:06.562540+00:00",
+      "string_answer_count": 468,
+      "whole_scan_count": 500,
+      "whole_scan_selected_count": 0
+    },
+    "receipt_path": ".local/integer-answer-upstream-replay-20261014T235000Z.receipt.json",
+    "receipt_sha256": "bb69a1d88c618945e30b51267cc8516ec36d1ebb3cf10e6232c6e53dfcd66876",
+    "script_path": ".local/integer-answer-upstream-replay-20261014T235000Z.py",
+    "script_sha256": "50c2b90f4c93f86caf4e4f3f1e87c84dfa3abdbb234b7eef1c19265ab26df5d3"
+  }
+}

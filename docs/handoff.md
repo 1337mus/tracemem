@@ -86,13 +86,39 @@ each push. No public publication, private-data upload, or training is authorized
 
 ## Next bounded work
 
-A bounded worker is probing compatibility of the existing adapter/scanner with
-the pinned public LongMemEval oracle file. Its public dataset-card MIT
-declaration does not resolve constituent provenance. Keep downloaded benchmark
-content and any record identifiers local; this check performs no model call,
-QA scoring, training or redistribution. Read `.local/active-cycle.json` for
-current ownership and exact receipts before continuing. Verify live worker
-state by 2026-10-15; do not duplicate the probe or any remote job.
+The root replay now passes the narrow format check against the pinned oracle
+object: all 500 questions parsed, 468 string answers remained unchanged, 32
+integer answers were normalized to canonical decimal strings, and all 500
+question/evidence tuples matched a transient string-normalized clone. The whole
+scanner returned 500 with no retained questions; the first-five selected scan
+matched the bytes parser. The input hash, size, mode, and mtime were unchanged.
+The 3.160915-second observation and 226,820,096-byte process peak include the
+JSON clone and two scanner passes; they are not a parser-latency or scale
+guarantee. See the [compatibility report](longmemeval-compatibility.md).
+
+Root's full `make check` passed 472 tests (one skip) in 15.085 seconds, Ruff on
+102 files, and mypy on 32 files. The package build and smoke test passed with a
+new wheel whose SHA256 is
+`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`; all 37
+runtime members matched the approved manifest. Installed validation passed 69
+tests plus the fictional evaluator/import check; the adapter imported from
+site-packages with reviewed SHA256
+`dc292e7f3eeb0eeb4ee253f7227c92c3b36eb8ea2e85ff2e14a75dd2d2b8551e`. The
+source change is signed and pushed after exact personal owner, origin, and
+PRIVATE verification: [commit
+70fa402c654b0125870b73f254e8763f49a7c8f4](https://github.com/1337mus/tracemem/commit/70fa402c654b0125870b73f254e8763f49a7c8f4).
+[Source CI](https://github.com/1337mus/tracemem/actions/runs/38657047378) passed:
+472 source tests (one skip) and 220 installed tests (two skips). The source
+watcher finished with exit 0. Documentation delivery and its CI are tracked in
+`.local/active-cycle.json`. No active GPU or Modal job was found in the personal
+workspace inventory; verify live state before work.
+
+The next bounded step is an offline retrieval diagnostic using the same frozen
+first-five source-order selection, fixed cutoffs 1, 3, and 5, and BM25, hash, and
+hybrid retrieval. Do not tune the setup or make model calls; keep real question
+IDs and result rows local. This does not establish QA or evaluator equivalence,
+data-use rights, or Gate A. Read `.local/active-cycle.json` for current ownership
+and exact receipts before continuing, and do not duplicate any remote job.
 
 ## Token-budget packing checkpoint
 
