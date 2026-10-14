@@ -159,16 +159,30 @@ Raw integrity passes only one Qwen claim per split and none from Phi. These are
 retrospective agent-label counts, not human precision/calibration. No acceptance
 policy or model winner follows. Gate A remains unmet.
 
-Next: implement the root-reviewed architecture in `docs/longmemeval-file-brief.md`.
-Root inspected the existing bytes adapter/CLI: both cap total input at 64 MiB,
-while public S/M metadata is larger. New bounded file scan validates every item,
-selects at most five requested questions, preserves existing identities, computes
-the full raw hash and publishes no partial return on late-invalid input. No actual
-benchmark body downloads, inference or rights claim. Active worker `/root/longmemeval_file` uses Luna/medium and owns only
-`src/tracemem/adapters/longmemeval_file.py`, `tests/test_longmemeval_file.py`,
-`docs/longmemeval-file.md` and its task logs. Do not duplicate or edit owned files
-until release. Root source review and fresh wheel approval remain required before
-packaging. Current worker/GPU/job state is in `.local/active-cycle.json`.
+Bounded file scan implemented from `docs/longmemeval-file-brief.md`, worker released
+and root source/tests/docs reviewed. Independent oracle checked 31 fictional questions,
+six selected objects against the whole-bytes adapter, four selection combinations,
+exact hash/input preservation and nine late-invalid/missing-ID/inode-replacement
+refusals. All34previous runtime files unchanged; only file reader added. No active
+worker or GPU call. Source contract `docs/longmemeval-file.md`.
+
+Local final boundary: make check passed366tests in7.408s with one optional ContextKit
+skip; that integration test separately passed with ContextKit on PYTHONPATH. Ruff84
+files, source mypy30, scoped mypy45, actionlint and diff check passed. An initial
+expanded mypy command had duplicate module names; established explicit-package-bases
+command passed with no source changes. New35file offline wheel SHA256
+`40337ff3cb854a2fd94e1f30dd024d48e6516716b248d35f8b11c2fbfe513f58`;
+111copied installed tests pass outside checkout with PYTHONPATH/HOME unset.
+Frozen budget report and byte-identical84taskHTML reproduce. Validation
+`docs/validation-longmemeval-file.json`; approval
+`.local/package-source-approved-longmemeval-file.json`; wheel receipt
+`.local/package-smoke-fts-v3-chatgpt-20261014T205248441104Z.json`;
+installed receipt `.local/installed-longmemeval-file-receipt.json`.
+Signed source delivery/hostedCI pending at this recorded boundary; verify active-cycle
+and live git before resuming. Next bounded useful slice: integrate explicit at-most-five
+question selection into the retrieval diagnostic using this scanner, preserving the
+existing bytes API/report and clearly reporting selected-only denominators. No actual
+benchmark downloads, inference or rights claim. Root brief/review required.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed

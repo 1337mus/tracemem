@@ -1,0 +1,78 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "7e354069b759242df82b17d98d7c16698fe143149794afed3b5d9c5d374713e6",
+    "docs/longmemeval-file-brief.md": "ed555b5716268ca16fe6b4acac6ec36d6413938175c77788c576da5a711dab37",
+    "docs/longmemeval-file.md": "346cd9f0cac710c8c1618b5f1fd0f0bc9e8b49c8c5eb2eeaea78b1dc4e19e4c6",
+    "src/tracemem/adapters/longmemeval_file.py": "943fc789e75fdee3c7bc96088396df188f9bc47f349f2d5b4e6df53f0b46c924",
+    "tests/test_longmemeval_file.py": "69568a569b4c505a81b78baa66f1393cd4600ef33f2fb70fd7f64b0c52cce00c"
+  },
+  "context_kit_integration": {
+    "command": "PYTHONPATH=src:tests:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest test_adapter.TranscriptAdapterTests.test_context_kit_integration_returns_only_synthetic_source_pairs -v",
+    "exit_code": 0,
+    "log_sha256": "9d82e5c1e50c056d0234d8c48a3ab3a3abed2c94fd084a46b1a1e62f889d3aea",
+    "tests": 1
+  },
+  "delivery_state": "Root reviewed and local validation passed; signed commit/push/hostedCI pending",
+  "diff_check_exit_code": 0,
+  "focused_tests": 20,
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "elapsed_seconds": 7.408,
+    "exit_code": 0,
+    "local_log": ".local/longmemeval-file-final-check.log",
+    "log_sha256": "a82333591677c2f3d10113dccb57d2c34a8a8362f1bb7d392c901385f1cdd22c",
+    "ruff_files": 84,
+    "skip_reason": "Optional Context Kit absent from make PYTHONPATH; separately rerun with ContextKit and passed",
+    "skipped": 1,
+    "source_mypy_files": 30,
+    "tests": 366
+  },
+  "gpu_or_model_calls": 0,
+  "independent_probe": {
+    "command": "PYTHONPATH=src:. .venv/bin/python .local/longmemeval-file-root-probe.py",
+    "exit_code": 0,
+    "input_bytes_modes_mtimes_preserved": true,
+    "log": ".local/longmemeval-file-root-probe.log",
+    "log_sha256": "76c88a28e8d737346fba27fd590a8be21f528fca1b97f6214e755a32ad34340b",
+    "questions": 31,
+    "rejected_cases": 9,
+    "scan_selection_combinations": 4,
+    "whole_bytes_selected_objects_compared": 6
+  },
+  "installed_wheel": {
+    "additional_installed_tests": 111,
+    "additional_receipt": ".local/installed-longmemeval-file-receipt.json",
+    "additional_receipt_sha256": "7a63ad9b0651dce8282241067cb6d3175752f4f5b69741c0e9616ea654283227",
+    "all34prior_runtime_members_unchanged": true,
+    "all_members_match_approved_source": true,
+    "frozen_budget_and_84_task_html_reproduced": true,
+    "local_receipt": "/Users/raj/Projects/tracemem/.local/package-smoke-fts-v3-chatgpt-20261014T205248441104Z.json",
+    "offline_smoke_commands_passed": 9,
+    "package_members": 35,
+    "receipt_sha256": "9a80dd0ab3f6e747a8b55f67f46b1f28ceba84691cfd6cb934fab96a123eeef3",
+    "source_path_imports": false,
+    "stable_benchmark_fields_match": true,
+    "wheel_sha256": "40337ff3cb854a2fd94e1f30dd024d48e6516716b248d35f8b11c2fbfe513f58"
+  },
+  "invocation_correction": "Initial expanded mypy invocation used ambiguous experiment module names and failed before typechecking. Corrected to established explicit-package-bases scoped command; no code changes.",
+  "limitations": [
+    "Fictional-format compatibility only; actual upstream compatibility and constituent data rights unresolved",
+    "Existing whole-bytes adapter and retrieval CLI retain64MiB whole-input cap",
+    "Quiescent file required; no atomic snapshot/adversarialABA guarantee",
+    "No benchmarkQA/model-training/GateA claim"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T20:53:36.008326+00:00",
+  "root_review": "Complete module/tests/docs inspected. Independent31question equivalence, exact hashing, source preservation, late-invalid/missing-ID and same-byte inode-replacement probe passed. All34previous runtime files unchanged.",
+  "scope": "Bounded local file validation and at-most-five question selection; fictional input only",
+  "scoped_mypy": {
+    "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py experiments/evaluate_integrity_selectivity.py",
+    "exit_code": 0,
+    "files": 45,
+    "local_log": ".local/longmemeval-file-scoped-mypy-fixed.log",
+    "log_sha256": "fdba5b4e396441aaf1ba0d4aee9a2b6de7229057c665772ec81bd032ce1cc3f5"
+  },
+  "source_base_commit": "0dd2d1a2813654e537471fc288c0b154db881d3e",
+  "workflow_lint_exit_code": 0
+}

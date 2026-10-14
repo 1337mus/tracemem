@@ -15,7 +15,7 @@ API `scan_longmemeval_file(path, *, namespace, variant, question_ids=())` return
 frozen slotted `LongMemEvalFileScan` with `input_sha256`, `input_bytes`,
 `question_count`, and `selected_questions: tuple[LongMemEvalQuestion, ...]`.
 `question_ids` must be a tuple of at most five distinct nonblank scalar-Unicode
-strings. Validate namespace/variant using the existing empty-array bytes adapter
+strings, each at most 4096 UTF8 bytes. Validate namespace/variant using the existing empty-array bytes adapter
 before opening a path. Validate selection before I/O. Return selected questions
 in source-file order; all requested IDs must exist. Empty selection scans and
 validates the whole file but retains no conversations. No CLI needed this slice.
@@ -35,7 +35,10 @@ array members, trailing commas, incomplete/trailing content, JSON-invalid whites
 invalid UTF8/BOM and malformed content. Wrap each completed item in b'['+item+b']'
 and call existing `parse_longmemeval_bytes` for strict JSON, duplicate keys,
 constants, Unicode, schema and evidence identities. Track duplicate question IDs
-across the entire file. Do not reproduce semantic/schema validation. Preserve the
+across the entire file. Enforce 4096 UTF8 bytes per question ID and a cumulative
+1 MiB UTF8 budget for the seen-ID set; count bounds alone could retain gigabytes
+of metadata. These are file-reader resource bounds, distinct from the unchanged
+adapter schema. Do not reproduce semantic/schema validation. Preserve the
 exact question/record IDs and metadata produced by the existing bytes adapter.
 Drop each unselected parsed question before proceeding; retain only requested
 questions and the bounded ID set. Enforce total/item/question/depth bounds during

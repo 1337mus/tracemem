@@ -82,6 +82,8 @@ make check
 - [Turn-retrieval diagnostic](docs/longmemeval-retrieval.md): a local CLI with per-question
   stores, explicit missing-label exclusions, and separate BM25/hash/hybrid recall cells.
   Its fictional protocol checks do not measure benchmark or QA performance.
+- [Bounded LongMemEval file scan](docs/longmemeval-file.md): incremental validation
+  and limited question selection for local fictional-format files larger than 64 MiB.
 - [Source-retention impact](docs/source-retention.md): a pure dependency diagnostic
   for historical evidence, candidate quotes, ambiguous spans and correction lineage.
   It opens no stores and performs no deletion.
