@@ -151,8 +151,20 @@
       }
     },
     "hosted_ci_for_catalog": {
-      "status": "pending",
-      "note": "No hosted CI run has validated source_commit yet."
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 38652529551,
+      "head_sha": "403cc47edc54ae462466cec0522842dd6aceda01",
+      "url": "https://github.com/1337mus/tracemem/actions/runs/38652529551",
+      "tests": 460,
+      "skipped": 1,
+      "elapsed_seconds": 42.285,
+      "installed_tests": 208,
+      "installed_skipped": 2,
+      "installed_elapsed_seconds": 17.228,
+      "local_raw_log": ".local/token-catalog-hosted-ci-38652529551.log",
+      "local_raw_log_sha256": "dabcc41e7cf4f77af87ca31057de353fea1734359a06c1ca53b3c9d23b52a687",
+      "scope_note": "This delivered HEAD contains exact signed source_commit; source and installed-wheel checks passed."
     },
     "prior_token_packing_ci_not_catalog_validation": {
       "run_id": 38650751759,
@@ -174,6 +186,17 @@
       "launch_occurred": false,
       "calls": 0,
       "fresh_check_required_before_future_remote_count": true
+    },
+    "delivery_personal_workspace_snapshot": {
+      "receipt": ".local/token-catalog-delivery-modal-inventory.json",
+      "receipt_sha256": "6bb94601dc86bbc20e1aa5099129e76e0b0a4648e1aebdabec1d0168f776872f",
+      "checked_at_utc": "2026-10-14T23:13:45.653860+00:00",
+      "personal_workspace_verified": true,
+      "active_apps": 0,
+      "active_jobs": 0,
+      "launch_occurred": false,
+      "calls": 0,
+      "recheck_required_before_future_remote_count": true
     }
   },
   "reviewed_future_count_input": {
@@ -186,7 +209,7 @@
     "remote_calls": 0,
     "note": "Reviewed fixed fictional messages only. It does not launch a call. A future count can cross-check overlapping prompt lengths against existing QA raw input_tokens without new inference. No counter runner hash exists yet."
   },
-  "delivery_state": "Root-reviewed source is committed locally as 2f959a8347fd4ccbb97c4db100c1d1b587746650; local full, focused, oracle, and installed checks passed. A fresh PRIVATE repository check, push, and hosted CI for this catalog commit remain pending.",
+  "delivery_state": "Root-reviewed signed source and validation documentation delivered to PRIVATE 1337mus/tracemem at 403cc47edc54ae462466cec0522842dd6aceda01; hosted CI passed.",
   "limitations": [
     "The fixture is eight fictional cases and the retrieval modes produce the same rankings here; it cannot compare retrieval quality or establish representative QA performance.",
     "Replay uses caller-supplied counts. Test/oracle counts are deterministic or invented integers, not token measurements; no tokenizer attestation or matched-token QA exists.",

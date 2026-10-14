@@ -38,8 +38,11 @@ offline prompt-count catalog is now implemented and root-reviewed in signed
 commit `2f959a8347fd4ccbb97c4db100c1d1b587746650`. Root's full check passed 460
 tests (one optional Context Kit skip), Ruff on 100 files, and mypy on 32 source
 files; the independent oracle and isolated installed-wheel replay also passed.
-Catalog-specific hosted CI is pending. The earlier token-packing CI run above
-does not validate this catalog commit. Exact hashes, test chronology, the
+Catalog source and validation docs were delivered privately at
+`403cc47edc54ae462466cec0522842dd6aceda01`. Catalog-specific
+CI [38652529551](https://github.com/1337mus/tracemem/actions/runs/38652529551)
+passed: 460 source tests (one skip), 208 installed tests (two skips), Ruff on
+100 files, and source mypy on 32 files. Exact hashes, test chronology, the
 preserved installed-harness failure, and remaining limitations are recorded in
 [`validation-token-count-catalog.json`](validation-token-count-catalog.json).
 The catalog prepares 28 synthetic prompt items from 84 subset instances and
@@ -47,13 +50,14 @@ replays caller-supplied counts; its invented test/oracle integers are not token
 measurements, and it does not perform QA or tokenizer-attested counting.
 
 The last personal Modal workspace inventory, at
-`2026-10-14T22:56:18.872005+00:00`, found no active apps or tasks; refresh the
+`2026-10-14T23:13:45.653860+00:00`, found no active apps or tasks; refresh the
 personal Modal workspace and no-active-job state before remote counting. Before
 any push, separately verify that the GitHub repository is still PRIVATE. A
 reviewed fixed-fictional count payload is staged locally at
 `.local/token-count-payload-reviewed.json`
 (payload SHA256 `125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88`);
-it has not been sent, and no count runner hash or remote call exists. Under
+it has not been sent, and no count runner hash or remote call exists.
+The next file-level implementation brief is `.local/token-counter-next-brief.md`. Under
 existing bounded synthetic-only authority, after separate source/payload
 review, the next bounded step is source-free remote tokenizer counting of that
 payload, with recorded catalog, payload, and runner hashes. Counts for
