@@ -1,0 +1,196 @@
+{
+  "recorded_at_utc": "2026-10-14T23:07:50Z",
+  "scope": "Offline synthetic prompt-count catalog and caller-supplied count replay",
+  "source_commit": "2f959a8347fd4ccbb97c4db100c1d1b587746650",
+  "commit_signature": {
+    "signature_present": true,
+    "verification_status": "Root independently ran git verify-commit and received a Good signature from the configured ultimate-trust signing key. The documentation worker could not access the trust database under its sandbox.",
+    "root_review_status": "Root inspected all source/test/workflow bytes, independently replayed candidates and packing, and verified the signed source commit.",
+    "signing_fingerprint": "73670F26064EC91BF33BC889D42898A1E36DBD7F",
+    "root_log": ".local/token-catalog-root-signature.log",
+    "root_log_sha256": "ea706d3a057f52377c0d59d3d699407a97669d1b199021e384551442a25c3190"
+  },
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "6fff3c99ab5fb9337ccfbc3083267ccd4290090bdf729e6f1b8e391bef552f81",
+    "docs/token-count-catalog.md": "08007d44d0f364abf496d77c943cd8c5ad9357424dc3f7441369782bdd44c164",
+    "experiments/token_catalog.py": "b1e1453d94f8510dbaf887810e79a9cf0677f5666dd749f7f7f8634d2288dfbf",
+    "tests/test_token_catalog.py": "213aee77392eccbd290fe029ca99e0da7c5452f016e82a0503d6bb395c976993"
+  },
+  "catalog": {
+    "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+    "canonical_bytes": 19161,
+    "source_sha256": "b1e1453d94f8510dbaf887810e79a9cf0677f5666dd749f7f7f8634d2288dfbf",
+    "subset_instances": 84,
+    "unique_prompts": 28,
+    "candidate_bound": 768,
+    "replay_cells": 72,
+    "replay_cells_by_split": {
+      "dev": 36,
+      "test": 36
+    }
+  },
+  "tdd_chronology": {
+    "behavioral_red_green_pairs": [
+      {
+        "behavior": "Candidate catalog contract and exhaustive deduplicated prompt set",
+        "red_log": ".local/token-catalog-red-01.log",
+        "red_sha256": "836a805c2563ff3eda02595db631cdbd6e2de112732e7bd57bf7ab8f5a6a3afa",
+        "green_log": ".local/token-catalog-green-01.log",
+        "green_sha256": "45d821cc635e8331f7ddd4f9a313ea7ebaef9f4e2f40de67efa7ff54478ab857"
+      },
+      {
+        "behavior": "Receipt replay through complete-prompt counts and ranked-hit skipping",
+        "red_log": ".local/token-catalog-red-03.log",
+        "red_sha256": "a5ce3d4bf55101a3a0caa1dfb4f0b54d73a4fa3e4558c076426e357e30e6f09f",
+        "green_log": ".local/token-catalog-green-02.log",
+        "green_sha256": "2852609e57a2000bd33dd0b06a77d0c7dff6ab1ce9ebc1f6f620c3487eecc1bc"
+      }
+    ],
+    "green_only_checks": [
+      ".local/token-catalog-green-04.log",
+      ".local/token-catalog-green-05.log",
+      ".local/token-catalog-green-06.log",
+      ".local/token-catalog-green-07.log"
+    ],
+    "chronology_notes": [
+      "The red-02 log expected 84 distinct prompts; the correct deduplicated count is 28, so it is a test-expectation error and is not behavioral RED evidence.",
+      "The later reference-sentinel, malformed-budget, receipt-rejection, and positive-empty-overhead checks have GREEN-only evidence; no RED/GREEN cycle is claimed for them.",
+      "Setup failures in setup-01, setup-02, and green-03 are preserved and are not behavioral RED evidence.",
+      "Initial Ruff and mypy command failures are preserved in final-02 through final-04; corrected final checks are recorded below."
+    ]
+  },
+  "validation": {
+    "root_full_check": {
+      "command": "make check PYTHON=.venv/bin/python",
+      "log": ".local/token-catalog-root-full-check.log",
+      "log_sha256": "6293b4b720726849a1c777a8be9afa4eaa297d1dc5d1e4f2cc4dee56f8f710d2",
+      "exit_code": 0,
+      "tests": 460,
+      "skipped": 1,
+      "skip_reason": "Optional Context Kit unavailable",
+      "elapsed_seconds": 15.498,
+      "ruff_check": "passed",
+      "ruff_format": "passed; 100 files already formatted",
+      "source_mypy": "passed; 32 source files"
+    },
+    "focused_local_checks": {
+      "tests": {
+        "command": "PYTHONPATH=src .venv/bin/python -m unittest tests/test_token_catalog.py -v",
+        "log": ".local/token-catalog-final-05-tests.log",
+        "log_sha256": "ec07993529785c6c1cf60947b3e5f231ca32c5c03a29af1b17e0d542fca5b1d7",
+        "exit_code": 0,
+        "tests": 6,
+        "skipped": 0
+      },
+      "ruff_check": {
+        "log": ".local/token-catalog-final-06-ruff-check.log",
+        "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "result": "passed"
+      },
+      "ruff_format": {
+        "log": ".local/token-catalog-final-07-ruff-format.log",
+        "log_sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+        "result": "passed; two files already formatted"
+      },
+      "strict_mypy": {
+        "command": "MYPYPATH=src:. .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/token_catalog.py tests/test_token_catalog.py",
+        "log": ".local/token-catalog-final-08-strict-mypy.log",
+        "log_sha256": "2964f4e84ac77897e510c8d7fa5b664a688c51c01f2c3733e4c2fa20c1f6c174",
+        "result": "passed; 34 source files"
+      },
+      "actionlint": {
+        "command": "actionlint .github/workflows/ci.yml",
+        "log": ".local/token-catalog-final-09-actionlint.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "result": "passed"
+      }
+    },
+    "root_scoped_checks": {
+      "mypy_log": ".local/token-catalog-root-scoped-mypy.log",
+      "mypy_log_sha256": "2964f4e84ac77897e510c8d7fa5b664a688c51c01f2c3733e4c2fa20c1f6c174",
+      "mypy_result": "passed; 34 source files",
+      "actionlint_log": ".local/token-catalog-root-actionlint.log",
+      "actionlint_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actionlint_result": "passed"
+    },
+    "independent_root_oracle": {
+      "script": ".local/token-catalog-root-oracle.py",
+      "receipt": ".local/token-catalog-root-oracle.json",
+      "receipt_sha256": "ca2b2988a23073f04d0bc4a3e492dd9fc308998bb71c4d0b1122af706cd846dc",
+      "subset_instances": 84,
+      "unique_prompts": 28,
+      "canonical_catalog_bytes": 19161,
+      "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+      "replayed_cells": 72,
+      "dev_cells": 36,
+      "test_cells": 36,
+      "counter_evidence": "Invented nonmonotonic integers exercise replay only; they are not token measurements or tokenizer evidence.",
+      "model_or_network_calls": 0
+    },
+    "installed_wheel_replay": {
+      "receipt": ".local/token-catalog-installed-receipt.json",
+      "receipt_sha256": "bc90e78fab484550f81f9b8aec60ba5be3a935dbd7c86262c0df1e59091ea976",
+      "reused_wheel_sha256": "65e9b49d6cf25c96c9829f049fc592eb5a1d87b7d232ea02decd07f5b047b26f",
+      "new_wheel_built": false,
+      "runtime_files_unchanged": 37,
+      "test_log": ".local/token-catalog-installed-final-tests.log",
+      "test_log_sha256": "a52947051e1f52f974f8511c11fe7d70f92fcbaabe44461106fc098a816cb4ef",
+      "tests": 6,
+      "skipped": 0,
+      "oracle_log": ".local/token-catalog-installed-final-oracle.log",
+      "oracle_log_sha256": "3374c9ea8a59949e93619db7becb07e46c681398e143597c96d307bbc2b3b962",
+      "oracle_replayed_cells": 72,
+      "catalog_sha256_matches_root": true,
+      "model_or_network_calls": 0,
+      "prior_harness_failure": {
+        "test_log": ".local/token-catalog-installed-tests.log",
+        "test_log_sha256": "7dd05604e43e7cdcd13873a598b779e082be191c62eac78339735fb76434299a",
+        "oracle_log": ".local/token-catalog-installed-oracle.log",
+        "oracle_log_sha256": "42854df2e8967888443eb3624467bd1a26d804940a5ee5f979ffb90173ab988a",
+        "cause": "Direct script execution put .local on sys.path instead of the copied test root. All six installed tests passed, but the oracle import failed. The corrected runpy invocation from the copied test root passed without production changes."
+      }
+    },
+    "hosted_ci_for_catalog": {
+      "status": "pending",
+      "note": "No hosted CI run has validated source_commit yet."
+    },
+    "prior_token_packing_ci_not_catalog_validation": {
+      "run_id": 38650751759,
+      "head_sha": "d7bb4f8bec846295ecb2eb8a96e0e55aff20dc79",
+      "conclusion": "success",
+      "source_tests": 454,
+      "source_skipped": 1,
+      "installed_tests": 202,
+      "installed_skipped": 2,
+      "url": "https://github.com/1337mus/tracemem/actions/runs/38650751759",
+      "scope_note": "This baseline token-packing CI run predates the catalog source commit and does not validate the catalog."
+    },
+    "personal_workspace_preflight_snapshot": {
+      "receipt": ".local/token-catalog-start-modal-inventory.json",
+      "checked_at_utc": "2026-10-14T22:56:18.872005+00:00",
+      "personal_workspace_verified": true,
+      "active_apps": 0,
+      "active_tasks": 0,
+      "launch_occurred": false,
+      "calls": 0,
+      "fresh_check_required_before_future_remote_count": true
+    }
+  },
+  "reviewed_future_count_input": {
+    "payload_file": ".local/token-count-payload-reviewed.json",
+    "payload_file_sha256": "08c727a86a0c7a0e6978c99eb58f66dae7f8728902746a958b74ee5655ab668e",
+    "payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+    "review_receipt": ".local/token-count-payload-review.json",
+    "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+    "items": 28,
+    "remote_calls": 0,
+    "note": "Reviewed fixed fictional messages only. It does not launch a call. A future count can cross-check overlapping prompt lengths against existing QA raw input_tokens without new inference. No counter runner hash exists yet."
+  },
+  "delivery_state": "Root-reviewed source is committed locally as 2f959a8347fd4ccbb97c4db100c1d1b587746650; local full, focused, oracle, and installed checks passed. A fresh PRIVATE repository check, push, and hosted CI for this catalog commit remain pending.",
+  "limitations": [
+    "The fixture is eight fictional cases and the retrieval modes produce the same rankings here; it cannot compare retrieval quality or establish representative QA performance.",
+    "Replay uses caller-supplied counts. Test/oracle counts are deterministic or invented integers, not token measurements; no tokenizer attestation or matched-token QA exists.",
+    "No catalog upload runner or remote call was performed. No model weights, new QA inference, or training are involved."
+  ],
+  "next_step": "Under existing bounded synthetic-only authority, after separate source/payload review, perform only source-free remote tokenizer counting for the reviewed synthetic payload. Pin and record the actual counter/model-tokenizer version, provider chat template, special tokens and generation markers, plus exact catalog/payload/runner hashes. Before any push, freshly verify that the GitHub repository is PRIVATE. Before remote counting, refresh the personal Modal workspace and no-active-job checks. Cross-check counts for overlapping prompts against existing QA raw input_tokens without new QA inference. Do not load model weights, run new QA inference, or train."
+}

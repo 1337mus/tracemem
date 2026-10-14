@@ -98,17 +98,32 @@
       "model_or_network_calls": 0
     },
     "hosted_ci": {
-      "run_id": 38649377646,
-      "conclusion": "passed",
-      "scope_note": "This run validated baseline documentation commit 6d174d6863d8855eb29d39f0852aa4ba98afa8f1; it did not validate source_commit. CI for source_commit is pending."
+      "run_id": 38650751759,
+      "head_sha": "d7bb4f8bec846295ecb2eb8a96e0e55aff20dc79",
+      "conclusion": "success",
+      "url": "https://github.com/1337mus/tracemem/actions/runs/38650751759",
+      "tests": 454,
+      "skipped": 1,
+      "elapsed_seconds": 43.6,
+      "installed_tests": 202,
+      "installed_skipped": 2,
+      "installed_elapsed_seconds": 15.971,
+      "local_raw_log": ".local/token-packing-hosted-ci-38650751759.log",
+      "local_raw_log_sha256": "4c9a77164e707581f58754b1d587208ad97ab81f5e4d5ba6e6f95885a56e1c5b",
+      "scope_note": "Delivered documentation HEAD contains source_commit; hosted source and installed-wheel checks passed."
     },
     "additional_root_reported_checks": {
       "actionlint": "passed",
       "diff_check": "passed",
       "raw_logs_preserved": false
+    },
+    "historical_baseline_hosted_ci": {
+      "run_id": 38649377646,
+      "conclusion": "passed",
+      "scope_note": "This run validated baseline documentation commit 6d174d6863d8855eb29d39f0852aa4ba98afa8f1; it did not validate source_commit. CI for source_commit is pending."
     }
   },
-  "delivery_state": "Reviewed and validated locally; exact source change is signed in source_commit and awaits a fresh private-repository check and push. CI for source_commit is pending.",
+  "delivery_state": "Signed reviewed source and documentation delivered to PRIVATE personal repository 1337mus/tracemem at d7bb4f8bec846295ecb2eb8a96e0e55aff20dc79; hosted CI passed.",
   "matched_token_qa": "Not run. The implementation has no tokenizer integration and does not establish model token use or QA outcomes.",
   "privacy_boundary": "Private source text stays local. Any future remote counter use is limited to reviewed synthetic-only inputs under current authorization. No model or network calls were made for this implementation or validation."
 }

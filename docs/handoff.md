@@ -29,11 +29,36 @@ reviewed locally. The full suite, static checks, independent oracle, and an
 installed-wheel replay passed; exact evidence and limitations are recorded in
 [`validation-token-budget-packing.json`](validation-token-budget-packing.json).
 Root signed the exact reviewed source, test, documentation, and workflow change
-as commit `717ff8c986238cbbf5b133238df9ad17729bc8bb`; it is not pushed yet and
-is pending the fresh private-repository check and delivery. The hosted CI run
-recorded there covered the baseline documentation commit, not this packing
-commit; CI for the packing commit is pending. Matched-token QA has not run. No
-GPU jobs are active. Do not launch or retry inference based on this document.
+as commit `717ff8c986238cbbf5b133238df9ad17729bc8bb`, delivered privately with
+validation documentation at `d7bb4f8bec846295ecb2eb8a96e0e55aff20dc79`.
+CI [38650751759](https://github.com/1337mus/tracemem/actions/runs/38650751759)
+passed: 454 source tests (one skip), 202 installed tests (two skips), Ruff on
+98 files, and mypy on 32 source files. Matched-token QA has not run. A bounded
+offline prompt-count catalog is now implemented and root-reviewed in signed
+commit `2f959a8347fd4ccbb97c4db100c1d1b587746650`. Root's full check passed 460
+tests (one optional Context Kit skip), Ruff on 100 files, and mypy on 32 source
+files; the independent oracle and isolated installed-wheel replay also passed.
+Catalog-specific hosted CI is pending. The earlier token-packing CI run above
+does not validate this catalog commit. Exact hashes, test chronology, the
+preserved installed-harness failure, and remaining limitations are recorded in
+[`validation-token-count-catalog.json`](validation-token-count-catalog.json).
+The catalog prepares 28 synthetic prompt items from 84 subset instances and
+replays caller-supplied counts; its invented test/oracle integers are not token
+measurements, and it does not perform QA or tokenizer-attested counting.
+
+The last personal Modal workspace inventory, at
+`2026-10-14T22:56:18.872005+00:00`, found no active apps or tasks; refresh the
+personal Modal workspace and no-active-job state before remote counting. Before
+any push, separately verify that the GitHub repository is still PRIVATE. A
+reviewed fixed-fictional count payload is staged locally at
+`.local/token-count-payload-reviewed.json`
+(payload SHA256 `125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88`);
+it has not been sent, and no count runner hash or remote call exists. Under
+existing bounded synthetic-only authority, after separate source/payload
+review, the next bounded step is source-free remote tokenizer counting of that
+payload, with recorded catalog, payload, and runner hashes. Counts for
+overlapping prompts can be checked against existing QA `input_tokens` without
+new QA inference. Do not load model weights, run new QA inference, or train.
 
 Phase 0/1 remain complete; see [`roadmap.md`](roadmap.md) and
 [`context-kit-inventory.md`](context-kit-inventory.md). Context Kit at
@@ -98,7 +123,6 @@ tokenizer-matched budgets. There is no pooled score or model ranking.
   corrected run, root replay, cleanup, and CI facts:
   `docs/validation-synthetic-qa-inference.json`.
 
-The working tree may include the independent offline token-packing slice. Do not
-change `.local/active-cycle.json`, receipts, or source as part of result
-documentation. Keep private artifacts under ignored `.local` with restrictive
-permissions.
+Root maintains [`.local/active-cycle.json`](../.local/active-cycle.json) with
+exact live delivery, job, and next-action state. Keep private artifacts under
+ignored `.local` with restrictive permissions; recheck live jobs before work.
