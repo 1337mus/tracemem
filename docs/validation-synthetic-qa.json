@@ -10,7 +10,7 @@
     "experiments/prepare_synthetic_qa.py": "161a45011807f08c98dd56b588a82907d6caa1519fa0691c8f71f7cbc8c4209b",
     "tests/test_synthetic_qa.py": "af85c31157bb7cc01d1739be6b7aaccc08214b3004988e24975ae3d262d6888a"
   },
-  "delivery_state": "Root reviewed; local and installed validation passed; signed commit/private push/hosted CI pending",
+  "delivery_state": "Signed source pushed PRIVATE; hosted CI passed",
   "diff_check_exit_code": 0,
   "documented_command": {
     "budgets_bytes": [
@@ -55,6 +55,21 @@
     "tests": 407
   },
   "gpu_or_model_calls": 0,
+  "hosted_ci": {
+    "conclusion": "success",
+    "frozen_budget_and_html_checks_passed": true,
+    "head_sha": "6918d5bdd9970c461d63a5e64974502939337b1c",
+    "hosted_elapsed_seconds": 17.748,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 407,
+    "installed_elapsed_seconds": 2.165,
+    "installed_expected_contextkit_skips": 1,
+    "installed_tests_passed": 155,
+    "local_log_sha256": "cd20bb728493f376a9fc0971b5e1113b524c07e9abf5ecb7d291e0f39a3b7fa3",
+    "run_id": 38643805641,
+    "skip_reason": "Optional Context Kit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38643805641"
+  },
   "independent_replay": {
     "canonical_request_sha256": "85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084",
     "cells_replayed": 72,
@@ -107,6 +122,7 @@
     "log_sha256": "a459b8765e4db93f08156e7d98399988a9b87243303f92178f28c9db897f6066"
   },
   "source_base_commit": "1f1a54083c8e140d12e2d668881cde239dd5d608",
+  "source_commit": "6918d5bdd9970c461d63a5e64974502939337b1c",
   "workflow_evidence": {
     "chronology": "Worker transcription, not raw RED outputs. Initial missing callable RED/GREEN; root-directed source-identity and invalid-split corrections have RED/GREEN. Broader protocol tests added after initial implementation. No claim of per-behavior preimplementation TDD.",
     "log": ".local/synthetic-qa-worker-verification.log",

@@ -262,8 +262,12 @@
     "wheel_sha256": "955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844"
   },
   "latest_checkpoint": {
+    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38643805641",
+    "hosted_installed_tests": 155,
+    "hosted_tests": 407,
     "previous_source_validation": "docs/validation-transcript-consistency.json",
-    "state": "Root reviewed; local and installed validation passed; signed commit/private push/hosted CI pending",
+    "source_commit": "6918d5bdd9970c461d63a5e64974502939337b1c",
+    "state": "Signed source pushed PRIVATE; hosted CI passed",
     "tests": 407,
     "tests_installed": 10,
     "validation": "docs/validation-synthetic-qa.json"
