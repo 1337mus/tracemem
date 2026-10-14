@@ -34,7 +34,7 @@ For RAG evidence recall, the scorer checks the returned context IDs against the 
 
 ## License and rights boundary
 
-The pinned LongMemEval repository `LICENSE` is MIT. The inspected README points to a separately hosted dataset, and this check did not inspect its dataset-specific license or rights. Do not treat the repository license as a completed dataset-rights review.
+The pinned LongMemEval repository `LICENSE` is MIT. A subsequent [dataset metadata audit](longmemeval-rights.md) verified that the separately hosted cleaned dataset's card declares MIT at commit `98d7416c24c778c2fee6e6f3006e7a073259d48f`. Its five-file tree contains no standalone license text, and inspected metadata leaves constituent provenance and third-party permissions unresolved. Do not treat the repository license or card declaration as a completed constituent-rights review.
 
 The pinned LoCoMo `LICENSE.txt` is Creative Commons Attribution-NonCommercial 4.0 International. Its terms include a NonCommercial limitation and attribution conditions. The README says image files are not released, but the dataset includes image URLs, captions, and search queries. The inspected files do not establish the rights for every conversation source, persona, caption, or externally hosted image.
 

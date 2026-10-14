@@ -7,6 +7,11 @@ were downloaded to this Mac. The historical NLI support diagnostic and the newer
 extraction comparison use agent-authored judgments, not independent human ground truth.
 Code licensing does not grant rights to private conversations.
 
+The [LongMemEval dataset metadata audit](longmemeval-rights.md) pins the official
+cleaned dataset's public card and tree. The card declares MIT; constituent provenance
+and third-party permissions remain unresolved. Only metadata was fetched. The format
+adapter uses newly authored fictional conversations, with no benchmark data imported.
+
 ## Two data lanes
 
 - **Synthetic:** newly authored fictional fixtures, MIT licensed with this project.

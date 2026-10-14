@@ -1,0 +1,58 @@
+{
+  "audit_date": "2026-10-14",
+  "dataset": "xiaowu0162/longmemeval-cleaned",
+  "resolved_commit": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+  "card_license_declaration": "mit",
+  "license_file_found_in_pinned_root_tree": false,
+  "observed_provenance": "The API description and dataset README state that this dataset replaces the original LongMemEval and removes noisy history sessions that interfere with answer correctness. The README links to a Google Sheets change log for more details; it was not fetched.",
+  "unknowns": [
+    "No standalone license text exists in the pinned root tree listing.",
+    "Inspected metadata does not specify constituent conversation authorship, provenance, or rights/permissions for all records.",
+    "No legal determination is made about redistribution, commercial use, or training."
+  ],
+  "tree_files_metadata_only": [
+    {
+      "path": "longmemeval_m_cleaned.json",
+      "size_bytes": 2737100077
+    },
+    {
+      "path": "longmemeval_oracle.json",
+      "size_bytes": 15388478
+    },
+    {
+      "path": "longmemeval_s_cleaned.json",
+      "size_bytes": 277383467
+    }
+  ],
+  "requests": [
+    {
+      "kind": "dataset API metadata",
+      "url": "https://huggingface.co/api/datasets/xiaowu0162/longmemeval-cleaned",
+      "status": 200,
+      "response_bytes": 1128,
+      "sha256": "2a22cceaa2e463f9d97112c114a5f9ee3a2327f5ad3cf3c08b13464987bce351"
+    },
+    {
+      "kind": "tree metadata",
+      "url": "https://huggingface.co/api/datasets/xiaowu0162/longmemeval-cleaned/tree/98d7416c24c778c2fee6e6f3006e7a073259d48f?recursive=true&expand=false",
+      "status": 200,
+      "response_bytes": 1127,
+      "sha256": "58056e714e478e4c7acfe82c5ba9f91f8ed293e4a24edb02f10f54d8e355efeb"
+    },
+    {
+      "kind": "dataset README",
+      "url": "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/98d7416c24c778c2fee6e6f3006e7a073259d48f/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/datasets/xiaowu0162/longmemeval-cleaned/98d7416c24c778c2fee6e6f3006e7a073259d48f/README.md?%2Fdatasets%2Fxiaowu0162%2Flongmemeval-cleaned%2Fresolve%2F98d7416c24c778c2fee6e6f3006e7a073259d48f%2FREADME.md=&etag=%224f9ea7d14335631a4100ff2ef9c1783697031c68%22",
+      "status": 200,
+      "response_bytes": 626,
+      "sha256": "fe31783d4e5d132681a25e4192e85def8edd214094939879f5283818c0a4a3e0"
+    }
+  ],
+  "not_fetched": [
+    "benchmark JSON/conversations",
+    "model weights",
+    "linked Google Sheets change log",
+    "upstream source code"
+  ],
+  "receipt_path": ".local/longmemeval-rights/receipt.json"
+}

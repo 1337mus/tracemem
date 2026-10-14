@@ -40,5 +40,32 @@
   "recorded_at_utc": "2026-10-14T19:25:51.403281+00:00",
   "local_receipt": ".local/installed-new-apis-isolated-receipt.json",
   "fixture_policy": "Tracked fictional fixtures only",
-  "browser_rendering_verified": false
+  "browser_rendering_verified": false,
+  "hosted_ci": {
+    "run_id": 38623661647,
+    "commit": "30765f20aa9ed438ebc09d688bef74837321154d",
+    "conclusion": "success",
+    "new_api_checks": {
+      "context_budget": {
+        "environment": {
+          "actual": {
+            "python": "3.12.15",
+            "sqlite": "3.45.1"
+          },
+          "recorded": {
+            "python": "3.12.14",
+            "sqlite": "3.53.1"
+          }
+        },
+        "fixture_sha256": "76862babda5e6e26be1ed14f5265c64e43627a54b1499dba47585605396637f3",
+        "report_sha256": "9e14de94e09893f400e17226fa2cebceeec377c1493f4f263fa325d49a055c01",
+        "stable_fields_match": true
+      },
+      "review_html": {
+        "bundle_sha256": "65ed4a2e0bbd227c3a521899676c4db98085f855083ec2d2a16aecbdda55bda5",
+        "html_sha256": "07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e",
+        "task_count": 84
+      }
+    }
+  }
 }

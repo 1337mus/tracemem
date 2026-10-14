@@ -1,0 +1,48 @@
+[
+  {
+    "question_id": "fictional-question-1",
+    "question_type": "multi-session",
+    "question": "Where is the fictional cobalt key stored?",
+    "answer": "In the velvet comet box.",
+    "question_date": "2032-04-03",
+    "haystack_session_ids": ["shared-fictional-session", "empty-fictional-session"],
+    "haystack_dates": ["2032-04-01", "2032-04-02"],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The cobalt key is at café shelf 7.\nPlease keep this note exact."
+        },
+        {
+          "role": "assistant",
+          "content": "Saved the cobalt key note for the fictional archive."
+        },
+        {
+          "role": "user",
+          "content": "The tiny label reads 東京 and 🧪.",
+          "has_answer": true
+        }
+      ],
+      []
+    ],
+    "answer_session_ids": ["shared-fictional-session"]
+  },
+  {
+    "question_id": "fictional_abs",
+    "question_type": "single-session-user",
+    "question": "Is the imaginary lavender archive open today?",
+    "answer": "",
+    "question_date": "2032-04-03",
+    "haystack_session_ids": ["shared-fictional-session"],
+    "haystack_dates": ["2032-04-01"],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "A paper kite rests in the amber drawer."
+        }
+      ]
+    ],
+    "answer_session_ids": []
+  }
+]

@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 277-test installed-API checkpoint. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 297-test LongMemEval adapter checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -119,11 +119,12 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:277tests,zero skips,4.713seconds including actual Context Kit
-integration and Node VM. Ruff72files,source mypy26,scoped39. Exact commands/exit
-codes `.local/final-installed-apis-commands.json`; `docs/validation.json` records
-source/test hashes. Historical267test checkpoint in
-`docs/validation-review-uncertainty.json`. Runtime package source still unchanged.
+Current full suite:297tests,zero skips,4.926seconds including actual Context Kit
+integration and Node VM. Ruff74files,source mypy27,scoped40. Exact commands/exit
+codes `.local/final-longmemeval-commands.json`; `docs/validation.json` records
+source/test hashes. The277test checkpoint is preserved in
+`docs/validation-installed-apis.json`. The only new runtime file is the adapter;
+all31earlier packagefiles remain byte-identical.
 
 Expanded installed smoke completed and root-reviewed. A fresh offline virtualenv
 installed the approved wheel; all31installed packagefiles match approved source.
@@ -156,10 +157,29 @@ No upstream code execution or benchmark conversations fetched. No new GPU calls.
    tests. GitHub signature reason remainsbad_email; local verify-commit passes.
    Uncertainty slice pushed as signed359b50811ce745a1b2398b154ffdd74c40b86350;
    hostedCI38622455178 passed267tests(one expectedskip)and34installedtests.
-2. No active worker at this checkpoint; the installed-API slice is ready for
-   signed private delivery and CI. Root verified the complete source/test diff.
-   Check `.local/active-cycle.json` before starting the next prototype slice.
-3. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
+2. Installed-API slice pushed as signed30765f20aa9ed438ebc09d688bef74837321154d.
+   CI38623661647 passed277tests(one expectedskip),34installedtests and newAPI
+   checks. RunnerPython3.12.15/SQLite3.45.1 vs recorded3.12.14/3.53.1;
+   all stable budget fields and exact84taskHTML match across these environments.
+3. LongMemEval adapter and public metadata audit completed and root-reviewed.
+   `docs/longmemeval-adapter.md` explains the strict fixture-only bytes contract.
+   20newtests cover label exclusion,question isolation,oracle source order,and
+   Unicode historical citations after later revisions/reopen. Root independently
+   checked48identity combinations,36schema rejections,and a combined-store positive
+   control. Full S277383467byte and M2737100077byte releases exceed64MiB cap;
+   no real-data compatibility or upstream score claim. Session dates remain separate.
+   Root verified public HF card MIT declaration,pinnedcommit98d7416 and three
+   cachehashes/README Gitblob; constituent provenance/permissions remain unresolved.
+   See `docs/longmemeval-rights.md`. No benchmark conversations downloaded.
+4. New offline wheelSHA2563097bb478faaf352cd33921682ad636a0a044518f0792a7d7a7b17c8fe084f98
+   matches all32approvedpackagefiles. All9previous smokecommands passed,including
+   frozen budget/84taskHTML replay;54copiedinstalledtests include20newadaptertests.
+   Adapter imports from site-packages outside checkout with PYTHONPATH/HOMEunset.
+   `.local/installed-longmemeval-receipt.json`; `docs/validation-longmemeval.json`.
+   CI now copies all3testmodules andfictionalfixture outside checkout.
+   Signedcommit/privatepush/hostedCI pending at this local checkpoint.
+   Both workers released ownership;check `.local/active-cycle.json` before work.
+5. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained

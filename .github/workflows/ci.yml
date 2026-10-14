@@ -59,8 +59,12 @@ jobs:
           .venv/bin/python -m venv "$smoke_venv"
           "$smoke_venv/bin/python" -m pip install --no-deps "$wheel"
 
-          test_dir="$(mktemp -d "$RUNNER_TEMP/tracemem-installed-tests.XXXXXX")"
-          cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py "$test_dir/"
+          test_root="$(mktemp -d "$RUNNER_TEMP/tracemem-installed-tests.XXXXXX")"
+          test_dir="$test_root/tests"
+          mkdir -p "$test_dir" "$test_root/examples/synthetic"
+          cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py \
+            tests/test_longmemeval_adapter.py "$test_dir/"
+          cp examples/synthetic/longmemeval-format.json "$test_root/examples/synthetic/"
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
@@ -72,5 +76,5 @@ jobs:
             --work-dir "$work_dir"
           "$smoke_venv/bin/python" -m unittest discover \
             -s "$test_dir" \
-            -p 'test_chatgpt_*.py' \
+            -p 'test_*.py' \
             -v

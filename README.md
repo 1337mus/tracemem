@@ -75,6 +75,10 @@ make check
 - [Pinned benchmark contracts](docs/benchmark-contracts.md): exact LongMemEval and
   LoCoMo evaluator semantics, source hashes, and unresolved dataset rights. No benchmark
   conversations were downloaded or evaluated.
+- [LongMemEval format adapter](docs/longmemeval-adapter.md): strict fixture-only parsing,
+  separate question stores, reference-label separation, and historical Unicode citations.
+  The [dataset metadata audit](docs/longmemeval-rights.md) records the MIT card declaration
+  and release sizes; full S/M files exceed the current parser's 64 MiB cap.
 - [Model candidates](docs/model-candidates.md): pinned extraction/retrieval/verifier
   diagnostics and the completed Qwen/Phi scenario comparison. No model is selected.
 - [Multi-session comparison](docs/experiments-scenarios.md): frozen explicit-v2
