@@ -1,0 +1,100 @@
+{
+  "artifact_sha256": {
+    "docs/integrity-selectivity-brief.md": "26ed4842b59bd8c5730e2fc7dd833314052ff363c46c0440e9e7b2ef994989b6",
+    "docs/integrity-selectivity.md": "97c79bf409fd3e97326eefdac2f64ea52ecbb626190d48f6e295fd975e28378f",
+    "docs/scenarios-integrity-selectivity.json": "19c8ed991bffb7c605792de2b78e6ce16cd282fb93769cce794061cbbc783e4e",
+    "experiments/evaluate_integrity_selectivity.py": "d2ffeda215eac2b3527581cd2b62385109642d7606d6bddbd81ba8182c7c7fe5",
+    "tests/test_integrity_selectivity.py": "d4e1f5147edb82d8a402dcf0a541c8766a63c38ba7baf71cd5c21d1a920bfa38"
+  },
+  "commands": {
+    "diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-diff_check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full_suite": {
+      "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-full_suite.log",
+      "log_sha256": "8d05301bb9d5933298600096f6b7881f323e6386fcbe655d0f38f526889eed20"
+    },
+    "ruff_check": {
+      "command": ".venv/bin/ruff check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-ruff_check.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "ruff_format": {
+      "command": ".venv/bin/ruff format --check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-ruff_format.log",
+      "log_sha256": "c0b753c0bfc7a70fc1f8c69d5afa1907a2fb41437df923ecb7ecac4d78676a19"
+    },
+    "scoped_mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py experiments/evaluate_integrity_selectivity.py",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-scoped_mypy.log",
+      "log_sha256": "522d7b3a15704213950b7053c882b6ddd0c41149631300ce6c1933d21b5971c3"
+    },
+    "source_mypy": {
+      "command": ".venv/bin/mypy",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-source_mypy.log",
+      "log_sha256": "4c4a1f687213d361065f9094b27b15c087d3754121b66f0e8580a9c699ab6426"
+    },
+    "workflow_lint": {
+      "command": "actionlint .github/workflows/ci.yml",
+      "exit_code": 0,
+      "local_log": ".local/final-integrity-selectivity-workflow_lint.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "delivery_state": "Locally validated; signed private delivery and hostedCI pending",
+  "focused_tests": 12,
+  "full_suite": {
+    "elapsed_seconds": 7.056,
+    "skipped": 0,
+    "tests": 346
+  },
+  "human_labels": 0,
+  "independent_root_errors": {
+    "error_aggregate_cells_checked": 8,
+    "errors_match": true,
+    "origin_error_lists_checked": 168,
+    "raw_receipts_reparsed_directly": 2
+  },
+  "independent_root_replay": {
+    "counts_and_mapping_match_independent_replay": true,
+    "model_split_filter_reviewer_cells_checked": 24,
+    "network_or_model_calls": 0,
+    "origin_rows_checked": 84,
+    "reviewer_metric_cells_checked": 72
+  },
+  "isolated_experiment": {
+    "all_loaded_runtime_paths_installed": true,
+    "approved_runtime_files": 34,
+    "copied_experiment_report_matches_source_run_exactly": true,
+    "exit_code": 0,
+    "local_receipt": ".local/integrity-selectivity-isolated-receipt.json",
+    "network_or_model_calls": 0,
+    "receipt_sha256": "d874f6e1a284767042313ee3db7c65870019f1d33107514ef314d5726b97fff9"
+  },
+  "labels_or_prompts_or_runtime_policy_changed": false,
+  "new_model_or_gpu_calls": 0,
+  "originals_modified": false,
+  "private_data_uploaded": false,
+  "private_inputs_read": false,
+  "recorded_at_utc": "2026-10-14T20:39:51.093810+00:00",
+  "root_review": "Complete experiment,12tests and docs reviewed. Independent replay confirms all84origin mappings/passflags,24reviewer cells,72metrics,168errorlists and8erroraggregates. All source/receipt/response hashes unchanged. Labels remain provisional agent judgments; no semantic acceptance/calibration/model selection.",
+  "runtime_package": {
+    "all34approved_files_unchanged": true,
+    "fresh_build_needed": false,
+    "prior_installed_tests": 91,
+    "prior_validation": "docs/validation-retention-report.json",
+    "reason": "Only source-only experiment, tests and docs changed; copied experiment independently used the already approved installed runtime",
+    "wheel_sha256": "41bb909feda22b10f9ed0a826a4a6ad499bf21221809eb7f255ec8b1202cb147"
+  },
+  "scope": "Retrospective fictional raw/quote-anchored integrity filters versus separate existing agent support judgments",
+  "source_base_commit": "e2ccd54e942563615907c9b94980a844cf72dfc9"
+}

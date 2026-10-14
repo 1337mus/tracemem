@@ -88,6 +88,8 @@ make check
 - [Persisted-store retention report](docs/retention-report.md): bounded copied-byte
   analysis of quiescent rollback-mode databases, with integrity checks and a new
   private report. WAL databases and journal sidecars are refused.
+- [Integrity versus support](docs/integrity-selectivity.md): a retrospective replay of
+  raw and quote-repaired citation filters against separate agent review labels.
 - [Model candidates](docs/model-candidates.md): pinned extraction/retrieval/verifier
   diagnostics and the completed Qwen/Phi scenario comparison. No model is selected.
 - [Multi-session comparison](docs/experiments-scenarios.md): frozen explicit-v2

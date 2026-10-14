@@ -155,3 +155,10 @@ human truth, precision calibration, semantic acceptance, or Gate A. See the
 limits. The fictional-only source bundle, key, provenance and separate responses
 are preserved under [synthetic review artifacts](../examples/synthetic/reviews/README.md).
 No model is selected from these results.
+
+The [retrospective integrity-versus-support replay](integrity-selectivity.md)
+now records raw and uniquely anchored integrity filters against both existing
+reviewers, with all model/split denominators and exclusions preserved. Quote
+repair retains unsupported-labeled claims in both splits; it is not a semantic
+acceptance rule. This replay makes no inference calls and changes no labels,
+prompts or runtime behavior.

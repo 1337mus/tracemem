@@ -42,14 +42,14 @@ packing. Schema2 rejects read-only, no migration. ChatGPT selected-parent-chain
 reader/fresh snapshot CLI is fictional-fixture verified, not actual-export verified.
 Default runtime has no dependencies. `README.md` links runnable commands and docs.
 
-Latest verified source commit6b16de9dd2612f8ecbf3abb8da98b501e014c7b8 includes the pure
-source-retention diagnostic. Signed docs95f456eb742c3778d024f33a452471d0a6aea588 also
+Previous verified source commit `6b16de9dd2612f8ecbf3abb8da98b501e014c7b8` includes the pure
+source-retention diagnostic. Signed docs `95f456eb742c3778d024f33a452471d0a6aea588` also
 pushed; both CI runs green38629594401/38629927315. Local323tests,zero skips,5.199s;
 Ruff78files,source mypy28,scoped42. Hosted323tests,one expected Context Kit skip.
 80copiedinstalledtests pass outside checkout. Exact `docs/validation.json`,
 `docs/validation-source-retention.json`, `docs/github-validation.json`.
 
-Approved33filewheelSHA256
+Previous approved 33-file wheel SHA256
 955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844.
 All32previous packagefiles unchanged.9offline smokecommands, full stable budget
 report and byte-identical84taskHTML reproduce; PYTHONPATH/HOMEunset, package imports
@@ -128,14 +128,41 @@ Offline smoke reproduces the frozen budget report and byte-identical 84-task HTM
 Source approval `.local/package-source-approved-retention-report.json`; wheel receipt
 `.local/package-smoke-fts-v3-chatgpt-20261014T202400715467Z.json`.
 
-No active workers or GPU calls. Current source/report delivery is pending signed
-private push and hosted CI; see active-cycle for the exact state. Next: verify PRIVATE
-and unchanged remote tip, signed push, check hosted CI and remote HEAD, save receipts.
-Then build a bounded retrospective integrity-versus-support diagnostic from immutable
-fictional receipts: raw versus unique-quote-anchored integrity, separate dev/test and
-reviewer accounting, explicit parse/schema exclusions, no tuning or new model calls.
-This tests how much unsupported content an integrity-only rule would retain; agent
-labels remain provisional and cannot establish semantic acceptance or calibration.
+Source commit `e2ccd54e942563615907c9b94980a844cf72dfc9` is signed and pushed
+to PRIVATE main; hosted CI `38631986917` passed: 334 tests, one expected Context Kit
+skip, 91 installed tests, frozen budget/HTML checks. GitHub still reports bad_email;
+local signature verifies. No GPU calls.
+
+Retrospective integrity-versus-support experiment is now implemented, root reviewed
+and locally validated. No active worker or GPU calls. Source-only experiment:
+`experiments/evaluate_integrity_selectivity.py`; brief `docs/integrity-selectivity-brief.md`;
+contract/results `docs/integrity-selectivity.md`; machine report
+`docs/scenarios-integrity-selectivity.json`; validation
+`docs/validation-integrity-selectivity.json`. Labels/prompts/runtime policy unchanged.
+
+Final local checks: 346 tests, zero skips (7.056s); Ruff 82 files, source mypy 29,
+scoped mypy 44. Root independently checked 84 origin mappings/pass flags, 24 reviewer
+cells, 72 metrics, 168 error lists and eight aggregates. Copied experiment outside
+checkout used all 34 approved installed runtime files and reproduced the report
+exactly. No package source changed and no fresh wheel was needed; previous 91
+installed tests still bind those same bytes. The isolated run's receipt is
+`.local/integrity-selectivity-isolated-receipt.json`. Historical raw receipts and
+response files remain unchanged. Signed private delivery/hostedCI for this experiment
+is pending; active-cycle tracks exact state.
+
+Qwen anchored passes dev 41/41 and test 40/42 schema-valid origins. Among those,
+blind-agent labels are dev 26 supported/14 unsupported/1 uncertain and test 24/14/2;
+separate nonblind-root labels are dev 20/16/5 and test 21/14/5. Phi has no dev claims;
+its one test claim passes anchored integrity but is unsupported-labeled by both.
+Raw integrity passes only one Qwen claim per split and none from Phi. These are
+retrospective agent-label counts, not human precision/calibration. No acceptance
+policy or model winner follows. Gate A remains unmet.
+
+Next: finish signed private delivery, verify hostedCI and exact remoteHEAD, then
+inspect the existing LongMemEval loader's 64 MiB cap. A useful bounded follow-up is
+file-streaming input support tested only on fictional data, without benchmarkbody
+downloads or a license-compatibility claim. Root must inspect/brief that design
+before delegating implementation; do not duplicate workers or launch inference.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed

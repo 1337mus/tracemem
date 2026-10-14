@@ -51,6 +51,12 @@ consensus or automatic acceptance. Parse/schema exclusions remain explicit. See
 the [per-model/split accounting](scenarios-reviewed-support.json) and
 [adjudication receipt](scenarios-root-adjudication.json).
 
+The retrospective [integrity-versus-support diagnostic](integrity-selectivity.md)
+compares the existing raw and quote-anchored citation checks against each reviewer
+separately. It preserves duplicate claim origins, uncertainty and output exclusions.
+An integrity pass remains a proposal for review; it does not establish semantic
+support, and the agent judgments do not establish calibration.
+
 The bounded dataset readiness audit found no exact or near-duplicate lexical
 flags across the assigned partitions, but that result cannot establish legal
 rights, entity separation, template independence, annotation quality, or Gate A.

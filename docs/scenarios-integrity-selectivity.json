@@ -1,0 +1,2255 @@
+{
+  "schema_version": 1,
+  "seed": 1729,
+  "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+  "bundle_sha256": "65078e901cad48856528377b003746e04f90245a19236eadfeeb951dc6358467",
+  "bundle_canonical_sha256": "14d2728915098a4275f07ff0b28ed9e2d85b4684fda96fbbec8cef5218a02a08",
+  "provenance_sha256": "c607176aed0921611c3ac25465e774a89d084890a9904ea28919d56d4108ba44",
+  "task_mapping_sha256": "b1c83796b3843501e32c3e88a3912c6996461fafc982da967c12a23c5a649429",
+  "inputs": {
+    "receipts": [
+      {
+        "model_key": "qwen3-4b",
+        "sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "canonical_sha256": "ac40da7b23302d936e7c0e0955a3b25ba4b33c2c6f4ab017950f36659105967e"
+      },
+      {
+        "model_key": "phi-3.5-mini",
+        "sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "canonical_sha256": "695dec64c217d2a963a0e0d03ebe9d83e0619eba8f2e7782e271716dda75a551"
+      }
+    ],
+    "responses": [
+      {
+        "reviewer_id": "luna-blind-support-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "acec53010489b1ab86dbcbcd35da5642debfc140adbfb264b9378fd5ec68daf1"
+      },
+      {
+        "reviewer_id": "root-adjudication-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "9a671cf97312ab9618f62c669a2f80f1c3f3a4423722bffae61506eab507ccb0"
+      }
+    ]
+  },
+  "accounting": {
+    "version": 1,
+    "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "bundle_sha256": "65078e901cad48856528377b003746e04f90245a19236eadfeeb951dc6358467",
+    "bundle_canonical_sha256": "14d2728915098a4275f07ff0b28ed9e2d85b4684fda96fbbec8cef5218a02a08",
+    "seed": 1729,
+    "receipts": [
+      {
+        "model_key": "qwen3-4b",
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "canonical_sha256": "ac40da7b23302d936e7c0e0955a3b25ba4b33c2c6f4ab017950f36659105967e"
+      },
+      {
+        "model_key": "phi-3.5-mini",
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "canonical_sha256": "695dec64c217d2a963a0e0d03ebe9d83e0619eba8f2e7782e271716dda75a551"
+      }
+    ],
+    "responses": [
+      {
+        "reviewer_id": "luna-blind-support-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "acec53010489b1ab86dbcbcd35da5642debfc140adbfb264b9378fd5ec68daf1"
+      },
+      {
+        "reviewer_id": "root-adjudication-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "9a671cf97312ab9618f62c669a2f80f1c3f3a4423722bffae61506eab507ccb0"
+      }
+    ],
+    "provenance_sha256": "c607176aed0921611c3ac25465e774a89d084890a9904ea28919d56d4108ba44",
+    "by_model": {
+      "qwen3-4b": {
+        "dev": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 1,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 3,
+          "schema_valid_candidate_count": 41,
+          "unique_review_task_count": 41,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 26,
+              "unsupported_origin_count": 14,
+              "uncertain_origin_count": 1,
+              "all_reviewed_origin_count": 41,
+              "decisive_origin_count": 40,
+              "supported_rate_all_reviewed_origins": 0.6341463414634146,
+              "supported_rate_decisive_origins": 0.65
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 20,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 5,
+              "all_reviewed_origin_count": 41,
+              "decisive_origin_count": 36,
+              "supported_rate_all_reviewed_origins": 0.4878048780487805,
+              "supported_rate_decisive_origins": 0.5555555555555556
+            }
+          ]
+        },
+        "test": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 2,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 1,
+          "schema_valid_candidate_count": 42,
+          "unique_review_task_count": 42,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 24,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 2,
+              "all_reviewed_origin_count": 42,
+              "decisive_origin_count": 40,
+              "supported_rate_all_reviewed_origins": 0.5714285714285714,
+              "supported_rate_decisive_origins": 0.6
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 21,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 5,
+              "all_reviewed_origin_count": 42,
+              "decisive_origin_count": 37,
+              "supported_rate_all_reviewed_origins": 0.5,
+              "supported_rate_decisive_origins": 0.5675675675675675
+            }
+          ]
+        }
+      },
+      "phi-3.5-mini": {
+        "dev": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 1,
+          "schema_excluded_output_count": 23,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 0,
+          "schema_valid_candidate_count": 0,
+          "unique_review_task_count": 0,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 0,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 0,
+              "decisive_origin_count": 0,
+              "supported_rate_all_reviewed_origins": null,
+              "supported_rate_decisive_origins": null
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 0,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 0,
+              "decisive_origin_count": 0,
+              "supported_rate_all_reviewed_origins": null,
+              "supported_rate_decisive_origins": null
+            }
+          ]
+        },
+        "test": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 23,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 0,
+          "schema_valid_candidate_count": 1,
+          "unique_review_task_count": 1,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 1,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 1,
+              "decisive_origin_count": 1,
+              "supported_rate_all_reviewed_origins": 0.0,
+              "supported_rate_decisive_origins": 0.0
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 1,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 1,
+              "decisive_origin_count": 1,
+              "supported_rate_all_reviewed_origins": 0.0,
+              "supported_rate_decisive_origins": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "interpretation": "These fractions are not recall, independent human truth, precision calibration, semantic acceptance, or Gate A. Citation anchoring, semantic judgment, and raw citation integrity are separate. Reviewer kind is self-attested.",
+    "exclusions": [
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "dev-blue-crate",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "test-route-timing",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "test-sensor-placement",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-balcony-basil",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-ferry-bike",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-agenda-email",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-supper-mushrooms",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-robot-test-log",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-blue-crate",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-piano-recording",
+        "raw_status": "parse_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_json"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-cycle-tunnels",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-large-print-atlas",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-window-fern",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-walker-pickup",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-linux-workstation",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-pottery-class-maybe",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-coffee-after-lunch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-brass-latch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-quoted-checklist",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-gallery-hours",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-sqlite-notes",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-welding-gloves",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unanswered-color",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unanswered-season",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-ambiguous-they",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unspecified-room",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-lantern-battery",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-dinghy-sail",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-cedar-market",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-theater-understudy",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-reading-corrections",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-bee-hotel",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-station-elevator",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-tablet-charging",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-cumin-recipe",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-piano-reverb",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-fundraiser-door",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-invoice-terms",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-west-launch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-museum-maps",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-glaze-kiln",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-unanswered-size",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-ambiguous-package",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-temporary-guest",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-undisclosed-address",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-greenhouse-key",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-unanswered-sound",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-route-timing",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-sensor-placement",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-archive-retention",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      }
+    ]
+  },
+  "filter_definitions": {
+    "all_schema_valid": "Every retrospectively selected schema-valid generated claim origin, regardless of evidence-integrity result.",
+    "raw_integrity": "A schema-valid raw claim passes when verify_candidate returns REVIEW for its original evidence offsets.",
+    "anchored_integrity": "A schema-valid claim passes when unique exact-quote anchoring is applied and verify_candidate returns REVIEW."
+  },
+  "limitations": [
+    "Filters are applied retrospectively only to schema-valid origins selected for review.",
+    "REVIEW means evidence-integrity checks passed; it is not semantic acceptance or truth.",
+    "Review labels are self-attested; reviewer identity and independence are unverified.",
+    "Candidate-denominator coverage is not whole-output success, recall, or precision.",
+    "No calibration or precision guarantee, Gate A result, prospective test, runtime acceptance policy, or model superiority follows from this report.",
+    "Unique quote anchoring changes offsets only and does not establish entailment."
+  ],
+  "by_model": {
+    "phi-3.5-mini": {
+      "dev": {
+        "schema_valid_origin_count": 0,
+        "filters": {
+          "all_schema_valid": {
+            "passed_origin_count": 0,
+            "rejected_origin_count": 0,
+            "coverage": null,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              }
+            ]
+          },
+          "raw_integrity": {
+            "passed_origin_count": 0,
+            "rejected_origin_count": 0,
+            "coverage": null,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              }
+            ]
+          },
+          "anchored_integrity": {
+            "passed_origin_count": 0,
+            "rejected_origin_count": 0,
+            "coverage": null,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 0,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              }
+            ]
+          }
+        },
+        "verifier_error_code_counts": {
+          "raw": {},
+          "anchored": {}
+        }
+      },
+      "test": {
+        "schema_valid_origin_count": 1,
+        "filters": {
+          "all_schema_valid": {
+            "passed_origin_count": 1,
+            "rejected_origin_count": 0,
+            "coverage": 1.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 1,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.0,
+                "supported_rate_decisive_passed_origins": 0.0,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 1,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.0,
+                "supported_rate_decisive_passed_origins": 0.0,
+                "supported_retention_rate": null
+              }
+            ]
+          },
+          "raw_integrity": {
+            "passed_origin_count": 0,
+            "rejected_origin_count": 1,
+            "coverage": 0.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 1,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 1,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": null,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": null
+              }
+            ]
+          },
+          "anchored_integrity": {
+            "passed_origin_count": 1,
+            "rejected_origin_count": 0,
+            "coverage": 1.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 1,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.0,
+                "supported_rate_decisive_passed_origins": 0.0,
+                "supported_retention_rate": null
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 0,
+                "all_reviewed_unsupported_origin_count": 1,
+                "all_reviewed_uncertain_origin_count": 0,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 1,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.0,
+                "supported_rate_decisive_passed_origins": 0.0,
+                "supported_retention_rate": null
+              }
+            ]
+          }
+        },
+        "verifier_error_code_counts": {
+          "raw": {
+            "quote_mismatch": 1
+          },
+          "anchored": {}
+        }
+      }
+    },
+    "qwen3-4b": {
+      "dev": {
+        "schema_valid_origin_count": 41,
+        "filters": {
+          "all_schema_valid": {
+            "passed_origin_count": 41,
+            "rejected_origin_count": 0,
+            "coverage": 1.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 26,
+                "all_reviewed_unsupported_origin_count": 14,
+                "all_reviewed_uncertain_origin_count": 1,
+                "passed_supported_origin_count": 26,
+                "passed_unsupported_origin_count": 14,
+                "passed_uncertain_origin_count": 1,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.6341463414634146,
+                "supported_rate_decisive_passed_origins": 0.65,
+                "supported_retention_rate": 1.0
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 20,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 20,
+                "passed_unsupported_origin_count": 16,
+                "passed_uncertain_origin_count": 5,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.4878048780487805,
+                "supported_rate_decisive_passed_origins": 0.5555555555555556,
+                "supported_retention_rate": 1.0
+              }
+            ]
+          },
+          "raw_integrity": {
+            "passed_origin_count": 1,
+            "rejected_origin_count": 40,
+            "coverage": 0.024390243902439025,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 26,
+                "all_reviewed_unsupported_origin_count": 14,
+                "all_reviewed_uncertain_origin_count": 1,
+                "passed_supported_origin_count": 1,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 25,
+                "rejected_unsupported_origin_count": 14,
+                "rejected_uncertain_origin_count": 1,
+                "supported_rate_all_passed_origins": 1.0,
+                "supported_rate_decisive_passed_origins": 1.0,
+                "supported_retention_rate": 0.038461538461538464
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 20,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 0,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 1,
+                "rejected_supported_origin_count": 20,
+                "rejected_unsupported_origin_count": 16,
+                "rejected_uncertain_origin_count": 4,
+                "supported_rate_all_passed_origins": 0.0,
+                "supported_rate_decisive_passed_origins": null,
+                "supported_retention_rate": 0.0
+              }
+            ]
+          },
+          "anchored_integrity": {
+            "passed_origin_count": 41,
+            "rejected_origin_count": 0,
+            "coverage": 1.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 26,
+                "all_reviewed_unsupported_origin_count": 14,
+                "all_reviewed_uncertain_origin_count": 1,
+                "passed_supported_origin_count": 26,
+                "passed_unsupported_origin_count": 14,
+                "passed_uncertain_origin_count": 1,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.6341463414634146,
+                "supported_rate_decisive_passed_origins": 0.65,
+                "supported_retention_rate": 1.0
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 20,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 20,
+                "passed_unsupported_origin_count": 16,
+                "passed_uncertain_origin_count": 5,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.4878048780487805,
+                "supported_rate_decisive_passed_origins": 0.5555555555555556,
+                "supported_retention_rate": 1.0
+              }
+            ]
+          }
+        },
+        "verifier_error_code_counts": {
+          "raw": {
+            "quote_mismatch": 27,
+            "span_out_of_bounds": 13
+          },
+          "anchored": {}
+        }
+      },
+      "test": {
+        "schema_valid_origin_count": 42,
+        "filters": {
+          "all_schema_valid": {
+            "passed_origin_count": 42,
+            "rejected_origin_count": 0,
+            "coverage": 1.0,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 24,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 2,
+                "passed_supported_origin_count": 24,
+                "passed_unsupported_origin_count": 16,
+                "passed_uncertain_origin_count": 2,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.5714285714285714,
+                "supported_rate_decisive_passed_origins": 0.6,
+                "supported_retention_rate": 1.0
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 21,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 21,
+                "passed_unsupported_origin_count": 16,
+                "passed_uncertain_origin_count": 5,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 0,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.5,
+                "supported_rate_decisive_passed_origins": 0.5675675675675675,
+                "supported_retention_rate": 1.0
+              }
+            ]
+          },
+          "raw_integrity": {
+            "passed_origin_count": 1,
+            "rejected_origin_count": 41,
+            "coverage": 0.023809523809523808,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 24,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 2,
+                "passed_supported_origin_count": 1,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 23,
+                "rejected_unsupported_origin_count": 16,
+                "rejected_uncertain_origin_count": 2,
+                "supported_rate_all_passed_origins": 1.0,
+                "supported_rate_decisive_passed_origins": 1.0,
+                "supported_retention_rate": 0.041666666666666664
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 21,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 1,
+                "passed_unsupported_origin_count": 0,
+                "passed_uncertain_origin_count": 0,
+                "rejected_supported_origin_count": 20,
+                "rejected_unsupported_origin_count": 16,
+                "rejected_uncertain_origin_count": 5,
+                "supported_rate_all_passed_origins": 1.0,
+                "supported_rate_decisive_passed_origins": 1.0,
+                "supported_retention_rate": 0.047619047619047616
+              }
+            ]
+          },
+          "anchored_integrity": {
+            "passed_origin_count": 40,
+            "rejected_origin_count": 2,
+            "coverage": 0.9523809523809523,
+            "reviewers": [
+              {
+                "reviewer_id": "luna-blind-support-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 24,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 2,
+                "passed_supported_origin_count": 24,
+                "passed_unsupported_origin_count": 14,
+                "passed_uncertain_origin_count": 2,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 2,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.6,
+                "supported_rate_decisive_passed_origins": 0.631578947368421,
+                "supported_retention_rate": 1.0
+              },
+              {
+                "reviewer_id": "root-adjudication-20261014",
+                "reviewer_kind": "agent",
+                "all_reviewed_supported_origin_count": 21,
+                "all_reviewed_unsupported_origin_count": 16,
+                "all_reviewed_uncertain_origin_count": 5,
+                "passed_supported_origin_count": 21,
+                "passed_unsupported_origin_count": 14,
+                "passed_uncertain_origin_count": 5,
+                "rejected_supported_origin_count": 0,
+                "rejected_unsupported_origin_count": 2,
+                "rejected_uncertain_origin_count": 0,
+                "supported_rate_all_passed_origins": 0.525,
+                "supported_rate_decisive_passed_origins": 0.6,
+                "supported_retention_rate": 1.0
+              }
+            ]
+          }
+        },
+        "verifier_error_code_counts": {
+          "raw": {
+            "attribution_role_conflict": 1,
+            "quote_mismatch": 25,
+            "source_role_mismatch": 1,
+            "span_out_of_bounds": 15
+          },
+          "anchored": {
+            "attribution_role_conflict": 1,
+            "source_role_mismatch": 1
+          }
+        }
+      }
+    }
+  },
+  "origin_audit": [
+    {
+      "model_key": "phi-3.5-mini",
+      "case_id": "test-coffee-grinder-change",
+      "claim_index": 0,
+      "task_id": "task_82f9fbf1a7029e73a23c09308b9f645ed421fb68268634560434244d0c9e2d5e",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-agenda-email",
+      "claim_index": 0,
+      "task_id": "task_434862bc83a9dcda6e30214b983174de26a07f709991393e6996d902e25c1e02",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-agenda-email",
+      "claim_index": 1,
+      "task_id": "task_f960ce75662c0ec3c28feb1fdd7005ad9ca26b1dd1dec5b4c29ae685429d6668",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-ambiguous-they",
+      "claim_index": 0,
+      "task_id": "task_07b26b917936e132544a6a03c3c38c8ae5196a7e7444c1681436c707ab38cdda",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-balcony-basil",
+      "claim_index": 0,
+      "task_id": "task_d998b299ececba54db80def34a9d34ca637bf895f0f0506ae00685d0fecc169f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-balcony-basil",
+      "claim_index": 1,
+      "task_id": "task_0978127964007414bd6b31ee42aa0d1c89fbda52d02ed967280cf381101f0a7f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-brass-latch",
+      "claim_index": 0,
+      "task_id": "task_99a8cdc6ac08a6d12a7f374ae5dcd70087839e61f0996669f3f675acf505a217",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-brass-latch",
+      "claim_index": 1,
+      "task_id": "task_3e2cab8c2eec9604350180f655507fd7d60220fa26647ab53f4d2528f07fd57d",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-coffee-after-lunch",
+      "claim_index": 0,
+      "task_id": "task_f41b125d82063387e2dce90d5a16c11dec37e8de22513ef4d5ae3479a0b510c9",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-coffee-after-lunch",
+      "claim_index": 1,
+      "task_id": "task_34a1ca39d83886d9031342d9d02cb87b6f767c4ca35753762e12930de6990026",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-coffee-after-lunch",
+      "claim_index": 2,
+      "task_id": "task_f1faf17e07cc71b46789c6e12bd5907b82c0b62da5937c9abd85867ee4ce7f3b",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-cycle-tunnels",
+      "claim_index": 0,
+      "task_id": "task_c8c7bef3ec615a6510d9f9038855690a292eda3c5ad34c731e8a874aa7a9410e",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-cycle-tunnels",
+      "claim_index": 1,
+      "task_id": "task_5a2822a13a54b15bddb09ad3be8c8008689e151427f4c129dfcbf3f45a7bbbe2",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-ferry-bike",
+      "claim_index": 0,
+      "task_id": "task_d5791cbf167d5cf6a2ddde292faeb79d4a724a4005721cbc883486434d60d510",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-ferry-bike",
+      "claim_index": 1,
+      "task_id": "task_34645819d0eca43f23915d437e9b8d3a42f7a848c37efcb80dce2e45669c59fc",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-ferry-bike",
+      "claim_index": 2,
+      "task_id": "task_f35c5a32628f355cf30fdc63ddae93a4e8fd712aaf03b3e444a0f5929444136c",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-gallery-hours",
+      "claim_index": 0,
+      "task_id": "task_5d98cedf40bcb4ec7701bb30ce2fe783f8e426a683b9e16d2239adb3e4efc8da",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-gallery-hours",
+      "claim_index": 1,
+      "task_id": "task_3b7a25f0ec01b45ab28cbb5eb5fcd196472cb4028ba8c4ee4cc84035bbb8564f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-lantern-battery",
+      "claim_index": 0,
+      "task_id": "task_b84bb79ccaa53917eee63e1967228931e1ad2ba591a0e0886cd4cd8055321a91",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-lantern-battery",
+      "claim_index": 1,
+      "task_id": "task_2b943efc3712148c2cfeca427c54ef6a1fed718294a04c42bb4acfb1bd29b7de",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-large-print-atlas",
+      "claim_index": 0,
+      "task_id": "task_609f708d8c78655900d3bd934efb50998c848a8d9d749c38085f82d1ac1388b4",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-linux-workstation",
+      "claim_index": 0,
+      "task_id": "task_677f6f332d598defee38aa3fb10f8048c37dbf010b4b8050d3241ae81fe9749f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-linux-workstation",
+      "claim_index": 1,
+      "task_id": "task_c6f065ac2aab7d70ffff4abaf2593324b2ce3e531b6d92ea0feb361153c3e77e",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-piano-recording",
+      "claim_index": 0,
+      "task_id": "task_cbd6720821d11714479e79f2d956eff8516021bb49af2e14fcc29f5812444d9f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-piano-recording",
+      "claim_index": 1,
+      "task_id": "task_58810d570d9286f2f5d2ad85f458956c8a0b31ef505408d0747a5381d21f0fb1",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-pottery-class-maybe",
+      "claim_index": 0,
+      "task_id": "task_d0b0e0918fa29aeb2dcaf3d22070ace20d58e3df3279a69751e26d8c35f849e5",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-pottery-class-maybe",
+      "claim_index": 1,
+      "task_id": "task_eb4ad39c8c6d73b4cbfafb041dc9f3cc48cb835fe178304672efe05fcb80edc9",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-pottery-class-maybe",
+      "claim_index": 2,
+      "task_id": "task_b6b2ffb112722d97d32477864bbccfec5c5adbe92c0b31ba45424b02f6029890",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-quoted-checklist",
+      "claim_index": 0,
+      "task_id": "task_7c885a80fa6f90e7581ac606ddbc771241ec37326566dd138d47d9bc863088b8",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-quoted-checklist",
+      "claim_index": 1,
+      "task_id": "task_903a91f94c5bbb57a1cf4ba6894c0f98422f928adc1a6101cdd70cc06e6d2a59",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-robot-test-log",
+      "claim_index": 0,
+      "task_id": "task_2029eeb35c6eaeb19517514989c288863df2927abf65a2d7177949229d4fc225",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-robot-test-log",
+      "claim_index": 1,
+      "task_id": "task_980aa7307a997349392d04c078faee504b6521e8605bad45656900dab8329eff",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-sqlite-notes",
+      "claim_index": 0,
+      "task_id": "task_64b2daf6aad0ff195e7f17654df039e0d4b0615ad11ad0b2b762d4f1f6c7c9b7",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-sqlite-notes",
+      "claim_index": 1,
+      "task_id": "task_075cfe1a6ae133eb0ccf23106845511f1efc32eda0e591210a96d3f7cf0c11c6",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-supper-mushrooms",
+      "claim_index": 0,
+      "task_id": "task_debcf6ef0688530f59ba5d525dfea1ef88e3b0c3568da0451355f0d3b1a146da",
+      "raw_integrity_passes": true,
+      "raw_error_codes": [],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-supper-mushrooms",
+      "claim_index": 1,
+      "task_id": "task_bba0b2d0f290b2f511f81020008da15e54bc9ad64c3e99095d75a0268a8b2a9e",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-walker-pickup",
+      "claim_index": 0,
+      "task_id": "task_9a2f81d0dfc9f97b42b53f5a0b724f7362d4c4aa00a6da03abb5dacd25ca1be6",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-walker-pickup",
+      "claim_index": 1,
+      "task_id": "task_a24347a74c0d12185a8076713328307767da78a3c5e75b947f4ebec9f0eea7db",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-welding-gloves",
+      "claim_index": 0,
+      "task_id": "task_ec7b6ef8370ee4ed2a1e26b5fc6c9ba4b66eb6febe0006db10c818044fdb6db3",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-welding-gloves",
+      "claim_index": 1,
+      "task_id": "task_a67890ea76a8f7ebc9ca414a1bf15e06c9a2dfe0964873549c8b2612380d3a82",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-window-fern",
+      "claim_index": 0,
+      "task_id": "task_62f61f4e60296ff11d467e3e5e075c2c605406468b2106121df33a1d8358f92d",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "dev-window-fern",
+      "claim_index": 1,
+      "task_id": "task_7663eef662ff75ae6f7ead579b3600780080ce1236a855bf3038a11247544a06",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-ambiguous-package",
+      "claim_index": 0,
+      "task_id": "task_3d62d67eabaf9b99b10cff7c9f453a0ae741bcd4bbac5760c5f8b045fe7d5b14",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-archive-retention",
+      "claim_index": 0,
+      "task_id": "task_e7a6e07192bc9a93ee0daf4277965bc15712c51d7710aab88d66279b5aa18cb3",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-bee-hotel",
+      "claim_index": 0,
+      "task_id": "task_6befac127dc87c11993dd85c2e60130ffbe8e0ff5cac6f8a76b50672cadca116",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-bee-hotel",
+      "claim_index": 1,
+      "task_id": "task_7765c823ec800f25b5b7639324cc3583925749aa2928d1cfa32ad668f28e5f72",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-cedar-market",
+      "claim_index": 0,
+      "task_id": "task_84a3234c3763c16d51b7323cdc99ebb2132c4213f74598b75b537c9e79d92100",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-cedar-market",
+      "claim_index": 1,
+      "task_id": "task_1aefc1c7a279afe36234d4589800408950d06d10e8ca061df7967be89d3a1837",
+      "raw_integrity_passes": true,
+      "raw_error_codes": [],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-coffee-grinder-change",
+      "claim_index": 0,
+      "task_id": "task_1f1d3ae62958cfc91acff7b40982c447fb676cceea6bb5ff766b62af1c36145b",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-coffee-grinder-change",
+      "claim_index": 1,
+      "task_id": "task_cb123a2a3f977bd7da26ff27f0a9de6d539f05b57d4265eb313fd644c0a28d99",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-coffee-grinder-change",
+      "claim_index": 2,
+      "task_id": "task_9d07a33d5b120b41c2dee1a59ee003165658d8c235da3a287faadb742977c538",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-cumin-recipe",
+      "claim_index": 0,
+      "task_id": "task_7de706d87aa62c48de14292946244a1e000a0be76d0643d0479f32de9d84d8ad",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-dinghy-sail",
+      "claim_index": 0,
+      "task_id": "task_d104f6a96e71675b95a303a39f2a79959d7618706a4655056a968fec1a150818",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-dinghy-sail",
+      "claim_index": 1,
+      "task_id": "task_3f7b9878f367257a60436023f40c1b8f26d0e32f1f920a76c8b0fbb8f7ac88d0",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-fundraiser-door",
+      "claim_index": 0,
+      "task_id": "task_225ad8abed78c0468891620c1edaf126479fdc379bfae0db9411ce7aebabc400",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-fundraiser-door",
+      "claim_index": 1,
+      "task_id": "task_af14816080538932de00c8f080c095cd3b452e217a3b2a7b76df067bd1c07210",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-glaze-kiln",
+      "claim_index": 0,
+      "task_id": "task_abe8a2338d551fcbc79ab355ecdd9b9d7584771075ddc6ad49457493bf2c4b7f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-glaze-kiln",
+      "claim_index": 1,
+      "task_id": "task_f7f19e7bbc665be5ce341dc897b7bb6da7c27b4cff3458fa7877a085731e97aa",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-greenhouse-key",
+      "claim_index": 0,
+      "task_id": "task_e886142408773e10507ae33b92b2e2ead34db1e749055e7c85e631ab014abd21",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-greenhouse-key",
+      "claim_index": 1,
+      "task_id": "task_0688ff87aef9b431e29d82019d7bf6a2f510e4632394af74df01e7b94c1ad486",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-invoice-terms",
+      "claim_index": 0,
+      "task_id": "task_e0f895a785c58d0e62c3c25e2e689b69b2cf9ecb9f516033ffbc908c65ea31e7",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-invoice-terms",
+      "claim_index": 1,
+      "task_id": "task_ef351fb8e651ce4e3bceaf15812caeae3416de1c9acfaed544f17df82529c593",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-museum-maps",
+      "claim_index": 0,
+      "task_id": "task_4b5d409b99d74f3b119473248b44c3fc2d58cfbc6b32f7a205a32912735199fe",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-museum-maps",
+      "claim_index": 1,
+      "task_id": "task_059249b895eaec55d587ea8fbd6f71f30acc550ad90ff567a65ed0e1f375524a",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-piano-reverb",
+      "claim_index": 0,
+      "task_id": "task_d17fc2c46151b7c79f72b3a3857dd1ba5eda3ffad1e3eb2326ee602bf4e03d8f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-piano-reverb",
+      "claim_index": 1,
+      "task_id": "task_9969bc6da3a331893b01627765fc9d2baac04bfbacbe672c94b0e7e1892bc9bb",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-reading-corrections",
+      "claim_index": 0,
+      "task_id": "task_e4eddc7770d6c7f20d2196176ca85b3d01cd1851f50d834e607c70041537829f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-reading-corrections",
+      "claim_index": 1,
+      "task_id": "task_00e53296e6548b18c6fcbe02ee67a14b753209fc13decea0a528fe0ec296a579",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "source_role_mismatch"
+      ],
+      "anchored_integrity_passes": false,
+      "anchored_error_codes": [
+        "source_role_mismatch"
+      ]
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-reading-corrections",
+      "claim_index": 2,
+      "task_id": "task_1846d8a1195fb80d55d98378563f40ed494699a01b98eb5d65cb892ca187434f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-reading-corrections",
+      "claim_index": 3,
+      "task_id": "task_38ca974f230c0f12b553776b6ddead220157554c5a1cacda9e1355dcc4eb16b2",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "attribution_role_conflict",
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": false,
+      "anchored_error_codes": [
+        "attribution_role_conflict"
+      ]
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-station-elevator",
+      "claim_index": 0,
+      "task_id": "task_d54d4a240572e867ebb520c7bdda9e597de519074cd596b16d1c28c34c914175",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-station-elevator",
+      "claim_index": 1,
+      "task_id": "task_9b086f10ab4af64b8cc47407d8f8ef2f9587ec7be707792d453c19b77624c503",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-station-elevator",
+      "claim_index": 2,
+      "task_id": "task_2ecff1d563ee54acd7accbc8d2bfca91974610e891b40d4b777047b2206bc8a1",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-station-elevator",
+      "claim_index": 3,
+      "task_id": "task_c225a917b6a481b8e83c20af63acfcce057f02725ce241a5b67f249b06524fbd",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-tablet-charging",
+      "claim_index": 0,
+      "task_id": "task_b04518909a812b640e559cc2ebafcdcf5cc362ad0ee413bf6c1ebcfa781b3eb7",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-tablet-charging",
+      "claim_index": 1,
+      "task_id": "task_7f5d3ae3dbb18b657d61e4fb45e8677df861ef44acaaf59687460500530bec07",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-temporary-guest",
+      "claim_index": 0,
+      "task_id": "task_f78cf975e3b2da3780b8173bcccab8411399f8adeb3bcb8dcebeb24c3c28a248",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-theater-understudy",
+      "claim_index": 0,
+      "task_id": "task_02c0eb262afa71d2c709bd41de8a48a3695e194bed529fd78eece0726319a917",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-theater-understudy",
+      "claim_index": 1,
+      "task_id": "task_9f512269c3a4963a59534fc8c14a38d321b100069195d1033be069fce90ddcf2",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-unanswered-sound",
+      "claim_index": 0,
+      "task_id": "task_da9bcb926c75e9482a0c0e74185b2aec084de925bf0ec40b00cab48a57a7e3e3",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-unanswered-sound",
+      "claim_index": 1,
+      "task_id": "task_f8cced1917efa3bd01033f1f68a154a4ad68244020f1b75dee836d59d9ba04ad",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-undisclosed-address",
+      "claim_index": 0,
+      "task_id": "task_0f4c693873408512be85114bef661a2aadb389e192da167f38777ed4a9eea0f2",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "quote_mismatch"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-west-launch",
+      "claim_index": 0,
+      "task_id": "task_6503ee9abb9bf1d260b26b1e864a4cba4bd0b47b359ad5746e5ad6e288c8cd4e",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    },
+    {
+      "model_key": "qwen3-4b",
+      "case_id": "test-west-launch",
+      "claim_index": 1,
+      "task_id": "task_3782438639ecb9ad8220fafdcaecc8e261129c25634d866791e2bf6f4a512a4f",
+      "raw_integrity_passes": false,
+      "raw_error_codes": [
+        "span_out_of_bounds"
+      ],
+      "anchored_integrity_passes": true,
+      "anchored_error_codes": []
+    }
+  ]
+}
