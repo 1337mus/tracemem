@@ -14,8 +14,9 @@ launch setup. The payload pins `Qwen/Qwen3-4B` revision
 tokenization, `trust_remote_code=False`, the reviewed chat-template hash, and
 the chat-template options. The remote function checks the payload hash,
 configuration, 28 sorted prompt IDs, and each ID's message hash before it
-loads `AutoTokenizer`. It rejects a different chat template and token ID
-results that are not lists of nonnegative integers.
+loads `AutoTokenizer`. It requires the loaded tokenizer's `is_fast` property to
+be exactly true, rejects a different chat template, and rejects token ID results
+that are not lists of nonnegative integers.
 
 The worker runs in Python 3.12 on bounded CPU resources. It uses one container,
 no GPU, no mounts, no secrets, no forwarded local environment, no retries, and
@@ -42,18 +43,20 @@ receipt path. Before it creates the Modal app, the runner requires local Python
 3.12, regenerates the fixed payload, checks the current runner file hash, and
 allocates the receipt with exclusive creation, no-follow, and mode `0600`. It
 then checks the personal Modal workspace. A remote error leaves a sanitized
-failure receipt and is not retried. This implementation slice and its tests do
-not invoke the launch path.
+failure receipt and is not retried. Offline tests exercise `run_once` with fake
+transports and never launch remote work; the separate reviewed count run is
+summarized below.
 
 The remote result contains `count_receipt`, which matches the nested receipt
 shape accepted by `experiments.token_catalog.pack_from_counts`, plus separate
 tokenizer provenance. Provenance records the pinned revision and template
 hash, package and Python versions, template options, elapsed time, the backend
-tokenizer hash when available, and the payload and runner hashes. A future
-replay must independently inspect this envelope and its counts before passing
-the nested receipt to the offline packer.
+tokenizer hash when available, and the payload and runner hashes. The root
+replay checked this envelope and counts, then reproduced both split reports;
+details are in [token-count-results.md](token-count-results.md).
 
 Fake-tokenizer tests exercise validation and receipt handling. Their fixture
-integers do not establish real token counts. No tokenizer download or Modal
-call was made while implementing this runner. Real counts remain unmeasured
-until the separately reviewed bounded launch and receipt replay are completed.
+integers do not establish real token counts. After implementation, one separate
+root-reviewed source-free CPU-only Modal call counted 28 complete fictional
+prompts. It used no GPU, model weights, generation, inference, or QA calls; its
+measured provenance and counts are in [token-count-results.md](token-count-results.md).

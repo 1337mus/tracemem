@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-14T23:34:29.388501+00:00",
+  "source_commit": "efa9434052d5b927a101fc119044ec6dc5571471",
+  "source_signature": "GPG verified locally; EDDSA 73670F26064EC91BF33BC889D42898A1E36DBD7F",
+  "source_sha256": {
+    "experiments/modal_token_count.py": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+    "tests/test_modal_token_count.py": "c17d1c1bfcc6e5d6cd579289a7d2ff2b3b1384f4d494b035c509bae2b3d2f394",
+    "docs/modal-token-count.md": "585d1721ae07ca07a2b1350b4fd78f5b55411bd32d0f6330f5717bf632482bce",
+    ".github/workflows/ci.yml": "b0a609e89ab0fa21fd3ae574c0de537efe060b546aea1123cd70fcc67c965d41"
+  },
+  "payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+  "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+  "runner_lines": 500,
+  "root_validation": {
+    "full_suite_attempted": 468,
+    "full_suite_skipped": 1,
+    "full_suite_seconds": 15.848,
+    "exit_code": 0,
+    "full_check_log": ".local/token-counter-root-full-check.log",
+    "full_check_log_sha256": "4ec90b8605ee76d2bf9507e0c0381883e31bb53ce47b23c57f80925676e137b3",
+    "ruff_formatted_files": 102,
+    "source_mypy_files": 32,
+    "installed_focused_tests": 8,
+    "installed_skips": 0,
+    "installed_receipt": ".local/token-counter-installed-receipt.json",
+    "installed_receipt_sha256": "b6ce5b3003d75618341390d90d3782b52aecbea00ff4f220c1188280561b2205",
+    "all_runtime_files_unchanged": 37,
+    "new_wheel_built": false,
+    "wheel_sha256": "65e9b49d6cf25c96c9829f049fc592eb5a1d87b7d232ea02decd07f5b047b26f",
+    "real_modal_serialization_roundtrip": {
+      "runner_sha256": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+      "payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+      "source_free_globals_before_serialization": [
+        "__name__"
+      ],
+      "serialized_bytes": 7884,
+      "serialized_sha256": "58c55a97ead7d8f3cb98e53db6756deaf1fd0f7f768f5cffc5a8386efefca17c",
+      "real_modal_serialization_roundtrip": true,
+      "isolated_body_tests": 1,
+      "fake_tokenizer_only": true,
+      "remote_calls": 0
+    },
+    "adversarial": {
+      "runner_sha256": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+      "rejected_remote_result_cases": [
+        "unknown-id",
+        "boolean-token-count",
+        "negative-count",
+        "missing-count",
+        "duplicate-id",
+        "wrong-catalog",
+        "wrong-runner",
+        "wrong-template",
+        "slow-tokenizer",
+        "wrong-python",
+        "elapsed-inf"
+      ],
+      "existing_symlink_refused_before_network": true,
+      "fake_counts_only": true,
+      "remote_calls": 0
+    }
+  },
+  "test_chronology": {
+    "behavioral_red_green": [
+      "payload-builder red-02 to green-02",
+      "remote-counter",
+      "modal-builder",
+      "launch-guards",
+      "offline-cli",
+      "result-guards",
+      "fast-tokenizer"
+    ],
+    "green_only_additions": [
+      "success-receipt",
+      "failure-receipt",
+      "invalid-token-ids",
+      "template-guard"
+    ],
+    "preserved_setup_and_checker_failures": [
+      "payload red-01 and green-01 lacked source path",
+      "final mypy/lint/format -01 before final fixes"
+    ],
+    "logs_sha256": {
+      "token-counter-final-focused-tests-01.log": "86d824e9051333363de76a8d5dc2cf4776df87f47344755615c6c21a6d3ef468",
+      "token-counter-final-focused-tests-02.log": "b9147bdcb021615bb15e7f234169d4778ab2b210f25af60e2e1e42f67245570b",
+      "token-counter-final-format-01.log": "b6d96facd59a08bcea10df16a671267c918500565fa6f98a0268f477f823599e",
+      "token-counter-final-format-02.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      "token-counter-final-mypy-01.log": "3da83815553039960ca0f603ce778a95ad0d65a4b31545d1ab3701a045b41b07",
+      "token-counter-final-repo-mypy-02.log": "103f10fdbb5ad2b6ee08833a3e2b634aa94d13009cb96f89236e9d80e79aac15",
+      "token-counter-final-ruff-01.log": "ef7f449f6765325aad2858027884e68e287a7e6ff42c9380634724a0db00539d",
+      "token-counter-final-ruff-02.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "token-counter-final-scoped-mypy-02.log": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8",
+      "token-counter-green-failure-receipt-01.log": "eba2db8f8f44711d0065369ca78a2b5d33db2c99a8e43421e4fc99ce9e3a0971",
+      "token-counter-green-fast-tokenizer-01.log": "0c71a9939ca5ec811ba50118245b0f65a0a219a028bf172c102cfe3ad7dd2e5d",
+      "token-counter-green-invalid-token-ids-01.log": "249f8e82753bd4cacce20ecf49a90a4f936ef0ecf8c697bd037a3e3f7cb7f5d7",
+      "token-counter-green-launch-guards-01.log": "af2459f95ae20ce4c47fb49dbcfa5eb4733e5cb8def5bbc811d88cfadb8a2af7",
+      "token-counter-green-modal-builder-01.log": "e1b22132946bdb3ba245389e63eb1c4b6cb3da6e848c0b12051168dc560427cf",
+      "token-counter-green-offline-cli-01.log": "e70d8b3d5879fd6994052896a4b9b1dac328ff7279d45c5b52cc417fd3879f8c",
+      "token-counter-green-payload-builder-01.log": "6c0596a9db795f96e21d3b205cb1458f789a8b0aa410a3443f22d41f2027a3e8",
+      "token-counter-green-payload-builder-02.log": "b37435eba63210f986c8b6cc01ab239bc0443ae3723845e4fb085570206757b0",
+      "token-counter-green-remote-counter-01.log": "25e51cda0dfe635449dd94c790e662ffd49ec374d19c6a63d6de6755e6b60abc",
+      "token-counter-green-result-guards-01.log": "733cab59615a4ecb1ddd21984642b9a8abc020068701ff6b016202540b8e0e8b",
+      "token-counter-green-success-receipt-01.log": "f398b19d7edb29b87047709b59eb7e846b4567933ba90083b356f20f72e5a62d",
+      "token-counter-green-template-guard-01.log": "c1e07ff199bc0906cf89623ab2957859e59774d2922c32dda24e01aeaca354cf",
+      "token-counter-installed-tests.log": "54e2f7258d32f4a48e5fc1cf0dcec31cd946e5f267018e71a4d5b1929787fd78",
+      "token-counter-red-fast-tokenizer-01.log": "99fdf098e6b0f839a31184d80ef5ecd5ab85e3b33cddb88497d68c2fbfd7d584",
+      "token-counter-red-launch-guards-01.log": "a82adeb6b90b3270302254abf2754a427a15bc93c0622d8f5e217ccefe2c90ed",
+      "token-counter-red-modal-builder-01.log": "20eb6db0c0c7cf7027dfa98ee12a73c55fb289a691ef9e86686e8d5d4652d6c2",
+      "token-counter-red-offline-cli-01.log": "7012f0b1b3b3d8642db47f09bbbc94971bedabeed1025dc2d8ac9e5723bf50bb",
+      "token-counter-red-payload-builder-01.log": "5e4e795afaf7b2ac3694348801079911c9a51af17a801a9a9ee5368403a2d58a",
+      "token-counter-red-payload-builder-02.log": "5493aff724d0cd5a7c583666d61dd80bfcc74d6cac92af81010b4752600a76d2",
+      "token-counter-red-remote-counter-01.log": "fa14b134175e01142ee037be62826ac1e6f9986b914b222a0db6bc8957ac895a",
+      "token-counter-red-result-guards-01.log": "cc16e74694b836a6cb27cc4d1151da2d61fe0729bc67376aef760f8e657b317f",
+      "token-counter-root-full-check.log": "4ec90b8605ee76d2bf9507e0c0381883e31bb53ce47b23c57f80925676e137b3",
+      "token-counter-root-isolated-body.log": "c0f8476f855e24e909b0445237cb004a23d96bc89f44167a3211b570f49413fc"
+    }
+  },
+  "remote_count": {
+    "state": "completed successfully; app stopped/tasks0; no active jobs",
+    "app_id": "ap-NiLyZ3rdVPfd9Nx4kkn3Eb",
+    "cpu_calls": 1,
+    "gpu_calls": 0,
+    "model_calls": 0,
+    "launch_attempts": 1,
+    "automatic_retries": 0,
+    "exec_session_id": 63940,
+    "exec_exit_code": 0,
+    "raw_receipt": "examples/synthetic/qwen3-4b-token-count-remote.json",
+    "raw_receipt_sha256": "5f4b8cd5c5215b8a82c4cccd610f57e32bcedc20586379a10f73611d0124a0f8",
+    "client_elapsed_seconds": 24.262924,
+    "remote_elapsed_seconds": 3.6516,
+    "cleanup_inventory": ".local/token-counter-cleanup-inventory.json",
+    "cleanup_sha256": "65eec46835da1b58b9a3217106c16c3ae3742371403d810496eac7fac604d1a7"
+  },
+  "limitations": [
+    "Fake-tokenizer test integers are not token measurements",
+    "No independent human labels; Gate A remains unmet",
+    "No model selection, training or matched-token QA",
+    "Tiny fixed fixture cannot establish retrieval quality differences",
+    "Caller counter ID is an assertion; full provenance reviewed separately"
+  ],
+  "measurement_replay": {
+    "frozen_protocol": "docs/token-count-protocol.json",
+    "protocol_sha256": "902bc1bcc5f0da192883da241b347cf9e7294e639f75983efe83f78abf94a473",
+    "root_validation": "docs/token-count-replay-validation.json",
+    "root_validation_sha256": "f3439049809d3849ec5070a6e492c0a39bc79fd400ae6fd980b2ecac39f3785d",
+    "independent_packing_cells": 72,
+    "historical_counts_crosschecked": 72,
+    "historical_unique_prompts": 16,
+    "mismatches": 0,
+    "split_reports": {
+      "dev": {
+        "path": "docs/token-count-dev.json",
+        "sha256": "42f28d9127c1ed0d815dff48395d5adb2499e79db303d3d7b55180e8e93f8e20",
+        "cells": 36
+      },
+      "test": {
+        "path": "docs/token-count-test.json",
+        "sha256": "36377991c30df8e0183e29334be3fd1671584874b6466b7668d4dc92de44a412",
+        "cells": 36
+      }
+    },
+    "installed_replay": ".local/token-counter-installed-real-replay.json",
+    "installed_replay_sha256": "724f5c578a7b48435baa213ecfce257148d2228d89ce8e0a5f0f5d24407d1ff3",
+    "installed_split_reports_byte_identical": true
+  },
+  "hosted_source_ci": {
+    "run_id": 38655447870,
+    "head_sha": "efa9434052d5b927a101fc119044ec6dc5571471",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38655447870",
+    "tests_run": 468,
+    "skips": 1,
+    "seconds": 44.117,
+    "installed_tests_run": 216,
+    "installed_skips": 2,
+    "installed_seconds": 17.861,
+    "local_raw_log": ".local/token-counter-source-ci-38655447870.log",
+    "local_raw_log_sha256": "283e8329a14f493d6848f1f36943bc6dd0e4988cdb2b4c23ac79180ab4a8cc1d"
+  },
+  "private_source_delivery": {
+    "commit": "efa9434052d5b927a101fc119044ec6dc5571471",
+    "verified_private": true,
+    "prepush_receipt": ".local/token-counter-source-prepush.json"
+  }
+}

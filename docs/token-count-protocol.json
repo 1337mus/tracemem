@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-14T23:18:26.007309+00:00",
+  "scope": "Token accounting and whole-evidence packing only; no QA scoring, inference, model comparison or training",
+  "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+  "reviewed_payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+  "complete_prompt_ceilings": [
+    128,
+    256,
+    512
+  ],
+  "context_selection": "Shared whole-evidence greedy packer, counts from exact complete-message catalog",
+  "expected_replay_cells": 72,
+  "separate_split_cells": {
+    "dev": 36,
+    "test": 36
+  },
+  "reference_qa_receipt": "examples/synthetic/qwen3-4b-qa-diagnostic-remote.json",
+  "reference_qa_receipt_sha256": "1da725c57bf858a6cf205bb300122616904520ad2966ff212f84605ca25d0738",
+  "historical_requests_to_crosscheck": 72,
+  "historical_request_unique_prompt_ids": 16,
+  "required_checks": [
+    "exact runner/payload/catalog/template/revision/package provenance",
+    "complete ID coverage, integer nonnegative counts",
+    "every overlapping historical input_tokens equals remote count",
+    "all selected citation IDs retained whole, prompt_tokens<=ceiling",
+    "dev/test manifests remain separate",
+    "one CPU call, no GPU/model calls, stopped app verification"
+  ],
+  "prohibited_changes": [
+    "Do not rescore or tune frozen QA outputs, references, prompt or literal scorer",
+    "Do not claim semantic QA accuracy or training readiness",
+    "Do not infer retrieval-quality differences from this identical-ranking fixture"
+  ]
+}

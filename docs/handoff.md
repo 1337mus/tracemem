@@ -1,8 +1,9 @@
 # TraceMem handoff
 
 Updated 2026-10-14. This checkpoint records the completed synthetic QA run and
-the current offline follow-up. Verify live GitHub and worker state before any
-operational action by 2026-10-15. No new inference is authorized by this handoff.
+the completed CPU-only synthetic token-count measurement. Verify live GitHub
+and worker state before any operational action by 2026-10-15. No new inference
+is authorized by this handoff.
 
 ## Current state
 
@@ -46,23 +47,34 @@ passed: 460 source tests (one skip), 208 installed tests (two skips), Ruff on
 preserved installed-harness failure, and remaining limitations are recorded in
 [`validation-token-count-catalog.json`](validation-token-count-catalog.json).
 The catalog prepares 28 synthetic prompt items from 84 subset instances and
-replays caller-supplied counts; its invented test/oracle integers are not token
-measurements, and it does not perform QA or tokenizer-attested counting.
+replays caller-supplied counts; its invented test/oracle integers are not
+measurements. A separate source-free CPU-only Modal call has now measured all
+28 complete fictional prompts with the pinned Qwen tokenizer. Root replay
+confirmed 72 historical input-token cross-checks over 16 unique prompts with
+zero mismatches, and checked 72 packing outcomes split 36/36 across
+dev and test. Details, provenance, and boundaries are in
+[`token-count-results.md`](token-count-results.md); the durable raw and split
+receipts are listed under [Durable evidence](#durable-evidence).
 
-The last personal Modal workspace inventory, at
-`2026-10-14T23:13:45.653860+00:00`, found no active apps or tasks; refresh the
-personal Modal workspace and no-active-job state before remote counting. Before
-any push, separately verify that the GitHub repository is still PRIVATE. A
-reviewed fixed-fictional count payload is staged locally at
-`.local/token-count-payload-reviewed.json`
-(payload SHA256 `125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88`);
-it has not been sent, and no count runner hash or remote call exists.
-The next file-level implementation brief is `.local/token-counter-next-brief.md`. Under
-existing bounded synthetic-only authority, after separate source/payload
-review, the next bounded step is source-free remote tokenizer counting of that
-payload, with recorded catalog, payload, and runner hashes. Counts for
-overlapping prompts can be checked against existing QA `input_tokens` without
-new QA inference. Do not load model weights, run new QA inference, or train.
+The count source is signed in local commit
+`efa9434052d5b927a101fc119044ec6dc5571471` and was delivered privately.
+[Source CI](https://github.com/1337mus/tracemem/actions/runs/38655447870)
+passed with 468 source tests (one skip) and 216 installed tests (two skips). Root's full check passed 468 tests with one skip in 15.848s,
+Ruff on 102 files, source mypy on 32 files, and eight installed focused tests.
+All 37 runtime files remained byte-identical. A real Modal serialization
+roundtrip and isolated-body fake-tokenizer test passed without a remote call.
+The one actual tokenizer count call used CPU only and no GPU, model weights,
+generation, inference, or QA calls. App `ap-NiLyZ3rdVPfd9Nx4kkn3Eb` is stopped
+with zero tasks.
+
+The raw measurement receipt and its separately generated dev/test packing
+reports are durable. Before any source push, separately verify that the GitHub
+repository is still PRIVATE. The measured run checked only the reviewed
+fictional payload; it did not perform QA scoring or inference. The generic
+packer still accepts caller-supplied, unattested count flags. Its split report
+metadata does not cryptographically attest those inputs; the separately
+reviewed measurement receipt supplies the tokenizer provenance. Do not load
+model weights, run new QA inference, or train.
 
 Phase 0/1 remain complete; see [`roadmap.md`](roadmap.md) and
 [`context-kit-inventory.md`](context-kit-inventory.md). Context Kit at
@@ -72,22 +84,31 @@ code, docs, and fictional fixtures may be signed and pushed only to private
 `1337mus/tracemem`; assert the repository is still PRIVATE immediately before
 each push. No public publication, private-data upload, or training is authorized.
 
+## Next bounded work
+
+A bounded worker is probing compatibility of the existing adapter/scanner with
+the pinned public LongMemEval oracle file. Its public dataset-card MIT
+declaration does not resolve constituent provenance. Keep downloaded benchmark
+content and any record identifiers local; this check performs no model call,
+QA scoring, training or redistribution. Read `.local/active-cycle.json` for
+current ownership and exact receipts before continuing. Verify live worker
+state by 2026-10-15; do not duplicate the probe or any remote job.
+
 ## Token-budget packing checkpoint
 
 `tracemem.token_budget.pack_context_by_tokens` now packs whole ranked
 citation/evidence lines using a caller-supplied counter for the complete final
 prompt. It measures the empty prompt and each complete proposed context, skips
 over-budget hits while trying later hits, and returns the exact selected hits.
-It has no tokenizer integration, does not establish actual model token usage,
-and makes no matched-token QA claim. The packer documentation describes the
-counter contract and privacy boundary; the validation record preserves the
-source hashes, behavioral RED/GREEN chronology, root checks, and installed
-replay.
+The packer itself has no tokenizer integration and does not establish actual
+model token usage. A separate reviewed receipt now supplies measured counts
+for the fixed synthetic fixture; see the [token-count results](token-count-results.md).
+The packer's count fields remain caller-supplied and are not attested by the
+generic packer.
 
-This is an offline implementation result only. Private source text stays local;
-remote token counting remains limited to reviewed synthetic-only inputs under
-current authorization. Matched-token QA has not run, and this checkpoint does
-not authorize inference.
+The packing implementation was validated offline. Private source text stayed
+local; the remote count used authored fictional prompts only. Matched-token QA
+has not run, and this checkpoint does not authorize new inference.
 
 ## Result boundary
 
@@ -123,6 +144,15 @@ tokenizer-matched budgets. There is no pooled score or model ranking.
   cells and 36 outcomes.
 - Analysis procedure and separate results: `docs/synthetic-qa-analysis.md` and
   `docs/synthetic-qa-qwen3-results.md`.
+- Measured token-count report: [`token-count-results.md`](token-count-results.md).
+- Raw tokenizer receipt: [`examples/synthetic/qwen3-4b-token-count-remote.json`](../examples/synthetic/qwen3-4b-token-count-remote.json)
+  (SHA256 `5f4b8cd5c5215b8a82c4cccd610f57e32bcedc20586379a10f73611d0124a0f8`).
+- Split packing reports: [`token-count-dev.json`](token-count-dev.json) (SHA256
+  `42f28d9127c1ed0d815dff48395d5adb2499e79db303d3d7b55180e8e93f8e20`) and
+  [`token-count-test.json`](token-count-test.json) (SHA256
+  `36377991c30df8e0183e29334be3fd1671584874b6466b7668d4dc92de44a412`).
+- Measurement and replay validation: [`validation-modal-token-count.json`](validation-modal-token-count.json)
+  and [`token-count-replay-validation.json`](token-count-replay-validation.json).
 - Correction, original failure receipt/hash, prior source-validation hashes,
   corrected run, root replay, cleanup, and CI facts:
   `docs/validation-synthetic-qa-inference.json`.

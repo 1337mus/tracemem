@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+  "runner_sha256": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+  "client_elapsed_seconds": 24.262924,
+  "result": {
+    "schema_version": 1,
+    "count_receipt": {
+      "schema_version": 1,
+      "catalog_sha256": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+      "counter_id": "Qwen/Qwen3-4B@1cfa9a7208912126459214e8b04321603b3df60c+transformers-4.51.3+template-a55ee1b1",
+      "counts": [
+        {
+          "prompt_id": "0183b94001bddd92b1785bfa2e31ac34a776d2ded07f2139abb2756bfaf4bb97",
+          "prompt_tokens": 226
+        },
+        {
+          "prompt_id": "15660f6dcda1061262c2f452a0050009eac88b67285640fff87dd4aa1c83ee71",
+          "prompt_tokens": 222
+        },
+        {
+          "prompt_id": "1f75772a73b98dea5d36406f047e044dd976d88eaff953380d29ab044eb639ad",
+          "prompt_tokens": 224
+        },
+        {
+          "prompt_id": "2d0d8fb74209894dce01a0b05f7d89d307a7f4e0b0ff064f58cff9b870e4fad4",
+          "prompt_tokens": 78
+        },
+        {
+          "prompt_id": "300f6489e5e9785cf39ca0261a35ab0e794d790fa18488880641998f164d4673",
+          "prompt_tokens": 221
+        },
+        {
+          "prompt_id": "3067bf225ffacb801fb7788d3d10f70ce6b8b487a1f4f66e8f5f8a9e2f13f5ed",
+          "prompt_tokens": 224
+        },
+        {
+          "prompt_id": "351eb56f800f00f76178285dc4b34e5d06451a484637f531e0d74f49b11052c4",
+          "prompt_tokens": 368
+        },
+        {
+          "prompt_id": "3ec2682cb253f9d25f828765d5feba3d52f010f3afdfea86b61b7aca7f717b31",
+          "prompt_tokens": 225
+        },
+        {
+          "prompt_id": "4324a63e26e424009c749159ce11fd37a3ec9af866b8c852c930cc9c9a237bd6",
+          "prompt_tokens": 233
+        },
+        {
+          "prompt_id": "4379f901e3c24b9c9a96157498dd76d18ea6ee60f3057862a5a57cab40203328",
+          "prompt_tokens": 364
+        },
+        {
+          "prompt_id": "4c44878cc3990707a6a78e5d4d811feb7dd87ce09cab64f42042d17bc66097f8",
+          "prompt_tokens": 220
+        },
+        {
+          "prompt_id": "60b7a481c29351e07b3c3bb0ec2b023f15968c8bf9a324dd38844510291f19b6",
+          "prompt_tokens": 80
+        },
+        {
+          "prompt_id": "61430669d006f3888a2dffddb33b47f886d377e1c34c6a86226472a4b551bc35",
+          "prompt_tokens": 373
+        },
+        {
+          "prompt_id": "63fa21008808e1b92e3217a7cb73359315102fa1085cdf2a23ec8f8b7d829a65",
+          "prompt_tokens": 85
+        },
+        {
+          "prompt_id": "6fbb922be2ffcdfe62e7071c0431ffbc1ebcf9b6de8e0d0b4e91cb37ab20b3c6",
+          "prompt_tokens": 226
+        },
+        {
+          "prompt_id": "74b4d57d5c41007d3940fe022edf537a3e670121509e27c7a3a50a468aae8485",
+          "prompt_tokens": 82
+        },
+        {
+          "prompt_id": "771e43d2c0681e8a92409a39114061c8c062265cd9b22f3184f4d09a73c67a9f",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "7cc090e1cb9b7bcc7062f5fd38042636f7c1ffc54a9f65b38bd3164ea3dd5dbf",
+          "prompt_tokens": 228
+        },
+        {
+          "prompt_id": "a25ecf74c673a201edc3f034517b335192e2df8eb376cc8ca3fbb2a6bc5e600e",
+          "prompt_tokens": 93
+        },
+        {
+          "prompt_id": "b12b4fc7daed14e7ff9e91fa75b7d4785b66584157117eec5a2e170150e18c9e",
+          "prompt_tokens": 79
+        },
+        {
+          "prompt_id": "bdac239f09a9bfe20cc2e0a5d7dd694418d754b5501534eafd55822091f3b601",
+          "prompt_tokens": 384
+        },
+        {
+          "prompt_id": "c128f14c05ce9a3ab510ef295017ae1425f3c3e8d773acef5d6354b5dc57a7a0",
+          "prompt_tokens": 84
+        },
+        {
+          "prompt_id": "d928cee8d7edbe4d30652433b5e62148ae8c386afb8c9c39ae069f18f697e9f7",
+          "prompt_tokens": 81
+        },
+        {
+          "prompt_id": "d9422dd86e3c4e0d8a1cdf44772dc92a982f261607bdaac948495348920b3cfb",
+          "prompt_tokens": 363
+        },
+        {
+          "prompt_id": "e38d68b24d85253ece5d979f0c270d15d50958af501e7350adb574d8782130ed",
+          "prompt_tokens": 377
+        },
+        {
+          "prompt_id": "e727c1f0ffe32471fe7af706cf3e22c10a9320f45a904a588053d5d3fc5262fd",
+          "prompt_tokens": 225
+        },
+        {
+          "prompt_id": "f09982ef5d376245c290189d3059408196a16c54a63505969fbc75bc915623b4",
+          "prompt_tokens": 227
+        },
+        {
+          "prompt_id": "fbfa45c827310932d3cdc564f2a863fcb01d36a233657e8dc0510e00ee7fe3b5",
+          "prompt_tokens": 241
+        }
+      ]
+    },
+    "tokenizer_provenance": {
+      "model_id": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "use_fast": true,
+      "trust_remote_code": false,
+      "package_versions": {
+        "transformers": "4.51.3",
+        "tokenizers": "0.21.1",
+        "jinja2": "3.1.6"
+      },
+      "python_version": "3.12.10",
+      "template_options": {
+        "tokenize": true,
+        "add_generation_prompt": true,
+        "enable_thinking": false
+      },
+      "backend_tokenizer_sha256": "a63080b4b30dc861fe1b0e420c53a241304dc81aff3d9bb315e6e33e2a1ab794",
+      "elapsed_seconds": 3.6516,
+      "payload_sha256": "125476f3d93363244fe0f6c5c51c21203f409a7dbf24ba397b25be469435cc88",
+      "runner_sha256": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a"
+    }
+  }
+}
