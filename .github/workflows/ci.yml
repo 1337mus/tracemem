@@ -66,9 +66,12 @@ jobs:
             tests/test_adapter.py tests/test_transcript_bounds.py tests/test_transcript_consistency.py \
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
             tests/test_longmemeval_file.py tests/test_longmemeval_selection.py \
-            tests/test_retention.py tests/test_retention_report.py tests/test_synthetic_qa.py "$test_dir/"
+            tests/test_retention.py tests/test_retention_report.py tests/test_synthetic_qa.py \
+            tests/test_modal_synthetic_qa.py tests/test_synthetic_qa_analysis.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
-          cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py "$test_root/experiments/"
+          cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py \
+            experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \
+            experiments/scenario_payload.py "$test_root/experiments/"
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
