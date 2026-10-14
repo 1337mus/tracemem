@@ -24,10 +24,16 @@ full analysis, root replay, and installed replay are preserved under `.local/`;
 their durable documentation copies and limitations are listed in
 [`synthetic-qa-qwen3-results.md`](synthetic-qa-qwen3-results.md).
 
-One offline token-budget packing worker is active under
-`.local/token-packing-brief.md`; root review is pending. It is the next useful
-step: implement generic token-budget packing and verify it offline. No GPU jobs
-are active. Do not launch or retry inference based on this document.
+The generic offline token-budget packing foundation is implemented and root-
+reviewed locally. The full suite, static checks, independent oracle, and an
+installed-wheel replay passed; exact evidence and limitations are recorded in
+[`validation-token-budget-packing.json`](validation-token-budget-packing.json).
+Root signed the exact reviewed source, test, documentation, and workflow change
+as commit `717ff8c986238cbbf5b133238df9ad17729bc8bb`; it is not pushed yet and
+is pending the fresh private-repository check and delivery. The hosted CI run
+recorded there covered the baseline documentation commit, not this packing
+commit; CI for the packing commit is pending. Matched-token QA has not run. No
+GPU jobs are active. Do not launch or retry inference based on this document.
 
 Phase 0/1 remain complete; see [`roadmap.md`](roadmap.md) and
 [`context-kit-inventory.md`](context-kit-inventory.md). Context Kit at
@@ -36,6 +42,23 @@ read-only. Keep model weights, tokenizers, and inference off this Mac. Reviewed
 code, docs, and fictional fixtures may be signed and pushed only to private
 `1337mus/tracemem`; assert the repository is still PRIVATE immediately before
 each push. No public publication, private-data upload, or training is authorized.
+
+## Token-budget packing checkpoint
+
+`tracemem.token_budget.pack_context_by_tokens` now packs whole ranked
+citation/evidence lines using a caller-supplied counter for the complete final
+prompt. It measures the empty prompt and each complete proposed context, skips
+over-budget hits while trying later hits, and returns the exact selected hits.
+It has no tokenizer integration, does not establish actual model token usage,
+and makes no matched-token QA claim. The packer documentation describes the
+counter contract and privacy boundary; the validation record preserves the
+source hashes, behavioral RED/GREEN chronology, root checks, and installed
+replay.
+
+This is an offline implementation result only. Private source text stays local;
+remote token counting remains limited to reviewed synthetic-only inputs under
+current authorization. Matched-token QA has not run, and this checkpoint does
+not authorize inference.
 
 ## Result boundary
 

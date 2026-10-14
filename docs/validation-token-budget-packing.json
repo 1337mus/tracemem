@@ -1,0 +1,114 @@
+{
+  "recorded_at_utc": "2026-10-14",
+  "scope": "Offline generic token-budget context packing; validation record",
+  "source_commit": "717ff8c986238cbbf5b133238df9ad17729bc8bb",
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "bfe7527fb42181095542c94fc119f63133a2685cdc4b2e2687d8ce7000584d73",
+    "docs/token-budget-packing.md": "5be6dded331166c96f257bcb0c984caf67d8c2cd7a9d1dcfc676a80fc068a10d",
+    "src/tracemem/retrieval.py": "ef8148f7d392bd92f03e089f61c1fc349ffea717b5bb4e20c6c5777407dd5fc6",
+    "src/tracemem/token_budget.py": "f14612f80413f4f6891c76d9ad7279b5392d81412f428f0b5f222015d89e32c6",
+    "tests/test_token_budget.py": "c48e538b13fb37927e39789f2f10d0842ea995010d1d66ba23ad696f38b9e9c4"
+  },
+  "tdd_chronology": {
+    "behavioral_reds": [
+      {
+        "log": ".local/token-packing-red-01.log",
+        "sha256": "f4e28fb018ad27c1f95f201927611fc68c85903aeb682cd6a7828f44f11bd2a9",
+        "failure": "Whole citation/evidence lines and exact hit identity were not packed at the expected boundary."
+      },
+      {
+        "log": ".local/token-packing-red-02.log",
+        "sha256": "8709e8bb8ade5cb16b94c6d1bbc4a019a1d0fc4c1e68a646e8bbda3f2a8c85a8",
+        "failure": "The complete candidate context, separator, and callback-owned prompt overhead were not counted together."
+      },
+      {
+        "log": ".local/token-packing-red-03.log",
+        "sha256": "e67a61179d88e8dc9532151dbdbf174587fe2615fb6a9a39c35e53c13c984543",
+        "failure": "An oversized ranked hit was not skipped in favor of a later smaller hit."
+      },
+      {
+        "log": ".local/token-packing-red-04.log",
+        "sha256": "6cf17bcee3c238f9c40ce7bc14db80cc1a2221f465cf30cb05af24da258f2a59",
+        "failure": "An empty context whose fixed prompt exceeded the budget was not rejected."
+      },
+      {
+        "log": ".local/token-packing-red-05.log",
+        "sha256": "98c560ed3831b81aa14e12f4448bf87a11f8d83e99ff66dabb0f74de615d12f2",
+        "failure": "Invalid limits and counter metadata were not consistently rejected; a string limit raised TypeError."
+      }
+    ],
+    "green_logs": [
+      ".local/token-packing-green-01.log",
+      ".local/token-packing-green-02.log",
+      ".local/token-packing-green-03.log",
+      ".local/token-packing-green-04.log",
+      ".local/token-packing-green-05.log"
+    ],
+    "green_only_checks": [
+      ".local/token-packing-green-06-preservation.log",
+      ".local/token-packing-green-nonmonotonic.log"
+    ],
+    "chronology_notes": [
+      "The removed red-00/green-00 pair was an API-existence probe, not behavioral TDD evidence.",
+      "Preservation and nonmonotonic-counter checks have green logs only; they are not claimed as independent RED/GREEN cycles.",
+      "The initial inline root oracle used a fictional fixture without content_kind and failed with KeyError. The corrected explicit fixture passed; no production fix resulted.",
+      "The first installed-wheel harness omitted experiments/benchmark_lexical_scale.py and had three import errors among 17 tests. Its failure log is preserved; a corrected fresh harness passed all 17 tests.",
+      "An initial mypy failure log was overwritten. It is not reconstructed or presented as raw evidence; the final passing log is preserved."
+    ]
+  },
+  "validation": {
+    "root_full_check": {
+      "command": ".venv/bin/python -m unittest discover -s tests -v; .venv/bin/ruff check src tests experiments; .venv/bin/ruff format --check src tests experiments; .venv/bin/mypy",
+      "log": ".local/token-packing-root-full-check.log",
+      "log_sha256": "4cb7e77a7214b0df2c4ab0c1b68d6983ad5f5d2eacd639e2c3bf2f1598b57ed2",
+      "exit_code": 0,
+      "tests": 454,
+      "skipped": 1,
+      "elapsed_seconds": 14.357,
+      "skip_reason": "Optional Context Kit unavailable",
+      "ruff_check": "passed",
+      "ruff_format": "passed; 98 files already formatted",
+      "source_mypy": "passed; 32 source files"
+    },
+    "focused_reviewed_tests": {
+      "log": ".local/token-packing-final-focused-tests-reviewed.log",
+      "log_sha256": "d5ef67cd493e3381e7d87f57e61a250b2373c484fb5f8671321c19afa1935984",
+      "exit_code": 0,
+      "tests": 38
+    },
+    "independent_root_oracle": {
+      "receipt": ".local/token-packing-root-oracle.json",
+      "receipt_sha256": "8b99e5479c9ad08cad12030adcd9206c50ef3e642e45d9ef8a2d926f3d1b8cfe",
+      "checks_passed": 8,
+      "checks_total": 8,
+      "legacy_byte_budget_comparisons": 800,
+      "requests_replayed_byte_identically": 72,
+      "references_replayed_byte_identically": 8,
+      "model_or_network_calls": 0
+    },
+    "installed_wheel": {
+      "receipt": ".local/token-packing-installed-receipt.json",
+      "receipt_sha256": "4d84cc4d0408ab10682db6629c57f6a8e20987081fe961f003aec32b23a6b74a",
+      "test_log": ".local/token-packing-root-installed-tests-final.log",
+      "test_log_sha256": "f334b374698164e1829932db57d6fd9b4525bfbfafa909853343424b337f6f4e",
+      "exit_code": 0,
+      "tests": 17,
+      "skipped": 0,
+      "actual_72_answer_analysis_byteidentical": true,
+      "model_or_network_calls": 0
+    },
+    "hosted_ci": {
+      "run_id": 38649377646,
+      "conclusion": "passed",
+      "scope_note": "This run validated baseline documentation commit 6d174d6863d8855eb29d39f0852aa4ba98afa8f1; it did not validate source_commit. CI for source_commit is pending."
+    },
+    "additional_root_reported_checks": {
+      "actionlint": "passed",
+      "diff_check": "passed",
+      "raw_logs_preserved": false
+    }
+  },
+  "delivery_state": "Reviewed and validated locally; exact source change is signed in source_commit and awaits a fresh private-repository check and push. CI for source_commit is pending.",
+  "matched_token_qa": "Not run. The implementation has no tokenizer integration and does not establish model token use or QA outcomes.",
+  "privacy_boundary": "Private source text stays local. Any future remote counter use is limited to reviewed synthetic-only inputs under current authorization. No model or network calls were made for this implementation or validation."
+}
