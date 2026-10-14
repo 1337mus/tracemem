@@ -1,0 +1,1009 @@
+{
+  "version": 1,
+  "seed": 1729,
+  "bootstrap": {
+    "unit": "scenario case, sampled with replacement within each split",
+    "samples": 2000,
+    "seed": 1729,
+    "percentile_method": "linear interpolation at rank=(n-1)*q",
+    "undefined_replicates": "excluded from intervals; valid and undefined counts are reported"
+  },
+  "accounting": {
+    "version": 1,
+    "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "bundle_sha256": "65078e901cad48856528377b003746e04f90245a19236eadfeeb951dc6358467",
+    "bundle_canonical_sha256": "14d2728915098a4275f07ff0b28ed9e2d85b4684fda96fbbec8cef5218a02a08",
+    "seed": 1729,
+    "receipts": [
+      {
+        "model_key": "qwen3-4b",
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "canonical_sha256": "ac40da7b23302d936e7c0e0955a3b25ba4b33c2c6f4ab017950f36659105967e"
+      },
+      {
+        "model_key": "phi-3.5-mini",
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "canonical_sha256": "695dec64c217d2a963a0e0d03ebe9d83e0619eba8f2e7782e271716dda75a551"
+      }
+    ],
+    "responses": [
+      {
+        "reviewer_id": "luna-blind-support-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "acec53010489b1ab86dbcbcd35da5642debfc140adbfb264b9378fd5ec68daf1"
+      },
+      {
+        "reviewer_id": "root-adjudication-20261014",
+        "reviewer_kind": "agent",
+        "canonical_sha256": "9a671cf97312ab9618f62c669a2f80f1c3f3a4423722bffae61506eab507ccb0"
+      }
+    ],
+    "provenance_sha256": "c607176aed0921611c3ac25465e774a89d084890a9904ea28919d56d4108ba44",
+    "by_model": {
+      "qwen3-4b": {
+        "dev": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 1,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 3,
+          "schema_valid_candidate_count": 41,
+          "unique_review_task_count": 41,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 26,
+              "unsupported_origin_count": 14,
+              "uncertain_origin_count": 1,
+              "all_reviewed_origin_count": 41,
+              "decisive_origin_count": 40,
+              "supported_rate_all_reviewed_origins": 0.6341463414634146,
+              "supported_rate_decisive_origins": 0.65
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 20,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 5,
+              "all_reviewed_origin_count": 41,
+              "decisive_origin_count": 36,
+              "supported_rate_all_reviewed_origins": 0.4878048780487805,
+              "supported_rate_decisive_origins": 0.5555555555555556
+            }
+          ]
+        },
+        "test": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 2,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 1,
+          "schema_valid_candidate_count": 42,
+          "unique_review_task_count": 42,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 24,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 2,
+              "all_reviewed_origin_count": 42,
+              "decisive_origin_count": 40,
+              "supported_rate_all_reviewed_origins": 0.5714285714285714,
+              "supported_rate_decisive_origins": 0.6
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 21,
+              "unsupported_origin_count": 16,
+              "uncertain_origin_count": 5,
+              "all_reviewed_origin_count": 42,
+              "decisive_origin_count": 37,
+              "supported_rate_all_reviewed_origins": 0.5,
+              "supported_rate_decisive_origins": 0.5675675675675675
+            }
+          ]
+        }
+      },
+      "phi-3.5-mini": {
+        "dev": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 1,
+          "schema_excluded_output_count": 23,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 0,
+          "schema_valid_candidate_count": 0,
+          "unique_review_task_count": 0,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 0,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 0,
+              "decisive_origin_count": 0,
+              "supported_rate_all_reviewed_origins": null,
+              "supported_rate_decisive_origins": null
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 0,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 0,
+              "decisive_origin_count": 0,
+              "supported_rate_all_reviewed_origins": null,
+              "supported_rate_decisive_origins": null
+            }
+          ]
+        },
+        "test": {
+          "raw_output_count": 24,
+          "parse_excluded_output_count": 0,
+          "schema_excluded_output_count": 23,
+          "anchoring_excluded_output_count": 0,
+          "schema_valid_empty_output_count": 0,
+          "schema_valid_candidate_count": 1,
+          "unique_review_task_count": 1,
+          "reviewers": [
+            {
+              "reviewer_id": "luna-blind-support-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 1,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 1,
+              "decisive_origin_count": 1,
+              "supported_rate_all_reviewed_origins": 0.0,
+              "supported_rate_decisive_origins": 0.0
+            },
+            {
+              "reviewer_id": "root-adjudication-20261014",
+              "reviewer_kind": "agent",
+              "supported_origin_count": 0,
+              "unsupported_origin_count": 1,
+              "uncertain_origin_count": 0,
+              "all_reviewed_origin_count": 1,
+              "decisive_origin_count": 1,
+              "supported_rate_all_reviewed_origins": 0.0,
+              "supported_rate_decisive_origins": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "interpretation": "These fractions are not recall, independent human truth, precision calibration, semantic acceptance, or Gate A. Citation anchoring, semantic judgment, and raw citation integrity are separate. Reviewer kind is self-attested.",
+    "exclusions": [
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "dev-blue-crate",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "test-route-timing",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 0,
+        "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+        "model_key": "qwen3-4b",
+        "case_id": "test-sensor-placement",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-balcony-basil",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-ferry-bike",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-agenda-email",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-supper-mushrooms",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-robot-test-log",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-blue-crate",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-piano-recording",
+        "raw_status": "parse_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_json"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-cycle-tunnels",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-large-print-atlas",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-window-fern",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-walker-pickup",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-linux-workstation",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-pottery-class-maybe",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-coffee-after-lunch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-brass-latch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-quoted-checklist",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-gallery-hours",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-sqlite-notes",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-welding-gloves",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unanswered-color",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unanswered-season",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-ambiguous-they",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-unspecified-room",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "dev-lantern-battery",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-dinghy-sail",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-cedar-market",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-theater-understudy",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-reading-corrections",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-bee-hotel",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-station-elevator",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-tablet-charging",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-cumin-recipe",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-piano-reverb",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-fundraiser-door",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-invoice-terms",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-west-launch",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-museum-maps",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-glaze-kiln",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-unanswered-size",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-ambiguous-package",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-temporary-guest",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-undisclosed-address",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-greenhouse-key",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-unanswered-sound",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-route-timing",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-sensor-placement",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      },
+      {
+        "receipt_index": 1,
+        "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+        "model_key": "phi-3.5-mini",
+        "case_id": "test-archive-retention",
+        "raw_status": "schema_invalid",
+        "anchored_status": "excluded",
+        "candidate_count": 0,
+        "reason": "invalid_candidate_schema"
+      }
+    ]
+  },
+  "by_model": {
+    "phi-3.5-mini": {
+      "dev": {
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 0,
+              "available_scenarios_without_reviewed_origins": 24,
+              "sampled_scenario_draws_with_reviewed_origins": 0,
+              "sampled_scenario_draws_without_reviewed_origins": 48000
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              }
+            }
+          },
+          {
+            "reviewer_id": "root-adjudication-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 0,
+              "available_scenarios_without_reviewed_origins": 24,
+              "sampled_scenario_draws_with_reviewed_origins": 0,
+              "sampled_scenario_draws_without_reviewed_origins": 48000
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": null,
+                "interval_95": null,
+                "valid_replicate_count": 0,
+                "undefined_replicate_count": 2000
+              }
+            }
+          }
+        ]
+      },
+      "test": {
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 1,
+              "available_scenarios_without_reviewed_origins": 23,
+              "sampled_scenario_draws_with_reviewed_origins": 1920,
+              "sampled_scenario_draws_without_reviewed_origins": 46080
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              }
+            }
+          },
+          {
+            "reviewer_id": "root-adjudication-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 1,
+              "available_scenarios_without_reviewed_origins": 23,
+              "sampled_scenario_draws_with_reviewed_origins": 1920,
+              "sampled_scenario_draws_without_reviewed_origins": 46080
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.0,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "valid_replicate_count": 1254,
+                "undefined_replicate_count": 746
+              }
+            }
+          }
+        ]
+      }
+    },
+    "qwen3-4b": {
+      "dev": {
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 20,
+              "available_scenarios_without_reviewed_origins": 4,
+              "sampled_scenario_draws_with_reviewed_origins": 39971,
+              "sampled_scenario_draws_without_reviewed_origins": 8029
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.6341463414634146,
+                "interval_95": {
+                  "lower": 0.47364766081871346,
+                  "upper": 0.7941365007541477
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.65,
+                "interval_95": {
+                  "lower": 0.5,
+                  "upper": 0.8
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.024390243902439025,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.07321646341463389
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              }
+            }
+          },
+          {
+            "reviewer_id": "root-adjudication-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 20,
+              "available_scenarios_without_reviewed_origins": 4,
+              "sampled_scenario_draws_with_reviewed_origins": 39971,
+              "sampled_scenario_draws_without_reviewed_origins": 8029
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.4878048780487805,
+                "interval_95": {
+                  "lower": 0.32558139534883723,
+                  "upper": 0.6585365853658537
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.5555555555555556,
+                "interval_95": {
+                  "lower": 0.3939393939393939,
+                  "upper": 0.717948717948718
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.12195121951219512,
+                "interval_95": {
+                  "lower": 0.03125,
+                  "upper": 0.21621621621621623
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              }
+            }
+          }
+        ]
+      },
+      "test": {
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 21,
+              "available_scenarios_without_reviewed_origins": 3,
+              "sampled_scenario_draws_with_reviewed_origins": 41833,
+              "sampled_scenario_draws_without_reviewed_origins": 6167
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.5714285714285714,
+                "interval_95": {
+                  "lower": 0.3877551020408163,
+                  "upper": 0.7777777777777778
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.6,
+                "interval_95": {
+                  "lower": 0.41304347826086957,
+                  "upper": 0.8
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.047619047619047616,
+                "interval_95": {
+                  "lower": 0.0,
+                  "upper": 0.11904761904761904
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              }
+            }
+          },
+          {
+            "reviewer_id": "root-adjudication-20261014",
+            "reviewer_kind": "agent",
+            "scenario_sampling": {
+              "scenarios_per_replicate": 24,
+              "available_scenarios_with_reviewed_origins": 21,
+              "available_scenarios_without_reviewed_origins": 3,
+              "sampled_scenario_draws_with_reviewed_origins": 41833,
+              "sampled_scenario_draws_without_reviewed_origins": 6167
+            },
+            "metrics": {
+              "supported_rate_all_reviewed_origins": {
+                "estimate": 0.5,
+                "interval_95": {
+                  "lower": 0.30612244897959184,
+                  "upper": 0.718055555555555
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "supported_rate_decisive_origins": {
+                "estimate": 0.5675675675675675,
+                "interval_95": {
+                  "lower": 0.35714285714285715,
+                  "upper": 0.78125
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              },
+              "uncertain_rate_all_reviewed_origins": {
+                "estimate": 0.11904761904761904,
+                "interval_95": {
+                  "lower": 0.04081632653061224,
+                  "upper": 0.21433397683397656
+                },
+                "valid_replicate_count": 2000,
+                "undefined_replicate_count": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "interpretation": "Intervals describe resampling variability across this fictional scenario sample only. They do not establish independent truth, calibration, acceptance precision, Gate A, or a model winner. Reviewer identity and independence are not verified. Zero observed errors can yield [1, 1] intervals; this is not a population guarantee."
+}

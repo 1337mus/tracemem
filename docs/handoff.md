@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 257-test review/budget checkpoint. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 267-test uncertainty checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -119,22 +119,37 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:257tests,zero skips,3.463seconds including actual Context Kit
-integration and Node VM. Ruff69files,source mypy26,scoped38. Exact commands/exit
-codes `.local/final-review-budget-commands.json`; `docs/validation.json` records
-source/test hashes and evidence. Historical242test checkpoint preserved in
-`docs/validation-github-bootstrap.json`. All31package hashes rechecked on resume.
-Context Kit still clean at the pinned commit. No new GPU/model calls this cycle.
+Current full suite:267tests,zero skips,4.514seconds including actual Context Kit
+integration and Node VM. Ruff71files,source mypy26,scoped39. Exact commands/exit
+codes `.local/final-uncertainty-commands.json`; `docs/validation.json` records
+source/test hashes. Historical257test checkpoint in `docs/validation-review-budget.json`.
+Runtime package unchanged; all31source hashes still match the installed wheel.
 
-1. Personal private repository verified live again on2026-10-14. Remote HEAD
-   747b7554544285752616853f45da1c1bc0fa16c7 before this push. New budget commit
-   9a30b42 is committed locally; reviewed offline slice and records are ready for
-   signed commit/private push and hosted CI. Recheck delivery rather than assume.
-2. Bounded Luna worker `/root/review_uncertainty` now owns ONLY the new experiment,
-   test and doc paths in `docs/review-uncertainty-brief.md`; root must inspect the
-   complete diff and numerical behavior. No other active worker. Scenario-level
-   bootstrap keeps correlated claim origins together; conditional descriptive
-   intervals cannot create independent labels or establish precision/calibration.
+Scenario-cluster uncertainty experiment completed and root-reviewed. All24cases
+per split,including excluded/empty outputs,remain in resampling population.2000draws,
+seed1729. Root independently checked8cells/24metrics via case-origin counts and
+statistics.quantiles,receipt `.local/review-uncertainty-root-verification.json`.
+Qwen blind-agent supported/all:dev26/41,interval[.474,.794],test24/42[.388,.778].
+Root nonblind dev20/41[.326,.659],test21/42[.306,.718]. Phi dev undefined;test0/1,
+746/2000draws undefined,degenerate[0,0]conditional on remaining draws. These are
+resampling diagnostics,not independent truth,precision guarantees or model selection.
+See `docs/review-uncertainty.md` and `docs/scenarios-review-uncertainty.json`.
+
+Three earlier unmapped Graphiti hashes now match exact pinned source files and
+Git blob IDs. Root inspected cited schema/prompt,episode mapping and temporal
+normalization code. `docs/graphiti-source-audit.json` and `docs/related-work.md`.
+No upstream code execution or benchmark conversations fetched. No new GPU calls.
+
+1. Private repository verified live on2026-10-14. Reviewed budget/offline source
+   pushed as signed664587cd5689d44a6572a978efd32ecffcd20de4. HostedCI38620827280
+   passed257tests(one expected Context Kit skip),Node VM and34installed ChatGPT
+   tests. GitHub signature reason remainsbad_email; local verify-commit passes.
+   New267test uncertainty/doc slice prepared for signed private delivery.
+2. No active worker at this checkpoint. Next bounded slice is
+   `docs/installed-new-apis-brief.md`: permanently exercise installed budget/review
+   APIs in existing CI smoke; preserve all existing checks. Root owns integration,
+   exact source/test hashes and final validation. Check `.local/active-cycle.json`
+   before starting so a resumed session does not duplicate a newer worker.
 3. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source

@@ -3,9 +3,12 @@
     ".github/workflows/ci.yml": "2b8b92ab1ea373fc438f181507258ac4ad67786a51bd646eaaf4d5fd79ac7384",
     "docs/baseline-context-budgets.json": "9e14de94e09893f400e17226fa2cebceeec377c1493f4f263fa325d49a055c01",
     "docs/benchmark-contracts.json": "081cf7fb1da15d8a5c8936ea0ef9d8db05b48065051a93d0a3840a12c2f5c5ac",
+    "docs/graphiti-source-audit.json": "c3883e741c2bf8f9c309f5df68f748127bc9d7f45257beb13fa58c5d2aadab16",
+    "docs/scenarios-review-uncertainty.json": "dfb3793136fa3d2ddc8b497ba6b7d6bffc1d3095b5e42d943bd23ca3430f3587",
     "docs/scenarios-reviewed-support.json": "8c3bd2e8596ce2628c59f5ba4536facf83d78626a131452bda188fbd5f90719f",
     "examples/synthetic/phi-3.5-mini-scenarios-remote.json": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
     "examples/synthetic/qwen3-4b-scenarios-remote.json": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+    "experiments/bootstrap_scenario_reviews.py": "edfc9e7edbd07b6654471524ff32da034bfe02bf57afd957d8a694def6e83cfe",
     "experiments/evaluate_context_budgets.py": "f1fbec895b67193dee1e21d534ee84447e5012c8a15573b810b8962345da38d0",
     "experiments/export_review_html.py": "a5ae05207f6d347319bddf2069fa3198cedf35be0c1f902c04e477476d8680c6",
     "src/tracemem/data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
@@ -30,31 +33,31 @@
     "full_suite": {
       "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
       "exit_code": 0,
-      "local_log": ".local/final-review-budget-full_suite.log",
-      "log_sha256": "65eb9c0006fa48ee4705fa002514aa9c7cc824d57f4f497fd1a530c004482fd6"
+      "local_log": ".local/final-uncertainty-full_suite.log",
+      "log_sha256": "5480546af85dea142b25566d1de1fa1ae1ee51aa4c90804ceec072ec98bf9c55"
     },
     "ruff_check": {
       "command": ".venv/bin/ruff check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-review-budget-ruff_check.log",
+      "local_log": ".local/final-uncertainty-ruff_check.log",
       "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
     },
     "ruff_format": {
       "command": ".venv/bin/ruff format --check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-review-budget-ruff_format.log",
-      "log_sha256": "70aeb2781372748bf56bc4126fc132461937977430c7144a7cb865fa230b87a6"
+      "local_log": ".local/final-uncertainty-ruff_format.log",
+      "log_sha256": "ea2969fd741733e33c490fb6696583f5d6e29e16cae5e536952236a31cf615b1"
     },
     "scoped_mypy": {
-      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py",
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py",
       "exit_code": 0,
-      "local_log": ".local/final-review-budget-scoped_mypy.log",
-      "log_sha256": "5b8ce7baba93409ab8ce52693c77459567344e2c2f77fe3cf14b888e34f7e451"
+      "local_log": ".local/final-uncertainty-scoped_mypy.log",
+      "log_sha256": "8b09188cd4334b7a36b9f6dc1f7ef942a9f88d6aa8cc3cdbb7ae7841468e6997"
     },
-    "strict_mypy": {
+    "source_mypy": {
       "command": ".venv/bin/mypy",
       "exit_code": 0,
-      "local_log": ".local/final-review-budget-strict_mypy.log",
+      "local_log": ".local/final-uncertainty-source_mypy.log",
       "log_sha256": "5107f9446510710cfc458474a6bae8746bf7ed9a2bccb85b1de3b0a14e84c8ad"
     },
     "workflow_lint": {
@@ -106,21 +109,21 @@
     "train_cases": 0
   },
   "full_suite": {
-    "elapsed_seconds": 3.463,
+    "elapsed_seconds": 4.514,
     "skipped": 0,
-    "tests": 257
+    "tests": 267
   },
   "gate_a": {
     "met": false,
     "reason": "No independent human labels or sufficiently established training/evaluation dataset; provisional targets and lexical split audit cannot establish readiness."
   },
   "github": {
-    "delivery_at_this_checkpoint": "Previously pushed 747b755; new reviewed budget/offline source prepared for signed private push. Recheck remote receipt.",
+    "delivery_at_this_checkpoint": "Reviewed budget/offline source pushed; hosted257tests and34installed ChatGPT tests passed",
     "delivery_receipt": "docs/github-validation.json",
-    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38617328181",
+    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38620827280",
     "public_release": false,
     "repository": "1337mus/tracemem",
-    "source_commit": "747b7554544285752616853f45da1c1bc0fa16c7",
+    "source_commit": "664587cd5689d44a6572a978efd32ecffcd20de4",
     "visibility_verified": "PRIVATE",
     "visibility_verified_at_utc": "2026-10-14T19:05:33.228181+00:00"
   },
@@ -132,11 +135,19 @@
     "local_receipt": ".local/modal-apps-after-scenarios.json",
     "observation": "2026-10-14 after Phi stopped at 11:11:16 Pacific; recheck before another launch"
   },
+  "graphiti_source_reconciliation": {
+    "git_blob_ids_matched": 3,
+    "old_hashes_matched": 3,
+    "receipt": "docs/graphiti-source-audit.json",
+    "source_static_review": true,
+    "upstream_executed": false
+  },
   "historical_receipts": [
     "docs/validation-phase1.json",
     "docs/validation-phase2-baseline.json",
     "docs/validation-support-ledger.json",
-    "docs/validation-github-bootstrap.json"
+    "docs/validation-github-bootstrap.json",
+    "docs/validation-review-budget.json"
   ],
   "isolated_wheel_smoke": {
     "all_members_match_approved_source": true,
@@ -162,6 +173,7 @@
     "source_path_imports": false,
     "source_unchanged": true,
     "stable_benchmark_fields_match": true,
+    "still_applicable": "Runtime package source unchanged across this experiment/doc-only slice; all31approved package hashes rechecked.267test suite includes new experiment tests; prior installed smoke receipt remains distinct.",
     "wheel_sha256": "63325e2fa0a4e32079938fdd07d8ae9c8364593256013ee4d1a20f393b628342"
   },
   "local_ml_packages_present": {
@@ -179,12 +191,25 @@
   },
   "original_data_writes_performed": false,
   "private_data_uploaded": false,
-  "recorded_at_utc": "2026-10-14T19:05:33.228181+00:00",
-  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels.",
-  "ruff_formatted_files": 69,
+  "recorded_at_utc": "2026-10-14T19:17:13.176921+00:00",
+  "review_uncertainty": {
+    "human_reviewers": 0,
+    "interpretation": "Descriptive conditional resampling; no acceptance precision, calibration, model winner or Gate A claim",
+    "metrics_independently_checked": 24,
+    "model_split_reviewer_cells": 8,
+    "phi_test_undefined_draws": 746,
+    "report": "docs/scenarios-review-uncertainty.json",
+    "root_verification": ".local/review-uncertainty-root-verification.json",
+    "samples": 2000,
+    "sampling_unit": "scenario case, stratified by split",
+    "scenarios_each_split": 24,
+    "seed": 1729
+  },
+  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels. New scenario-bootstrap source/tests reviewed; independent case-origin replay checked all24metrics with statistics.quantiles and explicit zero denominators. Three Graphiti source hashes/Git blob IDs reconciled and exact cited lines inspected.",
+  "ruff_formatted_files": 71,
   "schema2_migration": false,
   "scope": "Local Phase0/1 prototype; synthetic extraction/retrieval/NLI diagnostics; early candidate ledger; fixture-based ChatGPT reader/snapshot CLI; private GitHub bootstrap",
-  "scoped_mypy_files": 38,
+  "scoped_mypy_files": 39,
   "scoped_mypy_limitation": "GPU launch modules imported silently, not strict-checked targets. Optional ML libraries absent.",
   "source_mypy_files": 26,
   "source_sha256": {
@@ -243,6 +268,7 @@
     "tests/test_remote_vectors.py": "cf0d68c68e76af40575d912a837474c9fe778ae40606643ccc311b3bf1700100",
     "tests/test_retrieval.py": "66b9283b2f1b34168dcb17d79e0cdce6830e9d3a214f21b6281e2491449f3eb2",
     "tests/test_review_html.py": "ac0b15a303bd22b75771061c9b6f8927a2917f26761e22203b3878bd5b0f168b",
+    "tests/test_review_uncertainty.py": "cf8f8bc14bd7e60b8fd746feb79fbb281be41a93c1b96cca94d1fe6cdff89219",
     "tests/test_scenario_review_report.py": "444ecce2be259bb36689dcbac807d32c6a258ad93c6ae561551526a98bf8ca00",
     "tests/test_scenario_reviews.py": "9989286a3c50784b7eb90cbe070af09293d3c36bfd6abfd99dc82314e5532df6",
     "tests/test_scenarios.py": "8180c93b6c6c2a6781e32e91b5a4147fd8fbd93ad979c47cf8b31e7408c58074",

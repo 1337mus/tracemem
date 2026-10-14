@@ -87,6 +87,8 @@ make check
 - [Agent support review](docs/scenarios-reviewed-support.json): separate model/split/
   reviewer counts, explicit exclusions and [root adjudication](docs/scenarios-root-adjudication.json).
   [Fictional review artifacts](examples/synthetic/reviews/README.md) reproduce the report.
+- [Review uncertainty](docs/review-uncertainty.md): scenario-cluster intervals with
+  explicit undefined resamples and separate reviewers. Descriptive agent labels only.
 - [Offline review page](docs/offline-review.md): inspect blind candidates beside
   their sources, save drafts, and export complete responses for validation.
   It does not create independent human labels or satisfy Gate A.

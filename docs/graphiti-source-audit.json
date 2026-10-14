@@ -1,0 +1,58 @@
+{
+  "checked_on": "2026-10-14",
+  "repository": "getzep/graphiti",
+  "commit": "9b17e94c16457475f71d5cd2f8045649dd6f170c",
+  "tree_sha": "9b17e94c16457475f71d5cd2f8045649dd6f170c",
+  "sources": [
+    {
+      "path": "graphiti_core/prompts/extract_edges.py",
+      "sha256": "8db3ce782d67592cffe70fc834d48d646273b4cf78b35da2b68b7d253598c07f",
+      "git_blob_sha1": "c814e57858e8efd4a4df64ed590ae0376ea58ae4",
+      "bytes": 18075,
+      "reviewed_line_ranges": [
+        [
+          26,
+          53
+        ],
+        [
+          119,
+          145
+        ]
+      ],
+      "url": "https://github.com/getzep/graphiti/blob/9b17e94c16457475f71d5cd2f8045649dd6f170c/graphiti_core/prompts/extract_edges.py"
+    },
+    {
+      "path": "graphiti_core/utils/maintenance/edge_operations.py",
+      "sha256": "c98b606007d6490412c0fb3ec20482965a123a08987a7c1f48ae78ddeb718b75",
+      "git_blob_sha1": "0b6a0d852e414f17a6f4d95fd877aae1666dfdb5",
+      "bytes": 46595,
+      "reviewed_line_ranges": [
+        [
+          215,
+          240
+        ],
+        [
+          340,
+          374
+        ]
+      ],
+      "url": "https://github.com/getzep/graphiti/blob/9b17e94c16457475f71d5cd2f8045649dd6f170c/graphiti_core/utils/maintenance/edge_operations.py"
+    },
+    {
+      "path": "graphiti_core/utils/maintenance/temporal_edge_utils.py",
+      "sha256": "a86f7bc023e60c4a085677d589f9f183424eeb7324464149cddb344d052922fb",
+      "git_blob_sha1": "6a8e161e7510fcd5349828ff773ff686c6f05f78",
+      "bytes": 3023,
+      "reviewed_line_ranges": [
+        [
+          39,
+          71
+        ]
+      ],
+      "url": "https://github.com/getzep/graphiti/blob/9b17e94c16457475f71d5cd2f8045649dd6f170c/graphiti_core/utils/maintenance/temporal_edge_utils.py"
+    }
+  ],
+  "upstream_executed": false,
+  "conversations_downloaded": false,
+  "interpretation": "Source-path/hash reconciliation and static inspection only; no benchmark, deployment, quality, locality or complete rights claim."
+}
