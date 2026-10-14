@@ -60,6 +60,8 @@ make check
 
 - [Transcript line limits](docs/transcript-bounds.md): bounded Claude/Codex JSONL
   reads, an explicit cap override, and transactional rollback on late refusal.
+- [Quiescent transcript reads](docs/transcript-consistency.md): opt-in detection
+  of ordinary source changes during a complete import.
 - [Context Kit inventory](docs/context-kit-inventory.md): verified source architecture,
   schemas, aggregate coverage and integration limits.
 - [Experiments](docs/experiments.md): commands, measurements and failure cases.

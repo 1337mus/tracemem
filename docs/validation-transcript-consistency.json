@@ -1,0 +1,116 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "49b82e8d0e81b369b361c50acbb79c3ca5b3a0c228c7d48aff2a7f8aa4ed9975",
+    "README.md": "701d3f589a8cff99c21fa81b67a2d319a2c15616e9c32a63ce82ed4c7d478b08",
+    "docs/ci.md": "a37bbed8e8a33ef470f9ce46e0b79d3f7b56cf8f6914af5c9d64e6ea85954cd8",
+    "docs/transcript-consistency-brief.md": "d08252c7d74b0295cfe554a7ad2f386590f5d3b3582bda65d692be206922789b",
+    "docs/transcript-consistency.md": "7b46dea4a1b6ef00e1df4e4ba599d92ce8a3f0ae9a052a904de8d68bad21ce1f",
+    "src/tracemem/adapters/__init__.py": "ae7184fc1b7954c4e59dcba51d3df43317dcd8b4691158e572bef076fb028d3e",
+    "src/tracemem/adapters/_transcript_source.py": "5cde85b095b02de69fbbf945063e643814da4bdce30d27918b100e311fb56fa4",
+    "src/tracemem/cli.py": "8fa86ebada2f708f445127b6ad7e6b3713461f46ab1ae6ab7382145fdc004976",
+    "tests/test_transcript_consistency.py": "a706e09823eb8641a253a4ffe8674a1d4dac8e8f107907fc7e520195f64fc1b8"
+  },
+  "delivery_state": "Root reviewed; local and installed validation passed; signed commit, private push and hosted CI pending",
+  "diff_check_exit_code": 0,
+  "focused_correction": {
+    "exit_code": 0,
+    "expected_contextkit_skips": 1,
+    "log": ".local/transcript-consistency-loop-fix.log",
+    "ruff_check_and_format_passed": true,
+    "sha256": "1fc0c1605135f22680b692b8ef02749103eb01ab57756303f995ca8cadadf570",
+    "source_mypy_files": 3,
+    "tests": 25
+  },
+  "full_suite": {
+    "chronology": "Before narrow self-loop correction and its additional test. Final source received focused checks; hosted full suite expected 397 tests, not yet run.",
+    "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
+    "elapsed_seconds": 10.6,
+    "exit_code": 0,
+    "local_log": ".local/transcript-consistency-final-check.log",
+    "log_sha256": "11751350085edd86664eed082742f3953fd78321a1d3654a77e161dd6e1bae72",
+    "ruff_files": 90,
+    "skipped": 0,
+    "source_mypy_files": 31,
+    "tests": 396
+  },
+  "gpu_or_model_calls": 0,
+  "independent_probe": {
+    "additional_check": "Strict self-loop ValueError and default RuntimeError independently asserted after final correction",
+    "checks": [
+      "stable exactrecords/stats/source cap512",
+      "stable exactrecords/stats/source cap4096",
+      "append/strictFalse defaultaccepted",
+      "append/strictTrue refused/logicalrollback",
+      "truncate/strictFalse defaultaccepted",
+      "truncate/strictTrue refused/logicalrollback",
+      "same_size_edit/strictFalse defaultaccepted",
+      "same_size_edit/strictTrue refused/logicalrollback",
+      "rename_replace/strictFalse defaultaccepted",
+      "rename_replace/strictTrue refused/logicalrollback",
+      "unlink/strictFalse defaultaccepted",
+      "unlink/strictTrue refused/logicalrollback",
+      "restore_mtime_edit/strictFalse defaultaccepted",
+      "restore_mtime_edit/strictTrue refused/logicalrollback",
+      "leafsymlink/directory/missing refused; defaultsymlink preserved",
+      "FIFO refused withoutblockedopen",
+      "five strictboolflags refusedpreopen"
+    ],
+    "count": 17,
+    "limits": "Ordinary metadata/inode change detection only; not atomicfilesystem snapshot or protection against adversarial metadata restoration; iterator must be exhausted",
+    "log": ".local/transcript-consistency-root-final-oracle.log",
+    "log_sha256": "8e4de4734d88c3f99c4b18a20667c81c80186b71c57311c4af338cfe6084da7f",
+    "model_or_network_calls": 0,
+    "probe_sha256": "c107311ba4f7430b2180b7942265b6540907935e881e6c64ced55b81d2893acf",
+    "recorded_at_utc": "2026-10-14T21:41:19.153055+00:00"
+  },
+  "installed_validation": {
+    "added_runtime_files": [
+      "adapters/_transcript_source.py"
+    ],
+    "approved_source_manifest": ".local/package-source-approved-transcript-consistency.json",
+    "changed_runtime_files": [
+      "adapters/__init__.py",
+      "cli.py"
+    ],
+    "elapsed_seconds": 1.248,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "expected_contextkit_skips": 1,
+    "frozen_budget_and_html_checks_passed": true,
+    "other_runtime_files_unchanged": 33,
+    "package_files_verified": 36,
+    "receipt": ".local/transcript-consistency-installed-receipt.json",
+    "receipt_sha256": "e695733a56804342035dadf6126f360c665d6b142051d7a385c2c8ce60dbdb78",
+    "tests": 145,
+    "wheel_receipt": ".local/package-smoke-fts-v3-chatgpt-20261014T214119419628Z.json",
+    "wheel_sha256": "3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637"
+  },
+  "limitations": [
+    "Best-effort ordinary metadata and inode change detection; not an atomic filesystem snapshot or adversarial metadata-restoration defense",
+    "Natural complete iteration required; early generator close releases descriptor without EOF verification",
+    "Leaf symlinks refused only when opted in; ancestor symlink races not fully prevented",
+    "Late import failure rolls back logical rows and heads; new empty schema may remain",
+    "Stats and records yielded before EOF are provisional until full exhaustion succeeds"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T21:42:22.105492+00:00",
+  "root_review": "Entire final source, tests, docs and CI change inspected. Independent mutation and logical rollback oracle passed. Root found self-referential symlink error gap; bounded worker fixed it with genuine RED/GREEN. Root inspected fix and independently verified strict refusal and preserved default RuntimeError. No remaining substantive findings.",
+  "scope": "Opt-in complete-iteration source consistency guard for Claude/Codex transcript imports; default streaming behavior preserved",
+  "scoped_mypy": {
+    "chronology": "Before narrow correction; affected source mypy rerun after correction.",
+    "exit_code": 0,
+    "files": 47,
+    "local_log": ".local/transcript-consistency-scoped-mypy.log",
+    "log_sha256": "d65cae0083d77ec23a4483dfe03fa5cbfde2ebbad3bc4205bfa20ae5ff3edceb"
+  },
+  "source_base_commit": "ea28d979711aa6e235f897ce0ff199f765047bb7",
+  "workflow_evidence": {
+    "sequence": "Initial boolean/symlink/CLI RED/GREEN. EOF verification implemented before dedicated mutation rollback tests, so no per-behavior preimplementation RED claim. Root-directed self-loop correction has genuine RED/GREEN. Setup and static-check corrections recorded.",
+    "worker_log": ".local/transcript-consistency-worker-verification.log",
+    "worker_log_sha256": "a04e43af1d357c227f611fcf23b6cb75fdc3290b7aecf00c88135a6077343441"
+  },
+  "workflow_lint_exit_code": 0
+}

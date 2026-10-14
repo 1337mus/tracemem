@@ -25,3 +25,50 @@ Late consistency refusal must trigger existing EvidenceStore transactionrollback
 No schema migration,sourcecopy orpersistent privatecorpus. Root independently checks
 unchangeddefault outputs, explicitoptin mutation/refusal andlogicalrollback,then
 fullsuiteonce,new approvedsource/wheel,isolatedtests,PRIVATEassert andsigneddelivery.
+
+## Root-pinned implementation contract
+
+Fictional observation completed: append/truncate/inplaceedit/pathreplacement can be
+committed with unchangedpathlocator; no defaultconsistency promise currently exists.
+Evidence `.local/transcript-consistency-observation.py/json/log`; no realinputs.
+Implement only src/tracemem/adapters/_transcript_source.py (newhelper),
+src/tracemem/adapters/__init__.py,src/tracemem/cli.py,
+tests/test_transcript_consistency.py,docs/transcript-consistency.md and
+.local/transcript-consistency-worker-* logs. Rootowns all otherroot/oracle/state files.
+No staging/commits/push/fullsuite. Productiontarget<=150LOC,partitionbefore500.
+
+API read_transcript(...,require_quiescent:bool=False). Strict bool validation before
+opening/reading source; invalid=>TypeError('require_quiescent must be a boolean').
+Existing defaultbranch uses Path.open('rb') exactly and existing bound/decode/parse/
+record logic,stats,identities unchanged. Keep newdescriptor mechanics in helpermodule
+returning contextmanagedBinaryIO. Optin: rawleafpath lstatmust be regularnonsymlink;
+os.open O_RDONLY|O_NONBLOCK plus O_NOFOLLOW/O_CLOEXEC ifavailable; initialfstat regular
+and agreeswith initiallstat. Compare tuple(dev,ino,size,mtime_ns,ctime_ns,mode) initially
+and at natural fulliterationexhaustion for BOTH open descriptor and currentpathlstat.
+Pathmissing/replaced/symlink/specialfile/ordinarymetadatachange or OSError =>
+ValueError('transcript source is not a quiescent regular file') without paths/content.
+No readsourcechanges. Close alldescriptors on success/failure/earlyclose. Validate
+at natural successfulEOF only, not iteratorclose after partialconsumption; preserve
+primarydecode/linebound errors. Fullconsumption required for successfulfinalcheck.
+No promiseagainst metadatarestoration/atomic snapshots or allancestor symlinkraces.
+
+CLI ingest adds --require-quiescent actionstore_true. Keep existing resolvedsource
+for DBoutside-source guard; optin passes original args.input to reader so leafsymlink
+is not hiddenby _resolve_source_path.resolve. Defaultpasses resolvedsource asbefore.
+CLI alreadychecks issupportedfile; directories/FIFOrefused; missing/alias errors
+sanitizedexistingcontract. NewemptyDB schema mayremain onrefusal,asdocumented.
+No newreceipt/statsfield,storagechange or schema migration.
+
+Tests selfcontainedfictional realfiles/stores: stableClaude+Codex default==optin
+records/stats exact; strictinvalidbool preopen; all four mutators appliedwhileactual
+store consumesgenerator andrefusal rollsback existingheads/newrevisions/rows; default
+mutationsstillaccepted perexistingcontract; API+CLIleafsymlink refusedoptin while
+existingdefault stillworks; FIFO/directory/missing refusedwithoutblocking;
+O_NOFOLLOW/nonblocking flag and openrace regular->special refusal; source unchanged
+fornonmutatingreads; iteratorclose releasesfd,originalinvalidUTF8/oversize errors
+preserved; CLIexplicitflag path reachesreader and sanitizedfailures. Avoid bulk
+boilerplate or mockonlyproofs; use narrowstream/descriptor instrumentation onlywhere
+needed. Genuineincremental RED/GREEN perbehavior,not retrospectiveTDD claim. Root
+probe .local/transcript-consistency-root-oracle.py already authored; don'tedit/run.
+Focused new+existingadapter/bounds tests,Ruffcheck/format,strictsourcemypy. Release
+files/hashes/exactchronology. Rootowns independentreplay/fullsuite/wheel/delivery.

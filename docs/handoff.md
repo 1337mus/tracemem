@@ -245,3 +245,42 @@ No workers/GPUcalls active. Next boundedinvestigation follows
 `docs/transcript-consistency-brief.md`: fictional source mutation/replacement probes
 and root-pinned optional quiescence safeguard; defaultreader remainsstreaming. Independent humanannotation/GateA remains necessary before
 training/qualityclaims. Preserve frozenmodel testoutputs; do not tune or relaunch.
+
+## Quiescent transcript import checkpoint
+
+Optional `read_transcript(..., require_quiescent=True)` and CLI
+`ingest --require-quiescent` are implemented and root reviewed. They require a
+regular nonsymlink leaf, use nonblocking descriptor opening, and compare path and
+descriptor identity/size/mtime/ctime/mode before reading and after natural EOF.
+Ordinary mutation or replacement refuses the import; real EvidenceStore ingestion
+rolls back logical records and heads. Default streaming behavior is preserved.
+Early iterator close releases the descriptor without final verification. This is
+not an atomic snapshot or an adversarial metadata-restoration defense. See
+`docs/transcript-consistency.md` and `docs/validation-transcript-consistency.json`.
+
+Full local boundary passed 396 tests, zero skips, in 10.600s; Ruff 90 files,
+source mypy 31, scoped mypy 47 and actionlint passed. Root found a self-referential
+symlink error gap afterward. A genuine RED/GREEN correction added one test and
+preserved default RuntimeError behavior. Final focused checks passed 25 tests
+with one optional Context Kit skip, Ruff and affected source mypy. Full suite was
+not repeated for this narrow correction; hosted CI should run 397 tests.
+Root's final 17-check independent mutation/rollback oracle and an additional
+self-loop/default-mode assertion passed. EOF mutation tests followed implementation;
+do not claim per-behavior preimplementation TDD for the entire slice.
+
+Approved runtime manifest `.local/package-source-approved-transcript-consistency.json`
+binds 36 files: only adapter init and CLI changed, one source guard helper added,
+and 33 prior runtime files unchanged. Offline wheel SHA256
+`3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637`.
+145 copied installed tests passed with one expected Context Kit skip outside the
+checkout, with PYTHONPATH/HOME unset. Frozen budget report and byte-identical
+84-task review HTML reproduce. Wheel receipt
+`.local/package-smoke-fts-v3-chatgpt-20261014T214119419628Z.json`; installed receipt
+`.local/transcript-consistency-installed-receipt.json`.
+
+At this checkpoint signed source/private push/hosted CI are pending. No workers
+or GPU jobs were launched for validation; no model inference or private inputs.
+Context Kit remains clean. Continue delivery, then build the next bounded synthetic
+QA protocol slice: separate answer references from answering prompts and preserve
+matched retrieval/packing settings. Do not reuse the LongMemEval format fixture as
+QA truth: its deliberately mismatched answer and turn label test reference separation.

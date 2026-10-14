@@ -56,6 +56,7 @@ def build_parser() -> argparse.ArgumentParser:
     ingest.add_argument("--input", required=True, type=Path)
     ingest.add_argument("--db", required=True, type=Path)
     ingest.add_argument("--max-line-bytes", type=int, default=DEFAULT_MAX_TRANSCRIPT_LINE_BYTES)
+    ingest.add_argument("--require-quiescent", action="store_true")
 
     import_chatgpt = commands.add_parser(
         "import-chatgpt", help="create a fresh snapshot from an explicit ChatGPT export"
@@ -151,14 +152,16 @@ def _benchmark(args: argparse.Namespace) -> int:
 def _ingest(args: argparse.Namespace) -> int:
     source_path = _resolve_source_path(args.input)
     database_path = _resolve_ingest_database_path(source_path, args.db)
+    reader_path = args.input.expanduser() if args.require_quiescent else source_path
     stats = AdapterStats()
     with EvidenceStore(database_path) as store:
         inserted = store.ingest(
             read_transcript(
-                source_path,
+                reader_path,
                 args.provider,
                 stats=stats,
                 max_line_bytes=args.max_line_bytes,
+                require_quiescent=args.require_quiescent,
             )
         )
     _write_json(

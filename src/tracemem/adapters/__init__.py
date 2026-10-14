@@ -8,8 +8,10 @@ import os
 from collections.abc import Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import BinaryIO
 
 from ..schema import EvidenceRecord
+from ._transcript_source import QuiescentTranscriptSource
 
 DEFAULT_MAX_TRANSCRIPT_LINE_BYTES = 8 * 1024 * 1024
 MAX_TRANSCRIPT_LINE_BYTES = 64 * 1024 * 1024
@@ -38,8 +40,11 @@ def read_transcript(
     *,
     stats: AdapterStats | None = None,
     max_line_bytes: int = DEFAULT_MAX_TRANSCRIPT_LINE_BYTES,
+    require_quiescent: bool = False,
 ) -> Iterator[EvidenceRecord]:
     """Yield recognized transcript blocks without changing or normalizing their text."""
+    if not isinstance(require_quiescent, bool):
+        raise TypeError("require_quiescent must be a boolean")
     if isinstance(max_line_bytes, bool) or not isinstance(max_line_bytes, int):
         raise TypeError("max_line_bytes must be an integer")
     if not 1 <= max_line_bytes <= MAX_TRANSCRIPT_LINE_BYTES:
@@ -55,53 +60,65 @@ def read_transcript(
         locator = hashlib.sha256(
             str(transcript_path.resolve(strict=False)).encode("utf-8")
         ).hexdigest()
+    except RuntimeError:
+        if require_quiescent:
+            raise ValueError("transcript source is not a quiescent regular file") from None
+        raise
     except (OSError, UnicodeError):
         raise ValueError("cannot identify transcript source") from None
     default_session_id = locator
     session_id = default_session_id
 
-    try:
-        with transcript_path.open("rb") as transcript:
-            line_number = 0
-            while raw_line := transcript.readline(max_line_bytes + 1):
-                line_number += 1
-                if len(raw_line) > max_line_bytes:
-                    raise ValueError("transcript line exceeds the byte limit")
-                line = raw_line.decode("utf-8")
-                try:
-                    event = json.loads(line)
-                except json.JSONDecodeError:
-                    counters.malformed_records += 1
-                    continue
-                if not isinstance(event, dict):
-                    counters.malformed_records += 1
-                    continue
+    def records_from(transcript: BinaryIO) -> Iterator[EvidenceRecord]:
+        nonlocal session_id
+        line_number = 0
+        while raw_line := transcript.readline(max_line_bytes + 1):
+            line_number += 1
+            if len(raw_line) > max_line_bytes:
+                raise ValueError("transcript line exceeds the byte limit")
+            line = raw_line.decode("utf-8")
+            try:
+                event = json.loads(line)
+            except json.JSONDecodeError:
+                counters.malformed_records += 1
+                continue
+            if not isinstance(event, dict):
+                counters.malformed_records += 1
+                continue
 
-                if provider == "claude":
-                    records = _claude_records(
-                        event,
-                        session_id=default_session_id,
-                        locator=locator,
-                        line_number=line_number,
-                        stats=counters,
-                    )
-                else:
-                    payload = event.get("payload")
-                    payload_session = (
-                        payload.get("session_id") if isinstance(payload, dict) else None
-                    )
-                    session_id = _native_string(
-                        event.get("session_id"), payload_session, session_id
-                    )
-                    records, session_id = _codex_records(
-                        event,
-                        session_id=session_id,
-                        locator=locator,
-                        line_number=line_number,
-                        stats=counters,
-                    )
-                yield from records
+            if provider == "claude":
+                records = _claude_records(
+                    event,
+                    session_id=default_session_id,
+                    locator=locator,
+                    line_number=line_number,
+                    stats=counters,
+                )
+            else:
+                payload = event.get("payload")
+                payload_session = payload.get("session_id") if isinstance(payload, dict) else None
+                session_id = _native_string(event.get("session_id"), payload_session, session_id)
+                records, session_id = _codex_records(
+                    event,
+                    session_id=session_id,
+                    locator=locator,
+                    line_number=line_number,
+                    stats=counters,
+                )
+            yield from records
+
+    try:
+        if require_quiescent:
+            guarded_source = QuiescentTranscriptSource(transcript_path)
+            with guarded_source as transcript:
+                yield from records_from(transcript)
+                guarded_source.verify_unchanged()
+        else:
+            with transcript_path.open("rb") as transcript:
+                yield from records_from(transcript)
     except OSError:
+        if require_quiescent:
+            raise ValueError("transcript source is not a quiescent regular file") from None
         raise ValueError("cannot read transcript source") from None
     except UnicodeDecodeError:
         raise ValueError("transcript source is not valid UTF-8") from None
