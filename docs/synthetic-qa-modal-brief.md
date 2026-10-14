@@ -64,3 +64,33 @@ payload refused before importing heavy inference libraries (arrange validation f
 new-output safety and no accidental second call. Focused unittest/Ruff/strict mypy
 only. Release exact files/hashes/raw RED/GREEN log; root independently reviews,
 validates and decides whether to make one already-authorized bounded synthetic call.
+
+## Root-pinned payload and approval contract
+
+Root regenerated and independently compared the fixed request bundle. Canonical
+remote payload is saved read-only for inspection at
+`.local/synthetic-qa-modal-payload-reviewed.json` (50928 bytes,72items), SHA256
+`80e058c629de8f8a06ca4caa8f1093a8308a299c976b018ab7e8c5c62493b2ac`.
+Prompt SHA256 `f3eb75ac816fa8ddfa06b911002dc9f8d67eff987024b7370b824c66b62bec34`.
+Read it and regenerate that exact object in code from the fixed preparer. Do not
+edit this root-owned file or upload it. Canonical format is the preparer's sorted,
+compact ensure_ascii=False/allow_nan=False UTF8 convention. Payload keys/values
+must match these reviewed bytes exactly. Pin expected payload hash in both local
+builder and source-free remote body; a caller-supplied self-consistent hash is
+insufficient authorization. Pin runner bytes through --approve-runner-sha256.
+Remote request wrapper may contain only payload, payload_sha256 and runner_sha256.
+Runner hash is provenance for the inspected source, not a remote attestation.
+
+Keep CLI --launch, --show-payload, --approve-payload-sha256,
+--approve-runner-sha256 and --output NEWPATH. Without --launch it must never build
+an app, inspect account credentials, import inference libraries or contact network.
+Require fresh output and exact approval flags before workspace check or app build.
+Root owns live active-job checking and the exclusive launch-intent receipt in
+.local/active-cycle.json; worker must not implement an unbounded scheduler or claim
+SDK max_containers prevents other apps from running. Remote validation must precede
+Torch/Transformers imports, so malformed-payload tests need no heavy local modules.
+
+TDD is per behavior: one behavior test, save raw failing output, minimal fix, save
+passing output, then next behavior. Do not implement the entire runner after the
+first missing-callable RED. No blanket raw-output reconstruction afterward. Existing
+prior workers' chronology exceptions are historical facts, not permission to repeat.
