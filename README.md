@@ -87,6 +87,12 @@ make check
 - [Agent support review](docs/scenarios-reviewed-support.json): separate model/split/
   reviewer counts, explicit exclusions and [root adjudication](docs/scenarios-root-adjudication.json).
   [Fictional review artifacts](examples/synthetic/reviews/README.md) reproduce the report.
+- [Offline review page](docs/offline-review.md): inspect blind candidates beside
+  their sources, save drafts, and export complete responses for validation.
+  It does not create independent human labels or satisfy Gate A.
+- [Fixed context budgets](docs/context-budget.md): measured evidence retention
+  after packing identical rankings under UTF-8 byte ceilings. This is a retrieval
+  diagnostic; answer accuracy and tokenizer counts are not measured.
 - [Local claim ledger](docs/ledger-brief.md): implemented early Phase 4 engineering and
   its evidence-retention and current-fact boundaries.
 - [Exact citation retrieval](docs/citation-resolution-brief.md): resolve a cited

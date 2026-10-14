@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14, 11:47 Pacific. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 257-test review/budget checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -58,11 +58,26 @@ commands or update the original memory corpus. Durable context stays here.
   root, fixing a RUNNER_TEMP mismatch found in review. actionlint/shell checks
   passed; first hosted run passed on the initial commit. See `docs/ci.md`.
 - Fresh offline wheel passed all9commands and34installed ChatGPT tests outside
-  checkout.29package files match approved source bytes; schema3/import paths,
+  checkout.31package files match approved source bytes; schema3/import paths,
   demo hashes and stable benchmark fields match. Source stayed unchanged.
-  WheelSHA256 d8e66f6a8554138100a639374501e55c9dc33bdbb5e26666c86defddbe7bee0c.
-  Receipt `.local/package-smoke-fts-v3-chatgpt-20261014T183745147324Z.json`.
-  Historical storage-only465d58... wheel remains preserved. No new model calls.
+  WheelSHA256 63325e2fa0a4e32079938fdd07d8ae9c8364593256013ee4d1a20f393b628342.
+  Receipt `.local/package-smoke-fts-v3-chatgpt-20261014T190150652005Z.json`.
+  Extra installed checks reproduce the full budget report and byte-identical
+  84-task final HTML; `.local/installed-review-budget-new-apis.json`.
+  An initial probe caught a stale preview; failure log preserved, final probe passed.
+- Fixed UTF8-byte budget diagnostic completed:14answerable/3unknown queries,
+  three retrieval modes,six ceilings. Root checked306old-packer combinations and
+  resolved728exact fictional citations. At2048bytes authored evidence sufficiency
+  is BM25=14/14,hash=10/14,hybrid=13/14. Not QA accuracy or tokenizer counts.
+  All unknowns receive nonempty packs at512bytes+. See `docs/context-budget.md`.
+- Offline blind-review HTML completed: source/candidate display, Unicode citation
+  checks, explicit drafts/restore and complete exports. Nine focused tests include
+  Node VM DOM harness and Python importer roundtrip. Root reproduced/fixed citation
+  end truncation, whitespace parity and literal NUL/CSP hash faults. Checked all
+  1,114,112Unicode code points. Browser rendering unverified: CUA rejected file URL;
+  no workaround attempted. See `docs/offline-review.md`. Final fictional page
+  `.local/scenario-human-review-final-20261014.html`,SHA256
+  07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e.
 - Pinned benchmark-contract source audit complete and root-reviewed.13 public
   README/license/evaluator/tree records, no benchmark data/upstream execution.
   `docs/benchmark-contracts.md/json`; exact hashes verified. Root added precise
@@ -104,21 +119,23 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:242tests,zero skips,2.808seconds with actual Context Kit and
-Modal SDK. Ruff63files,source mypy24,scoped34; workflow actionlint passed.
-`docs/validation.json` now records this checkpoint and all source/test/artifact
-hashes. Historical136test receipt stays in `docs/validation-support-ledger.json`.
-Root independently checked package receipt/hashes and ran fictional CLI import→
-BM25→exact citation; excluded sibling query returned zero hits.
+Current full suite:257tests,zero skips,3.463seconds including actual Context Kit
+integration and Node VM. Ruff69files,source mypy26,scoped38. Exact commands/exit
+codes `.local/final-review-budget-commands.json`; `docs/validation.json` records
+source/test hashes and evidence. Historical242test checkpoint preserved in
+`docs/validation-github-bootstrap.json`. All31package hashes rechecked on resume.
+Context Kit still clean at the pinned commit. No new GPU/model calls this cycle.
 
-1. Initial private push and hosted CI are complete; root verified remote HEAD,
-   private visibility and successful run38617328181 live on2026-10-14.
-   Hosted242tests,one expected Context Kit skip;34installed ChatGPT tests passed.
-2. Build the offline review page from `docs/offline-review-brief.md`; keep answer
-   keys and model/split origins out, preserve originals, and validate exported
-   complete responses through the existing importer. Worker owns only new files.
-3. Root-review all code, browser-smoke draft/resume/export, run final checks and
-   signed private push; continue useful work. No PR/Linear required for bootstrap.
+1. Personal private repository verified live again on2026-10-14. Remote HEAD
+   747b7554544285752616853f45da1c1bc0fa16c7 before this push. New budget commit
+   9a30b42 is committed locally; reviewed offline slice and records are ready for
+   signed commit/private push and hosted CI. Recheck delivery rather than assume.
+2. Bounded Luna worker `/root/review_uncertainty` now owns ONLY the new experiment,
+   test and doc paths in `docs/review-uncertainty-brief.md`; root must inspect the
+   complete diff and numerical behavior. No other active worker. Scenario-level
+   bootstrap keeps correlated claim origins together; conditional descriptive
+   intervals cannot create independent labels or establish precision/calibration.
+3. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained
