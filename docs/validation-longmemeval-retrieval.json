@@ -1,0 +1,99 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "d9a18985e707ddfbe1721e39aaf7232c53f846551c4cdff70d42a09163e5e331",
+    "docs/longmemeval-retrieval.md": "e21ea807983bfc8636abe7d5780542a4ce5308c4acef611eba50b879bac5e0a4",
+    "examples/synthetic/longmemeval-format.json": "0b768756829e5ad57a7c0ec93d587768b8f4f070803337e8e1e270b73e1172c4",
+    "experiments/evaluate_longmemeval_retrieval.py": "ead1c7b056e873eca1586555577b7200e81e7b460ffee37ce5a38e443fad19c0",
+    "tests/test_longmemeval_retrieval.py": "8dc45b1241fe51a00034408906c955c6ee2627cb4d25e941d7197951f0920186"
+  },
+  "commands": {
+    "diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-diff_check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full_suite": {
+      "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-full_suite.log",
+      "log_sha256": "d75035157a99701fd89c1af9ff6f2048cc8be6916f4891dc5dfe97cb61a6438c"
+    },
+    "ruff_check": {
+      "command": ".venv/bin/ruff check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-ruff_check.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "ruff_format": {
+      "command": ".venv/bin/ruff format --check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-ruff_format.log",
+      "log_sha256": "363910bec9208f1bd80af852c16d0262b268cf6f523e2c5e0f1ccef8ecd55e9d"
+    },
+    "scoped_mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-scoped_mypy.log",
+      "log_sha256": "02a88e044e14b966c27f6c162bdcba751601b93ba0a212fa2151bd889d9688ef"
+    },
+    "source_mypy": {
+      "command": ".venv/bin/mypy",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-source_mypy.log",
+      "log_sha256": "843649a0230c7553c8b57e66c604afb1635f102a7f73c9dd914713d9f01fff0f"
+    },
+    "workflow_lint": {
+      "command": "actionlint .github/workflows/ci.yml",
+      "exit_code": 0,
+      "local_log": ".local/final-longmemeval-retrieval-workflow_lint.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "delivery_state": "Reviewed and validated; commit/push/hosted CI pending",
+  "diagnostic": {
+    "cli_probe": ".local/longmemeval-retrieval-cli-receipt.json",
+    "contract": "docs/longmemeval-retrieval.md",
+    "embedding": "weak signed-token hash baseline",
+    "excluded": [
+      "abstention",
+      "missing_turn_labels"
+    ],
+    "focused_tests": 16,
+    "independently_recomputed_aggregates": 9,
+    "independently_recomputed_cells": 45,
+    "installed_receipt": ".local/installed-longmemeval-retrieval-receipt.json",
+    "installed_tests": 70,
+    "question_corpus_isolated": true,
+    "real_benchmark_or_qa_measured": false,
+    "resolved_report_citations": 42,
+    "root_probe": ".local/longmemeval-retrieval-root-probe.json",
+    "runtime_package_unchanged": true,
+    "source_input_cap_bytes": 67108864,
+    "zero_denominator": null
+  },
+  "full_suite": {
+    "elapsed_seconds": 5.215,
+    "skipped": 0,
+    "tests": 313
+  },
+  "gpu_or_model_calls": 0,
+  "installed_tests": {
+    "count": 70,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "exit_code": 0,
+    "experiment_from_isolated_copy": true,
+    "package_members": 32,
+    "runtime_package_changed": false,
+    "wheel_sha256": "3097bb478faaf352cd33921682ad636a0a044518f0792a7d7a7b17c8fe084f98"
+  },
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T19:57:02.684758+00:00",
+  "root_review": "Complete experiment and tests reviewed; isolation positive control, exact multi-label aggregates, Unicode report citations and explicit RRF settings verified; separate five-question probe recomputed45cells/9aggregates and resolved42citations. CLI counts independently derived from fixture.",
+  "source_base_commit": "6ca0782baac9b633cf06579f184da06c3e8a6d2c",
+  "visibility_verified": "PRIVATE"
+}

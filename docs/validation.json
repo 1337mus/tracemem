@@ -1,9 +1,10 @@
 {
   "artifact_sha256": {
-    ".github/workflows/ci.yml": "7568cb03069cdb4e21119cd027cb7221cdf46dfd09fab17b791adfd71812a2c9",
+    ".github/workflows/ci.yml": "d9a18985e707ddfbe1721e39aaf7232c53f846551c4cdff70d42a09163e5e331",
     "docs/baseline-context-budgets.json": "9e14de94e09893f400e17226fa2cebceeec377c1493f4f263fa325d49a055c01",
     "docs/benchmark-contracts.json": "081cf7fb1da15d8a5c8936ea0ef9d8db05b48065051a93d0a3840a12c2f5c5ac",
     "docs/graphiti-source-audit.json": "c3883e741c2bf8f9c309f5df68f748127bc9d7f45257beb13fa58c5d2aadab16",
+    "docs/longmemeval-retrieval.md": "e21ea807983bfc8636abe7d5780542a4ce5308c4acef611eba50b879bac5e0a4",
     "docs/longmemeval-rights.json": "b58b9e99495db6dced609fce95373a31268a438a571a4c1729a2c85f1dff1394",
     "docs/scenarios-review-uncertainty.json": "dfb3793136fa3d2ddc8b497ba6b7d6bffc1d3095b5e42d943bd23ca3430f3587",
     "docs/scenarios-reviewed-support.json": "8c3bd2e8596ce2628c59f5ba4536facf83d78626a131452bda188fbd5f90719f",
@@ -12,13 +13,15 @@
     "examples/synthetic/qwen3-4b-scenarios-remote.json": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
     "experiments/bootstrap_scenario_reviews.py": "edfc9e7edbd07b6654471524ff32da034bfe02bf57afd957d8a694def6e83cfe",
     "experiments/evaluate_context_budgets.py": "f1fbec895b67193dee1e21d534ee84447e5012c8a15573b810b8962345da38d0",
+    "experiments/evaluate_longmemeval_retrieval.py": "ead1c7b056e873eca1586555577b7200e81e7b460ffee37ce5a38e443fad19c0",
     "experiments/export_review_html.py": "a5ae05207f6d347319bddf2069fa3198cedf35be0c1f902c04e477476d8680c6",
     "experiments/smoke_installed.py": "576a399a4e9dba14f6615a1641b40a2e594b1a053511298f42d4090edcba1269",
     "src/tracemem/adapters/longmemeval.py": "e56726adea5ea28d798a05ec66d68b0050bf095c4c0da003b553619d278e4f34",
     "src/tracemem/data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
     "src/tracemem/review_html.py": "e697edb9e5ec68943599b856998af9f0a17547bebde5fa616ce8e4d2645e1cd4",
     "tests/test_installed_new_apis.py": "e13d06f2301b40db4c7172aab1531381e0e6d88e1e7a45ab923fdda0af6ed5ed",
-    "tests/test_longmemeval_adapter.py": "fb9e88a0188ae7be166795b16e834b19c8fe12d1bde1e13110405727daa4386b"
+    "tests/test_longmemeval_adapter.py": "fb9e88a0188ae7be166795b16e834b19c8fe12d1bde1e13110405727daa4386b",
+    "tests/test_longmemeval_retrieval.py": "8dc45b1241fe51a00034408906c955c6ee2627cb4d25e941d7197951f0920186"
   },
   "candidate_ledger": {
     "automatic_accept": false,
@@ -39,43 +42,43 @@
     "diff_check": {
       "command": "git diff --check",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-diff_check.log",
+      "local_log": ".local/final-longmemeval-retrieval-diff_check.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "full_suite": {
       "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-full_suite.log",
-      "log_sha256": "570e9b706a9eeb61d03a772ee545d8712e804918943e3cc02cefbf1311b5947d"
+      "local_log": ".local/final-longmemeval-retrieval-full_suite.log",
+      "log_sha256": "d75035157a99701fd89c1af9ff6f2048cc8be6916f4891dc5dfe97cb61a6438c"
     },
     "ruff_check": {
       "command": ".venv/bin/ruff check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-ruff_check.log",
+      "local_log": ".local/final-longmemeval-retrieval-ruff_check.log",
       "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
     },
     "ruff_format": {
       "command": ".venv/bin/ruff format --check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-ruff_format.log",
-      "log_sha256": "7586f3a0d458f21b4bd49fa3262806c13262c3000e0b29a6e9ec969c0419b2ab"
+      "local_log": ".local/final-longmemeval-retrieval-ruff_format.log",
+      "log_sha256": "363910bec9208f1bd80af852c16d0262b268cf6f523e2c5e0f1ccef8ecd55e9d"
     },
     "scoped_mypy": {
-      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py",
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-scoped_mypy.log",
-      "log_sha256": "ecc16c0564b42e826048bd3cc3026ed6f52b5dc94d3419716c4a1f1ab458ac8d"
+      "local_log": ".local/final-longmemeval-retrieval-scoped_mypy.log",
+      "log_sha256": "02a88e044e14b966c27f6c162bdcba751601b93ba0a212fa2151bd889d9688ef"
     },
     "source_mypy": {
       "command": ".venv/bin/mypy",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-source_mypy.log",
+      "local_log": ".local/final-longmemeval-retrieval-source_mypy.log",
       "log_sha256": "843649a0230c7553c8b57e66c604afb1635f102a7f73c9dd914713d9f01fff0f"
     },
     "workflow_lint": {
       "command": "actionlint .github/workflows/ci.yml",
       "exit_code": 0,
-      "local_log": ".local/final-longmemeval-workflow_lint.log",
+      "local_log": ".local/final-longmemeval-retrieval-workflow_lint.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   },
@@ -121,23 +124,23 @@
     "train_cases": 0
   },
   "full_suite": {
-    "elapsed_seconds": 4.926,
+    "elapsed_seconds": 5.215,
     "skipped": 0,
-    "tests": 297
+    "tests": 313
   },
   "gate_a": {
     "met": false,
     "reason": "No independent human labels or sufficiently established training/evaluation dataset; provisional targets and lexical split audit cannot establish readiness."
   },
   "github": {
-    "delivery_at_this_checkpoint": "Local297test LongMemEval slice reviewed and verified; commit/push/hostedCI pending. Prior30765f2 delivery remains recorded below.",
+    "delivery_at_this_checkpoint": "313test retrieval diagnostic validated locally; new slice commit/push/hosted CI pending. Prior adapter commit6ca0782 hostedCI passed.",
     "delivery_receipt": "docs/github-validation.json",
-    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38623661647",
+    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38625667741",
     "public_release": false,
     "repository": "1337mus/tracemem",
-    "source_commit": "30765f20aa9ed438ebc09d688bef74837321154d",
+    "source_commit": "6ca0782baac9b633cf06579f184da06c3e8a6d2c",
     "visibility_verified": "PRIVATE",
-    "visibility_verified_at_utc": "2026-10-14T19:05:33.228181+00:00"
+    "visibility_verified_at_utc": "2026-10-14T19:57:02.684758+00:00"
   },
   "gpu_jobs_started": 6,
   "gpu_state_evidence": {
@@ -161,11 +164,13 @@
     "docs/validation-github-bootstrap.json",
     "docs/validation-review-budget.json",
     "docs/validation-review-uncertainty.json",
-    "docs/validation-installed-apis.json"
+    "docs/validation-installed-apis.json",
+    "docs/validation-longmemeval.json"
   ],
   "installed_new_apis": {
     "all_existing_checks_preserved": true,
     "all_loaded_modules": 15,
+    "historical_receipt_runtime_package_changed": false,
     "installed_package_members_match_approved_source": 31,
     "isolated_smoke_exit_code": 0,
     "latest_wheel_recheck": {
@@ -175,7 +180,6 @@
     },
     "network_or_gpu_calls": 0,
     "new_api_hashes_and_stable_fields_match": true,
-    "runtime_package_changed": false,
     "validation": "docs/installed-new-apis-validation.json"
   },
   "isolated_wheel_smoke": {
@@ -193,6 +197,12 @@
       "PYTHONHOME"
     ],
     "installed_chatgpt_tests": 34,
+    "latest_retrieval_layout": {
+      "count": 70,
+      "exit_code": 0,
+      "receipt": ".local/installed-longmemeval-retrieval-receipt.json",
+      "runtime_package_unchanged": true
+    },
     "local_receipt": ".local/package-smoke-fts-v3-chatgpt-20261014T193808263881Z.json",
     "network_or_model_calls": 0,
     "new_module_checks": "Existing expanded smoke reproduces complete stable budget report and byte-identical84taskHTML; separate installed adapter tests verify new module.",
@@ -228,6 +238,27 @@
     },
     "upstream_metrics_or_qa_evaluated": false
   },
+  "longmemeval_retrieval": {
+    "cli_probe": ".local/longmemeval-retrieval-cli-receipt.json",
+    "contract": "docs/longmemeval-retrieval.md",
+    "embedding": "weak signed-token hash baseline",
+    "excluded": [
+      "abstention",
+      "missing_turn_labels"
+    ],
+    "focused_tests": 16,
+    "independently_recomputed_aggregates": 9,
+    "independently_recomputed_cells": 45,
+    "installed_receipt": ".local/installed-longmemeval-retrieval-receipt.json",
+    "installed_tests": 70,
+    "question_corpus_isolated": true,
+    "real_benchmark_or_qa_measured": false,
+    "resolved_report_citations": 42,
+    "root_probe": ".local/longmemeval-retrieval-root-probe.json",
+    "runtime_package_unchanged": true,
+    "source_input_cap_bytes": 67108864,
+    "zero_denominator": null
+  },
   "offline_review": {
     "browser_rendering": "unverified; file URL navigation rejected; no workaround attempted",
     "final_html_sha256": "07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e",
@@ -238,7 +269,7 @@
   },
   "original_data_writes_performed": false,
   "private_data_uploaded": false,
-  "recorded_at_utc": "2026-10-14T19:39:13.854682+00:00",
+  "recorded_at_utc": "2026-10-14T19:57:02.684758+00:00",
   "review_uncertainty": {
     "human_reviewers": 0,
     "interpretation": "Descriptive conditional resampling; no acceptance precision, calibration, model winner or Gate A claim",
@@ -252,11 +283,11 @@
     "scenarios_each_split": 24,
     "seed": 1729
   },
-  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels. New scenario-bootstrap source/tests reviewed; independent case-origin replay checked all24metrics with statistics.quantiles and explicit zero denominators. Three Graphiti source hashes/Git blob IDs reconciled and exact cited lines inspected. Expanded installed-smoke source and10tests reviewed; fresh offline installed wheel reproduced frozen budget/84taskHTML checks, all15loadedmodulepaths are installed and31packagebytes match approved source. Complete LongMemEval adapter, all20tests, fictional fixture and docs reviewed. Root independently checked48identity combinations,36sanitized schema errors, late-invalid-item rejection and a combined-store contamination positive control. Public metadata cache hashes, pinned dataset commit and README Git blob verified; no benchmark bodies fetched.",
-  "ruff_formatted_files": 74,
+  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels. New scenario-bootstrap source/tests reviewed; independent case-origin replay checked all24metrics with statistics.quantiles and explicit zero denominators. Three Graphiti source hashes/Git blob IDs reconciled and exact cited lines inspected. Expanded installed-smoke source and10tests reviewed; fresh offline installed wheel reproduced frozen budget/84taskHTML checks, all15loadedmodulepaths are installed and31packagebytes match approved source. Complete LongMemEval adapter, all20tests, fictional fixture and docs reviewed. Root independently checked48identity combinations,36sanitized schema errors, late-invalid-item rejection and a combined-store contamination positive control. Public metadata cache hashes, pinned dataset commit and README Git blob verified; no benchmark bodies fetched. Complete experiment and tests reviewed; isolation positive control, exact multi-label aggregates, Unicode report citations and explicit RRF settings verified; separate five-question probe recomputed45cells/9aggregates and resolved42citations. CLI counts independently derived from fixture.",
+  "ruff_formatted_files": 76,
   "schema2_migration": false,
-  "scope": "Local Phase0/1 prototype; synthetic extraction/retrieval/NLI diagnostics; early candidate ledger; fixture-based ChatGPT reader/snapshot CLI; private GitHub bootstrap; fixture-only LongMemEval format adapter and public dataset metadata audit",
-  "scoped_mypy_files": 40,
+  "scope": "Local Phase0/1 prototype; synthetic extraction/retrieval/NLI diagnostics; early candidate ledger; fixture-based ChatGPT reader/snapshot CLI; private GitHub bootstrap; fixture-only LongMemEval format adapter and public dataset metadata audit; local per-question turn-retrieval protocol diagnostic",
+  "scoped_mypy_files": 41,
   "scoped_mypy_limitation": "GPU launch modules imported silently, not strict-checked targets. Optional ML libraries absent.",
   "source_mypy_files": 27,
   "source_sha256": {
@@ -310,6 +341,7 @@
     "tests/test_installed_new_apis.py": "e13d06f2301b40db4c7172aab1531381e0e6d88e1e7a45ab923fdda0af6ed5ed",
     "tests/test_ledger.py": "877b300aaa2562f0b1f579a8a0228accdf162229a703fff1429820cb09de6420",
     "tests/test_longmemeval_adapter.py": "fb9e88a0188ae7be166795b16e834b19c8fe12d1bde1e13110405727daa4386b",
+    "tests/test_longmemeval_retrieval.py": "8dc45b1241fe51a00034408906c955c6ee2627cb4d25e941d7197951f0920186",
     "tests/test_modal_baseline.py": "f11cabb3a63e412f2f507b6078e2920032e9466add738e5f5240bc7057c3eee3",
     "tests/test_modal_scenarios.py": "c379eaa2d16b3967fed7f9b4a53f93517a11b06ab69cfbaa98e9c55cfe7e7c9d",
     "tests/test_modal_support.py": "4e1679292542e44df53483f1bfd2e95a19911d967afe75652df3163c0879139e",

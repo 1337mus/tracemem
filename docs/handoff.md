@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 297-test LongMemEval adapter checkpoint. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 313-test turn-retrieval diagnostic checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -119,11 +119,12 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:297tests,zero skips,4.926seconds including actual Context Kit
-integration and Node VM. Ruff74files,source mypy27,scoped40. Exact commands/exit
-codes `.local/final-longmemeval-commands.json`; `docs/validation.json` records
+Current full suite:313tests,zero skips,5.215seconds including actual Context Kit
+integration and Node VM. Ruff76files,source mypy27,scoped41. Exact commands/exit
+codes `.local/final-longmemeval-retrieval-commands.json`; `docs/validation.json` records
 source/test hashes. The277test checkpoint is preserved in
-`docs/validation-installed-apis.json`. The only new runtime file is the adapter;
+`docs/validation-installed-apis.json`;297test adapter checkpoint in
+`docs/validation-longmemeval.json`. The only new runtime file is the adapter;
 all31earlier packagefiles remain byte-identical.
 
 Expanded installed smoke completed and root-reviewed. A fresh offline virtualenv
@@ -177,9 +178,21 @@ No upstream code execution or benchmark conversations fetched. No new GPU calls.
    Adapter imports from site-packages outside checkout with PYTHONPATH/HOMEunset.
    `.local/installed-longmemeval-receipt.json`; `docs/validation-longmemeval.json`.
    CI now copies all3testmodules andfictionalfixture outside checkout.
-   Signedcommit/privatepush/hostedCI pending at this local checkpoint.
-   Both workers released ownership;check `.local/active-cycle.json` before work.
-5. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
+   Signedcommit6ca0782baac9b633cf06579f184da06c3e8a6d2c pushed toprivate main.
+   HostedCI38625667741 passed297tests(one expectedskip),54installedtests and
+   frozen budget/84taskHTML replay. Local signaturevalid;GitHubbad_email unchanged.
+   Adapter and metadata workers released ownership;check `.local/active-cycle.json`.
+   Retrieval worker also released ownership. Root reviewed full experiment/tests
+   and independently recomputed45cells/9aggregates and resolved42report citations.
+5. Turn-retrieval diagnostic completed:16newtests; one temporary corpus per question,
+   explicit abstention/missing-label exclusions,macro recall/all-found fractions,
+   weak signed-hash/BM25/hybrid modes,explicitRRF60. CLI bounded read-only input,
+   exclusive0600output; real reports stay private. Fictional protocol only,no QA.
+   All70copiedtests pass outside checkout against unchanged approved32filewheel;
+   copied experiment resolves separately while runtime imports site-packages.
+   See `docs/validation-longmemeval-retrieval.json`/`docs/longmemeval-retrieval.md`.
+   Reviewed313test slice commit/push/hostedCI pending; remote still6ca0782.
+6. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained

@@ -75,7 +75,22 @@
     "tests": 297
   },
   "gpu_or_model_calls": 0,
-  "hosted_ci": "pending push",
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "6ca0782baac9b633cf06579f184da06c3e8a6d2c",
+    "hosted_elapsed_seconds": 13.847,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 297,
+    "installed_chatgpt_tests_passed": 34,
+    "installed_longmemeval_tests_passed": 20,
+    "installed_new_api_checks_passed": true,
+    "installed_tests_passed": 54,
+    "local_log_sha256": "144b44e13d1eefb6299b76fbe54b8137ff16eff46f5193fdcd98949d30aa004d",
+    "node_vm_tests_passed": true,
+    "run_id": 38625667741,
+    "skip_reason": "Optional local Context Kit checkout absent on hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38625667741"
+  },
   "installed_wheel": {
     "additional_installed_tests": {
       "adapter_import_path_is_site_packages": true,
@@ -106,6 +121,7 @@
   "private_data_uploaded": false,
   "recorded_at_utc": "2026-10-14T19:39:13.854682+00:00",
   "root_review": "Complete new adapter, tests and authored fixture read; independent boundary and identity probes passed",
+  "source_commit": "6ca0782baac9b633cf06579f184da06c3e8a6d2c",
   "source_sha256": {
     "__init__.py": "ceabe786c2dfdb38d9132b38a93b5543c33e4d5dba3076475a86fea594d913db",
     "__main__.py": "f8671118b692a0ba78ce99f479fcbedf2cdd2c74043bb2a5e00073a50f190b46",
@@ -139,5 +155,6 @@
     "snapshots.py": "a18b25b699d6d1b076b29a0acfe63091013f0948c14cabe4e0999a72dcb1a669",
     "storage.py": "cf7d94d27044b81b47853bf262787b74b5e1a32b6fe2086a6d61cac3188f3d37",
     "support.py": "e00cd64d842fe4faf1d7ac0db0a0fccbc67c94f43497f3aa4665336dcaf4d6a4"
-  }
+  },
+  "visibility_verified": "PRIVATE"
 }

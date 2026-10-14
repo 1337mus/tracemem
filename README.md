@@ -79,6 +79,9 @@ make check
   separate question stores, reference-label separation, and historical Unicode citations.
   The [dataset metadata audit](docs/longmemeval-rights.md) records the MIT card declaration
   and release sizes; full S/M files exceed the current parser's 64 MiB cap.
+- [Turn-retrieval diagnostic](docs/longmemeval-retrieval.md): a local CLI with per-question
+  stores, explicit missing-label exclusions, and separate BM25/hash/hybrid recall cells.
+  Its fictional protocol checks do not measure benchmark or QA performance.
 - [Model candidates](docs/model-candidates.md): pinned extraction/retrieval/verifier
   diagnostics and the completed Qwen/Phi scenario comparison. No model is selected.
 - [Multi-session comparison](docs/experiments-scenarios.md): frozen explicit-v2
