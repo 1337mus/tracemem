@@ -271,6 +271,18 @@ class SyntheticQARemoteValidationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 runner._remote_compute({"payload": {}, "payload_sha256": "0" * 64})
 
+    def test_remote_image_matches_local_python_minor(self) -> None:
+        runner = importlib.import_module("experiments.modal_synthetic_qa")
+        image = MagicMock()
+        fake_modal = SimpleNamespace(
+            App=MagicMock(),
+            Image=SimpleNamespace(debian_slim=MagicMock(return_value=image)),
+        )
+        with patch.dict("sys.modules", {"modal": fake_modal}):
+            runner._build_modal_function()
+
+        fake_modal.Image.debian_slim.assert_called_once_with(python_version="3.12")
+
     def test_sdk_serializes_the_registered_remote_body_by_value(self) -> None:
         try:
             from modal._utils.function_utils import FunctionSourceInfo
@@ -347,6 +359,30 @@ class SyntheticQARemoteValidationTests(unittest.TestCase):
 
 
 class SyntheticQALaunchTests(unittest.TestCase):
+    def test_unsupported_local_python_refuses_before_launch_side_effects(self) -> None:
+        runner = importlib.import_module("experiments.modal_synthetic_qa")
+        payload = runner.build_payload()
+        payload_hash = runner.payload_sha256(payload)
+        runner_hash = _runner_file_hash(runner)
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "receipt.json"
+            with (
+                patch.object(runner.sys, "version_info", SimpleNamespace(major=3, minor=11)),
+                patch.object(runner, "verify_personal_workspace") as workspace_check,
+                patch.object(runner, "_build_modal_function") as build_function,
+                self.assertRaisesRegex(RuntimeError, "local Python 3.12"),
+            ):
+                runner.run_once(
+                    payload,
+                    approved_payload_sha256=payload_hash,
+                    approved_runner_sha256=runner_hash,
+                    output_path=output,
+                )
+
+            self.assertFalse(output.exists())
+        workspace_check.assert_not_called()
+        build_function.assert_not_called()
+
     def test_mutated_payload_is_rejected_even_with_its_matching_hash(self) -> None:
         runner = importlib.import_module("experiments.modal_synthetic_qa")
         payload = runner.build_payload()

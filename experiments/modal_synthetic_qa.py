@@ -356,6 +356,15 @@ def verify_personal_workspace() -> None:
     verify()
 
 
+def _require_supported_launch_python() -> None:
+    version = sys.version_info
+    if version.major != 3 or version.minor != 12:
+        raise RuntimeError(
+            "approved Modal launches require local Python 3.12 to match the remote image "
+            f"(found {version.major}.{version.minor})"
+        )
+
+
 def run_once(
     payload: dict[str, Any],
     *,
@@ -364,6 +373,7 @@ def run_once(
     output_path: Path,
 ) -> dict[str, Any]:
     """Validate caller inputs before any workspace inspection or Modal app creation."""
+    _require_supported_launch_python()
     expected_payload = build_payload()
     if type(payload) is not dict or _canonical_bytes(payload) != _canonical_bytes(expected_payload):
         raise ValueError("caller payload differs from the fixed reviewed payload")
@@ -423,11 +433,12 @@ def run_once(
 
 
 def _build_modal_function() -> tuple[Any, Any]:
+    _require_supported_launch_python()
     import types
 
     import modal
 
-    image = modal.Image.debian_slim(python_version="3.11").pip_install(*_IMAGE_PACKAGES)
+    image = modal.Image.debian_slim(python_version="3.12").pip_install(*_IMAGE_PACKAGES)
     app = modal.App("tracemem-synthetic-qa")
     remote_globals = {"__name__": "__main__"}
     remote_compute = types.FunctionType(

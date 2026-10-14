@@ -5,6 +5,26 @@ first, then verify live git/workers/CI. This is a prototype checkpoint, not over
 completion. Existing `continue-tracemem-prototype` heartbeat continues this chat;
 do not create a duplicate. History remains in validation documents and git.
 
+## Synthetic QA source and runtime status, 2026-10-14
+
+Source snapshot `f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e` was delivered; hosted
+CI [38647516448](https://github.com/1337mus/tracemem/actions/runs/38647516448)
+passed. Its first Modal app initialization failed before inference because the
+local serialized source used Python 3.12 and the image used Python 3.11. The app
+is stopped with zero tasks, no model outputs or GPU inference, and no automatic
+retry. The original failure receipt and validation hashes remain in
+`docs/validation-synthetic-qa-inference.json`.
+
+Root reviewed the correction: the image is pinned to Python 3.12 and unsupported
+local Python minors refuse before workspace, output, or app effects. The updated
+source passed the focused suite, strict checks, and root's independent SDK and
+approval-gate oracle; it has not been launched. Corrected-source signed delivery
+is pending, and any later launch requires root's separate decision. Do not retry
+or launch. See `docs/synthetic-qa-modal.md` and the correction record in
+`docs/validation-synthetic-qa-inference.json`. Read active-cycle and live workers
+before taking ownership. The scoring contract was frozen before inference in
+`docs/synthetic-qa-answer-protocol.md`.
+
 ## Authority and execution
 
 Workspace `/Users/raj/Projects/tracemem`; original specification

@@ -35,6 +35,17 @@ it is not a remote attestation. Root retains responsibility for checking the
 workspace, active jobs, exact payload/source hashes, and launch intent before
 authorizing a call.
 
+An approved launch requires local Python 3.12, matching the remote image's
+Python 3.12 minor version for Modal's by-value function serialization. The first
+app initialization failed before inference because the local source used Python
+3.12 while the image used Python 3.11. That app is now stopped with zero tasks;
+no model outputs or GPU inference were produced. The runner now pins the image
+to Python 3.12 and rejects another local minor version before workspace
+inspection, output reservation, or app creation. The offline dry run remains
+available on the project's supported Python 3.11+ versions. There is no
+automatic retry or launch; root must separately review and authorize any later
+call.
+
 The remote body is registered by value with no source mount and validates its
 wrapper, canonical payload hash, schema, generation config, exact request IDs,
 and message format before importing inference libraries. It uses the pinned

@@ -1,0 +1,156 @@
+{
+  "python_version_correction": {
+    "recorded_date": "2026-10-14",
+    "status": "root reviewed; corrected source not signed/delivered and not launched",
+    "source_commit": "pending signed delivery",
+    "base_delivery": {
+      "commit": "f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e",
+      "ci_run_id": "38647516448",
+      "ci_status": "passed",
+      "ci_summary": {
+        "installed_tests_run": 193,
+        "installed_elapsed_seconds": 16.425,
+        "installed_skips": 2,
+        "ruff_files": 96,
+        "source_mypy_files": 31,
+        "log_path": ".local/github-actions-38647516448.log",
+        "log_sha256": "f7c8f8494d1b2cb13e565464774740671181117918fe000f82e214f0e79acadf",
+        "tests_run": 445,
+        "elapsed_seconds": 43.233,
+        "skips": 1
+      }
+    },
+    "runtime_fix": {
+      "remote_image_python": "3.12",
+      "required_local_launch_python": "3.12",
+      "offline_dry_run_minimum": "3.11",
+      "guard_precedes_workspace_output_and_app_effects": true,
+      "automatic_retry": false,
+      "launched": false,
+      "initialization_failure": "Local Python 3.12 serialized function did not match Python 3.11 image; initialization failed before inference, app stopped with zero tasks and no outputs. Original failure receipt is preserved below."
+    },
+    "file_sha256": {
+      "experiments/modal_synthetic_qa.py": "1fa6881e03b8f501cc127de97b29576bc70561b777b69f5359d381b2a1ca968c",
+      "tests/test_modal_synthetic_qa.py": "0e68554248a49625cc6843b4710bc8a871620024333f2771216b57af2d7a964c",
+      "docs/synthetic-qa-modal.md": "21503e74e11a033a0a93102781c749f03f3c1681263b44c5c15b2303bee4d505"
+    },
+    "focused_tests": {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_modal_synthetic_qa.py'",
+      "passed": 20,
+      "failed": 0,
+      "independent_root_rerun": {
+        "log_path": ".local/synthetic-qa-python-fix-root-focused.log",
+        "log_sha256": "be3a9de5c2171164373a1f2ed07169a3a94fd3cdcc2bbe9172252b61c5b4d7a6",
+        "passed": 20
+      }
+    },
+    "strict_mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --follow-imports=silent experiments/modal_synthetic_qa.py tests/test_modal_synthetic_qa.py",
+      "status": "passed"
+    },
+    "ruff": {
+      "check": "passed",
+      "format": "passed"
+    },
+    "diff_check": "passed",
+    "raw_log_sha256": {
+      ".local/synthetic-qa-python-fix-image-red.log": "c5e28c794c180f86167406eb927674045593552d6226d1fcf0bca11f2710811e",
+      ".local/synthetic-qa-python-fix-image-green.log": "2299339565fdc7c4fedeb54e99b181ba53b821f77194926422cc7df3301ba0ee",
+      ".local/synthetic-qa-python-fix-launch-guard-red.log": "f1adc67663d72482121600b025d881354b216b5734d1cad4810190b02a66d9b0",
+      ".local/synthetic-qa-python-fix-launch-guard-green.log": "353239c6a391a5fe2e900b988e30c68aa3a27170e16d3a962ba3592c634b44fa",
+      ".local/synthetic-qa-python-fix-final-focused.log": "f944391001240968c93ff1b2c1f75aa39d8ae4192ddbc1fc31e277c74f3b19d7",
+      ".local/synthetic-qa-python-fix-final-mypy.log": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8",
+      ".local/synthetic-qa-python-fix-final-ruff-check.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      ".local/synthetic-qa-python-fix-final-ruff-format.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      ".local/synthetic-qa-python-fix-final-diff-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root_oracle": {
+      "path": ".local/synthetic-qa-modal-root-oracle-1fa6881e.json",
+      "sha256": "db4221c87b5153a4b04a8d40b688f09f75938fd4a4c309466631674a9875f020",
+      "sdk_serialized_bytes": 11646,
+      "remote_invalid_wrapper_mutations": 8,
+      "network_or_model_calls": 0,
+      "additional_checks": "Local Python 3.11, 3.13, and 4.12 refusals occurred before side effects."
+    },
+    "fresh_python312_preflight": {
+      "path": ".local/synthetic-qa-modal-preflight-python312.json",
+      "sha256": "a8b767f34782c57a62e84978988716aee58099541cffb4ccd292e28062702f1d",
+      "checked_at_utc": "2026-10-14T22:30:18.619147+00:00",
+      "personal_workspace_verified": true,
+      "active_gpu_jobs": 0,
+      "historical_app_state": "stopped, zero tasks",
+      "launch_occurred": false
+    }
+  },
+  "chronology_limits": [
+    "Initial builder RED was a PYTHONPATH setup failure, not behavioral proof.",
+    "Initial remote body preceded detailed behavioral tests.",
+    "Analyzer initial direct-script CLI RED was a harness failure; corrected module invocation demonstrated missing report output.",
+    "Analyzer huge-integer RED/GREEN was observed but not saved as raw standalone logs; regression appears passing in final integrated/installed logs."
+  ],
+  "installed_experiment_suite": {
+    "elapsed_seconds": 4.876,
+    "fresh_temp_root": true,
+    "new_wheel_built": false,
+    "optional_modal_sdk_skips": 1,
+    "passed": 47,
+    "tests_run": 48,
+    "wheel_sha256": "3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637"
+  },
+  "launch_failure": {
+    "answers_generated": 0,
+    "app": "stopped",
+    "automatic_retries": 0,
+    "cause": "Python3.12serializedfunction/imagePython3.11incompatibility",
+    "error_type": "InvalidError",
+    "receipt": ".local/synthetic-qa-qwen3-4b-remote-20261014T2224Z.json",
+    "receipt_sha256": "d1c1d7d234e65537317c324db090a45935d2f889b4a9cfe5b9099369b156eca2",
+    "tasks": 0
+  },
+  "limitations": [
+    "Fictional references are provisional agent-only.",
+    "GateAunmet; no selected/trainedmodel or independenthumanlabels.",
+    "Byteceilings are not tokenizer-matched budgets."
+  ],
+  "local_suite": {
+    "elapsed_seconds": 14.359,
+    "optional_contextkit_skips": 1,
+    "optional_contextkit_test_rerun_separately": {
+      "bytecode_writes_disabled": true,
+      "elapsed_seconds": 0.008,
+      "passed": 1,
+      "read_only_original_checkout": true
+    },
+    "passed": 444,
+    "tests_run": 445
+  },
+  "log_sha256": {
+    ".local/synthetic-qa-inference-contextkit-focused.log": "fb160f7e8ab4bb759633e4abcd6a46ae5702a09336458bbe1a42f77cadeeb126",
+    ".local/synthetic-qa-inference-final-check.log": "259b0755aa9bfe47d7557918f11c83d6030075b4edf51bf92bdd004e3370bb1e",
+    ".local/synthetic-qa-inference-installed.log": "73ed4cf01b86617aea6fcc784e00c4c4d20db780cb1c54bbe3d5639d709d6e28",
+    ".local/synthetic-qa-inference-scoped-mypy.log": "71144743c83babea384888a735db0c4daba3d4d7b7942b6839984bd5c21b52bb"
+  },
+  "recorded_at_utc": "2026-10-14T22:27:31.311931+00:00",
+  "root_oracles": {
+    "analyzer": ".local/synthetic-qa-analysis-root-oracle.json",
+    "runner": ".local/synthetic-qa-modal-root-oracle-2e3475ac.json"
+  },
+  "runtime_files_unchanged": 36,
+  "scope": "Reviewed source runner/analyzer before interpreter-mismatch fix; not live-inference success",
+  "source_commit": "f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e",
+  "source_sha256": {
+    "examples/synthetic/qa-diagnostic-v1.json": "a4d94c8e727c71e8c8b723e97c9674b1d0008ac9f35ba675485a7ea796349d78",
+    "experiments/analyze_synthetic_qa.py": "273c2c38000afe8186ba9e1f38148ad481c049ae9d72a8532108bf3b55fdabe3",
+    "experiments/modal_synthetic_qa.py": "2e3475acd5fce8718ff43dfc5bd0f402304e13122dd06019ff45e215728ac9af",
+    "experiments/prepare_synthetic_qa.py": "161a45011807f08c98dd56b588a82907d6caa1519fa0691c8f71f7cbc8c4209b",
+    "tests/test_modal_synthetic_qa.py": "9f834e012c8e475e5b6ade7e90911ef012467b59deae568bad244fc0d2cd75c3",
+    "tests/test_synthetic_qa_analysis.py": "e89b761f0c9024a4cc2e717bf5801765f6e118dc4683ca3b4b5f23112560d870"
+  },
+  "static": {
+    "actionlint": "pass",
+    "diff_check": "pass",
+    "focused_mypy_files": 4,
+    "ruff_files": 96,
+    "source_mypy_files": 31
+  }
+}
