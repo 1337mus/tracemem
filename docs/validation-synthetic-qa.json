@@ -1,0 +1,116 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "dcf1882dede1fdf797c8b041d9d4ace34d8c077aef8f637c2b23f6980f7d14f4",
+    "README.md": "d94d2ea5ea6c02da2a0a3a6ee7268b53d4d8d8d5664fe59811224623dd22c0c2",
+    "docs/ci.md": "e303cdd10367b5920423f44b0f94ee15d7be20bb61924baaaa626716600249d1",
+    "docs/roadmap.md": "b8cf0bf72042275ac58da1b70eebf9d5786e8c2cbc224bc5729cab61e0101e31",
+    "docs/synthetic-qa-brief.md": "dcc3453c099b219f2d9020c4ca47ba61edf7a8e70a3870edd541a89851ba10ec",
+    "docs/synthetic-qa.md": "d41248ec63494fdcb77c104e3040db8a43c52df49319ccc1a02a2ee78c9e7864",
+    "examples/synthetic/qa-diagnostic-v1.json": "a4d94c8e727c71e8c8b723e97c9674b1d0008ac9f35ba675485a7ea796349d78",
+    "experiments/prepare_synthetic_qa.py": "161a45011807f08c98dd56b588a82907d6caa1519fa0691c8f71f7cbc8c4209b",
+    "tests/test_synthetic_qa.py": "af85c31157bb7cc01d1739be6b7aaccc08214b3004988e24975ae3d262d6888a"
+  },
+  "delivery_state": "Root reviewed; local and installed validation passed; signed commit/private push/hosted CI pending",
+  "diff_check_exit_code": 0,
+  "documented_command": {
+    "budgets_bytes": [
+      0,
+      512,
+      2048
+    ],
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "experiments.prepare_synthetic_qa",
+      "--requests",
+      "/Users/raj/Projects/tracemem/.local/synthetic-qa-reviewed-zkvfzpvu/requests.json",
+      "--references",
+      "/Users/raj/Projects/tracemem/.local/synthetic-qa-reviewed-zkvfzpvu/references.json"
+    ],
+    "exit_code": 0,
+    "model_or_network_calls": 0,
+    "modes": [
+      "bm25",
+      "vector",
+      "hybrid"
+    ],
+    "receipt": ".local/synthetic-qa-command-receipt.json",
+    "receipt_sha256": "212b4f4e011e5f8a0ec1423a0af53ec9d363cf43c688d33d7a5f6d0fe50c5a31",
+    "references_path": "/Users/raj/Projects/tracemem/.local/synthetic-qa-reviewed-zkvfzpvu/references.json",
+    "references_raw_sha256": "9af87fda949b0fb8e5a03f4edd5f16b91677f87b8f4084a6e9ae4d4ad362c010",
+    "request_rows": 72,
+    "requests_canonical_sha256": "85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084",
+    "requests_path": "/Users/raj/Projects/tracemem/.local/synthetic-qa-reviewed-zkvfzpvu/requests.json",
+    "requests_raw_sha256": "ec8029c64c42a0c1094d80907d071f3033e9efcf6688a4f54e13ccffc63c49dc"
+  },
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
+    "elapsed_seconds": 10.607,
+    "exit_code": 0,
+    "local_log": ".local/synthetic-qa-final-check.log",
+    "log_sha256": "0489abe7cd8b396f3506a109d81952842234416f6e447b84d08296f391b27597",
+    "ruff_files": 92,
+    "skipped": 0,
+    "source_mypy_files": 31,
+    "tests": 407
+  },
+  "gpu_or_model_calls": 0,
+  "independent_replay": {
+    "canonical_request_sha256": "85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084",
+    "cells_replayed": 72,
+    "fixture_sha256": "a4d94c8e727c71e8c8b723e97c9674b1d0008ac9f35ba675485a7ea796349d78",
+    "limits": "Protocol and authored-reference checks only; no inference, tokenizer-matched budgets, human truth or QA quality measurement",
+    "log_sha256": "8f559f4b024f7911906382e468a9399dc038591ce5766b764d1e2f0c1f2b7fdc",
+    "model_or_network_calls": 0,
+    "nonempty_unknown_cells": 12,
+    "probe_sha256": "bd3c0013b20ed08ab1ba1e52b0a152f06e209ad058ff029cfbf90e9cc8576d68",
+    "questions": 8,
+    "reference_and_label_sentinel_changed_no_messages": true,
+    "reference_rows_checked": 8,
+    "reference_sha256": "70769ec36ac4c1e6a226d7432ea88241225e35d91d803cdc0a678fe2589226d2",
+    "runtime_files_unchanged": 36,
+    "source_preserved": true,
+    "source_sha256": "161a45011807f08c98dd56b588a82907d6caa1519fa0691c8f71f7cbc8c4209b"
+  },
+  "installed_validation": {
+    "elapsed_seconds": 0.174,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "new_wheel_built": false,
+    "receipt": ".local/synthetic-qa-installed-receipt.json",
+    "receipt_sha256": "d332f04573b2e974c01b165d0b6875ca5a6aa190065a8df5fcf780b4c9eb49c1",
+    "references_reproduce": "70769ec36ac4c1e6a226d7432ea88241225e35d91d803cdc0a678fe2589226d2",
+    "requests_reproduce": "85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084",
+    "runtime_files_unchanged": 36,
+    "skipped": 0,
+    "tests": 10,
+    "wheel_sha256": "3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637"
+  },
+  "limitations": [
+    "Eight new authored fictional questions; 72cells are repeated retrieval/budget variants, not independent questions",
+    "Four dev/four test; provisional agent-authored references, zero independent human reviewers",
+    "Byte ceilings are not tokenizer-matched budgets; model and token counts unset",
+    "No inference, answer accuracy, semantic calibration, model selection or real benchmark compatibility result",
+    "Second-file write failure can leave incomplete pair; canonical request hash binds references but no filesystem transaction guarantee"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T21:52:21.405604+00:00",
+  "root_review": "Entire final source, ten tests, eight fictional cases, docs and CI change reviewed. Named first-person source attribution corrected before final head; one-session types corrected. Independently replayed all72retrieval/packing cells, eight reference rows, fixed prompt bodies, source preservation, canonical hashes, and reference-answer plus label sentinel independence. No remaining substantive findings.",
+  "scope": "Offline authored fictional QA request preparation; separate provisional references; no inference or scoring",
+  "scoped_mypy": {
+    "exit_code": 0,
+    "files": 48,
+    "local_log": ".local/synthetic-qa-scoped-mypy.log",
+    "log_sha256": "a459b8765e4db93f08156e7d98399988a9b87243303f92178f28c9db897f6066"
+  },
+  "source_base_commit": "1f1a54083c8e140d12e2d668881cde239dd5d608",
+  "workflow_evidence": {
+    "chronology": "Worker transcription, not raw RED outputs. Initial missing callable RED/GREEN; root-directed source-identity and invalid-split corrections have RED/GREEN. Broader protocol tests added after initial implementation. No claim of per-behavior preimplementation TDD.",
+    "log": ".local/synthetic-qa-worker-verification.log",
+    "sha256": "bcb90885904bb21240ff8685855cb7724f493c5093aea27dde38113a6705eb26"
+  },
+  "workflow_lint_exit_code": 0
+}

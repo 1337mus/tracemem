@@ -117,6 +117,8 @@ make check
 - [Offline review page](docs/offline-review.md): inspect blind candidates beside
   their sources, save drafts, and export complete responses for validation.
   It does not create independent human labels or satisfy Gate A.
+- [Synthetic QA preparation](docs/synthetic-qa.md): 72 request cells from eight
+  new fictional questions, with separate provisional references and no inference.
 - [Fixed context budgets](docs/context-budget.md): measured evidence retention
   after packing identical rankings under UTF-8 byte ceilings. This is a retrieval
   diagnostic; answer accuracy and tokenizer counts are not measured.

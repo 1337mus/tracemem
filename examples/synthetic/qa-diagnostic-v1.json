@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "provenance": "authored-fictional-agent-only",
+  "cases": [
+    {
+      "split": "dev",
+      "item": {
+        "question_id": "qa-correction-lumina",
+        "question_type": "knowledge-update",
+        "question": "What color did Lumina correct the moonstone to?",
+        "answer": "teal",
+        "question_date": "2036-02-03",
+        "haystack_session_ids": ["session-lumina-correction"],
+        "haystack_dates": ["2036-02-02"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Lumina first called the moonstone violet."},
+          {"role": "assistant", "content": "You described it as violet."},
+          {"role": "user", "content": "Correction: Lumina's moonstone is teal, not violet.", "has_answer": true}
+        ]],
+        "answer_session_ids": ["session-lumina-correction"]
+      }
+    },
+    {
+      "split": "dev",
+      "item": {
+        "question_id": "qa-dated-corin",
+        "question_type": "temporal-reasoning",
+        "question": "Which instrument did Corin play at the recital on 2022-04-17?",
+        "answer": "bassoon",
+        "question_date": "2022-04-18",
+        "haystack_session_ids": ["session-corin-recital"],
+        "haystack_dates": ["2022-04-17"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "At the recital on 2022-04-17, Corin played the bassoon.", "has_answer": true},
+          {"role": "assistant", "content": "The recital program sounded memorable."}
+        ]],
+        "answer_session_ids": ["session-corin-recital"]
+      }
+    },
+    {
+      "split": "dev",
+      "item": {
+        "question_id": "qa-negation-venn",
+        "question_type": "single-session-user",
+        "question": "Did Venn keep the amber telescope?",
+        "answer": "No",
+        "question_date": "2036-03-12",
+        "haystack_session_ids": ["session-venn-telescope"],
+        "haystack_dates": ["2036-03-11"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Venn did not keep the amber telescope; Venn returned it to the observatory.", "has_answer": true},
+          {"role": "assistant", "content": "Returning borrowed equipment is considerate."}
+        ]],
+        "answer_session_ids": ["session-venn-telescope"]
+      }
+    },
+    {
+      "split": "dev",
+      "item": {
+        "question_id": "qa-unanswerable-orpheus_abs",
+        "question_type": "single-session-user",
+        "question": "What passcode did Orpheus use for the glasshouse gate?",
+        "answer": "UNKNOWN",
+        "question_date": "2036-04-08",
+        "haystack_session_ids": ["session-orpheus-glasshouse"],
+        "haystack_dates": ["2036-04-07"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Orpheus admired the glasshouse gate's brass hinges."},
+          {"role": "assistant", "content": "The gate has a striking design."}
+        ]],
+        "answer_session_ids": []
+      }
+    },
+    {
+      "split": "test",
+      "item": {
+        "question_id": "qa-speaker-nemi",
+        "question_type": "single-session-user",
+        "question": "Who said the silver orchard opens at dawn?",
+        "answer": "Nemi",
+        "question_date": "2036-05-21",
+        "haystack_session_ids": ["session-nemi-orchard"],
+        "haystack_dates": ["2036-05-20"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Nemi said, 'The silver orchard opens at dawn.'", "has_answer": true},
+          {"role": "assistant", "content": "That sounds like a useful schedule."}
+        ]],
+        "answer_session_ids": ["session-nemi-orchard"]
+      }
+    },
+    {
+      "split": "test",
+      "item": {
+        "question_id": "qa-conditional-sola",
+        "question_type": "single-session-preference",
+        "question": "If snow blocks the trail, where will Sola move the lantern workshop?",
+        "answer": "to the cedar cabin",
+        "question_date": "2036-06-03",
+        "haystack_session_ids": ["session-sola-workshop"],
+        "haystack_dates": ["2036-06-02"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "If snow blocks the trail, Sola will move the lantern workshop to the cedar cabin.", "has_answer": true},
+          {"role": "assistant", "content": "The cedar cabin should stay warm."}
+        ]],
+        "answer_session_ids": ["session-sola-workshop"]
+      }
+    },
+    {
+      "split": "test",
+      "item": {
+        "question_id": "qa-simple-fact-tavik",
+        "question_type": "single-session-user",
+        "question": "What is Tavik's favorite tea?",
+        "answer": "jasmine tea",
+        "question_date": "2036-07-15",
+        "haystack_session_ids": ["session-tavik-tea"],
+        "haystack_dates": ["2036-07-14"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Tavik's favorite tea is jasmine tea.", "has_answer": true},
+          {"role": "assistant", "content": "Jasmine tea has a gentle floral aroma."}
+        ]],
+        "answer_session_ids": ["session-tavik-tea"]
+      }
+    },
+    {
+      "split": "test",
+      "item": {
+        "question_id": "qa-unanswerable-velorum_abs",
+        "question_type": "single-session-user",
+        "question": "How many copper bells did Velorum count in the tower?",
+        "answer": "UNKNOWN",
+        "question_date": "2036-08-22",
+        "haystack_session_ids": ["session-velorum-bells"],
+        "haystack_dates": ["2036-08-21"],
+        "haystack_sessions": [[
+          {"role": "user", "content": "Velorum visited the tower but never counted its copper bells."},
+          {"role": "assistant", "content": "The bells are arranged along the upper gallery."}
+        ]],
+        "answer_session_ids": []
+      }
+    }
+  ]
+}

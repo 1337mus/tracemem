@@ -262,10 +262,11 @@
     "wheel_sha256": "955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844"
   },
   "latest_checkpoint": {
-    "state": "Root reviewed; local and installed validation passed; signed commit, private push and hosted CI pending",
-    "tests_full_boundary_before_narrow_correction": 396,
-    "tests_installed_final_source": 145,
-    "validation": "docs/validation-transcript-consistency.json"
+    "previous_source_validation": "docs/validation-transcript-consistency.json",
+    "state": "Root reviewed; local and installed validation passed; signed commit/private push/hosted CI pending",
+    "tests": 407,
+    "tests_installed": 10,
+    "validation": "docs/validation-synthetic-qa.json"
   },
   "local_ml_packages_present": {
     "sentence_transformers": false,

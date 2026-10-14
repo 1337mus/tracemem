@@ -1,286 +1,171 @@
 # TraceMem continuation
 
-Updated 2026-10-14. Verify by: 2026-10-14. Read `.local/active-cycle.json`
-first; verify current git/workers/CI before acting. This is a research checkpoint,
-not overall completion. Raj requested continuous useful work and a PRIVATE personal
-repository. Existing 30-minute heartbeat continues this chat; do not duplicate it.
+Updated 2026-10-14. Verify by: 2026-10-15. Read `.local/active-cycle.json`
+first, then verify live git/workers/CI. This is a prototype checkpoint, not overall
+completion. Existing `continue-tracemem-prototype` heartbeat continues this chat;
+do not create a duplicate. History remains in validation documents and git.
 
-## Authority and boundaries
+## Authority and execution
 
-Workspace `/Users/raj/Projects/tracemem`; full specification
-`/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Prototype delivery
-uses signed private pushes; no PR/Linear required. Remote
-https://github.com/1337mus/tracemem (owner 1337mus). Verify PRIVATE before every push.
-No public release, private-data uploads, destructive changes or expensive training
-without separate approval. Original conversations, Context Kit and `~/.llm-context`
-remain read-only. Keep all private text/claims/vectors/reports/checkpoints local
-under ignored mode-0700 `.local`, mode-0600 files. No persistent private corpus was imported.
+Workspace `/Users/raj/Projects/tracemem`; original specification
+`/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Reviewed code,
+docs and fictional fixtures may be signed and pushed to PRIVATE personal
+`1337mus/tracemem`. Assert PRIVATE immediately before every push. No publication,
+private-data upload, destructive change or expensive training without separate
+approval. Context Kit `/Users/raj/Projects/ctxkit`, original conversations and
+`~/.llm-context` remain read-only. Keep private text/claims/vectors/checkpoints in
+ignored mode-0700 `.local`, mode-0600 files. No persistent private corpus imported.
+No model weights, Torch, Transformers or inference on this Mac. Six historical
+fictional Modal calls completed and apps stopped; do not relaunch them. No GPU
+needed for current slice. Computer Use is unused; browser rendering unverified.
 
-No weights/Torch/Transformers/inference on this Mac. Six historical fictional Modal
-calls completed and apps stopped; do not relaunch/duplicate them. No GPU needed for
-current slice. No model selected/trained. Computer Use is unused; earlier fileURL
-navigation was rejected, browser rendering remains unverified; no workaround.
+Preparation/TDD/model routing/handoff workflow applies. Root architects, adjudicates,
+reviews every diff and independently verifies; bounded Luna/medium workers implement
+from file-level briefs. Do not duplicate active workers. Full affected suite once
+at final boundary; focused checks for narrow review fixes, then CI full rerun.
+Prototype scope requires no Linear/PR. Preserve historical raw receipts and prompts.
 
-Use preparation/TDD/model-routing workflow already loaded in this conversation.
-Root architects/reviews/verifies; bounded Luna implements from explicit briefs.
-Inspect final source/tests and validate findings before signed delivery. Signing:
+Signed commits use:
 `git -c gpg.program=/Users/raj/Projects/tracemem/.local/gpg-noninteractive.sh commit -S`.
-Local verify-commit succeeds; GitHub reports `bad_email`. Do not change signing/identity
-settings, rewrite commits or probe pinentry. Preserve historical receipts.
+Local signature verification succeeds when allowed to read the GPG trust database.
+GitHub reports `bad_email`; do not change identity/signing settings or rewrite history.
+Git/network writes require the tool's sandbox escalation. Never hide failing exit
+codes behind pipes or later commands.
 
-## Verified implementation and delivery
+## Latest delivered source and validation
 
-Context Kit `/Users/raj/Projects/ctxkit` was clean at
-`20096bcb1095883262c77a37bbbb458732d9cf3a`. It has no conversation/vector DB or ChatGPT
-importer. Reuse config/discovery, read transcripts separately; no write-capable ctx
-commands. See `docs/context-kit-inventory.md`. Recheck cleanliness at boundaries.
+Signed source `1f1a54083c8e140d12e2d668881cde239dd5d608` pushed PRIVATE.
+Hosted CI [38642368196](https://github.com/1337mus/tracemem/actions/runs/38642368196)
+passed: 397 tests, one expected Context Kit skip; Ruff 90 files; source mypy 31;
+145 installed tests with the same expected skip; frozen budget and HTML smoke.
+Exact log hash and signature facts: `docs/github-validation.json`.
 
-Phase0/1 works offline: read-only Claude/Codex readers, immutable exact evidence
-revisions, mutable last-imported heads, schema3SQLiteFTS5BM25, signed-hash vectors/RRF,
-optional offline pretrained embeddings, revision citations and UTF8-byte context
-packing. Schema2 rejects read-only, no migration. ChatGPT selected-parent-chain
-reader/fresh snapshot CLI is fictional-fixture verified, not actual-export verified.
-Default runtime has no dependencies. `README.md` links runnable commands and docs.
+Latest slice adds optional `read_transcript(..., require_quiescent=True)` and
+`ingest --require-quiescent`. Regular nonsymlink leaf only; nonblocking descriptor
+opening; compare path/descriptor dev, inode, size, mtime, ctime and mode before
+read and after natural EOF. Ordinary change or replacement refuses import and
+EvidenceStore rolls back logical revisions/heads. Default streaming behavior is
+preserved. Early close releases descriptor without checking unconsumed remainder.
+Not an atomic snapshot or adversarial metadata-restoration defense. New empty
+schema may remain after refused import. See `docs/transcript-consistency.md`.
 
-Previous verified source commit `6b16de9dd2612f8ecbf3abb8da98b501e014c7b8` includes the pure
-source-retention diagnostic. Signed docs `95f456eb742c3778d024f33a452471d0a6aea588` also
-pushed; both CI runs green38629594401/38629927315. Local323tests,zero skips,5.199s;
-Ruff78files,source mypy28,scoped42. Hosted323tests,one expected Context Kit skip.
-80copiedinstalledtests pass outside checkout. Exact `docs/validation.json`,
-`docs/validation-source-retention.json`, `docs/github-validation.json`.
-
-Previous approved 33-file wheel SHA256
-955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844.
-All32previous packagefiles unchanged.9offline smokecommands, full stable budget
-report and byte-identical84taskHTML reproduce; PYTHONPATH/HOMEunset, package imports
-from site-packages. Source manifest `.local/package-source-approved-retention.json`;
-wheel receipt `.local/package-smoke-fts-v3-chatgpt-20261014T200724807306Z.json`.
-Local packaging script `.local/package-smoke-fts-v3-chatgpt.py` accepts an approved
-manifest and freezes source before an offline build/install. Do not rebuild until
-root approves new runtime bytes. Fullsuite once at finalboundary,focused checks
-for review corrections. CI official pinnedactions,read-only permissions,no artifacts,
-secrets,inference or private data.
-
-## Research evidence and limits
-
-Frozen48fictional scenarios,24dev/24test,43provisional nonexhaustive targets,eight
-no-memory,zero training cases/humanlabels. Gate A unmet. Frozen dataset/prompt/runner/
-payload hashes in active-cycle.json; detailed historical launch records in its
-history_archive. Never post-test tune/salvage/select on frozen test outputs.
-
-Qwen:dev1schemafailure/41claims,test2schemafailures/42claims;anchored integrity41/41,
-40/42. Phi:dev1parse+23schemafailures,test23schemafailures+one invented-end-date claim.
-Exact structuredF1=0 is reference agreement,not semantic precision.84validgenerated
-candidates:blindLuna50supported/31unsupported/3uncertain;nonblindroot41/33/10 after
-nine separate overrides. No independent humans/consensus/autoacceptance. Simple
-8positive+8negative devcontrols16/16agentagreement is not calibration. Scenariocluster
-bootstrap2000draws,seed1729 is descriptive,not independent truth or modelselection.
-See `docs/experiments-scenarios.md`, `docs/scenarios-reviewed-support.json`,
-`docs/review-uncertainty.md`, `docs/data-governance.md`. NLI had confident falsepositives;
-no semantic verifier policy. Ledger stores REVIEW/REJECT proposals and quotes;
-supersession is proposal lineage,not current-fact truth.
-
-Budget diagnostic:14answerable/3unknown,3modes,6UTF8-byte ceilings. At2048bytes authored
-evidence sufficiency BM25=14/14,hash10/14,hybrid13/14;not QA or tokenizercounts. All
-unknown queries get nonempty packs at512bytes+. `docs/context-budget.md`.
-Offline reviewer:84tasks,NodeVM/roundtrip checks and complete Unicode whitespace
-probe;browser unverified. `docs/offline-review.md`. FinalHTML hash
-07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e.
-
-LongMemEval bytesadapter/per-question turn-retrieval diagnostic is fictional-format
-verified,not real-benchmark/QA/upstream-equivalent. Explicit turnlabels only;
-abstention/missinglabels excluded separately. Root45cells/9aggregates/42citations
-replayed. PublicHFmetadata commit98d7416c24c778c2fee6e6f3006e7a073259d48f declaresMIT;
-constituent rights unresolved. FullS277383467bytes/M2737100077bytes exceed64MiBcap.
-No benchmark bodies downloaded. `docs/longmemeval-adapter.md`,
-`docs/longmemeval-retrieval.md`, `docs/longmemeval-rights.md`.
-Related-work source/license contracts and Graphiti source hashes are audited;
-`docs/benchmark-contracts.md/json`, `docs/graphiti-source-audit.json`,
-`docs/related-work.md`. No upstream execution.
-
-Pure `retention.plan_source_erasure` reports selected historical revisions,exact
-citation links,conservative ambiguous spans (span schema lacks provider/revision/part)
-and complete supersession descendants. No I/O/deletion or semantic ownership proof.
-10tests plus root30DAG/1500entry and1501chain/cycle oracle. Source/citation/ledger bytes
-survive unchanged. `docs/source-retention.md`. Externalcopies,freepages/vectorcounts
-are unaudited; this is not erasure support.
-
-## Current checkpoint and next work
-
-Persisted-store retention report is implemented and root reviewed. It reads explicit
-quiescent rollback-mode stores via read-only OS descriptors, deserializes copied bytes
-into memory-only SQLite, validates hashes/identities/citations/lineage and returns the
-pure planner's impact without changing inputs. WAL files and all sidecars are refused;
-maximum 64 MiB per input. CLI creates only a new mode-0600 report. It omits paths,
-selectors and transcript/claim text; hashes/IDs still remain private. No deletion,
-atomic cross-store guarantee, external-copy audit or complete semantic ownership proof.
-See `docs/retention-report.md` and `docs/retention-report-brief.md`.
-
-Final local checks passed: 334 tests, zero skips (5.191s); Ruff 80 files, source mypy
-29 and scoped mypy 43. Independent root probe checked two historical revisions,
-1 direct/2 ambiguous/1 descendant candidates, private sentinels, unchanged input
-bytes/modes/mtimes and eight corruption/concurrency refusals. 91 copied installed
-wheel tests pass outside the checkout. All 33 previous runtime files unchanged;
-new 34-file wheel SHA256
-`41bb909feda22b10f9ed0a826a4a6ad499bf21221809eb7f255ec8b1202cb147`.
-Offline smoke reproduces the frozen budget report and byte-identical 84-task HTML.
-`docs/validation-retention-report.json` and `.local/installed-retention-report-receipt.json`.
-Source approval `.local/package-source-approved-retention-report.json`; wheel receipt
-`.local/package-smoke-fts-v3-chatgpt-20261014T202400715467Z.json`.
-
-Source commit `e2ccd54e942563615907c9b94980a844cf72dfc9` is signed and pushed
-to PRIVATE main; hosted CI `38631986917` passed: 334 tests, one expected Context Kit
-skip, 91 installed tests, frozen budget/HTML checks. GitHub still reports bad_email;
-local signature verifies. No GPU calls.
-
-Retrospective integrity-versus-support experiment is now implemented, root reviewed
-and locally validated. That slice has no active worker or GPU calls. Source-only experiment:
-`experiments/evaluate_integrity_selectivity.py`; brief `docs/integrity-selectivity-brief.md`;
-contract/results `docs/integrity-selectivity.md`; machine report
-`docs/scenarios-integrity-selectivity.json`; validation
-`docs/validation-integrity-selectivity.json`. Labels/prompts/runtime policy unchanged.
-
-Final local checks: 346 tests, zero skips (7.056s); Ruff 82 files, source mypy 29,
-scoped mypy 44. Root independently checked 84 origin mappings/pass flags, 24 reviewer
-cells, 72 metrics, 168 error lists and eight aggregates. Copied experiment outside
-checkout used all 34 approved installed runtime files and reproduced the report
-exactly. No package source changed and no fresh wheel was needed; previous 91
-installed tests still bind those same bytes. The isolated run's receipt is
-`.local/integrity-selectivity-isolated-receipt.json`. Historical raw receipts and
-response files remain unchanged. Signed source `f949b9acefd600988a996e82ca9b53a0138027d3` is pushed to
-PRIVATE main; hostedCI `38634067687` passed: 346tests (one expected Context Kit skip),
-91installedtests and frozen budget/HTML checks. Active-cycle tracks exact state.
-
-Qwen anchored passes dev 41/41 and test 40/42 schema-valid origins. Among those,
-blind-agent labels are dev 26 supported/14 unsupported/1 uncertain and test 24/14/2;
-separate nonblind-root labels are dev 20/16/5 and test 21/14/5. Phi has no dev claims;
-its one test claim passes anchored integrity but is unsupported-labeled by both.
-Raw integrity passes only one Qwen claim per split and none from Phi. These are
-retrospective agent-label counts, not human precision/calibration. No acceptance
-policy or model winner follows. Gate A remains unmet.
-
-Bounded file scan implemented from `docs/longmemeval-file-brief.md`, worker released
-and root source/tests/docs reviewed. Independent oracle checked 31 fictional questions,
-six selected objects against the whole-bytes adapter, four selection combinations,
-exact hash/input preservation and nine late-invalid/missing-ID/inode-replacement
-refusals. All34previous runtime files unchanged; only file reader added. No active
-worker or GPU call. Source contract `docs/longmemeval-file.md`.
-
-Local final boundary: make check passed366tests in7.408s with one optional ContextKit
-skip; that integration test separately passed with ContextKit on PYTHONPATH. Ruff84
-files, source mypy30, scoped mypy45, actionlint and diff check passed. An initial
-expanded mypy command had duplicate module names; established explicit-package-bases
-command passed with no source changes. New35file offline wheel SHA256
-`40337ff3cb854a2fd94e1f30dd024d48e6516716b248d35f8b11c2fbfe513f58`;
-111copied installed tests pass outside checkout with PYTHONPATH/HOME unset.
-Frozen budget report and byte-identical84taskHTML reproduce. Validation
-`docs/validation-longmemeval-file.json`; approval
-`.local/package-source-approved-longmemeval-file.json`; wheel receipt
-`.local/package-smoke-fts-v3-chatgpt-20261014T205248441104Z.json`;
-installed receipt `.local/installed-longmemeval-file-receipt.json`.
-Signed source `fcfd1da13d4fb6a820bd8e753affd2c708394ae7` pushed PRIVATE; hostedCI
-`38635953203` passed366tests (one expected ContextKit skip),111installedtests and
-frozen budget/HTML smoke. Local signature good; GitHub bad_email remains unchanged.
-
-Selected-file retrieval is implemented/root reviewed; worker released. API and
-repeatableCLIselector share existing scoring, preserve schema1bytes/defaultCLI and
-emit schema2selected-only metadata. Root independently replayed27cells/9aggregates/
-45citations, late-invalid preflight/privacy/source-preservation. Three complete bytes
-reports exactly match prior fcfd1da code. No runtime package files changed.
-
-Final local boundary:375tests,zero skips,8.302s;Ruff85files,source mypy30,scoped45,
-actionlint/diffcheck pass.120copied installed tests including9new selection tests
-pass outside checkout against the same approved35file wheel. No fresh wheel needed.
-Validation `docs/validation-longmemeval-selection.json`; isolated receipt
-`.local/installed-longmemeval-selection-receipt.json`. Independent69,229,333byte/
-67question body-scale file evaluation selected one question in5.839s with40,615,936
-byte process peakRSS. This is one macOS observation, not a speed comparison,
-peakmemory guarantee, QA result or realbenchmark claim. No model/GPU/download calls.
-Signed source `26a03e23416d3fc7acb516773836514c9a7dfac2` pushedPRIVATE; hostedCI
-`38637357131`passed375tests (one expected ContextKit skip),120installedtests and
-frozen budget/HTML smoke. Exact loghash/signature facts in`docs/github-validation.json`.
-No original/private data was changed or uploaded.
-
-Scenario-tag breakdown is implemented/root reviewed; worker released and no GPU calls.
-`experiments/summarize_scenario_phenomena.py` emits186overlappingtagcells, separates
-all model/split/reviewer counts, preserves uncertainty and output exclusions, and
-binds original provenance hashes. Whole-scenario tags do not attribute error causes.
-Report `docs/scenarios-phenomena.json`; contract `docs/scenario-phenomena.md`;
-validation `docs/validation-scenario-phenomena.json`. Root independently replayed
-186tagcells/372reviewercells/744rates against historical saved provenance/labels.
-All381tests,zero skips,9.477s;Ruff87files,source mypy30,scoped46,actionlint/diffcheck
-pass.6newtests pass outside checkout with approved installed35-file runtime and
-PYTHONPATH/HOMEunset; byte-identicalreport reproduced. No freshwheel needed. Signed source
-`1a48e7633ce42900a8088bf47058cf89dbe624d8` pushedPRIVATE; hostedCI38639123154passed
-381tests(one expectedContextKit skip),120installedtests,frozenbudget/HTML smoke. No private sources, rawreceipts,labels or prompts changed.
-
-Remaining substantive gates: independent human labels/Gate A, calibrated semantic
-verification, owner-authorized source lifecycle/erasure, temporal truth, licensed
-benchmark compatibility and matched-budget QA. No trained model/public release or
-novelty claim. Continue useful bounded progress; this checkpoint is not completion.
-
-Bounded transcript reader is implemented/root reviewed; worker released. Default8MiB
-rawLF/CRLFline cap, explicit max_line_bytes/CLI --max-line-bytes up to64MiB, immediate
-oversize refusal before decode/parse. Existingallowed evidence identities/stats match
-priorreader. LegacyCR-only recordseparators are unsupported; documented. Generator
-failure rollsback logical records/heads; newly created emptyDB schema may remain.
-No totalmemory or atomic sourcesnapshot guarantee. Source contract
-`docs/transcript-bounds.md`; validation `docs/validation-transcript-bounds.json`.
-387tests,zero skips,10.175s;Ruff88files,source mypy30,scoped46,actionlint/diffcheck pass.
-Root15check oracle includes exactpriorrecords/stats/source preservation,8badcaps,
-12MiBunterminatedline at512bytecap (8119byte Pythontracedpeak,singleobservation),
-and real latefailure rollback. New35file wheel SHA256
-`36941fedfc6ae7c207c4207d3749fbeefb1d2f35ea0382145cb6fb1079f80cea`;
-33oldruntimefiles unchanged,onlyadapters/__init__.py and cli.py changed.135copied
-installedtests pass with1expectedContextKit skip; frozenbudget/HTML reproduce.
-Approvedmanifest `.local/package-source-approved-transcript-bounds.json`;
-wheelreceipt `.local/package-smoke-fts-v3-chatgpt-20261014T212302688753Z.json`.
-Workflow evidence is honest: initialinvalidlimit RED/GREEN, broaderbaseline REDreplay
-after an initialimplementation, not perbehaviorpreimplementationRED. Signed source
-`e670ea3874cc0aed3d782615132c1fb512b643e7` pushedPRIVATE; hostedCI38640042553passed
-387tests(oneexpectedCtxKit skip),135installedtests(oneexpectedCtxKit skip),frozen
-budget/HTMLchecks. Localsignature verifies; GitHubbad_email persists,settingsunchanged. No privatecorpus,originalsources or ContextKit touched.
-
-No workers/GPUcalls active. Next boundedinvestigation follows
-`docs/transcript-consistency-brief.md`: fictional source mutation/replacement probes
-and root-pinned optional quiescence safeguard; defaultreader remainsstreaming. Independent humanannotation/GateA remains necessary before
-training/qualityclaims. Preserve frozenmodel testoutputs; do not tune or relaunch.
-
-## Quiescent transcript import checkpoint
-
-Optional `read_transcript(..., require_quiescent=True)` and CLI
-`ingest --require-quiescent` are implemented and root reviewed. They require a
-regular nonsymlink leaf, use nonblocking descriptor opening, and compare path and
-descriptor identity/size/mtime/ctime/mode before reading and after natural EOF.
-Ordinary mutation or replacement refuses the import; real EvidenceStore ingestion
-rolls back logical records and heads. Default streaming behavior is preserved.
-Early iterator close releases the descriptor without final verification. This is
-not an atomic snapshot or an adversarial metadata-restoration defense. See
-`docs/transcript-consistency.md` and `docs/validation-transcript-consistency.json`.
-
-Full local boundary passed 396 tests, zero skips, in 10.600s; Ruff 90 files,
-source mypy 31, scoped mypy 47 and actionlint passed. Root found a self-referential
-symlink error gap afterward. A genuine RED/GREEN correction added one test and
-preserved default RuntimeError behavior. Final focused checks passed 25 tests
-with one optional Context Kit skip, Ruff and affected source mypy. Full suite was
-not repeated for this narrow correction; hosted CI should run 397 tests.
-Root's final 17-check independent mutation/rollback oracle and an additional
-self-loop/default-mode assertion passed. EOF mutation tests followed implementation;
+Local full boundary: 396 tests, zero skips, 10.600s; Ruff 90 files, source mypy31,
+scoped mypy47, actionlint and diff check. Root then found a self-loop symlink error
+gap. Genuine RED/GREEN fix added one test, preserved default RuntimeError, and
+passed25 focused tests with one optional Context Kit skip, Ruff and affected mypy.
+Final hosted full suite397 passed. Root final17-check mutation/rollback oracle plus
+self-loop/default assertion passed. Worker EOF mutation tests followed implementation;
 do not claim per-behavior preimplementation TDD for the entire slice.
 
-Approved runtime manifest `.local/package-source-approved-transcript-consistency.json`
-binds 36 files: only adapter init and CLI changed, one source guard helper added,
-and 33 prior runtime files unchanged. Offline wheel SHA256
+Approved manifest `.local/package-source-approved-transcript-consistency.json`
+binds36 files: adapter init and CLI changed, `_transcript_source.py` added,
+33prior runtime files unchanged. Offline wheel SHA256
 `3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637`.
-145 copied installed tests passed with one expected Context Kit skip outside the
-checkout, with PYTHONPATH/HOME unset. Frozen budget report and byte-identical
-84-task review HTML reproduce. Wheel receipt
+145copied installed tests passed with one expected Context Kit skip outside checkout,
+PYTHONPATH/HOME unset. Frozen budget report and byte-identical84-task HTML reproduce.
+Validation `docs/validation-transcript-consistency.json`; wheel receipt
 `.local/package-smoke-fts-v3-chatgpt-20261014T214119419628Z.json`; installed receipt
-`.local/transcript-consistency-installed-receipt.json`.
+`.local/transcript-consistency-installed-receipt.json`. Inspect/approve runtime bytes
+before any new wheel; use `.local/package-smoke-fts-v3-chatgpt.py` with approved manifest.
 
-At this checkpoint signed source/private push/hosted CI are pending. No workers
-or GPU jobs were launched for validation; no model inference or private inputs.
-Context Kit remains clean. Continue delivery, then build the next bounded synthetic
-QA protocol slice: separate answer references from answering prompts and preserve
-matched retrieval/packing settings. Do not reuse the LongMemEval format fixture as
-QA truth: its deliberately mismatched answer and turn label test reference separation.
+## Existing prototype and evidence boundaries
+
+Phase0/1 runnable. Context Kit clean at `20096bcb1095883262c77a37bbbb458732d9cf3a`
+(last rechecked this cycle); no conversation/vector DB or ChatGPT importer. Reuse
+config/discovery, read original transcripts separately, no write-capable ctx commands.
+`docs/context-kit-inventory.md` records schemas and aggregate coverage.
+
+Provider-neutral immutable evidence revisions, mutable last-imported heads,
+schema3 SQLite FTS5 BM25, signed-hash vectors/RRF, optional pinned remote MiniLM
+vectors, exact historical citations and UTF8-byte context packing are implemented.
+Default package has no dependencies. Schema2 is rejected read-only, no migration.
+Claude/Codex JSONL defaults8MiB per raw LF/CRLF line, override up to64MiB; CR-only
+separators unsupported. No total-memory guarantee. `docs/transcript-bounds.md`.
+ChatGPT selected-parent-chain reader/fresh snapshot CLI is fictional-fixture verified;
+actual-export compatibility unverified. `docs/chatgpt-export.md`, `docs/chatgpt-snapshot.md`.
+
+Proposal ledger records REVIEW/REJECT claims, exact quotes and lineage. No automatic
+semantic acceptance or current-fact truth. Pure source-retention planner handles
+historical revisions, citation links, ambiguous spans and complete descendants.
+Persisted-store report reads bounded64MiB quiescent rollback-mode DB copies into
+memory; rejects WAL/journal sidecars, validates integrity, writes a new private report.
+No deletion, complete ownership proof, cross-store snapshot or external-copy audit.
+`docs/source-retention.md`, `docs/retention-report.md`.
+
+Frozen48fictional scenarios:24dev/24test,43 provisional nonexhaustive targets,
+eight no-memory, zero train/human labels. GateA unmet; no model selected/trained.
+Dataset/prompt/payload/runner hashes in active-cycle; historical launches in its
+history_archive. Never tune/select/salvage on frozen test outputs. Qwen/Phi diagnostic
+and six Modal calls are completed. Qwen dev1schemafailure/41claims,test2/42; Phi dev
+one parse+23schemafailures,test23schemafailures+one unsupported end-date claim.
+84valid candidates: blind agent50supported/31unsupported/3uncertain; separate nonblind
+root41/33/10 after nine overrides. Neither is human truth or consensus. NLI showed
+confident false positives; no verifier policy. `docs/experiments-scenarios.md`,
+`docs/scenarios-reviewed-support.json`, `docs/scenarios-root-adjudication.json`.
+
+Integrity-versus-support replay, overlapping scenario-tag breakdown and scenario-cluster
+bootstrap preserve model/split/reviewer distinctions, uncertainty and exclusions.
+Tags describe whole scenarios, not error causes; bootstrap is descriptive, not model
+selection. Simple16-control agent agreement is not calibration.
+`docs/integrity-selectivity.md`, `docs/scenario-phenomena.md`, `docs/review-uncertainty.md`.
+
+Fixed context-budget diagnostic:14answerable/3unknown,3modes,6UTF8-byte ceilings.
+At2048bytes authored sufficiency BM25=14/14,hash10/14,hybrid13/14; not QA or tokenizer
+counts. Unknowns receive nonempty packs512bytes+. `docs/context-budget.md`.
+Offline84-task blind reviewer has NodeVM/roundtrip/Unicode checks; browser unverified.
+FinalHTML SHA256 `07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e`.
+`docs/offline-review.md`.
+
+LongMemEval bytes adapter, bounded whole-file scanner and selected-question turn
+retrieval diagnostic are fictional-format verified, not real benchmark/QA results.
+Explicit turnlabels only; abstention/missing labels excluded separately. No benchmark
+bodies downloaded. HF card declares MIT at pinned commit; constituent rights unresolved.
+LoCoMo NC restrictions and exact evaluator differences remain documented. Graphiti
+source/license contracts audited, no upstream execution. `docs/longmemeval-file.md`,
+`docs/longmemeval-selection.md`, `docs/benchmark-contracts.md`, `docs/related-work.md`.
+
+## Synthetic QA checkpoint and next action
+
+New source-only QA preparation is implemented and root reviewed. Eight new authored
+fictional cases have four dev/four test questions, six answerable and two unknowns.
+72request cells cover three retrieval modes and byte ceilings0/512/2048; zero-byte
+controls are empty. References stay separate and bind the canonical request hash.
+Root independently replayed72contexts/citation lists/byte lengths and eight reference
+rows, then changed answer/label sentinels and confirmed every answering message
+remained identical. Provisional answers were source-reviewed by root, not humans.
+No inference/scoring or tokenizer-matched-budget claim. See `docs/synthetic-qa.md`.
+
+Full local boundary407tests,zero skips,10.607s; Ruff92files,source mypy31,scoped48,
+actionlint/diffcheck pass. Ten copied installed protocol tests pass outside checkout,
+PYTHONPATH/HOME unset, and both canonical bundles reproduce exactly. All36approved
+runtime files unchanged; previous wheel reused. `docs/validation-synthetic-qa.json`.
+Worker chronology is an honest transcription, not raw RED outputs. Initial callable,
+source-identity and invalid-split corrections had RED/GREEN; broader tests followed
+initial implementation. Do not claim per-behavior preimplementation TDD.
+
+Canonical requests SHA256
+`85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084`;
+references `70769ec36ac4c1e6a226d7432ea88241225e35d91d803cdc0a678fe2589226d2`.
+CLI created two new0600files; raw paths/hashes in
+`.local/synthetic-qa-command-receipt.json`; root/installed receipts in
+`.local/synthetic-qa-root-receipt.json` and `.local/synthetic-qa-installed-receipt.json`.
+Signed source/private push/hostedCI are pending at this documentation checkpoint.
+No workers or GPU calls active. Original sources and frozen extraction data unchanged.
+
+Next: `docs/synthetic-qa-modal-brief.md` pins a bounded source-free Qwen3-4B runner
+for the exact reviewed72messages. Start with one bounded Luna implementer; no launch
+during implementation. Root reviews source/payload/SDK serialization, verifies live
+personal Modal workspace and absent active jobs, saves launch intent and exact hashes,
+then may run one bounded synthetic-only call under existing authorization. Keep
+weights/inference remote. No private data or references in remote payload. No retries,
+training or public publication. Inspect exact source and live state before acting.
+
+Do not use `examples/synthetic/longmemeval-format.json` as QA truth: its deliberately
+mismatched answer/turnlabel tests parsing separation. New synthetic QA references
+remain provisional. A later answering run must report actual tokens and preserve
+byte-budget limitations; it cannot establish real benchmark or matched-token QA.
+
+Remaining substantive gates: independent human labels/GateA, calibrated semantic
+verification, temporal truth, owner-authorized erasure, real benchmark rights and
+compatibility, matched-budget downstream QA, and eventual owner-reviewed release.
+Continue useful bounded work; this checkpoint does not mark the project complete.
