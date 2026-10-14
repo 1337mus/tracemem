@@ -64,7 +64,7 @@ jobs:
           mkdir -p "$test_dir" "$test_root/examples/synthetic" "$test_root/experiments"
           cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py \
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
-            tests/test_retention.py "$test_dir/"
+            tests/test_retention.py tests/test_retention_report.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json "$test_root/examples/synthetic/"
           cp experiments/evaluate_longmemeval_retrieval.py "$test_root/experiments/"
 

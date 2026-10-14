@@ -1,227 +1,143 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 323-test source-retention diagnostic checkpoint. Live jobs/workers/remote state must be checked
-again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
-This is a continuation checkpoint, not task completion; Raj repeatedly asked for
-continuous useful progress beyond passing tests.
+Updated 2026-10-14. Verify by: 2026-10-14. Read `.local/active-cycle.json`
+first; verify current git/workers/CI before acting. This is a research checkpoint,
+not overall completion. Raj requested continuous useful work and a PRIVATE personal
+repository. Existing 30-minute heartbeat continues this chat; do not duplicate it.
 
-Workspace `/Users/raj/Projects/tracemem`. Specification
-`/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Local prototype.
-Raj subsequently authorized creating a private project under his personal GitHub
-profile. Root created https://github.com/1337mus/tracemem and independently checked
-`visibility=PRIVATE`. Signed initial commit `309f41b1810981056b30f811383634d2953165f3`
-is pushed to main. Initial hosted CI passed; see `docs/github-validation.json`.
-Local signature verification passed at delivery; GitHub reports `bad_email`.
-No signing-key or identity settings were changed. No PR required for this prototype.
-No public visibility change is authorized; owner plans publication later.
+## Authority and boundaries
 
-## Boundaries
+Workspace `/Users/raj/Projects/tracemem`; full specification
+`/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Prototype delivery
+uses signed private pushes; no PR/Linear required. Remote
+https://github.com/1337mus/tracemem (owner 1337mus). Verify PRIVATE before every push.
+No public release, private-data uploads, destructive changes or expensive training
+without separate approval. Original conversations, Context Kit and `~/.llm-context`
+remain read-only. Keep all private text/claims/vectors/reports/checkpoints local
+under ignored mode-0700 `.local`, mode-0600 files. No persistent private corpus was imported.
 
-Preserve Context Kit, original transcripts and `~/.llm-context` as read-only inputs.
-All private text, derived claims, vectors, identifiers and checkpoints stay local.
-No destructive changes, private-data uploads or expensive training without approval.
-Keep weights/Torch/Transformers/model inference off this Mac. All six prior fictional
-Modal calls completed; latest Qwen/Phi apps stopped with zero tasks. Do not relaunch.
-Current work needs no GPU. The nominal six-call estimate $0.65066 is not billing or
-a provider-enforced cap. No model selected; no training started.
+No weights/Torch/Transformers/inference on this Mac. Six historical fictional Modal
+calls completed and apps stopped; do not relaunch/duplicate them. No GPU needed for
+current slice. No model selected/trained. Computer Use is unused; earlier fileURL
+navigation was rejected, browser rendering remains unverified; no workaround.
 
-Context Kit `/Users/raj/Projects/ctxkit` remains clean at
-`20096bcb1095883262c77a37bbbb458732d9cf3a` (root rechecked this cycle).
-It has no ChatGPT importer/conversation/vector database. Reuse config/discovery,
-read source transcripts separately. Inventory is aggregate-only in
-`docs/context-kit-inventory.md`; private manifests remain ignored under `.local/`.
-No persistent private conversation DB was created. Do not run write-capable ctx
-commands or update the original memory corpus. Durable context stays here.
+Use preparation/TDD/model-routing workflow already loaded in this conversation.
+Root architects/reviews/verifies; bounded Luna implements from explicit briefs.
+Inspect final source/tests and validate findings before signed delivery. Signing:
+`git -c gpg.program=/Users/raj/Projects/tracemem/.local/gpg-noninteractive.sh commit -S`.
+Local verify-commit succeeds; GitHub reports `bad_email`. Do not change signing/identity
+settings, rewrite commits or probe pinentry. Preserve historical receipts.
 
-## Current engineering
+## Verified implementation and delivery
 
-- Phase0/1 runs offline: read-only Claude/Codex adapters, immutable exact-text
-  evidence revisions, mutable last-imported heads, SQLite FTS5 BM25, signed-hash
-  vectors/RRF, optional offline pretrained vectors, revision citations, UTF8-byte
-  context packing. No runtime dependencies for default demo.
-- Root approved schema3 indexed FTS maintenance and complete source/tests.
-  Version2 rejected through read-only preflight, no migration. Identical10k/50k
-  corpus/ranking hashes; setup4.058199→0.260205s and129.551996→1.575206s.
-  See `docs/lexical-scale-results.md`. Synthetic timings, Python allocations not RSS.
-- Root reviewed all ChatGPT reader source/tests and found/fixed three edge cases:
-  escaped lone surrogate evidence, huge JSON integer errors, symlink-loop path
-  leaks. Adapter now approved, fixture-only compatibility; no actual export read.
-  See `docs/chatgpt-export.md`. Selected-parent-chain text only,64MiB input cap.
-- Fresh-store ChatGPT API/CLI completed and root-reviewed.11 fictional integration
-  tests cover branch independence, exact Unicode citations, output/sidecar
-  preservation, malformed imports and exclusive-publication collisions. See
-  `docs/chatgpt-snapshot.md`. No actual-export compatibility claim. New fictional
-  export fixture demonstrates selected/excluded branches without private data.
-- GitHub CI completed and root-reviewed: one Python3.12 Ubuntu job, official
-  pinned actions, read-only permissions, locked dev/Modal SDK dependencies, no
-  secrets/model calls/artifact uploads. Installed smoke uses its Python tempfile
-  root, fixing a RUNNER_TEMP mismatch found in review. actionlint/shell checks
-  passed; first hosted run passed on the initial commit. See `docs/ci.md`.
-- Fresh offline wheel passed all9commands and34installed ChatGPT tests outside
-  checkout.31package files match approved source bytes; schema3/import paths,
-  demo hashes and stable benchmark fields match. Source stayed unchanged.
-  WheelSHA256 63325e2fa0a4e32079938fdd07d8ae9c8364593256013ee4d1a20f393b628342.
-  Receipt `.local/package-smoke-fts-v3-chatgpt-20261014T190150652005Z.json`.
-  Extra installed checks reproduce the full budget report and byte-identical
-  84-task final HTML; `.local/installed-review-budget-new-apis.json`.
-  An initial probe caught a stale preview; failure log preserved, final probe passed.
-- Fixed UTF8-byte budget diagnostic completed:14answerable/3unknown queries,
-  three retrieval modes,six ceilings. Root checked306old-packer combinations and
-  resolved728exact fictional citations. At2048bytes authored evidence sufficiency
-  is BM25=14/14,hash=10/14,hybrid=13/14. Not QA accuracy or tokenizer counts.
-  All unknowns receive nonempty packs at512bytes+. See `docs/context-budget.md`.
-- Offline blind-review HTML completed: source/candidate display, Unicode citation
-  checks, explicit drafts/restore and complete exports. Nine focused tests include
-  Node VM DOM harness and Python importer roundtrip. Root reproduced/fixed citation
-  end truncation, whitespace parity and literal NUL/CSP hash faults. Checked all
-  1,114,112Unicode code points. Browser rendering unverified: CUA rejected file URL;
-  no workaround attempted. See `docs/offline-review.md`. Final fictional page
-  `.local/scenario-human-review-final-20261014.html`,SHA256
-  07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e.
-- Pinned benchmark-contract source audit complete and root-reviewed.13 public
-  README/license/evaluator/tree records, no benchmark data/upstream execution.
-  `docs/benchmark-contracts.md/json`; exact hashes verified. Root added precise
-  LongMemEval DCG/projection conventions and LoCoMo empty-context/rounding caveats.
+Context Kit `/Users/raj/Projects/ctxkit` was clean at
+`20096bcb1095883262c77a37bbbb458732d9cf3a`. It has no conversation/vector DB or ChatGPT
+importer. Reuse config/discovery, read transcripts separately; no write-capable ctx
+commands. See `docs/context-kit-inventory.md`. Recheck cleanliness at boundaries.
 
-## Frozen synthetic extraction comparison
+Phase0/1 works offline: read-only Claude/Codex readers, immutable exact evidence
+revisions, mutable last-imported heads, schema3SQLiteFTS5BM25, signed-hash vectors/RRF,
+optional offline pretrained embeddings, revision citations and UTF8-byte context
+packing. Schema2 rejects read-only, no migration. ChatGPT selected-parent-chain
+reader/fresh snapshot CLI is fictional-fixture verified, not actual-export verified.
+Default runtime has no dependencies. `README.md` links runnable commands and docs.
 
-Dataset `src/tracemem/data/scenarios_v1.json` SHA256
-`5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214`.
-48 fictional multi-session cases,24dev/24test,eight no-memory,43 provisional
-nonexhaustive authored targets; no training split or human labels. Gate A unmet.
-Frozen prompts/runner/payload hashes retained in `.local/active-cycle.json`.
-No post-test tuning, salvage or model selection.
+Latest verified source commit6b16de9dd2612f8ecbf3abb8da98b501e014c7b8 includes the pure
+source-retention diagnostic. Signed docs95f456eb742c3778d024f33a452471d0a6aea588 also
+pushed; both CI runs green38629594401/38629927315. Local323tests,zero skips,5.199s;
+Ruff78files,source mypy28,scoped42. Hosted323tests,one expected Context Kit skip.
+80copiedinstalledtests pass outside checkout. Exact `docs/validation.json`,
+`docs/validation-source-retention.json`, `docs/github-validation.json`.
 
-Qwen raw receipt `examples/synthetic/qwen3-4b-scenarios-remote.json` SHA256
-`2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f`.
-Dev1schema failure/41claims; test2schema failures/42claims. Integrity raw1/41,
-1/42; anchored41/41,40/42. No-memory3/4dev,1/4test. No truncation.
+Approved33filewheelSHA256
+955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844.
+All32previous packagefiles unchanged.9offline smokecommands, full stable budget
+report and byte-identical84taskHTML reproduce; PYTHONPATH/HOMEunset, package imports
+from site-packages. Source manifest `.local/package-source-approved-retention.json`;
+wheel receipt `.local/package-smoke-fts-v3-chatgpt-20261014T200724807306Z.json`.
+Local packaging script `.local/package-smoke-fts-v3-chatgpt.py` accepts an approved
+manifest and freezes source before an offline build/install. Do not rebuild until
+root approves new runtime bytes. Fullsuite once at finalboundary,focused checks
+for review corrections. CI official pinnedactions,read-only permissions,no artifacts,
+secrets,inference or private data.
 
-Phi raw receipt `examples/synthetic/phi-3.5-mini-scenarios-remote.json` SHA256
-`d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d`.
-Dev1parse+23schema failures; test23schema failures+one valid claim with invented
-end date. No-memory0/4both. No truncation. Main faults date/enum schema misuse.
-Both exact structured F1=0 measures reference agreement, not semantic precision.
+## Research evidence and limits
 
-All84 schema-valid candidates reviewed blind by Luna:50supported/31unsupported/
-3uncertain. Root read all84 full candidates/conversations/rationales and made nine
-separate adjudications:41supported/33unsupported/10uncertain. Root nonblind,
-nonindependent, no humans or auto-acceptance. Reports preserve parse/schema
-exclusions and per-model/split/reviewer denominators. Original reviews unchanged.
-Separate8positive+8simple-negative dev-derived controls:agent16/16 agreement,
-no calibration/independent truth. Historical43-positive-only review unchanged.
-Reproducible fictional bundles/keys/responses under `examples/synthetic/reviews/`.
+Frozen48fictional scenarios,24dev/24test,43provisional nonexhaustive targets,eight
+no-memory,zero training cases/humanlabels. Gate A unmet. Frozen dataset/prompt/runner/
+payload hashes in active-cycle.json; detailed historical launch records in its
+history_archive. Never post-test tune/salvage/select on frozen test outputs.
 
-Candidate ledger, strict claim/citation validators, anchoring, blind review tools
-and exact revision fetch implemented. Ledger stores claim quotes; callers retain
-EvidenceStore separately. Supersession records proposal lineage, not current-fact
-truth. NLI diagnostic had high-confidence false positives; no verifier policy.
+Qwen:dev1schemafailure/41claims,test2schemafailures/42claims;anchored integrity41/41,
+40/42. Phi:dev1parse+23schemafailures,test23schemafailures+one invented-end-date claim.
+Exact structuredF1=0 is reference agreement,not semantic precision.84validgenerated
+candidates:blindLuna50supported/31unsupported/3uncertain;nonblindroot41/33/10 after
+nine separate overrides. No independent humans/consensus/autoacceptance. Simple
+8positive+8negative devcontrols16/16agentagreement is not calibration. Scenariocluster
+bootstrap2000draws,seed1729 is descriptive,not independent truth or modelselection.
+See `docs/experiments-scenarios.md`, `docs/scenarios-reviewed-support.json`,
+`docs/review-uncertainty.md`, `docs/data-governance.md`. NLI had confident falsepositives;
+no semantic verifier policy. Ledger stores REVIEW/REJECT proposals and quotes;
+supersession is proposal lineage,not current-fact truth.
 
-## Validation and next actions
+Budget diagnostic:14answerable/3unknown,3modes,6UTF8-byte ceilings. At2048bytes authored
+evidence sufficiency BM25=14/14,hash10/14,hybrid13/14;not QA or tokenizercounts. All
+unknown queries get nonempty packs at512bytes+. `docs/context-budget.md`.
+Offline reviewer:84tasks,NodeVM/roundtrip checks and complete Unicode whitespace
+probe;browser unverified. `docs/offline-review.md`. FinalHTML hash
+07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e.
 
-Current full suite:323tests,zero skips,5.199seconds including actual Context Kit
-integration and Node VM. Ruff78files,source mypy28,scoped42. Exact commands/exit
-codes `.local/final-retention-commands.json`; `docs/validation.json` records
-source/test hashes. The277test checkpoint is preserved in
-`docs/validation-installed-apis.json`;297test adapter checkpoint in
-`docs/validation-longmemeval.json`. The new runtime file in this slice is retention.py;
-all32earlier packagefiles remain byte-identical.
+LongMemEval bytesadapter/per-question turn-retrieval diagnostic is fictional-format
+verified,not real-benchmark/QA/upstream-equivalent. Explicit turnlabels only;
+abstention/missinglabels excluded separately. Root45cells/9aggregates/42citations
+replayed. PublicHFmetadata commit98d7416c24c778c2fee6e6f3006e7a073259d48f declaresMIT;
+constituent rights unresolved. FullS277383467bytes/M2737100077bytes exceed64MiBcap.
+No benchmark bodies downloaded. `docs/longmemeval-adapter.md`,
+`docs/longmemeval-retrieval.md`, `docs/longmemeval-rights.md`.
+Related-work source/license contracts and Graphiti source hashes are audited;
+`docs/benchmark-contracts.md/json`, `docs/graphiti-source-audit.json`,
+`docs/related-work.md`. No upstream execution.
 
-Expanded installed smoke completed and root-reviewed. A fresh offline virtualenv
-installed the approved wheel; all31installed packagefiles match approved source.
-All15loadedpackage modules resolve under site-packages outside checkout, including
-budget_benchmark/review_html. Frozen budget report (all fields except py/sql version
-values) and byte-identical84taskHTML reproduce. Previous ledger/citation/NLI checks
-all pass.10newtests pin changed metrics/citations/config/environment schema+types,
-input hashes and HTML hash. See `docs/installed-new-apis-validation.json`/`docs/ci.md`.
-The existing GitHub workflow runs this expanded script without a workflow change.
-No browser use or model/GPU calls were needed; browser rendering remains unverified.
+Pure `retention.plan_source_erasure` reports selected historical revisions,exact
+citation links,conservative ambiguous spans (span schema lacks provider/revision/part)
+and complete supersession descendants. No I/O/deletion or semantic ownership proof.
+10tests plus root30DAG/1500entry and1501chain/cycle oracle. Source/citation/ledger bytes
+survive unchanged. `docs/source-retention.md`. Externalcopies,freepages/vectorcounts
+are unaudited; this is not erasure support.
 
-Scenario-cluster uncertainty experiment completed and root-reviewed. All24cases
-per split,including excluded/empty outputs,remain in resampling population.2000draws,
-seed1729. Root independently checked8cells/24metrics via case-origin counts and
-statistics.quantiles,receipt `.local/review-uncertainty-root-verification.json`.
-Qwen blind-agent supported/all:dev26/41,interval[.474,.794],test24/42[.388,.778].
-Root nonblind dev20/41[.326,.659],test21/42[.306,.718]. Phi dev undefined;test0/1,
-746/2000draws undefined,degenerate[0,0]conditional on remaining draws. These are
-resampling diagnostics,not independent truth,precision guarantees or model selection.
-See `docs/review-uncertainty.md` and `docs/scenarios-review-uncertainty.json`.
+## Current checkpoint and next work
 
-Three earlier unmapped Graphiti hashes now match exact pinned source files and
-Git blob IDs. Root inspected cited schema/prompt,episode mapping and temporal
-normalization code. `docs/graphiti-source-audit.json` and `docs/related-work.md`.
-No upstream code execution or benchmark conversations fetched. No new GPU calls.
+Persisted-store retention report is implemented and root reviewed. It reads explicit
+quiescent rollback-mode stores via read-only OS descriptors, deserializes copied bytes
+into memory-only SQLite, validates hashes/identities/citations/lineage and returns the
+pure planner's impact without changing inputs. WAL files and all sidecars are refused;
+maximum 64 MiB per input. CLI creates only a new mode-0600 report. It omits paths,
+selectors and transcript/claim text; hashes/IDs still remain private. No deletion,
+atomic cross-store guarantee, external-copy audit or complete semantic ownership proof.
+See `docs/retention-report.md` and `docs/retention-report-brief.md`.
 
-1. Private repository verified live on2026-10-14. Reviewed budget/offline source
-   pushed as signed664587cd5689d44a6572a978efd32ecffcd20de4. HostedCI38620827280
-   passed257tests(one expected Context Kit skip),Node VM and34installed ChatGPT
-   tests. GitHub signature reason remainsbad_email; local verify-commit passes.
-   Uncertainty slice pushed as signed359b50811ce745a1b2398b154ffdd74c40b86350;
-   hostedCI38622455178 passed267tests(one expectedskip)and34installedtests.
-2. Installed-API slice pushed as signed30765f20aa9ed438ebc09d688bef74837321154d.
-   CI38623661647 passed277tests(one expectedskip),34installedtests and newAPI
-   checks. RunnerPython3.12.15/SQLite3.45.1 vs recorded3.12.14/3.53.1;
-   all stable budget fields and exact84taskHTML match across these environments.
-3. LongMemEval adapter and public metadata audit completed and root-reviewed.
-   `docs/longmemeval-adapter.md` explains the strict fixture-only bytes contract.
-   20newtests cover label exclusion,question isolation,oracle source order,and
-   Unicode historical citations after later revisions/reopen. Root independently
-   checked48identity combinations,36schema rejections,and a combined-store positive
-   control. Full S277383467byte and M2737100077byte releases exceed64MiB cap;
-   no real-data compatibility or upstream score claim. Session dates remain separate.
-   Root verified public HF card MIT declaration,pinnedcommit98d7416 and three
-   cachehashes/README Gitblob; constituent provenance/permissions remain unresolved.
-   See `docs/longmemeval-rights.md`. No benchmark conversations downloaded.
-4. New offline wheelSHA2563097bb478faaf352cd33921682ad636a0a044518f0792a7d7a7b17c8fe084f98
-   matches all32approvedpackagefiles. All9previous smokecommands passed,including
-   frozen budget/84taskHTML replay;54copiedinstalledtests include20newadaptertests.
-   Adapter imports from site-packages outside checkout with PYTHONPATH/HOMEunset.
-   `.local/installed-longmemeval-receipt.json`; `docs/validation-longmemeval.json`.
-   CI now copies all3testmodules andfictionalfixture outside checkout.
-   Signedcommit6ca0782baac9b633cf06579f184da06c3e8a6d2c pushed toprivate main.
-   HostedCI38625667741 passed297tests(one expectedskip),54installedtests and
-   frozen budget/84taskHTML replay. Local signaturevalid;GitHubbad_email unchanged.
-   Adapter and metadata workers released ownership;check `.local/active-cycle.json`.
-   Retrieval worker also released ownership. Root reviewed full experiment/tests
-   and independently recomputed45cells/9aggregates and resolved42report citations.
-5. Turn-retrieval diagnostic completed:16newtests; one temporary corpus per question,
-   explicit abstention/missing-label exclusions,macro recall/all-found fractions,
-   weak signed-hash/BM25/hybrid modes,explicitRRF60. CLI bounded read-only input,
-   exclusive0600output; real reports stay private. Fictional protocol only,no QA.
-   All70copiedtests pass outside checkout against unchanged approved32filewheel;
-   copied experiment resolves separately while runtime imports site-packages.
-   See `docs/validation-longmemeval-retrieval.json`/`docs/longmemeval-retrieval.md`.
-   Signedcommit690ecef48cc60b02ed435c51ba3e2391e1ebe50b pushed toprivate main.
-   HostedCI38628034666 passed313tests(one expectedskip),70installedtests and
-   frozen budget/84taskHTML checks. Local signaturevalid;GitHubbad_email unchanged.
-6. Source-retention diagnostic complete and root-reviewed; worker released ownership.
-   Pure in-memory API reports all selected historical revisions,exact citations,
-   conservative span ambiguity and complete supersession descendants. No store I/O,
-   deletion,vector-count audit,external-copy discovery or semantic-provenance proof.
-   Root independent30DAG/1500entry and1501chain/cycle oracle passes.10focusedtests
-   include malformed no-match inputs and byte-identical real-store/citation access.
-   Fresh offline33filewheelSHA256955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844
-   passes9smokecommands;80copiedinstalledtests pass outsidecheckout with envunset.
-   Exact receipt `docs/validation-source-retention.json`. Signedsourcecommit
-   6b16de9dd2612f8ecbf3abb8da98b501e014c7b8 pushed;hostedCI38629594401 passed
-   323tests(one expectedskip),80installedtests and frozen budget/84taskHTML checks.
-   Local signaturevalid;GitHubbad_email unchanged. No activeworkers/GPUjobs.
-7. Next bounded slice: expose persisted-store retention diagnostics with strict
-   read-only SQLite snapshot loading and a new private report. Validate schemas,
-   never use writable constructors,cover byte invariance/cross-store consistency;
-   no original/private corpus changes or erasure. Write a brief/delegate bounded
-   implementation only after inspecting current APIs. Existing pure planner is
-   not an erasure implementation. Continue useful work beyond CI; prototype needs
-   no PR/Linear bootstrap.
+Final local checks passed: 334 tests, zero skips (5.191s); Ruff 80 files, source mypy
+29 and scoped mypy 43. Independent root probe checked two historical revisions,
+1 direct/2 ambiguous/1 descendant candidates, private sentinels, unchanged input
+bytes/modes/mtimes and eight corruption/concurrency refusals. 91 copied installed
+wheel tests pass outside the checkout. All 33 previous runtime files unchanged;
+new 34-file wheel SHA256
+`41bb909feda22b10f9ed0a826a4a6ad499bf21221809eb7f255ec8b1202cb147`.
+Offline smoke reproduces the frozen budget report and byte-identical 84-task HTML.
+`docs/validation-retention-report.json` and `.local/installed-retention-report-receipt.json`.
+Source approval `.local/package-source-approved-retention-report.json`; wheel receipt
+`.local/package-smoke-fts-v3-chatgpt-20261014T202400715467Z.json`.
 
-Open: independent human labels/Gate A, calibrated semantic verification, source
-lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained
-model, full private-corpus deployment, public release or novelty claim.
+No active workers or GPU calls. Current source/report delivery is pending signed
+private push and hosted CI; see active-cycle for the exact state. Next: verify PRIVATE
+and unchanged remote tip, signed push, check hosted CI and remote HEAD, save receipts.
+Then build a bounded retrospective integrity-versus-support diagnostic from immutable
+fictional receipts: raw versus unique-quote-anchored integrity, separate dev/test and
+reviewer accounting, explicit parse/schema exclusions, no tuning or new model calls.
+This tests how much unsupported content an integrity-only rule would retain; agent
+labels remain provisional and cannot establish semantic acceptance or calibration.
 
-Automation `continue-tracemem-prototype` remains ACTIVE,every30minutes, same chat;
-root verified saved config this cycle. Quiet unless meaningful progress/failure/
-action. Avoid duplicate work. Original memory context stays read-only.
-
-Raj asked why Computer Use was present. Root explained the earlier blocked local
-HTML browser check; no Computer Use calls this continuation. Prefer deterministic
-code/tests for this research loop; a specific UI need would require separate judgment.
+Remaining substantive gates: independent human labels/Gate A, calibrated semantic
+verification, owner-authorized source lifecycle/erasure, temporal truth, licensed
+benchmark compatibility and matched-budget QA. No trained model/public release or
+novelty claim. Continue useful bounded progress; this checkpoint is not completion.

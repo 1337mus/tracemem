@@ -1,0 +1,148 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "cfeac262f4b295d5f9703f7a63a114b9f571627a716ece428de84f3237eca1da",
+    "docs/retention-report-brief.md": "2a532640a3f5af3da56774eb66f8059f2d84861dfa2ac718cc4a282d4b3963f0",
+    "docs/retention-report.md": "075d40957a47ecddaf224fdee8381706fc72c8f510a1fa72402bfb73bffc5ef9",
+    "src/tracemem/retention_report.py": "f3f98f3aa3e09868734745439a99842c2982c89db4025bc8fcc31113a7247d13",
+    "tests/test_retention_report.py": "4eb10cc4d463666de55782c67ba726960ae0b9e1c13823b2a126484e4e1f996e"
+  },
+  "commands": {
+    "diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-diff_check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "full_suite": {
+      "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-full_suite.log",
+      "log_sha256": "6a4bcc527356270c0ee09d087b76121b19ed4b59e002ec161a911464fbae5dc2"
+    },
+    "ruff_check": {
+      "command": ".venv/bin/ruff check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-ruff_check.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "ruff_format": {
+      "command": ".venv/bin/ruff format --check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-ruff_format.log",
+      "log_sha256": "a70f7dd4dea92217153fb5f41f49b47f586ab31ecae1d696942f53ccf1180f9e"
+    },
+    "scoped_mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-scoped_mypy.log",
+      "log_sha256": "355a435c33a29b8f3f0db0815b88731b7ae35c080fe47fdbc27e9330572711aa"
+    },
+    "source_mypy": {
+      "command": ".venv/bin/mypy",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-source_mypy.log",
+      "log_sha256": "4c4a1f687213d361065f9094b27b15c087d3754121b66f0e8580a9c699ab6426"
+    },
+    "workflow_lint": {
+      "command": "actionlint .github/workflows/ci.yml",
+      "exit_code": 0,
+      "local_log": ".local/final-retention-report-workflow_lint.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "delivery_state": "Reviewed and validated locally; signed private push and hosted CI pending",
+  "diagnostic": {
+    "ambiguous_candidates": 2,
+    "direct_candidates": 1,
+    "input_bytes_modes_mtimes_unchanged_on_success": true,
+    "lineage_descendants": 1,
+    "network_or_model_or_private_input_calls": 0,
+    "private_content_sentinels_absent": true,
+    "rejected_cases": [
+      "dangling evidence-head foreign key",
+      "stored revision mismatch",
+      "payload/SQL lineage mismatch",
+      "dangling -wal",
+      "dangling -shm",
+      "dangling -journal",
+      "WAL-format main without sidecar",
+      "same-byte inode replacement during analysis"
+    ],
+    "selected_historical_revisions": 2,
+    "valid_report_matches_pure_planner": true
+  },
+  "focused_tests": 11,
+  "full_suite": {
+    "elapsed_seconds": 5.191,
+    "skipped": 0,
+    "tests": 334
+  },
+  "gpu_or_model_calls": 0,
+  "installed_wheel": {
+    "additional_installed_tests": {
+      "includes_retention_report_tests": 11,
+      "receipt": ".local/installed-retention-report-receipt.json",
+      "receipt_sha256": "7503801036346595bdecd075c9179eb9b9d723ea3eeedbfeaa05952260112be6",
+      "retention_report_import_path_is_site_packages": true,
+      "test_count": 91,
+      "tests_exit_code": 0
+    },
+    "all_members_match_approved_source": true,
+    "commands_passed": 9,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "local_receipt": "/Users/raj/Projects/tracemem/.local/package-smoke-fts-v3-chatgpt-20261014T202400715467Z.json",
+    "network_or_model_calls": 0,
+    "new_module_checks": "91copied installed tests including API/CLI safety; existing frozen budget report and byte-identical84taskHTML reproduce.",
+    "package_members": 34,
+    "receipt_sha256": "d2227e87f69353413155e8433270ee83b492a070927d564dd2f0544be81102a6",
+    "source_path_imports": false,
+    "source_unchanged": true,
+    "stable_benchmark_fields_match": true,
+    "wheel_sha256": "41bb909feda22b10f9ed0a826a4a6ad499bf21221809eb7f255ec8b1202cb147"
+  },
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T20:25:04.566612+00:00",
+  "root_review": "Complete source/tests/docs reviewed; independent historical-revision, ambiguous-dependency, corruption, dangling-sidecar and same-byte replacement probe passed. All33prior runtime files unchanged.",
+  "scope": "Read-only copied-byte retention report over explicitly supplied quiescent rollback-mode fictional stores",
+  "source_base_commit": "95f456eb742c3778d024f33a452471d0a6aea588",
+  "source_sha256": {
+    "__init__.py": "ceabe786c2dfdb38d9132b38a93b5543c33e4d5dba3076475a86fea594d913db",
+    "__main__.py": "f8671118b692a0ba78ce99f479fcbedf2cdd2c74043bb2a5e00073a50f190b46",
+    "adapters/__init__.py": "960d10f1fd17702eb082340042ea888e498e9b0076d18eacccd227e9ef284789",
+    "adapters/chatgpt.py": "820e93e5ed43bc8d847f4ee04ba3db552e02c00eabb5c07d38df5d8a0f36a370",
+    "adapters/context_kit.py": "3e61c4d651a99c8cdd8bfabacb3e9deedf86dad9f365517c3d4b16322025d870",
+    "adapters/longmemeval.py": "e56726adea5ea28d798a05ec66d68b0050bf095c4c0da003b553619d278e4f34",
+    "anchoring.py": "beed8dd94bbc4dd14dc9e77176b8ed479bc69200f3575cacd4266014c6cbefd0",
+    "annotation_report.py": "db9e6fa305b859147305c6691cba46edefaea32ce89b965eb087834fb0af2afe",
+    "annotations.py": "c3ce656946a76afd07a28a2f8eddc8ee90035eb3e88c06de2c819c17af4e3d95",
+    "benchmark.py": "bd0589f91efdfc6d5c4a82d00cfeea973612a4d7ba67f4b80eef1be509917653",
+    "budget_benchmark.py": "0070eeaafa1fd0c945bc9cc3912389ead2f52df53954862414ed81574f930711",
+    "challenge.py": "47ecb4548b2433a0604956e1a694632ca78a18e1034d8e43c9b780e38cd4927d",
+    "citations.py": "7ee21eee8bf5d11c4507f4a3535909959754c10ce65cf1aa0f38fca885fa872f",
+    "claims.py": "4d3c08bfe74e528b116d455a93c568a19baf377f66fa22e816128bee278b0657",
+    "cli.py": "6d555936c61cff6a3dcb0cb71430912c0ad3b9afa041404cdbaad1e61d1126dd",
+    "data/claim_challenge.json": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
+    "data/corpus.json": "4012f95c2ed7837cc65b626e225547aa2a089b00e04765fb59c8bebbddab6d35",
+    "data/queries.json": "170dc13a4dffcaf07d4dfba6e957d60be7536fd43c3cba3abeb4f62062842659",
+    "data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "data/support_challenge.json": "582612fc24e60868c8b0b1f37745188dbf143a41330a5777152b5cce9adc90e9",
+    "dataset_audit.py": "d6d541cc3f996db79afa9fbf42fa5b30ca1bab7c994d0ab858796ebcf6628c18",
+    "ledger.py": "86c2824b069f89da335d8f6b938150286ccd2864cfcb0e0a4f9aa28e218ddffc",
+    "privacy.py": "b78d8b7e023a15c466f2a76d98a91a3f3dbc36bfeb01006f958ad65c9e3aae0b",
+    "prompts.py": "2d866dd3203b5352f0d80ab2227a5ab8cf32efc2d759da0bcaf5e4af54525c57",
+    "remote_vectors.py": "23854467c4782c958da76e73f117da4e3454a2affceedb72d4d4c6ffa6793961",
+    "retention.py": "242da798b0e89895baf7f7cc9b2d11dccce579c4a00349747d35b839a98c3a7b",
+    "retention_report.py": "f3f98f3aa3e09868734745439a99842c2982c89db4025bc8fcc31113a7247d13",
+    "retrieval.py": "dc1dd3d2bee648526cfdb0a6446e4d6b9dbeab7e9709f48c5bd851a65937dabd",
+    "review_html.py": "e697edb9e5ec68943599b856998af9f0a17547bebde5fa616ce8e4d2645e1cd4",
+    "scenarios.py": "22077a82f12efa8055905feef0ba4f193651c1268592da398f541192593da0cd",
+    "schema.py": "d67abaf132d3d8c1471e9f1e1cb706d66c4347c5519757015e34474b08b05530",
+    "snapshots.py": "a18b25b699d6d1b076b29a0acfe63091013f0948c14cabe4e0999a72dcb1a669",
+    "storage.py": "cf7d94d27044b81b47853bf262787b74b5e1a32b6fe2086a6d61cac3188f3d37",
+    "support.py": "e00cd64d842fe4faf1d7ac0db0a0fccbc67c94f43497f3aa4665336dcaf4d6a4"
+  }
+}
