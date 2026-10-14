@@ -134,7 +134,7 @@ skip, 91 installed tests, frozen budget/HTML checks. GitHub still reports bad_em
 local signature verifies. No GPU calls.
 
 Retrospective integrity-versus-support experiment is now implemented, root reviewed
-and locally validated. No active worker or GPU calls. Source-only experiment:
+and locally validated. That slice has no active worker or GPU calls. Source-only experiment:
 `experiments/evaluate_integrity_selectivity.py`; brief `docs/integrity-selectivity-brief.md`;
 contract/results `docs/integrity-selectivity.md`; machine report
 `docs/scenarios-integrity-selectivity.json`; validation
@@ -147,8 +147,9 @@ checkout used all 34 approved installed runtime files and reproduced the report
 exactly. No package source changed and no fresh wheel was needed; previous 91
 installed tests still bind those same bytes. The isolated run's receipt is
 `.local/integrity-selectivity-isolated-receipt.json`. Historical raw receipts and
-response files remain unchanged. Signed private delivery/hostedCI for this experiment
-is pending; active-cycle tracks exact state.
+response files remain unchanged. Signed source `f949b9acefd600988a996e82ca9b53a0138027d3` is pushed to
+PRIVATE main; hostedCI `38634067687` passed: 346tests (one expected Context Kit skip),
+91installedtests and frozen budget/HTML checks. Active-cycle tracks exact state.
 
 Qwen anchored passes dev 41/41 and test 40/42 schema-valid origins. Among those,
 blind-agent labels are dev 26 supported/14 unsupported/1 uncertain and test 24/14/2;
@@ -158,11 +159,16 @@ Raw integrity passes only one Qwen claim per split and none from Phi. These are
 retrospective agent-label counts, not human precision/calibration. No acceptance
 policy or model winner follows. Gate A remains unmet.
 
-Next: finish signed private delivery, verify hostedCI and exact remoteHEAD, then
-inspect the existing LongMemEval loader's 64 MiB cap. A useful bounded follow-up is
-file-streaming input support tested only on fictional data, without benchmarkbody
-downloads or a license-compatibility claim. Root must inspect/brief that design
-before delegating implementation; do not duplicate workers or launch inference.
+Next: implement the root-reviewed architecture in `docs/longmemeval-file-brief.md`.
+Root inspected the existing bytes adapter/CLI: both cap total input at 64 MiB,
+while public S/M metadata is larger. New bounded file scan validates every item,
+selects at most five requested questions, preserves existing identities, computes
+the full raw hash and publishes no partial return on late-invalid input. No actual
+benchmark body downloads, inference or rights claim. Active worker `/root/longmemeval_file` uses Luna/medium and owns only
+`src/tracemem/adapters/longmemeval_file.py`, `tests/test_longmemeval_file.py`,
+`docs/longmemeval-file.md` and its task logs. Do not duplicate or edit owned files
+until release. Root source review and fresh wheel approval remain required before
+packaging. Current worker/GPU/job state is in `.local/active-cycle.json`.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed

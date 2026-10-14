@@ -50,12 +50,31 @@
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   },
-  "delivery_state": "Locally validated; signed private delivery and hostedCI pending",
+  "delivery_state": "Signed commit pushed to private main; hostedCI passed",
   "focused_tests": 12,
   "full_suite": {
     "elapsed_seconds": 7.056,
     "skipped": 0,
     "tests": 346
+  },
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "f949b9acefd600988a996e82ca9b53a0138027d3",
+    "hosted_elapsed_seconds": 17.761,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 346,
+    "installed_chatgpt_tests_passed": 34,
+    "installed_longmemeval_tests_passed": 20,
+    "installed_new_api_checks_passed": true,
+    "installed_retention_report_tests_passed": 11,
+    "installed_retention_tests_passed": 10,
+    "installed_retrieval_tests_passed": 16,
+    "installed_tests_passed": 91,
+    "local_log_sha256": "306a2c60aa983a7f64efa065be20edb5c71898f96f9ae5d8fb0ce39ca69606b1",
+    "node_vm_tests_passed": true,
+    "run_id": 38634067687,
+    "skip_reason": "Optional local Context Kit checkout absent on hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38634067687"
   },
   "human_labels": 0,
   "independent_root_errors": {
@@ -96,5 +115,6 @@
     "wheel_sha256": "41bb909feda22b10f9ed0a826a4a6ad499bf21221809eb7f255ec8b1202cb147"
   },
   "scope": "Retrospective fictional raw/quote-anchored integrity filters versus separate existing agent support judgments",
-  "source_base_commit": "e2ccd54e942563615907c9b94980a844cf72dfc9"
+  "source_base_commit": "e2ccd54e942563615907c9b94980a844cf72dfc9",
+  "source_commit": "f949b9acefd600988a996e82ca9b53a0138027d3"
 }
