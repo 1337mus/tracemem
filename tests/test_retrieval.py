@@ -102,6 +102,55 @@ class LocalSentenceTransformerTests(unittest.TestCase):
 
 
 class ContextPackingTests(unittest.TestCase):
+    def test_manifest_names_exact_selected_hits_and_matches_legacy_packing(self) -> None:
+        import tracemem.retrieval as retrieval
+
+        oversized = SimpleNamespace(
+            citation="large@rev:0:100",
+            record=SimpleNamespace(
+                role="user",
+                recorded_at=None,
+                content_kind="conversation",
+                text="x" * 500,
+            ),
+        )
+        first = SimpleNamespace(
+            citation="same@rev:0:4",
+            record=SimpleNamespace(
+                role="user",
+                recorded_at="2026-09-01T10:00:00Z",
+                content_kind="mixed_untrusted",
+                text="café 🪐",
+            ),
+        )
+        second = SimpleNamespace(
+            citation="same@rev:0:4",
+            record=SimpleNamespace(
+                role="assistant",
+                recorded_at=None,
+                content_kind="conversation",
+                text="short",
+            ),
+        )
+        lines = (
+            "same@rev:0:4 [role=user recorded_at=2026-09-01T10:00:00Z "
+            "content_kind=mixed_untrusted] café 🪐",
+            "same@rev:0:4 [role=assistant recorded_at=unknown content_kind=conversation] short",
+        )
+        expected = "\n".join(lines)
+        budget = len(expected.encode("utf-8"))
+
+        packed = retrieval.pack_context_with_manifest([oversized, first, second], max_bytes=budget)
+
+        self.assertIsInstance(packed, retrieval.PackedContext)
+        self.assertEqual(packed.text, expected)
+        self.assertEqual(packed.selected_hits, (first, second))
+        self.assertEqual(retrieval.pack_context([oversized, first, second], budget), expected)
+        self.assertEqual(len(packed.text.encode("utf-8")), budget)
+        empty = retrieval.pack_context_with_manifest([first], max_bytes=0)
+        self.assertEqual(empty.text, "")
+        self.assertEqual(empty.selected_hits, ())
+
     def test_utf8_byte_limit_includes_citation_metadata_and_unicode_evidence(self) -> None:
         import tracemem.retrieval as retrieval
 

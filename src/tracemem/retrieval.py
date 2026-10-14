@@ -32,6 +32,14 @@ class SearchHit:
     citation: str
 
 
+@dataclass(frozen=True, slots=True)
+class PackedContext:
+    """Packed text and the exact whole hits that contributed to it."""
+
+    text: str
+    selected_hits: tuple[SearchHit, ...]
+
+
 def _tokens(text: str) -> set[str]:
     return set(_TOKEN_PATTERN.findall(text.casefold()))
 
@@ -266,12 +274,12 @@ class Retriever:
         return scored
 
 
-def pack_context(hits: Sequence[SearchHit], max_bytes: int) -> str:
-    """Pack complete citation/evidence lines under a UTF-8 byte ceiling."""
+def _pack_context(hits: Sequence[SearchHit], max_bytes: int) -> PackedContext:
     if isinstance(max_bytes, bool) or not isinstance(max_bytes, int) or max_bytes < 0:
         raise ValueError("max_bytes must be a non-negative integer")
 
     lines: list[str] = []
+    selected_hits: list[SearchHit] = []
     used_bytes = 0
     for hit in hits:
         citation = hit.citation
@@ -290,5 +298,16 @@ def pack_context(hits: Sequence[SearchHit], max_bytes: int) -> str:
         separator_bytes = 1 if lines else 0
         if used_bytes + separator_bytes + line_bytes <= max_bytes:
             lines.append(line)
+            selected_hits.append(hit)
             used_bytes += separator_bytes + line_bytes
-    return "\n".join(lines)
+    return PackedContext("\n".join(lines), tuple(selected_hits))
+
+
+def pack_context_with_manifest(hits: Sequence[SearchHit], max_bytes: int) -> PackedContext:
+    """Pack whole citation/evidence lines and preserve their exact hit manifest."""
+    return _pack_context(hits, max_bytes)
+
+
+def pack_context(hits: Sequence[SearchHit], max_bytes: int) -> str:
+    """Pack complete citation/evidence lines under a UTF-8 byte ceiling."""
+    return _pack_context(hits, max_bytes).text
