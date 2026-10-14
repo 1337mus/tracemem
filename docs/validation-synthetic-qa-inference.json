@@ -1,8 +1,8 @@
 {
   "python_version_correction": {
     "recorded_date": "2026-10-14",
-    "status": "root reviewed; corrected source not signed/delivered and not launched",
-    "source_commit": "pending signed delivery",
+    "status": "signed/pushed; one corrected-source call succeeded; app stopped with zero tasks; root replay and CI passed",
+    "source_commit": "814c5ca09aa251f6d06c918adf0e621a35dd888a",
     "base_delivery": {
       "commit": "f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e",
       "ci_run_id": "38647516448",
@@ -26,8 +26,31 @@
       "offline_dry_run_minimum": "3.11",
       "guard_precedes_workspace_output_and_app_effects": true,
       "automatic_retry": false,
-      "launched": false,
-      "initialization_failure": "Local Python 3.12 serialized function did not match Python 3.11 image; initialization failed before inference, app stopped with zero tasks and no outputs. Original failure receipt is preserved below."
+      "launched": true,
+      "corrected_source_call_count": 1,
+      "result": "success: one corrected-source call produced all 72 answers; no retry",
+      "initialization_failure": "Local Python 3.12 serialized function did not match Python 3.11 image; initialization failed before inference, app stopped with zero tasks and no outputs. Original failure receipt is preserved below.",
+      "result_receipt_path": ".local/synthetic-qa-qwen3-4b-python312-20261014T223209Z.json",
+      "result_receipt_sha256": "1da725c57bf858a6cf205bb300122616904520ad2966ff212f84605ca25d0738"
+    },
+    "corrected_source_delivery": {
+      "commit": "814c5ca09aa251f6d06c918adf0e621a35dd888a",
+      "signed": true,
+      "pushed": true,
+      "repository_visibility": "PRIVATE",
+      "ci_run_id": "38648259693",
+      "ci_status": "passed",
+      "ci_summary": {
+        "tests_run": 447,
+        "elapsed_seconds": 42.572,
+        "skips": 1,
+        "installed_tests_run": 195,
+        "installed_elapsed_seconds": 16.149,
+        "installed_skips": 2,
+        "ruff_files": 96,
+        "source_mypy_files": 31,
+        "log_path": ".local/github-actions-38648259693.log"
+      }
     },
     "file_sha256": {
       "experiments/modal_synthetic_qa.py": "1fa6881e03b8f501cc127de97b29576bc70561b777b69f5359d381b2a1ca968c",
@@ -76,11 +99,82 @@
       "path": ".local/synthetic-qa-modal-preflight-python312.json",
       "sha256": "a8b767f34782c57a62e84978988716aee58099541cffb4ccd292e28062702f1d",
       "checked_at_utc": "2026-10-14T22:30:18.619147+00:00",
+      "scope": "Prelaunch snapshot; active GPU jobs were zero at this time.",
       "personal_workspace_verified": true,
       "active_gpu_jobs": 0,
       "historical_app_state": "stopped, zero tasks",
       "launch_occurred": false
-    }
+    },
+    "completed_call": {
+      "exec_session_id": 76840,
+      "app_id": "ap-hlJcf4cTuGwBEPl4P55iZT",
+      "receipt_path": ".local/synthetic-qa-qwen3-4b-python312-20261014T223209Z.json",
+      "receipt_file_sha256": "1da725c57bf858a6cf205bb300122616904520ad2966ff212f84605ca25d0738",
+      "analysis_path": ".local/synthetic-qa-qwen3-4b-python312-analysis-20261014T223209Z.json",
+      "analysis_file_sha256": "0b3932af0f140f16fd98e7d01d60f94072162c01bba312173f32a6c4886af89f",
+      "completed_inference_calls": 1,
+      "request_count": 72,
+      "result": "success",
+      "app_state": "stopped;tasks0",
+      "active_gpu_jobs_at_verification": 0,
+      "automatic_retry": false,
+      "model_id": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "payload_sha256": "80e058c629de8f8a06ca4caa8f1093a8308a299c976b018ab7e8c5c62493b2ac",
+      "gpu": "Tesla T4; compute capability 7.5",
+      "gpu_compute_seconds": 54.679459,
+      "model_load_seconds": 76.35161,
+      "remote_function_elapsed_seconds": 137.175618,
+      "peak_gpu_memory_bytes": 8822848512,
+      "input_tokens": {
+        "sum": 18078,
+        "min": 78,
+        "max": 384
+      },
+      "generated_tokens_including_eos": 636,
+      "exec_exit_code": 0,
+      "exec_session_state": "closed"
+    },
+    "success_validation": {
+      "root_replay": {
+        "path": ".local/synthetic-qa-real-run-root-replay.json",
+        "sha256": "56f8339d4d982f92b4c802adc22013feebcee6f74ecd7bdd8db15592c1414c53",
+        "checked_at_utc": "2026-10-14T22:35:31.834181+00:00",
+        "independent_cells_replayed": 18,
+        "literal_outcomes_replayed": 72,
+        "token_empty_finish_counts_replayed": true,
+        "nonzero_context_identical_across_modes_and_ceilings": true,
+        "no_new_model_calls": true
+      },
+      "installed_wheel_reproduction": {
+        "path": ".local/synthetic-qa-real-run-installed-replay.json",
+        "sha256": "c1ac68c65be24edb6cfd2b47311feaaa2d0c07837848aea8cecd7dc259cc7f93",
+        "exact_analysis_reproduced": true,
+        "pythonpath_pythonhome_unset": true,
+        "model_or_network_calls": 0,
+        "new_wheel_built": false
+      },
+      "cleanup": {
+        "app_id": "ap-hlJcf4cTuGwBEPl4P55iZT",
+        "app_state": "stopped",
+        "tasks": 0,
+        "active_gpu_jobs": 0,
+        "automatic_retries": 0,
+        "evidence_path": ".local/synthetic-qa-python312-cleanup.json",
+        "evidence_sha256": "54907993e07e80df06fbe4b6dd517f73aa0df8329d8f627f0f7350fe11b8800d",
+        "checked_at_utc": "2026-10-14T22:39:23.111435+00:00"
+      },
+      "analysis": {
+        "path": "docs/synthetic-qa-qwen3-analysis.json",
+        "sha256": "0b3932af0f140f16fd98e7d01d60f94072162c01bba312173f32a6c4886af89f",
+        "provisional_agent_only": true,
+        "split_artifacts": [
+          "docs/synthetic-qa-qwen3-dev.json",
+          "docs/synthetic-qa-qwen3-test.json"
+        ]
+      }
+    },
+    "scope": "Corrected source validation and one completed synthetic-only Qwen3-4B inference run; no private corpus or references sent."
   },
   "chronology_limits": [
     "Initial builder RED was a PYTHONPATH setup failure, not behavioral proof.",
@@ -136,7 +230,7 @@
     "runner": ".local/synthetic-qa-modal-root-oracle-2e3475ac.json"
   },
   "runtime_files_unchanged": 36,
-  "scope": "Reviewed source runner/analyzer before interpreter-mismatch fix; not live-inference success",
+  "scope": "Corrected source validation and one completed fictional, synthetic-only Qwen3-4B inference run; preserves the earlier failed initialization receipt and all original source-validation evidence.",
   "source_commit": "f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e",
   "source_sha256": {
     "examples/synthetic/qa-diagnostic-v1.json": "a4d94c8e727c71e8c8b723e97c9674b1d0008ac9f35ba675485a7ea796349d78",
@@ -152,5 +246,6 @@
     "focused_mypy_files": 4,
     "ruff_files": 96,
     "source_mypy_files": 31
-  }
+  },
+  "updated_at_utc": "2026-10-14T22:39:23.111435+00:00"
 }

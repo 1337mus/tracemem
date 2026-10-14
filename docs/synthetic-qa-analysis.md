@@ -3,8 +3,10 @@
 This tool analyzes a receipt from the frozen 72-request diagnostic in
 [`synthetic-qa-answer-protocol.md`](synthetic-qa-answer-protocol.md). It calls no
 model and does not change the prepared requests, references, prompt, retrieval,
-or payload. The implementation tests use fictional constructed receipts; no
-answer-generation run or answer observation is part of this report.
+or payload. The analyzer's implementation tests use fictional constructed
+receipts. A separate successful Qwen3-4B synthetic answer-generation run is now
+recorded in the [split results](synthetic-qa-qwen3-results.md), with its raw
+receipt and full analysis preserved separately.
 
 Run it with the two reviewed hash approvals and a new output path:
 
@@ -27,6 +29,14 @@ runtime metadata remains in the input receipt and is not treated as attestation.
 The output file must not already exist. The CLI creates it with mode `0600`,
 rejects symlink targets, and returns a sanitized nonzero error for invalid input
 or output paths.
+
+For the completed run, root independently replayed all 18 cells, 72 literal
+outcomes, and token/finish/empty counts. The nonzero rendered context for each
+question was identical across retrieval modes and 512/2048-byte ceilings, so
+the run cannot compare retrieval modes or context capacity. See the
+[run results and limitations](synthetic-qa-qwen3-results.md). The output is
+provisional agent-only evidence; it is not semantic accuracy, training-ready
+data, or authorization for another inference run.
 
 The report contains 18 separately labeled cells: dev and test, each crossed with
 the three retrieval modes and byte ceilings 0, 512, and 2048. Every cell has four

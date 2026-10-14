@@ -1,0 +1,682 @@
+{
+  "schema_version": 1,
+  "payload_sha256": "80e058c629de8f8a06ca4caa8f1093a8308a299c976b018ab7e8c5c62493b2ac",
+  "runner_sha256": "1fa6881e03b8f501cc127de97b29576bc70561b777b69f5359d381b2a1ca968c",
+  "client_elapsed_seconds": 145.733279,
+  "result": {
+    "schema_version": 1,
+    "payload_sha256": "80e058c629de8f8a06ca4caa8f1093a8308a299c976b018ab7e8c5c62493b2ac",
+    "model_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "config_sha256": "bab03d3f86877737d8c4a04eb4fd5fddb7b480a449527d80147eb4739d9f3f15",
+    "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "package_versions": {
+      "torch": "2.7.1",
+      "transformers": "4.51.3",
+      "accelerate": "1.6.0"
+    },
+    "python_version": "3.12.10",
+    "torch_cuda_version": "12.6",
+    "gpu_name": "Tesla T4",
+    "gpu_compute_capability": [
+      7,
+      5
+    ],
+    "gpu_compute_seconds": 54.679459,
+    "model_load_seconds": 76.35161,
+    "remote_function_elapsed_seconds": 137.175618,
+    "peak_gpu_memory_bytes": 8822848512,
+    "request_count": 72,
+    "outputs": [
+      {
+        "request_id": "qa-correction-lumina::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 81,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::bm25::512",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::bm25::2048",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 81,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::vector::512",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::vector::2048",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 81,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::hybrid::512",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-correction-lumina::hybrid::2048",
+        "raw_output": "Teal.",
+        "input_tokens": 364,
+        "generated_tokens": 4,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 93,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::bm25::512",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::bm25::2048",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 93,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::vector::512",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::vector::2048",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 93,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::hybrid::512",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-dated-corin::hybrid::2048",
+        "raw_output": "The instrument Corin played at the recital on 2022-04-17 was the bassoon.",
+        "input_tokens": 377,
+        "generated_tokens": 27,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 78,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::bm25::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::bm25::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 78,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::vector::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::vector::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 78,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::hybrid::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-negation-venn::hybrid::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 226,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 84,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::bm25::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::bm25::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 84,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::vector::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::vector::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 84,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::hybrid::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-orpheus_abs::hybrid::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 373,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 80,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::bm25::512",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::bm25::2048",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 80,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::vector::512",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::vector::2048",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 80,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::hybrid::512",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-speaker-nemi::hybrid::2048",
+        "raw_output": "The statement \"The silver orchard opens at dawn\" was said by Nemi.",
+        "input_tokens": 227,
+        "generated_tokens": 18,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 85,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::bm25::512",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::bm25::2048",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 85,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::vector::512",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::vector::2048",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 85,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::hybrid::512",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-conditional-sola::hybrid::2048",
+        "raw_output": "The context states that if snow blocks the trail, Sola will move the lantern workshop to the cedar cabin. Therefore, the answer is the cedar cabin.",
+        "input_tokens": 384,
+        "generated_tokens": 32,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 79,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::bm25::512",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::bm25::2048",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 79,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::vector::512",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::vector::2048",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 79,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::hybrid::512",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-simple-fact-tavik::hybrid::2048",
+        "raw_output": "Tavik's favorite tea is jasmine tea.",
+        "input_tokens": 363,
+        "generated_tokens": 11,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::bm25::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 82,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::bm25::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::bm25::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::vector::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 82,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::vector::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::vector::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::hybrid::0",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 82,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::hybrid::512",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      },
+      {
+        "request_id": "qa-unanswerable-velorum_abs::hybrid::2048",
+        "raw_output": "UNKNOWN",
+        "input_tokens": 368,
+        "generated_tokens": 2,
+        "stop_reason": "eos",
+        "hit_max_new_tokens": false,
+        "truncated": false
+      }
+    ],
+    "modal_call_id": "fc-01M4Y8PTZRKH8B4CZKQS59XB2K"
+  }
+}

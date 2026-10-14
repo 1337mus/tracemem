@@ -1,195 +1,81 @@
-# TraceMem continuation
+# TraceMem handoff
 
-Updated 2026-10-14. Verify by: 2026-10-15. Read `.local/active-cycle.json`
-first, then verify live git/workers/CI. This is a prototype checkpoint, not overall
-completion. Existing `continue-tracemem-prototype` heartbeat continues this chat;
-do not create a duplicate. History remains in validation documents and git.
+Updated 2026-10-14. This checkpoint records the completed synthetic QA run and
+the current offline follow-up. Verify live GitHub and worker state before any
+operational action by 2026-10-15. No new inference is authorized by this handoff.
 
-## Synthetic QA source and runtime status, 2026-10-14
+## Current state
 
-Source snapshot `f49a599aa9ade2c8beeedfe4a16c1c9f0758ff8e` was delivered; hosted
-CI [38647516448](https://github.com/1337mus/tracemem/actions/runs/38647516448)
-passed. Its first Modal app initialization failed before inference because the
-local serialized source used Python 3.12 and the image used Python 3.11. The app
-is stopped with zero tasks, no model outputs or GPU inference, and no automatic
-retry. The original failure receipt and validation hashes remain in
-`docs/validation-synthetic-qa-inference.json`.
+Corrected-source commit `814c5ca09aa251f6d06c918adf0e621a35dd888a` is signed
+and pushed to private `1337mus/tracemem`. CI [38648259693](https://github.com/1337mus/tracemem/actions/runs/38648259693)
+passed: 447 tests in 42.572s (one optional Context Kit skip), 195 installed
+tests in 16.149s (two skips), Ruff on 96 files, and source mypy on 31 files.
+The earlier Python 3.11 image initialization failure remains documented with
+its original receipt and hashes in
+[`validation-synthetic-qa-inference.json`](validation-synthetic-qa-inference.json).
 
-Root reviewed the correction: the image is pinned to Python 3.12 and unsupported
-local Python minors refuse before workspace, output, or app effects. The updated
-source passed the focused suite, strict checks, and root's independent SDK and
-approval-gate oracle; it has not been launched. Corrected-source signed delivery
-is pending, and any later launch requires root's separate decision. Do not retry
-or launch. See `docs/synthetic-qa-modal.md` and the correction record in
-`docs/validation-synthetic-qa-inference.json`. Read active-cycle and live workers
-before taking ownership. The scoring contract was frozen before inference in
-`docs/synthetic-qa-answer-protocol.md`.
+Exactly one corrected-source Qwen3-4B call completed successfully with 72
+answers. The Modal app is stopped with zero tasks; the read-only live snapshot
+reported zero active GPU jobs. Root independently replayed all 18 analysis
+cells, all 72 literal outcomes, and token/empty/finish counts. An installed-wheel
+reproduction outside the checkout, with `PYTHONPATH` and `PYTHONHOME` unset and
+no model or network calls, reproduced the analysis byte-for-byte. The raw receipt,
+full analysis, root replay, and installed replay are preserved under `.local/`;
+their durable documentation copies and limitations are listed in
+[`synthetic-qa-qwen3-results.md`](synthetic-qa-qwen3-results.md).
 
-## Authority and execution
+One offline token-budget packing worker is active under
+`.local/token-packing-brief.md`; root review is pending. It is the next useful
+step: implement generic token-budget packing and verify it offline. No GPU jobs
+are active. Do not launch or retry inference based on this document.
 
-Workspace `/Users/raj/Projects/tracemem`; original specification
-`/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Reviewed code,
-docs and fictional fixtures may be signed and pushed to PRIVATE personal
-`1337mus/tracemem`. Assert PRIVATE immediately before every push. No publication,
-private-data upload, destructive change or expensive training without separate
-approval. Context Kit `/Users/raj/Projects/ctxkit`, original conversations and
-`~/.llm-context` remain read-only. Keep private text/claims/vectors/checkpoints in
-ignored mode-0700 `.local`, mode-0600 files. No persistent private corpus imported.
-No model weights, Torch, Transformers or inference on this Mac. Six historical
-fictional Modal calls completed and apps stopped; do not relaunch them. No GPU
-needed for current slice. Computer Use is unused; browser rendering unverified.
+Phase 0/1 remain complete; see [`roadmap.md`](roadmap.md) and
+[`context-kit-inventory.md`](context-kit-inventory.md). Context Kit at
+`/Users/raj/Projects/ctxkit`, original conversations, and `~/.llm-context` remain
+read-only. Keep model weights, tokenizers, and inference off this Mac. Reviewed
+code, docs, and fictional fixtures may be signed and pushed only to private
+`1337mus/tracemem`; assert the repository is still PRIVATE immediately before
+each push. No public publication, private-data upload, or training is authorized.
 
-Preparation/TDD/model routing/handoff workflow applies. Root architects, adjudicates,
-reviews every diff and independently verifies; bounded Luna/medium workers implement
-from file-level briefs. Do not duplicate active workers. Full affected suite once
-at final boundary; focused checks for narrow review fixes, then CI full rerun.
-Prototype scope requires no Linear/PR. Preserve historical raw receipts and prompts.
+## Result boundary
 
-Signed commits use:
-`git -c gpg.program=/Users/raj/Projects/tracemem/.local/gpg-noninteractive.sh commit -S`.
-Local signature verification succeeds when allowed to read the GPG trust database.
-GitHub reports `bad_email`; do not change identity/signing settings or rewrite history.
-Git/network writes require the tool's sandbox escalation. Never hide failing exit
-codes behind pipes or later commands.
+All 18 cells report literal agreement 1/4 overall, 0/3 for answerable questions,
+and 1/1 for unknown questions. Every zero-context cell returns `UNKNOWN` for
+all four questions. All 72 outputs ended in EOS; none were empty, length-stopped,
+truncated, or hit the generation limit. The 18,078 input tokens range from 78
+to 384; outputs used 636 generated tokens including EOS. GPU compute took
+54.679459s, model loading 76.35161s, remote execution 137.175618s, and peak
+allocated GPU memory was 8,822,848,512 bytes.
+Cleanup inventory `.local/synthetic-qa-python312-cleanup.json` (checked at
+`2026-10-14T22:39:23.111435Z`) records both apps stopped with zero tasks and
+zero active GPU jobs.
 
-## Latest runtime delivery and validation
+Root replay found that each question's nonzero rendered context was identical
+across retrieval modes and 512/2048-byte ceilings. This run cannot compare
+retrieval modes or context capacity. Literal matching does not normalize
+punctuation or semantic equivalence; observed differences include `teal` vs
+`Teal.`, `bassoon` vs a full-sentence answer, and `No` vs `UNKNOWN`. Do not
+rescore, claim semantic accuracy, salvage test performance, or call this
+training-ready. References are provisional agent-authored; Gate A and
+independent human labels remain unmet. Byte ceilings are UTF-8 bytes, not
+tokenizer-matched budgets. There is no pooled score or model ranking.
 
-Signed source `1f1a54083c8e140d12e2d668881cde239dd5d608` pushed PRIVATE.
-Hosted CI [38642368196](https://github.com/1337mus/tracemem/actions/runs/38642368196)
-passed: 397 tests, one expected Context Kit skip; Ruff 90 files; source mypy 31;
-145 installed tests with the same expected skip; frozen budget and HTML smoke.
-Exact log hash and signature facts: `docs/github-validation.json`.
+## Durable evidence
 
-Latest slice adds optional `read_transcript(..., require_quiescent=True)` and
-`ingest --require-quiescent`. Regular nonsymlink leaf only; nonblocking descriptor
-opening; compare path/descriptor dev, inode, size, mtime, ctime and mode before
-read and after natural EOF. Ordinary change or replacement refuses import and
-EvidenceStore rolls back logical revisions/heads. Default streaming behavior is
-preserved. Early close releases descriptor without checking unconsumed remainder.
-Not an atomic snapshot or adversarial metadata-restoration defense. New empty
-schema may remain after refused import. See `docs/transcript-consistency.md`.
+- Raw answer receipt copy: `examples/synthetic/qwen3-4b-qa-diagnostic-remote.json`
+  (SHA256 `1da725c57bf858a6cf205bb300122616904520ad2966ff212f84605ca25d0738`).
+- Full analyzer output: `docs/synthetic-qa-qwen3-analysis.json` (SHA256
+  `0b3932af0f140f16fd98e7d01d60f94072162c01bba312173f32a6c4886af89f`).
+- Split artifacts: `docs/synthetic-qa-qwen3-dev.json` and
+  `docs/synthetic-qa-qwen3-test.json`; each contains only its split's nine
+  cells and 36 outcomes.
+- Analysis procedure and separate results: `docs/synthetic-qa-analysis.md` and
+  `docs/synthetic-qa-qwen3-results.md`.
+- Correction, original failure receipt/hash, prior source-validation hashes,
+  corrected run, root replay, cleanup, and CI facts:
+  `docs/validation-synthetic-qa-inference.json`.
 
-Local full boundary: 396 tests, zero skips, 10.600s; Ruff 90 files, source mypy 31,
-scoped mypy 47, actionlint and diff check. Root then found a self-loop symlink error
-gap. Genuine RED/GREEN fix added one test, preserved default RuntimeError, and
-passed 25 focused tests with one optional Context Kit skip, Ruff and affected mypy.
-Final hosted full suite 397 passed. Root final 17-check mutation/rollback oracle plus
-self-loop/default assertion passed. Worker EOF mutation tests followed implementation;
-do not claim per-behavior preimplementation TDD for the entire slice.
-
-Approved manifest `.local/package-source-approved-transcript-consistency.json`
-binds 36 files: adapter init and CLI changed, `_transcript_source.py` added,
-33 prior runtime files unchanged. Offline wheel SHA256
-`3d8263b7b97fa4f9ac28b204cb285beea4ac2dedf451bb4dcfaf9216409df637`.
-145 copied installed tests passed with one expected Context Kit skip outside checkout,
-PYTHONPATH/HOME unset. Frozen budget report and byte-identical 84-task HTML reproduce.
-Validation `docs/validation-transcript-consistency.json`; wheel receipt
-`.local/package-smoke-fts-v3-chatgpt-20261014T214119419628Z.json`; installed receipt
-`.local/transcript-consistency-installed-receipt.json`. Inspect/approve runtime bytes
-before any new wheel; use `.local/package-smoke-fts-v3-chatgpt.py` with approved manifest.
-
-## Existing prototype and evidence boundaries
-
-Phase0/1 runnable. Context Kit clean at `20096bcb1095883262c77a37bbbb458732d9cf3a`
-(last rechecked this cycle); no conversation/vector DB or ChatGPT importer. Reuse
-config/discovery, read original transcripts separately, no write-capable ctx commands.
-`docs/context-kit-inventory.md` records schemas and aggregate coverage.
-
-Provider-neutral immutable evidence revisions, mutable last-imported heads,
-schema3 SQLite FTS5 BM25, signed-hash vectors/RRF, optional pinned remote MiniLM
-vectors, exact historical citations and UTF8-byte context packing are implemented.
-Default package has no dependencies. Schema2 is rejected read-only, no migration.
-Claude/Codex JSONL defaults 8 MiB per raw LF/CRLF line, override up to 64 MiB; CR-only
-separators unsupported. No total-memory guarantee. `docs/transcript-bounds.md`.
-ChatGPT selected-parent-chain reader/fresh snapshot CLI is fictional-fixture verified;
-actual-export compatibility unverified. `docs/chatgpt-export.md`, `docs/chatgpt-snapshot.md`.
-
-Proposal ledger records REVIEW/REJECT claims, exact quotes and lineage. No automatic
-semantic acceptance or current-fact truth. Pure source-retention planner handles
-historical revisions, citation links, ambiguous spans and complete descendants.
-Persisted-store report reads bounded 64 MiB quiescent rollback-mode DB copies into
-memory; rejects WAL/journal sidecars, validates integrity, writes a new private report.
-No deletion, complete ownership proof, cross-store snapshot or external-copy audit.
-`docs/source-retention.md`, `docs/retention-report.md`.
-
-Frozen 48 fictional scenarios:24 dev/24 test, 43 provisional nonexhaustive targets,
-eight no-memory, zero train/human labels. GateA unmet; no model selected/trained.
-Dataset/prompt/payload/runner hashes in active-cycle; historical launches in its
-history_archive. Never tune/select/salvage on frozen test outputs. Qwen/Phi diagnostic
-and six Modal calls are completed. Qwen dev1schemafailure/41claims,test2/42; Phi dev
-one parse+23schemafailures,test23schemafailures+one unsupported end-date claim.
-84 valid candidates: blind agent50supported/31unsupported/3uncertain; separate nonblind
-root41/33/10 after nine overrides. Neither is human truth or consensus. NLI showed
-confident false positives; no verifier policy. `docs/experiments-scenarios.md`,
-`docs/scenarios-reviewed-support.json`, `docs/scenarios-root-adjudication.json`.
-
-Integrity-versus-support replay, overlapping scenario-tag breakdown and scenario-cluster
-bootstrap preserve model/split/reviewer distinctions, uncertainty and exclusions.
-Tags describe whole scenarios, not error causes; bootstrap is descriptive, not model
-selection. Simple 16-control agent agreement is not calibration.
-`docs/integrity-selectivity.md`, `docs/scenario-phenomena.md`, `docs/review-uncertainty.md`.
-
-Fixed context-budget diagnostic: 14 answerable/3 unknown, 3 modes, 6 UTF8-byte ceilings.
-At 2048 bytes authored sufficiency BM25=14/14,hash10/14,hybrid13/14; not QA or tokenizer
-counts. Unknowns receive nonempty packs512bytes+. `docs/context-budget.md`.
-Offline 84-task blind reviewer has NodeVM/roundtrip/Unicode checks; browser unverified.
-FinalHTML SHA256 `07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e`.
-`docs/offline-review.md`.
-
-LongMemEval bytes adapter, bounded whole-file scanner and selected-question turn
-retrieval diagnostic are fictional-format verified, not real benchmark/QA results.
-Explicit turnlabels only; abstention/missing labels excluded separately. No benchmark
-bodies downloaded. HF card declares MIT at pinned commit; constituent rights unresolved.
-LoCoMo NC restrictions and exact evaluator differences remain documented. Graphiti
-source/license contracts audited, no upstream execution. `docs/longmemeval-file.md`,
-`docs/longmemeval-selection.md`, `docs/benchmark-contracts.md`, `docs/related-work.md`.
-
-## Synthetic QA checkpoint and next action
-
-New source-only QA preparation is implemented and root reviewed. Eight new authored
-fictional cases have four dev/four test questions, six answerable and two unknowns.
-72 request cells cover three retrieval modes and byte ceilings0/512/2048; zero-byte
-controls are empty. References stay separate and bind the canonical request hash.
-Root independently replayed72 contexts/citation lists/byte lengths and eight reference
-rows, then changed answer/label sentinels and confirmed every answering message
-remained identical. Provisional answers were source-reviewed by root, not humans.
-No inference/scoring or tokenizer-matched-budget claim. See `docs/synthetic-qa.md`.
-
-Full local boundary407 tests,zero skips, 10.607s; Ruff 92 files,source mypy 31,scoped 48,
-actionlint/diffcheck pass. Ten copied installed protocol tests pass outside checkout,
-PYTHONPATH/HOME unset, and both canonical bundles reproduce exactly. All 36 approved
-runtime files unchanged; previous wheel reused. `docs/validation-synthetic-qa.json`.
-Worker chronology is an honest transcription, not raw RED outputs. Initial callable,
-source-identity and invalid-split corrections had RED/GREEN; broader tests followed
-initial implementation. Do not claim per-behavior preimplementation TDD.
-
-Canonical requests SHA256
-`85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084`;
-references `70769ec36ac4c1e6a226d7432ea88241225e35d91d803cdc0a678fe2589226d2`.
-CLI created two new mode-0600 files; raw paths/hashes in
-`.local/synthetic-qa-command-receipt.json`; root/installed receipts in
-`.local/synthetic-qa-root-receipt.json` and `.local/synthetic-qa-installed-receipt.json`.
-Signed source `6918d5bdd9970c461d63a5e64974502939337b1c` pushed PRIVATE;
-[hosted CI38643805641](https://github.com/1337mus/tracemem/actions/runs/38643805641)
-passed407 tests and155 installed tests, each with one expected Context Kit skip;
-all static checks and frozen budget/HTML smoke passed. Local signature good;
-GitHub bad_email persists with identity settings unchanged. No workers or GPU calls
-active. Original sources and frozen extraction data unchanged.
-
-Next: `docs/synthetic-qa-modal-brief.md` pins a bounded source-free Qwen3-4B runner
-for the exact reviewed72 messages. Start with one bounded Luna implementer; no launch
-during implementation. Root reviews source/payload/SDK serialization, verifies live
-personal Modal workspace and absent active jobs, saves launch intent and exact hashes,
-then may run one bounded synthetic-only call under existing authorization. Keep
-weights/inference remote. No private data or references in remote payload. No retries,
-training or public publication. Inspect exact source and live state before acting.
-
-Do not use `examples/synthetic/longmemeval-format.json` as QA truth: its deliberately
-mismatched answer/turnlabel tests parsing separation. New synthetic QA references
-remain provisional. A later answering run must report actual tokens and preserve
-byte-budget limitations; it cannot establish real benchmark or matched-token QA.
-
-Remaining substantive gates: independent human labels/GateA, calibrated semantic
-verification, temporal truth, owner-authorized erasure, real benchmark rights and
-compatibility, matched-budget downstream QA, and eventual owner-reviewed release.
-Continue useful bounded work; this checkpoint does not mark the project complete.
+The working tree may include the independent offline token-packing slice. Do not
+change `.local/active-cycle.json`, receipts, or source as part of result
+documentation. Keep private artifacts under ignored `.local` with restrictive
+permissions.

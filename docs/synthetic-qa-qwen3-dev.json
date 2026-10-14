@@ -1,0 +1,1003 @@
+{
+  "cells": [
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 0,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 2,
+        "min": 2,
+        "sum": 8
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 93,
+        "min": 78,
+        "sum": 336
+      },
+      "mode": "bm25",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 4,
+        "numerator": 4
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 512,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "bm25",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 2048,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "bm25",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 0,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 2,
+        "min": 2,
+        "sum": 8
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 93,
+        "min": 78,
+        "sum": 336
+      },
+      "mode": "vector",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 4,
+        "numerator": 4
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 512,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "vector",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 2048,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "vector",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 0,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 2,
+        "min": 2,
+        "sum": 8
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 93,
+        "min": 78,
+        "sum": 336
+      },
+      "mode": "hybrid",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 4,
+        "numerator": 4
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 512,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "hybrid",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    },
+    {
+      "agreement": {
+        "all": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "answerable": {
+          "denominator": 3,
+          "numerator": 0
+        },
+        "unknown": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "answerable_n": 3,
+      "byte_ceiling": 2048,
+      "empty_count": 0,
+      "finish_counts": {
+        "eos": 4,
+        "length": 0,
+        "other": 0
+      },
+      "generated_tokens": {
+        "max": 27,
+        "min": 2,
+        "sum": 35
+      },
+      "hit_max_new_tokens_count": 0,
+      "input_tokens": {
+        "max": 377,
+        "min": 226,
+        "sum": 1340
+      },
+      "mode": "hybrid",
+      "n": 4,
+      "split": "dev",
+      "truncated_count": 0,
+      "unknown_n": 1,
+      "zero_context_unknown": {
+        "denominator": 0,
+        "numerator": 0
+      }
+    }
+  ],
+  "label": "provisional agent-only",
+  "limitations": [
+    "No semantic QA judging; literal reference comparison only.",
+    "No matched-token budget; byte ceilings are UTF-8 bytes.",
+    "No independent-scenario claim; cells repeat the same eight questions.",
+    "References are provisional agent-authored and not independently reviewed.",
+    "No pooled dev/test score or model ranking.",
+    "Not evidence of benchmark compatibility, calibration, cost per correct answer, or training readiness."
+  ],
+  "matched_request_count": 36,
+  "outcomes": [
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 81,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::bm25::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::bm25::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::bm25::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 81,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::vector::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::vector::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::vector::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 81,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::hybrid::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::hybrid::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 4,
+      "hit_max_new_tokens": false,
+      "input_tokens": 364,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-correction-lumina",
+      "request_id": "qa-correction-lumina::hybrid::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 93,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::bm25::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::bm25::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::bm25::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 93,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::vector::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::vector::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::vector::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 93,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::hybrid::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::hybrid::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 27,
+      "hit_max_new_tokens": false,
+      "input_tokens": 377,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-dated-corin",
+      "request_id": "qa-dated-corin::hybrid::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 78,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::bm25::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::bm25::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "bm25",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::bm25::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 78,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::vector::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::vector::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "vector",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::vector::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 78,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::hybrid::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::hybrid::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 226,
+      "is_answerable": true,
+      "literal_agreement": false,
+      "mode": "hybrid",
+      "question_id": "qa-negation-venn",
+      "request_id": "qa-negation-venn::hybrid::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 84,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "bm25",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::bm25::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "bm25",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::bm25::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "bm25",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::bm25::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 84,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "vector",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::vector::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "vector",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::vector::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "vector",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::vector::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 0,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 84,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "hybrid",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::hybrid::0",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": true
+    },
+    {
+      "byte_ceiling": 512,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "hybrid",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::hybrid::512",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    },
+    {
+      "byte_ceiling": 2048,
+      "empty": false,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 373,
+      "is_answerable": false,
+      "literal_agreement": true,
+      "mode": "hybrid",
+      "question_id": "qa-unanswerable-orpheus_abs",
+      "request_id": "qa-unanswerable-orpheus_abs::hybrid::2048",
+      "split": "dev",
+      "stop_reason": "eos",
+      "truncated": false,
+      "zero_context_unknown": null
+    }
+  ],
+  "provenance": {
+    "analyzer_source_sha256": "273c2c38000afe8186ba9e1f38148ad481c049ae9d72a8532108bf3b55fdabe3",
+    "config_sha256": "bab03d3f86877737d8c4a04eb4fd5fddb7b480a449527d80147eb4739d9f3f15",
+    "fixture_sha256": "a4d94c8e727c71e8c8b723e97c9674b1d0008ac9f35ba675485a7ea796349d78",
+    "payload_sha256": "80e058c629de8f8a06ca4caa8f1093a8308a299c976b018ab7e8c5c62493b2ac",
+    "reference_bundle_sha256": "70769ec36ac4c1e6a226d7432ea88241225e35d91d803cdc0a678fe2589226d2",
+    "request_bundle_sha256": "85d1334d0401ef2bdc920bf316f066bc3e74e9423ee5bec0aa63f4a559be2084",
+    "runner_sha256": "1fa6881e03b8f501cc127de97b29576bc70561b777b69f5359d381b2a1ca968c",
+    "source_receipt_sha256": "8e7a20f3306864e59a7f4b15f0c3e93dced20cdb13a1406dff044ae0a4c2d0cb",
+    "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+  },
+  "question_count": 4,
+  "schema_version": 1,
+  "source_analysis_sha256": "0b3932af0f140f16fd98e7d01d60f94072162c01bba312173f32a6c4886af89f",
+  "split": "dev"
+}
