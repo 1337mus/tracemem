@@ -202,9 +202,17 @@ No upstream code execution or benchmark conversations fetched. No new GPU calls.
    include malformed no-match inputs and byte-identical real-store/citation access.
    Fresh offline33filewheelSHA256955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844
    passes9smokecommands;80copiedinstalledtests pass outsidecheckout with envunset.
-   Exact receipt `docs/validation-source-retention.json`. Signedcommit/push/hostedCI
-   pending for323test slice; latest pushed690ecef313testCI is green.
-7. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
+   Exact receipt `docs/validation-source-retention.json`. Signedsourcecommit
+   6b16de9dd2612f8ecbf3abb8da98b501e014c7b8 pushed;hostedCI38629594401 passed
+   323tests(one expectedskip),80installedtests and frozen budget/84taskHTML checks.
+   Local signaturevalid;GitHubbad_email unchanged. No activeworkers/GPUjobs.
+7. Next bounded slice: expose persisted-store retention diagnostics with strict
+   read-only SQLite snapshot loading and a new private report. Validate schemas,
+   never use writable constructors,cover byte invariance/cross-store consistency;
+   no original/private corpus changes or erasure. Write a brief/delegate bounded
+   implementation only after inspecting current APIs. Existing pure planner is
+   not an erasure implementation. Continue useful work beyond CI; prototype needs
+   no PR/Linear bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained
