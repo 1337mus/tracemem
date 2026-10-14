@@ -2,13 +2,19 @@
   "artifact_sha256": {
     ".github/workflows/ci.yml": "92e2c05e57d0761d2811875b118b37765a5130315a04cb7dca18b44c5f2d5939",
     "docs/transcript-bounds-brief.md": "c11c2bf3856147628a91b0482e9625e6975ee4ff28fd42a03739f244f12e9e30",
-    "docs/transcript-bounds.md": "99ecbd9576a7613713af8a522d09f534738e6172c660dc4753bdb973d2ae4363",
+    "docs/transcript-bounds.md": "98744d6eaa0f57d50dff2b57adf6d559687ef08657004a86d2aea66c85d1f076",
     "src/tracemem/adapters/__init__.py": "a054639c77c827b749c8c0d256b027a0537210c9f0962b34ad6c18a28b98d3b7",
     "src/tracemem/cli.py": "0d220b121af84fd3fb6e6128983eea06d5d9bfc1414bafa4dede9f1b0ea16c59",
     "tests/test_transcript_bounds.py": "4776f035331513314e28b1496d0623b4d52df7b7c2c6e491b4467d3b919db408"
   },
-  "delivery_state": "Root reviewed; local suite,independent replay,newwheel and isolatedtests passed; signed source/push/hostedCI pending",
+  "delivery_state": "Signed source pushed PRIVATE; hostedCI passed",
   "diff_check_exit_code": 0,
+  "documented_command": {
+    "installed_execution_passed": true,
+    "note": "Corrected example to keep derivedDB outside transcriptdirectory; no runtimechange",
+    "receipt": ".local/transcript-bounds-doc-command-receipt.json",
+    "sha256": "2f92768c204936166c858d146b8c8d58cf157b87fb4c94011dca673c09cff8da"
+  },
   "full_suite": {
     "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
     "elapsed_seconds": 10.175,
@@ -21,6 +27,21 @@
     "tests": 387
   },
   "gpu_or_model_calls": 0,
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "e670ea3874cc0aed3d782615132c1fb512b643e7",
+    "hosted_elapsed_seconds": 29.229,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 387,
+    "installed_elapsed_seconds": 2.425,
+    "installed_expected_contextkit_skips": 1,
+    "installed_new_api_checks_passed": true,
+    "installed_tests_passed": 135,
+    "local_log_sha256": "841fc59eefd866e1d66d193a7de82b198ddb354bf3811545275105750cc590e9",
+    "run_id": 38640042553,
+    "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38640042553"
+  },
   "independent_probe": {
     "checks": [
       "claude/1 exactrecords/stats/rawlimit/source",
@@ -89,6 +110,7 @@
     "log_sha256": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89"
   },
   "source_base_commit": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
+  "source_commit": "e670ea3874cc0aed3d782615132c1fb512b643e7",
   "workflow_evidence": {
     "green_log_sha256": "b6ce5c0b624d1f451d6b3a616272301919ee9a615bde9c9876781a455350011a",
     "red_log_sha256": "b55037bb565fb99d7fb504527a746691bd34b5fac359622fdc787e3ae696ff10",

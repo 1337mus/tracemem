@@ -236,9 +236,12 @@ installedtests pass with1expectedContextKit skip; frozenbudget/HTML reproduce.
 Approvedmanifest `.local/package-source-approved-transcript-bounds.json`;
 wheelreceipt `.local/package-smoke-fts-v3-chatgpt-20261014T212302688753Z.json`.
 Workflow evidence is honest: initialinvalidlimit RED/GREEN, broaderbaseline REDreplay
-after an initialimplementation, not perbehaviorpreimplementationRED. Signed delivery
-and hostedCI pending. No privatecorpus,originalsources or ContextKit touched.
+after an initialimplementation, not perbehaviorpreimplementationRED. Signed source
+`e670ea3874cc0aed3d782615132c1fb512b643e7` pushedPRIVATE; hostedCI38640042553passed
+387tests(oneexpectedCtxKit skip),135installedtests(oneexpectedCtxKit skip),frozen
+budget/HTMLchecks. Localsignature verifies; GitHubbad_email persists,settingsunchanged. No privatecorpus,originalsources or ContextKit touched.
 
-Next: verify signed private delivery/CI, then continue useful boundedprototype work
-within existing gates. Independent humanannotation/GateA remains necessary before
+No workers/GPUcalls active. Next boundedinvestigation follows
+`docs/transcript-consistency-brief.md`: fictional source mutation/replacement probes
+and root-pinned optional quiescence safeguard; defaultreader remainsstreaming. Independent humanannotation/GateA remains necessary before
 training/qualityclaims. Preserve frozenmodel testoutputs; do not tune or relaunch.

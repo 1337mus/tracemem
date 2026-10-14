@@ -12,10 +12,12 @@ byte limit` immediately. The reader does not parse, drain, skip, or truncate tha
 Older transcripts containing a larger individual line must be ingested with an
 explicitly larger limit, up to 64 MiB.
 
-For example, to allow lines up to 16 MiB:
+For example, to allow lines up to 16 MiB while keeping the derived database
+outside the source transcript directory:
 
 ```sh
-tracemem ingest --provider claude --input transcript.jsonl --db evidence.sqlite --max-line-bytes 16777216
+tracemem ingest --provider claude --input transcripts/session.jsonl \
+  --db .local/evidence.sqlite --max-line-bytes 16777216
 ```
 
 Line boundaries are LF or CRLF. CR-only separators between JSON objects are not
