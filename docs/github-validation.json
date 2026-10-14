@@ -1,22 +1,17 @@
 {
   "ci": {
     "conclusion": "success",
-    "head_sha": "f949b9acefd600988a996e82ca9b53a0138027d3",
-    "hosted_elapsed_seconds": 17.761,
+    "head_sha": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
+    "hosted_elapsed_seconds": 18.188,
     "hosted_expected_skips": 1,
-    "hosted_test_count": 346,
-    "installed_chatgpt_tests_passed": 34,
-    "installed_longmemeval_tests_passed": 20,
+    "hosted_test_count": 366,
+    "installed_file_reader_tests_passed": 20,
     "installed_new_api_checks_passed": true,
-    "installed_retention_report_tests_passed": 11,
-    "installed_retention_tests_passed": 10,
-    "installed_retrieval_tests_passed": 16,
-    "installed_tests_passed": 91,
-    "local_log_sha256": "306a2c60aa983a7f64efa065be20edb5c71898f96f9ae5d8fb0ce39ca69606b1",
-    "node_vm_tests_passed": true,
-    "run_id": 38634067687,
-    "skip_reason": "Optional local Context Kit checkout absent on hosted runner",
-    "url": "https://github.com/1337mus/tracemem/actions/runs/38634067687"
+    "installed_tests_passed": 111,
+    "local_log_sha256": "70014ee1e3053683a6b3ae8e67340d89bca69464113ac89d669b77e7dba5040a",
+    "run_id": 38635953203,
+    "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38635953203"
   },
   "historical_deliveries": [
     {
@@ -170,21 +165,44 @@
       },
       "recorded_at_utc": "2026-10-14T20:27:43.432946+00:00",
       "source_commit": "e2ccd54e942563615907c9b94980a844cf72dfc9"
+    },
+    {
+      "ci": {
+        "conclusion": "success",
+        "head_sha": "f949b9acefd600988a996e82ca9b53a0138027d3",
+        "hosted_elapsed_seconds": 17.761,
+        "hosted_expected_skips": 1,
+        "hosted_test_count": 346,
+        "installed_chatgpt_tests_passed": 34,
+        "installed_longmemeval_tests_passed": 20,
+        "installed_new_api_checks_passed": true,
+        "installed_retention_report_tests_passed": 11,
+        "installed_retention_tests_passed": 10,
+        "installed_retrieval_tests_passed": 16,
+        "installed_tests_passed": 91,
+        "local_log_sha256": "306a2c60aa983a7f64efa065be20edb5c71898f96f9ae5d8fb0ce39ca69606b1",
+        "node_vm_tests_passed": true,
+        "run_id": 38634067687,
+        "skip_reason": "Optional local Context Kit checkout absent on hosted runner",
+        "url": "https://github.com/1337mus/tracemem/actions/runs/38634067687"
+      },
+      "recorded_at_utc": "2026-10-14T20:42:23.287585+00:00",
+      "source_commit": "f949b9acefd600988a996e82ca9b53a0138027d3"
     }
   ],
   "private_data_uploaded": false,
   "public_release": false,
   "pushed": true,
-  "recorded_at_utc": "2026-10-14T20:42:23.287585+00:00",
+  "recorded_at_utc": "2026-10-14T20:56:26.080241+00:00",
   "repository": "https://github.com/1337mus/tracemem",
   "signature": {
-    "github_reason": "bad_email verified live on f949b9a; identity settings unchanged",
+    "github_reason": "bad_email verified live on fcfd1da; identity settings unchanged",
     "github_verified": false,
     "identity_settings_changed": false,
-    "local_evidence": "git verify-commit f949b9a: Good signature",
+    "local_evidence": "git verify-commit fcfd1da: Good signature",
     "local_verified": true
   },
-  "source_commit": "f949b9acefd600988a996e82ca9b53a0138027d3",
+  "source_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
   "upload_scope": "Reviewed code, documentation, configuration and fictional fixtures only",
   "verify_live_by": "2026-10-15",
   "visibility_verified": "PRIVATE"

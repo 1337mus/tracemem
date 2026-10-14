@@ -44,3 +44,12 @@ does not establish compatibility with an upstream release, data-use rights,
 quality against upstream scoring, or completion of a large-dataset evaluation.
 No network access, model inference, retrieval policy change, CLI, or GPU work is
 part of this module.
+
+An additional root-owned local measurement scanned 69,229,333 bytes from 67
+fictional questions: 66 had 1 MiB conversation bodies and one small question was
+selected. One macOS run took 6.198 seconds (10.652 MiB/s), with a process peak RSS
+of 33,259,520 bytes including interpreter/import/allocator overhead. Exact hash,
+question count, selection and input size/mode/mtime invariance passed. This single
+measurement is not a peak-memory guarantee, full-release throughput estimate or
+real-benchmark result. The local probe and hashed receipt are recorded in
+[validation-longmemeval-file.json](validation-longmemeval-file.json).

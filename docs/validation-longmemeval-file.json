@@ -6,13 +6,14 @@
     "src/tracemem/adapters/longmemeval_file.py": "943fc789e75fdee3c7bc96088396df188f9bc47f349f2d5b4e6df53f0b46c924",
     "tests/test_longmemeval_file.py": "69568a569b4c505a81b78baa66f1393cd4600ef33f2fb70fd7f64b0c52cce00c"
   },
+  "artifact_sha256_scope": "Source commit fcfd1da; later docs add hostedCI and independent body-scale measurement",
   "context_kit_integration": {
     "command": "PYTHONPATH=src:tests:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest test_adapter.TranscriptAdapterTests.test_context_kit_integration_returns_only_synthetic_source_pairs -v",
     "exit_code": 0,
     "log_sha256": "9d82e5c1e50c056d0234d8c48a3ab3a3abed2c94fd084a46b1a1e62f889d3aea",
     "tests": 1
   },
-  "delivery_state": "Root reviewed and local validation passed; signed commit/push/hostedCI pending",
+  "delivery_state": "Signed source pushed to PRIVATE main; hostedCI passed",
   "diff_check_exit_code": 0,
   "focused_tests": 20,
   "full_suite": {
@@ -28,6 +29,40 @@
     "tests": 366
   },
   "gpu_or_model_calls": 0,
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
+    "hosted_elapsed_seconds": 18.188,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 366,
+    "installed_file_reader_tests_passed": 20,
+    "installed_new_api_checks_passed": true,
+    "installed_tests_passed": 111,
+    "local_log_sha256": "70014ee1e3053683a6b3ae8e67340d89bca69464113ac89d669b77e7dba5040a",
+    "run_id": 38635953203,
+    "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38635953203"
+  },
+  "independent_body_scale_probe": {
+    "elapsed_seconds": 6.198139582993463,
+    "input_bytes": 69229333,
+    "input_sha256": "8103230a2b4603411567756717fcf893d80fa83f0399a192102d4b71d05ee25b",
+    "limitations": "One macOS fictional67question scan, one selected small question; no exact peakRAM guarantee, throughput extrapolation, realbenchmark compatibility or QA claim",
+    "local_probe": ".local/longmemeval-file-scale-probe.py",
+    "local_receipt": ".local/longmemeval-file-scale-receipt.json",
+    "mib_per_second": 10.6519441745372,
+    "network_or_model_calls": 0,
+    "platform": "macOS ru_maxrss is bytes; peak includes interpreter/imports/allocator",
+    "probe_sha256": "7016044c15238bc1bef933702f8200f028f205cf1e15c1ae77551a53461a1013",
+    "process_peak_rss_platform_units": 33259520,
+    "question_count": 67,
+    "selected_question_ids": [
+      "root-small-selected"
+    ],
+    "source": "root-generated fictional JSON bodies;66x1MiB and one small selected question; no whitespace-only size padding",
+    "source_preserved": true,
+    "timestamp_utc": "2026-10-14T20:56:32.600652+00:00"
+  },
   "independent_probe": {
     "command": "PYTHONPATH=src:. .venv/bin/python .local/longmemeval-file-root-probe.py",
     "exit_code": 0,
@@ -74,5 +109,6 @@
     "log_sha256": "fdba5b4e396441aaf1ba0d4aee9a2b6de7229057c665772ec81bd032ce1cc3f5"
   },
   "source_base_commit": "0dd2d1a2813654e537471fc288c0b154db881d3e",
+  "source_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
   "workflow_lint_exit_code": 0
 }

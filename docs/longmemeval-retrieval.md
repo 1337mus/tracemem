@@ -5,7 +5,7 @@ the repository's default local retriever against one question at a time. It
 reports retrieval of explicit `has_answer: true` turn labels. It does not run a
 question-answering model or the upstream benchmark evaluator.
 
-The command accepts a local JSON file up to 64 MiB and writes a new report with
+The default command accepts a local JSON file up to 64 MiB and writes a new report with
 permissions set to `0600`:
 
 ```sh
@@ -50,10 +50,12 @@ or semantic-support annotations. Results from the fixture measure only the
 turn-label retrieval protocol. This diagnostic makes no nDCG, session-retrieval,
 QA, or upstream-equivalence claim. Real LongMemEval dataset rights and full
 release compatibility remain unverified; see the [rights note](longmemeval-rights.md)
-and [adapter notes](longmemeval-adapter.md). The S and M releases exceed this
-tool's input cap.
+and [adapter notes](longmemeval-adapter.md). The S and M releases exceed the
+default whole-input cap.
 
-A separate [bounded file scanner](longmemeval-file.md) can validate a larger local
-fictional-format file and select up to five questions. It is not integrated into
-this retrieval CLI, which retains its whole-input 64 MiB cap. No full S/M benchmark
-body was downloaded or evaluated.
+Optional repeatable `--question-id` arguments use the [bounded file scanner](longmemeval-file.md)
+to validate the complete file and evaluate only one to five explicit questions.
+That path emits a schema-2 report with full-source hash/count and selected-only
+denominators; see [selected-file retrieval](longmemeval-selection.md). Without
+selectors, the schema-1 report and whole-input 64 MiB cap remain unchanged. No full
+S/M benchmark body was downloaded or evaluated.

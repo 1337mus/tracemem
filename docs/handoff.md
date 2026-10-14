@@ -178,11 +178,31 @@ Frozen budget report and byte-identical84taskHTML reproduce. Validation
 `.local/package-source-approved-longmemeval-file.json`; wheel receipt
 `.local/package-smoke-fts-v3-chatgpt-20261014T205248441104Z.json`;
 installed receipt `.local/installed-longmemeval-file-receipt.json`.
-Signed source delivery/hostedCI pending at this recorded boundary; verify active-cycle
-and live git before resuming. Next bounded useful slice: integrate explicit at-most-five
-question selection into the retrieval diagnostic using this scanner, preserving the
-existing bytes API/report and clearly reporting selected-only denominators. No actual
-benchmark downloads, inference or rights claim. Root brief/review required.
+Signed source `fcfd1da13d4fb6a820bd8e753affd2c708394ae7` pushed PRIVATE; hostedCI
+`38635953203` passed366tests (one expected ContextKit skip),111installedtests and
+frozen budget/HTML smoke. Local signature good; GitHub bad_email remains unchanged.
+
+Selected-file retrieval is implemented/root reviewed; worker released. API and
+repeatableCLIselector share existing scoring, preserve schema1bytes/defaultCLI and
+emit schema2selected-only metadata. Root independently replayed27cells/9aggregates/
+45citations, late-invalid preflight/privacy/source-preservation. Three complete bytes
+reports exactly match prior fcfd1da code. No runtime package files changed.
+
+Final local boundary:375tests,zero skips,8.302s;Ruff85files,source mypy30,scoped45,
+actionlint/diffcheck pass.120copied installed tests including9new selection tests
+pass outside checkout against the same approved35file wheel. No fresh wheel needed.
+Validation `docs/validation-longmemeval-selection.json`; isolated receipt
+`.local/installed-longmemeval-selection-receipt.json`. Independent69,229,333byte/
+67question body-scale file evaluation selected one question in5.839s with40,615,936
+byte process peakRSS. This is one macOS observation, not a speed comparison,
+peakmemory guarantee, QA result or realbenchmark claim. No model/GPU/download calls.
+Signed delivery/hostedCI pending at this boundary; active-cycle holds live state.
+
+Next bounded useful research step: descriptive scenario-phenomenon breakdown of
+frozen generated outputs and existing reviewer labels, preserving every model,
+dev/test split, reviewer, uncertainty and parse/schema/empty exclusions. Existing
+scenario tags overlap; no pooled totals, humanprecision/calibration, post-test tuning,
+modelselection or changed labels. Root brief required before implementation.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed

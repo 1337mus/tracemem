@@ -51,6 +51,7 @@ from this adapter.
 
 The separate [bounded file scanner](longmemeval-file.md) validates larger fictional
 files incrementally and retains at most five requested questions. It reuses this
-adapter for each item. The whole-bytes API and existing retrieval CLI retain their
-64 MiB limit; file scanning does not establish full upstream compatibility or data
-rights and does not perform a large-dataset retrieval/QA evaluation.
+adapter for each item. The whole-bytes API and default retrieval CLI retain their
+64 MiB limit. Explicit CLI question selectors use the file scanner; see
+[selected-file retrieval](longmemeval-selection.md). File scanning does not establish
+full upstream compatibility, data rights or large-dataset retrieval/QA accuracy.

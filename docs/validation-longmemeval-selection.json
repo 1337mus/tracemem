@@ -1,0 +1,108 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "25d988f67fe7a5e8c87d69ac13a82f414a75410b537ca4032ccacecce2050231",
+    "docs/longmemeval-selection-brief.md": "37dbe082d8e985bb7f02716f7e0468fcd920810c775c1ebacc2cacdff487988e",
+    "docs/longmemeval-selection.md": "8b677e4bafa3e7ab3dcbb940576c2325f67b52863c6ef4252b7380b1d18b31d6",
+    "experiments/evaluate_longmemeval_retrieval.py": "eec4e15f287398cfe0edcc6241b37ea215cd3ee944b18ff76d33a0aa1296d1ed",
+    "tests/test_longmemeval_selection.py": "6b07af93075f504521940f658079f583ce55b5bdc6a6b37093e4b215cec509f8"
+  },
+  "backward_compatibility": {
+    "complete_reports_equal_prior_source": 3,
+    "frozen_local_reports": ".local/longmemeval-selection-prior-reports.json",
+    "frozen_local_reports_sha256": "bb2430bfd23a3e1a1aa8e98d9067a46228836a2520b0b59d392dc21d16007d4c",
+    "prior_experiment_sha256": "ead1c7b056e873eca1586555577b7200e81e7b460ffee37ce5a38e443fad19c0",
+    "prior_source_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7"
+  },
+  "delivery_state": "Root reviewed and local checks passed; signed source/push/hostedCI pending",
+  "diff_check_exit_code": 0,
+  "focused_selection_tests": 9,
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
+    "elapsed_seconds": 8.302,
+    "exit_code": 0,
+    "local_log": ".local/longmemeval-selection-final-check.log",
+    "log_sha256": "8cd5956c9b1aa86378d3268bcce094bd4ec26a491c31f889fd755b784c4bc773",
+    "ruff_files": 85,
+    "skipped": 0,
+    "source_mypy_files": 30,
+    "tests": 375
+  },
+  "gpu_or_model_calls": 0,
+  "independent_body_scale_probe": {
+    "elapsed_seconds": 5.839049500063993,
+    "input_bytes": 69229333,
+    "input_sha256": "8103230a2b4603411567756717fcf893d80fa83f0399a192102d4b71d05ee25b",
+    "mib_per_second": 11.30701783283599,
+    "network_or_model_calls": 0,
+    "platform": "macOS ru_maxrss is bytes; peak includes interpreter/imports/allocator",
+    "probe_sha256": "dd591cd66e6d935de474cde407fc7af8ca4332df6fb81fef98cdafd8adc57520",
+    "process_peak_rss_platform_units": 40615936,
+    "question_count": 67,
+    "schema_version": 2,
+    "selected_counts": {
+      "abstention_count": 0,
+      "question_count": 1,
+      "scored_count": 1,
+      "unlabeled_count": 0
+    },
+    "selected_question_ids": [
+      "root-small-selected"
+    ],
+    "source": "root-generated fictional JSON bodies;66x1MiB and one small selected question; no whitespace-only size padding",
+    "source_preserved": true,
+    "timestamp_utc": "2026-10-14T21:01:19.173380+00:00"
+  },
+  "independent_probe": {
+    "aggregate_cells": 9,
+    "command": "PYTHONPATH=src:. .venv/bin/python .local/longmemeval-selection-root-probe.py",
+    "exit_code": 0,
+    "late_invalid_preflight_rejected": true,
+    "log_sha256": "957fb3bb32ae70f3425959b5fe7f5f1ed67dafd371b75b9e2bc3c1d01d8d727e",
+    "metric_cells": 27,
+    "private_markers_absent": true,
+    "returned_citations": 45,
+    "selected_only_counts_and_exclusions": true,
+    "selected_report_matches_bytes_metrics": true,
+    "source_bytes_modes_mtimes_preserved": true
+  },
+  "installed_validation": {
+    "all_members_unchanged": true,
+    "approved_source_manifest": ".local/package-source-approved-longmemeval-file.json",
+    "copied_experiment_source_sha256": "eec4e15f287398cfe0edcc6241b37ea215cd3ee944b18ff76d33a0aa1296d1ed",
+    "copied_installed_tests": 120,
+    "copied_selection_tests": 9,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "imports_from_site_packages": true,
+    "new_wheel_built": false,
+    "receipt": ".local/installed-longmemeval-selection-receipt.json",
+    "receipt_sha256": "8ba651e364502911c13f0e5f70de58f9e35fb4345685c3044b36e8e914224f60",
+    "runtime_package_members": 35,
+    "wheel_sha256": "40337ff3cb854a2fd94e1f30dd024d48e6516716b248d35f8b11c2fbfe513f58"
+  },
+  "limitations": [
+    "Fictional-format verification only; no actualbenchmark/QA/upstream-equivalence or rights claim",
+    "Single local body-scale observation is not memory guarantee/throughput extrapolation or speed comparison",
+    "Selected-only report denominators never represent the full source dataset"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T21:03:32.231298+00:00",
+  "root_review": "Complete production/tests/docs reviewed. No production findings; tightened negative-test reasons and removed obsolete API stub. Independent cell/citation/aggregate/backward/real-body-scale probes passed.",
+  "scope": "Explicit1..5question selected-file retrieval with whole-file validation and selected-only denominators; existing bytes/defaultCLI unchanged",
+  "scoped_mypy": {
+    "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py experiments/evaluate_integrity_selectivity.py",
+    "exit_code": 0,
+    "files": 45,
+    "local_log": ".local/longmemeval-selection-scoped-mypy.log",
+    "log_sha256": "fdba5b4e396441aaf1ba0d4aee9a2b6de7229057c665772ec81bd032ce1cc3f5"
+  },
+  "source_base_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
+  "tdd_red_logs": {
+    ".local/longmemeval-selection-api-red.log": "9eb3937339e7d6aa07e9be29a4e393e485f3fc2679c3b0f22d6989a1f05d21a6",
+    ".local/longmemeval-selection-cli-red.log": "5a25cb1e3896d2dc225863516feebdb194981eacf1f001641221f4932a82383e"
+  },
+  "workflow_lint_exit_code": 0
+}

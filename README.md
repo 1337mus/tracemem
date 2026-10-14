@@ -84,6 +84,8 @@ make check
   Its fictional protocol checks do not measure benchmark or QA performance.
 - [Bounded LongMemEval file scan](docs/longmemeval-file.md): incremental validation
   and limited question selection for local fictional-format files larger than 64 MiB.
+- [Selected-file retrieval](docs/longmemeval-selection.md): explicit one-to-five-question
+  evaluation with full-file validation and selected-only score denominators.
 - [Source-retention impact](docs/source-retention.md): a pure dependency diagnostic
   for historical evidence, candidate quotes, ambiguous spans and correction lineage.
   It opens no stores and performs no deletion.

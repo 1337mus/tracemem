@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from tracemem.adapters.longmemeval import LongMemEvalQuestion, parse_longmemeval_bytes
+from tracemem.adapters.longmemeval_file import scan_longmemeval_file
 from tracemem.retrieval import Retriever, SignedHashEmbedder
 from tracemem.schema import EVIDENCE_SCHEMA_VERSION
 from tracemem.storage import EvidenceStore
@@ -117,19 +118,16 @@ def _question_retrieval(
             )
 
 
-def evaluate_retrieval_bytes(
-    raw: bytes,
+def _evaluate_questions(
+    questions: tuple[LongMemEvalQuestion, ...],
     *,
-    namespace: str,
+    input_sha256: str,
     variant: str,
-    cutoffs: tuple[int, ...] = _DEFAULT_CUTOFFS,
+    cutoffs: tuple[int, ...],
+    schema_version: int = 1,
+    input_bytes: int | None = None,
+    selection: dict[str, int | str] | None = None,
 ) -> dict[str, Any]:
-    """Evaluate explicit turn-label retrieval using isolated local evidence stores."""
-    _validate_cutoffs(cutoffs)
-    questions = parse_longmemeval_bytes(raw, namespace=namespace, variant=variant)
-    if any(len(question.question) > _MAX_QUERY_CHARS for question in questions):
-        raise ValueError("query exceeds Retriever's 4096-character limit")
-
     question_results: list[dict[str, Any]] = []
     embedding_report = _default_embedding_report()
     rrf_k = _DEFAULT_RRF_K
@@ -187,9 +185,9 @@ def evaluate_retrieval_bytes(
             )
         aggregates[mode] = mode_aggregates
 
-    return {
-        "schema_version": 1,
-        "input_sha256": hashlib.sha256(raw).hexdigest(),
+    report: dict[str, Any] = {
+        "schema_version": schema_version,
+        "input_sha256": input_sha256,
         "variant": variant,
         "cutoffs": list(cutoffs),
         "modes": list(_MODES),
@@ -204,6 +202,69 @@ def evaluate_retrieval_bytes(
         "questions": question_results,
         "aggregates": aggregates,
     }
+    if input_bytes is not None:
+        report["input_bytes"] = input_bytes
+    if selection is not None:
+        report["selection"] = selection
+    return report
+
+
+def evaluate_retrieval_bytes(
+    raw: bytes,
+    *,
+    namespace: str,
+    variant: str,
+    cutoffs: tuple[int, ...] = _DEFAULT_CUTOFFS,
+) -> dict[str, Any]:
+    """Evaluate explicit turn-label retrieval using isolated local evidence stores."""
+    _validate_cutoffs(cutoffs)
+    questions = parse_longmemeval_bytes(raw, namespace=namespace, variant=variant)
+    if any(len(question.question) > _MAX_QUERY_CHARS for question in questions):
+        raise ValueError("query exceeds Retriever's 4096-character limit")
+    return _evaluate_questions(
+        questions,
+        input_sha256=hashlib.sha256(raw).hexdigest(),
+        variant=variant,
+        cutoffs=cutoffs,
+    )
+
+
+def evaluate_retrieval_file(
+    path: str | os.PathLike[str],
+    *,
+    namespace: str,
+    variant: str,
+    question_ids: tuple[str, ...],
+    cutoffs: tuple[int, ...] = _DEFAULT_CUTOFFS,
+) -> dict[str, Any]:
+    """Evaluate selected questions after the complete file passes validation."""
+    _validate_cutoffs(cutoffs)
+    if type(question_ids) is not tuple or not question_ids:
+        raise ValueError("question_ids must be a nonempty tuple")
+
+    scan = scan_longmemeval_file(
+        path,
+        namespace=namespace,
+        variant=variant,
+        question_ids=question_ids,
+    )
+    questions = scan.selected_questions
+    if any(len(question.question) > _MAX_QUERY_CHARS for question in questions):
+        raise ValueError("query exceeds Retriever's 4096-character limit")
+
+    return _evaluate_questions(
+        questions,
+        input_sha256=scan.input_sha256,
+        variant=variant,
+        cutoffs=cutoffs,
+        schema_version=2,
+        input_bytes=scan.input_bytes,
+        selection={
+            "kind": "explicit_question_ids",
+            "source_question_count": scan.question_count,
+            "evaluated_question_count": len(questions),
+        },
+    )
 
 
 def _read_input(path: str) -> bytes:
@@ -258,13 +319,27 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--namespace", required=True, help="stable identity namespace")
     parser.add_argument("--variant", required=True, choices=("s", "m", "oracle"))
     parser.add_argument("--output", required=True, help="new private JSON report path")
+    parser.add_argument(
+        "--question-id",
+        action="append",
+        dest="question_ids",
+        help="explicit question ID to evaluate; repeat to select up to five",
+    )
     arguments = parser.parse_args(argv)
 
     try:
-        raw = _read_input(arguments.input)
-        report = evaluate_retrieval_bytes(
-            raw, namespace=arguments.namespace, variant=arguments.variant
-        )
+        if arguments.question_ids is None:
+            raw = _read_input(arguments.input)
+            report = evaluate_retrieval_bytes(
+                raw, namespace=arguments.namespace, variant=arguments.variant
+            )
+        else:
+            report = evaluate_retrieval_file(
+                arguments.input,
+                namespace=arguments.namespace,
+                variant=arguments.variant,
+                question_ids=tuple(arguments.question_ids),
+            )
         serialized = json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
         _write_output(arguments.output, serialized)
     except ValueError as error:
