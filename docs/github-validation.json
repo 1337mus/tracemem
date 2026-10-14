@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-10-14T18:46:34.639510+00:00",
+  "repository": "https://github.com/1337mus/tracemem",
+  "visibility_verified": "PRIVATE",
+  "source_commit": "309f41b1810981056b30f811383634d2953165f3",
+  "pushed": true,
+  "ci": {
+    "run_id": 38617328181,
+    "conclusion": "success",
+    "head_sha": "309f41b1810981056b30f811383634d2953165f3",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38617328181",
+    "hosted_test_count": 242,
+    "hosted_expected_skips": 1,
+    "skip_reason": "Optional local Context Kit checkout is absent on hosted runner",
+    "installed_chatgpt_tests_passed": 34
+  },
+  "signature": {
+    "local_verified": true,
+    "local_evidence": "Initial delivery receipt and local verify-commit checkpoint",
+    "github_verified": false,
+    "github_reason": "bad_email",
+    "identity_settings_changed": false
+  },
+  "upload_scope": "Reviewed code, documentation, configuration and fictional fixtures only",
+  "private_data_uploaded": false,
+  "public_release": false,
+  "verify_live_by": "2026-10-15"
+}

@@ -102,9 +102,12 @@
     "reason": "No independent human labels or sufficiently established training/evaluation dataset; provisional targets and lexical split audit cannot establish readiness."
   },
   "github": {
-    "delivery_at_this_checkpoint": "Empty remote created; signed initial push and hosted CI pending",
+    "delivery_at_this_checkpoint": "Signed initial commit pushed; hosted CI completed successfully",
+    "delivery_receipt": "docs/github-validation.json",
+    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38617328181",
     "public_release": false,
     "repository": "1337mus/tracemem",
+    "source_commit": "309f41b1810981056b30f811383634d2953165f3",
     "visibility_verified": "PRIVATE"
   },
   "gpu_jobs_started": 6,

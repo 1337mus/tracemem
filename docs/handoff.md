@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14, 11:39 Pacific. Live jobs/workers/remote state must be checked
+Updated 2026-10-14, 11:47 Pacific. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -9,8 +9,10 @@ Workspace `/Users/raj/Projects/tracemem`. Specification
 `/Users/raj/Downloads/TRACEMEM_AGENT_BRIEF.md` was read entirely. Local prototype.
 Raj subsequently authorized creating a private project under his personal GitHub
 profile. Root created https://github.com/1337mus/tracemem and independently checked
-`visibility=PRIVATE`; it is still empty. Unborn local main; origin is the private HTTPS repository; no commit/PR yet.
-Next: verified signed initial commit and push of code/fictional fixtures only.
+`visibility=PRIVATE`. Signed initial commit `309f41b1810981056b30f811383634d2953165f3`
+is pushed to main. Initial hosted CI passed; see `docs/github-validation.json`.
+Local signature verification passed at delivery; GitHub reports `bad_email`.
+No signing-key or identity settings were changed. No PR required for this prototype.
 No public visibility change is authorized; owner plans publication later.
 
 ## Boundaries
@@ -54,7 +56,7 @@ commands or update the original memory corpus. Durable context stays here.
   pinned actions, read-only permissions, locked dev/Modal SDK dependencies, no
   secrets/model calls/artifact uploads. Installed smoke uses its Python tempfile
   root, fixing a RUNNER_TEMP mismatch found in review. actionlint/shell checks
-  passed; first hosted run awaits push. See `docs/ci.md`.
+  passed; first hosted run passed on the initial commit. See `docs/ci.md`.
 - Fresh offline wheel passed all9commands and34installed ChatGPT tests outside
   checkout.29package files match approved source bytes; schema3/import paths,
   demo hashes and stable benchmark fields match. Source stayed unchanged.
@@ -109,14 +111,14 @@ hashes. Historical136test receipt stays in `docs/validation-support-ledger.json`
 Root independently checked package receipt/hashes and ran fictional CLI import→
 BM25→exact citation; excluded sibling query returned zero hits.
 
-1. Refresh and inspect exact staged-upload manifest. Only code, docs, configs and
-   fictional fixtures; never .local or original sources. Scanner's only hits were
-   deliberately synthetic privacy test strings. Signed initial commit and push
-   to private1337mus/tracemem. Verify remoteHEAD and private visibility.
-2. Watch first GitHub Actions outcome and fix any real CI/platform/dependency
-   failures. Do not claim hosted CI passed before a completed successful run.
-3. Record exact GitHub delivery and CI state; then continue the next useful
-   bounded prototype slice. No PR/Linear required for this prototype bootstrap.
+1. Initial private push and hosted CI are complete; root verified remote HEAD,
+   private visibility and successful run38617328181 live on2026-10-14.
+   Hosted242tests,one expected Context Kit skip;34installed ChatGPT tests passed.
+2. Build the offline review page from `docs/offline-review-brief.md`; keep answer
+   keys and model/split origins out, preserve originals, and validate exported
+   complete responses through the existing importer. Worker owns only new files.
+3. Root-review all code, browser-smoke draft/resume/export, run final checks and
+   signed private push; continue useful work. No PR/Linear required for bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained

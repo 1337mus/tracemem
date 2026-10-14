@@ -7,3 +7,5 @@ The job installs both locked requirement files into `.venv` and runs `make check
 The job builds a wheel with the installed setuptools backend, installs it without dependencies into a fresh virtual environment, and runs both demo entry points from outside the checkout. It also runs `experiments/smoke_installed.py` with an absolute source root and a fresh work directory under the system temporary directory. The two ChatGPT adapter and snapshot test modules are copied outside the checkout and run against the installed wheel.
 
 The workflow makes no cloud inference or training calls. Test, build, and smoke failures fail the job; it has no allowed-to-fail step. A hosted CI pass cannot be claimed until the workflow has run after a push.
+
+The initial hosted run [38617328181](https://github.com/1337mus/tracemem/actions/runs/38617328181) passed on commit `309f41b1810981056b30f811383634d2953165f3`: 242 tests with one expected Context Kit skip, all lint/type checks, and 34 installed-wheel ChatGPT tests. See [delivery evidence](github-validation.json).
