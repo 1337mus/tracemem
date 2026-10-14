@@ -196,13 +196,22 @@ Validation `docs/validation-longmemeval-selection.json`; isolated receipt
 67question body-scale file evaluation selected one question in5.839s with40,615,936
 byte process peakRSS. This is one macOS observation, not a speed comparison,
 peakmemory guarantee, QA result or realbenchmark claim. No model/GPU/download calls.
-Signed delivery/hostedCI pending at this boundary; active-cycle holds live state.
+Signed source `26a03e23416d3fc7acb516773836514c9a7dfac2` pushedPRIVATE; hostedCI
+`38637357131`passed375tests (one expected ContextKit skip),120installedtests and
+frozen budget/HTML smoke. Exact loghash/signature facts in`docs/github-validation.json`.
+No original/private data was changed or uploaded.
 
-Next bounded useful research step: descriptive scenario-phenomenon breakdown of
-frozen generated outputs and existing reviewer labels, preserving every model,
-dev/test split, reviewer, uncertainty and parse/schema/empty exclusions. Existing
-scenario tags overlap; no pooled totals, humanprecision/calibration, post-test tuning,
-modelselection or changed labels. Root brief required before implementation.
+Scenario-tag breakdown is implemented/root reviewed; worker released and no GPU calls.
+`experiments/summarize_scenario_phenomena.py` emits186overlappingtagcells, separates
+all model/split/reviewer counts, preserves uncertainty and output exclusions, and
+binds original provenance hashes. Whole-scenario tags do not attribute error causes.
+Report `docs/scenarios-phenomena.json`; contract `docs/scenario-phenomena.md`;
+validation `docs/validation-scenario-phenomena.json`. Root independently replayed
+186tagcells/372reviewercells/744rates against historical saved provenance/labels.
+All381tests,zero skips,9.477s;Ruff87files,source mypy30,scoped46,actionlint/diffcheck
+pass.6newtests pass outside checkout with approved installed35-file runtime and
+PYTHONPATH/HOMEunset; byte-identicalreport reproduced. No freshwheel needed. Source
+commit/push/hostedCI pending. No private sources, rawreceipts,labels or prompts changed.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed

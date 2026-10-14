@@ -13,7 +13,7 @@
     "prior_experiment_sha256": "ead1c7b056e873eca1586555577b7200e81e7b460ffee37ce5a38e443fad19c0",
     "prior_source_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7"
   },
-  "delivery_state": "Root reviewed and local checks passed; signed source/push/hostedCI pending",
+  "delivery_state": "Signed source pushed PRIVATE; hostedCI passed",
   "diff_check_exit_code": 0,
   "focused_selection_tests": 9,
   "full_suite": {
@@ -28,6 +28,20 @@
     "tests": 375
   },
   "gpu_or_model_calls": 0,
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "26a03e23416d3fc7acb516773836514c9a7dfac2",
+    "hosted_elapsed_seconds": 23.261,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 375,
+    "installed_new_api_checks_passed": true,
+    "installed_selection_tests_passed": 9,
+    "installed_tests_passed": 120,
+    "local_log_sha256": "a8c16b5483f776635269c47c41fe51c9b5c68f3af4b73cb49f107bfa18dc8882",
+    "run_id": 38637357131,
+    "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38637357131"
+  },
   "independent_body_scale_probe": {
     "elapsed_seconds": 5.839049500063993,
     "input_bytes": 69229333,
@@ -100,6 +114,7 @@
     "log_sha256": "fdba5b4e396441aaf1ba0d4aee9a2b6de7229057c665772ec81bd032ce1cc3f5"
   },
   "source_base_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7",
+  "source_commit": "26a03e23416d3fc7acb516773836514c9a7dfac2",
   "tdd_red_logs": {
     ".local/longmemeval-selection-api-red.log": "9eb3937339e7d6aa07e9be29a4e393e485f3fc2679c3b0f22d6989a1f05d21a6",
     ".local/longmemeval-selection-cli-red.log": "5a25cb1e3896d2dc225863516feebdb194981eacf1f001641221f4932a82383e"

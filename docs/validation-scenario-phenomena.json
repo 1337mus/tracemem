@@ -1,0 +1,96 @@
+{
+  "artifact_sha256": {
+    "docs/scenario-phenomena-brief.md": "bed8e79d7803010f9a4d48fdbbcc8464713866e8b5ee10f08829c091f688affd",
+    "docs/scenario-phenomena.md": "d432da5b4ab146405b32b2f8a23583e024ea76708cf979bfbd04fd431a93726e",
+    "docs/scenarios-phenomena.json": "7009a69e36ec14565ba3b0cef068bcdf824aa73deb8d5eb2996c258b89ce9b90",
+    "experiments/summarize_scenario_phenomena.py": "c1fc31e8ff664cff7ddbe2941815f7d8a946251308e9d16f0408270dfb6b3699",
+    "tests/test_scenario_phenomena.py": "b700797d774a97aae8208d0225374ba811508522922d9210bcf2df02ae4a7fc3"
+  },
+  "delivery_state": "Root reviewed; local validation passed; signed source/push/hostedCI pending",
+  "diff_check_exit_code": 0,
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
+    "elapsed_seconds": 9.477,
+    "exit_code": 0,
+    "local_log": ".local/scenario-phenomena-final-check.log",
+    "log_sha256": "03e540676181f8454ae28fcf46085cd64c559e8550e4c08c858732703ff0246e",
+    "ruff_files": 87,
+    "skipped": 0,
+    "source_mypy_files": 30,
+    "tests": 381
+  },
+  "gpu_or_model_calls": 0,
+  "independent_replay": {
+    "frozen_anchoring_exclusions": 0,
+    "log_sha256": "864a0bfb1a942574ce7edabef7f426096e05abce7a9495338828a07025977c4a",
+    "model_or_network_calls": 0,
+    "origins": 84,
+    "output_rows": 96,
+    "overlap_summary": {
+      "phi-3.5-mini/dev": {
+        "actual_distinct_cases": 24,
+        "overlapping_case_memberships": 67,
+        "tags": 45
+      },
+      "phi-3.5-mini/test": {
+        "actual_distinct_cases": 24,
+        "overlapping_case_memberships": 72,
+        "tags": 48
+      },
+      "qwen3-4b/dev": {
+        "actual_distinct_cases": 24,
+        "overlapping_case_memberships": 67,
+        "tags": 45
+      },
+      "qwen3-4b/test": {
+        "actual_distinct_cases": 24,
+        "overlapping_case_memberships": 72,
+        "tags": 48
+      }
+    },
+    "probe_sha256": "5ebc5a8bd1dbf4e350130deb102b98274e7495b68c4f1184b1c2676bd0968a6c",
+    "reviewer_cells_replayed": 372,
+    "reviewer_metrics_replayed": 744,
+    "source_questions": 48,
+    "tag_cells_replayed": 186,
+    "zero_reviewer_path_checked_cells": 93
+  },
+  "isolated_validation": {
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "initial_harness_failures": "Copied test helper additionally required configs and prompt-source hash resource; added them and reran. Runtime imports verified from site-packages; no product changes.",
+    "new_wheel_built": false,
+    "receipt": ".local/scenario-phenomena-isolated-receipt.json",
+    "receipt_sha256": "873cf8c33bd6a02a1abfbe106dd5b934bad8fcbe302f1a07f2b6048723b869d5",
+    "report_bytes_equal": true,
+    "report_sha256": "7009a69e36ec14565ba3b0cef068bcdf824aa73deb8d5eb2996c258b89ce9b90",
+    "runtime_files_unchanged": 35,
+    "tests": 6
+  },
+  "limitations": [
+    "Overlapping whole-scenario tags do not attribute semantic error causes",
+    "Agent-only labels, small samples; no precision/calibration or model selection",
+    "Frozen dev/test untouched; Gate A remains unmet"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T21:17:10.470692+00:00",
+  "root_review": "Entire final source/tests/docs inspected. Reused validators and checked mappings; exclusive0600 writer justified because existing writer does not enforce permissions. Formatting fixes preserve report bytes. No substantive findings.",
+  "scope": "Retrospective overlapping source-tag breakdown; separate models, splits and reviewers; no altered labels or inference",
+  "scoped_mypy": {
+    "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py experiments/evaluate_longmemeval_retrieval.py experiments/evaluate_integrity_selectivity.py experiments/summarize_scenario_phenomena.py",
+    "exit_code": 0,
+    "files": 46,
+    "local_log": ".local/scenario-phenomena-scoped-mypy.log",
+    "log_sha256": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89"
+  },
+  "source_base_commit": "26a03e23416d3fc7acb516773836514c9a7dfac2",
+  "tdd_evidence": {
+    "initial_red": "Callable stub lacks by_model; intended behavior failure after valid fixture setup",
+    "log": ".local/scenario-phenomena-kickoff.log",
+    "sha256": "0b5edc6e1a61cca4cf7db17150c6dd9f22573f437cc55af08b6b362be52e2a83"
+  },
+  "workflow_lint_exit_code": 0
+}

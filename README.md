@@ -108,6 +108,8 @@ make check
   [Fictional review artifacts](examples/synthetic/reviews/README.md) reproduce the report.
 - [Review uncertainty](docs/review-uncertainty.md): scenario-cluster intervals with
   explicit undefined resamples and separate reviewers. Descriptive agent labels only.
+- [Scenario tag breakdown](docs/scenario-phenomena.md): overlapping source-tag cells
+  for frozen outputs and separate agent labels; no causal error attribution.
 - [Offline review page](docs/offline-review.md): inspect blind candidates beside
   their sources, save drafts, and export complete responses for validation.
   It does not create independent human labels or satisfy Gate A.
