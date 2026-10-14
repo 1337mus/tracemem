@@ -11,8 +11,10 @@
     "experiments/bootstrap_scenario_reviews.py": "edfc9e7edbd07b6654471524ff32da034bfe02bf57afd957d8a694def6e83cfe",
     "experiments/evaluate_context_budgets.py": "f1fbec895b67193dee1e21d534ee84447e5012c8a15573b810b8962345da38d0",
     "experiments/export_review_html.py": "a5ae05207f6d347319bddf2069fa3198cedf35be0c1f902c04e477476d8680c6",
+    "experiments/smoke_installed.py": "576a399a4e9dba14f6615a1641b40a2e594b1a053511298f42d4090edcba1269",
     "src/tracemem/data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
-    "src/tracemem/review_html.py": "e697edb9e5ec68943599b856998af9f0a17547bebde5fa616ce8e4d2645e1cd4"
+    "src/tracemem/review_html.py": "e697edb9e5ec68943599b856998af9f0a17547bebde5fa616ce8e4d2645e1cd4",
+    "tests/test_installed_new_apis.py": "e13d06f2301b40db4c7172aab1531381e0e6d88e1e7a45ab923fdda0af6ed5ed"
   },
   "candidate_ledger": {
     "automatic_accept": false,
@@ -33,31 +35,31 @@
     "full_suite": {
       "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
       "exit_code": 0,
-      "local_log": ".local/final-uncertainty-full_suite.log",
-      "log_sha256": "5480546af85dea142b25566d1de1fa1ae1ee51aa4c90804ceec072ec98bf9c55"
+      "local_log": ".local/final-installed-apis-full_suite.log",
+      "log_sha256": "a3d8ddfecb7d64085cde50a26c25f2e9bf6fea51026f372aa713230e6545f40b"
     },
     "ruff_check": {
       "command": ".venv/bin/ruff check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-uncertainty-ruff_check.log",
+      "local_log": ".local/final-installed-apis-ruff_check.log",
       "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
     },
     "ruff_format": {
       "command": ".venv/bin/ruff format --check src tests experiments",
       "exit_code": 0,
-      "local_log": ".local/final-uncertainty-ruff_format.log",
-      "log_sha256": "ea2969fd741733e33c490fb6696583f5d6e29e16cae5e536952236a31cf615b1"
+      "local_log": ".local/final-installed-apis-ruff_format.log",
+      "log_sha256": "9071fb8809290955639414bfc7f9a55bb49b60c6fbecf0b84ad6e8cffd072155"
     },
     "scoped_mypy": {
       "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py experiments/export_review_html.py experiments/evaluate_context_budgets.py experiments/bootstrap_scenario_reviews.py",
       "exit_code": 0,
-      "local_log": ".local/final-uncertainty-scoped_mypy.log",
+      "local_log": ".local/final-installed-apis-scoped_mypy.log",
       "log_sha256": "8b09188cd4334b7a36b9f6dc1f7ef942a9f88d6aa8cc3cdbb7ae7841468e6997"
     },
     "source_mypy": {
       "command": ".venv/bin/mypy",
       "exit_code": 0,
-      "local_log": ".local/final-uncertainty-source_mypy.log",
+      "local_log": ".local/final-installed-apis-source_mypy.log",
       "log_sha256": "5107f9446510710cfc458474a6bae8746bf7ed9a2bccb85b1de3b0a14e84c8ad"
     },
     "workflow_lint": {
@@ -109,21 +111,21 @@
     "train_cases": 0
   },
   "full_suite": {
-    "elapsed_seconds": 4.514,
+    "elapsed_seconds": 4.713,
     "skipped": 0,
-    "tests": 267
+    "tests": 277
   },
   "gate_a": {
     "met": false,
     "reason": "No independent human labels or sufficiently established training/evaluation dataset; provisional targets and lexical split audit cannot establish readiness."
   },
   "github": {
-    "delivery_at_this_checkpoint": "Reviewed budget/offline source pushed; hosted257tests and34installed ChatGPT tests passed",
+    "delivery_at_this_checkpoint": "Signed267test slice pushed; hosted CI passed267tests and34installedtests. Expanded installed smoke277test slice prepared for private delivery.",
     "delivery_receipt": "docs/github-validation.json",
-    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38620827280",
+    "hosted_ci": "https://github.com/1337mus/tracemem/actions/runs/38622455178",
     "public_release": false,
     "repository": "1337mus/tracemem",
-    "source_commit": "664587cd5689d44a6572a978efd32ecffcd20de4",
+    "source_commit": "359b50811ce745a1b2398b154ffdd74c40b86350",
     "visibility_verified": "PRIVATE",
     "visibility_verified_at_utc": "2026-10-14T19:05:33.228181+00:00"
   },
@@ -147,8 +149,19 @@
     "docs/validation-phase2-baseline.json",
     "docs/validation-support-ledger.json",
     "docs/validation-github-bootstrap.json",
-    "docs/validation-review-budget.json"
+    "docs/validation-review-budget.json",
+    "docs/validation-review-uncertainty.json"
   ],
+  "installed_new_apis": {
+    "all_existing_checks_preserved": true,
+    "all_loaded_modules": 15,
+    "installed_package_members_match_approved_source": 31,
+    "isolated_smoke_exit_code": 0,
+    "network_or_gpu_calls": 0,
+    "new_api_hashes_and_stable_fields_match": true,
+    "runtime_package_changed": false,
+    "validation": "docs/installed-new-apis-validation.json"
+  },
   "isolated_wheel_smoke": {
     "all_members_match_approved_source": true,
     "commands_passed": 9,
@@ -191,7 +204,7 @@
   },
   "original_data_writes_performed": false,
   "private_data_uploaded": false,
-  "recorded_at_utc": "2026-10-14T19:17:13.176921+00:00",
+  "recorded_at_utc": "2026-10-14T19:25:51.403281+00:00",
   "review_uncertainty": {
     "human_reviewers": 0,
     "interpretation": "Descriptive conditional resampling; no acceptance precision, calibration, model winner or Gate A claim",
@@ -205,8 +218,8 @@
     "scenarios_each_split": 24,
     "seed": 1729
   },
-  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels. New scenario-bootstrap source/tests reviewed; independent case-origin replay checked all24metrics with statistics.quantiles and explicit zero denominators. Three Graphiti source hashes/Git blob IDs reconciled and exact cited lines inspected.",
-  "ruff_formatted_files": 71,
+  "root_review": "Complete budget and offline renderer source/tests reviewed. Root replayed 306 previous-packer combinations and resolved 728 exact fictional citations. Corrected citation-end truncation, JS/Python whitespace parity and literal NUL CSP mismatch. Node VM harness passed; browser rendering unverified after file URL security rejection. No independent human labels. New scenario-bootstrap source/tests reviewed; independent case-origin replay checked all24metrics with statistics.quantiles and explicit zero denominators. Three Graphiti source hashes/Git blob IDs reconciled and exact cited lines inspected. Expanded installed-smoke source and10tests reviewed; fresh offline installed wheel reproduced frozen budget/84taskHTML checks, all15loadedmodulepaths are installed and31packagebytes match approved source.",
+  "ruff_formatted_files": 72,
   "schema2_migration": false,
   "scope": "Local Phase0/1 prototype; synthetic extraction/retrieval/NLI diagnostics; early candidate ledger; fixture-based ChatGPT reader/snapshot CLI; private GitHub bootstrap",
   "scoped_mypy_files": 39,
@@ -259,6 +272,7 @@
     "tests/test_dataset_audit.py": "8c7627d217bff4ae8596f4a5c349f598864aee9823d56688458994a57c964020",
     "tests/test_evaluate_anchoring.py": "61c6bf9622122c4bf053a577c1736d93db0972faa7d7e4b4b27b973454da065e",
     "tests/test_evaluate_baselines.py": "fe161b38b41ceb81f9a88fce764a2251f5db0aa79f1ef3f304d1fa45fddb68ad",
+    "tests/test_installed_new_apis.py": "e13d06f2301b40db4c7172aab1531381e0e6d88e1e7a45ab923fdda0af6ed5ed",
     "tests/test_ledger.py": "877b300aaa2562f0b1f579a8a0228accdf162229a703fff1429820cb09de6420",
     "tests/test_modal_baseline.py": "f11cabb3a63e412f2f507b6078e2920032e9466add738e5f5240bc7057c3eee3",
     "tests/test_modal_scenarios.py": "c379eaa2d16b3967fed7f9b4a53f93517a11b06ab69cfbaa98e9c55cfe7e7c9d",

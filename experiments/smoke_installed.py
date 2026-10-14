@@ -8,8 +8,10 @@ import json
 import os
 import sys
 import tempfile
+from collections.abc import Mapping
 from dataclasses import replace
 from pathlib import Path
+from typing import Any
 
 FROZEN = {
     "legacy_claim_fixture": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
@@ -18,6 +20,10 @@ FROZEN = {
     "nli_receipt": "16be7f4c542bd174e49f975bfc3d8baa7ef9995fdd5d8cfcf2e3df03893f3871",
     "support_report": "9d2891c622c1644baddd8a7cf87faa410d393f5a7e70e6ded80a32c6daf828e2",
 }
+CONTEXT_BUDGET_REPORT_SHA256 = "9e14de94e09893f400e17226fa2cebceeec377c1493f4f263fa325d49a055c01"
+REVIEW_BUNDLE_SHA256 = "65ed4a2e0bbd227c3a521899676c4db98085f855083ec2d2a16aecbdda55bda5"
+REVIEW_HTML_SHA256 = "07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e"
+REVIEW_TASK_COUNT = 84
 
 
 def sha256(path: Path) -> str:
@@ -26,6 +32,137 @@ def sha256(path: Path) -> str:
 
 def inside(path: Path, root: Path) -> bool:
     return path.is_relative_to(root)
+
+
+def _first_mismatch_path(actual: Any, expected: Any, path: str = "report") -> str | None:
+    if type(actual) is not type(expected):
+        return path
+    if isinstance(actual, Mapping):
+        for key in sorted(set(actual) | set(expected)):
+            child_path = f"{path}.{key}"
+            if key not in actual or key not in expected:
+                return child_path
+            mismatch = _first_mismatch_path(actual[key], expected[key], child_path)
+            if mismatch is not None:
+                return mismatch
+        return None
+    if isinstance(actual, list):
+        if len(actual) != len(expected):
+            return f"{path}.length"
+        for index, (actual_item, expected_item) in enumerate(zip(actual, expected, strict=True)):
+            mismatch = _first_mismatch_path(actual_item, expected_item, f"{path}[{index}]")
+            if mismatch is not None:
+                return mismatch
+        return None
+    return None if actual == expected else path
+
+
+def _compare_context_budget_reports(
+    actual: Mapping[str, Any], recorded: Mapping[str, Any]
+) -> dict[str, Any]:
+    actual_environment = actual.get("environment")
+    recorded_environment = recorded.get("environment")
+    if not isinstance(actual_environment, Mapping) or not isinstance(recorded_environment, Mapping):
+        raise SystemExit("context-budget report environment must be an object")
+    actual_environment_fields = set(actual_environment)
+    recorded_environment_fields = set(recorded_environment)
+    if actual_environment_fields != recorded_environment_fields:
+        raise SystemExit(
+            "context-budget environment schema changed: "
+            f"actual={sorted(actual_environment_fields)}, "
+            f"recorded={sorted(recorded_environment_fields)}"
+        )
+    for field in sorted(actual_environment_fields):
+        if type(actual_environment[field]) is not type(recorded_environment[field]):
+            raise SystemExit(f"context-budget environment field type changed: environment.{field}")
+
+    allowed_environment_values = {"python", "sqlite"}
+    stable_actual = dict(actual)
+    stable_recorded = dict(recorded)
+    stable_actual["environment"] = {
+        key: value
+        for key, value in actual_environment.items()
+        if key not in allowed_environment_values
+    }
+    stable_recorded["environment"] = {
+        key: value
+        for key, value in recorded_environment.items()
+        if key not in allowed_environment_values
+    }
+    mismatch = _first_mismatch_path(stable_actual, stable_recorded)
+    if mismatch is not None:
+        raise SystemExit(f"context-budget report changed at {mismatch}")
+    return {
+        "stable_fields_match": True,
+        "environment": {
+            "actual": dict(sorted(actual_environment.items())),
+            "recorded": dict(sorted(recorded_environment.items())),
+        },
+    }
+
+
+def _require_frozen_sha256(label: str, raw: bytes, expected: str) -> str:
+    actual = hashlib.sha256(raw).hexdigest()
+    if actual != expected:
+        raise SystemExit(f"{label} SHA-256 changed: expected {expected}, got {actual}")
+    return actual
+
+
+def _exercise_new_apis(source_root: Path, work_dir: Path) -> dict[str, Any]:
+    from tracemem.benchmark import load_synthetic_data
+    from tracemem.budget_benchmark import run_context_budget_benchmark
+    from tracemem.review_html import render_review_html
+    from tracemem.storage import EvidenceStore
+
+    report_path = source_root / "docs/baseline-context-budgets.json"
+    bundle_path = source_root / "examples/synthetic/reviews/scenario-review-blind.json"
+    try:
+        recorded_report_bytes = report_path.read_bytes()
+        bundle_bytes = bundle_path.read_bytes()
+    except OSError as error:
+        raise SystemExit(f"missing installed API smoke input: {error.filename}") from error
+
+    report_sha256 = _require_frozen_sha256(
+        "context-budget baseline report", recorded_report_bytes, CONTEXT_BUDGET_REPORT_SHA256
+    )
+    bundle_sha256 = _require_frozen_sha256(
+        "blind review bundle", bundle_bytes, REVIEW_BUNDLE_SHA256
+    )
+    recorded_report = json.loads(recorded_report_bytes)
+    review_bundle = json.loads(bundle_bytes)
+    if not isinstance(recorded_report, Mapping):
+        raise SystemExit("context-budget baseline report must be a JSON object")
+    if not isinstance(review_bundle, Mapping):
+        raise SystemExit("blind review bundle must be a JSON object")
+    tasks = review_bundle.get("tasks")
+    if not isinstance(tasks, list) or len(tasks) != REVIEW_TASK_COUNT:
+        raise SystemExit(f"blind review bundle must contain {REVIEW_TASK_COUNT} tasks")
+
+    database_path = work_dir / "context-budget-evidence.sqlite3"
+    if database_path.exists():
+        raise SystemExit(f"context-budget smoke database already exists: {database_path.name}")
+    records, queries, fixture_sha256 = load_synthetic_data()
+    with EvidenceStore(database_path) as store:
+        store.ingest(records)
+        actual_report = run_context_budget_benchmark(store, queries, input_sha256=fixture_sha256)
+    budget_comparison = _compare_context_budget_reports(actual_report, recorded_report)
+
+    rendered_html = render_review_html(review_bundle)
+    html_sha256 = _require_frozen_sha256(
+        "rendered blind review HTML", rendered_html.encode("utf-8"), REVIEW_HTML_SHA256
+    )
+    return {
+        "context_budget": {
+            "report_sha256": report_sha256,
+            "fixture_sha256": actual_report["fixture_sha256"],
+            **budget_comparison,
+        },
+        "review_html": {
+            "bundle_sha256": bundle_sha256,
+            "html_sha256": html_sha256,
+            "task_count": len(tasks),
+        },
+    }
 
 
 def preflight(source_root: Path, work_dir: Path) -> tuple[Path, Path]:
@@ -87,7 +224,6 @@ def main() -> None:
     from tracemem.storage import EvidenceStore
     from tracemem.support import load_support_challenge, score_support_cases
 
-    modules = installed_module_paths(source)
     cases, legacy_hash = load_challenge()
     if legacy_hash != FROZEN["legacy_claim_fixture"]:
         raise SystemExit("legacy claim fixture hash changed")
@@ -181,9 +317,13 @@ def main() -> None:
     replay = score_support_cases(support_cases, outputs)
     assert replay == frozen_report["score"]
 
+    new_api_checks = _exercise_new_apis(source, work)
+    modules = installed_module_paths(source)
+
     receipt = {
         "installed_module_paths": modules,
         "sha256": {**FROZEN},
+        "new_api_checks": new_api_checks,
         "counts": {
             "legacy": {"gold_claims": legacy_count, "entries_after_reopen": 27},
             "nli_support_cases": len(support_cases),

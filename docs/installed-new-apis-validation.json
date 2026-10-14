@@ -1,0 +1,44 @@
+{
+  "exit_code": 0,
+  "wheel_sha256": "63325e2fa0a4e32079938fdd07d8ae9c8364593256013ee4d1a20f393b628342",
+  "source_script_sha256": "576a399a4e9dba14f6615a1641b40a2e594b1a053511298f42d4090edcba1269",
+  "source_script_unchanged": true,
+  "conditions": {
+    "citation_revision_survives_newer_source_and_reopen": true,
+    "frozen_nli_scores_match": true,
+    "model_or_remote_calls": 0,
+    "preflight_passed": true,
+    "semantic_acceptance_claimed": false
+  },
+  "new_api_checks": {
+    "context_budget": {
+      "environment": {
+        "actual": {
+          "python": "3.12.14",
+          "sqlite": "3.53.1"
+        },
+        "recorded": {
+          "python": "3.12.14",
+          "sqlite": "3.53.1"
+        }
+      },
+      "fixture_sha256": "76862babda5e6e26be1ed14f5265c64e43627a54b1499dba47585605396637f3",
+      "report_sha256": "9e14de94e09893f400e17226fa2cebceeec377c1493f4f263fa325d49a055c01",
+      "stable_fields_match": true
+    },
+    "review_html": {
+      "bundle_sha256": "65ed4a2e0bbd227c3a521899676c4db98085f855083ec2d2a16aecbdda55bda5",
+      "html_sha256": "07521f971f5554e5476d15a1299eb75cf0b5b20fbc6854c79b6053a1aecc474e",
+      "task_count": 84
+    }
+  },
+  "new_modules_from_installed_site_packages": true,
+  "all_loaded_package_module_count": 15,
+  "all_previous_checks_preserved": true,
+  "installed_package_members_match_approved_source": true,
+  "package_members": 31,
+  "recorded_at_utc": "2026-10-14T19:25:51.403281+00:00",
+  "local_receipt": ".local/installed-new-apis-isolated-receipt.json",
+  "fixture_policy": "Tracked fictional fixtures only",
+  "browser_rendering_verified": false
+}

@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 267-test uncertainty checkpoint. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 277-test installed-API checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -119,11 +119,21 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:267tests,zero skips,4.514seconds including actual Context Kit
-integration and Node VM. Ruff71files,source mypy26,scoped39. Exact commands/exit
-codes `.local/final-uncertainty-commands.json`; `docs/validation.json` records
-source/test hashes. Historical257test checkpoint in `docs/validation-review-budget.json`.
-Runtime package unchanged; all31source hashes still match the installed wheel.
+Current full suite:277tests,zero skips,4.713seconds including actual Context Kit
+integration and Node VM. Ruff72files,source mypy26,scoped39. Exact commands/exit
+codes `.local/final-installed-apis-commands.json`; `docs/validation.json` records
+source/test hashes. Historical267test checkpoint in
+`docs/validation-review-uncertainty.json`. Runtime package source still unchanged.
+
+Expanded installed smoke completed and root-reviewed. A fresh offline virtualenv
+installed the approved wheel; all31installed packagefiles match approved source.
+All15loadedpackage modules resolve under site-packages outside checkout, including
+budget_benchmark/review_html. Frozen budget report (all fields except py/sql version
+values) and byte-identical84taskHTML reproduce. Previous ledger/citation/NLI checks
+all pass.10newtests pin changed metrics/citations/config/environment schema+types,
+input hashes and HTML hash. See `docs/installed-new-apis-validation.json`/`docs/ci.md`.
+The existing GitHub workflow runs this expanded script without a workflow change.
+No browser use or model/GPU calls were needed; browser rendering remains unverified.
 
 Scenario-cluster uncertainty experiment completed and root-reviewed. All24cases
 per split,including excluded/empty outputs,remain in resampling population.2000draws,
@@ -144,12 +154,11 @@ No upstream code execution or benchmark conversations fetched. No new GPU calls.
    pushed as signed664587cd5689d44a6572a978efd32ecffcd20de4. HostedCI38620827280
    passed257tests(one expected Context Kit skip),Node VM and34installed ChatGPT
    tests. GitHub signature reason remainsbad_email; local verify-commit passes.
-   New267test uncertainty/doc slice prepared for signed private delivery.
-2. No active worker at this checkpoint. Next bounded slice is
-   `docs/installed-new-apis-brief.md`: permanently exercise installed budget/review
-   APIs in existing CI smoke; preserve all existing checks. Root owns integration,
-   exact source/test hashes and final validation. Check `.local/active-cycle.json`
-   before starting so a resumed session does not duplicate a newer worker.
+   Uncertainty slice pushed as signed359b50811ce745a1b2398b154ffdd74c40b86350;
+   hostedCI38622455178 passed267tests(one expectedskip)and34installedtests.
+2. No active worker at this checkpoint; the installed-API slice is ready for
+   signed private delivery and CI. Root verified the complete source/test diff.
+   Check `.local/active-cycle.json` before starting the next prototype slice.
 3. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
@@ -159,3 +168,7 @@ model, full private-corpus deployment, public release or novelty claim.
 Automation `continue-tracemem-prototype` remains ACTIVE,every30minutes, same chat;
 root verified saved config this cycle. Quiet unless meaningful progress/failure/
 action. Avoid duplicate work. Original memory context stays read-only.
+
+Raj asked why Computer Use was present. Root explained the earlier blocked local
+HTML browser check; no Computer Use calls this continuation. Prefer deterministic
+code/tests for this research loop; a specific UI need would require separate judgment.
