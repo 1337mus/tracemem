@@ -6,7 +6,7 @@
     "experiments/summarize_scenario_phenomena.py": "c1fc31e8ff664cff7ddbe2941815f7d8a946251308e9d16f0408270dfb6b3699",
     "tests/test_scenario_phenomena.py": "b700797d774a97aae8208d0225374ba811508522922d9210bcf2df02ae4a7fc3"
   },
-  "delivery_state": "Root reviewed; local validation passed; signed source/push/hostedCI pending",
+  "delivery_state": "Signed source pushed PRIVATE; hostedCI passed",
   "diff_check_exit_code": 0,
   "full_suite": {
     "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
@@ -20,6 +20,19 @@
     "tests": 381
   },
   "gpu_or_model_calls": 0,
+  "hosted_ci": {
+    "conclusion": "success",
+    "head_sha": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
+    "hosted_elapsed_seconds": 28.508,
+    "hosted_expected_skips": 1,
+    "hosted_test_count": 381,
+    "installed_new_api_checks_passed": true,
+    "installed_tests_passed": 120,
+    "local_log_sha256": "45a65a88c118522634447781203c8560d578ec58f3b26e42fa2b8de67a89234e",
+    "run_id": 38639123154,
+    "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38639123154"
+  },
   "independent_replay": {
     "frozen_anchoring_exclusions": 0,
     "log_sha256": "864a0bfb1a942574ce7edabef7f426096e05abce7a9495338828a07025977c4a",
@@ -87,6 +100,7 @@
     "log_sha256": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89"
   },
   "source_base_commit": "26a03e23416d3fc7acb516773836514c9a7dfac2",
+  "source_commit": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
   "tdd_evidence": {
     "initial_red": "Callable stub lacks by_model; intended behavior failure after valid fixture setup",
     "log": ".local/scenario-phenomena-kickoff.log",

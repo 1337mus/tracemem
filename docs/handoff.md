@@ -210,10 +210,35 @@ validation `docs/validation-scenario-phenomena.json`. Root independently replaye
 186tagcells/372reviewercells/744rates against historical saved provenance/labels.
 All381tests,zero skips,9.477s;Ruff87files,source mypy30,scoped46,actionlint/diffcheck
 pass.6newtests pass outside checkout with approved installed35-file runtime and
-PYTHONPATH/HOMEunset; byte-identicalreport reproduced. No freshwheel needed. Source
-commit/push/hostedCI pending. No private sources, rawreceipts,labels or prompts changed.
+PYTHONPATH/HOMEunset; byte-identicalreport reproduced. No freshwheel needed. Signed source
+`1a48e7633ce42900a8088bf47058cf89dbe624d8` pushedPRIVATE; hostedCI38639123154passed
+381tests(one expectedContextKit skip),120installedtests,frozenbudget/HTML smoke. No private sources, rawreceipts,labels or prompts changed.
 
 Remaining substantive gates: independent human labels/Gate A, calibrated semantic
 verification, owner-authorized source lifecycle/erasure, temporal truth, licensed
 benchmark compatibility and matched-budget QA. No trained model/public release or
 novelty claim. Continue useful bounded progress; this checkpoint is not completion.
+
+Bounded transcript reader is implemented/root reviewed; worker released. Default8MiB
+rawLF/CRLFline cap, explicit max_line_bytes/CLI --max-line-bytes up to64MiB, immediate
+oversize refusal before decode/parse. Existingallowed evidence identities/stats match
+priorreader. LegacyCR-only recordseparators are unsupported; documented. Generator
+failure rollsback logical records/heads; newly created emptyDB schema may remain.
+No totalmemory or atomic sourcesnapshot guarantee. Source contract
+`docs/transcript-bounds.md`; validation `docs/validation-transcript-bounds.json`.
+387tests,zero skips,10.175s;Ruff88files,source mypy30,scoped46,actionlint/diffcheck pass.
+Root15check oracle includes exactpriorrecords/stats/source preservation,8badcaps,
+12MiBunterminatedline at512bytecap (8119byte Pythontracedpeak,singleobservation),
+and real latefailure rollback. New35file wheel SHA256
+`36941fedfc6ae7c207c4207d3749fbeefb1d2f35ea0382145cb6fb1079f80cea`;
+33oldruntimefiles unchanged,onlyadapters/__init__.py and cli.py changed.135copied
+installedtests pass with1expectedContextKit skip; frozenbudget/HTML reproduce.
+Approvedmanifest `.local/package-source-approved-transcript-bounds.json`;
+wheelreceipt `.local/package-smoke-fts-v3-chatgpt-20261014T212302688753Z.json`.
+Workflow evidence is honest: initialinvalidlimit RED/GREEN, broaderbaseline REDreplay
+after an initialimplementation, not perbehaviorpreimplementationRED. Signed delivery
+and hostedCI pending. No privatecorpus,originalsources or ContextKit touched.
+
+Next: verify signed private delivery/CI, then continue useful boundedprototype work
+within existing gates. Independent humanannotation/GateA remains necessary before
+training/qualityclaims. Preserve frozenmodel testoutputs; do not tune or relaunch.

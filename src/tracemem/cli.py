@@ -11,7 +11,12 @@ from collections.abc import Sequence
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from .adapters import AdapterStats, discover_context_kit, read_transcript
+from .adapters import (
+    DEFAULT_MAX_TRANSCRIPT_LINE_BYTES,
+    AdapterStats,
+    discover_context_kit,
+    read_transcript,
+)
 from .benchmark import (
     DEFAULT_BOOTSTRAP_SAMPLES,
     DEFAULT_TOP_K,
@@ -50,6 +55,7 @@ def build_parser() -> argparse.ArgumentParser:
     ingest.add_argument("--provider", required=True, choices=("claude", "codex"))
     ingest.add_argument("--input", required=True, type=Path)
     ingest.add_argument("--db", required=True, type=Path)
+    ingest.add_argument("--max-line-bytes", type=int, default=DEFAULT_MAX_TRANSCRIPT_LINE_BYTES)
 
     import_chatgpt = commands.add_parser(
         "import-chatgpt", help="create a fresh snapshot from an explicit ChatGPT export"
@@ -147,7 +153,14 @@ def _ingest(args: argparse.Namespace) -> int:
     database_path = _resolve_ingest_database_path(source_path, args.db)
     stats = AdapterStats()
     with EvidenceStore(database_path) as store:
-        inserted = store.ingest(read_transcript(source_path, args.provider, stats=stats))
+        inserted = store.ingest(
+            read_transcript(
+                source_path,
+                args.provider,
+                stats=stats,
+                max_line_bytes=args.max_line_bytes,
+            )
+        )
     _write_json(
         {
             "inserted_revisions": inserted,

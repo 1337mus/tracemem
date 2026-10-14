@@ -58,6 +58,8 @@ make check
 
 ## Read the evidence
 
+- [Transcript line limits](docs/transcript-bounds.md): bounded Claude/Codex JSONL
+  reads, an explicit cap override, and transactional rollback on late refusal.
 - [Context Kit inventory](docs/context-kit-inventory.md): verified source architecture,
   schemas, aggregate coverage and integration limits.
 - [Experiments](docs/experiments.md): commands, measurements and failure cases.

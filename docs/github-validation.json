@@ -1,17 +1,16 @@
 {
   "ci": {
     "conclusion": "success",
-    "head_sha": "26a03e23416d3fc7acb516773836514c9a7dfac2",
-    "hosted_elapsed_seconds": 23.261,
+    "head_sha": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
+    "hosted_elapsed_seconds": 28.508,
     "hosted_expected_skips": 1,
-    "hosted_test_count": 375,
+    "hosted_test_count": 381,
     "installed_new_api_checks_passed": true,
-    "installed_selection_tests_passed": 9,
     "installed_tests_passed": 120,
-    "local_log_sha256": "a8c16b5483f776635269c47c41fe51c9b5c68f3af4b73cb49f107bfa18dc8882",
-    "run_id": 38637357131,
+    "local_log_sha256": "45a65a88c118522634447781203c8560d578ec58f3b26e42fa2b8de67a89234e",
+    "run_id": 38639123154,
     "skip_reason": "Optional ContextKit checkout absent from hosted runner",
-    "url": "https://github.com/1337mus/tracemem/actions/runs/38637357131"
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38639123154"
   },
   "historical_deliveries": [
     {
@@ -206,21 +205,39 @@
       },
       "recorded_at_utc": "2026-10-14T20:56:26.080241+00:00",
       "source_commit": "fcfd1da13d4fb6a820bd8e753affd2c708394ae7"
+    },
+    {
+      "ci": {
+        "conclusion": "success",
+        "head_sha": "26a03e23416d3fc7acb516773836514c9a7dfac2",
+        "hosted_elapsed_seconds": 23.261,
+        "hosted_expected_skips": 1,
+        "hosted_test_count": 375,
+        "installed_new_api_checks_passed": true,
+        "installed_selection_tests_passed": 9,
+        "installed_tests_passed": 120,
+        "local_log_sha256": "a8c16b5483f776635269c47c41fe51c9b5c68f3af4b73cb49f107bfa18dc8882",
+        "run_id": 38637357131,
+        "skip_reason": "Optional ContextKit checkout absent from hosted runner",
+        "url": "https://github.com/1337mus/tracemem/actions/runs/38637357131"
+      },
+      "recorded_at_utc": "2026-10-14T21:19:47.045012+00:00",
+      "source_commit": "26a03e23416d3fc7acb516773836514c9a7dfac2"
     }
   ],
   "private_data_uploaded": false,
   "public_release": false,
   "pushed": true,
-  "recorded_at_utc": "2026-10-14T21:06:16.914092+00:00",
+  "recorded_at_utc": "2026-10-14T21:19:47.045012+00:00",
   "repository": "https://github.com/1337mus/tracemem",
   "signature": {
-    "github_reason": "bad_email verified live on26a03e2; identity settings unchanged",
+    "github_reason": "bad_email verified live on1a48e76; identity settings unchanged",
     "github_verified": false,
     "identity_settings_changed": false,
-    "local_evidence": "git verify-commit26a03e2: Good signature",
+    "local_evidence": "git verify-commit1a48e76: Good signature",
     "local_verified": true
   },
-  "source_commit": "26a03e23416d3fc7acb516773836514c9a7dfac2",
+  "source_commit": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
   "upload_scope": "Reviewed code, documentation, configuration and fictional fixtures only",
   "verify_live_by": "2026-10-15",
   "visibility_verified": "PRIVATE"

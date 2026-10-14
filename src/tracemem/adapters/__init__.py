@@ -11,6 +11,9 @@ from pathlib import Path
 
 from ..schema import EvidenceRecord
 
+DEFAULT_MAX_TRANSCRIPT_LINE_BYTES = 8 * 1024 * 1024
+MAX_TRANSCRIPT_LINE_BYTES = 64 * 1024 * 1024
+
 
 @dataclass(slots=True)
 class AdapterStats:
@@ -34,8 +37,13 @@ def read_transcript(
     provider: str,
     *,
     stats: AdapterStats | None = None,
+    max_line_bytes: int = DEFAULT_MAX_TRANSCRIPT_LINE_BYTES,
 ) -> Iterator[EvidenceRecord]:
     """Yield recognized transcript blocks without changing or normalizing their text."""
+    if isinstance(max_line_bytes, bool) or not isinstance(max_line_bytes, int):
+        raise TypeError("max_line_bytes must be an integer")
+    if not 1 <= max_line_bytes <= MAX_TRANSCRIPT_LINE_BYTES:
+        raise ValueError("max_line_bytes must be between 1 and 67108864")
     if provider not in {"claude", "codex"}:
         raise ValueError("provider must be 'claude' or 'codex'")
     if stats is not None and not isinstance(stats, AdapterStats):
@@ -53,8 +61,13 @@ def read_transcript(
     session_id = default_session_id
 
     try:
-        with transcript_path.open("r", encoding="utf-8") as transcript:
-            for line_number, line in enumerate(transcript, start=1):
+        with transcript_path.open("rb") as transcript:
+            line_number = 0
+            while raw_line := transcript.readline(max_line_bytes + 1):
+                line_number += 1
+                if len(raw_line) > max_line_bytes:
+                    raise ValueError("transcript line exceeds the byte limit")
+                line = raw_line.decode("utf-8")
                 try:
                     event = json.loads(line)
                 except json.JSONDecodeError:
@@ -385,6 +398,8 @@ def __getattr__(name: str) -> object:
 
 __all__ = [
     "AdapterStats",
+    "DEFAULT_MAX_TRANSCRIPT_LINE_BYTES",
+    "MAX_TRANSCRIPT_LINE_BYTES",
     "ContextKitConfigError",
     "discover_context_kit",
     "read_transcript",

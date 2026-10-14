@@ -1,0 +1,98 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "92e2c05e57d0761d2811875b118b37765a5130315a04cb7dca18b44c5f2d5939",
+    "docs/transcript-bounds-brief.md": "c11c2bf3856147628a91b0482e9625e6975ee4ff28fd42a03739f244f12e9e30",
+    "docs/transcript-bounds.md": "99ecbd9576a7613713af8a522d09f534738e6172c660dc4753bdb973d2ae4363",
+    "src/tracemem/adapters/__init__.py": "a054639c77c827b749c8c0d256b027a0537210c9f0962b34ad6c18a28b98d3b7",
+    "src/tracemem/cli.py": "0d220b121af84fd3fb6e6128983eea06d5d9bfc1414bafa4dede9f1b0ea16c59",
+    "tests/test_transcript_bounds.py": "4776f035331513314e28b1496d0623b4d52df7b7c2c6e491b4467d3b919db408"
+  },
+  "delivery_state": "Root reviewed; local suite,independent replay,newwheel and isolatedtests passed; signed source/push/hostedCI pending",
+  "diff_check_exit_code": 0,
+  "full_suite": {
+    "command": "make check PYTHON=.venv/bin/python PYTHONPATH=src:/Users/raj/Projects/ctxkit/src",
+    "elapsed_seconds": 10.175,
+    "exit_code": 0,
+    "local_log": ".local/transcript-bounds-final-check.log",
+    "log_sha256": "1eb0013ecd1515882bee5c33f35db1e5f3afc9f2c6bb3fbebc6025d32efefdee",
+    "ruff_files": 88,
+    "skipped": 0,
+    "source_mypy_files": 30,
+    "tests": 387
+  },
+  "gpu_or_model_calls": 0,
+  "independent_probe": {
+    "checks": [
+      "claude/1 exactrecords/stats/rawlimit/source",
+      "claude/1 onebyteoverflow refused",
+      "claude/2 exactrecords/stats/rawlimit/source",
+      "claude/2 onebyteoverflow refused",
+      "claude/0 exactrecords/stats/rawlimit/source",
+      "claude/0 onebyteoverflow refused",
+      "codex/1 exactrecords/stats/rawlimit/source",
+      "codex/1 onebyteoverflow refused",
+      "codex/2 exactrecords/stats/rawlimit/source",
+      "codex/2 onebyteoverflow refused",
+      "codex/0 exactrecords/stats/rawlimit/source",
+      "codex/0 onebyteoverflow refused",
+      "eight invalidlimits preopen",
+      "12MiB unterminatedline refused with<1MiB tracedPythonpeak at512bytecap",
+      "lateoverflow rollsback newrevisions,newheads,newrecords"
+    ],
+    "current_source_sha256": "a054639c77c827b749c8c0d256b027a0537210c9f0962b34ad6c18a28b98d3b7",
+    "huge_file_bytes": 12583126,
+    "line_cap_bytes": 512,
+    "log_sha256": "52213a784069aa295be04cb997fe5014a3d11410880cdf497b7280fb1224744a",
+    "memory_observation_limit": "single local Pythontracemalloc observation; not processRSS or totalmemory guarantee",
+    "model_or_network_calls": 0,
+    "previous_source_sha256": "960d10f1fd17702eb082340042ea888e498e9b0076d18eacccd227e9ef284789",
+    "probe_sha256": "0d8bbcb8c108ec51b46a03745b8007cdd5462a67875247b4615ab9da83d728e5",
+    "python_traced_peak_bytes": 8119,
+    "recorded_at_utc": "2026-10-14T21:22:31.784102+00:00",
+    "source_base": "1a48e7633ce42900a8088bf47058cf89dbe624d8"
+  },
+  "installed_validation": {
+    "approved_source_manifest": ".local/package-source-approved-transcript-bounds.json",
+    "changed_runtime_files": [
+      "adapters/__init__.py",
+      "cli.py"
+    ],
+    "elapsed_seconds": 1.204,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "expected_contextkit_skips": 1,
+    "frozen_budget_and_html_checks_passed": true,
+    "other_runtime_files_unchanged": 33,
+    "package_files_verified": 35,
+    "receipt": ".local/transcript-bounds-installed-receipt.json",
+    "receipt_sha256": "e428d6912bf912cc58d50b26c37bdf8154770b022101071b24e3951dd9dde756",
+    "tests": 135,
+    "wheel_receipt": ".local/package-smoke-fts-v3-chatgpt-20261014T212302688753Z.json",
+    "wheel_sha256": "36941fedfc6ae7c207c4207d3749fbeefb1d2f35ea0382145cb6fb1079f80cea"
+  },
+  "limitations": [
+    "RawLF/CRLF line bound only; not totalprocess memory or an atomic source snapshot",
+    "Legacy text iteration accepted CR-only separators; bounded reader requires LF/CRLF between JSONL records",
+    "Default8MiB lines now refused above cap; explicit override supported up to64MiB",
+    "Invalid newimport may leave an empty database schema; existinglogical records/heads rollback"
+  ],
+  "original_data_modified": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T21:24:23.013571+00:00",
+  "root_review": "Entire source diff,tests,docs and CI change inspected; independent prior-source equivalence,boundary,large unterminatedline,sourcepreservation and SQLite rollback replay passed. No substantive production findings. Documented CR-only separator compatibility limit.",
+  "scope": "Bounded rawJSONL lines before decode/parse; explicit API/CLI cap; real generator failure rollsback records/heads",
+  "scoped_mypy": {
+    "exit_code": 0,
+    "files": 46,
+    "log_sha256": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89"
+  },
+  "source_base_commit": "1a48e7633ce42900a8088bf47058cf89dbe624d8",
+  "workflow_evidence": {
+    "green_log_sha256": "b6ce5c0b624d1f451d6b3a616272301919ee9a615bde9c9876781a455350011a",
+    "red_log_sha256": "b55037bb565fb99d7fb504527a746691bd34b5fac359622fdc787e3ae696ff10",
+    "worker_sequence": "Initial invalid-limit test: corrected an import setup failure, observed missing max_line_bytes contract, implemented first behavior, passed. Broader RED is an explicit baseline replay after temporary restoration of prior source, then GREEN; not incremental preimplementation RED for every behavior."
+  },
+  "workflow_lint_exit_code": 0
+}
