@@ -1,0 +1,36 @@
+[
+  {
+    "id": "fictional-venue-conversation",
+    "current_node": "selected-venue",
+    "mapping": {
+      "empty-root": {"parent": null, "message": null},
+      "question": {
+        "parent": "empty-root",
+        "message": {
+          "id": "fictional-question",
+          "author": {"role": "user"},
+          "create_time": 1735689600,
+          "content": {"content_type": "text", "parts": ["Which venue should we choose for our fictional planning meeting?"]}
+        }
+      },
+      "unselected-suggestion": {
+        "parent": "question",
+        "message": {
+          "id": "fictional-sibling",
+          "author": {"role": "assistant"},
+          "create_time": 1735689660,
+          "content": {"content_type": "text", "parts": ["An unselected suggestion: Harbor Hall."]}
+        }
+      },
+      "selected-venue": {
+        "parent": "question",
+        "message": {
+          "id": "fictional-selected-venue",
+          "author": {"role": "user"},
+          "create_time": 1735689720.25,
+          "content": {"content_type": "text", "parts": ["For this fictional example, I chose Cedar Café 🧪."]}
+        }
+      }
+    }
+  }
+]

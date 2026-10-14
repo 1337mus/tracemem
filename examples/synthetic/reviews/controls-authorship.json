@@ -1,0 +1,61 @@
+{
+  "mutations": [
+    {
+      "case_id": "dev-balcony-basil",
+      "field": "polarity",
+      "before": "positive",
+      "after": "negative",
+      "rationale": "Intention polarity reversal; user affirmatively plans to check soil."
+    },
+    {
+      "case_id": "dev-ferry-bike",
+      "field": "object",
+      "before": "late ferry when bringing a bike",
+      "after": "late ferry even when not bringing a bike",
+      "rationale": "Adds unsupported preference outside the explicit bike condition."
+    },
+    {
+      "case_id": "dev-agenda-email",
+      "field": "object",
+      "before": "agenda received the evening before",
+      "after": "agenda received the morning after the planning call",
+      "rationale": "Changes before-call evening to after-call morning."
+    },
+    {
+      "case_id": "dev-supper-mushrooms",
+      "field": "polarity",
+      "before": "negative",
+      "after": "positive",
+      "rationale": "Reverses explicit dislike of mushrooms."
+    },
+    {
+      "case_id": "dev-blue-crate",
+      "field": "object",
+      "before": "under the south bench",
+      "after": "on top of the north shelf",
+      "rationale": "Contradicts explicit under-south-bench location."
+    },
+    {
+      "case_id": "dev-piano-recording",
+      "field": "polarity",
+      "before": "negative",
+      "after": "positive",
+      "rationale": "Reverses explicit preference against recording children."
+    },
+    {
+      "case_id": "dev-large-print-atlas",
+      "field": "object",
+      "before": "large-print edition for field maps",
+      "after": "small-print edition for field maps",
+      "rationale": "Contradicts explicit large-print preference."
+    },
+    {
+      "case_id": "dev-window-fern",
+      "field": "subject",
+      "before": "cold air from the window",
+      "after": "heat from the heater",
+      "rationale": "Substitutes heater heat for explicitly attributed cold window air."
+    }
+  ],
+  "limits": "Eight simple dev-derived foils, author-root-reviewed only; not independent semantic calibration or held-out evaluation."
+}

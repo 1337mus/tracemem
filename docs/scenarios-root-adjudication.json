@@ -1,0 +1,59 @@
+{
+  "scope": "Root read all84 candidates, complete conversations and original agent rationales. Nonblind adjudication; not a second independent reviewer. Original responses preserved.",
+  "source_response_sha256": "fd0670d20b4749e39214415b819ce60b421e26a69368a3a58ff55afb29c7110b",
+  "reviewer_kind": "agent",
+  "human_reviewers": 0,
+  "overrides": [
+    {
+      "task_id": "task_980aa7307a997349392d04c078faee504b6521e8605bad45656900dab8329eff",
+      "label": "uncertain",
+      "rationale": "Responsibility for a log does not explicitly establish current use; management and use are different relationships."
+    },
+    {
+      "task_id": "task_609f708d8c78655900d3bd934efb50998c848a8d9d749c38085f82d1ac1388b4",
+      "label": "uncertain",
+      "rationale": "Source preference is scoped to field maps; candidate omits the domain and can be read as a general edition preference."
+    },
+    {
+      "task_id": "task_4b5d409b99d74f3b119473248b44c3fc2d58cfbc6b32f7a205a32912735199fe",
+      "label": "uncertain",
+      "rationale": "Source prefers a starting location for volunteer tours; candidate omits the activity and starting-point qualification."
+    },
+    {
+      "task_id": "task_07b26b917936e132544a6a03c3c38c8ae5196a7e7444c1681436c707ab38cdda",
+      "label": "unsupported",
+      "rationale": "Claim reports an unresolved move as a direct asserted user statement while dropping that it is quoted wording in a note; quoted-source attribution is lost."
+    },
+    {
+      "task_id": "task_3d62d67eabaf9b99b10cff7c9f453a0ae741bcd4bbac5760c5f8b045fe7d5b14",
+      "label": "uncertain",
+      "rationale": "Object repeats an instruction from an unidentified message; direct-user attribution plus REPORTS does not clearly preserve the quoted source or disavow instruction authority."
+    },
+    {
+      "task_id": "task_eb4ad39c8c6d73b4cbfafb041dc9f3cc48cb835fe178304672efe05fcb80edc9",
+      "label": "unsupported",
+      "rationale": "Preferring evening class over Saturday is a relative ranking and does not establish a negative preference for Saturday itself."
+    },
+    {
+      "task_id": "task_debcf6ef0688530f59ba5d525dfea1ef88e3b0c3568da0451355f0d3b1a146da",
+      "label": "uncertain",
+      "rationale": "Disliking mushrooms in response to an ingredient question suggests exclusion but does not explicitly state a settled decision; preserve this ambiguity."
+    },
+    {
+      "task_id": "task_b6b2ffb112722d97d32477864bbccfec5c5adbe92c0b31ba45424b02f6029890",
+      "label": "uncertain",
+      "rationale": "Needing to see whether shifts settle is a prerequisite or uncertainty; a separate affirmative plan to investigate is not explicit."
+    },
+    {
+      "task_id": "task_e4eddc7770d6c7f20d2196176ca85b3d01cd1851f50d834e607c70041537829f",
+      "label": "uncertain",
+      "rationale": "A past recording in Italian supports that event; broad present USES Italian can overgeneralize its time and context."
+    }
+  ],
+  "counts": {
+    "supported": 41,
+    "unsupported": 33,
+    "uncertain": 10
+  },
+  "limits": "Labels are descriptive agent judgments; context-loss cases remain uncertain. No consensus merging, automatic acceptance, schema-failure salvage or frozen fixture changes."
+}

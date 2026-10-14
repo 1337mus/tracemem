@@ -1,0 +1,8 @@
+{
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "license_tag": "apache-2.0",
+  "metadata_source": "https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2",
+  "verified_local_date": "2026-10-13",
+  "weights_downloaded_locally": false
+}

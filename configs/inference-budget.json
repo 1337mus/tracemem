@@ -1,0 +1,19 @@
+{
+  "scope": "Phase 2 synthetic-only baseline inference, not training",
+  "authorized_local_date": "2026-10-13",
+  "gpu": "T4",
+  "max_initial_calls": 2,
+  "max_containers": 1,
+  "min_containers": 0,
+  "retries": 0,
+  "startup_timeout_seconds": 300,
+  "execution_timeout_seconds": 900,
+  "gpu_price_usd_per_second": 0.000164,
+  "pricing_source": "https://modal.com/pricing",
+  "pricing_checked_local_date": "2026-10-13",
+  "conservative_target_usd": 2,
+  "hard_billing_cap": false,
+  "private_data_allowed": false,
+  "remote_inputs": "reviewed authored synthetic fixtures only",
+  "local_weights_or_inference_allowed": false
+}

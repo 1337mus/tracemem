@@ -1,0 +1,52 @@
+{
+  "torch": {
+    "version": "2.7.1",
+    "requires_python": ">=3.9.0",
+    "model_stack_constraints": [],
+    "source": "https://pypi.org/pypi/torch/2.7.1/json"
+  },
+  "transformers": {
+    "version": "4.51.3",
+    "requires_python": ">=3.9.0",
+    "model_stack_constraints": [
+      "huggingface-hub<1.0,>=0.30.0",
+      "numpy>=1.17",
+      "safetensors>=0.4.3"
+    ],
+    "source": "https://pypi.org/pypi/transformers/4.51.3/json"
+  },
+  "sentence-transformers": {
+    "version": "4.1.0",
+    "requires_python": ">=3.9",
+    "model_stack_constraints": [
+      "transformers<5.0.0,>=4.41.0",
+      "torch>=1.11.0",
+      "huggingface-hub>=0.20.0"
+    ],
+    "source": "https://pypi.org/pypi/sentence-transformers/4.1.0/json"
+  },
+  "accelerate": {
+    "version": "1.6.0",
+    "requires_python": ">=3.9.0",
+    "model_stack_constraints": [
+      "numpy<3.0.0,>=1.17",
+      "torch>=2.0.0",
+      "huggingface-hub>=0.21.0",
+      "safetensors>=0.4.3"
+    ],
+    "source": "https://pypi.org/pypi/accelerate/1.6.0/json"
+  },
+  "qwen_card": {
+    "source": "https://huggingface.co/Qwen/Qwen3-4B/raw/1cfa9a7208912126459214e8b04321603b3df60c/README.md",
+    "compatibility_lines": [
+      "library_name: transformers",
+      "The code of Qwen3 has been in the latest Hugging Face `transformers` and we advise you to use the latest version of `transformers`.",
+      "With `transformers<4.51.0`, you will encounter the following error:",
+      "from transformers import AutoModelForCausalLM, AutoTokenizer",
+      "For local use, applications such as Ollama, LMStudio, MLX-LM, llama.cpp, and KTransformers have also supported Qwen3.",
+      "from transformers import AutoModelForCausalLM, AutoTokenizer",
+      "YaRN is currently supported by several inference frameworks, e.g., `transformers` and `llama.cpp` for local use, `vllm` and `sglang` for deployment. In general, there are two approaches to enabling YaRN for supported frameworks:",
+      "> please upgrade `transformers>=4.51.0`."
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "benchmark": "synthetic-bm25-scale",
+  "version": 1,
+  "source_sha256": "379b403b3c46807e2a30d2fdee1da0be16b02e79798d7707a6da47725a65168a",
+  "retrieval_source_sha256": "08d5343fee4c4441c69115977e82cc15fbd43ecd3963d30911f51541bc3025b4",
+  "storage_source_sha256": "cf7d94d27044b81b47853bf262787b74b5e1a32b6fe2086a6d61cac3188f3d37",
+  "legacy_function_source_sha256": "9173d9b08cffce8e9dd8782c04dd63b8bfd12c16f6582526688baeacf3cf58d4",
+  "generator_sha256": "20e1a98c33c96bd9f18d325c12797bc4812f659fa7cf3661ba94bf0c02d38894",
+  "corpus_query_sha256": "64eb1685d89442710025c334e57688125e166b5877af2887fc22b92fb98b1545",
+  "environment": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "platform": "macOS-26.7.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_count": 18
+  },
+  "corpus": {
+    "requested_size": 50000,
+    "revision_count": 50001,
+    "current_head_count": 50000,
+    "utf8_text_bytes": 3633888,
+    "query_utf8_bytes": 12,
+    "top_k": 10,
+    "setup_seconds": 1.5752058340003714,
+    "sqlite_file_bytes": 42909696
+  },
+  "repeats": 5,
+  "measurements": {
+    "legacy_full_head_materialization": {
+      "latency_ms": {
+        "median": 461.030917,
+        "min": 448.945916,
+        "max": 523.468667
+      },
+      "tracemalloc_peak_python_bytes": {
+        "median": 42020930,
+        "min": 42020930,
+        "max": 42021666
+      },
+      "result_count": 10,
+      "ranking_sha256": "b859cfe99bcf3e77d59eebe5d3d4aacba9f33afc9abb4fd288301936038d4170"
+    },
+    "optimized_bm25": {
+      "latency_ms": {
+        "median": 149.189541,
+        "min": 140.256375,
+        "max": 179.294042
+      },
+      "tracemalloc_peak_python_bytes": {
+        "median": 12670,
+        "min": 12670,
+        "max": 13534
+      },
+      "result_count": 10,
+      "ranking_sha256": "b859cfe99bcf3e77d59eebe5d3d4aacba9f33afc9abb4fd288301936038d4170"
+    },
+    "rankings_identical": true
+  },
+  "measurement_policy": {
+    "latency": "separate pass with tracemalloc disabled",
+    "python_allocations": "separate pass with tracemalloc enabled",
+    "ranking_equivalence": "checked on every repeat in both passes"
+  },
+  "measurement_limits": [
+    "tracemalloc reports Python allocations, not process RSS or SQLite native memory.",
+    "Results describe this measured environment and are not production performance claims.",
+    "Corpus records and queries are deterministic synthetic text only.",
+    "Legacy timing reconstructs the previous BM25 head materialization and SearchHit creation; fixed-input validation is omitted."
+  ]
+}

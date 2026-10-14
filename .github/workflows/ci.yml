@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Python 3.12 checks and installed smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_CACHE_DIR: "1"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install locked development and Modal dependencies
+        run: |
+          set -euo pipefail
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements-dev.lock -r requirements-modal.lock
+
+      - name: Run checks
+        run: |
+          set -euo pipefail
+          make check PYTHON=.venv/bin/python
+
+      - name: Build wheel
+        run: |
+          set -euo pipefail
+          wheel_dir="$RUNNER_TEMP/tracemem-wheel"
+          mkdir -p "$wheel_dir"
+          .venv/bin/python -m pip wheel \
+            --no-build-isolation \
+            --no-deps \
+            --wheel-dir "$wheel_dir" \
+            .
+
+      - name: Test installed wheel outside the checkout
+        run: |
+          set -euo pipefail
+          wheel="$(find "$RUNNER_TEMP/tracemem-wheel" -maxdepth 1 -type f -name 'tracemem-*.whl' -print -quit)"
+          test -n "$wheel"
+
+          smoke_venv="$RUNNER_TEMP/tracemem-smoke-venv"
+          .venv/bin/python -m venv "$smoke_venv"
+          "$smoke_venv/bin/python" -m pip install --no-deps "$wheel"
+
+          test_dir="$(mktemp -d "$RUNNER_TEMP/tracemem-installed-tests.XXXXXX")"
+          cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py "$test_dir/"
+
+          unset PYTHONPATH PYTHONHOME
+          work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
+          cd "$RUNNER_TEMP"
+          "$smoke_venv/bin/tracemem" demo
+          "$smoke_venv/bin/python" -m tracemem demo
+          "$smoke_venv/bin/python" "$GITHUB_WORKSPACE/experiments/smoke_installed.py" \
+            --source-root "$GITHUB_WORKSPACE" \
+            --work-dir "$work_dir"
+          "$smoke_venv/bin/python" -m unittest discover \
+            -s "$test_dir" \
+            -p 'test_chatgpt_*.py' \
+            -v

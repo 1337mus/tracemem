@@ -1,0 +1,19 @@
+[
+  {"query_id":"q01","query":"When should the nightly database maintenance happen?","relevant_message_ids":["m01","m02"],"sufficient_sets":[["m01"]]},
+  {"query_id":"q02","query":"Which object store bucket holds the nightly archive, and how long is it retained?","relevant_message_ids":["m04","m05","m06"],"sufficient_sets":[["m04","m05"]],"case_tags":["multi_evidence"]},
+  {"query_id":"q03","query":"How hot is the oven for the lemon loaf and for how long does it bake?","relevant_message_ids":["m07","m08"],"sufficient_sets":[["m07"]]},
+  {"query_id":"q04","query":"What charge ceiling did I choose for my travel computer?","relevant_message_ids":["m10","m11"],"sufficient_sets":[["m10"]]},
+  {"query_id":"q05","query":"As of September 22, what AWS region is the staging cluster using now?","relevant_message_ids":["m37","m38"],"sufficient_sets":[["m37"]],"case_tags":["temporal_current"]},
+  {"query_id":"q06","query":"Before the September 20 move, which cloud region had we selected for staging?","relevant_message_ids":["m13","m14"],"sufficient_sets":[["m13"]],"case_tags":["temporal_historical"]},
+  {"query_id":"q07","query":"What weekdays and time of day are acceptable for design reviews?","relevant_message_ids":["m16","m17"],"sufficient_sets":[["m16"]]},
+  {"query_id":"q08","query":"When should I take care of replacing the passport?","relevant_message_ids":["m19","m20","m21"],"sufficient_sets":[["m19"]]},
+  {"query_id":"q09","query":"For the Cedar release, who is responsible for rollback, and what must happen before release?","relevant_message_ids":["m22","m23","m24"],"sufficient_sets":[["m22","m23"]],"case_tags":["multi_evidence"]},
+  {"query_id":"q10","query":"How am I supposed to get to the capital for the event?","relevant_message_ids":["m25","m26"],"sufficient_sets":[["m25"]],"case_tags":["paraphrase_failure"]},
+  {"query_id":"q11","query":"At what checkout failure rate and duration should an alert fire?","relevant_message_ids":["m28","m29"],"sufficient_sets":[["m28"]]},
+  {"query_id":"q12","query":"What kind of novels do I tend to enjoy?","relevant_message_ids":["m31","m32","m33"],"sufficient_sets":[["m31"]]},
+  {"query_id":"q13","query":"Where is the quarterly planning meeting?","relevant_message_ids":["m34","m35","m36"],"sufficient_sets":[["m34"]]},
+  {"query_id":"q14","query":"What is the exact title of the movie I watched last weekend?","relevant_message_ids":[],"sufficient_sets":[],"case_tags":["no_answer"]},
+  {"query_id":"q15","query":"Which physician did I choose for the dental implant?","relevant_message_ids":[],"sufficient_sets":[],"case_tags":["no_answer"]},
+  {"query_id":"q16","query":"What is the Wi-Fi password at the cabin?","relevant_message_ids":[],"sufficient_sets":[],"case_tags":["no_answer"]},
+  {"query_id":"q17","query":"What did I say about the quoted request to send a production key?","relevant_message_ids":["m39","m40"],"sufficient_sets":[["m39"]],"case_tags":["quoted_instruction_decoy"]}
+]

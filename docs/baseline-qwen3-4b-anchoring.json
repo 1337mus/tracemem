@@ -1,0 +1,3311 @@
+{
+  "schema_version": 1,
+  "mode": "extraction",
+  "prompt_version": "v1",
+  "input_sha256": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
+  "payload_sha256": "70ec4bb633161983506cfb08e87d552e355e9c26c698a9b7528a94c628b26f0b",
+  "raw_receipt_sha256": "480992a25aaeea9f1e16067e9df56727899fab14db2f4eb1948ae8109ddb3d1c",
+  "model": {
+    "model_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "max_new_tokens": 512,
+    "max_prompt_tokens": 4096
+  },
+  "provenance": {
+    "package_versions": {
+      "Jinja2": "3.1.6",
+      "MarkupSafe": "3.0.4",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.6.0",
+      "aiohappyeyeballs": "2.6.1",
+      "aiohttp": "3.12.7",
+      "aiosignal": "1.3.2",
+      "attrs": "25.3.0",
+      "cbor2": "5.7.0",
+      "certifi": "2025.4.26",
+      "charset-normalizer": "3.5.2",
+      "cloudpickle": "3.1.2",
+      "filelock": "4.1.1",
+      "frozenlist": "1.6.0",
+      "fsspec": "2026.9.0",
+      "grpclib": "0.4.8",
+      "h2": "4.2.0",
+      "hf-xet": "1.7.0",
+      "hpack": "4.1.0",
+      "huggingface_hub": "0.36.2",
+      "hyperframe": "6.1.0",
+      "idna": "3.10",
+      "joblib": "1.6.0",
+      "mpmath": "1.3.0",
+      "multidict": "6.4.4",
+      "narwhals": "2.27.1",
+      "networkx": "3.7",
+      "numpy": "2.5.4",
+      "nvidia-cublas-cu12": "12.6.4.1",
+      "nvidia-cuda-cupti-cu12": "12.6.80",
+      "nvidia-cuda-nvrtc-cu12": "12.6.77",
+      "nvidia-cuda-runtime-cu12": "12.6.77",
+      "nvidia-cudnn-cu12": "9.5.1.17",
+      "nvidia-cufft-cu12": "11.3.0.4",
+      "nvidia-cufile-cu12": "1.11.1.6",
+      "nvidia-curand-cu12": "10.3.7.77",
+      "nvidia-cusolver-cu12": "11.7.1.2",
+      "nvidia-cusparse-cu12": "12.5.4.2",
+      "nvidia-cusparselt-cu12": "0.6.3",
+      "nvidia-nccl-cu12": "2.26.2",
+      "nvidia-nvjitlink-cu12": "12.6.85",
+      "nvidia-nvtx-cu12": "12.6.77",
+      "packaging": "26.3",
+      "pillow": "12.3.0",
+      "pip": "25.1.1",
+      "propcache": "0.3.1",
+      "protobuf": "6.31.1",
+      "psutil": "7.2.2",
+      "regex": "2026.9.29",
+      "requests": "2.34.2",
+      "safetensors": "0.8.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "sentence-transformers": "4.1.0",
+      "setuptools": "84.0.0",
+      "sympy": "1.14.0",
+      "threadpoolctl": "3.7.0",
+      "tokenizers": "0.21.4",
+      "torch": "2.7.1",
+      "tqdm": "4.70.1",
+      "transformers": "4.51.3",
+      "triton": "3.3.1",
+      "typing_extensions": "4.13.2",
+      "urllib3": "2.8.0",
+      "uv": "0.7.19",
+      "wheel": "0.45.1",
+      "yarl": "1.20.0"
+    },
+    "gpu_compute_seconds": 304.772849,
+    "model_load_seconds": 73.579751,
+    "remote_function_elapsed_seconds": 382.079294,
+    "peak_gpu_memory_bytes": 8822848512,
+    "client_call_wall_seconds_including_image_and_startup": 399.468317,
+    "modal_function_call_id": "fc-01M4WHMBFZ4VE7A4FP36WXNTKQ",
+    "modal_app_id": "ap-RjoWOOd1UuqJuiwT3T5M2Q",
+    "python_version": "3.12.10",
+    "gpu_name": "Tesla T4",
+    "torch_cuda_version": "12.6"
+  },
+  "token_totals": {
+    "input": 8560,
+    "generated": 5978
+  },
+  "truncated_cases": 0,
+  "evaluation_scope": "prompt-development diagnostics; not an independent evaluation",
+  "interpretation_note": "Offset repair restores uniquely located exact quotes only; it does not establish entailment, and repaired claims must never be auto-accepted.",
+  "raw_result": {
+    "exact_match": {
+      "true_positive": 0,
+      "false_positive": 24,
+      "false_negative": 26,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "scoring": {
+      "term_normalization": "casefold and collapse whitespace for subject/object",
+      "other_claim_fields": "exact",
+      "evidence": "exact IDs, offsets, and quotes; evidence order ignored",
+      "label_error_alignment": "normalized subject/object match"
+    },
+    "parse_failures": 0,
+    "schema_failures": 4,
+    "evidence_integrity": {
+      "claims": 24,
+      "valid_claims": 0,
+      "invalid_claims": 24,
+      "errors": {
+        "attribution_role_conflict": 1,
+        "quote_mismatch": 17,
+        "span_out_of_bounds": 7
+      }
+    },
+    "label_errors": {
+      "total": 5,
+      "by_field": {
+        "modality": 2,
+        "valid_from": 3
+      }
+    },
+    "unknown_case_abstention": {
+      "cases": 4,
+      "abstentions": 2,
+      "rate": 0.5
+    },
+    "per_tag_errors": {
+      "abandoned": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "abstention": {
+        "cases": 4,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 4,
+        "unknown_abstentions": 2
+      },
+      "ambiguity": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "assistant_decoy": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "attribution": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "causality": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 3,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "completed": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "conflict": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 2,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "correction": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "decision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "decision_boundary": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 2,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "direct_statement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "explicit_cause": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "explicit_choice": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "future_plan": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "historical": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "hypothetical": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "intention": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "location": {
+        "cases": 3,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 4,
+        "false_negative": 3,
+        "label_errors": 0,
+        "evidence_integrity_errors": 4,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "measurement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "multi_evidence": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "negation": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 3,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 3,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "not_decision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 1
+      },
+      "not_user_measurement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "ownership": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "past_event": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "past_vs_current": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "plan": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "planned_not_completed": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "preference": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 3,
+        "false_negative": 3,
+        "label_errors": 2,
+        "evidence_integrity_errors": 3,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "question": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 2,
+        "unknown_abstentions": 2
+      },
+      "quoted_source": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "quoted_text": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "reported_claim": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "revision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "role_attribution": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "same_speaker": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "temporal": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "tentative": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "third_party_report": {
+        "cases": 3,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "tool_observation": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "uncertainty": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "unknown": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 1
+      },
+      "unresolved": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "unresolved_reference": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "unsupported_cause": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "user_vs_assistant": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 2,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      }
+    },
+    "case_breakdown": {
+      "case_001_tentative_timer": {
+        "scenario_id": "scene_greenhouse_timer",
+        "tags": [
+          "tentative",
+          "future_plan"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "modality": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_002_preference_not_decision": {
+        "scenario_id": "scene_finish_choice",
+        "tags": [
+          "preference",
+          "decision_boundary"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "quote_mismatch": 2
+          }
+        },
+        "label_errors": {
+          "total": 2,
+          "by_field": {
+            "modality": 1,
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_003_temporal_revision": {
+        "scenario_id": "scene_filter_storage",
+        "tags": [
+          "temporal",
+          "past_vs_current",
+          "revision"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "quote_mismatch": 2
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_004_assistant_decoy": {
+        "scenario_id": "scene_mural_selection",
+        "tags": [
+          "assistant_decoy",
+          "user_vs_assistant",
+          "negation"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "attribution_role_conflict": 1,
+            "quote_mismatch": 1,
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_005_quoted_invoice": {
+        "scenario_id": "scene_parcel_weight_quote",
+        "tags": [
+          "quoted_text",
+          "attribution",
+          "not_user_measurement"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_006_third_party_report": {
+        "scenario_id": "scene_vent_report",
+        "tags": [
+          "third_party_report",
+          "reported_claim"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_007_negated_location": {
+        "scenario_id": "scene_backup_key",
+        "tags": [
+          "negation",
+          "location"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_008_intention_not_completion": {
+        "scenario_id": "scene_seed_catalog",
+        "tags": [
+          "intention",
+          "planned_not_completed"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "quote_mismatch": 2
+          }
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_009_ambiguous_reference": {
+        "scenario_id": "scene_ambiguous_objects",
+        "tags": [
+          "ambiguity",
+          "unresolved_reference",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": false
+      },
+      "case_010_unsupported_causality": {
+        "scenario_id": "scene_gauge_screen",
+        "tags": [
+          "causality",
+          "unsupported_cause"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_011_resolved_temporal_conflict": {
+        "scenario_id": "scene_orchid_shelf",
+        "tags": [
+          "conflict",
+          "correction",
+          "temporal"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_012_multi_evidence_location": {
+        "scenario_id": "scene_titanium_clip",
+        "tags": [
+          "multi_evidence",
+          "location",
+          "same_speaker"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "quote_mismatch": 2
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_013_unknown_question": {
+        "scenario_id": "scene_meter_calibration",
+        "tags": [
+          "unknown",
+          "abstention",
+          "question"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": true
+      },
+      "case_014_hypothetical": {
+        "scenario_id": "scene_telescope_storage",
+        "tags": [
+          "hypothetical",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": false
+      },
+      "case_015_question_not_preference": {
+        "scenario_id": "scene_archive_limit",
+        "tags": [
+          "question",
+          "not_decision",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": true
+      },
+      "case_016_explicit_preference": {
+        "scenario_id": "scene_pottery_warmup",
+        "tags": [
+          "preference",
+          "direct_statement"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_017_tool_observation": {
+        "scenario_id": "scene_thermometer_reading",
+        "tags": [
+          "tool_observation",
+          "measurement",
+          "role_attribution"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_018_shipping_label_report": {
+        "scenario_id": "scene_package_location",
+        "tags": [
+          "third_party_report",
+          "quoted_source",
+          "location"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_019_unresolved_source_conflict": {
+        "scenario_id": "scene_workshop_date",
+        "tags": [
+          "conflict",
+          "third_party_report",
+          "unresolved"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_020_explicit_decision": {
+        "scenario_id": "scene_fountain_pen",
+        "tags": [
+          "decision",
+          "explicit_choice"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "span_out_of_bounds": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_021_completed_action": {
+        "scenario_id": "scene_terrarium_samples",
+        "tags": [
+          "completed",
+          "past_event"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 2,
+          "errors": {
+            "quote_mismatch": 2
+          }
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_022_abandoned_historical_plan": {
+        "scenario_id": "scene_redwood_bench",
+        "tags": [
+          "historical",
+          "plan",
+          "abandoned"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_023_supported_causality": {
+        "scenario_id": "scene_spacer_failure",
+        "tags": [
+          "causality",
+          "explicit_cause"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_024_tentative_ownership": {
+        "scenario_id": "scene_binder_ownership",
+        "tags": [
+          "tentative",
+          "ownership",
+          "uncertainty"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "quote_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      }
+    },
+    "confidence_intervals_95": {
+      "precision": [
+        0.0,
+        0.0
+      ],
+      "recall": [
+        0.0,
+        0.0
+      ],
+      "f1": [
+        0.0,
+        0.0
+      ],
+      "evidence_integrity_rate": [
+        0.0,
+        0.0
+      ],
+      "unknown_case_abstention_rate": [
+        0.0,
+        1.0
+      ]
+    },
+    "bootstrap": {
+      "samples": 1000,
+      "seed": 1729,
+      "unit": "scenario"
+    },
+    "extra_output_ids": []
+  },
+  "anchored_result": {
+    "exact_match": {
+      "true_positive": 0,
+      "false_positive": 24,
+      "false_negative": 26,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "scoring": {
+      "term_normalization": "casefold and collapse whitespace for subject/object",
+      "other_claim_fields": "exact",
+      "evidence": "exact IDs, offsets, and quotes; evidence order ignored",
+      "label_error_alignment": "normalized subject/object match"
+    },
+    "parse_failures": 0,
+    "schema_failures": 4,
+    "evidence_integrity": {
+      "claims": 24,
+      "valid_claims": 21,
+      "invalid_claims": 3,
+      "errors": {
+        "attribution_role_conflict": 1,
+        "source_role_mismatch": 2
+      }
+    },
+    "label_errors": {
+      "total": 5,
+      "by_field": {
+        "modality": 2,
+        "valid_from": 3
+      }
+    },
+    "unknown_case_abstention": {
+      "cases": 4,
+      "abstentions": 2,
+      "rate": 0.5
+    },
+    "per_tag_errors": {
+      "abandoned": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "abstention": {
+        "cases": 4,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 4,
+        "unknown_abstentions": 2
+      },
+      "ambiguity": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "assistant_decoy": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "attribution": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "causality": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 3,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "completed": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "conflict": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 2,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "correction": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "decision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "decision_boundary": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 2,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "direct_statement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "explicit_cause": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "explicit_choice": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "future_plan": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "historical": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "hypothetical": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "intention": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "location": {
+        "cases": 3,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 4,
+        "false_negative": 3,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "measurement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "multi_evidence": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "negation": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 3,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "not_decision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 1
+      },
+      "not_user_measurement": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "ownership": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "past_event": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "past_vs_current": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "plan": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "planned_not_completed": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "preference": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 3,
+        "false_negative": 3,
+        "label_errors": 2,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "question": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 2,
+        "unknown_abstentions": 2
+      },
+      "quoted_source": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "quoted_text": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "reported_claim": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "revision": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "role_attribution": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "same_speaker": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "temporal": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "tentative": {
+        "cases": 2,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "label_errors": 1,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "third_party_report": {
+        "cases": 3,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 4,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "tool_observation": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "uncertainty": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "unknown": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 1
+      },
+      "unresolved": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "unresolved_reference": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 1,
+        "unknown_abstentions": 0
+      },
+      "unsupported_cause": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "label_errors": 0,
+        "evidence_integrity_errors": 0,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      },
+      "user_vs_assistant": {
+        "cases": 1,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "label_errors": 0,
+        "evidence_integrity_errors": 1,
+        "unknown_cases": 0,
+        "unknown_abstentions": 0
+      }
+    },
+    "case_breakdown": {
+      "case_001_tentative_timer": {
+        "scenario_id": "scene_greenhouse_timer",
+        "tags": [
+          "tentative",
+          "future_plan"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "modality": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_002_preference_not_decision": {
+        "scenario_id": "scene_finish_choice",
+        "tags": [
+          "preference",
+          "decision_boundary"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 2,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 2,
+          "by_field": {
+            "modality": 1,
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_003_temporal_revision": {
+        "scenario_id": "scene_filter_storage",
+        "tags": [
+          "temporal",
+          "past_vs_current",
+          "revision"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 2,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_004_assistant_decoy": {
+        "scenario_id": "scene_mural_selection",
+        "tags": [
+          "assistant_decoy",
+          "user_vs_assistant",
+          "negation"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 1,
+          "errors": {
+            "attribution_role_conflict": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_005_quoted_invoice": {
+        "scenario_id": "scene_parcel_weight_quote",
+        "tags": [
+          "quoted_text",
+          "attribution",
+          "not_user_measurement"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "source_role_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_006_third_party_report": {
+        "scenario_id": "scene_vent_report",
+        "tags": [
+          "third_party_report",
+          "reported_claim"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 1,
+          "errors": {
+            "source_role_mismatch": 1
+          }
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_007_negated_location": {
+        "scenario_id": "scene_backup_key",
+        "tags": [
+          "negation",
+          "location"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_008_intention_not_completion": {
+        "scenario_id": "scene_seed_catalog",
+        "tags": [
+          "intention",
+          "planned_not_completed"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 2,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_009_ambiguous_reference": {
+        "scenario_id": "scene_ambiguous_objects",
+        "tags": [
+          "ambiguity",
+          "unresolved_reference",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": false
+      },
+      "case_010_unsupported_causality": {
+        "scenario_id": "scene_gauge_screen",
+        "tags": [
+          "causality",
+          "unsupported_cause"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_011_resolved_temporal_conflict": {
+        "scenario_id": "scene_orchid_shelf",
+        "tags": [
+          "conflict",
+          "correction",
+          "temporal"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_012_multi_evidence_location": {
+        "scenario_id": "scene_titanium_clip",
+        "tags": [
+          "multi_evidence",
+          "location",
+          "same_speaker"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 2,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_013_unknown_question": {
+        "scenario_id": "scene_meter_calibration",
+        "tags": [
+          "unknown",
+          "abstention",
+          "question"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": true
+      },
+      "case_014_hypothetical": {
+        "scenario_id": "scene_telescope_storage",
+        "tags": [
+          "hypothetical",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": false
+      },
+      "case_015_question_not_preference": {
+        "scenario_id": "scene_archive_limit",
+        "tags": [
+          "question",
+          "not_decision",
+          "abstention"
+        ],
+        "expected_claims": 0,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": true,
+        "abstained": true
+      },
+      "case_016_explicit_preference": {
+        "scenario_id": "scene_pottery_warmup",
+        "tags": [
+          "preference",
+          "direct_statement"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_017_tool_observation": {
+        "scenario_id": "scene_thermometer_reading",
+        "tags": [
+          "tool_observation",
+          "measurement",
+          "role_attribution"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_018_shipping_label_report": {
+        "scenario_id": "scene_package_location",
+        "tags": [
+          "third_party_report",
+          "quoted_source",
+          "location"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_019_unresolved_source_conflict": {
+        "scenario_id": "scene_workshop_date",
+        "tags": [
+          "conflict",
+          "third_party_report",
+          "unresolved"
+        ],
+        "expected_claims": 2,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_020_explicit_decision": {
+        "scenario_id": "scene_fountain_pen",
+        "tags": [
+          "decision",
+          "explicit_choice"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_021_completed_action": {
+        "scenario_id": "scene_terrarium_samples",
+        "tags": [
+          "completed",
+          "past_event"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 2,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 2,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 1,
+          "by_field": {
+            "valid_from": 1
+          }
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_022_abandoned_historical_plan": {
+        "scenario_id": "scene_redwood_bench",
+        "tags": [
+          "historical",
+          "plan",
+          "abandoned"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": true,
+        "evidence_integrity": {
+          "valid_claims": 0,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_023_supported_causality": {
+        "scenario_id": "scene_spacer_failure",
+        "tags": [
+          "causality",
+          "explicit_cause"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      },
+      "case_024_tentative_ownership": {
+        "scenario_id": "scene_binder_ownership",
+        "tags": [
+          "tentative",
+          "ownership",
+          "uncertainty"
+        ],
+        "expected_claims": 1,
+        "predicted_claims": 1,
+        "true_positive": 0,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "parse_failure": false,
+        "schema_failure": false,
+        "evidence_integrity": {
+          "valid_claims": 1,
+          "invalid_claims": 0,
+          "errors": {}
+        },
+        "label_errors": {
+          "total": 0,
+          "by_field": {}
+        },
+        "unknown": false,
+        "abstained": false
+      }
+    },
+    "confidence_intervals_95": {
+      "precision": [
+        0.0,
+        0.0
+      ],
+      "recall": [
+        0.0,
+        0.0
+      ],
+      "f1": [
+        0.0,
+        0.0
+      ],
+      "evidence_integrity_rate": [
+        0.7143,
+        1.0
+      ],
+      "unknown_case_abstention_rate": [
+        0.0,
+        1.0
+      ]
+    },
+    "bootstrap": {
+      "samples": 1000,
+      "seed": 1729,
+      "unit": "scenario"
+    },
+    "extra_output_ids": []
+  },
+  "cases": {
+    "case_001_tentative_timer": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 64,
+              "new_start": 0,
+              "new_end": 55,
+              "record_id": "94717f3f3401f989b24d43d5359d47ea3a3b2d754618635b97ce12ae29af246f",
+              "revision": "5648592d71423de0453c3bdf5faf8fec2e58d45ad80d824a5c88b418d0519826"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_002_preference_not_decision": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 11,
+              "old_end": 26,
+              "new_start": 13,
+              "new_end": 30,
+              "record_id": "25ad8e8eba0f6af8c2c379ddae0e1d18b38fcd0ba46a8bfcffff2fc34aa84b8a",
+              "revision": "33374cdec9feb32bfc48711acafe5707ac66c69755f187e7a8d7bb24dcce66f1"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 34,
+              "old_end": 47,
+              "new_start": 43,
+              "new_end": 62,
+              "record_id": "25ad8e8eba0f6af8c2c379ddae0e1d18b38fcd0ba46a8bfcffff2fc34aa84b8a",
+              "revision": "33374cdec9feb32bfc48711acafe5707ac66c69755f187e7a8d7bb24dcce66f1"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_003_temporal_revision": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 66,
+              "new_start": 0,
+              "new_end": 83,
+              "record_id": "91b983c09cdc372eceec9a4933522f222e23f9a091022988e05bcd19d4cf9fae",
+              "revision": "6edf617ffff8074952f7ebd40cb4c15bf54386ec0e8fe8e01994a5f9411bd897"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 67,
+              "old_end": 133,
+              "new_start": 84,
+              "new_end": 138,
+              "record_id": "91b983c09cdc372eceec9a4933522f222e23f9a091022988e05bcd19d4cf9fae",
+              "revision": "6edf617ffff8074952f7ebd40cb4c15bf54386ec0e8fe8e01994a5f9411bd897"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_004_assistant_decoy": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 46,
+              "new_start": 0,
+              "new_end": 39,
+              "record_id": "08891ff2cca48d30453d66e1e0816b3eee931ecb3a144028e9fa1ace148c45a0",
+              "revision": "893f3d866730887f409d0325fc4a08047cbebcb2f78a6ed36750607a3ff162ca"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 46,
+              "new_start": 0,
+              "new_end": 52,
+              "record_id": "90be63a016e7e183b21ce9ce7750d4b560a60804967fe63850a049a622d611df",
+              "revision": "f1f12ac42689f5258b25c3dc22b84d5353a4441ecda9257251e29d8c2431fd77"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_005_quoted_invoice": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 46,
+              "new_start": 0,
+              "new_end": 93,
+              "record_id": "42de6606142ddd55813507f4e80a2d02b57eec5d8ad08f5ea5bb1affe97be4f4",
+              "revision": "2beecba863763dda0a25cfd6fa2c7eec8ce865085ddda90fc07450de56a539bd"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_006_third_party_report": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 13,
+              "old_end": 46,
+              "new_start": 13,
+              "new_end": 50,
+              "record_id": "018a68b58792fd151f851306d93e3f3d1577a6ec76e867cf36b7a59c351b02f5",
+              "revision": "1ac088ca378e34003d9d370ddc2ad4a8456265968c00e1aa4237aec4886cf33f"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_007_negated_location": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 64,
+              "new_start": 0,
+              "new_end": 46,
+              "record_id": "b79194359ae87d745ce3f98f38b6d589ad6210cbda663946183ff5c784a5020a",
+              "revision": "d24407cf40bfb281fda1d5bd68f147d016a81a06c4670b7c20dc3453e8b44448"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_008_intention_not_completion": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 11,
+              "old_end": 44,
+              "new_start": 12,
+              "new_end": 46,
+              "record_id": "e093deb0f5afa7072755c9cdf4bdbd857b40dd2d266f92ea34fd73f1837d0419",
+              "revision": "93bff014404eba34c57e909dde8ea5f6a3589b7598f8526d155762bac3e98861"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 46,
+              "old_end": 63,
+              "new_start": 48,
+              "new_end": 78,
+              "record_id": "e093deb0f5afa7072755c9cdf4bdbd857b40dd2d266f92ea34fd73f1837d0419",
+              "revision": "93bff014404eba34c57e909dde8ea5f6a3589b7598f8526d155762bac3e98861"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_009_ambiguous_reference": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 46,
+              "new_start": 0,
+              "new_end": 42,
+              "record_id": "c3c7f74d06fb7a08eec7fd83b9b601f1a2a1b6dcb9252cab72cce09b7ebe8c13",
+              "revision": "ff93cf304e270b17327c6cc854e105fe9dcd731f95adbb311cf97992b6fe9ee9"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_010_unsupported_causality": {
+      "status": "schema_invalid",
+      "output_error": "invalid_candidate_schema",
+      "claims": []
+    },
+    "case_011_resolved_temporal_conflict": {
+      "status": "schema_invalid",
+      "output_error": "invalid_candidate_schema",
+      "claims": []
+    },
+    "case_012_multi_evidence_location": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 26,
+              "new_start": 0,
+              "new_end": 35,
+              "record_id": "809d3ae77cb09c897b13fe106e9e586e8c14415cd6c634116008cecbb7118f11",
+              "revision": "0ff47ba9a3cc3b0d017b8eec6b722f526810817ead948ddeec05da3c847574c7"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 26,
+              "new_start": 0,
+              "new_end": 28,
+              "record_id": "3d872c94ec254a00f03efd41f4de43aded419edf89e1294e7cd867164bcaf26f",
+              "revision": "78b8fa79c2de20c8df54e25979e09fa905191eafd1ff83caa8bb9dce5e3496e3"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_013_unknown_question": {
+      "status": "anchored",
+      "claims": []
+    },
+    "case_014_hypothetical": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 64,
+              "new_start": 0,
+              "new_end": 53,
+              "record_id": "7e2f2d7920d8486a37d586caa53f873b425b40bf11a61a3a9f63f856d1e7c4d4",
+              "revision": "ffb45be0ebd8c8978e49e302c3651b36b9012c47523c9fdd2fb986354e004a8f"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_015_question_not_preference": {
+      "status": "anchored",
+      "claims": []
+    },
+    "case_016_explicit_preference": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 64,
+              "new_start": 0,
+              "new_end": 50,
+              "record_id": "6239d0ac39b6d4e3466ac33f63ba8860e94637e14a726ecde53dceed1aea171a",
+              "revision": "a7361641f595df453ad71b850c8fb009c40f9268e8961545417b017d53477dca"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_017_tool_observation": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 15,
+              "new_start": 0,
+              "new_end": 38,
+              "record_id": "48f462e75a1ef608593d622d6b3f39b96abe511a8c4630ebb286108e6adec1fe",
+              "revision": "9ae20635c286c5445186c2f77f5d029654391e4a44f6818d5fa7c06562e6362c"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_018_shipping_label_report": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 55,
+              "new_start": 0,
+              "new_end": 61,
+              "record_id": "c5fabf17b9b6a93dbb172500e157228186f115ec405ebd739f2ffa15751d06f2",
+              "revision": "2d0c2c9bb6401a8f60e2f4ceaa6447457269198d76087c35f5e369d25e70f4ad"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_019_unresolved_source_conflict": {
+      "status": "schema_invalid",
+      "output_error": "invalid_candidate_schema",
+      "claims": []
+    },
+    "case_020_explicit_decision": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 64,
+              "new_start": 0,
+              "new_end": 56,
+              "record_id": "9327f30bfd03ed24df1dda87120179489da45bf186e3d84e93c6f356fb491a01",
+              "revision": "6ded1b76fc2326741df3821a1ae02a6fa0cc14faa24b3ef2600fb115b64d715c"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_021_completed_action": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 11,
+              "old_end": 36,
+              "new_start": 11,
+              "new_end": 41,
+              "record_id": "a2d93e7eb21df198855f03aa36f60e97f745e017a9114d269bb0088a58468d14",
+              "revision": "4973b33c5d9b6a8f5cc684e4e7f1b0519bf2ea8cc83f95509653f3dbb41eda5a"
+            }
+          ],
+          "unresolved": []
+        },
+        {
+          "claim_index": 1,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 46,
+              "new_start": 0,
+              "new_end": 51,
+              "record_id": "a2d93e7eb21df198855f03aa36f60e97f745e017a9114d269bb0088a58468d14",
+              "revision": "4973b33c5d9b6a8f5cc684e4e7f1b0519bf2ea8cc83f95509653f3dbb41eda5a"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_022_abandoned_historical_plan": {
+      "status": "schema_invalid",
+      "output_error": "invalid_candidate_schema",
+      "claims": []
+    },
+    "case_023_supported_causality": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 0,
+              "old_end": 55,
+              "new_start": 0,
+              "new_end": 63,
+              "record_id": "368054f8003fca0823f516270a5ed8d22674e1e47edf39d18ed8ef5d43295b96",
+              "revision": "5d72e82350e11a2402dd59335268fc864b7cea1af5ceca9e096d63f9466cca70"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    },
+    "case_024_tentative_ownership": {
+      "status": "anchored",
+      "claims": [
+        {
+          "claim_index": 0,
+          "repairs": [
+            {
+              "evidence_index": 0,
+              "old_start": 11,
+              "old_end": 34,
+              "new_start": 23,
+              "new_end": 54,
+              "record_id": "9e58a6b1a4394cb7ff251e6b0b5cd59c13d390121d8c5837ba77f079c8afa28b",
+              "revision": "a6a76627fc518c744ca94b9f26e1734e8ee624bd2bf0310d85075a03b101dd06"
+            }
+          ],
+          "unresolved": []
+        }
+      ]
+    }
+  },
+  "anchored_outputs": {
+    "case_001_tentative_timer": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PLANS\",\"object\":\"move the greenhouse timer to 06:40 in May\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"intention\",\"polarity\":\"positive\",\"valid_from\":null,\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-001\",\"message_id\":\"fictional-message-001-01\",\"char_start\":0,\"char_end\":55,\"quote\":\"Maybe I will move the greenhouse timer to 06:40 in May.\"}]}]}",
+    "case_002_preference_not_decision": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PREFERS\",\"object\":\"matte-blue finish\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-002\",\"message_id\":\"fictional-message-002-01\",\"char_start\":13,\"char_end\":30,\"quote\":\"matte-blue finish\"}]},{\"subject\":\"user\",\"predicate\":\"HAS\",\"object\":\"not chosen a finish\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"negative\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-002\",\"message_id\":\"fictional-message-002-01\",\"char_start\":43,\"char_end\":62,\"quote\":\"not chosen a finish\"}]}]}",
+    "case_003_temporal_revision": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"COMPLETED\",\"object\":\"stored spare filters in drawer C from January 1, 2024 through December 31, 2024\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"positive\",\"valid_from\":\"2024-01-01\",\"valid_to\":\"2024-12-31\",\"evidence\":[{\"session_id\":\"fictional-session-003\",\"message_id\":\"fictional-message-003-01\",\"char_start\":0,\"char_end\":83,\"quote\":\"From January 1, 2024 through December 31, 2024, I stored spare filters in drawer C.\"}]},{\"subject\":\"user\",\"predicate\":\"COMPLETED\",\"object\":\"stored spare filters in drawer F from January 1, 2025 onward\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"positive\",\"valid_from\":\"2025-01-01\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-003\",\"message_id\":\"fictional-message-003-01\",\"char_start\":84,\"char_end\":138,\"quote\":\"From January 1, 2025 onward, I store them in drawer F.\"}]}]}",
+    "case_004_assistant_decoy": "{\"claims\":[{\"subject\":\"assistant\",\"predicate\":\"CAUSES\",\"object\":\"user chose the north arch for the mural\",\"speaker_role\":\"assistant\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-004\",\"message_id\":\"fictional-message-004-01\",\"char_start\":0,\"char_end\":39,\"quote\":\"You chose the north arch for the mural.\"}]},{\"subject\":\"user\",\"predicate\":\"REPORTS\",\"object\":\"user did not choose the north arch\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"negative\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-004\",\"message_id\":\"fictional-message-004-02\",\"char_start\":0,\"char_end\":52,\"quote\":\"I only asked about the north arch; I never chose it.\"}]}]}",
+    "case_005_quoted_invoice": "{\"claims\":[{\"subject\":\"invoice\",\"predicate\":\"REPORTS\",\"object\":\"The parcel weighs 8 kg.\",\"speaker_role\":\"unknown\",\"attribution\":\"quoted_text\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-005\",\"message_id\":\"fictional-message-005-01\",\"char_start\":0,\"char_end\":93,\"quote\":\"The invoice says, “The parcel weighs 8 kg.” That is the seller’s wording, not my measurement.\"}]}]}",
+    "case_006_third_party_report": "{\"claims\":[{\"subject\":\"greenhouse vent\",\"predicate\":\"CAUSES\",\"object\":\"sticks when damp\",\"speaker_role\":\"unknown\",\"attribution\":\"quoted_text\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-006\",\"message_id\":\"fictional-message-006-01\",\"char_start\":13,\"char_end\":50,\"quote\":\"the greenhouse vent sticks when damp.\"}]}]}",
+    "case_007_negated_location": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"DECIDED\",\"object\":\"not to keep the backup key in a desk drawer\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"negative\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-007\",\"message_id\":\"fictional-message-007-01\",\"char_start\":0,\"char_end\":46,\"quote\":\"I do not keep the backup key in a desk drawer.\"}]}]}",
+    "case_008_intention_not_completion": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PLANS\",\"object\":\"catalog the seed jars this weekend\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"intention\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-008\",\"message_id\":\"fictional-message-008-01\",\"char_start\":12,\"char_end\":46,\"quote\":\"catalog the seed jars this weekend\"}]},{\"subject\":\"user\",\"predicate\":\"COMPLETED\",\"object\":\"catalog the seed jars\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"negative\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-008\",\"message_id\":\"fictional-message-008-01\",\"char_start\":48,\"char_end\":78,\"quote\":\"I have not cataloged them yet.\"}]}]}",
+    "case_009_ambiguous_reference": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PLANS\",\"object\":\"Put it there after the other one is ready.\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"intention\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-009\",\"message_id\":\"fictional-message-009-01\",\"char_start\":0,\"char_end\":42,\"quote\":\"Put it there after the other one is ready.\"}]}]}",
+    "case_010_unsupported_causality": "{\n  \"claims\": [\n    {\n      \"subject\": \"pressure gauge\",\n      \"predicate\": \"CAUSES\",\n      \"object\": \"going quiet\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-10-13\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-010\",\n          \"message_id\": \"fictional-message-010-01\",\n          \"char_start\": 16,\n          \"char_end\": 34,\n          \"quote\": \"The pressure gauge went quiet after the screen dimmed\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"screen\",\n      \"predicate\": \"DIMMED\",\n      \"object\": \"at time of pressure gauge going quiet\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-10-13\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-010\",\n          \"message_id\": \"fictional-message-010-01\",\n          \"char_start\": 35,\n          \"char_end\": 46,\n          \"quote\": \"after the screen dimmed\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"user\",\n      \"predicate\": \"CANNOT_TELL\",\n      \"object\": \"whether dimming caused the pressure gauge to go quiet\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-10-13\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-010\",\n          \"message_id\": \"fictional-message-010-01\",\n          \"char_start\": 47,\n          \"char_end\": 73,\n          \"quote\": \"but I cannot tell whether dimming caused it.\"\n        }\n      ]\n    }\n  ]\n}",
+    "case_011_resolved_temporal_conflict": "{\n  \"claims\": [\n    {\n      \"subject\": \"orchid shelf\",\n      \"predicate\": \"LOCATED_IN\",\n      \"object\": \"east wall\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-10-01\",\n      \"valid_to\": \"2026-10-12\",\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-011\",\n          \"message_id\": \"fictional-message-011-01\",\n          \"char_start\": 0,\n          \"char_end\": 25,\n          \"quote\": \"Until 2026-10-12, the orchid shelf was on the east wall.\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"orchid shelf\",\n      \"predicate\": \"LOCATED_IN\",\n      \"object\": \"west wall\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-10-13\",\n      \"valid_to\": \"null\",\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-011\",\n          \"message_id\": \"fictional-message-011-01\",\n          \"char_start\": 34,\n          \"char_end\": 66,\n          \"quote\": \"Starting 2026-10-13, it is on the west wall.\"\n        }\n      ]\n    }\n  ]\n}",
+    "case_012_multi_evidence_location": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"COMPLETED\",\"object\":\"bought a titanium clip\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-12\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-012\",\"message_id\":\"fictional-message-012-01\",\"char_start\":0,\"char_end\":35,\"quote\":\"I bought a titanium clip last week.\"}]},{\"subject\":\"user\",\"predicate\":\"PLANS\",\"object\":\"store that clip in case R\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"intention\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-012\",\"message_id\":\"fictional-message-012-02\",\"char_start\":0,\"char_end\":28,\"quote\":\"I store that clip in case R.\"}]}]}",
+    "case_013_unknown_question": "{\n  \"claims\": []\n}",
+    "case_014_hypothetical": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PLANS\",\"object\":\"keep a telescope in the attic\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"intention\",\"polarity\":\"positive\",\"valid_from\":null,\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-014\",\"message_id\":\"fictional-message-014-01\",\"char_start\":0,\"char_end\":53,\"quote\":\"If I owned a telescope, I would keep it in the attic.\"}]}]}",
+    "case_015_question_not_preference": "{\n  \"claims\": []\n}",
+    "case_016_explicit_preference": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"PREFERS\",\"object\":\"a 14-minute warm-up before pottery class\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-016\",\"message_id\":\"fictional-message-016-01\",\"char_start\":0,\"char_end\":50,\"quote\":\"I prefer a 14-minute warm-up before pottery class.\"}]}]}",
+    "case_017_tool_observation": "{\"claims\":[{\"subject\":\"thermometer\",\"predicate\":\"CAUSES\",\"object\":\"reading\",\"speaker_role\":\"tool\",\"attribution\":\"tool_observation\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-017\",\"message_id\":\"fictional-message-017-01\",\"char_start\":0,\"char_end\":38,\"quote\":\"Thermometer reading: 18.6 °C at 14:10.\"}]}]}",
+    "case_018_shipping_label_report": "{\"claims\":[{\"subject\":\"shipping label\",\"predicate\":\"LOCATED_IN\",\"object\":\"B12\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-018\",\"message_id\":\"fictional-message-018-01\",\"char_start\":0,\"char_end\":61,\"quote\":\"The shipping label lists locker B12 as the delivery location.\"}]}]}",
+    "case_019_unresolved_source_conflict": "{\n  \"claims\": [\n    {\n      \"subject\": \"wall calendar\",\n      \"predicate\": \"REPORTS\",\n      \"object\": \"workshop is on 8 June\",\n      \"speaker_role\": \"unknown\",\n      \"attribution\": \"quoted_text\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-06-08\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-019\",\n          \"message_id\": \"fictional-message-019-01\",\n          \"char_start\": 0,\n          \"char_end\": 25,\n          \"quote\": \"The wall calendar says the workshop is on 8 June.\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"organizer's note\",\n      \"predicate\": \"REPORTS\",\n      \"object\": \"workshop is on 9 June\",\n      \"speaker_role\": \"unknown\",\n      \"attribution\": \"quoted_text\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2026-06-09\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-019\",\n          \"message_id\": \"fictional-message-019-01\",\n          \"char_start\": 26,\n          \"char_end\": 56,\n          \"quote\": \"The organizer's note says it is on 9 June;\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"user\",\n      \"predicate\": \"DOES_NOT_KNOW\",\n      \"object\": \"which date is current\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"asserted\",\n      \"polarity\": \"negative\",\n      \"valid_from\": null,\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-019\",\n          \"message_id\": \"fictional-message-019-01\",\n          \"char_start\": 57,\n          \"char_end\": 81,\n          \"quote\": \"I do not know which date is current.\"\n        }\n      ]\n    }\n  ]\n}",
+    "case_020_explicit_decision": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"DECIDED\",\"object\":\"to use the walnut handle for the fountain pen\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-020\",\"message_id\":\"fictional-message-020-01\",\"char_start\":0,\"char_end\":56,\"quote\":\"I decided to use the walnut handle for the fountain pen.\"}]}]}",
+    "case_021_completed_action": "{\"claims\":[{\"subject\":\"user\",\"predicate\":\"COMPLETED\",\"object\":\"labeling the terrarium samples\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-021\",\"message_id\":\"fictional-message-021-01\",\"char_start\":11,\"char_end\":41,\"quote\":\"labeling the terrarium samples\"}]},{\"subject\":\"user\",\"predicate\":\"REPORTS\",\"object\":\"finished labeling the terrarium samples at 16:20\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"completed\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-021\",\"message_id\":\"fictional-message-021-01\",\"char_start\":0,\"char_end\":51,\"quote\":\"I finished labeling the terrarium samples at 16:20.\"}]}]}",
+    "case_022_abandoned_historical_plan": "{\n  \"claims\": [\n    {\n      \"subject\": \"user\",\n      \"predicate\": \"PLANS\",\n      \"object\": \"restore the redwood bench\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"intention\",\n      \"polarity\": \"positive\",\n      \"valid_from\": \"2023-01-01\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-022\",\n          \"message_id\": \"fictional-message-022-01\",\n          \"char_start\": 16,\n          \"char_end\": 34,\n          \"quote\": \"planned to restore the redwood bench\"\n        }\n      ]\n    },\n    {\n      \"subject\": \"user\",\n      \"predicate\": \"ABANDONED\",\n      \"object\": \"plan to restore the redwood bench\",\n      \"speaker_role\": \"user\",\n      \"attribution\": \"direct_user_statement\",\n      \"modality\": \"intention\",\n      \"polarity\": \"negative\",\n      \"valid_from\": \"2023-01-01\",\n      \"valid_to\": null,\n      \"evidence\": [\n        {\n          \"session_id\": \"fictional-session-022\",\n          \"message_id\": \"fictional-message-022-01\",\n          \"char_start\": 46,\n          \"char_end\": 64,\n          \"quote\": \"abandoned the plan before starting\"\n        }\n      ]\n    }\n  ]\n}",
+    "case_023_supported_causality": "{\"claims\":[{\"subject\":\"ceramic spacer\",\"predicate\":\"CAUSES\",\"object\":\"cracked\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-023\",\"message_id\":\"fictional-message-023-01\",\"char_start\":0,\"char_end\":63,\"quote\":\"The ceramic spacer cracked because the clamp was overtightened.\"}]}]}",
+    "case_024_tentative_ownership": "{\"claims\":[{\"subject\":\"red binder\",\"predicate\":\"LOCATED_IN\",\"object\":\"night crew\",\"speaker_role\":\"user\",\"attribution\":\"direct_user_statement\",\"modality\":\"asserted\",\"polarity\":\"positive\",\"valid_from\":\"2026-10-13\",\"valid_to\":null,\"evidence\":[{\"session_id\":\"fictional-session-024\",\"message_id\":\"fictional-message-024-01\",\"char_start\":23,\"char_end\":54,\"quote\":\"might belong to the night crew.\"}]}]}"
+  }
+}

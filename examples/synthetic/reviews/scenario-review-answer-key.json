@@ -1,0 +1,1030 @@
+{
+  "version": 1,
+  "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+  "bundle_sha256": "65078e901cad48856528377b003746e04f90245a19236eadfeeb951dc6358467",
+  "case_ids": [
+    "dev-balcony-basil",
+    "dev-ferry-bike",
+    "dev-agenda-email",
+    "dev-supper-mushrooms",
+    "dev-robot-test-log",
+    "dev-blue-crate",
+    "dev-piano-recording",
+    "dev-cycle-tunnels",
+    "dev-large-print-atlas",
+    "dev-window-fern",
+    "dev-walker-pickup",
+    "dev-linux-workstation",
+    "dev-pottery-class-maybe",
+    "dev-coffee-after-lunch",
+    "dev-brass-latch",
+    "dev-quoted-checklist",
+    "dev-gallery-hours",
+    "dev-sqlite-notes",
+    "dev-welding-gloves",
+    "dev-unanswered-color",
+    "dev-unanswered-season",
+    "dev-ambiguous-they",
+    "dev-unspecified-room",
+    "dev-lantern-battery",
+    "test-dinghy-sail",
+    "test-cedar-market",
+    "test-theater-understudy",
+    "test-reading-corrections",
+    "test-bee-hotel",
+    "test-station-elevator",
+    "test-tablet-charging",
+    "test-cumin-recipe",
+    "test-piano-reverb",
+    "test-fundraiser-door",
+    "test-invoice-terms",
+    "test-west-launch",
+    "test-museum-maps",
+    "test-glaze-kiln",
+    "test-unanswered-size",
+    "test-ambiguous-package",
+    "test-temporary-guest",
+    "test-undisclosed-address",
+    "test-greenhouse-key",
+    "test-coffee-grinder-change",
+    "test-unanswered-sound",
+    "test-route-timing",
+    "test-sensor-placement",
+    "test-archive-retention"
+  ],
+  "task_keys": [
+    {
+      "task_id": "task_00e53296e6548b18c6fcbe02ee67a14b753209fc13decea0a528fe0ec296a579",
+      "case_id": "test-reading-corrections",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_02c0eb262afa71d2c709bd41de8a48a3695e194bed529fd78eece0726319a917",
+      "case_id": "test-theater-understudy",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_059249b895eaec55d587ea8fbd6f71f30acc550ad90ff567a65ed0e1f375524a",
+      "case_id": "test-museum-maps",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_0688ff87aef9b431e29d82019d7bf6a2f510e4632394af74df01e7b94c1ad486",
+      "case_id": "test-greenhouse-key",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_075cfe1a6ae133eb0ccf23106845511f1efc32eda0e591210a96d3f7cf0c11c6",
+      "case_id": "dev-sqlite-notes",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_07b26b917936e132544a6a03c3c38c8ae5196a7e7444c1681436c707ab38cdda",
+      "case_id": "dev-ambiguous-they",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_0978127964007414bd6b31ee42aa0d1c89fbda52d02ed967280cf381101f0a7f",
+      "case_id": "dev-balcony-basil",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_0f4c693873408512be85114bef661a2aadb389e192da167f38777ed4a9eea0f2",
+      "case_id": "test-undisclosed-address",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_1846d8a1195fb80d55d98378563f40ed494699a01b98eb5d65cb892ca187434f",
+      "case_id": "test-reading-corrections",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_1aefc1c7a279afe36234d4589800408950d06d10e8ca061df7967be89d3a1837",
+      "case_id": "test-cedar-market",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_1f1d3ae62958cfc91acff7b40982c447fb676cceea6bb5ff766b62af1c36145b",
+      "case_id": "test-coffee-grinder-change",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_2029eeb35c6eaeb19517514989c288863df2927abf65a2d7177949229d4fc225",
+      "case_id": "dev-robot-test-log",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_225ad8abed78c0468891620c1edaf126479fdc379bfae0db9411ce7aebabc400",
+      "case_id": "test-fundraiser-door",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_2b943efc3712148c2cfeca427c54ef6a1fed718294a04c42bb4acfb1bd29b7de",
+      "case_id": "dev-lantern-battery",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_2ecff1d563ee54acd7accbc8d2bfca91974610e891b40d4b777047b2206bc8a1",
+      "case_id": "test-station-elevator",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_34645819d0eca43f23915d437e9b8d3a42f7a848c37efcb80dce2e45669c59fc",
+      "case_id": "dev-ferry-bike",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_34a1ca39d83886d9031342d9d02cb87b6f767c4ca35753762e12930de6990026",
+      "case_id": "dev-coffee-after-lunch",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_3782438639ecb9ad8220fafdcaecc8e261129c25634d866791e2bf6f4a512a4f",
+      "case_id": "test-west-launch",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_38ca974f230c0f12b553776b6ddead220157554c5a1cacda9e1355dcc4eb16b2",
+      "case_id": "test-reading-corrections",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_3b7a25f0ec01b45ab28cbb5eb5fcd196472cb4028ba8c4ee4cc84035bbb8564f",
+      "case_id": "dev-gallery-hours",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_3d62d67eabaf9b99b10cff7c9f453a0ae741bcd4bbac5760c5f8b045fe7d5b14",
+      "case_id": "test-ambiguous-package",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_3e2cab8c2eec9604350180f655507fd7d60220fa26647ab53f4d2528f07fd57d",
+      "case_id": "dev-brass-latch",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_3f7b9878f367257a60436023f40c1b8f26d0e32f1f920a76c8b0fbb8f7ac88d0",
+      "case_id": "test-dinghy-sail",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_434862bc83a9dcda6e30214b983174de26a07f709991393e6996d902e25c1e02",
+      "case_id": "dev-agenda-email",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_4b5d409b99d74f3b119473248b44c3fc2d58cfbc6b32f7a205a32912735199fe",
+      "case_id": "test-museum-maps",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_58810d570d9286f2f5d2ad85f458956c8a0b31ef505408d0747a5381d21f0fb1",
+      "case_id": "dev-piano-recording",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_5a2822a13a54b15bddb09ad3be8c8008689e151427f4c129dfcbf3f45a7bbbe2",
+      "case_id": "dev-cycle-tunnels",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_5d98cedf40bcb4ec7701bb30ce2fe783f8e426a683b9e16d2239adb3e4efc8da",
+      "case_id": "dev-gallery-hours",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_609f708d8c78655900d3bd934efb50998c848a8d9d749c38085f82d1ac1388b4",
+      "case_id": "dev-large-print-atlas",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_62f61f4e60296ff11d467e3e5e075c2c605406468b2106121df33a1d8358f92d",
+      "case_id": "dev-window-fern",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_64b2daf6aad0ff195e7f17654df039e0d4b0615ad11ad0b2b762d4f1f6c7c9b7",
+      "case_id": "dev-sqlite-notes",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_6503ee9abb9bf1d260b26b1e864a4cba4bd0b47b359ad5746e5ad6e288c8cd4e",
+      "case_id": "test-west-launch",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_677f6f332d598defee38aa3fb10f8048c37dbf010b4b8050d3241ae81fe9749f",
+      "case_id": "dev-linux-workstation",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_6befac127dc87c11993dd85c2e60130ffbe8e0ff5cac6f8a76b50672cadca116",
+      "case_id": "test-bee-hotel",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_7663eef662ff75ae6f7ead579b3600780080ce1236a855bf3038a11247544a06",
+      "case_id": "dev-window-fern",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_7765c823ec800f25b5b7639324cc3583925749aa2928d1cfa32ad668f28e5f72",
+      "case_id": "test-bee-hotel",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_7c885a80fa6f90e7581ac606ddbc771241ec37326566dd138d47d9bc863088b8",
+      "case_id": "dev-quoted-checklist",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_7de706d87aa62c48de14292946244a1e000a0be76d0643d0479f32de9d84d8ad",
+      "case_id": "test-cumin-recipe",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_7f5d3ae3dbb18b657d61e4fb45e8677df861ef44acaaf59687460500530bec07",
+      "case_id": "test-tablet-charging",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_82f9fbf1a7029e73a23c09308b9f645ed421fb68268634560434244d0c9e2d5e",
+      "case_id": "test-coffee-grinder-change",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_84a3234c3763c16d51b7323cdc99ebb2132c4213f74598b75b537c9e79d92100",
+      "case_id": "test-cedar-market",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_903a91f94c5bbb57a1cf4ba6894c0f98422f928adc1a6101cdd70cc06e6d2a59",
+      "case_id": "dev-quoted-checklist",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_980aa7307a997349392d04c078faee504b6521e8605bad45656900dab8329eff",
+      "case_id": "dev-robot-test-log",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_9969bc6da3a331893b01627765fc9d2baac04bfbacbe672c94b0e7e1892bc9bb",
+      "case_id": "test-piano-reverb",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_99a8cdc6ac08a6d12a7f374ae5dcd70087839e61f0996669f3f675acf505a217",
+      "case_id": "dev-brass-latch",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_9a2f81d0dfc9f97b42b53f5a0b724f7362d4c4aa00a6da03abb5dacd25ca1be6",
+      "case_id": "dev-walker-pickup",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_9b086f10ab4af64b8cc47407d8f8ef2f9587ec7be707792d453c19b77624c503",
+      "case_id": "test-station-elevator",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_9d07a33d5b120b41c2dee1a59ee003165658d8c235da3a287faadb742977c538",
+      "case_id": "test-coffee-grinder-change",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_9f512269c3a4963a59534fc8c14a38d321b100069195d1033be069fce90ddcf2",
+      "case_id": "test-theater-understudy",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_a24347a74c0d12185a8076713328307767da78a3c5e75b947f4ebec9f0eea7db",
+      "case_id": "dev-walker-pickup",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_a67890ea76a8f7ebc9ca414a1bf15e06c9a2dfe0964873549c8b2612380d3a82",
+      "case_id": "dev-welding-gloves",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_abe8a2338d551fcbc79ab355ecdd9b9d7584771075ddc6ad49457493bf2c4b7f",
+      "case_id": "test-glaze-kiln",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_af14816080538932de00c8f080c095cd3b452e217a3b2a7b76df067bd1c07210",
+      "case_id": "test-fundraiser-door",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_b04518909a812b640e559cc2ebafcdcf5cc362ad0ee413bf6c1ebcfa781b3eb7",
+      "case_id": "test-tablet-charging",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_b6b2ffb112722d97d32477864bbccfec5c5adbe92c0b31ba45424b02f6029890",
+      "case_id": "dev-pottery-class-maybe",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_b84bb79ccaa53917eee63e1967228931e1ad2ba591a0e0886cd4cd8055321a91",
+      "case_id": "dev-lantern-battery",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_bba0b2d0f290b2f511f81020008da15e54bc9ad64c3e99095d75a0268a8b2a9e",
+      "case_id": "dev-supper-mushrooms",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_c225a917b6a481b8e83c20af63acfcce057f02725ce241a5b67f249b06524fbd",
+      "case_id": "test-station-elevator",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_c6f065ac2aab7d70ffff4abaf2593324b2ce3e531b6d92ea0feb361153c3e77e",
+      "case_id": "dev-linux-workstation",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_c8c7bef3ec615a6510d9f9038855690a292eda3c5ad34c731e8a874aa7a9410e",
+      "case_id": "dev-cycle-tunnels",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_cb123a2a3f977bd7da26ff27f0a9de6d539f05b57d4265eb313fd644c0a28d99",
+      "case_id": "test-coffee-grinder-change",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_cbd6720821d11714479e79f2d956eff8516021bb49af2e14fcc29f5812444d9f",
+      "case_id": "dev-piano-recording",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d0b0e0918fa29aeb2dcaf3d22070ace20d58e3df3279a69751e26d8c35f849e5",
+      "case_id": "dev-pottery-class-maybe",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d104f6a96e71675b95a303a39f2a79959d7618706a4655056a968fec1a150818",
+      "case_id": "test-dinghy-sail",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d17fc2c46151b7c79f72b3a3857dd1ba5eda3ffad1e3eb2326ee602bf4e03d8f",
+      "case_id": "test-piano-reverb",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d54d4a240572e867ebb520c7bdda9e597de519074cd596b16d1c28c34c914175",
+      "case_id": "test-station-elevator",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d5791cbf167d5cf6a2ddde292faeb79d4a724a4005721cbc883486434d60d510",
+      "case_id": "dev-ferry-bike",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_d998b299ececba54db80def34a9d34ca637bf895f0f0506ae00685d0fecc169f",
+      "case_id": "dev-balcony-basil",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_da9bcb926c75e9482a0c0e74185b2aec084de925bf0ec40b00cab48a57a7e3e3",
+      "case_id": "test-unanswered-sound",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_debcf6ef0688530f59ba5d525dfea1ef88e3b0c3568da0451355f0d3b1a146da",
+      "case_id": "dev-supper-mushrooms",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_e0f895a785c58d0e62c3c25e2e689b69b2cf9ecb9f516033ffbc908c65ea31e7",
+      "case_id": "test-invoice-terms",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_e4eddc7770d6c7f20d2196176ca85b3d01cd1851f50d834e607c70041537829f",
+      "case_id": "test-reading-corrections",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_e7a6e07192bc9a93ee0daf4277965bc15712c51d7710aab88d66279b5aa18cb3",
+      "case_id": "test-archive-retention",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_e886142408773e10507ae33b92b2e2ead34db1e749055e7c85e631ab014abd21",
+      "case_id": "test-greenhouse-key",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_eb4ad39c8c6d73b4cbfafb041dc9f3cc48cb835fe178304672efe05fcb80edc9",
+      "case_id": "dev-pottery-class-maybe",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_ec7b6ef8370ee4ed2a1e26b5fc6c9ba4b66eb6febe0006db10c818044fdb6db3",
+      "case_id": "dev-welding-gloves",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_ef351fb8e651ce4e3bceaf15812caeae3416de1c9acfaed544f17df82529c593",
+      "case_id": "test-invoice-terms",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f1faf17e07cc71b46789c6e12bd5907b82c0b62da5937c9abd85867ee4ce7f3b",
+      "case_id": "dev-coffee-after-lunch",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f35c5a32628f355cf30fdc63ddae93a4e8fd712aaf03b3e444a0f5929444136c",
+      "case_id": "dev-ferry-bike",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f41b125d82063387e2dce90d5a16c11dec37e8de22513ef4d5ae3479a0b510c9",
+      "case_id": "dev-coffee-after-lunch",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f78cf975e3b2da3780b8173bcccab8411399f8adeb3bcb8dcebeb24c3c28a248",
+      "case_id": "test-temporary-guest",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f7f19e7bbc665be5ce341dc897b7bb6da7c27b4cff3458fa7877a085731e97aa",
+      "case_id": "test-glaze-kiln",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f8cced1917efa3bd01033f1f68a154a4ad68244020f1b75dee836d59d9ba04ad",
+      "case_id": "test-unanswered-sound",
+      "split": "test",
+      "membership": "unlabeled",
+      "reference_label": null
+    },
+    {
+      "task_id": "task_f960ce75662c0ec3c28feb1fdd7005ad9ca26b1dd1dec5b4c29ae685429d6668",
+      "case_id": "dev-agenda-email",
+      "split": "dev",
+      "membership": "unlabeled",
+      "reference_label": null
+    }
+  ],
+  "case_metadata": {
+    "dev-balcony-basil": {
+      "scenario_group": "scenario:dev-balcony-basil",
+      "template_group": "template:dev-balcony-basil",
+      "entity_ids": [
+        "dev-balcony-basil:balcony-basil",
+        "dev-balcony-basil:awning"
+      ]
+    },
+    "dev-ferry-bike": {
+      "scenario_group": "scenario:dev-ferry-bike",
+      "template_group": "template:dev-ferry-bike",
+      "entity_ids": [
+        "dev-ferry-bike:island-ferry",
+        "dev-ferry-bike:bicycle"
+      ]
+    },
+    "dev-agenda-email": {
+      "scenario_group": "scenario:dev-agenda-email",
+      "template_group": "template:dev-agenda-email",
+      "entity_ids": [
+        "dev-agenda-email:planning-call",
+        "dev-agenda-email:meeting-agenda"
+      ]
+    },
+    "dev-supper-mushrooms": {
+      "scenario_group": "scenario:dev-supper-mushrooms",
+      "template_group": "template:dev-supper-mushrooms",
+      "entity_ids": [
+        "dev-supper-mushrooms:barley-soup",
+        "dev-supper-mushrooms:mushrooms"
+      ]
+    },
+    "dev-robot-test-log": {
+      "scenario_group": "scenario:dev-robot-test-log",
+      "template_group": "template:dev-robot-test-log",
+      "entity_ids": [
+        "dev-robot-test-log:rover",
+        "dev-robot-test-log:rover-test-log"
+      ]
+    },
+    "dev-blue-crate": {
+      "scenario_group": "scenario:dev-blue-crate",
+      "template_group": "template:dev-blue-crate",
+      "entity_ids": [
+        "dev-blue-crate:blue-crate",
+        "dev-blue-crate:south-bench"
+      ]
+    },
+    "dev-piano-recording": {
+      "scenario_group": "scenario:dev-piano-recording",
+      "template_group": "template:dev-piano-recording",
+      "entity_ids": [
+        "dev-piano-recording:piano-recital",
+        "dev-piano-recording:children"
+      ]
+    },
+    "dev-cycle-tunnels": {
+      "scenario_group": "scenario:dev-cycle-tunnels",
+      "template_group": "template:dev-cycle-tunnels",
+      "entity_ids": [
+        "dev-cycle-tunnels:east-tunnel",
+        "dev-cycle-tunnels:canal-path"
+      ]
+    },
+    "dev-large-print-atlas": {
+      "scenario_group": "scenario:dev-large-print-atlas",
+      "template_group": "template:dev-large-print-atlas",
+      "entity_ids": [
+        "dev-large-print-atlas:field-maps",
+        "dev-large-print-atlas:large-print-edition"
+      ]
+    },
+    "dev-window-fern": {
+      "scenario_group": "scenario:dev-window-fern",
+      "template_group": "template:dev-window-fern",
+      "entity_ids": [
+        "dev-window-fern:studio-fern",
+        "dev-window-fern:studio-window"
+      ]
+    },
+    "dev-walker-pickup": {
+      "scenario_group": "scenario:dev-walker-pickup",
+      "template_group": "template:dev-walker-pickup",
+      "entity_ids": [
+        "dev-walker-pickup:Moss",
+        "dev-walker-pickup:Tari"
+      ]
+    },
+    "dev-linux-workstation": {
+      "scenario_group": "scenario:dev-linux-workstation",
+      "template_group": "template:dev-linux-workstation",
+      "entity_ids": [
+        "dev-linux-workstation:editing-workstation",
+        "dev-linux-workstation:Fedora-Linux"
+      ]
+    },
+    "dev-pottery-class-maybe": {
+      "scenario_group": "scenario:dev-pottery-class-maybe",
+      "template_group": "template:dev-pottery-class-maybe",
+      "entity_ids": [
+        "dev-pottery-class-maybe:evening-pottery-class",
+        "dev-pottery-class-maybe:Saturday-section"
+      ]
+    },
+    "dev-coffee-after-lunch": {
+      "scenario_group": "scenario:dev-coffee-after-lunch",
+      "template_group": "template:dev-coffee-after-lunch",
+      "entity_ids": [
+        "dev-coffee-after-lunch:coffee",
+        "dev-coffee-after-lunch:cafe"
+      ]
+    },
+    "dev-brass-latch": {
+      "scenario_group": "scenario:dev-brass-latch",
+      "template_group": "template:dev-brass-latch",
+      "entity_ids": [
+        "dev-brass-latch:brass-latch",
+        "dev-brass-latch:top-drawer"
+      ]
+    },
+    "dev-quoted-checklist": {
+      "scenario_group": "scenario:dev-quoted-checklist",
+      "template_group": "template:dev-quoted-checklist",
+      "entity_ids": [
+        "dev-quoted-checklist:archive-checklist",
+        "dev-quoted-checklist:red-folder"
+      ]
+    },
+    "dev-gallery-hours": {
+      "scenario_group": "scenario:dev-gallery-hours",
+      "template_group": "template:dev-gallery-hours",
+      "entity_ids": [
+        "dev-gallery-hours:print-gallery",
+        "dev-gallery-hours:Lea"
+      ]
+    },
+    "dev-sqlite-notes": {
+      "scenario_group": "scenario:dev-sqlite-notes",
+      "template_group": "template:dev-sqlite-notes",
+      "entity_ids": [
+        "dev-sqlite-notes:prototype",
+        "dev-sqlite-notes:SQLite"
+      ]
+    },
+    "dev-welding-gloves": {
+      "scenario_group": "scenario:dev-welding-gloves",
+      "template_group": "template:dev-welding-gloves",
+      "entity_ids": [
+        "dev-welding-gloves:spare-gloves",
+        "dev-welding-gloves:yellow-cabinet"
+      ]
+    },
+    "dev-unanswered-color": {
+      "scenario_group": "scenario:dev-unanswered-color",
+      "template_group": "template:dev-unanswered-color",
+      "entity_ids": [
+        "dev-unanswered-color:new-curtains",
+        "dev-unanswered-color:curtain-color"
+      ]
+    },
+    "dev-unanswered-season": {
+      "scenario_group": "scenario:dev-unanswered-season",
+      "template_group": "template:dev-unanswered-season",
+      "entity_ids": [
+        "dev-unanswered-season:trip",
+        "dev-unanswered-season:season"
+      ]
+    },
+    "dev-ambiguous-they": {
+      "scenario_group": "scenario:dev-ambiguous-they",
+      "template_group": "template:dev-ambiguous-they",
+      "entity_ids": [
+        "dev-ambiguous-they:archived-note",
+        "dev-ambiguous-they:unresolved-referents"
+      ]
+    },
+    "dev-unspecified-room": {
+      "scenario_group": "scenario:dev-unspecified-room",
+      "template_group": "template:dev-unspecified-room",
+      "entity_ids": [
+        "dev-unspecified-room:review-room"
+      ]
+    },
+    "dev-lantern-battery": {
+      "scenario_group": "scenario:dev-lantern-battery",
+      "template_group": "template:dev-lantern-battery",
+      "entity_ids": [
+        "dev-lantern-battery:lantern",
+        "dev-lantern-battery:AA-batteries"
+      ]
+    },
+    "test-dinghy-sail": {
+      "scenario_group": "scenario:test-dinghy-sail",
+      "template_group": "template:test-dinghy-sail",
+      "entity_ids": [
+        "test-dinghy-sail:dinghy",
+        "test-dinghy-sail:blue-mainsail"
+      ]
+    },
+    "test-cedar-market": {
+      "scenario_group": "scenario:test-cedar-market",
+      "template_group": "template:test-cedar-market",
+      "entity_ids": [
+        "test-cedar-market:Cedar-Street-market",
+        "test-cedar-market:soap-stand"
+      ]
+    },
+    "test-theater-understudy": {
+      "scenario_group": "scenario:test-theater-understudy",
+      "template_group": "template:test-theater-understudy",
+      "entity_ids": [
+        "test-theater-understudy:understudy-role",
+        "test-theater-understudy:audition-form"
+      ]
+    },
+    "test-reading-corrections": {
+      "scenario_group": "scenario:test-reading-corrections",
+      "template_group": "template:test-reading-corrections",
+      "entity_ids": [
+        "test-reading-corrections:Italian-passage",
+        "test-reading-corrections:accent-corrections"
+      ]
+    },
+    "test-bee-hotel": {
+      "scenario_group": "scenario:test-bee-hotel",
+      "template_group": "template:test-bee-hotel",
+      "entity_ids": [
+        "test-bee-hotel:bee-hotel",
+        "test-bee-hotel:north-wall"
+      ]
+    },
+    "test-station-elevator": {
+      "scenario_group": "scenario:test-station-elevator",
+      "template_group": "template:test-station-elevator",
+      "entity_ids": [
+        "test-station-elevator:station-elevator",
+        "test-station-elevator:cello"
+      ]
+    },
+    "test-tablet-charging": {
+      "scenario_group": "scenario:test-tablet-charging",
+      "template_group": "template:test-tablet-charging",
+      "entity_ids": [
+        "test-tablet-charging:check-in-tablet",
+        "test-tablet-charging:power-bank"
+      ]
+    },
+    "test-cumin-recipe": {
+      "scenario_group": "scenario:test-cumin-recipe",
+      "template_group": "template:test-cumin-recipe",
+      "entity_ids": [
+        "test-cumin-recipe:Aunt-Sol-lentil-card",
+        "test-cumin-recipe:cumin"
+      ]
+    },
+    "test-piano-reverb": {
+      "scenario_group": "scenario:test-piano-reverb",
+      "template_group": "template:test-piano-reverb",
+      "entity_ids": [
+        "test-piano-reverb:piano-track",
+        "test-piano-reverb:reverb"
+      ]
+    },
+    "test-fundraiser-door": {
+      "scenario_group": "scenario:test-fundraiser-door",
+      "template_group": "template:test-fundraiser-door",
+      "entity_ids": [
+        "test-fundraiser-door:neighborhood-concert-team",
+        "test-fundraiser-door:QR-poster"
+      ]
+    },
+    "test-invoice-terms": {
+      "scenario_group": "scenario:test-invoice-terms",
+      "template_group": "template:test-invoice-terms",
+      "entity_ids": [
+        "test-invoice-terms:design-invoices",
+        "test-invoice-terms:payment-terms"
+      ]
+    },
+    "test-west-launch": {
+      "scenario_group": "scenario:test-west-launch",
+      "template_group": "template:test-west-launch",
+      "entity_ids": [
+        "test-west-launch:west-launch",
+        "test-west-launch:footbridge"
+      ]
+    },
+    "test-museum-maps": {
+      "scenario_group": "scenario:test-museum-maps",
+      "template_group": "template:test-museum-maps",
+      "entity_ids": [
+        "test-museum-maps:map-gallery",
+        "test-museum-maps:volunteer-tour"
+      ]
+    },
+    "test-glaze-kiln": {
+      "scenario_group": "scenario:test-glaze-kiln",
+      "template_group": "template:test-glaze-kiln",
+      "entity_ids": [
+        "test-glaze-kiln:glaze-jars",
+        "test-glaze-kiln:kiln"
+      ]
+    },
+    "test-unanswered-size": {
+      "scenario_group": "scenario:test-unanswered-size",
+      "template_group": "template:test-unanswered-size",
+      "entity_ids": [
+        "test-unanswered-size:display-case",
+        "test-unanswered-size:dimensions"
+      ]
+    },
+    "test-ambiguous-package": {
+      "scenario_group": "scenario:test-ambiguous-package",
+      "template_group": "template:test-ambiguous-package",
+      "entity_ids": [
+        "test-ambiguous-package:delivery-message",
+        "test-ambiguous-package:usual-entrance"
+      ]
+    },
+    "test-temporary-guest": {
+      "scenario_group": "scenario:test-temporary-guest",
+      "template_group": "template:test-temporary-guest",
+      "entity_ids": [
+        "test-temporary-guest:visitor",
+        "test-temporary-guest:room-choice"
+      ]
+    },
+    "test-undisclosed-address": {
+      "scenario_group": "scenario:test-undisclosed-address",
+      "template_group": "template:test-undisclosed-address",
+      "entity_ids": [
+        "test-undisclosed-address:delivery-address",
+        "test-undisclosed-address:delivery-note"
+      ]
+    },
+    "test-greenhouse-key": {
+      "scenario_group": "scenario:test-greenhouse-key",
+      "template_group": "template:test-greenhouse-key",
+      "entity_ids": [
+        "test-greenhouse-key:greenhouse-key",
+        "test-greenhouse-key:orange-tin"
+      ]
+    },
+    "test-coffee-grinder-change": {
+      "scenario_group": "scenario:test-coffee-grinder-change",
+      "template_group": "template:test-coffee-grinder-change",
+      "entity_ids": [
+        "test-coffee-grinder-change:cane-grinder",
+        "test-coffee-grinder-change:hand-burr-grinder"
+      ]
+    },
+    "test-unanswered-sound": {
+      "scenario_group": "scenario:test-unanswered-sound",
+      "template_group": "template:test-unanswered-sound",
+      "entity_ids": [
+        "test-unanswered-sound:exhibit-sound-cue",
+        "test-unanswered-sound:bell-or-chime"
+      ]
+    },
+    "test-route-timing": {
+      "scenario_group": "scenario:test-route-timing",
+      "template_group": "template:test-route-timing",
+      "entity_ids": [
+        "test-route-timing:6-10-bus",
+        "test-route-timing:6-25-bus"
+      ]
+    },
+    "test-sensor-placement": {
+      "scenario_group": "scenario:test-sensor-placement",
+      "template_group": "template:test-sensor-placement",
+      "entity_ids": [
+        "test-sensor-placement:humidity-sensor",
+        "test-sensor-placement:mist-line"
+      ]
+    },
+    "test-archive-retention": {
+      "scenario_group": "scenario:test-archive-retention",
+      "template_group": "template:test-archive-retention",
+      "entity_ids": [
+        "test-archive-retention:scanned-letter",
+        "test-archive-retention:drafts"
+      ]
+    }
+  }
+}

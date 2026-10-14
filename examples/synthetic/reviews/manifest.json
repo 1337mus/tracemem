@@ -1,0 +1,43 @@
+{
+  "fictional_only": true,
+  "human_reviewers": 0,
+  "policy": "Agent judgments only, not accepted memory or independent human truth. Keep keys/provenance hidden from future blind reviewers. Root adjudication is nonblind and not independent.",
+  "files": {
+    "scenario-review-blind.json": {
+      "sha256": "65ed4a2e0bbd227c3a521899676c4db98085f855083ec2d2a16aecbdda55bda5",
+      "source": ".local/combined-scenario-review/blind.json"
+    },
+    "scenario-review-answer-key.json": {
+      "sha256": "cb7a04d4fe9c4df4eb55ce56fed13de0b78d88f1cba7b5c95553138cbf38275e",
+      "source": ".local/combined-scenario-review/answer-key.json"
+    },
+    "scenario-review-provenance.json": {
+      "sha256": "4b84236a74e76576dd428609fdf2d5f36cd7293da54350f1858fc597fee43f1d",
+      "source": ".local/combined-scenario-review/provenance.json"
+    },
+    "scenario-review-agent-responses.json": {
+      "sha256": "fd0670d20b4749e39214415b819ce60b421e26a69368a3a58ff55afb29c7110b",
+      "source": ".local/combined-scenario-review/agent-luna-responses.json"
+    },
+    "scenario-review-root-responses.json": {
+      "sha256": "52da5ca10e89ac8f505748e5d40a248480372374d6368753e9ce996f44929e2c",
+      "source": ".local/combined-scenario-review/root-adjudication-responses.json"
+    },
+    "controls-blind.json": {
+      "sha256": "814502b044d2020d6598c91dd2cbd1a4f1a0e343d8a0f7d1e9075938ba94a5be",
+      "source": ".local/reviewer-controls-v1/blind.json"
+    },
+    "controls-answer-key.json": {
+      "sha256": "161441d99ee6ca6f4ed084291d9a44577e69203f331a7066b62c341319061489",
+      "source": ".local/reviewer-controls-v1/answer-key.json"
+    },
+    "controls-agent-responses.json": {
+      "sha256": "3008b0c8e8f664467a8322235992eb81be7d90f0fe93d068de00ab42f7101f2c",
+      "source": ".local/reviewer-controls-v1/agent-luna-responses.json"
+    },
+    "controls-authorship.json": {
+      "sha256": "da36a0d29fc3f502951656b06dede75afa67183092841018836c2632a56ba3d9",
+      "source": ".local/reviewer-controls-v1/root-authorship.json"
+    }
+  }
+}

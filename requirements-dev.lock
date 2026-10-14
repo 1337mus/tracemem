@@ -1,0 +1,9 @@
+# CPython 3.12 development environment, resolved 2026-10-13.
+# Runtime and offline synthetic demo need only the Python standard library.
+librt==0.16.0
+mypy==1.19.1
+mypy-extensions==1.1.0
+pathspec==1.1.1
+ruff==0.15.0
+setuptools==80.9.0
+typing-extensions==4.16.0

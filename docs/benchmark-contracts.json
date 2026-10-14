@@ -1,0 +1,287 @@
+{
+  "checked_on": "2026-10-14",
+  "scope": {
+    "repositories": [
+      {
+        "name": "LongMemEval",
+        "repository": "https://github.com/xiaowu0162/LongMemEval",
+        "commit": "9e0b455f4ef0e2ab8f2e582289761153549043fc"
+      },
+      {
+        "name": "LoCoMo",
+        "repository": "https://github.com/snap-research/locomo",
+        "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376"
+      }
+    ],
+    "tree_metadata_read": true,
+    "dataset_files_fetched": false,
+    "conversation_records_fetched": false,
+    "upstream_code_executed": false,
+    "source_manifest": ".local/benchmark-contracts/sources.json"
+  },
+  "citations": {
+    "longmemeval_readme_schema": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md#L75-L88",
+      "repo_path": "README.md",
+      "lines": [
+        75,
+        88
+      ],
+      "rawsha256": "c4ff45676683d9e2f7cf7d9099d26426f14635ec110dbb1da818d1019a142573",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md"
+    },
+    "longmemeval_readme_qa": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md#L92-L106",
+      "repo_path": "README.md",
+      "lines": [
+        92,
+        106
+      ],
+      "rawsha256": "c4ff45676683d9e2f7cf7d9099d26426f14635ec110dbb1da818d1019a142573",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md"
+    },
+    "longmemeval_readme_retrieval": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md#L201-L206",
+      "repo_path": "README.md",
+      "lines": [
+        201,
+        206
+      ],
+      "rawsha256": "c4ff45676683d9e2f7cf7d9099d26426f14635ec110dbb1da818d1019a142573",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md"
+    },
+    "longmemeval_eval_qa": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "repo_path": "src/evaluation/evaluate_qa.py",
+      "lines": [
+        [
+          11,
+          15
+        ],
+        [
+          24,
+          43
+        ],
+        [
+          46,
+          73
+        ],
+        [
+          75,
+          134
+        ]
+      ],
+      "rawsha256": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py"
+    },
+    "longmemeval_qa_metrics": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/print_qa_metrics.py",
+      "repo_path": "src/evaluation/print_qa_metrics.py",
+      "lines": [
+        12,
+        33
+      ],
+      "rawsha256": "e9283933a0cefb7a0ded7365e436ae3d1be5aac41853325e6155d83bf07607f0",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/print_qa_metrics.py"
+    },
+    "longmemeval_retrieval_metrics": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/print_retrieval_metrics.py",
+      "repo_path": "src/evaluation/print_retrieval_metrics.py",
+      "lines": [
+        10,
+        42
+      ],
+      "rawsha256": "58b70c0b562ea57372a7774a554c347cd908e901b77ac0149fc90b097b6f1b8f",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/print_retrieval_metrics.py"
+    },
+    "longmemeval_retrieval_helpers": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/retrieval/eval_utils.py",
+      "repo_path": "src/retrieval/eval_utils.py",
+      "lines": [
+        [
+          4,
+          29
+        ],
+        [
+          32,
+          46
+        ]
+      ],
+      "rawsha256": "c98b8d1096877a15aa755c9de44fe33c195298466a2eb6f3c0f9f6bde8c72349",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/retrieval/eval_utils.py"
+    },
+    "longmemeval_license": {
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/LICENSE",
+      "repo_path": "LICENSE",
+      "lines": [
+        1,
+        21
+      ],
+      "rawsha256": "d3c4b9aa54759df6ded337978a6f3b55b75615e5e4525c3b82d7e2627d4b9732",
+      "raw_url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/9e0b455f4ef0e2ab8f2e582289761153549043fc/LICENSE"
+    },
+    "locomo_readme_schema": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD#L8-L26",
+      "repo_path": "README.MD",
+      "lines": [
+        8,
+        26
+      ],
+      "rawsha256": "9f8e6fd00a3400aa687109f40ed53715f0a2c028ee3f8c465bdfa96475640e8a",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD"
+    },
+    "locomo_readme_context": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD#L53-L94",
+      "repo_path": "README.MD",
+      "lines": [
+        [
+          53,
+          73
+        ],
+        [
+          90,
+          94
+        ]
+      ],
+      "rawsha256": "9f8e6fd00a3400aa687109f40ed53715f0a2c028ee3f8c465bdfa96475640e8a",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD"
+    },
+    "locomo_evaluate_qa": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluate_qa.py",
+      "repo_path": "task_eval/evaluate_qa.py",
+      "lines": [
+        [
+          19,
+          34
+        ],
+        [
+          37,
+          64
+        ],
+        [
+          67,
+          114
+        ]
+      ],
+      "rawsha256": "dde7c1c6b5501486f96ce31398d6e49de76abbfa656e980b137e54fc69e9f6ee",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluate_qa.py"
+    },
+    "locomo_scoring": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "repo_path": "task_eval/evaluation.py",
+      "lines": [
+        [
+          75,
+          92
+        ],
+        [
+          126,
+          145
+        ],
+        [
+          189,
+          241
+        ]
+      ],
+      "rawsha256": "8e3be5d57ff2ff9ec5cd05939592f468c5f3f1fd95d13e431932bdf6bf0fd6fd",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py"
+    },
+    "locomo_aggregation": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation_stats.py",
+      "repo_path": "task_eval/evaluation_stats.py",
+      "lines": [
+        [
+          31,
+          59
+        ],
+        [
+          94,
+          108
+        ],
+        [
+          127,
+          145
+        ]
+      ],
+      "rawsha256": "d36bf596de05ea6f1c355e433167a8cd704bea3a3745277c650ac0c464bba139",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation_stats.py"
+    },
+    "locomo_license": {
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/LICENSE.txt",
+      "repo_path": "LICENSE.txt",
+      "lines": [
+        [
+          1,
+          2
+        ],
+        [
+          116,
+          120
+        ],
+        [
+          142,
+          155
+        ],
+        [
+          222,
+          258
+        ]
+      ],
+      "rawsha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+      "raw_url": "https://raw.githubusercontent.com/snap-research/locomo/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/LICENSE.txt"
+    }
+  },
+  "contracts": {
+    "LongMemEval": {
+      "readme_assertions": [
+        "The README describes 500 records per release variant, six question types, abstention IDs with an _abs suffix, answer_session_ids, and turn has_answer labels.",
+        "The README describes S as about 115k history tokens, M as about 500 sessions, and oracle as evidence sessions only."
+      ],
+      "code_verified": [
+        "QA inputs are hypothesis rows with question_id and hypothesis, joined to reference question, answer, and question_type.",
+        "The evaluator has GPT-4o, GPT-4o-mini, and local Llama 3.1 70B judge aliases. Prompts use yes/no judgments, with special temporal, knowledge-update, preference, and abstention instructions.",
+        "The judge runs at temperature 0 with max_tokens 10. Any case-insensitive occurrence of the substring yes marks correct.",
+        "QA aggregation reports by type, task average, overall, and abstention accuracy, and asserts the judge model is GPT-4o 2024-08-06.",
+        "Retrieval excludes IDs containing _abs and reports session recall_all/NDCG at 5 and 10, plus turn recall_all/NDCG at 5, 10, and 50. Retrieval helpers define any/all evidence recall, binary relevance NDCG, and turn-to-session projection.",
+        "DCG leaves the first item undiscounted, then divides later items by log2(2), log2(3), ...; positions one and two both have weight 1. Turn-to-session projection expands the ranked prefix to k unique sessions or corpus exhaustion, but retains repeated session IDs for NDCG."
+      ],
+      "license_observation": "The pinned repository LICENSE is MIT. Dataset-specific rights were not established by this source review.",
+      "unresolved": [
+        "No dataset variant or field values were inspected.",
+        "No quality result or compatibility claim was established."
+      ]
+    },
+    "LoCoMo": {
+      "readme_assertions": [
+        "The README describes ten conversations and a sample schema with sessions, timestamps, speakers, dialogue IDs, QA category, and evidence dialogue IDs.",
+        "The README describes QA over truncated conversations and RAG over dialogue, observation, or session-summary databases.",
+        "The README says image files are not released, while image URLs, captions, and search queries are included."
+      ],
+      "code_verified": [
+        "The runner reads a JSON list of samples and invokes the selected system-under-test model family. The evaluator does not call a separate LLM judge.",
+        "Answer scores use normalized, Porter-stemmed token F1. Categories 2, 3, and 4 use single-string F1; category 1 uses comma-split multi-answer F1; category 3 truncates the answer at its first semicolon; category 5 accepts either no-information phrase.",
+        "Evidence recall compares returned context IDs to annotated evidence at session or dialogue granularity. If the context key is absent or the evidence list is empty, the scorer appends recall 1.",
+        "The aggregate overall score is count-weighted across categories.",
+        "A present empty context list with nonempty evidence raises at context[0]. The runner rounds per-answer F1 and recall to three decimals before aggregation."
+      ],
+      "license_observation": "The pinned LICENSE.txt is Creative Commons Attribution-NonCommercial 4.0 International. Rights for every conversation, persona, caption, and external image were not established.",
+      "unresolved": [
+        "No dataset records or images were fetched.",
+        "Provider-specific answer prompts, truncation limits, and exact RAG selection code were not inspected.",
+        "The evaluator contains no separate judge model or judge prompt."
+      ]
+    }
+  },
+  "digest_mapping": [
+    {
+      "prior_digest": "ecce9c4c79dc89d99534ac17b383a5cbb5b9f0c69ee98adaf0684742e3d95251",
+      "result": "exact byte match",
+      "repo_path": "LongMemEval/src/evaluation/evaluate_qa.py"
+    },
+    {
+      "prior_digest": "e9283933a0cefb7a0ded7365e436ae3d1be5aac41853325e6155d83bf07607f0",
+      "result": "exact byte match",
+      "repo_path": "LongMemEval/src/evaluation/print_qa_metrics.py"
+    }
+  ]
+}

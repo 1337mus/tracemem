@@ -1,0 +1,1199 @@
+{
+  "answerable_queries": 14,
+  "benchmark": "synthetic-retrieval-diagnostic",
+  "benchmark_version": 1,
+  "bootstrap": {
+    "samples": 1000,
+    "seed": 1729
+  },
+  "claims": "retrieval diagnostics only; no answer or claim-fidelity evaluation",
+  "embedder": {
+    "dimensions": 384,
+    "kind": "signed-token-hash",
+    "label": "weak lexical feature vectors; not semantic embeddings",
+    "normalization": "l2",
+    "version": 1
+  },
+  "environment": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "index_versions": {
+    "evidence_schema": 2,
+    "retrieval": 1,
+    "rrf": 1
+  },
+  "input_sha256": "76862babda5e6e26be1ed14f5265c64e43627a54b1499dba47585605396637f3",
+  "latency_cache_state": "warm",
+  "modes": {
+    "bm25": {
+      "answerable_queries": 14,
+      "case_breakdown": {
+        "multi_evidence": {
+          "queries": 2,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "no_answer": {
+          "queries": 3,
+          "recall_at_k": null,
+          "sufficient_evidence_rate": null,
+          "unknown_abstention_rate": 0.0
+        },
+        "paraphrase_failure": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "quoted_instruction_decoy": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_current": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_historical": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        }
+      },
+      "confidence_intervals_95": {
+        "mrr": [
+          0.7048,
+          1.0
+        ],
+        "ndcg": [
+          0.6396,
+          0.9299
+        ],
+        "recall_at_k": [
+          0.6905,
+          0.9405
+        ],
+        "sufficient_evidence_rate": [
+          1.0,
+          1.0
+        ],
+        "unknown_abstention_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "insufficient_evidence_query_ids": [],
+      "latency_ms": {
+        "p50": 0.485,
+        "p95": 0.559
+      },
+      "mrr": 0.8595238095238095,
+      "ndcg": 0.7851163102460996,
+      "per_query": [
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.484584,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q01",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m01",
+            "m04",
+            "m28",
+            "m15",
+            "m17"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.5255,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q02",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m04",
+            "m06",
+            "m05",
+            "m27",
+            "m09"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.558625,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q03",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m07",
+            "m08",
+            "m09",
+            "m39",
+            "m18"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.41025,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493,
+          "query_id": "q04",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m11",
+            "m19",
+            "m12",
+            "m10",
+            "m31"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_current"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.520542,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q05",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m38",
+            "m37",
+            "m13",
+            "m20",
+            "m14"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_historical"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.535417,
+          "mrr": 0.5,
+          "ndcg": 0.38685280723454163,
+          "query_id": "q06",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m37",
+            "m13",
+            "m38",
+            "m03",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.434708,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q07",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m17",
+            "m16",
+            "m13",
+            "m20",
+            "m06"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.519208,
+          "mrr": 1.0,
+          "ndcg": 0.7653606369886217,
+          "query_id": "q08",
+          "recall_at_k": 0.6666666666666666,
+          "retrieved_message_ids": [
+            "m20",
+            "m19",
+            "m28",
+            "m25",
+            "m15"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.573459,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q09",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m23",
+            "m22",
+            "m24",
+            "m07",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "paraphrase_failure"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.546584,
+          "mrr": 0.2,
+          "ndcg": 0.23719771276929622,
+          "query_id": "q10",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m19",
+            "m10",
+            "m07",
+            "m37",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.382875,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q11",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m28",
+            "m29",
+            "m01",
+            "m39",
+            "m27"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.360875,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.23463936301137822,
+          "query_id": "q12",
+          "recall_at_k": 0.3333333333333333,
+          "retrieved_message_ids": [
+            "m20",
+            "m19",
+            "m31",
+            "m39",
+            "m10"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 0.432292,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q13",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m35",
+            "m34",
+            "m36",
+            "m11",
+            "m18"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 0.47825,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q14",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m20",
+            "m31",
+            "m19",
+            "m39",
+            "m11"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 0.4755,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q15",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m31",
+            "m19",
+            "m39",
+            "m07",
+            "m29"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 0.453208,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q16",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m27",
+            "m12",
+            "m26",
+            "m01",
+            "m11"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "quoted_instruction_decoy"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 0.498583,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493,
+          "query_id": "q17",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m39",
+            "m15",
+            "m19",
+            "m40",
+            "m31"
+          ]
+        }
+      ],
+      "recall_at_k": 0.8214285714285714,
+      "sufficient_evidence_queries": 14,
+      "sufficient_evidence_rate": 1.0,
+      "unknown_abstention_rate": 0.0,
+      "unknown_abstentions": 0,
+      "unknown_false_positive_rate": 1.0,
+      "unknown_queries": 3
+    },
+    "hybrid": {
+      "answerable_queries": 14,
+      "case_breakdown": {
+        "multi_evidence": {
+          "queries": 2,
+          "recall_at_k": 0.8333333333333333,
+          "sufficient_evidence_rate": 0.5,
+          "unknown_abstention_rate": null
+        },
+        "no_answer": {
+          "queries": 3,
+          "recall_at_k": null,
+          "sufficient_evidence_rate": null,
+          "unknown_abstention_rate": 0.0
+        },
+        "paraphrase_failure": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "quoted_instruction_decoy": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_current": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_historical": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        }
+      },
+      "confidence_intervals_95": {
+        "mrr": [
+          0.75,
+          1.0
+        ],
+        "ndcg": [
+          0.6422,
+          0.8455
+        ],
+        "recall_at_k": [
+          0.6667,
+          0.9286
+        ],
+        "sufficient_evidence_rate": [
+          0.7857,
+          1.0
+        ],
+        "unknown_abstention_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "insufficient_evidence_query_ids": [
+        "q02"
+      ],
+      "latency_ms": {
+        "p50": 3.632,
+        "p95": 3.98
+      },
+      "mrr": 0.880952380952381,
+      "ndcg": 0.744441198815233,
+      "per_query": [
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.594333,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q01",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m01",
+            "m04",
+            "m34",
+            "m24",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": false,
+          "latency_ms": 3.575959,
+          "mrr": 1.0,
+          "ndcg": 0.7039180890341347,
+          "query_id": "q02",
+          "recall_at_k": 0.6666666666666666,
+          "retrieved_message_ids": [
+            "m04",
+            "m27",
+            "m06",
+            "m09",
+            "m23"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.98025,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q03",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m07",
+            "m09",
+            "m36",
+            "m18",
+            "m12"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 2.223458,
+          "mrr": 0.5,
+          "ndcg": 0.6509209298071326,
+          "query_id": "q04",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m19",
+            "m11",
+            "m12",
+            "m10",
+            "m39"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_current"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.632125,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876,
+          "query_id": "q05",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m38",
+            "m13",
+            "m37",
+            "m30",
+            "m34"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_historical"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.872792,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q06",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m13",
+            "m37",
+            "m25",
+            "m38",
+            "m03"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 2.578292,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493,
+          "query_id": "q07",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m16",
+            "m07",
+            "m13",
+            "m17",
+            "m20"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.78075,
+          "mrr": 1.0,
+          "ndcg": 0.6713860725233041,
+          "query_id": "q08",
+          "recall_at_k": 0.6666666666666666,
+          "retrieved_message_ids": [
+            "m20",
+            "m25",
+            "m31",
+            "m19",
+            "m01"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.637416,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q09",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m23",
+            "m22",
+            "m24",
+            "m07",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "paraphrase_failure"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.848667,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5437713091520254,
+          "query_id": "q10",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m07",
+            "m10",
+            "m25",
+            "m37",
+            "m26"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 1.769125,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q11",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m28",
+            "m29",
+            "m27",
+            "m01",
+            "m39"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 1.691792,
+          "mrr": 0.5,
+          "ndcg": 0.2960819109658652,
+          "query_id": "q12",
+          "recall_at_k": 0.3333333333333333,
+          "retrieved_message_ids": [
+            "m19",
+            "m31",
+            "m37",
+            "m10",
+            "m20"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.455042,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q13",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m34",
+            "m35",
+            "m36",
+            "m11",
+            "m18"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 3.570917,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q14",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m31",
+            "m34",
+            "m39",
+            "m11",
+            "m20"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 3.80675,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q15",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m31",
+            "m07",
+            "m39",
+            "m25",
+            "m09"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 4.20225,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q16",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m12",
+            "m34",
+            "m01",
+            "m27",
+            "m11"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "quoted_instruction_decoy"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.695792,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876,
+          "query_id": "q17",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m39",
+            "m31",
+            "m40",
+            "m03",
+            "m22"
+          ]
+        }
+      ],
+      "recall_at_k": 0.7976190476190476,
+      "sufficient_evidence_queries": 13,
+      "sufficient_evidence_rate": 0.9285714285714286,
+      "unknown_abstention_rate": 0.0,
+      "unknown_abstentions": 0,
+      "unknown_false_positive_rate": 1.0,
+      "unknown_queries": 3
+    },
+    "vector": {
+      "answerable_queries": 14,
+      "case_breakdown": {
+        "multi_evidence": {
+          "queries": 2,
+          "recall_at_k": 0.8333333333333333,
+          "sufficient_evidence_rate": 0.5,
+          "unknown_abstention_rate": null
+        },
+        "no_answer": {
+          "queries": 3,
+          "recall_at_k": null,
+          "sufficient_evidence_rate": null,
+          "unknown_abstention_rate": 0.0
+        },
+        "paraphrase_failure": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "quoted_instruction_decoy": {
+          "queries": 1,
+          "recall_at_k": 1.0,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_current": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 0.0,
+          "unknown_abstention_rate": null
+        },
+        "temporal_historical": {
+          "queries": 1,
+          "recall_at_k": 0.5,
+          "sufficient_evidence_rate": 1.0,
+          "unknown_abstention_rate": null
+        }
+      },
+      "confidence_intervals_95": {
+        "mrr": [
+          0.6429,
+          0.9286
+        ],
+        "ndcg": [
+          0.4798,
+          0.7453
+        ],
+        "recall_at_k": [
+          0.5,
+          0.7619
+        ],
+        "sufficient_evidence_rate": [
+          0.5,
+          0.9286
+        ],
+        "unknown_abstention_rate": [
+          0.0,
+          0.0
+        ]
+      },
+      "insufficient_evidence_query_ids": [
+        "q02",
+        "q04",
+        "q05",
+        "q08"
+      ],
+      "latency_ms": {
+        "p50": 2.982,
+        "p95": 3.285
+      },
+      "mrr": 0.7916666666666667,
+      "ndcg": 0.6070985297421142,
+      "per_query": [
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.197875,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q01",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m01",
+            "m34",
+            "m23",
+            "m25",
+            "m24"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": false,
+          "latency_ms": 2.993666,
+          "mrr": 1.0,
+          "ndcg": 0.6713860725233041,
+          "query_id": "q02",
+          "recall_at_k": 0.6666666666666666,
+          "retrieved_message_ids": [
+            "m04",
+            "m27",
+            "m24",
+            "m06",
+            "m34"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 3.284792,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q03",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m07",
+            "m25",
+            "m36",
+            "m12",
+            "m09"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": false,
+          "latency_ms": 1.939709,
+          "mrr": 0.5,
+          "ndcg": 0.38685280723454163,
+          "query_id": "q04",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m19",
+            "m11",
+            "m09",
+            "m12",
+            "m30"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_current"
+          ],
+          "evidence_sufficient": false,
+          "latency_ms": 2.922834,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q05",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m38",
+            "m30",
+            "m31",
+            "m13",
+            "m34"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "temporal_historical"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.277542,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "query_id": "q06",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m13",
+            "m37",
+            "m25",
+            "m09",
+            "m38"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 2.209292,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292,
+          "query_id": "q07",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m07",
+            "m30",
+            "m16",
+            "m09",
+            "m13"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": false,
+          "latency_ms": 3.184083,
+          "mrr": 0.5,
+          "ndcg": 0.2960819109658652,
+          "query_id": "q08",
+          "recall_at_k": 0.3333333333333333,
+          "retrieved_message_ids": [
+            "m31",
+            "m20",
+            "m25",
+            "m23",
+            "m01"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "multi_evidence"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.207083,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q09",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m23",
+            "m22",
+            "m24",
+            "m07",
+            "m30"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "paraphrase_failure"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 3.355333,
+          "mrr": 0.5,
+          "ndcg": 0.38685280723454163,
+          "query_id": "q10",
+          "recall_at_k": 0.5,
+          "retrieved_message_ids": [
+            "m07",
+            "m25",
+            "m37",
+            "m10",
+            "m40"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 1.463916,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876,
+          "query_id": "q11",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m28",
+            "m27",
+            "m29",
+            "m26",
+            "m23"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 1.462708,
+          "mrr": 0.25,
+          "ndcg": 0.20210734650054757,
+          "query_id": "q12",
+          "recall_at_k": 0.3333333333333333,
+          "retrieved_message_ids": [
+            "m19",
+            "m37",
+            "m10",
+            "m31",
+            "m39"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [],
+          "evidence_sufficient": true,
+          "latency_ms": 2.921833,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "query_id": "q13",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m34",
+            "m36",
+            "m35",
+            "m11",
+            "m40"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 2.962,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q14",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m31",
+            "m34",
+            "m09",
+            "m36",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 3.216916,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q15",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m25",
+            "m31",
+            "m07",
+            "m09",
+            "m36"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "no_answer"
+          ],
+          "evidence_sufficient": null,
+          "latency_ms": 2.918875,
+          "mrr": null,
+          "ndcg": null,
+          "query_id": "q16",
+          "recall_at_k": null,
+          "retrieved_message_ids": [
+            "m12",
+            "m34",
+            "m09",
+            "m36",
+            "m25"
+          ]
+        },
+        {
+          "abstained": false,
+          "case_tags": [
+            "quoted_instruction_decoy"
+          ],
+          "evidence_sufficient": true,
+          "latency_ms": 2.982,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493,
+          "query_id": "q17",
+          "recall_at_k": 1.0,
+          "retrieved_message_ids": [
+            "m39",
+            "m31",
+            "m37",
+            "m40",
+            "m03"
+          ]
+        }
+      ],
+      "recall_at_k": 0.630952380952381,
+      "sufficient_evidence_queries": 10,
+      "sufficient_evidence_rate": 0.7142857142857143,
+      "unknown_abstention_rate": 0.0,
+      "unknown_abstentions": 0,
+      "unknown_false_positive_rate": 1.0,
+      "unknown_queries": 3
+    }
+  },
+  "top_k": 5,
+  "unknown_queries": 3,
+  "warmup_ms": 72.286,
+  "warmup_queries": 17
+}

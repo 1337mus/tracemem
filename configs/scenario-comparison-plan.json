@@ -1,0 +1,41 @@
+{
+  "automatic_accept": false,
+  "comparison_models": [
+    "Qwen/Qwen3-4B",
+    "microsoft/Phi-3.5-mini-instruct"
+  ],
+  "compute_target_usd": 2,
+  "dataset": "tracemem/data/scenarios_v1.json",
+  "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+  "dataset_status": "root-audited and frozen before first scenario inference; agent-authored provisional targets",
+  "decoding": "greedy",
+  "local_model_inference": false,
+  "max_generated_tokens": 1024,
+  "max_input_tokens": 4096,
+  "partitions": {
+    "dev": 24,
+    "test": 24,
+    "train": 0
+  },
+  "post_test_prompt_tuning": false,
+  "primary_reports": [
+    "exact structured reference agreement (precision/recall/F1; authored target labels may be nonexhaustive)",
+    "parse/schema failure rate",
+    "deterministic citation/role integrity",
+    "no-memory abstention"
+  ],
+  "prompt_source_sha256": "2d866dd3203b5352f0d80ab2227a5ab8cf32efc2d759da0bcaf5e4af54525c57",
+  "prompt_version": "explicit-v2",
+  "provider_billing_cap": false,
+  "purpose": "Frozen-prompt comparison on fresh agent-authored multi-session cases",
+  "reference_coverage": "conservative target lists may omit additional valid memories; unmatched predictions are not proven unsupported",
+  "reference_labels": "agent-authored provisional annotations, not independent human ground truth",
+  "replays": [
+    "raw",
+    "unique exact-quote anchoring"
+  ],
+  "report_partitions_separately": true,
+  "semantic_support_claim": false,
+  "training": false,
+  "version": 1
+}

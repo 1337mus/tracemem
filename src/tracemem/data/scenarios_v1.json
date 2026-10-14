@@ -1,0 +1,3284 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "cases": [
+    {
+      "case_id": "dev-balcony-basil",
+      "scenario_id": "scenario:dev-balcony-basil",
+      "split": "dev",
+      "tags": [
+        "gardening",
+        "intention",
+        "cause_direction"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-balcony-basil-s1",
+          "message_id": "dev-balcony-basil-m1",
+          "role": "user",
+          "text": "The balcony basil went limp again after yesterday's rain.",
+          "recorded_at": "2026-01-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-balcony-basil-s1",
+          "message_id": "dev-balcony-basil-m2",
+          "role": "assistant",
+          "text": "Does the pot sit where water collects?",
+          "recorded_at": "2026-01-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-balcony-basil-s2",
+          "message_id": "dev-balcony-basil-m3",
+          "role": "user",
+          "text": "I moved it under the awning; I'll check the soil before watering now.",
+          "recorded_at": "2026-01-02T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PLANS",
+          "object": "check the soil before watering",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-balcony-basil-s2",
+              "message_id": "dev-balcony-basil-m3",
+              "char_start": 29,
+              "char_end": 68,
+              "quote": "I'll check the soil before watering now"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-ferry-bike",
+      "scenario_id": "scenario:dev-ferry-bike",
+      "split": "dev",
+      "tags": [
+        "travel",
+        "conditional_preference"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-ferry-bike-s1",
+          "message_id": "dev-ferry-bike-m1",
+          "role": "user",
+          "text": "The island bus felt cramped with my bike last month.",
+          "recorded_at": "2026-01-03T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-ferry-bike-s1",
+          "message_id": "dev-ferry-bike-m2",
+          "role": "assistant",
+          "text": "The ferry has a bicycle deck on the late crossing.",
+          "recorded_at": "2026-01-03T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-ferry-bike-s2",
+          "message_id": "dev-ferry-bike-m3",
+          "role": "assistant",
+          "text": "Would that work better for your coastal ride?",
+          "recorded_at": "2026-01-03T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-ferry-bike-s2",
+          "message_id": "dev-ferry-bike-m4",
+          "role": "user",
+          "text": "Yes; I prefer the late ferry if I bring my bike.",
+          "recorded_at": "2026-01-03T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "late ferry when bringing a bike",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-ferry-bike-s2",
+              "message_id": "dev-ferry-bike-m4",
+              "char_start": 5,
+              "char_end": 48,
+              "quote": "I prefer the late ferry if I bring my bike."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-agenda-email",
+      "scenario_id": "scenario:dev-agenda-email",
+      "split": "dev",
+      "tags": [
+        "work",
+        "preference",
+        "coreference"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-agenda-email-s1",
+          "message_id": "dev-agenda-email-m1",
+          "role": "user",
+          "text": "Last week's planning call ran over, and I hadn't seen the notes.",
+          "recorded_at": "2026-01-04T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-agenda-email-s1",
+          "message_id": "dev-agenda-email-m2",
+          "role": "assistant",
+          "text": "I can prepare an agenda before the next one.",
+          "recorded_at": "2026-01-04T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-agenda-email-s2",
+          "message_id": "dev-agenda-email-m3",
+          "role": "user",
+          "text": "That would help; I prefer receiving the agenda the evening before so I can add questions.",
+          "recorded_at": "2026-01-04T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-agenda-email-s2",
+          "message_id": "dev-agenda-email-m4",
+          "role": "assistant",
+          "text": "I'll leave space at the end for those.",
+          "recorded_at": "2026-01-04T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "agenda received the evening before",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-agenda-email-s2",
+              "message_id": "dev-agenda-email-m3",
+              "char_start": 17,
+              "char_end": 65,
+              "quote": "I prefer receiving the agenda the evening before"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-supper-mushrooms",
+      "scenario_id": "scenario:dev-supper-mushrooms",
+      "split": "dev",
+      "tags": [
+        "cooking",
+        "negation"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-supper-mushrooms-s1",
+          "message_id": "dev-supper-mushrooms-m1",
+          "role": "assistant",
+          "text": "I'm helping with the barley soup list. Any ingredients to skip?",
+          "recorded_at": "2026-01-05T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-supper-mushrooms-s1",
+          "message_id": "dev-supper-mushrooms-m2",
+          "role": "user",
+          "text": "I don't like mushrooms in the broth.",
+          "recorded_at": "2026-01-05T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-supper-mushrooms-s2",
+          "message_id": "dev-supper-mushrooms-m3",
+          "role": "assistant",
+          "text": "Would carrots and thyme suit it?",
+          "recorded_at": "2026-01-05T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-supper-mushrooms-s2",
+          "message_id": "dev-supper-mushrooms-m4",
+          "role": "user",
+          "text": "Yes, those are good.",
+          "recorded_at": "2026-01-05T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "mushrooms in broth",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-supper-mushrooms-s1",
+              "message_id": "dev-supper-mushrooms-m2",
+              "char_start": 0,
+              "char_end": 35,
+              "quote": "I don't like mushrooms in the broth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-robot-test-log",
+      "scenario_id": "scenario:dev-robot-test-log",
+      "split": "dev",
+      "tags": [
+        "robotics",
+        "ownership"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-robot-test-log-s1",
+          "message_id": "dev-robot-test-log-m1",
+          "role": "assistant",
+          "text": "Who is tracking the rover tests for the gravel course?",
+          "recorded_at": "2026-01-06T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-robot-test-log-s1",
+          "message_id": "dev-robot-test-log-m2",
+          "role": "user",
+          "text": "I took the notes during the last build.",
+          "recorded_at": "2026-01-06T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-robot-test-log-s2",
+          "message_id": "dev-robot-test-log-m3",
+          "role": "assistant",
+          "text": "Are you keeping that log this season too?",
+          "recorded_at": "2026-01-06T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-robot-test-log-s2",
+          "message_id": "dev-robot-test-log-m4",
+          "role": "user",
+          "text": "I'm responsible for the rover's test log this season.",
+          "recorded_at": "2026-01-06T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "HAS",
+          "object": "responsibility for the rover's test log this season",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-robot-test-log-s2",
+              "message_id": "dev-robot-test-log-m4",
+              "char_start": 0,
+              "char_end": 52,
+              "quote": "I'm responsible for the rover's test log this season"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-blue-crate",
+      "scenario_id": "scenario:dev-blue-crate",
+      "split": "dev",
+      "tags": [
+        "workshop",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-blue-crate-s1",
+          "message_id": "dev-blue-crate-m1",
+          "role": "user",
+          "text": "I cleared some space in the ceramics room.",
+          "recorded_at": "2026-01-07T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-blue-crate-s1",
+          "message_id": "dev-blue-crate-m2",
+          "role": "assistant",
+          "text": "Where did the blue crate end up?",
+          "recorded_at": "2026-01-07T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-blue-crate-s2",
+          "message_id": "dev-blue-crate-m3",
+          "role": "user",
+          "text": "The blue crate is under the south bench, beside the clay tools.",
+          "recorded_at": "2026-01-07T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "blue crate",
+          "predicate": "LOCATED_IN",
+          "object": "under the south bench",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-blue-crate-s2",
+              "message_id": "dev-blue-crate-m3",
+              "char_start": 0,
+              "char_end": 39,
+              "quote": "The blue crate is under the south bench"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-piano-recording",
+      "scenario_id": "scenario:dev-piano-recording",
+      "split": "dev",
+      "tags": [
+        "music",
+        "negation",
+        "media"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-piano-recording-s1",
+          "message_id": "dev-piano-recording-m1",
+          "role": "user",
+          "text": "The kids' piano recital is next Friday.",
+          "recorded_at": "2026-01-08T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-piano-recording-s1",
+          "message_id": "dev-piano-recording-m2",
+          "role": "assistant",
+          "text": "Are you planning to record the whole set?",
+          "recorded_at": "2026-01-08T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-piano-recording-s2",
+          "message_id": "dev-piano-recording-m3",
+          "role": "user",
+          "text": "I'd rather not record the children; I'll just listen from the back row.",
+          "recorded_at": "2026-01-08T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "recording the children",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-piano-recording-s2",
+              "message_id": "dev-piano-recording-m3",
+              "char_start": 0,
+              "char_end": 34,
+              "quote": "I'd rather not record the children"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-cycle-tunnels",
+      "scenario_id": "scenario:dev-cycle-tunnels",
+      "split": "dev",
+      "tags": [
+        "cycling",
+        "negation",
+        "route"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-cycle-tunnels-s1",
+          "message_id": "dev-cycle-tunnels-m1",
+          "role": "user",
+          "text": "I tried the river loop before work.",
+          "recorded_at": "2026-01-09T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-cycle-tunnels-s1",
+          "message_id": "dev-cycle-tunnels-m2",
+          "role": "assistant",
+          "text": "Did the underpass save much time?",
+          "recorded_at": "2026-01-09T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-cycle-tunnels-s2",
+          "message_id": "dev-cycle-tunnels-m3",
+          "role": "user",
+          "text": "I avoid the east tunnel on my bike; the path beside the canal is better.",
+          "recorded_at": "2026-01-09T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "east tunnel for cycling",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-cycle-tunnels-s2",
+              "message_id": "dev-cycle-tunnels-m3",
+              "char_start": 0,
+              "char_end": 34,
+              "quote": "I avoid the east tunnel on my bike"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-large-print-atlas",
+      "scenario_id": "scenario:dev-large-print-atlas",
+      "split": "dev",
+      "tags": [
+        "maps",
+        "accessibility",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-large-print-atlas-s1",
+          "message_id": "dev-large-print-atlas-m1",
+          "role": "user",
+          "text": "The trail guide arrived, but the contour labels are tiny.",
+          "recorded_at": "2026-01-10T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-large-print-atlas-s1",
+          "message_id": "dev-large-print-atlas-m2",
+          "role": "assistant",
+          "text": "Would a different edition be easier to use?",
+          "recorded_at": "2026-01-10T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-large-print-atlas-s2",
+          "message_id": "dev-large-print-atlas-m3",
+          "role": "user",
+          "text": "For field maps I prefer the large-print edition, even if it weighs more.",
+          "recorded_at": "2026-01-10T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "large-print edition for field maps",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-large-print-atlas-s2",
+              "message_id": "dev-large-print-atlas-m3",
+              "char_start": 0,
+              "char_end": 47,
+              "quote": "For field maps I prefer the large-print edition"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-window-fern",
+      "scenario_id": "scenario:dev-window-fern",
+      "split": "dev",
+      "tags": [
+        "home",
+        "cause_direction",
+        "location_change"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-window-fern-s1",
+          "message_id": "dev-window-fern-m1",
+          "role": "user",
+          "text": "The fern by the studio window has crisp brown edges.",
+          "recorded_at": "2026-01-11T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-window-fern-s1",
+          "message_id": "dev-window-fern-m2",
+          "role": "assistant",
+          "text": "The heater is on the other side of the room.",
+          "recorded_at": "2026-01-11T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-window-fern-s2",
+          "message_id": "dev-window-fern-m3",
+          "role": "user",
+          "text": "Cold air from that window browned the fern, so I moved it to the hallway.",
+          "recorded_at": "2026-01-11T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-window-fern-s2",
+          "message_id": "dev-window-fern-m4",
+          "role": "assistant",
+          "text": "The hallway should be sheltered from that draft.",
+          "recorded_at": "2026-01-11T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "cold air from the window",
+          "predicate": "CAUSES",
+          "object": "fern browning",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-window-fern-s2",
+              "message_id": "dev-window-fern-m3",
+              "char_start": 0,
+              "char_end": 42,
+              "quote": "Cold air from that window browned the fern"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-walker-pickup",
+      "scenario_id": "scenario:dev-walker-pickup",
+      "split": "dev",
+      "tags": [
+        "pet_care",
+        "third_party",
+        "schedule"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-walker-pickup-s1",
+          "message_id": "dev-walker-pickup-m1",
+          "role": "user",
+          "text": "Moss has a checkup on Thursday.",
+          "recorded_at": "2026-01-12T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-walker-pickup-s1",
+          "message_id": "dev-walker-pickup-m2",
+          "role": "assistant",
+          "text": "Can someone take him from the studio?",
+          "recorded_at": "2026-01-12T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-walker-pickup-s2",
+          "message_id": "dev-walker-pickup-m3",
+          "role": "user",
+          "text": "Tari told me she'll pick Moss up at four after her shift.",
+          "recorded_at": "2026-01-12T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "Tari will pick Moss up at four after her shift",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-walker-pickup-s2",
+              "message_id": "dev-walker-pickup-m3",
+              "char_start": 0,
+              "char_end": 57,
+              "quote": "Tari told me she'll pick Moss up at four after her shift."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-linux-workstation",
+      "scenario_id": "scenario:dev-linux-workstation",
+      "split": "dev",
+      "tags": [
+        "computing",
+        "current_state"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-linux-workstation-s1",
+          "message_id": "dev-linux-workstation-m1",
+          "role": "assistant",
+          "text": "Did the overnight render use the tablet or the editing station?",
+          "recorded_at": "2026-01-13T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-linux-workstation-s1",
+          "message_id": "dev-linux-workstation-m2",
+          "role": "user",
+          "text": "The editing workstation handled it.",
+          "recorded_at": "2026-01-13T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-linux-workstation-s2",
+          "message_id": "dev-linux-workstation-m3",
+          "role": "assistant",
+          "text": "Which system is installed there now?",
+          "recorded_at": "2026-01-13T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-linux-workstation-s2",
+          "message_id": "dev-linux-workstation-m4",
+          "role": "user",
+          "text": "My editing workstation runs Fedora Linux.",
+          "recorded_at": "2026-01-13T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user's editing workstation",
+          "predicate": "USES",
+          "object": "Fedora Linux",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-linux-workstation-s2",
+              "message_id": "dev-linux-workstation-m4",
+              "char_start": 0,
+              "char_end": 40,
+              "quote": "My editing workstation runs Fedora Linux"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-pottery-class-maybe",
+      "scenario_id": "scenario:dev-pottery-class-maybe",
+      "split": "dev",
+      "tags": [
+        "classes",
+        "preference",
+        "conditional"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-pottery-class-maybe-s1",
+          "message_id": "dev-pottery-class-maybe-m1",
+          "role": "user",
+          "text": "The community studio posted its autumn schedule.",
+          "recorded_at": "2026-01-14T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-pottery-class-maybe-s1",
+          "message_id": "dev-pottery-class-maybe-m2",
+          "role": "assistant",
+          "text": "The evening pottery class still has two places.",
+          "recorded_at": "2026-01-14T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-pottery-class-maybe-s2",
+          "message_id": "dev-pottery-class-maybe-m3",
+          "role": "user",
+          "text": "I prefer the evening pottery class to the Saturday section, but I need to see whether my shifts settle down.",
+          "recorded_at": "2026-01-14T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-pottery-class-maybe-s2",
+          "message_id": "dev-pottery-class-maybe-m4",
+          "role": "assistant",
+          "text": "You have not signed up yet, then.",
+          "recorded_at": "2026-01-14T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "evening pottery class over Saturday section",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-pottery-class-maybe-s2",
+              "message_id": "dev-pottery-class-maybe-m3",
+              "char_start": 0,
+              "char_end": 58,
+              "quote": "I prefer the evening pottery class to the Saturday section"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-coffee-after-lunch",
+      "scenario_id": "scenario:dev-coffee-after-lunch",
+      "split": "dev",
+      "tags": [
+        "food",
+        "routine",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-coffee-after-lunch-s1",
+          "message_id": "dev-coffee-after-lunch-m1",
+          "role": "user",
+          "text": "The new café opens at seven now.",
+          "recorded_at": "2026-01-15T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-coffee-after-lunch-s1",
+          "message_id": "dev-coffee-after-lunch-m2",
+          "role": "assistant",
+          "text": "Do you still stop there on the morning walk?",
+          "recorded_at": "2026-01-15T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-coffee-after-lunch-s2",
+          "message_id": "dev-coffee-after-lunch-m3",
+          "role": "user",
+          "text": "I usually wait until after lunch for coffee; otherwise I get jittery.",
+          "recorded_at": "2026-01-15T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "coffee after lunch",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-coffee-after-lunch-s2",
+              "message_id": "dev-coffee-after-lunch-m3",
+              "char_start": 0,
+              "char_end": 43,
+              "quote": "I usually wait until after lunch for coffee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-brass-latch",
+      "scenario_id": "scenario:dev-brass-latch",
+      "split": "dev",
+      "tags": [
+        "repair",
+        "correction",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-brass-latch-s1",
+          "message_id": "dev-brass-latch-m1",
+          "role": "user",
+          "text": "I put the loose hardware in the top drawer.",
+          "recorded_at": "2026-01-16T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-brass-latch-s1",
+          "message_id": "dev-brass-latch-m2",
+          "role": "assistant",
+          "text": "Was the copper hinge the part you wanted to replace?",
+          "recorded_at": "2026-01-16T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-brass-latch-s2",
+          "message_id": "dev-brass-latch-m3",
+          "role": "user",
+          "text": "Correction: the brass latch is in the top drawer; I meant that one, not the copper hinge.",
+          "recorded_at": "2026-01-16T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-brass-latch-s2",
+          "message_id": "dev-brass-latch-m4",
+          "role": "assistant",
+          "text": "I'll update the repair list.",
+          "recorded_at": "2026-01-16T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "brass latch",
+          "predicate": "LOCATED_IN",
+          "object": "top drawer",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "quote": "I put the loose hardware in the top drawer.",
+              "session_id": "dev-brass-latch-s1",
+              "message_id": "dev-brass-latch-m1",
+              "char_start": 0,
+              "char_end": 43
+            },
+            {
+              "quote": "Correction: the brass latch is in the top drawer; I meant that one, not the copper hinge.",
+              "session_id": "dev-brass-latch-s2",
+              "message_id": "dev-brass-latch-m3",
+              "char_start": 0,
+              "char_end": 89
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-quoted-checklist",
+      "scenario_id": "scenario:dev-quoted-checklist",
+      "split": "dev",
+      "tags": [
+        "quoted_text",
+        "instruction_boundary",
+        "negation"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-quoted-checklist-s1",
+          "message_id": "dev-quoted-checklist-m1",
+          "role": "user",
+          "text": "I found an old checklist in the archive, mixed in with shipping forms.",
+          "recorded_at": "2026-01-17T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-quoted-checklist-s1",
+          "message_id": "dev-quoted-checklist-m2",
+          "role": "assistant",
+          "text": "Could you tell whether it was meant for this week's team?",
+          "recorded_at": "2026-01-17T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-quoted-checklist-s2",
+          "message_id": "dev-quoted-checklist-m3",
+          "role": "user",
+          "text": "It literally says 'leave the red folder unlocked'; that's copied text, not an instruction from me.",
+          "recorded_at": "2026-01-17T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-quoted-checklist-s2",
+          "message_id": "dev-quoted-checklist-m4",
+          "role": "assistant",
+          "text": "I'll treat it as archive text only.",
+          "recorded_at": "2026-01-17T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "the checklist says to leave the red folder unlocked",
+          "speaker_role": "user",
+          "attribution": "quoted_text",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-quoted-checklist-s2",
+              "message_id": "dev-quoted-checklist-m3",
+              "char_start": 0,
+              "char_end": 98,
+              "quote": "It literally says 'leave the red folder unlocked'; that's copied text, not an instruction from me."
+            },
+            {
+              "quote": "I found an old checklist in the archive, mixed in with shipping forms.",
+              "session_id": "dev-quoted-checklist-s1",
+              "message_id": "dev-quoted-checklist-m1",
+              "char_start": 0,
+              "char_end": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-gallery-hours",
+      "scenario_id": "scenario:dev-gallery-hours",
+      "split": "dev",
+      "tags": [
+        "third_party",
+        "schedule",
+        "reported"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-gallery-hours-s1",
+          "message_id": "dev-gallery-hours-m1",
+          "role": "user",
+          "text": "I couldn't read the sign outside the print gallery.",
+          "recorded_at": "2026-01-18T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-gallery-hours-s1",
+          "message_id": "dev-gallery-hours-m2",
+          "role": "assistant",
+          "text": "Did anyone there know the closing time?",
+          "recorded_at": "2026-01-18T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-gallery-hours-s2",
+          "message_id": "dev-gallery-hours-m3",
+          "role": "user",
+          "text": "Lea said the print gallery closes at six on weekdays.",
+          "recorded_at": "2026-01-18T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "Lea said the print gallery closes at six on weekdays",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-gallery-hours-s2",
+              "message_id": "dev-gallery-hours-m3",
+              "char_start": 0,
+              "char_end": 53,
+              "quote": "Lea said the print gallery closes at six on weekdays."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-sqlite-notes",
+      "scenario_id": "scenario:dev-sqlite-notes",
+      "split": "dev",
+      "tags": [
+        "software",
+        "decision",
+        "project"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-sqlite-notes-s1",
+          "message_id": "dev-sqlite-notes-m1",
+          "role": "assistant",
+          "text": "The prototype should work on a plane with no network.",
+          "recorded_at": "2026-01-19T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-sqlite-notes-s1",
+          "message_id": "dev-sqlite-notes-m2",
+          "role": "user",
+          "text": "Agreed; I want the sample to be self-contained.",
+          "recorded_at": "2026-01-19T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-sqlite-notes-s2",
+          "message_id": "dev-sqlite-notes-m3",
+          "role": "assistant",
+          "text": "Have you picked local storage?",
+          "recorded_at": "2026-01-19T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-sqlite-notes-s2",
+          "message_id": "dev-sqlite-notes-m4",
+          "role": "user",
+          "text": "I chose SQLite for the prototype.",
+          "recorded_at": "2026-01-19T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "DECIDED",
+          "object": "SQLite for the prototype",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-sqlite-notes-s2",
+              "message_id": "dev-sqlite-notes-m4",
+              "char_start": 0,
+              "char_end": 33,
+              "quote": "I chose SQLite for the prototype."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-welding-gloves",
+      "scenario_id": "scenario:dev-welding-gloves",
+      "split": "dev",
+      "tags": [
+        "maker_space",
+        "location",
+        "ownership"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-welding-gloves-s1",
+          "message_id": "dev-welding-gloves-m1",
+          "role": "assistant",
+          "text": "The welding table is clear for the afternoon class.",
+          "recorded_at": "2026-01-20T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-welding-gloves-s1",
+          "message_id": "dev-welding-gloves-m2",
+          "role": "user",
+          "text": "I brought my spare gloves in yesterday.",
+          "recorded_at": "2026-01-20T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-welding-gloves-s2",
+          "message_id": "dev-welding-gloves-m3",
+          "role": "assistant",
+          "text": "Where did you put them?",
+          "recorded_at": "2026-01-20T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-welding-gloves-s2",
+          "message_id": "dev-welding-gloves-m4",
+          "role": "user",
+          "text": "My spare gloves are in the yellow cabinet beside the sink.",
+          "recorded_at": "2026-01-20T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user's spare gloves",
+          "predicate": "LOCATED_IN",
+          "object": "yellow cabinet beside the sink",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-welding-gloves-s2",
+              "message_id": "dev-welding-gloves-m4",
+              "char_start": 0,
+              "char_end": 57,
+              "quote": "My spare gloves are in the yellow cabinet beside the sink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "dev-unanswered-color",
+      "scenario_id": "scenario:dev-unanswered-color",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "question"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-unanswered-color-s1",
+          "message_id": "dev-unanswered-color-m1",
+          "role": "assistant",
+          "text": "What color did you say the new curtains were?",
+          "recorded_at": "2026-01-21T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unanswered-color-s1",
+          "message_id": "dev-unanswered-color-m2",
+          "role": "user",
+          "text": "I don't think I mentioned their color.",
+          "recorded_at": "2026-01-21T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unanswered-color-s2",
+          "message_id": "dev-unanswered-color-m3",
+          "role": "assistant",
+          "text": "That's fine; I can leave that detail blank.",
+          "recorded_at": "2026-01-21T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "dev-unanswered-season",
+      "scenario_id": "scenario:dev-unanswered-season",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "question"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-unanswered-season-s1",
+          "message_id": "dev-unanswered-season-m1",
+          "role": "assistant",
+          "text": "I have the dates for your trip but not its season.",
+          "recorded_at": "2026-01-22T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unanswered-season-s1",
+          "message_id": "dev-unanswered-season-m2",
+          "role": "user",
+          "text": "Can you remind me which season I picked?",
+          "recorded_at": "2026-01-22T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unanswered-season-s2",
+          "message_id": "dev-unanswered-season-m3",
+          "role": "assistant",
+          "text": "I don't have that choice in this conversation.",
+          "recorded_at": "2026-01-22T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unanswered-season-s2",
+          "message_id": "dev-unanswered-season-m4",
+          "role": "user",
+          "text": "Let's decide later, after I check the calendar.",
+          "recorded_at": "2026-01-22T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "dev-ambiguous-they",
+      "scenario_id": "scenario:dev-ambiguous-they",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "coreference"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-ambiguous-they-s1",
+          "message_id": "dev-ambiguous-they-m1",
+          "role": "user",
+          "text": "The note just says, 'they moved it near the old place.'",
+          "recorded_at": "2026-01-23T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-ambiguous-they-s1",
+          "message_id": "dev-ambiguous-they-m2",
+          "role": "assistant",
+          "text": "Does it identify who moved what?",
+          "recorded_at": "2026-01-23T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-ambiguous-they-s2",
+          "message_id": "dev-ambiguous-they-m3",
+          "role": "user",
+          "text": "No, both references are unclear without the earlier page.",
+          "recorded_at": "2026-01-23T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "dev-unspecified-room",
+      "scenario_id": "scenario:dev-unspecified-room",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "missing_information"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-unspecified-room-s1",
+          "message_id": "dev-unspecified-room-m1",
+          "role": "assistant",
+          "text": "Which room did you mention for the review?",
+          "recorded_at": "2026-01-24T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unspecified-room-s1",
+          "message_id": "dev-unspecified-room-m2",
+          "role": "user",
+          "text": "I may not have given you a room number.",
+          "recorded_at": "2026-01-24T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-unspecified-room-s2",
+          "message_id": "dev-unspecified-room-m3",
+          "role": "assistant",
+          "text": "I can ask again when you have it.",
+          "recorded_at": "2026-01-24T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "dev-lantern-battery",
+      "scenario_id": "scenario:dev-lantern-battery",
+      "split": "dev",
+      "tags": [
+        "outdoors",
+        "correction",
+        "negation"
+      ],
+      "messages": [
+        {
+          "session_id": "dev-lantern-battery-s1",
+          "message_id": "dev-lantern-battery-m1",
+          "role": "user",
+          "text": "The lantern kept fading on the ridge walk.",
+          "recorded_at": "2026-01-25T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-lantern-battery-s1",
+          "message_id": "dev-lantern-battery-m2",
+          "role": "assistant",
+          "text": "Was that the rechargeable battery?",
+          "recorded_at": "2026-01-25T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "dev-lantern-battery-s2",
+          "message_id": "dev-lantern-battery-m3",
+          "role": "user",
+          "text": "The lantern takes two AA batteries; I only replaced the cells.",
+          "recorded_at": "2026-01-25T09:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "lantern",
+          "predicate": "USES",
+          "object": "two AA batteries",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "dev-lantern-battery-s2",
+              "message_id": "dev-lantern-battery-m3",
+              "char_start": 0,
+              "char_end": 34,
+              "quote": "The lantern takes two AA batteries"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-dinghy-sail",
+      "scenario_id": "scenario:test-dinghy-sail",
+      "split": "test",
+      "tags": [
+        "sailing",
+        "ownership",
+        "correction"
+      ],
+      "messages": [
+        {
+          "session_id": "test-dinghy-sail-s1",
+          "message_id": "test-dinghy-sail-m1",
+          "role": "assistant",
+          "text": "The junior boat's old sail is ready for pickup.",
+          "recorded_at": "2026-01-26T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-dinghy-sail-s1",
+          "message_id": "test-dinghy-sail-m2",
+          "role": "user",
+          "text": "Good; ours was looking tired after the haul-out.",
+          "recorded_at": "2026-01-26T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-dinghy-sail-s2",
+          "message_id": "test-dinghy-sail-m3",
+          "role": "user",
+          "text": "The dinghy has a blue mainsail now; the white one went to the junior boat.",
+          "recorded_at": "2026-01-26T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-dinghy-sail-s2",
+          "message_id": "test-dinghy-sail-m4",
+          "role": "assistant",
+          "text": "I'll update the equipment list.",
+          "recorded_at": "2026-01-26T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "dinghy",
+          "predicate": "HAS",
+          "object": "blue mainsail",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-dinghy-sail-s2",
+              "message_id": "test-dinghy-sail-m3",
+              "char_start": 0,
+              "char_end": 34,
+              "quote": "The dinghy has a blue mainsail now"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-cedar-market",
+      "scenario_id": "scenario:test-cedar-market",
+      "split": "test",
+      "tags": [
+        "small_business",
+        "routine",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "test-cedar-market-s1",
+          "message_id": "test-cedar-market-m1",
+          "role": "user",
+          "text": "The soap labels are finally dry.",
+          "recorded_at": "2026-01-27T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-cedar-market-s1",
+          "message_id": "test-cedar-market-m2",
+          "role": "assistant",
+          "text": "Where are you setting up this weekend?",
+          "recorded_at": "2026-01-27T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-cedar-market-s2",
+          "message_id": "test-cedar-market-m3",
+          "role": "user",
+          "text": "I sell at Cedar Street market on Saturdays, near the flower stall.",
+          "recorded_at": "2026-01-27T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "LOCATED_IN",
+          "object": "Cedar Street market on Saturdays",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-cedar-market-s2",
+              "message_id": "test-cedar-market-m3",
+              "char_start": 0,
+              "char_end": 42,
+              "quote": "I sell at Cedar Street market on Saturdays"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-theater-understudy",
+      "scenario_id": "scenario:test-theater-understudy",
+      "split": "test",
+      "tags": [
+        "theater",
+        "tentative",
+        "role"
+      ],
+      "messages": [
+        {
+          "session_id": "test-theater-understudy-s1",
+          "message_id": "test-theater-understudy-m1",
+          "role": "user",
+          "text": "The touring company posted a second casting notice.",
+          "recorded_at": "2026-01-28T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-theater-understudy-s1",
+          "message_id": "test-theater-understudy-m2",
+          "role": "assistant",
+          "text": "Are you auditioning for the understudy part?",
+          "recorded_at": "2026-01-28T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-theater-understudy-s2",
+          "message_id": "test-theater-understudy-m3",
+          "role": "user",
+          "text": "I'm considering auditioning for the understudy role, but I haven't sent in the form.",
+          "recorded_at": "2026-01-28T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "considering auditioning for the understudy role",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "tentative",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-theater-understudy-s2",
+              "message_id": "test-theater-understudy-m3",
+              "char_start": 0,
+              "char_end": 51,
+              "quote": "I'm considering auditioning for the understudy role"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-reading-corrections",
+      "scenario_id": "scenario:test-reading-corrections",
+      "split": "test",
+      "tags": [
+        "language_learning",
+        "preference",
+        "negative"
+      ],
+      "messages": [
+        {
+          "session_id": "test-reading-corrections-s1",
+          "message_id": "test-reading-corrections-m1",
+          "role": "user",
+          "text": "I recorded another short passage in Italian.",
+          "recorded_at": "2026-01-29T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-reading-corrections-s1",
+          "message_id": "test-reading-corrections-m2",
+          "role": "assistant",
+          "text": "I can pause after each line and make detailed pronunciation notes.",
+          "recorded_at": "2026-01-29T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-reading-corrections-s2",
+          "message_id": "test-reading-corrections-m3",
+          "role": "user",
+          "text": "When I'm reading aloud, please don't interrupt to correct every accent.",
+          "recorded_at": "2026-01-29T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-reading-corrections-s2",
+          "message_id": "test-reading-corrections-m4",
+          "role": "assistant",
+          "text": "Understood; I'll wait until you finish the passage.",
+          "recorded_at": "2026-01-29T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "interruptions for every accent correction while reading aloud",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-reading-corrections-s2",
+              "message_id": "test-reading-corrections-m3",
+              "char_start": 0,
+              "char_end": 71,
+              "quote": "When I'm reading aloud, please don't interrupt to correct every accent."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-bee-hotel",
+      "scenario_id": "scenario:test-bee-hotel",
+      "split": "test",
+      "tags": [
+        "urban_gardening",
+        "cause_direction",
+        "location_change"
+      ],
+      "messages": [
+        {
+          "session_id": "test-bee-hotel-s1",
+          "message_id": "test-bee-hotel-m1",
+          "role": "user",
+          "text": "The storm left mud across the courtyard.",
+          "recorded_at": "2026-01-30T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-bee-hotel-s1",
+          "message_id": "test-bee-hotel-m2",
+          "role": "assistant",
+          "text": "Did the bee hotel get wet too?",
+          "recorded_at": "2026-01-30T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-bee-hotel-s2",
+          "message_id": "test-bee-hotel-m3",
+          "role": "user",
+          "text": "Roof runoff soaked the bee hotel, so I moved it to the north wall.",
+          "recorded_at": "2026-01-30T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "roof runoff",
+          "predicate": "CAUSES",
+          "object": "bee hotel getting soaked",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-bee-hotel-s2",
+              "message_id": "test-bee-hotel-m3",
+              "char_start": 0,
+              "char_end": 32,
+              "quote": "Roof runoff soaked the bee hotel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-station-elevator",
+      "scenario_id": "scenario:test-station-elevator",
+      "split": "test",
+      "tags": [
+        "transit",
+        "routine",
+        "conditional"
+      ],
+      "messages": [
+        {
+          "session_id": "test-station-elevator-s1",
+          "message_id": "test-station-elevator-m1",
+          "role": "user",
+          "text": "The central station has a new platform map.",
+          "recorded_at": "2026-01-31T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-station-elevator-s1",
+          "message_id": "test-station-elevator-m2",
+          "role": "assistant",
+          "text": "Which route do you use with your cello?",
+          "recorded_at": "2026-01-31T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-station-elevator-s2",
+          "message_id": "test-station-elevator-m3",
+          "role": "user",
+          "text": "I take the station elevator when I'm carrying my cello; otherwise I use the west stairs.",
+          "recorded_at": "2026-01-31T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "station elevator when carrying cello",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-station-elevator-s2",
+              "message_id": "test-station-elevator-m3",
+              "char_start": 0,
+              "char_end": 54,
+              "quote": "I take the station elevator when I'm carrying my cello"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-tablet-charging",
+      "scenario_id": "scenario:test-tablet-charging",
+      "split": "test",
+      "tags": [
+        "volunteering",
+        "ownership",
+        "routine"
+      ],
+      "messages": [
+        {
+          "session_id": "test-tablet-charging-s1",
+          "message_id": "test-tablet-charging-m1",
+          "role": "assistant",
+          "text": "The museum's check-in tablet died during the morning tour.",
+          "recorded_at": "2026-02-01T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-tablet-charging-s1",
+          "message_id": "test-tablet-charging-m2",
+          "role": "user",
+          "text": "I can bring the power bank from the office.",
+          "recorded_at": "2026-02-01T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-tablet-charging-s2",
+          "message_id": "test-tablet-charging-m3",
+          "role": "assistant",
+          "text": "Who charges the tablet after the Thursday shift?",
+          "recorded_at": "2026-02-01T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-tablet-charging-s2",
+          "message_id": "test-tablet-charging-m4",
+          "role": "user",
+          "text": "I'm the one who charges the check-in tablet after my Thursday shift.",
+          "recorded_at": "2026-02-01T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "HAS",
+          "object": "responsibility for charging the check-in tablet after Thursday shift",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-tablet-charging-s2",
+              "message_id": "test-tablet-charging-m4",
+              "char_start": 0,
+              "char_end": 67,
+              "quote": "I'm the one who charges the check-in tablet after my Thursday shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-cumin-recipe",
+      "scenario_id": "scenario:test-cumin-recipe",
+      "split": "test",
+      "tags": [
+        "cooking",
+        "third_party",
+        "correction"
+      ],
+      "messages": [
+        {
+          "session_id": "test-cumin-recipe-s1",
+          "message_id": "test-cumin-recipe-m1",
+          "role": "assistant",
+          "text": "The lentil card's cumin amount is smudged. Can you read it?",
+          "recorded_at": "2026-02-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-cumin-recipe-s1",
+          "message_id": "test-cumin-recipe-m2",
+          "role": "user",
+          "text": "Aunt Sol's card has the measurement in her handwriting.",
+          "recorded_at": "2026-02-02T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-cumin-recipe-s2",
+          "message_id": "test-cumin-recipe-m3",
+          "role": "assistant",
+          "text": "Is it a teaspoon or a tablespoon?",
+          "recorded_at": "2026-02-02T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-cumin-recipe-s2",
+          "message_id": "test-cumin-recipe-m4",
+          "role": "user",
+          "text": "Aunt Sol's lentil recipe card says one teaspoon of cumin, not a tablespoon.",
+          "recorded_at": "2026-02-02T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "Aunt Sol's lentil recipe card states one teaspoon of cumin, not a tablespoon",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-cumin-recipe-s2",
+              "message_id": "test-cumin-recipe-m4",
+              "char_start": 0,
+              "char_end": 75,
+              "quote": "Aunt Sol's lentil recipe card says one teaspoon of cumin, not a tablespoon."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-piano-reverb",
+      "scenario_id": "scenario:test-piano-reverb",
+      "split": "test",
+      "tags": [
+        "audio",
+        "preference",
+        "negation"
+      ],
+      "messages": [
+        {
+          "session_id": "test-piano-reverb-s1",
+          "message_id": "test-piano-reverb-m1",
+          "role": "user",
+          "text": "The voice track sounds clear in headphones.",
+          "recorded_at": "2026-02-03T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-piano-reverb-s1",
+          "message_id": "test-piano-reverb-m2",
+          "role": "assistant",
+          "text": "Should I add the room effect to the piano?",
+          "recorded_at": "2026-02-03T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-piano-reverb-s2",
+          "message_id": "test-piano-reverb-m3",
+          "role": "user",
+          "text": "Keep the piano track dry; I don't want reverb on it.",
+          "recorded_at": "2026-02-03T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "reverb on the piano track",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-piano-reverb-s2",
+              "message_id": "test-piano-reverb-m3",
+              "char_start": 0,
+              "char_end": 52,
+              "quote": "Keep the piano track dry; I don't want reverb on it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-fundraiser-door",
+      "scenario_id": "scenario:test-fundraiser-door",
+      "split": "test",
+      "tags": [
+        "fundraising",
+        "negation",
+        "tool_use"
+      ],
+      "messages": [
+        {
+          "session_id": "test-fundraiser-door-s1",
+          "message_id": "test-fundraiser-door-m1",
+          "role": "assistant",
+          "text": "The concert tickets are almost gone. What about walk-ins?",
+          "recorded_at": "2026-02-04T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-fundraiser-door-s1",
+          "message_id": "test-fundraiser-door-m2",
+          "role": "user",
+          "text": "Our neighborhood concert team isn't collecting cash at the door.",
+          "recorded_at": "2026-02-04T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-fundraiser-door-s2",
+          "message_id": "test-fundraiser-door-m3",
+          "role": "assistant",
+          "text": "Should I put a payment link on the foyer sign?",
+          "recorded_at": "2026-02-04T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-fundraiser-door-s2",
+          "message_id": "test-fundraiser-door-m4",
+          "role": "user",
+          "text": "Our neighborhood concert team will use the QR poster for late tickets.",
+          "recorded_at": "2026-02-04T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "neighborhood concert team",
+          "predicate": "PLANS",
+          "object": "use QR poster for late tickets",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-fundraiser-door-s2",
+              "message_id": "test-fundraiser-door-m4",
+              "char_start": 0,
+              "char_end": 70,
+              "quote": "Our neighborhood concert team will use the QR poster for late tickets."
+            }
+          ]
+        },
+        {
+          "subject": "neighborhood concert team",
+          "predicate": "USES",
+          "object": "cash at the door",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-fundraiser-door-s1",
+              "message_id": "test-fundraiser-door-m2",
+              "char_start": 0,
+              "char_end": 64,
+              "quote": "Our neighborhood concert team isn't collecting cash at the door."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-invoice-terms",
+      "scenario_id": "scenario:test-invoice-terms",
+      "split": "test",
+      "tags": [
+        "freelance",
+        "payment_terms",
+        "business"
+      ],
+      "messages": [
+        {
+          "session_id": "test-invoice-terms-s1",
+          "message_id": "test-invoice-terms-m1",
+          "role": "user",
+          "text": "The illustrator sent the final icons this morning.",
+          "recorded_at": "2026-02-05T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-invoice-terms-s1",
+          "message_id": "test-invoice-terms-m2",
+          "role": "assistant",
+          "text": "What payment window did you agree on?",
+          "recorded_at": "2026-02-05T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-invoice-terms-s2",
+          "message_id": "test-invoice-terms-m3",
+          "role": "user",
+          "text": "My design invoices are due on receipt, according to the terms I send clients.",
+          "recorded_at": "2026-02-05T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user's design invoices",
+          "predicate": "HAS",
+          "object": "payment due on receipt",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-invoice-terms-s2",
+              "message_id": "test-invoice-terms-m3",
+              "char_start": 0,
+              "char_end": 37,
+              "quote": "My design invoices are due on receipt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-west-launch",
+      "scenario_id": "scenario:test-west-launch",
+      "split": "test",
+      "tags": [
+        "kayaking",
+        "cause_direction",
+        "closure"
+      ],
+      "messages": [
+        {
+          "session_id": "test-west-launch-s1",
+          "message_id": "test-west-launch-m1",
+          "role": "user",
+          "text": "The river path is fenced off below the old mill.",
+          "recorded_at": "2026-02-06T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-west-launch-s1",
+          "message_id": "test-west-launch-m2",
+          "role": "assistant",
+          "text": "Could paddlers still reach the west launch?",
+          "recorded_at": "2026-02-06T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-west-launch-s2",
+          "message_id": "test-west-launch-m3",
+          "role": "user",
+          "text": "The flood washed out the footbridge, so the west launch is closed.",
+          "recorded_at": "2026-02-06T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-west-launch-s2",
+          "message_id": "test-west-launch-m4",
+          "role": "assistant",
+          "text": "I'll mark the east ramp as the detour.",
+          "recorded_at": "2026-02-06T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "flood",
+          "predicate": "CAUSES",
+          "object": "footbridge washout",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-west-launch-s2",
+              "message_id": "test-west-launch-m3",
+              "char_start": 0,
+              "char_end": 35,
+              "quote": "The flood washed out the footbridge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-museum-maps",
+      "scenario_id": "scenario:test-museum-maps",
+      "split": "test",
+      "tags": [
+        "museum",
+        "volunteering",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "test-museum-maps-s1",
+          "message_id": "test-museum-maps-m1",
+          "role": "user",
+          "text": "The maritime room gets crowded before noon.",
+          "recorded_at": "2026-02-07T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-museum-maps-s1",
+          "message_id": "test-museum-maps-m2",
+          "role": "assistant",
+          "text": "Where do you like to start your volunteer tour?",
+          "recorded_at": "2026-02-07T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-museum-maps-s2",
+          "message_id": "test-museum-maps-m3",
+          "role": "user",
+          "text": "I prefer starting my volunteer tours in the map gallery; visitors can spread out there.",
+          "recorded_at": "2026-02-07T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "starting volunteer tours in the map gallery",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-museum-maps-s2",
+              "message_id": "test-museum-maps-m3",
+              "char_start": 0,
+              "char_end": 55,
+              "quote": "I prefer starting my volunteer tours in the map gallery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-glaze-kiln",
+      "scenario_id": "scenario:test-glaze-kiln",
+      "split": "test",
+      "tags": [
+        "pottery",
+        "negation",
+        "cause"
+      ],
+      "messages": [
+        {
+          "session_id": "test-glaze-kiln-s1",
+          "message_id": "test-glaze-kiln-m1",
+          "role": "user",
+          "text": "The labels on my glaze jars are peeling.",
+          "recorded_at": "2026-02-08T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-glaze-kiln-s1",
+          "message_id": "test-glaze-kiln-m2",
+          "role": "assistant",
+          "text": "Do you keep them near the kiln?",
+          "recorded_at": "2026-02-08T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-glaze-kiln-s2",
+          "message_id": "test-glaze-kiln-m3",
+          "role": "user",
+          "text": "I never leave glaze jars beside the kiln; heat ruins the labels.",
+          "recorded_at": "2026-02-08T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "heat",
+          "predicate": "CAUSES",
+          "object": "glaze jar labels to deteriorate",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-glaze-kiln-s2",
+              "message_id": "test-glaze-kiln-m3",
+              "char_start": 0,
+              "char_end": 64,
+              "quote": "I never leave glaze jars beside the kiln; heat ruins the labels."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-unanswered-size",
+      "scenario_id": "scenario:test-unanswered-size",
+      "split": "test",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "question"
+      ],
+      "messages": [
+        {
+          "session_id": "test-unanswered-size-s1",
+          "message_id": "test-unanswered-size-m1",
+          "role": "user",
+          "text": "The display case order form asks for dimensions.",
+          "recorded_at": "2026-02-09T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-unanswered-size-s1",
+          "message_id": "test-unanswered-size-m2",
+          "role": "assistant",
+          "text": "What size did you say it should be?",
+          "recorded_at": "2026-02-09T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-unanswered-size-s2",
+          "message_id": "test-unanswered-size-m3",
+          "role": "user",
+          "text": "I haven't chosen dimensions yet.",
+          "recorded_at": "2026-02-09T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-unanswered-size-s2",
+          "message_id": "test-unanswered-size-m4",
+          "role": "assistant",
+          "text": "No problem; we can leave the form open.",
+          "recorded_at": "2026-02-09T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "test-ambiguous-package",
+      "scenario_id": "scenario:test-ambiguous-package",
+      "split": "test",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "coreference"
+      ],
+      "messages": [
+        {
+          "session_id": "test-ambiguous-package-s1",
+          "message_id": "test-ambiguous-package-m1",
+          "role": "user",
+          "text": "The message says 'leave it by the usual entrance.'",
+          "recorded_at": "2026-02-10T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-ambiguous-package-s1",
+          "message_id": "test-ambiguous-package-m2",
+          "role": "assistant",
+          "text": "Can you tell which building or item it means?",
+          "recorded_at": "2026-02-10T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-ambiguous-package-s2",
+          "message_id": "test-ambiguous-package-m3",
+          "role": "user",
+          "text": "Not from that message alone.",
+          "recorded_at": "2026-02-10T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "test-temporary-guest",
+      "scenario_id": "scenario:test-temporary-guest",
+      "split": "test",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "temporal_ambiguity"
+      ],
+      "messages": [
+        {
+          "session_id": "test-temporary-guest-s1",
+          "message_id": "test-temporary-guest-m1",
+          "role": "assistant",
+          "text": "Should I save your visitor's room preference?",
+          "recorded_at": "2026-02-11T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-temporary-guest-s1",
+          "message_id": "test-temporary-guest-m2",
+          "role": "user",
+          "text": "I haven't picked a room; let's wait before saving anything.",
+          "recorded_at": "2026-02-11T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-temporary-guest-s2",
+          "message_id": "test-temporary-guest-m3",
+          "role": "assistant",
+          "text": "Understood; I won't guess.",
+          "recorded_at": "2026-02-11T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "test-undisclosed-address",
+      "scenario_id": "scenario:test-undisclosed-address",
+      "split": "test",
+      "tags": [
+        "delivery",
+        "missing_information",
+        "intention"
+      ],
+      "messages": [
+        {
+          "session_id": "test-undisclosed-address-s1",
+          "message_id": "test-undisclosed-address-m1",
+          "role": "user",
+          "text": "Can you put the delivery address in the note?",
+          "recorded_at": "2026-02-12T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-undisclosed-address-s1",
+          "message_id": "test-undisclosed-address-m2",
+          "role": "assistant",
+          "text": "I don't see an address in our messages.",
+          "recorded_at": "2026-02-12T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-undisclosed-address-s2",
+          "message_id": "test-undisclosed-address-m3",
+          "role": "user",
+          "text": "I'll find the delivery address before sending the note.",
+          "recorded_at": "2026-02-12T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PLANS",
+          "object": "find the delivery address before sending the note",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-undisclosed-address-s2",
+              "message_id": "test-undisclosed-address-m3",
+              "char_start": 0,
+              "char_end": 54,
+              "quote": "I'll find the delivery address before sending the note"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-greenhouse-key",
+      "scenario_id": "scenario:test-greenhouse-key",
+      "split": "test",
+      "tags": [
+        "horticulture",
+        "location",
+        "correction"
+      ],
+      "messages": [
+        {
+          "session_id": "test-greenhouse-key-s1",
+          "message_id": "test-greenhouse-key-m1",
+          "role": "assistant",
+          "text": "The greenhouse was locked when the tour arrived.",
+          "recorded_at": "2026-02-13T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-greenhouse-key-s1",
+          "message_id": "test-greenhouse-key-m2",
+          "role": "user",
+          "text": "I thought the spare key was in the desk.",
+          "recorded_at": "2026-02-13T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-greenhouse-key-s2",
+          "message_id": "test-greenhouse-key-m3",
+          "role": "assistant",
+          "text": "Did you find it?",
+          "recorded_at": "2026-02-13T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-greenhouse-key-s2",
+          "message_id": "test-greenhouse-key-m4",
+          "role": "user",
+          "text": "Correction, the greenhouse key is in the orange tin by the sink.",
+          "recorded_at": "2026-02-13T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "greenhouse key",
+          "predicate": "LOCATED_IN",
+          "object": "orange tin by the sink",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-greenhouse-key-s2",
+              "message_id": "test-greenhouse-key-m4",
+              "char_start": 12,
+              "char_end": 63,
+              "quote": "the greenhouse key is in the orange tin by the sink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-coffee-grinder-change",
+      "scenario_id": "scenario:test-coffee-grinder-change",
+      "split": "test",
+      "tags": [
+        "coffee",
+        "temporal_change",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "test-coffee-grinder-change-s1",
+          "message_id": "test-coffee-grinder-change-m1",
+          "role": "user",
+          "text": "I used the cane grinder through November 30, 2025, but the handle kept slipping.",
+          "recorded_at": "2026-02-14T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-coffee-grinder-change-s1",
+          "message_id": "test-coffee-grinder-change-m2",
+          "role": "assistant",
+          "text": "Did you repair it?",
+          "recorded_at": "2026-02-14T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-coffee-grinder-change-s2",
+          "message_id": "test-coffee-grinder-change-m3",
+          "role": "user",
+          "text": "No, I gave it to the repair café.",
+          "recorded_at": "2026-02-14T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-coffee-grinder-change-s2",
+          "message_id": "test-coffee-grinder-change-m4",
+          "role": "assistant",
+          "text": "What replaced it?",
+          "recorded_at": "2026-02-14T09:35:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-coffee-grinder-change-s2",
+          "message_id": "test-coffee-grinder-change-m5",
+          "role": "user",
+          "text": "Since December 1, 2025, I use the hand burr grinder instead.",
+          "recorded_at": "2026-02-14T09:42:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "cane grinder",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": "2025-11-30",
+          "evidence": [
+            {
+              "session_id": "test-coffee-grinder-change-s1",
+              "message_id": "test-coffee-grinder-change-m1",
+              "char_start": 0,
+              "char_end": 49,
+              "quote": "I used the cane grinder through November 30, 2025"
+            }
+          ]
+        },
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "hand burr grinder",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2025-12-01",
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-coffee-grinder-change-s2",
+              "message_id": "test-coffee-grinder-change-m5",
+              "char_start": 0,
+              "char_end": 59,
+              "quote": "Since December 1, 2025, I use the hand burr grinder instead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-unanswered-sound",
+      "scenario_id": "scenario:test-unanswered-sound",
+      "split": "test",
+      "tags": [
+        "no_memory",
+        "unknown",
+        "question"
+      ],
+      "messages": [
+        {
+          "session_id": "test-unanswered-sound-s1",
+          "message_id": "test-unanswered-sound-m1",
+          "role": "user",
+          "text": "Was I going to use the bell or the chime for the exhibit?",
+          "recorded_at": "2026-02-15T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-unanswered-sound-s1",
+          "message_id": "test-unanswered-sound-m2",
+          "role": "assistant",
+          "text": "I don't have a choice recorded here.",
+          "recorded_at": "2026-02-15T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-unanswered-sound-s2",
+          "message_id": "test-unanswered-sound-m3",
+          "role": "user",
+          "text": "Let's leave the sound cue undecided for now.",
+          "recorded_at": "2026-02-15T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "test-route-timing",
+      "scenario_id": "scenario:test-route-timing",
+      "split": "test",
+      "tags": [
+        "commute",
+        "temporal_change",
+        "routine"
+      ],
+      "messages": [
+        {
+          "session_id": "test-route-timing-s1",
+          "message_id": "test-route-timing-m1",
+          "role": "assistant",
+          "text": "The bridge repair shifted the bus stop east.",
+          "recorded_at": "2026-02-16T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-route-timing-s1",
+          "message_id": "test-route-timing-m2",
+          "role": "user",
+          "text": "That changed my morning route too.",
+          "recorded_at": "2026-02-16T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-route-timing-s2",
+          "message_id": "test-route-timing-m3",
+          "role": "assistant",
+          "text": "Which departure are you using now?",
+          "recorded_at": "2026-02-16T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-route-timing-s2",
+          "message_id": "test-route-timing-m4",
+          "role": "user",
+          "text": "Through August 31, 2025, I took the 6:10 bus; since September 1, 2025, I take the 6:25 instead.",
+          "recorded_at": "2026-02-16T09:35:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "6:10 bus",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": "2025-08-31",
+          "evidence": [
+            {
+              "session_id": "test-route-timing-s2",
+              "message_id": "test-route-timing-m4",
+              "char_start": 0,
+              "char_end": 44,
+              "quote": "Through August 31, 2025, I took the 6:10 bus"
+            }
+          ]
+        },
+        {
+          "subject": "user",
+          "predicate": "USES",
+          "object": "6:25 bus",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2025-09-01",
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-route-timing-s2",
+              "message_id": "test-route-timing-m4",
+              "char_start": 46,
+              "char_end": 94,
+              "quote": "since September 1, 2025, I take the 6:25 instead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-sensor-placement",
+      "scenario_id": "scenario:test-sensor-placement",
+      "split": "test",
+      "tags": [
+        "research",
+        "cause_direction",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "test-sensor-placement-s1",
+          "message_id": "test-sensor-placement-m1",
+          "role": "user",
+          "text": "The humidity readings spiked during the greenhouse test.",
+          "recorded_at": "2026-02-17T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-sensor-placement-s1",
+          "message_id": "test-sensor-placement-m2",
+          "role": "assistant",
+          "text": "Was the probe close to the mist line?",
+          "recorded_at": "2026-02-17T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-sensor-placement-s2",
+          "message_id": "test-sensor-placement-m3",
+          "role": "user",
+          "text": "The mist line was spraying the sensor, which caused those spikes.",
+          "recorded_at": "2026-02-17T09:28:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-sensor-placement-s2",
+          "message_id": "test-sensor-placement-m4",
+          "role": "assistant",
+          "text": "Did you move it after the run?",
+          "recorded_at": "2026-02-17T09:35:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-sensor-placement-s2",
+          "message_id": "test-sensor-placement-m5",
+          "role": "user",
+          "text": "I mounted it by the door.",
+          "recorded_at": "2026-02-17T09:42:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "mist line spray",
+          "predicate": "CAUSES",
+          "object": "humidity sensor readings to spike",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "quote": "The humidity readings spiked during the greenhouse test.",
+              "session_id": "test-sensor-placement-s1",
+              "message_id": "test-sensor-placement-m1",
+              "char_start": 0,
+              "char_end": 56
+            },
+            {
+              "quote": "The mist line was spraying the sensor, which caused those spikes.",
+              "session_id": "test-sensor-placement-s2",
+              "message_id": "test-sensor-placement-m3",
+              "char_start": 0,
+              "char_end": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "test-archive-retention",
+      "scenario_id": "scenario:test-archive-retention",
+      "split": "test",
+      "tags": [
+        "archives",
+        "quoted_text",
+        "instruction_boundary"
+      ],
+      "messages": [
+        {
+          "session_id": "test-archive-retention-s1",
+          "message_id": "test-archive-retention-m1",
+          "role": "user",
+          "text": "A scanned letter includes a line about keeping every draft.",
+          "recorded_at": "2026-02-18T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-archive-retention-s1",
+          "message_id": "test-archive-retention-m2",
+          "role": "assistant",
+          "text": "Is that your current records policy?",
+          "recorded_at": "2026-02-18T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "test-archive-retention-s2",
+          "message_id": "test-archive-retention-m3",
+          "role": "user",
+          "text": "No, 'keep every draft forever' is a sentence in the letter, not our policy.",
+          "recorded_at": "2026-02-18T09:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "the letter says to keep every draft forever",
+          "speaker_role": "user",
+          "attribution": "quoted_text",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "test-archive-retention-s2",
+              "message_id": "test-archive-retention-m3",
+              "char_start": 0,
+              "char_end": 75,
+              "quote": "No, 'keep every draft forever' is a sentence in the letter, not our policy."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "case_metadata": {
+    "dev-balcony-basil": {
+      "scenario_group": "scenario:dev-balcony-basil",
+      "template_group": "template:dev-balcony-basil",
+      "entity_ids": [
+        "dev-balcony-basil:balcony-basil",
+        "dev-balcony-basil:awning"
+      ]
+    },
+    "dev-ferry-bike": {
+      "scenario_group": "scenario:dev-ferry-bike",
+      "template_group": "template:dev-ferry-bike",
+      "entity_ids": [
+        "dev-ferry-bike:island-ferry",
+        "dev-ferry-bike:bicycle"
+      ]
+    },
+    "dev-agenda-email": {
+      "scenario_group": "scenario:dev-agenda-email",
+      "template_group": "template:dev-agenda-email",
+      "entity_ids": [
+        "dev-agenda-email:planning-call",
+        "dev-agenda-email:meeting-agenda"
+      ]
+    },
+    "dev-supper-mushrooms": {
+      "scenario_group": "scenario:dev-supper-mushrooms",
+      "template_group": "template:dev-supper-mushrooms",
+      "entity_ids": [
+        "dev-supper-mushrooms:barley-soup",
+        "dev-supper-mushrooms:mushrooms"
+      ]
+    },
+    "dev-robot-test-log": {
+      "scenario_group": "scenario:dev-robot-test-log",
+      "template_group": "template:dev-robot-test-log",
+      "entity_ids": [
+        "dev-robot-test-log:rover",
+        "dev-robot-test-log:rover-test-log"
+      ]
+    },
+    "dev-blue-crate": {
+      "scenario_group": "scenario:dev-blue-crate",
+      "template_group": "template:dev-blue-crate",
+      "entity_ids": [
+        "dev-blue-crate:blue-crate",
+        "dev-blue-crate:south-bench"
+      ]
+    },
+    "dev-piano-recording": {
+      "scenario_group": "scenario:dev-piano-recording",
+      "template_group": "template:dev-piano-recording",
+      "entity_ids": [
+        "dev-piano-recording:piano-recital",
+        "dev-piano-recording:children"
+      ]
+    },
+    "dev-cycle-tunnels": {
+      "scenario_group": "scenario:dev-cycle-tunnels",
+      "template_group": "template:dev-cycle-tunnels",
+      "entity_ids": [
+        "dev-cycle-tunnels:east-tunnel",
+        "dev-cycle-tunnels:canal-path"
+      ]
+    },
+    "dev-large-print-atlas": {
+      "scenario_group": "scenario:dev-large-print-atlas",
+      "template_group": "template:dev-large-print-atlas",
+      "entity_ids": [
+        "dev-large-print-atlas:field-maps",
+        "dev-large-print-atlas:large-print-edition"
+      ]
+    },
+    "dev-window-fern": {
+      "scenario_group": "scenario:dev-window-fern",
+      "template_group": "template:dev-window-fern",
+      "entity_ids": [
+        "dev-window-fern:studio-fern",
+        "dev-window-fern:studio-window"
+      ]
+    },
+    "dev-walker-pickup": {
+      "scenario_group": "scenario:dev-walker-pickup",
+      "template_group": "template:dev-walker-pickup",
+      "entity_ids": [
+        "dev-walker-pickup:Moss",
+        "dev-walker-pickup:Tari"
+      ]
+    },
+    "dev-linux-workstation": {
+      "scenario_group": "scenario:dev-linux-workstation",
+      "template_group": "template:dev-linux-workstation",
+      "entity_ids": [
+        "dev-linux-workstation:editing-workstation",
+        "dev-linux-workstation:Fedora-Linux"
+      ]
+    },
+    "dev-pottery-class-maybe": {
+      "scenario_group": "scenario:dev-pottery-class-maybe",
+      "template_group": "template:dev-pottery-class-maybe",
+      "entity_ids": [
+        "dev-pottery-class-maybe:evening-pottery-class",
+        "dev-pottery-class-maybe:Saturday-section"
+      ]
+    },
+    "dev-coffee-after-lunch": {
+      "scenario_group": "scenario:dev-coffee-after-lunch",
+      "template_group": "template:dev-coffee-after-lunch",
+      "entity_ids": [
+        "dev-coffee-after-lunch:coffee",
+        "dev-coffee-after-lunch:cafe"
+      ]
+    },
+    "dev-brass-latch": {
+      "scenario_group": "scenario:dev-brass-latch",
+      "template_group": "template:dev-brass-latch",
+      "entity_ids": [
+        "dev-brass-latch:brass-latch",
+        "dev-brass-latch:top-drawer"
+      ]
+    },
+    "dev-quoted-checklist": {
+      "scenario_group": "scenario:dev-quoted-checklist",
+      "template_group": "template:dev-quoted-checklist",
+      "entity_ids": [
+        "dev-quoted-checklist:archive-checklist",
+        "dev-quoted-checklist:red-folder"
+      ]
+    },
+    "dev-gallery-hours": {
+      "scenario_group": "scenario:dev-gallery-hours",
+      "template_group": "template:dev-gallery-hours",
+      "entity_ids": [
+        "dev-gallery-hours:print-gallery",
+        "dev-gallery-hours:Lea"
+      ]
+    },
+    "dev-sqlite-notes": {
+      "scenario_group": "scenario:dev-sqlite-notes",
+      "template_group": "template:dev-sqlite-notes",
+      "entity_ids": [
+        "dev-sqlite-notes:prototype",
+        "dev-sqlite-notes:SQLite"
+      ]
+    },
+    "dev-welding-gloves": {
+      "scenario_group": "scenario:dev-welding-gloves",
+      "template_group": "template:dev-welding-gloves",
+      "entity_ids": [
+        "dev-welding-gloves:spare-gloves",
+        "dev-welding-gloves:yellow-cabinet"
+      ]
+    },
+    "dev-unanswered-color": {
+      "scenario_group": "scenario:dev-unanswered-color",
+      "template_group": "template:dev-unanswered-color",
+      "entity_ids": [
+        "dev-unanswered-color:new-curtains",
+        "dev-unanswered-color:curtain-color"
+      ]
+    },
+    "dev-unanswered-season": {
+      "scenario_group": "scenario:dev-unanswered-season",
+      "template_group": "template:dev-unanswered-season",
+      "entity_ids": [
+        "dev-unanswered-season:trip",
+        "dev-unanswered-season:season"
+      ]
+    },
+    "dev-ambiguous-they": {
+      "scenario_group": "scenario:dev-ambiguous-they",
+      "template_group": "template:dev-ambiguous-they",
+      "entity_ids": [
+        "dev-ambiguous-they:archived-note",
+        "dev-ambiguous-they:unresolved-referents"
+      ]
+    },
+    "dev-unspecified-room": {
+      "scenario_group": "scenario:dev-unspecified-room",
+      "template_group": "template:dev-unspecified-room",
+      "entity_ids": [
+        "dev-unspecified-room:review-room"
+      ]
+    },
+    "dev-lantern-battery": {
+      "scenario_group": "scenario:dev-lantern-battery",
+      "template_group": "template:dev-lantern-battery",
+      "entity_ids": [
+        "dev-lantern-battery:lantern",
+        "dev-lantern-battery:AA-batteries"
+      ]
+    },
+    "test-dinghy-sail": {
+      "scenario_group": "scenario:test-dinghy-sail",
+      "template_group": "template:test-dinghy-sail",
+      "entity_ids": [
+        "test-dinghy-sail:dinghy",
+        "test-dinghy-sail:blue-mainsail"
+      ]
+    },
+    "test-cedar-market": {
+      "scenario_group": "scenario:test-cedar-market",
+      "template_group": "template:test-cedar-market",
+      "entity_ids": [
+        "test-cedar-market:Cedar-Street-market",
+        "test-cedar-market:soap-stand"
+      ]
+    },
+    "test-theater-understudy": {
+      "scenario_group": "scenario:test-theater-understudy",
+      "template_group": "template:test-theater-understudy",
+      "entity_ids": [
+        "test-theater-understudy:understudy-role",
+        "test-theater-understudy:audition-form"
+      ]
+    },
+    "test-reading-corrections": {
+      "scenario_group": "scenario:test-reading-corrections",
+      "template_group": "template:test-reading-corrections",
+      "entity_ids": [
+        "test-reading-corrections:Italian-passage",
+        "test-reading-corrections:accent-corrections"
+      ]
+    },
+    "test-bee-hotel": {
+      "scenario_group": "scenario:test-bee-hotel",
+      "template_group": "template:test-bee-hotel",
+      "entity_ids": [
+        "test-bee-hotel:bee-hotel",
+        "test-bee-hotel:north-wall"
+      ]
+    },
+    "test-station-elevator": {
+      "scenario_group": "scenario:test-station-elevator",
+      "template_group": "template:test-station-elevator",
+      "entity_ids": [
+        "test-station-elevator:station-elevator",
+        "test-station-elevator:cello"
+      ]
+    },
+    "test-tablet-charging": {
+      "scenario_group": "scenario:test-tablet-charging",
+      "template_group": "template:test-tablet-charging",
+      "entity_ids": [
+        "test-tablet-charging:check-in-tablet",
+        "test-tablet-charging:power-bank"
+      ]
+    },
+    "test-cumin-recipe": {
+      "scenario_group": "scenario:test-cumin-recipe",
+      "template_group": "template:test-cumin-recipe",
+      "entity_ids": [
+        "test-cumin-recipe:Aunt-Sol-lentil-card",
+        "test-cumin-recipe:cumin"
+      ]
+    },
+    "test-piano-reverb": {
+      "scenario_group": "scenario:test-piano-reverb",
+      "template_group": "template:test-piano-reverb",
+      "entity_ids": [
+        "test-piano-reverb:piano-track",
+        "test-piano-reverb:reverb"
+      ]
+    },
+    "test-fundraiser-door": {
+      "scenario_group": "scenario:test-fundraiser-door",
+      "template_group": "template:test-fundraiser-door",
+      "entity_ids": [
+        "test-fundraiser-door:neighborhood-concert-team",
+        "test-fundraiser-door:QR-poster"
+      ]
+    },
+    "test-invoice-terms": {
+      "scenario_group": "scenario:test-invoice-terms",
+      "template_group": "template:test-invoice-terms",
+      "entity_ids": [
+        "test-invoice-terms:design-invoices",
+        "test-invoice-terms:payment-terms"
+      ]
+    },
+    "test-west-launch": {
+      "scenario_group": "scenario:test-west-launch",
+      "template_group": "template:test-west-launch",
+      "entity_ids": [
+        "test-west-launch:west-launch",
+        "test-west-launch:footbridge"
+      ]
+    },
+    "test-museum-maps": {
+      "scenario_group": "scenario:test-museum-maps",
+      "template_group": "template:test-museum-maps",
+      "entity_ids": [
+        "test-museum-maps:map-gallery",
+        "test-museum-maps:volunteer-tour"
+      ]
+    },
+    "test-glaze-kiln": {
+      "scenario_group": "scenario:test-glaze-kiln",
+      "template_group": "template:test-glaze-kiln",
+      "entity_ids": [
+        "test-glaze-kiln:glaze-jars",
+        "test-glaze-kiln:kiln"
+      ]
+    },
+    "test-unanswered-size": {
+      "scenario_group": "scenario:test-unanswered-size",
+      "template_group": "template:test-unanswered-size",
+      "entity_ids": [
+        "test-unanswered-size:display-case",
+        "test-unanswered-size:dimensions"
+      ]
+    },
+    "test-ambiguous-package": {
+      "scenario_group": "scenario:test-ambiguous-package",
+      "template_group": "template:test-ambiguous-package",
+      "entity_ids": [
+        "test-ambiguous-package:delivery-message",
+        "test-ambiguous-package:usual-entrance"
+      ]
+    },
+    "test-temporary-guest": {
+      "scenario_group": "scenario:test-temporary-guest",
+      "template_group": "template:test-temporary-guest",
+      "entity_ids": [
+        "test-temporary-guest:visitor",
+        "test-temporary-guest:room-choice"
+      ]
+    },
+    "test-undisclosed-address": {
+      "scenario_group": "scenario:test-undisclosed-address",
+      "template_group": "template:test-undisclosed-address",
+      "entity_ids": [
+        "test-undisclosed-address:delivery-address",
+        "test-undisclosed-address:delivery-note"
+      ]
+    },
+    "test-greenhouse-key": {
+      "scenario_group": "scenario:test-greenhouse-key",
+      "template_group": "template:test-greenhouse-key",
+      "entity_ids": [
+        "test-greenhouse-key:greenhouse-key",
+        "test-greenhouse-key:orange-tin"
+      ]
+    },
+    "test-coffee-grinder-change": {
+      "scenario_group": "scenario:test-coffee-grinder-change",
+      "template_group": "template:test-coffee-grinder-change",
+      "entity_ids": [
+        "test-coffee-grinder-change:cane-grinder",
+        "test-coffee-grinder-change:hand-burr-grinder"
+      ]
+    },
+    "test-unanswered-sound": {
+      "scenario_group": "scenario:test-unanswered-sound",
+      "template_group": "template:test-unanswered-sound",
+      "entity_ids": [
+        "test-unanswered-sound:exhibit-sound-cue",
+        "test-unanswered-sound:bell-or-chime"
+      ]
+    },
+    "test-route-timing": {
+      "scenario_group": "scenario:test-route-timing",
+      "template_group": "template:test-route-timing",
+      "entity_ids": [
+        "test-route-timing:6-10-bus",
+        "test-route-timing:6-25-bus"
+      ]
+    },
+    "test-sensor-placement": {
+      "scenario_group": "scenario:test-sensor-placement",
+      "template_group": "template:test-sensor-placement",
+      "entity_ids": [
+        "test-sensor-placement:humidity-sensor",
+        "test-sensor-placement:mist-line"
+      ]
+    },
+    "test-archive-retention": {
+      "scenario_group": "scenario:test-archive-retention",
+      "template_group": "template:test-archive-retention",
+      "entity_ids": [
+        "test-archive-retention:scanned-letter",
+        "test-archive-retention:drafts"
+      ]
+    }
+  }
+}

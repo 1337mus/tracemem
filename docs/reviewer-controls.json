@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "root_reviewed_approved",
+  "purpose": "Descriptive record of a small blind agent check on authored positive and negative controls derived from the dev split.",
+  "dataset": {
+    "path": "src/tracemem/data/scenarios_v1.json",
+    "sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "split": "dev"
+  },
+  "bundle_sha256": "185e9e6943fdca44535e37992dbc1e7eeaafa0337e52c8b81109b4c9f8a8d1e9",
+  "controls": {
+    "task_count": 16,
+    "positive_count": 8,
+    "negative_count": 8,
+    "negative_control_method": "Eight simple dev-derived foils, each authored by changing a claim field in a positive example.",
+    "root_review": "Root reviewed all 16 candidate/rationale pairs and approved the control set."
+  },
+  "review": {
+    "reviewer_count": 1,
+    "reviewer_id": "luna-blind-support-20261014",
+    "reviewer_kind": "agent",
+    "human_reviewer_count": 0,
+    "response_count": 16,
+    "supported_responses": 8,
+    "unsupported_responses": 8,
+    "uncertain_responses": 0,
+    "agreement": 16,
+    "agreement_denominator": 16,
+    "agreement_rate_on_decisive": 1.0,
+    "coverage_rate": 1.0,
+    "interpretation": "The 16/16 agreement indicates discrimination on these authored controls only."
+  },
+  "limits": [
+    "This is a small, simple, dev-derived control set.",
+    "The result does not establish semantic calibration, independent truth, or held-out performance.",
+    "There was one agent reviewer and no human review."
+  ],
+  "source_artifacts": {
+    "blind_bundle": {
+      "path": ".local/reviewer-controls-v1/blind.json",
+      "sha256": "814502b044d2020d6598c91dd2cbd1a4f1a0e343d8a0f7d1e9075938ba94a5be"
+    },
+    "answer_key": {
+      "path": ".local/reviewer-controls-v1/answer-key.json",
+      "sha256": "161441d99ee6ca6f4ed084291d9a44577e69203f331a7066b62c341319061489"
+    },
+    "agent_responses": {
+      "path": ".local/reviewer-controls-v1/agent-luna-responses.json",
+      "sha256": "3008b0c8e8f664467a8322235992eb81be7d90f0fe93d068de00ab42f7101f2c"
+    },
+    "computed_report": {
+      "path": ".local/reviewer-controls-v1/agent-luna-report.json",
+      "sha256": "cf892c705ad4fb3a6ccc95d9f27ffe664563e6a0b870ddbb5f4df98fb483fd56"
+    },
+    "root_authorship_review": {
+      "path": ".local/reviewer-controls-v1/root-authorship.json",
+      "sha256": "da36a0d29fc3f502951656b06dede75afa67183092841018836c2632a56ba3d9"
+    }
+  }
+}

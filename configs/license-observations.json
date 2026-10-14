@@ -1,0 +1,30 @@
+{
+  "qwen_license": {
+    "url": "https://huggingface.co/Qwen/Qwen3-4B/raw/1cfa9a7208912126459214e8b04321603b3df60c/LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "summary": "Apache License 2.0",
+    "local_weights_downloaded": false
+  },
+  "encoder_card": {
+    "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/raw/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md",
+    "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+    "summary": "model card declares apache-2.0",
+    "local_weights_downloaded": false
+  },
+  "longmemeval_license": {
+    "url": "https://raw.githubusercontent.com/xiaowu0162/LongMemEval/main/LICENSE",
+    "sha256": "d3c4b9aa54759df6ded337978a6f3b55b75615e5e4525c3b82d7e2627d4b9732",
+    "summary": "MIT License | Copyright (c) 2024 Di Wu | Permission is hereby granted, free of charge, to any person obtaining a copy",
+    "local_weights_downloaded": false,
+    "data_rights_review_complete": false,
+    "dataset_downloaded": false
+  },
+  "locomo_license": {
+    "url": "https://raw.githubusercontent.com/snap-research/locomo/main/LICENSE.txt",
+    "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+    "summary": "Creative Commons Attribution-NonCommercial 4.0 International",
+    "data_rights_review_complete": false,
+    "dataset_downloaded": false
+  },
+  "verified_local_date": "2026-10-13"
+}

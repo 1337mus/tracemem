@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "default_prototype_runtime": "cpu-stdlib",
+  "preferred_gpu_backend": "modal",
+  "local_model_downloads": false,
+  "local_model_inference": false,
+  "private_data_remote_upload_allowed": false,
+  "remote_development_data": "authored synthetic fixtures only",
+  "expensive_training_requires_explicit_approval": true,
+  "approved_training_budget_usd": null,
+  "default_model_routing": "bounded cheap implementation, one accountable final reviewer",
+  "verified_modal_sdk": "1.6.1",
+  "gpu_jobs_started": 6
+}

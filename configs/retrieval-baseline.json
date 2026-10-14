@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "embedder": {
+    "kind": "signed-token-hash",
+    "dimensions": 384,
+    "normalization": "l2",
+    "label": "weak lexical feature vectors; not semantic embeddings"
+  },
+  "retrieval": {
+    "modes": ["bm25", "vector", "hybrid"],
+    "rrf_k": 60,
+    "exclude_zero_overlap": true,
+    "default_limit": 5
+  },
+  "context": {
+    "max_utf8_bytes": 8000,
+    "budget_unit": "utf8_bytes_including_citations",
+    "not_model_tokens": true
+  },
+  "benchmark": {
+    "bootstrap_seed": 1729,
+    "bootstrap_samples": 1000,
+    "top_k": 5
+  }
+}

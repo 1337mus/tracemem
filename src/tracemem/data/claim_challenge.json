@@ -1,0 +1,1061 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "case_id": "case_001_tentative_timer",
+      "scenario_id": "scene_greenhouse_timer",
+      "split": "diagnostic",
+      "tags": [
+        "tentative",
+        "future_plan"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-001",
+          "message_id": "fictional-message-001-01",
+          "role": "user",
+          "text": "Maybe I will move the greenhouse timer to 06:40 in May.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PLANS",
+          "object": "move the greenhouse timer to 06:40 in May",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "tentative",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-001",
+              "message_id": "fictional-message-001-01",
+              "char_start": 0,
+              "char_end": 55,
+              "quote": "Maybe I will move the greenhouse timer to 06:40 in May."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_002_preference_not_decision",
+      "scenario_id": "scene_finish_choice",
+      "split": "diagnostic",
+      "tags": [
+        "preference",
+        "decision_boundary"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-002",
+          "message_id": "fictional-message-002-01",
+          "role": "user",
+          "text": "I prefer the matte-blue finish, but I have not chosen a finish.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "matte-blue finish",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-002",
+              "message_id": "fictional-message-002-01",
+              "char_start": 0,
+              "char_end": 30,
+              "quote": "I prefer the matte-blue finish"
+            }
+          ]
+        },
+        {
+          "subject": "user",
+          "predicate": "DECIDED",
+          "object": "choosing a finish",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-002",
+              "message_id": "fictional-message-002-01",
+              "char_start": 36,
+              "char_end": 63,
+              "quote": "I have not chosen a finish."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_003_temporal_revision",
+      "scenario_id": "scene_filter_storage",
+      "split": "diagnostic",
+      "tags": [
+        "temporal",
+        "past_vs_current",
+        "revision"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-003",
+          "message_id": "fictional-message-003-01",
+          "role": "user",
+          "text": "From January 1, 2024 through December 31, 2024, I stored spare filters in drawer C. From January 1, 2025 onward, I store them in drawer F.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "spare filters",
+          "predicate": "LOCATED_IN",
+          "object": "drawer C",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": "2024-01-01",
+          "valid_to": "2024-12-31",
+          "evidence": [
+            {
+              "session_id": "fictional-session-003",
+              "message_id": "fictional-message-003-01",
+              "char_start": 0,
+              "char_end": 83,
+              "quote": "From January 1, 2024 through December 31, 2024, I stored spare filters in drawer C."
+            }
+          ]
+        },
+        {
+          "subject": "spare filters",
+          "predicate": "LOCATED_IN",
+          "object": "drawer F",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2025-01-01",
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-003",
+              "message_id": "fictional-message-003-01",
+              "char_start": 84,
+              "char_end": 138,
+              "quote": "From January 1, 2025 onward, I store them in drawer F."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_004_assistant_decoy",
+      "scenario_id": "scene_mural_selection",
+      "split": "diagnostic",
+      "tags": [
+        "assistant_decoy",
+        "user_vs_assistant",
+        "negation"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-004",
+          "message_id": "fictional-message-004-01",
+          "role": "assistant",
+          "text": "You chose the north arch for the mural.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "fictional-session-004",
+          "message_id": "fictional-message-004-02",
+          "role": "user",
+          "text": "I only asked about the north arch; I never chose it.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "DECIDED",
+          "object": "north arch for the mural",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-004",
+              "message_id": "fictional-message-004-02",
+              "char_start": 0,
+              "char_end": 52,
+              "quote": "I only asked about the north arch; I never chose it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_005_quoted_invoice",
+      "scenario_id": "scene_parcel_weight_quote",
+      "split": "diagnostic",
+      "tags": [
+        "quoted_text",
+        "attribution",
+        "not_user_measurement"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-005",
+          "message_id": "fictional-message-005-01",
+          "role": "user",
+          "text": "The invoice says, “The parcel weighs 8 kg.” That is the seller’s wording, not my measurement.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "invoice",
+          "predicate": "REPORTS",
+          "object": "parcel weighs 8 kg",
+          "speaker_role": "user",
+          "attribution": "quoted_text",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-005",
+              "message_id": "fictional-message-005-01",
+              "char_start": 18,
+              "char_end": 43,
+              "quote": "“The parcel weighs 8 kg.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_006_third_party_report",
+      "scenario_id": "scene_vent_report",
+      "split": "diagnostic",
+      "tags": [
+        "third_party_report",
+        "reported_claim"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-006",
+          "message_id": "fictional-message-006-01",
+          "role": "user",
+          "text": "Inez told me the greenhouse vent sticks when damp.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "Inez",
+          "predicate": "REPORTS",
+          "object": "greenhouse vent sticks when damp",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-006",
+              "message_id": "fictional-message-006-01",
+              "char_start": 0,
+              "char_end": 50,
+              "quote": "Inez told me the greenhouse vent sticks when damp."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_007_negated_location",
+      "scenario_id": "scene_backup_key",
+      "split": "diagnostic",
+      "tags": [
+        "negation",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-007",
+          "message_id": "fictional-message-007-01",
+          "role": "user",
+          "text": "I do not keep the backup key in a desk drawer.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "backup key",
+          "predicate": "LOCATED_IN",
+          "object": "desk drawer",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-007",
+              "message_id": "fictional-message-007-01",
+              "char_start": 0,
+              "char_end": 46,
+              "quote": "I do not keep the backup key in a desk drawer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_008_intention_not_completion",
+      "scenario_id": "scene_seed_catalog",
+      "split": "diagnostic",
+      "tags": [
+        "intention",
+        "planned_not_completed"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-008",
+          "message_id": "fictional-message-008-01",
+          "role": "user",
+          "text": "I intend to catalog the seed jars this weekend; I have not cataloged them yet.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PLANS",
+          "object": "catalog the seed jars this weekend",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-008",
+              "message_id": "fictional-message-008-01",
+              "char_start": 0,
+              "char_end": 46,
+              "quote": "I intend to catalog the seed jars this weekend"
+            }
+          ]
+        },
+        {
+          "subject": "user",
+          "predicate": "COMPLETED",
+          "object": "cataloging the seed jars",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "completed",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-008",
+              "message_id": "fictional-message-008-01",
+              "char_start": 48,
+              "char_end": 78,
+              "quote": "I have not cataloged them yet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_009_ambiguous_reference",
+      "scenario_id": "scene_ambiguous_objects",
+      "split": "diagnostic",
+      "tags": [
+        "ambiguity",
+        "unresolved_reference",
+        "abstention"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-009",
+          "message_id": "fictional-message-009-01",
+          "role": "user",
+          "text": "Put it there after the other one is ready.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "case_010_unsupported_causality",
+      "scenario_id": "scene_gauge_screen",
+      "split": "diagnostic",
+      "tags": [
+        "causality",
+        "unsupported_cause"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-010",
+          "message_id": "fictional-message-010-01",
+          "role": "user",
+          "text": "The pressure gauge went quiet after the screen dimmed, but I cannot tell whether dimming caused it.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "pressure gauge went quiet",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-010",
+              "message_id": "fictional-message-010-01",
+              "char_start": 0,
+              "char_end": 29,
+              "quote": "The pressure gauge went quiet"
+            }
+          ]
+        },
+        {
+          "subject": "user",
+          "predicate": "REPORTS",
+          "object": "screen dimmed",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-010",
+              "message_id": "fictional-message-010-01",
+              "char_start": 36,
+              "char_end": 53,
+              "quote": "the screen dimmed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_011_resolved_temporal_conflict",
+      "scenario_id": "scene_orchid_shelf",
+      "split": "diagnostic",
+      "tags": [
+        "conflict",
+        "correction",
+        "temporal"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-011",
+          "message_id": "fictional-message-011-01",
+          "role": "user",
+          "text": "Until 2026-10-12, the orchid shelf was on the east wall. Starting 2026-10-13, it is on the west wall.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "orchid shelf",
+          "predicate": "LOCATED_IN",
+          "object": "east wall",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": "2026-10-12",
+          "evidence": [
+            {
+              "session_id": "fictional-session-011",
+              "message_id": "fictional-message-011-01",
+              "char_start": 0,
+              "char_end": 56,
+              "quote": "Until 2026-10-12, the orchid shelf was on the east wall."
+            }
+          ]
+        },
+        {
+          "subject": "orchid shelf",
+          "predicate": "LOCATED_IN",
+          "object": "west wall",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2026-10-13",
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-011",
+              "message_id": "fictional-message-011-01",
+              "char_start": 57,
+              "char_end": 101,
+              "quote": "Starting 2026-10-13, it is on the west wall."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_012_multi_evidence_location",
+      "scenario_id": "scene_titanium_clip",
+      "split": "diagnostic",
+      "tags": [
+        "multi_evidence",
+        "location",
+        "same_speaker"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-012",
+          "message_id": "fictional-message-012-01",
+          "role": "user",
+          "text": "I bought a titanium clip last week.",
+          "recorded_at": "2026-10-12",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "fictional-session-012",
+          "message_id": "fictional-message-012-02",
+          "role": "user",
+          "text": "I store that clip in case R.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "titanium clip",
+          "predicate": "LOCATED_IN",
+          "object": "case R",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-012",
+              "message_id": "fictional-message-012-01",
+              "char_start": 0,
+              "char_end": 35,
+              "quote": "I bought a titanium clip last week."
+            },
+            {
+              "session_id": "fictional-session-012",
+              "message_id": "fictional-message-012-02",
+              "char_start": 0,
+              "char_end": 28,
+              "quote": "I store that clip in case R."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_013_unknown_question",
+      "scenario_id": "scene_meter_calibration",
+      "split": "diagnostic",
+      "tags": [
+        "unknown",
+        "abstention",
+        "question"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-013",
+          "message_id": "fictional-message-013-01",
+          "role": "user",
+          "text": "What is the calibration code for the blue meter?",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "case_014_hypothetical",
+      "scenario_id": "scene_telescope_storage",
+      "split": "diagnostic",
+      "tags": [
+        "hypothetical",
+        "abstention"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-014",
+          "message_id": "fictional-message-014-01",
+          "role": "user",
+          "text": "If I owned a telescope, I would keep it in the attic.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "case_015_question_not_preference",
+      "scenario_id": "scene_archive_limit",
+      "split": "diagnostic",
+      "tags": [
+        "question",
+        "not_decision",
+        "abstention"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-015",
+          "message_id": "fictional-message-015-01",
+          "role": "user",
+          "text": "Could the archive use a two-gigabyte limit?",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "case_016_explicit_preference",
+      "scenario_id": "scene_pottery_warmup",
+      "split": "diagnostic",
+      "tags": [
+        "preference",
+        "direct_statement"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-016",
+          "message_id": "fictional-message-016-01",
+          "role": "user",
+          "text": "I prefer a 14-minute warm-up before pottery class.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PREFERS",
+          "object": "14-minute warm-up before pottery class",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-016",
+              "message_id": "fictional-message-016-01",
+              "char_start": 0,
+              "char_end": 50,
+              "quote": "I prefer a 14-minute warm-up before pottery class."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_017_tool_observation",
+      "scenario_id": "scene_thermometer_reading",
+      "split": "diagnostic",
+      "tags": [
+        "tool_observation",
+        "measurement",
+        "role_attribution"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-017",
+          "message_id": "fictional-message-017-01",
+          "role": "tool",
+          "text": "Thermometer reading: 18.6 °C at 14:10.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "tool_output"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "thermometer",
+          "predicate": "HAS",
+          "object": "reading 18.6 °C at 14:10",
+          "speaker_role": "tool",
+          "attribution": "tool_observation",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-017",
+              "message_id": "fictional-message-017-01",
+              "char_start": 0,
+              "char_end": 38,
+              "quote": "Thermometer reading: 18.6 °C at 14:10."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_018_shipping_label_report",
+      "scenario_id": "scene_package_location",
+      "split": "diagnostic",
+      "tags": [
+        "third_party_report",
+        "quoted_source",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-018",
+          "message_id": "fictional-message-018-01",
+          "role": "user",
+          "text": "The shipping label lists locker B12 as the delivery location.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "shipping label",
+          "predicate": "REPORTS",
+          "object": "delivery location: locker B12",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-018",
+              "message_id": "fictional-message-018-01",
+              "char_start": 0,
+              "char_end": 61,
+              "quote": "The shipping label lists locker B12 as the delivery location."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_019_unresolved_source_conflict",
+      "scenario_id": "scene_workshop_date",
+      "split": "diagnostic",
+      "tags": [
+        "conflict",
+        "third_party_report",
+        "unresolved"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-019",
+          "message_id": "fictional-message-019-01",
+          "role": "user",
+          "text": "The wall calendar says the workshop is on 8 June. The organizer's note says it is on 9 June; I do not know which date is current.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "wall calendar",
+          "predicate": "REPORTS",
+          "object": "workshop date: 8 June",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-019",
+              "message_id": "fictional-message-019-01",
+              "char_start": 0,
+              "char_end": 49,
+              "quote": "The wall calendar says the workshop is on 8 June."
+            }
+          ]
+        },
+        {
+          "subject": "organizer's note",
+          "predicate": "REPORTS",
+          "object": "workshop date: 9 June",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-019",
+              "message_id": "fictional-message-019-01",
+              "char_start": 50,
+              "char_end": 91,
+              "quote": "The organizer's note says it is on 9 June"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_020_explicit_decision",
+      "scenario_id": "scene_fountain_pen",
+      "split": "diagnostic",
+      "tags": [
+        "decision",
+        "explicit_choice"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-020",
+          "message_id": "fictional-message-020-01",
+          "role": "user",
+          "text": "I decided to use the walnut handle for the fountain pen.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "DECIDED",
+          "object": "walnut handle for the fountain pen",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-020",
+              "message_id": "fictional-message-020-01",
+              "char_start": 0,
+              "char_end": 56,
+              "quote": "I decided to use the walnut handle for the fountain pen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_021_completed_action",
+      "scenario_id": "scene_terrarium_samples",
+      "split": "diagnostic",
+      "tags": [
+        "completed",
+        "past_event"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-021",
+          "message_id": "fictional-message-021-01",
+          "role": "user",
+          "text": "I finished labeling the terrarium samples at 16:20.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "COMPLETED",
+          "object": "labeling the terrarium samples",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "completed",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-021",
+              "message_id": "fictional-message-021-01",
+              "char_start": 0,
+              "char_end": 51,
+              "quote": "I finished labeling the terrarium samples at 16:20."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_022_abandoned_historical_plan",
+      "scenario_id": "scene_redwood_bench",
+      "split": "diagnostic",
+      "tags": [
+        "historical",
+        "plan",
+        "abandoned"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-022",
+          "message_id": "fictional-message-022-01",
+          "role": "user",
+          "text": "In 2023, I planned to restore the redwood bench, then abandoned the plan before starting.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "user",
+          "predicate": "PLANS",
+          "object": "restore the redwood bench",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-022",
+              "message_id": "fictional-message-022-01",
+              "char_start": 0,
+              "char_end": 89,
+              "quote": "In 2023, I planned to restore the redwood bench, then abandoned the plan before starting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_023_supported_causality",
+      "scenario_id": "scene_spacer_failure",
+      "split": "diagnostic",
+      "tags": [
+        "causality",
+        "explicit_cause"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-023",
+          "message_id": "fictional-message-023-01",
+          "role": "user",
+          "text": "The ceramic spacer cracked because the clamp was overtightened.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "overtightened clamp",
+          "predicate": "CAUSES",
+          "object": "ceramic spacer cracked",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-023",
+              "message_id": "fictional-message-023-01",
+              "char_start": 0,
+              "char_end": 63,
+              "quote": "The ceramic spacer cracked because the clamp was overtightened."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "case_024_tentative_ownership",
+      "scenario_id": "scene_binder_ownership",
+      "split": "diagnostic",
+      "tags": [
+        "tentative",
+        "ownership",
+        "uncertainty"
+      ],
+      "messages": [
+        {
+          "session_id": "fictional-session-024",
+          "message_id": "fictional-message-024-01",
+          "role": "user",
+          "text": "I think the red binder might belong to the night crew.",
+          "recorded_at": "2026-10-13",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "night crew",
+          "predicate": "HAS",
+          "object": "red binder",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "tentative",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "fictional-session-024",
+              "message_id": "fictional-message-024-01",
+              "char_start": 0,
+              "char_end": 54,
+              "quote": "I think the red binder might belong to the night crew."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

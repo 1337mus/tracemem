@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "scope": "Descriptive root audit of frozen Phi scenario output failures; no output repair or selection",
+  "raw_receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+  "case_count": 48,
+  "parse_failures": 1,
+  "schema_failures": 46,
+  "schema_valid_cases": 1,
+  "first_schema_error_counts": {
+    "valid_from is too long": 44,
+    "predicate has an invalid label": 2
+  },
+  "timestamp_validity_field_occurrences_in_parseable_schema_invalid_outputs": {
+    "valid_from": 71,
+    "valid_to": 62
+  },
+  "root_reviewed_examples": [
+    {
+      "case_id": "dev-balcony-basil",
+      "finding": "Message timestamp emitted as date-only fact validity; exact quote offsets also incorrect."
+    },
+    {
+      "case_id": "dev-piano-recording",
+      "finding": "JSON followed by prose; repeated claims, invented plan interpretation and bad offsets visible in raw output; strict parse fails."
+    },
+    {
+      "case_id": "dev-brass-latch",
+      "finding": "Unsupported predicate labels PUTS and CORRECTS; timestamps also appear as validity."
+    },
+    {
+      "case_id": "test-reading-corrections",
+      "finding": "Unsupported predicate labels RECORDS and COMPLETES; timestamps also appear as validity; reading plan attributed to user."
+    },
+    {
+      "case_id": "test-coffee-grinder-change",
+      "finding": "Only schema-valid output. Unique exact quote anchoring repairs span. User states use since2025-12-01, no end; candidate invents valid_to2025-12-31. Semantic support not established by valid quote."
+    }
+  ],
+  "limits": [
+    "Counts show first schema exception per output; other defects coexist and are not exhaustively classified.",
+    "71 valid_from and62 valid_to timestamp occurrences concern rejected parsed claims, not validated memories.",
+    "No human semantic labels, calibration, model superiority or Gate A is established."
+  ],
+  "local_audit_sha256": "1974352c7ffb1333bf91778d8f4511fd3902b24b066afac21ffe821c74b5b37f"
+}

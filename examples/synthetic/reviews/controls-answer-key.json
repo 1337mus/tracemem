@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+  "bundle_sha256": "185e9e6943fdca44535e37992dbc1e7eeaafa0337e52c8b81109b4c9f8a8d1e9",
+  "case_ids": [
+    "dev-balcony-basil",
+    "dev-ferry-bike",
+    "dev-agenda-email",
+    "dev-supper-mushrooms",
+    "dev-blue-crate",
+    "dev-piano-recording",
+    "dev-large-print-atlas",
+    "dev-window-fern"
+  ],
+  "task_keys": [
+    {
+      "task_id": "task_0164ffe53975b9f38039633a1364aa62bbcd107122de68a5e3467d20c7f8078d",
+      "case_id": "dev-supper-mushrooms",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_35dcb759a0f5ef2707a49eadee5635bb40c51f7fc2e9c00ac9feea73a6585ae5",
+      "case_id": "dev-blue-crate",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_49899011e9b872bcb5bc12b36238df4615b46856d897d8360c77b769faead151",
+      "case_id": "dev-large-print-atlas",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_5360e4cb1351cba4d0cc38f34e79e25486f366036a0ae431a97a3ba479cfa74f",
+      "case_id": "dev-balcony-basil",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_5f7875d21621709d052ab499e725873f1636ef43c36f068411e875e2072c15c6",
+      "case_id": "dev-large-print-atlas",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_77c7922931086ddd2404d4b516b7c275b8f66d56efadf1b9bd92a0c69486e6a4",
+      "case_id": "dev-agenda-email",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_9783a44342ef149200462ce212c197affceda896a9fb2a06282587d6302404e4",
+      "case_id": "dev-agenda-email",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_999d5b90de1c41a0a12612f731bf65e6a94e5394567d0db16e2c6cdb58039cc7",
+      "case_id": "dev-piano-recording",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_a79e4cb12f5712889fe602ec46f30e6dce6e4d141cb7c8af0394d4c7a3b5e481",
+      "case_id": "dev-piano-recording",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_b93dcdcacf67dc2e27b5260ff94b669e3316abf3d5789eda887d0831e9eee028",
+      "case_id": "dev-ferry-bike",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_be04a0f92c78fdf05b3b461d1232201428ec9c670dc952aa570f881d744a6a9c",
+      "case_id": "dev-window-fern",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_cceb9eecebe60c301cbda16c4bb9aab138b9b0ae1aa37924c2dc94fe02f766f9",
+      "case_id": "dev-ferry-bike",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_dcfbe84074ad71fe5e68b5d771bb3ea455bae51d765fcfb87f54b79829215133",
+      "case_id": "dev-supper-mushrooms",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_dd3e92adf923834448716bb607ab9e17737ad0cee17806aa258502fc3f7f4e58",
+      "case_id": "dev-balcony-basil",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    },
+    {
+      "task_id": "task_f1a79d252a8298e7c12601d4bb6bd27fd4a68a99b6c4e28af85a06034b86d1e0",
+      "case_id": "dev-window-fern",
+      "split": "dev",
+      "membership": "gold",
+      "reference_label": "supported"
+    },
+    {
+      "task_id": "task_f3d4e0a6db263d3fbb4cfca10f6c983cd1bc7f554316a7acae9c46ae4cb9abdf",
+      "case_id": "dev-blue-crate",
+      "split": "dev",
+      "membership": "foil",
+      "reference_label": "unsupported"
+    }
+  ],
+  "case_metadata": {
+    "dev-balcony-basil": {
+      "scenario_group": "scenario:dev-balcony-basil",
+      "template_group": "template:dev-balcony-basil",
+      "entity_ids": [
+        "dev-balcony-basil:balcony-basil",
+        "dev-balcony-basil:awning"
+      ]
+    },
+    "dev-ferry-bike": {
+      "scenario_group": "scenario:dev-ferry-bike",
+      "template_group": "template:dev-ferry-bike",
+      "entity_ids": [
+        "dev-ferry-bike:island-ferry",
+        "dev-ferry-bike:bicycle"
+      ]
+    },
+    "dev-agenda-email": {
+      "scenario_group": "scenario:dev-agenda-email",
+      "template_group": "template:dev-agenda-email",
+      "entity_ids": [
+        "dev-agenda-email:planning-call",
+        "dev-agenda-email:meeting-agenda"
+      ]
+    },
+    "dev-supper-mushrooms": {
+      "scenario_group": "scenario:dev-supper-mushrooms",
+      "template_group": "template:dev-supper-mushrooms",
+      "entity_ids": [
+        "dev-supper-mushrooms:barley-soup",
+        "dev-supper-mushrooms:mushrooms"
+      ]
+    },
+    "dev-blue-crate": {
+      "scenario_group": "scenario:dev-blue-crate",
+      "template_group": "template:dev-blue-crate",
+      "entity_ids": [
+        "dev-blue-crate:blue-crate",
+        "dev-blue-crate:south-bench"
+      ]
+    },
+    "dev-piano-recording": {
+      "scenario_group": "scenario:dev-piano-recording",
+      "template_group": "template:dev-piano-recording",
+      "entity_ids": [
+        "dev-piano-recording:piano-recital",
+        "dev-piano-recording:children"
+      ]
+    },
+    "dev-large-print-atlas": {
+      "scenario_group": "scenario:dev-large-print-atlas",
+      "template_group": "template:dev-large-print-atlas",
+      "entity_ids": [
+        "dev-large-print-atlas:field-maps",
+        "dev-large-print-atlas:large-print-edition"
+      ]
+    },
+    "dev-window-fern": {
+      "scenario_group": "scenario:dev-window-fern",
+      "template_group": "template:dev-window-fern",
+      "entity_ids": [
+        "dev-window-fern:studio-fern",
+        "dev-window-fern:studio-window"
+      ]
+    }
+  }
+}

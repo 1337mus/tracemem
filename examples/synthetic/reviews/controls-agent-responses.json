@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "bundle_sha256": "185e9e6943fdca44535e37992dbc1e7eeaafa0337e52c8b81109b4c9f8a8d1e9",
+  "responses": [
+    {
+      "task_id": "task_f1a79d252a8298e7c12601d4bb6bd27fd4a68a99b6c4e28af85a06034b86d1e0",
+      "label": "supported",
+      "rationale": "The user directly says cold air from the window browned the fern.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_b93dcdcacf67dc2e27b5260ff94b669e3316abf3d5789eda887d0831e9eee028",
+      "label": "unsupported",
+      "rationale": "The preference is explicitly conditional on bringing a bike, so the claim overextends it.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_f3d4e0a6db263d3fbb4cfca10f6c983cd1bc7f554316a7acae9c46ae4cb9abdf",
+      "label": "unsupported",
+      "rationale": "The user locates the crate under the south bench, not on the north shelf.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_be04a0f92c78fdf05b3b461d1232201428ec9c670dc952aa570f881d744a6a9c",
+      "label": "unsupported",
+      "rationale": "The user attributes browning to cold air from the window, not heater heat.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_9783a44342ef149200462ce212c197affceda896a9fb2a06282587d6302404e4",
+      "label": "unsupported",
+      "rationale": "The user prefers the agenda the evening before, not the morning after the call.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_49899011e9b872bcb5bc12b36238df4615b46856d897d8360c77b769faead151",
+      "label": "unsupported",
+      "rationale": "The user prefers the large-print edition, opposite the claimed small-print preference.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_5f7875d21621709d052ab499e725873f1636ef43c36f068411e875e2072c15c6",
+      "label": "supported",
+      "rationale": "The user directly prefers the large-print edition for field maps.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_77c7922931086ddd2404d4b516b7c275b8f66d56efadf1b9bd92a0c69486e6a4",
+      "label": "supported",
+      "rationale": "The user directly prefers receiving the agenda the evening before.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_a79e4cb12f5712889fe602ec46f30e6dce6e4d141cb7c8af0394d4c7a3b5e481",
+      "label": "unsupported",
+      "rationale": "The user says they would rather not record the children, contrary to positive polarity.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_5360e4cb1351cba4d0cc38f34e79e25486f366036a0ae431a97a3ba479cfa74f",
+      "label": "supported",
+      "rationale": "The user states an intention to check the soil before watering.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_999d5b90de1c41a0a12612f731bf65e6a94e5394567d0db16e2c6cdb58039cc7",
+      "label": "supported",
+      "rationale": "Negative polarity matches the user saying they would rather not record the children.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_cceb9eecebe60c301cbda16c4bb9aab138b9b0ae1aa37924c2dc94fe02f766f9",
+      "label": "supported",
+      "rationale": "The user prefers the late ferry when bringing a bike, matching the stated condition.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_dcfbe84074ad71fe5e68b5d771bb3ea455bae51d765fcfb87f54b79829215133",
+      "label": "unsupported",
+      "rationale": "The user says they do not like mushrooms in broth, contrary to positive polarity.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_35dcb759a0f5ef2707a49eadee5635bb40c51f7fc2e9c00ac9feea73a6585ae5",
+      "label": "supported",
+      "rationale": "The user directly locates the blue crate under the south bench.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_0164ffe53975b9f38039633a1364aa62bbcd107122de68a5e3467d20c7f8078d",
+      "label": "supported",
+      "rationale": "Negative polarity matches the user saying they do not like mushrooms in the broth.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    },
+    {
+      "task_id": "task_dd3e92adf923834448716bb607ab9e17737ad0cee17806aa258502fc3f7f4e58",
+      "label": "unsupported",
+      "rationale": "The user says they will check the soil before watering, contrary to negative polarity.",
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-14T18:09:31Z"
+    }
+  ]
+}

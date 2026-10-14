@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "purpose": "Provisional agent-only support review of authored reference claims",
+  "reviewer_kind": "agent",
+  "reviewer_model": "gpt-6-luna",
+  "human_reviewer_count": 0,
+  "source_disclosure": "Reviewer received blind tasks and field/response documentation, not model keys or authored target keys. This procedural restriction is not cryptographic proof of independence.",
+  "root_audit": "Root audited all 43 source/target spans before dataset freeze; inspected eight returned reviewer rationales after completion.",
+  "negative_controls": 0,
+  "limitation": "All tasks are authored positive references. Agreement does not establish reviewer discrimination, exhaustive reference coverage, population quality or Gate A.",
+  "artifacts": {
+    "blind_bundle": {
+      "path": ".local/authored-reference-review/blind.json",
+      "sha256": "3b0a9cfda6a7dedb3fafbf19f17a379605416c6330924791ff71f960492799a1"
+    },
+    "answer_key": {
+      "path": ".local/authored-reference-review/answer-key.json",
+      "sha256": "c603a167c8cba1ee33410de66294658653902da7f083807bd8a4220e5a22196d"
+    },
+    "agent_responses": {
+      "path": ".local/authored-reference-review/agent-luna-responses.json",
+      "sha256": "6f4f725b838d5d9498d6b69ec94d4f6050b051acee974ff0e9001135d1bd7d4b"
+    },
+    "computed_report": {
+      "path": ".local/authored-reference-review/agent-luna-report.json",
+      "sha256": "e9f5146a08f0a712c9569642e8773aaba16a3536264e90052501c32a47be6249"
+    }
+  },
+  "report": {
+    "version": 1,
+    "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "bundle_sha256": "9ceb074e2074eb22878ec2fb31b2a8f45df34faae3248a76aa97e43ad0efcb42",
+    "task_count": 43,
+    "reviewer_document_count": 1,
+    "by_reviewer_kind": {
+      "human": {
+        "reviewers": 0,
+        "responses": 0,
+        "agreement": 0,
+        "disagreement": 0,
+        "uncertain": 0,
+        "response_uncertain": 0,
+        "response_supported": 0,
+        "response_unsupported": 0,
+        "reference_supported": 0,
+        "reference_unsupported": 0,
+        "reference_labeled_responses": 0,
+        "unlabeled_responses": 0,
+        "expected_responses": 0,
+        "coverage_rate": null,
+        "decisive_responses": 0,
+        "agreement_denominator": 0,
+        "agreement_rate_on_decisive": null
+      },
+      "agent": {
+        "reviewers": 1,
+        "responses": 43,
+        "agreement": 43,
+        "disagreement": 0,
+        "uncertain": 0,
+        "response_uncertain": 0,
+        "response_supported": 43,
+        "response_unsupported": 0,
+        "reference_supported": 43,
+        "reference_unsupported": 0,
+        "reference_labeled_responses": 43,
+        "unlabeled_responses": 0,
+        "expected_responses": 43,
+        "coverage_rate": 1.0,
+        "decisive_responses": 43,
+        "agreement_denominator": 43,
+        "agreement_rate_on_decisive": 1.0
+      }
+    },
+    "human_identity_policy": "reviewer_kind is self-attested; reviewer identity is not verified",
+    "reference_label_policy": "authored expectations are descriptive comparisons; this report never modifies or promotes them",
+    "agreement_scope": "Agreement uses decisive responses to gold and foil tasks only; unlabeled candidates are excluded from its denominator"
+  }
+}

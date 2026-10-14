@@ -1,0 +1,42 @@
+{
+  "metadata_verified_at": "2026-10-13",
+  "status": "pinned candidate registry; no model selected; current run state is in docs/model-candidates.md",
+  "candidates": [
+    {
+      "id": "microsoft/Phi-3.5-mini-instruct",
+      "revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+      "license": "mit",
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "BF16": 3821079552
+        },
+        "total": 3821079552
+      }
+    },
+    {
+      "id": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "license": "apache-2.0",
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "BF16": 8190735360
+        },
+        "total": 8190735360
+      }
+    },
+    {
+      "id": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "license": "apache-2.0",
+      "gated": false,
+      "safetensors": {
+        "parameters": {
+          "BF16": 4022468096
+        },
+        "total": 4022468096
+      }
+    }
+  ]
+}

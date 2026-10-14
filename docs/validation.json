@@ -1,0 +1,221 @@
+{
+  "artifact_sha256": {
+    ".github/workflows/ci.yml": "2b8b92ab1ea373fc438f181507258ac4ad67786a51bd646eaaf4d5fd79ac7384",
+    "docs/benchmark-contracts.json": "081cf7fb1da15d8a5c8936ea0ef9d8db05b48065051a93d0a3840a12c2f5c5ac",
+    "docs/scenarios-reviewed-support.json": "8c3bd2e8596ce2628c59f5ba4536facf83d78626a131452bda188fbd5f90719f",
+    "examples/synthetic/phi-3.5-mini-scenarios-remote.json": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+    "examples/synthetic/qwen3-4b-scenarios-remote.json": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+    "src/tracemem/data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214"
+  },
+  "candidate_ledger": {
+    "automatic_accept": false,
+    "current_fact_resolution": false,
+    "erasure_implemented": false,
+    "evidence_retention": "Caller retains EvidenceStore separately; ledger stores claim quotes."
+  },
+  "chatgpt_snapshot": {
+    "cli_example": "2 records; exact Unicode citation resolved; excluded sibling query returned zero hits",
+    "compatibility": "Fictional fixture contract only; no actual export located/read/validated",
+    "existing_output_overwritten": false,
+    "malformed_conversations": "Reject whole snapshot",
+    "policy": "fresh_store_selected_branch",
+    "source_modified": false,
+    "unsupported_content": "Skip and count"
+  },
+  "commands": {
+    "full_suite": {
+      "command": "PYTHONPATH=src:/Users/raj/Projects/ctxkit/src .venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "local_log": ".local/tests-github-initial.log",
+      "log_sha256": "aacee4dbf24dbebf007977ae382772cc1f476a9dfb0bd6b34cd723cbb6eaa6b8"
+    },
+    "ruff_check": {
+      "command": ".venv/bin/ruff check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/ruff-check-github-initial.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "ruff_format": {
+      "command": ".venv/bin/ruff format --check src tests experiments",
+      "exit_code": 0,
+      "local_log": ".local/ruff-format-github-initial.log",
+      "log_sha256": "79c290403d79908f2d42a8f84ec231f4e3f7740cc78edf692bc629663e20cbbf"
+    },
+    "scoped_experiment_mypy": {
+      "command": "MYPYPATH=src .venv/bin/mypy --strict --explicit-package-bases --follow-imports=silent src/tracemem experiments/evaluate_baselines.py experiments/evaluate_anchoring.py experiments/audit_dataset.py experiments/evaluate_support.py experiments/evaluate_scenarios.py experiments/review_annotations.py experiments/prepare_scenario_reviews.py experiments/summarize_scenario_reviews.py experiments/benchmark_lexical_scale.py experiments/smoke_installed.py",
+      "exit_code": 0,
+      "local_log": ".local/mypy-scoped-github-initial.log",
+      "log_sha256": "2964f4e84ac77897e510c8d7fa5b664a688c51c01f2c3733e4c2fa20c1f6c174"
+    },
+    "strict_mypy": {
+      "command": ".venv/bin/mypy",
+      "exit_code": 0,
+      "local_log": ".local/mypy-github-initial.log",
+      "log_sha256": "fa935e779fe5886f2480e415c7e46616bdedad407f9da1cca28e7d341d95f4d7"
+    },
+    "workflow_lint": {
+      "command": "actionlint .github/workflows/ci.yml",
+      "exit_code": 0,
+      "local_log": ".local/actionlint-github-initial.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "context_kit_checkout_modified": false,
+  "context_kit_commit": "20096bcb1095883262c77a37bbbb458732d9cf3a",
+  "environment": {
+    "modal_sdk": "1.6.1",
+    "python": "3.12.14",
+    "setuptools": "80.9.0",
+    "sqlite": "3.53.1"
+  },
+  "evidence_schema_version": 3,
+  "frozen_scenario_comparison": {
+    "authored_targets": 43,
+    "blind_agent_labels": {
+      "supported": 50,
+      "uncertain": 3,
+      "unsupported": 31
+    },
+    "cases": 48,
+    "dev_cases": 24,
+    "generated_candidates": 84,
+    "independent_human_reviewers": 0,
+    "model_selected": false,
+    "report": "docs/experiments-scenarios.md",
+    "separate_nonblind_root_labels": {
+      "supported": 41,
+      "uncertain": 10,
+      "unsupported": 33
+    },
+    "support_report": "docs/scenarios-reviewed-support.json",
+    "targets_exhaustive": false,
+    "test_cases": 24,
+    "train_cases": 0
+  },
+  "full_suite": {
+    "elapsed_seconds": 2.808,
+    "skipped": 0,
+    "tests": 242
+  },
+  "gate_a": {
+    "met": false,
+    "reason": "No independent human labels or sufficiently established training/evaluation dataset; provisional targets and lexical split audit cannot establish readiness."
+  },
+  "github": {
+    "delivery_at_this_checkpoint": "Empty remote created; signed initial push and hosted CI pending",
+    "public_release": false,
+    "repository": "1337mus/tracemem",
+    "visibility_verified": "PRIVATE"
+  },
+  "gpu_jobs_started": 6,
+  "gpu_state_evidence": {
+    "active_tasks_observed": 0,
+    "all_calls_completed": true,
+    "latest_apps_stopped": true,
+    "local_receipt": ".local/modal-apps-after-scenarios.json",
+    "observation": "2026-10-14 after Phi stopped at 11:11:16 Pacific; recheck before another launch"
+  },
+  "historical_receipts": [
+    "docs/validation-phase1.json",
+    "docs/validation-phase2-baseline.json",
+    "docs/validation-support-ledger.json"
+  ],
+  "isolated_wheel_smoke": {
+    "all_members_match_approved_source": true,
+    "commands_passed": 9,
+    "demo_sha256": "c27a8b0c1bf3d212f27be189efdfe27b895b95c9f3f9996d1ff8d5bb15d7faeb",
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "excluded_benchmark_fields": [
+      "latency_ms",
+      "warmup_ms"
+    ],
+    "exit_code": 0,
+    "installed_chatgpt_tests": 34,
+    "local_receipt": ".local/package-smoke-fts-v3-chatgpt-20261014T183745147324Z.json",
+    "network_or_model_calls": 0,
+    "package_members": 29,
+    "receipt_sha256": "1e825f652bd0492c21c4b0e289850813da323dbab1ecd9ca2ccfe8b397ee11a3",
+    "schema_version": 3,
+    "source_path_imports": false,
+    "source_unchanged": true,
+    "stable_benchmark_fields_match": true,
+    "wheel_sha256": "d8e66f6a8554138100a639374501e55c9dc33bdbb5e26666c86defddbe7bee0c"
+  },
+  "local_ml_packages_present": {
+    "sentence_transformers": false,
+    "torch": false,
+    "transformers": false
+  },
+  "original_data_writes_performed": false,
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T18:39:34.265072+00:00",
+  "root_review": "Complete new adapter/snapshot source/tests, CLI diff, package receipt, synthetic CLI demo, pinned benchmark metric code and hashes. Three reproduced adapter fixes and CI tempfile correction validated. No independent external review service or human semantic labels.",
+  "ruff_formatted_files": 63,
+  "schema2_migration": false,
+  "scope": "Local Phase0/1 prototype; synthetic extraction/retrieval/NLI diagnostics; early candidate ledger; fixture-based ChatGPT reader/snapshot CLI; private GitHub bootstrap",
+  "scoped_mypy_files": 34,
+  "scoped_mypy_limitation": "GPU launch modules imported silently, not strict-checked targets. Optional ML libraries absent.",
+  "source_mypy_files": 24,
+  "source_sha256": {
+    "__init__.py": "ceabe786c2dfdb38d9132b38a93b5543c33e4d5dba3076475a86fea594d913db",
+    "__main__.py": "f8671118b692a0ba78ce99f479fcbedf2cdd2c74043bb2a5e00073a50f190b46",
+    "adapters/__init__.py": "960d10f1fd17702eb082340042ea888e498e9b0076d18eacccd227e9ef284789",
+    "adapters/chatgpt.py": "820e93e5ed43bc8d847f4ee04ba3db552e02c00eabb5c07d38df5d8a0f36a370",
+    "adapters/context_kit.py": "3e61c4d651a99c8cdd8bfabacb3e9deedf86dad9f365517c3d4b16322025d870",
+    "anchoring.py": "beed8dd94bbc4dd14dc9e77176b8ed479bc69200f3575cacd4266014c6cbefd0",
+    "annotation_report.py": "db9e6fa305b859147305c6691cba46edefaea32ce89b965eb087834fb0af2afe",
+    "annotations.py": "c3ce656946a76afd07a28a2f8eddc8ee90035eb3e88c06de2c819c17af4e3d95",
+    "benchmark.py": "bd0589f91efdfc6d5c4a82d00cfeea973612a4d7ba67f4b80eef1be509917653",
+    "challenge.py": "47ecb4548b2433a0604956e1a694632ca78a18e1034d8e43c9b780e38cd4927d",
+    "citations.py": "7ee21eee8bf5d11c4507f4a3535909959754c10ce65cf1aa0f38fca885fa872f",
+    "claims.py": "4d3c08bfe74e528b116d455a93c568a19baf377f66fa22e816128bee278b0657",
+    "cli.py": "6d555936c61cff6a3dcb0cb71430912c0ad3b9afa041404cdbaad1e61d1126dd",
+    "data/claim_challenge.json": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
+    "data/corpus.json": "4012f95c2ed7837cc65b626e225547aa2a089b00e04765fb59c8bebbddab6d35",
+    "data/queries.json": "170dc13a4dffcaf07d4dfba6e957d60be7536fd43c3cba3abeb4f62062842659",
+    "data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "data/support_challenge.json": "582612fc24e60868c8b0b1f37745188dbf143a41330a5777152b5cce9adc90e9",
+    "dataset_audit.py": "d6d541cc3f996db79afa9fbf42fa5b30ca1bab7c994d0ab858796ebcf6628c18",
+    "ledger.py": "86c2824b069f89da335d8f6b938150286ccd2864cfcb0e0a4f9aa28e218ddffc",
+    "privacy.py": "b78d8b7e023a15c466f2a76d98a91a3f3dbc36bfeb01006f958ad65c9e3aae0b",
+    "prompts.py": "2d866dd3203b5352f0d80ab2227a5ab8cf32efc2d759da0bcaf5e4af54525c57",
+    "remote_vectors.py": "23854467c4782c958da76e73f117da4e3454a2affceedb72d4d4c6ffa6793961",
+    "retrieval.py": "08d5343fee4c4441c69115977e82cc15fbd43ecd3963d30911f51541bc3025b4",
+    "scenarios.py": "22077a82f12efa8055905feef0ba4f193651c1268592da398f541192593da0cd",
+    "schema.py": "d67abaf132d3d8c1471e9f1e1cb706d66c4347c5519757015e34474b08b05530",
+    "snapshots.py": "a18b25b699d6d1b076b29a0acfe63091013f0948c14cabe4e0999a72dcb1a669",
+    "storage.py": "cf7d94d27044b81b47853bf262787b74b5e1a32b6fe2086a6d61cac3188f3d37",
+    "support.py": "e00cd64d842fe4faf1d7ac0db0a0fccbc67c94f43497f3aa4665336dcaf4d6a4"
+  },
+  "test_sha256": {
+    "tests/test_adapter.py": "092d7b4927f9edd43cc1f6bda90fa19808e16493c89077ff2fe6cf9ee6429f83",
+    "tests/test_anchoring.py": "32e2e76df23cb82ecf048285acb735ed3c7dc816d2e7dff0f4cb4ddbac818114",
+    "tests/test_annotations.py": "ba7fe2a741cdd987431becc7180d8daf9cf1fedb80816e6f2258b14566616647",
+    "tests/test_benchmark.py": "fc06e347f88c6a08b57701dfa0cf08ba1a274ffb6d72ea5872e573675ee5657a",
+    "tests/test_challenge.py": "d462f79756b1e66120a364fb77e9c1651e61a7d3d8389d9cb27bbb8d21ac0673",
+    "tests/test_chatgpt_adapter.py": "62cfdfe895a4981020fe468fa5245cedb8b7f219b8cdd8a41e4b6c0b349df914",
+    "tests/test_chatgpt_snapshot.py": "d3de9c7f454751350eaf4833abfb966733c4740c993ec05241c07abdb97cfc8c",
+    "tests/test_citations.py": "0f9666c3fe621c171a018f76f1c5ce83ab100645552727747ec592ec30d29a5d",
+    "tests/test_claims.py": "9dee3caccfd25ebef30e45996c5338f85f9e61ff18197136449ce005c05dfce9",
+    "tests/test_dataset_audit.py": "8c7627d217bff4ae8596f4a5c349f598864aee9823d56688458994a57c964020",
+    "tests/test_evaluate_anchoring.py": "61c6bf9622122c4bf053a577c1736d93db0972faa7d7e4b4b27b973454da065e",
+    "tests/test_evaluate_baselines.py": "fe161b38b41ceb81f9a88fce764a2251f5db0aa79f1ef3f304d1fa45fddb68ad",
+    "tests/test_ledger.py": "877b300aaa2562f0b1f579a8a0228accdf162229a703fff1429820cb09de6420",
+    "tests/test_modal_baseline.py": "f11cabb3a63e412f2f507b6078e2920032e9466add738e5f5240bc7057c3eee3",
+    "tests/test_modal_scenarios.py": "c379eaa2d16b3967fed7f9b4a53f93517a11b06ab69cfbaa98e9c55cfe7e7c9d",
+    "tests/test_modal_support.py": "4e1679292542e44df53483f1bfd2e95a19911d967afe75652df3163c0879139e",
+    "tests/test_privacy.py": "0f2dc957c99a3229e7f3018be04ccbf272d69e49174de8b19b4f2531b07c2dcd",
+    "tests/test_prompts.py": "42e774771f93cfd60e8d2373ec8050af42bb32e275f35d5ab9234fea1a1b9e14",
+    "tests/test_remote_vectors.py": "cf0d68c68e76af40575d912a837474c9fe778ae40606643ccc311b3bf1700100",
+    "tests/test_retrieval.py": "ce3d16663bee216feb0439de29855bd4cf1bd665ab4b1c0e58a6b9107ec69417",
+    "tests/test_scenario_review_report.py": "444ecce2be259bb36689dcbac807d32c6a258ad93c6ae561551526a98bf8ca00",
+    "tests/test_scenario_reviews.py": "9989286a3c50784b7eb90cbe070af09293d3c36bfd6abfd99dc82314e5532df6",
+    "tests/test_scenarios.py": "8180c93b6c6c2a6781e32e91b5a4147fd8fbd93ad979c47cf8b31e7408c58074",
+    "tests/test_storage.py": "c7f5b382c5caa6337693e640d18d39ec2c66dcf60d5dd837a4dacc47fe581cfc",
+    "tests/test_support.py": "320f48a738f72608a6819e07c2d28c881332a9a66e00b021abcc1db5746b3da3"
+  },
+  "training_jobs_started": 0
+}

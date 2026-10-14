@@ -1,0 +1,61 @@
+{
+  "baseline_result_sha256": "dc13126213e3c5565b6b0ef2cefd64b35635ccd53f9a792abb946de1a21c50a6",
+  "context_kit_checkout_modified": false,
+  "environment": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "files_sha256": {
+    "configs/compute-policy.json": "2b6360da0c263dfa3e52e360eedb4041e765b952132befc47457c9bc4783890c",
+    "configs/model-candidates.json": "1021a21ba44aebabd03dc647680be8c4a01945560f04c279c6072e386c66a8fd",
+    "configs/retrieval-baseline.json": "4e21a975c7ac317c2fb44b25a16de7d7ac441443f3a34c36cf4cce1893621afe",
+    "pyproject.toml": "f54ec7dddee5f739ab07852c5cb23787dfbda3042ecbfc370ffde22165c9571f",
+    "requirements-dev.lock": "d474454d7d4cf52f137ebb199b78e7c0eb259532ebb7178aa5ca1efc3c940898",
+    "requirements-modal.lock": "f0dd4f9987f0fe40b925cee5717963fac12fdfe269186ea14d45abadd863ecec",
+    "src/tracemem/__init__.py": "ceabe786c2dfdb38d9132b38a93b5543c33e4d5dba3076475a86fea594d913db",
+    "src/tracemem/__main__.py": "f8671118b692a0ba78ce99f479fcbedf2cdd2c74043bb2a5e00073a50f190b46",
+    "src/tracemem/adapters/__init__.py": "960d10f1fd17702eb082340042ea888e498e9b0076d18eacccd227e9ef284789",
+    "src/tracemem/adapters/context_kit.py": "3e61c4d651a99c8cdd8bfabacb3e9deedf86dad9f365517c3d4b16322025d870",
+    "src/tracemem/benchmark.py": "bd0589f91efdfc6d5c4a82d00cfeea973612a4d7ba67f4b80eef1be509917653",
+    "src/tracemem/cli.py": "4ec072d7a6c317204f4c2be6a1034f6fd7f7b61e0afd29bba054862095f6d449",
+    "src/tracemem/data/corpus.json": "4012f95c2ed7837cc65b626e225547aa2a089b00e04765fb59c8bebbddab6d35",
+    "src/tracemem/data/queries.json": "170dc13a4dffcaf07d4dfba6e957d60be7536fd43c3cba3abeb4f62062842659",
+    "src/tracemem/privacy.py": "b78d8b7e023a15c466f2a76d98a91a3f3dbc36bfeb01006f958ad65c9e3aae0b",
+    "src/tracemem/retrieval.py": "930945c51395a8dbb7c1a49efdc20b67053f3e1bb53ff947fbb76f36269e890b",
+    "src/tracemem/schema.py": "953290d013d498db8382300767bad81f769956908980f98e927ee2c18e9b4cbe",
+    "src/tracemem/storage.py": "2c79fdda1c911c4f33f797e855e312f8b8f683ea2ab6b8058699ff60c6738559",
+    "tests/test_adapter.py": "092d7b4927f9edd43cc1f6bda90fa19808e16493c89077ff2fe6cf9ee6429f83",
+    "tests/test_benchmark.py": "fc06e347f88c6a08b57701dfa0cf08ba1a274ffb6d72ea5872e573675ee5657a",
+    "tests/test_privacy.py": "0f2dc957c99a3229e7f3018be04ccbf272d69e49174de8b19b4f2531b07c2dcd",
+    "tests/test_retrieval.py": "4f67d417c4308e2ed5b9158f4af6ece94a20d43d65631ea80ac1f5ca2920e480",
+    "tests/test_storage.py": "7cc09d0f53ed9f2c156904ac6645f16493202bc97ff7b8314396337691173bf4"
+  },
+  "final_test_only_refinement": {
+    "exit_code": 0,
+    "targeted_regression_passed": 1
+  },
+  "fixture_input_sha256": "76862babda5e6e26be1ed14f5265c64e43627a54b1499dba47585605396637f3",
+  "full_suite": {
+    "context_kit_integration": true,
+    "exit_code": 0,
+    "passed": 32,
+    "skipped": 0
+  },
+  "gpu_or_training_jobs_started": 0,
+  "isolated_wheel_smoke": {
+    "benchmark": "quality metrics, intervals, configuration and input hash match source run",
+    "build_backend": "setuptools 80.9.0",
+    "demo": "passed through installed CLI outside checkout",
+    "exit_code": 0,
+    "isolated_install": "passed offline, no dependencies",
+    "schema_version": 2,
+    "source_path_imports": false,
+    "wheel_sha256": "ec75121a1ada6babbd2e6a1a34f3eec0740d2b609b3bacee51a43c6b967a8d7e"
+  },
+  "private_data_uploaded": false,
+  "recorded_at_utc": "2026-10-14T05:45:04.993927+00:00",
+  "ruff_check_exit_code": 0,
+  "ruff_format_exit_code": 0,
+  "scope": "local Phase 0/1 prototype; no publication or training",
+  "strict_mypy_exit_code": 0
+}

@@ -1,0 +1,16 @@
+{
+  "model_id": "cross-encoder/nli-deberta-v3-base",
+  "revision": "6c749ce3425cd33b46d187e45b92bbf96ee12ec7",
+  "license_tag": "apache-2.0",
+  "license_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-base/tree/6c749ce3425cd33b46d187e45b92bbf96ee12ec7",
+  "standalone_license_file_found": false,
+  "license_verification_limit": "The model card declares Apache-2.0; no standalone license file was found.",
+  "selected": false,
+  "weights_downloaded_locally": false,
+  "label_mapping": {
+    "0": "contradiction",
+    "1": "entailment",
+    "2": "neutral"
+  },
+  "verified_local_date": "2026-10-14"
+}

@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "dataset_sha256": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+  "bundle_sha256": "65078e901cad48856528377b003746e04f90245a19236eadfeeb951dc6358467",
+  "bundle_canonical_sha256": "14d2728915098a4275f07ff0b28ed9e2d85b4684fda96fbbec8cef5218a02a08",
+  "seed": 1729,
+  "receipts": [
+    {
+      "model_key": "qwen3-4b",
+      "receipt_sha256": "2035de5bfeceaf3d4be4117dd47a515ef67df1cb7899a56d5a2eacefa349410f",
+      "canonical_sha256": "ac40da7b23302d936e7c0e0955a3b25ba4b33c2c6f4ab017950f36659105967e"
+    },
+    {
+      "model_key": "phi-3.5-mini",
+      "receipt_sha256": "d5eff2e56a827a76a7426b47ccd26e88601bd85f2f57f178c4e0f62725a2648d",
+      "canonical_sha256": "695dec64c217d2a963a0e0d03ebe9d83e0619eba8f2e7782e271716dda75a551"
+    }
+  ],
+  "responses": [
+    {
+      "reviewer_id": "luna-blind-support-20261014",
+      "reviewer_kind": "agent",
+      "canonical_sha256": "acec53010489b1ab86dbcbcd35da5642debfc140adbfb264b9378fd5ec68daf1"
+    }
+  ],
+  "provenance_sha256": "c607176aed0921611c3ac25465e774a89d084890a9904ea28919d56d4108ba44",
+  "by_model": {
+    "qwen3-4b": {
+      "dev": {
+        "raw_output_count": 24,
+        "parse_excluded_output_count": 0,
+        "schema_excluded_output_count": 1,
+        "anchoring_excluded_output_count": 0,
+        "schema_valid_empty_output_count": 3,
+        "schema_valid_candidate_count": 41,
+        "unique_review_task_count": 41,
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "supported_origin_count": 26,
+            "unsupported_origin_count": 14,
+            "uncertain_origin_count": 1,
+            "all_reviewed_origin_count": 41,
+            "decisive_origin_count": 40,
+            "supported_rate_all_reviewed_origins": 0.6341463414634146,
+            "supported_rate_decisive_origins": 0.65
+          }
+        ]
+      },
+      "test": {
+        "raw_output_count": 24,
+        "parse_excluded_output_count": 0,
+        "schema_excluded_output_count": 2,
+        "anchoring_excluded_output_count": 0,
+        "schema_valid_empty_output_count": 1,
+        "schema_valid_candidate_count": 42,
+        "unique_review_task_count": 42,
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "supported_origin_count": 24,
+            "unsupported_origin_count": 16,
+            "uncertain_origin_count": 2,
+            "all_reviewed_origin_count": 42,
+            "decisive_origin_count": 40,
+            "supported_rate_all_reviewed_origins": 0.5714285714285714,
+            "supported_rate_decisive_origins": 0.6
+          }
+        ]
+      }
+    },
+    "phi-3.5-mini": {
+      "dev": {
+        "raw_output_count": 24,
+        "parse_excluded_output_count": 1,
+        "schema_excluded_output_count": 23,
+        "anchoring_excluded_output_count": 0,
+        "schema_valid_empty_output_count": 0,
+        "schema_valid_candidate_count": 0,
+        "unique_review_task_count": 0,
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "supported_origin_count": 0,
+            "unsupported_origin_count": 0,
+            "uncertain_origin_count": 0,
+            "all_reviewed_origin_count": 0,
+            "decisive_origin_count": 0,
+            "supported_rate_all_reviewed_origins": null,
+            "supported_rate_decisive_origins": null
+          }
+        ]
+      },
+      "test": {
+        "raw_output_count": 24,
+        "parse_excluded_output_count": 0,
+        "schema_excluded_output_count": 23,
+        "anchoring_excluded_output_count": 0,
+        "schema_valid_empty_output_count": 0,
+        "schema_valid_candidate_count": 1,
+        "unique_review_task_count": 1,
+        "reviewers": [
+          {
+            "reviewer_id": "luna-blind-support-20261014",
+            "reviewer_kind": "agent",
+            "supported_origin_count": 0,
+            "unsupported_origin_count": 1,
+            "uncertain_origin_count": 0,
+            "all_reviewed_origin_count": 1,
+            "decisive_origin_count": 1,
+            "supported_rate_all_reviewed_origins": 0.0,
+            "supported_rate_decisive_origins": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "interpretation": "These fractions are not recall, independent human truth, precision calibration, semantic acceptance, or Gate A. Citation anchoring, semantic judgment, and raw citation integrity are separate. Reviewer kind is self-attested."
+}

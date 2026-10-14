@@ -1,0 +1,53 @@
+{
+  "automatic_gate_a_approval": false,
+  "case_count": 24,
+  "comparison": {
+    "exact_duplicate": "Compare every case pair's ordered sequence of literal message roles and normalized per-message text, preserving message and role boundaries.",
+    "near_duplicate": {
+      "inclusive": true,
+      "method": "token-set Jaccard similarity",
+      "scope": "Cross-split only; exact-duplicate pairs are reported separately.",
+      "threshold": 0.8,
+      "tokenization": "Split each normalized message on whitespace and union tokens across the conversation; word order, repetitions, roles, and message boundaries are ignored."
+    },
+    "normalization": "Per-message text is Unicode NFKC normalized, casefolded, and has all Unicode whitespace collapsed to single spaces."
+  },
+  "diagnostic_case_count": 24,
+  "exact_duplicate_pairs": [],
+  "fixture_sha256": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
+  "held_out_case_count": 0,
+  "held_out_split_names": [
+    "test"
+  ],
+  "limitations": [
+    "Pairwise candidate enumeration is O(n²) in case count.",
+    "Lexical overlap cannot prove entity or user isolation.",
+    "Lexical overlap cannot prove template isolation.",
+    "This diagnostic does not establish legal permission.",
+    "This diagnostic does not assess annotation quality or sample adequacy.",
+    "No automatic Gate A approval is granted."
+  ],
+  "near_duplicate_pairs": [],
+  "no_memory_case_count": 4,
+  "no_memory_case_counts_by_split": {
+    "dev": 0,
+    "diagnostic": 4,
+    "test": 0,
+    "train": 0
+  },
+  "no_memory_definition": "A case whose expected claim list is empty.",
+  "scenarios_across_splits": [],
+  "split_case_counts": {
+    "dev": 0,
+    "diagnostic": 24,
+    "test": 0,
+    "train": 0
+  },
+  "unique_scenario_count": 24,
+  "unique_scenario_counts_by_split": {
+    "dev": 0,
+    "diagnostic": 24,
+    "test": 0,
+    "train": 0
+  }
+}
