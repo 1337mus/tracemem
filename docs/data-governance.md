@@ -112,7 +112,10 @@ navigation material but cannot substitute for original conversational evidence.
 ## Deletion and publication gates
 
 The first prototype does not ingest the whole private corpus and does not implement
-source erasure. It has no automatic destructive cleanup. Before persistent private
+source erasure. The [source-retention impact diagnostic](source-retention.md) traces
+explicit snapshot dependencies without opening or modifying a store. It distinguishes
+exact citations from conservative ambiguous span matches and follows correction
+lineage. It does not discover external copies or establish semantic information flow. It has no automatic destructive cleanup. Before persistent private
 corpus deployment, implement owner-authorized erasure of source-linked evidence,
 FTS rows, vectors, claims, exports and caches, including SQLite free-page/WAL handling
 and backup retention. Source deletion and claim supersession are different operations.

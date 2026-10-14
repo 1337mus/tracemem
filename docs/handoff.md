@@ -1,6 +1,6 @@
 # TraceMem continuation
 
-Updated 2026-10-14 after the 313-test turn-retrieval diagnostic checkpoint. Live jobs/workers/remote state must be checked
+Updated 2026-10-14 after the 323-test source-retention diagnostic checkpoint. Live jobs/workers/remote state must be checked
 again before acting. Verify by: 2026-10-14. Read `.local/active-cycle.json` first.
 This is a continuation checkpoint, not task completion; Raj repeatedly asked for
 continuous useful progress beyond passing tests.
@@ -119,13 +119,13 @@ truth. NLI diagnostic had high-confidence false positives; no verifier policy.
 
 ## Validation and next actions
 
-Current full suite:313tests,zero skips,5.215seconds including actual Context Kit
-integration and Node VM. Ruff76files,source mypy27,scoped41. Exact commands/exit
-codes `.local/final-longmemeval-retrieval-commands.json`; `docs/validation.json` records
+Current full suite:323tests,zero skips,5.199seconds including actual Context Kit
+integration and Node VM. Ruff78files,source mypy28,scoped42. Exact commands/exit
+codes `.local/final-retention-commands.json`; `docs/validation.json` records
 source/test hashes. The277test checkpoint is preserved in
 `docs/validation-installed-apis.json`;297test adapter checkpoint in
-`docs/validation-longmemeval.json`. The only new runtime file is the adapter;
-all31earlier packagefiles remain byte-identical.
+`docs/validation-longmemeval.json`. The new runtime file in this slice is retention.py;
+all32earlier packagefiles remain byte-identical.
 
 Expanded installed smoke completed and root-reviewed. A fresh offline virtualenv
 installed the approved wheel; all31installed packagefiles match approved source.
@@ -191,8 +191,20 @@ No upstream code execution or benchmark conversations fetched. No new GPU calls.
    All70copiedtests pass outside checkout against unchanged approved32filewheel;
    copied experiment resolves separately while runtime imports site-packages.
    See `docs/validation-longmemeval-retrieval.json`/`docs/longmemeval-retrieval.md`.
-   Reviewed313test slice commit/push/hostedCI pending; remote still6ca0782.
-6. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
+   Signedcommit690ecef48cc60b02ed435c51ba3e2391e1ebe50b pushed toprivate main.
+   HostedCI38628034666 passed313tests(one expectedskip),70installedtests and
+   frozen budget/84taskHTML checks. Local signaturevalid;GitHubbad_email unchanged.
+6. Source-retention diagnostic complete and root-reviewed; worker released ownership.
+   Pure in-memory API reports all selected historical revisions,exact citations,
+   conservative span ambiguity and complete supersession descendants. No store I/O,
+   deletion,vector-count audit,external-copy discovery or semantic-provenance proof.
+   Root independent30DAG/1500entry and1501chain/cycle oracle passes.10focusedtests
+   include malformed no-match inputs and byte-identical real-store/citation access.
+   Fresh offline33filewheelSHA256955d8440d9951ebba2877aff9934d1169e44ef5509d31b45088341e792dfc844
+   passes9smokecommands;80copiedinstalledtests pass outsidecheckout with envunset.
+   Exact receipt `docs/validation-source-retention.json`. Signedcommit/push/hostedCI
+   pending for323test slice; latest pushed690ecef313testCI is green.
+7. Continue useful work beyond CI. No PR/Linear required for prototype bootstrap.
 
 Open: independent human labels/Gate A, calibrated semantic verification, source
 lifecycle/erasure, temporal truth and matched-budget downstream QA. No trained
