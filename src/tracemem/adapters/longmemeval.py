@@ -79,6 +79,12 @@ def _require_string(value: Any, *, nonblank: bool = False) -> str:
     return value
 
 
+def _answer_string(value: Any) -> str:
+    if type(value) is int:
+        return str(value)
+    return _require_string(value)
+
+
 def _require_string_list(value: Any, *, nonblank: bool = False) -> list[str]:
     if type(value) is not list:
         raise _InvalidSchema
@@ -105,7 +111,7 @@ def _validate_question_items(data: Any) -> list[dict[str, Any]]:
         if question_type not in _QUESTION_TYPES:
             raise _InvalidSchema
         _require_string(item["question"], nonblank=True)
-        _require_string(item["answer"])
+        _answer_string(item["answer"])
         _require_string(item["question_date"], nonblank=True)
 
         session_ids = _require_string_list(item["haystack_session_ids"], nonblank=True)
@@ -255,7 +261,7 @@ def parse_longmemeval_bytes(
                 question_id=question_id,
                 question_type=item["question_type"],
                 question=item["question"],
-                answer=item["answer"],
+                answer=_answer_string(item["answer"]),
                 question_date=item["question_date"],
                 variant=variant,
                 is_abstention=question_id.endswith("_abs"),

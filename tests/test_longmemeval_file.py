@@ -42,6 +42,37 @@ class LongMemEvalFileTests(unittest.TestCase):
         self.assertEqual(result.input_bytes, len(exact))
         self.assertEqual(result.question_count, 2)
 
+    def test_unselected_integer_answer_is_validated_and_input_is_unchanged(self) -> None:
+        from tracemem.adapters.longmemeval import parse_longmemeval_bytes
+        from tracemem.adapters.longmemeval_file import scan_longmemeval_file
+
+        items = json.loads(self._fixture_bytes())
+        items[1]["answer"] = -12
+        raw = json.dumps(items, ensure_ascii=False).encode("utf-8")
+        expected = parse_longmemeval_bytes(raw, namespace="study", variant="s")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fictional.json"
+            path.write_bytes(raw)
+            before = path.stat()
+            before_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+
+            result = scan_longmemeval_file(
+                path,
+                namespace="study",
+                variant="s",
+                question_ids=(expected[0].question_id,),
+            )
+
+            after = path.stat()
+            after_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+
+        self.assertEqual(result.selected_questions, (expected[0],))
+        self.assertEqual(result.question_count, 2)
+        self.assertEqual(result.input_sha256, before_hash)
+        self.assertEqual(after_hash, before_hash)
+        self.assertEqual(stat.S_IMODE(after.st_mode), stat.S_IMODE(before.st_mode))
+        self.assertEqual(after.st_mtime_ns, before.st_mtime_ns)
+
     def test_empty_selection_validates_everything_and_retains_no_questions(self) -> None:
         from tracemem.adapters.longmemeval_file import scan_longmemeval_file
 

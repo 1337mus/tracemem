@@ -214,7 +214,6 @@ class LongMemEvalAdapterTests(unittest.TestCase):
     def test_question_metadata_and_history_fields_require_documented_types(self) -> None:
         mutations = (
             lambda item: item.__setitem__("question", "  "),
-            lambda item: item.__setitem__("answer", None),
             lambda item: item.__setitem__("question_date", 20320403),
             lambda item: item.__setitem__("haystack_session_ids", "not-a-list"),
             lambda item: item["haystack_session_ids"].__setitem__(0, 7),
@@ -227,6 +226,39 @@ class LongMemEvalAdapterTests(unittest.TestCase):
                 items = self._fixture_items()
                 mutate(items[0])
                 self._assert_schema_rejected(items)
+
+    def test_integer_answer_is_normalized_to_decimal_string(self) -> None:
+        for answer in (0, -7, 42):
+            with self.subTest(answer=answer):
+                numeric_items = self._fixture_items()
+                numeric_items[0]["answer"] = answer
+                string_items = self._fixture_items()
+                string_items[0]["answer"] = str(answer)
+
+                question = self._parse_items(numeric_items)[0]
+                string_question = self._parse_items(string_items)[0]
+
+                self.assertIs(type(question.answer), str)  # type: ignore[attr-defined]
+                self.assertEqual(question.answer, str(answer))  # type: ignore[attr-defined]
+                self.assertEqual(question.records, string_question.records)  # type: ignore[attr-defined]
+                self.assertTrue(
+                    all(str(answer) not in record.text for record in question.records)  # type: ignore[attr-defined]
+                )
+
+    def test_non_integer_non_string_answers_keep_the_schema_rejection(self) -> None:
+        for answer in (False, True, 1.0, None, [], {}):
+            with self.subTest(answer=answer):
+                items = self._fixture_items()
+                items[0]["answer"] = answer
+                self._assert_schema_rejected(items)
+
+    def test_string_answer_formatting_is_preserved(self) -> None:
+        items = self._fixture_items()
+        items[0]["answer"] = "  exact answer \n"
+
+        question = self._parse_items(items)[0]
+
+        self.assertEqual(question.answer, "  exact answer \n")  # type: ignore[attr-defined]
 
     def test_parallel_lists_and_unique_contained_session_labels_are_checked(self) -> None:
         mismatched = self._fixture_items()
