@@ -29,6 +29,31 @@ establish QA or evaluator equivalence, data-use rights, or Gate A.
 
 ## Current bounded work
 
+Latest private delivery: signed commit
+[`d8d0847c058559aff791fae70a0ed757c7510dfa`](https://github.com/1337mus/tracemem/commit/d8d0847c058559aff791fae70a0ed757c7510dfa),
+with exact [CI38668432855](https://github.com/1337mus/tracemem/actions/runs/38668432855)
+success: 502 source tests (one skip), 250 installed tests (two skips).
+Root verified the signature, owner/origin/PRIVATE visibility before pushing.
+The fictional end-to-end demo was rerun successfully after delivery.
+
+The [answering runner](qa-contrast-answer-runner.md) is implemented and root
+reviewed across both source modules, all focused tests and installed-CI copies.
+Twelve focused tests and full checks pass: 514 tests (one skip), Ruff on 113
+files and mypy on 32 runtime files. Root independently compared all 46 prompts,
+the complete generation protocol and resource envelope against frozen inputs.
+Raw responses are flushed and fsynced before app teardown and validation.
+Installed-wheel verification passed all 12 focused tests and exact offline CLI
+replay, with all 37 runtime members unchanged. Root inspected that harness and
+its evidence. The validation receipt records the actual failure chronology;
+the log named `red-reconstructed` passed and is not RED evidence. A separate
+bounded `gpt-6-luna/medium` worker, `/root/contrast_answer_analysis`, implements
+the predeclared offline analysis; that follow-up remains unreviewed and is
+excluded from runner delivery. Verify live ownership before resuming workers.
+Private delivery and an actual launch are pending. No GPU job has launched
+for this payload. Root freeze and predeclared
+literal-analysis protocol are saved at `.local/qa-contrast-answer-root-freeze.json`
+and `.local/qa-contrast-answer-scoring-freeze.json`. Verify live state by 2026-10-15.
+
 Phase 0/1 is complete; Gate A is unmet, with zero human labels, no selected
 model, and no training. The frozen first-five oracle retrieval diagnostic is
 complete: BM25/hash/hybrid each recovered 0.80 macro explicit-label recall at
@@ -106,12 +131,12 @@ observed but its raw log was not saved. See [validation](validation-qa-contrast-
 No remote, GPU, local model or tokenizer call ran. Active-cycle records the
 exact signed private delivery and CI once verified.
 
-Next: implement and review a separate source-free Modal answering runner
-for the frozen 46-prompt payload. Pin payload/runner hashes, recheck exact
-token counts/template/backend before generation, retain raw responses before
-validation, and verify the personal workspace and zero active jobs before
-any single bounded synthetic-only GPU call. Gate A remains unmet; this is
-an answering diagnostic and does not select an extractor.
+Next: finish installed verification, signed private delivery and exact CI for
+the reviewed runner, then verify the personal workspace and zero active jobs
+before one bounded synthetic-only GPU call. The runner rechecks exact counts,
+template and backend before model loading, with no prompt truncation. Keep raw
+responses and use the predeclared literal scoring protocol for the subsequent
+development report. Gate A remains unmet; this does not select an extractor.
 
 Before continuing, read `.local/active-cycle.json` and verify live ownership,
 jobs, sessions, and next action; do not duplicate a remote job. Modal work is

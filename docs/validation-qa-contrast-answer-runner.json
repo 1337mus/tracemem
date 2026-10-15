@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "offline and installed-wheel validation of the source-free QA contrast answer runner",
+  "source": {
+    "runner_sha256": "1e1b7409c7a19bc4c0d51db72eb9256e6b1667ebc311af01d257e395e734a3db",
+    "receipt_contract_sha256": "63e9bcfa37447f9b6e81b091d4f928bb1ba36668426260c5d99239156a7b0461",
+    "test_sha256": "3c5f61435f07ce4ffe11540f219063e6c70b7507c7ae38b2e9e6541f8955c7b2",
+    "ci_workflow_sha256": "d1878404b341aedc5f3fa87a865bc0fb8226bc547d26f7d0417eaf22ef157d64",
+    "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+    "generation_protocol_sha256": "3ed43f94abba3419cd62814aa4c32b5943acfa73684ac1197fabc84b7a58d9f2",
+    "approved_receipt_source_pin_matches_final_bytes": true
+  },
+  "source_validation": {
+    "focused_command": "PYTHONPATH=src:. .venv/bin/python -m unittest discover -s tests -p 'test_modal_qa_contrast_answer*.py' -v",
+    "focused_tests": 12,
+    "focused_exit_code": 0,
+    "focused_log": ".local/qa-contrast-answer-focused-after-import-fix.log",
+    "focused_log_sha256": "cf41e3277dd1cc5ecb61b0a004a64e6ec58fc75311734a7f9813a47261eb7802",
+    "ruff_check_exit_code": 0,
+    "ruff_format_check_exit_code": 0,
+    "git_diff_check_exit_code": 0
+  },
+  "root_validation": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "tests_attempted": 514,
+    "tests_skipped": 1,
+    "elapsed_seconds": 24.057,
+    "ruff_files": 113,
+    "mypy_files": 32,
+    "log": ".local/qa-contrast-answer-root-full-check.log",
+    "log_sha256": "b41c261f93aa1d07557f1f306efe45dcb4c896d5a989cda17b7bb348e49a83cb"
+  },
+  "independent_root_audit": {
+    "status": "passed",
+    "evidence": ".local/qa-contrast-answer-root-audit.json",
+    "evidence_sha256": "29ccd187dd8a209f304079f0d5033f14d7b81d611a5e0637bdd6bd05329ca54a",
+    "prompts_compared": 46,
+    "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+    "generation_protocol_sha256": "3ed43f94abba3419cd62814aa4c32b5943acfa73684ac1197fabc84b7a58d9f2",
+    "resource_envelope_matches_root_freeze": true,
+    "source_free_closure_empty": true,
+    "heavy_imports": false,
+    "remote_calls": 0
+  },
+  "installed_validation": {
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+    "new_wheel_built": false,
+    "python_version": "3.12.14",
+    "runtime_members_verified": 37,
+    "source_installed_and_wheel_member_hashes_match": true,
+    "test_root_outside_checkout": true,
+    "tests": 12,
+    "tests_exit_code": 0,
+    "tests_log": ".local/qa-contrast-answer-installed-tests.log",
+    "tests_log_sha256": "2b7e8ac02a1c6575182aa7d3602a61a1f2e89159d529e4b9ca6d46381bab1310",
+    "offline_source_cli_exit_code": 0,
+    "offline_installed_cli_exit_code": 0,
+    "source_and_installed_cli_summaries_match": true,
+    "offline_cli_summary": {
+      "item_count": 46,
+      "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+      "runner_sha256": "1e1b7409c7a19bc4c0d51db72eb9256e6b1667ebc311af01d257e395e734a3db",
+      "remote_started": false
+    },
+    "model_modal_and_tokenizer_imports_blocked": true,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "fixture_scope": {
+      "fictional_development_fixture_only": true,
+      "case_count": 6,
+      "all_cases_are_dev": true,
+      "fixture_sha256": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+      "only_fixture_files_copied": [
+        "examples/synthetic/qa-contrast-dev-v1.json",
+        "examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json"
+      ],
+      "no_other_synthetic_fixtures_copied": true
+    },
+    "receipt": ".local/qa-contrast-answer-installed-receipt.json",
+    "receipt_sha256": "41cfce748fda6acc7ecf12d18bc942bf28fffd816d2318735530f7911e044b6f",
+    "runner_script": ".local/qa-contrast-answer-installed.py",
+    "runner_script_sha256": "07bc006d0ab9b269d0752b2099e87491b0ce17ffde1620b4e7f41f1e279c2d2c"
+  },
+  "evidence_chronology": {
+    "behavioral_reds": [
+      {
+        "log": ".local/qa-contrast-answer-red-protocol-hash.log",
+        "observed": "A valid result carrying generation_protocol_sha256 was rejected by the then-current validator.",
+        "classification": "pre-fix contract failure; final validator checks the canonical protocol hash."
+      },
+      {
+        "log": ".local/qa-contrast-answer-red-gpu-provenance.log",
+        "observed": "The validator accepted a wrong GPU name and capability.",
+        "classification": "confirmed pre-fix provenance validation gap; exact Tesla T4 and 7.5 checks are now covered."
+      }
+    ],
+    "not_behavioral_reds": [
+      {
+        "log": ".local/qa-contrast-answer-red-reconstructed.log",
+        "observed": "One reconstructed-body test passed.",
+        "classification": "The filename does not indicate a failure."
+      },
+      {
+        "logs": [
+          ".local/qa-contrast-answer-red-cli.log",
+          ".local/qa-contrast-answer-red-modal-builder.log",
+          ".local/qa-contrast-answer-red-payload-contract.log",
+          ".local/qa-contrast-answer-red-payload-sha.log",
+          ".local/qa-contrast-answer-red-remote-preflight.log",
+          ".local/qa-contrast-answer-red-result-validation.log",
+          ".local/qa-contrast-answer-red-run-once.log"
+        ],
+        "observed": "Tests ran while the implementation APIs were still being added and reported missing attributes.",
+        "classification": "intermediate implementation incompleteness, not behavioral evidence against the final implementation."
+      },
+      {
+        "log": ".local/qa-contrast-answer-focused.log",
+        "observed": "A focused run had two NameError failures because Ruff removed a function-local import needed by the reconstructed remote body.",
+        "classification": "implementation regression caught and fixed; the final focused source and installed suites pass."
+      },
+      {
+        "log": ".local/qa-contrast-answer-installed-script.log",
+        "observed": "The first installed-check harness stopped before tests because its site_packages variable was referenced before assignment.",
+        "classification": "verification-script setup error; corrected harness completed all installed checks."
+      }
+    ]
+  },
+  "limits": {
+    "modal_launches": 0,
+    "network_used": false,
+    "model_weights_or_tokenizers_loaded": false,
+    "installed_receipt_is_not_a_model_result": true
+  },
+  "artifacts": {
+    "installed_source_cli_log_sha256": "8b667cfecb6d45e90ff54165201f7311b8aa3addf971413969f44e158a7f8d5e",
+    "installed_cli_log_sha256": "8b667cfecb6d45e90ff54165201f7311b8aa3addf971413969f44e158a7f8d5e",
+    "installed_script_final_log": ".local/qa-contrast-answer-installed-script-final.log",
+    "installed_script_final_log_sha256": "41cfce748fda6acc7ecf12d18bc942bf28fffd816d2318735530f7911e044b6f"
+  }
+}

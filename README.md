@@ -24,7 +24,8 @@ New stores use evidence schema 3 and indexed FTS maintenance; older stores are
 rejected read-only, with no automatic migration. Default vectors use deterministic
 token hashing; pinned MiniLM is a separate measured retrieval diagnostic.
 See [current validation](docs/validation.json) for the last finalized checkpoint
-and [handoff](docs/handoff.md) for live work.
+and [handoff](docs/handoff.md) for live work. A short
+[project status and design](docs/project-status.md) connects the pieces and results.
 
 ## Run offline
 
