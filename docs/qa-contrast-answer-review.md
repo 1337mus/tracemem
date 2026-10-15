@@ -64,3 +64,10 @@ bundle and rejects hash mismatches, missing/duplicate/unknown tasks, unexpected
 fields, invalid labels, blank rationales, mixed reviewer identity or kind and
 invalid timestamps. It reports validation counts without computing semantic
 accuracy, changing references or promoting claims. Keep review files local.
+
+The [delivered tooling commit](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb)
+passed [exact CI 38674186708](https://github.com/1337mus/tracemem/actions/runs/38674186708):
+525 source tests passed / one skipped; 272 installed tests passed / two skipped.
+The [validation snapshot](validation-qa-contrast-reviews.json) preserves the earlier
+local checks, hashes and RED/GREEN chronology. Source and copied actual export
+files match byte-for-byte outside the checkout. No semantic labels were created.

@@ -1,9 +1,9 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. Verified analysis delivery:
-[`743bb2f`](https://github.com/1337mus/tracemem/commit/743bb2fe76b67d652d4d349a5b01f369019e01ef).
-Its [CI](https://github.com/1337mus/tracemem/actions/runs/38673059955) passed
-520 source tests (one skip) and 268 installed tests (two skips). Repository
+Updated 2026-10-15 UTC. Verified QA review tooling delivery:
+[`125d366`](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb).
+Its [CI](https://github.com/1337mus/tracemem/actions/runs/38674186708) passed
+526 source tests (one skip) and 274 installed tests (two skips). Repository
 visibility was verified PRIVATE before that push. Verify live delivery and
 worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
 

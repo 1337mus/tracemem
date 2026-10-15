@@ -7,19 +7,25 @@ read-only. Private conversations, vectors, claims and checkpoints stay local.
 
 ## Verified delivery
 
-Analysis commit [`743bb2fe76b67d652d4d349a5b01f369019e01ef`](https://github.com/1337mus/tracemem/commit/743bb2fe76b67d652d4d349a5b01f369019e01ef)
-was signed, signature verified and pushed after confirming personal owner,
-origin and PRIVATE visibility immediately before push.
-[Exact CI 38673059955](https://github.com/1337mus/tracemem/actions/runs/38673059955)
-passed: 520 source tests (one skip), 268 installed tests (two skips), including
-actual source/copied/expected report byte equality. All 37 runtime members remain
-unchanged from wheel SHA-256
+QA review tooling commit [`125d3660066cd610e8229fc131714fcb33019cdb`](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb)
+was signed, locally GPG-verified and privately pushed after confirming personal
+owner, origin and PRIVATE visibility immediately before push.
+[Exact CI 38674186708](https://github.com/1337mus/tracemem/actions/runs/38674186708)
+passed: 526 source tests (one skip), 274 installed tests (two skips).
+The earlier [analysis CI 38673059955](https://github.com/1337mus/tracemem/actions/runs/38673059955)
+also passed and reproduced the literal report byte-for-byte. All 37 runtime
+members remain unchanged from wheel SHA-256
 `0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`.
-The earlier runner commit was `7f7c08f7cee05c73d377d437b0200020f9dac6f2`.
+
+GitHub marked the tooling commit's locally valid signature `bad_email`: the
+committer identity differed from the signing key. The next documentation
+checkpoint uses a per-command email matching the registered verified key;
+verify its actual GitHub signature state in active-cycle. No history is rewritten.
+Local GPG validity and GitHub's verified badge are separate recorded facts.
 
 Check active-cycle for the exact newest signed delivery and CI outcome;
-never infer pushed from implemented. The validation JSON records the pre-push
-validation snapshot; this handoff records the subsequently verified delivery.
+never infer pushed from implemented. Validation JSON files preserve the pre-push
+snapshots; this handoff records subsequently verified delivery.
 
 ## Completed bounded experiment
 
@@ -80,12 +86,16 @@ files and mypy 32. Six installed focused tests pass; all three actual export
 files match source/copy bytes outside checkout with heavy imports blocked.
 All 37 runtime members still match the prior wheel. See the
 [validation snapshot](validation-qa-contrast-reviews.json) for exact hashes and
-honest RED/GREEN limits. Review source and tests are ready for signed delivery;
-check active-cycle for the later push and exact CI result.
+honest RED/GREEN limits. Review source and tests were privately delivered in
+`125d366`; the exact CI passed as recorded above.
 
 The actual local packet is `.local/qa-contrast-reviews-source-export/`.
 `bundle.json` and `response-template.json` may go to a blinded reviewer;
-withhold `key.json`. No review labels have been filled in.
+withhold `key.json`. No review labels have been filled in. A lossless grouped
+reading view at `.local/qa-contrast-reviews-reading-view.json` reduces compact
+JSON from 140,852 to 71,429 bytes; exact reconstruction matches the bundle hash.
+This is byte-size reduction, not a tokenizer measurement. Its separate local
+receipt pins the view hash and reconstruction check.
 
 ## Next useful action
 
