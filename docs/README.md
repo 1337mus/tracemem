@@ -64,6 +64,11 @@ Paths in this index are relative to this `docs/` directory.
 - [Longitudinal revision v2](longitudinal-revision-v2.md): the same fictional
   development slice with one unresolved candidate kept unlabeled; see its
   [validation record](validation-longitudinal-v2.json).
+- [Cross-session test data card](cross-session-test-data-card.md),
+  [retrieval replay](cross-session-test-retrieval.json), and
+  [validation record](validation-cross-session-test.json): six newly authored
+  fictional cases and a CPU turn-retrieval diagnostic; labels remain provisional
+  and do not establish held-out quality.
 - [Dataset readiness report](dataset-readiness.json): assigned split and duplicate counts.
 - [Scenario curation notes](scenario-curation-notes.md) and [scenario dataset brief](scenario-dataset-brief.md):
   fixture construction records.

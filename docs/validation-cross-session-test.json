@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-15T07:19:46.029412+00:00",
+  "scope": "Six new authored fictional assigned-test cases; CPU labeled-turn retrieval only. No runtime change.",
+  "source_check": {
+    "command": [
+      "make",
+      "check",
+      "PYTHON=.venv/bin/python"
+    ],
+    "exit_code": 0,
+    "attempted": 603,
+    "passed": 602,
+    "skipped": 1,
+    "ruff": "passed",
+    "format_files": 134,
+    "mypy_source_files": 32
+  },
+  "focused_tests": {
+    "source_passed": 3,
+    "installed_passed": 3,
+    "installed_isolated_python": true,
+    "installed_outside_checkout": true,
+    "installed_pythonpath_pythonhome_unset": true
+  },
+  "source_installed_report_bytes_equal": true,
+  "report_sha256": "34492b7c47d6fcae0042c730df14641b6062f2e47348b46d52958a263afa0fa6",
+  "runtime_members_equal_source_wheel_installed": 37,
+  "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+  "fixture_hashes": {
+    "examples/synthetic/cross-session-test-v1.json": "dc7e301a9acb0e0d26293c2d8fa80bf8ebe838ecd543a7917a64bcd8f3cdfedf",
+    "examples/synthetic/cross-session-test-v1-metadata.json": "e41f27e4e96c76b73baabba06ee17f17a23df2fbdaf4cd07d645a012faf0fd8e",
+    "tests/test_cross_session_fixture.py": "e30e48042fbcc450b4addf8a319a51527f5dcf9a82af9fc63a7095ff20e6a842",
+    ".github/workflows/ci.yml": "dbd2d1b85b0393a7fcf933ba3b07c1c4c21ad4190fd5c57e8b79fe0b8c53f84e"
+  },
+  "message_count": 72,
+  "session_count": 24,
+  "positive_turn_labels": 8,
+  "counts": {
+    "question_count": 6,
+    "abstention_count": 2,
+    "unlabeled_count": 0,
+    "scored_count": 4
+  },
+  "environment": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "annotation": {
+    "status": "agent_authored_provisional",
+    "root_review": "unblinded agent-only source/question/answer/dependency audit",
+    "independently_verified_human_labels": 0,
+    "assigned_split": "test",
+    "held_out_quality_established": false
+  },
+  "results": {
+    "bm25": [
+      {
+        "cutoff": 1,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 0.5,
+        "all_labels_found_fraction": 0.0
+      },
+      {
+        "cutoff": 3,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 1.0,
+        "all_labels_found_fraction": 1.0
+      },
+      {
+        "cutoff": 5,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 1.0,
+        "all_labels_found_fraction": 1.0
+      }
+    ],
+    "vector": [
+      {
+        "cutoff": 1,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 0.5,
+        "all_labels_found_fraction": 0.0
+      },
+      {
+        "cutoff": 3,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 0.75,
+        "all_labels_found_fraction": 0.5
+      },
+      {
+        "cutoff": 5,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 1.0,
+        "all_labels_found_fraction": 1.0
+      }
+    ],
+    "hybrid": [
+      {
+        "cutoff": 1,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 0.5,
+        "all_labels_found_fraction": 0.0
+      },
+      {
+        "cutoff": 3,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 1.0,
+        "all_labels_found_fraction": 1.0
+      },
+      {
+        "cutoff": 5,
+        "question_count": 6,
+        "abstention_count": 2,
+        "unlabeled_count": 0,
+        "scored_question_count": 4,
+        "nonempty_retrieval_question_count": 6,
+        "macro_label_recall": 1.0,
+        "all_labels_found_fraction": 1.0
+      }
+    ]
+  },
+  "unknowns_excluded_from_recall": true,
+  "historical_artifact_pins_verified": 50,
+  "historical_artifacts_modified": false,
+  "actionlint": "passed",
+  "git_diff_check": "passed",
+  "raw_capture_policy": "Actual subprocess stdout/stderr and exit codes captured in new files; no reconstruction or editing.",
+  "local_evidence": {
+    "raw_commands": ".local/cross-session-root-captures",
+    "replay_summary": ".local/cross-session-root-replay-summary.json",
+    "semantic_review": ".local/cross-session-root-semantic-review.json",
+    "arithmetic_and_provenance_audit": ".local/cross-session-root-ranking-audit.json"
+  },
+  "limits": [
+    "Four tiny scored histories and two unknown exclusions; not official LongMemEval data.",
+    "Exact-ID/text checks do not establish semantic independence.",
+    "Hash vectors are weak lexical features, not semantic embeddings.",
+    "No QA, abstention accuracy, generalization, model improvement or human-validation claim.",
+    "No new inference, GPU call, model selection, training, private-conversation reads or uploads."
+  ],
+  "delivery": "Local validation passed; authoritative signed/private push and exact-head CI state remain in ignored .local/active-cycle.json.",
+  "root_audited_retrieval_cells": 54
+}

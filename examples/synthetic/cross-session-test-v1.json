@@ -1,0 +1,490 @@
+[
+  {
+    "question_id": "cst-moonbridge-route",
+    "question_type": "temporal-reasoning",
+    "question": "Before the March 23 replacement, which two stops opened the Moonbridge garden route?",
+    "answer": "Fern Atrium, followed by Lichen Steps.",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-moonbridge-route-s01",
+      "cst-moonbridge-route-s02",
+      "cst-moonbridge-route-s03",
+      "cst-moonbridge-route-s04"
+    ],
+    "haystack_dates": [
+      "2035-01-02",
+      "2035-02-14",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "For the first edition of the Moonbridge garden route, the opening stop was Fern Atrium.",
+          "has_answer": true
+        },
+        {
+          "role": "assistant",
+          "content": "I put that route note in the blue folder."
+        },
+        {
+          "role": "user",
+          "content": "The first-edition card also carries a small pond legend."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The February draft used a temporary detour through Pebble Gallery."
+        },
+        {
+          "role": "assistant",
+          "content": "I marked that draft as circulated on February 14."
+        },
+        {
+          "role": "user",
+          "content": "I have not approved the detour as the replacement route."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The first edition’s second stop was Lichen Steps; its replacement took effect March 23 and moved the second stop to Cloud Basin.",
+          "has_answer": true
+        },
+        {
+          "role": "assistant",
+          "content": "I recorded March 23 as the revision date."
+        },
+        {
+          "role": "user",
+          "content": "The revised card is stored in the green folder."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The April route now opens at Quartz Walk."
+        },
+        {
+          "role": "assistant",
+          "content": "I filed the current route for the next visit."
+        },
+        {
+          "role": "user",
+          "content": "Its April second stop is Harbor Arch."
+        }
+      ]
+    ],
+    "answer_session_ids": [
+      "cst-moonbridge-route-s01",
+      "cst-moonbridge-route-s03"
+    ]
+  },
+  {
+    "question_id": "cst-hearth-reed-rule",
+    "question_type": "multi-session",
+    "question": "According to the Saffron Current rule, where should the Hearth Reed jar go after its two recorded morning readings?",
+    "answer": "The Dry Shelf.",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-hearth-reed-rule-s01",
+      "cst-hearth-reed-rule-s02",
+      "cst-hearth-reed-rule-s03",
+      "cst-hearth-reed-rule-s04"
+    ],
+    "haystack_dates": [
+      "2035-01-02",
+      "2035-02-14",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The Saffron Current rule is: if two consecutive morning humidity readings are both below 18 percent, move a Hearth Reed jar to the Dry Shelf; otherwise, leave it in the vault.",
+          "has_answer": true
+        },
+        {
+          "role": "assistant",
+          "content": "I recorded the handling rule with the storage chart."
+        },
+        {
+          "role": "user",
+          "content": "The violet jars use a separate temperature log."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The refill cart holds empty trays until Friday."
+        },
+        {
+          "role": "assistant",
+          "content": "I noted the cart schedule."
+        },
+        {
+          "role": "user",
+          "content": "The west cabinet needs a new label."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The Hearth Reed jar logged 16 percent Monday morning and 15 percent Tuesday morning.",
+          "has_answer": true
+        },
+        {
+          "role": "assistant",
+          "content": "I added the readings to the vault ledger."
+        },
+        {
+          "role": "user",
+          "content": "The scale battery was changed after Tuesday’s entry."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "A different jar measured 22 percent on Thursday."
+        },
+        {
+          "role": "assistant",
+          "content": "That reading belongs to the mist tray."
+        },
+        {
+          "role": "user",
+          "content": "The archive room was swept before closing."
+        }
+      ]
+    ],
+    "answer_session_ids": [
+      "cst-hearth-reed-rule-s01",
+      "cst-hearth-reed-rule-s03"
+    ]
+  },
+  {
+    "question_id": "cst-quietpine-identity",
+    "question_type": "multi-session",
+    "question": "What registered name belongs to the account that uploaded the final dusk-lantern sketch for Ember Heron?",
+    "answer": "Ivo Maren.",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-quietpine-identity-s01",
+      "cst-quietpine-identity-s02",
+      "cst-quietpine-identity-s03",
+      "cst-quietpine-identity-s04"
+    ],
+    "haystack_dates": [
+      "2035-01-02",
+      "2035-02-14",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The east studio keeps its proofs in a paper sleeve."
+        },
+        {
+          "role": "assistant",
+          "content": "I added a note about the print supplies."
+        },
+        {
+          "role": "user",
+          "content": "The studio paper stock is labeled 140 gsm."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The east studio borrowed a press for its botanical postcards."
+        },
+        {
+          "role": "assistant",
+          "content": "I put the return date on the equipment card."
+        },
+        {
+          "role": "user",
+          "content": "In the Ember Heron print room, account alias QuietPine is registered to Ivo Maren.",
+          "has_answer": true
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The paper cutter was cleaned after the botanical postcard run."
+        },
+        {
+          "role": "assistant",
+          "content": "I added the paper cutter check to the workshop log."
+        },
+        {
+          "role": "user",
+          "content": "The attachment used the square canvas preset."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The April print run used matte stock."
+        },
+        {
+          "role": "assistant",
+          "content": "I added the stock choice to the production sheet."
+        },
+        {
+          "role": "user",
+          "content": "The final dusk-lantern sketch for Ember Heron was uploaded from account QuietPine.",
+          "has_answer": true
+        }
+      ]
+    ],
+    "answer_session_ids": [
+      "cst-quietpine-identity-s02",
+      "cst-quietpine-identity-s04"
+    ]
+  },
+  {
+    "question_id": "cst-blueshingle-report",
+    "question_type": "multi-session",
+    "question": "Which project uses a report that counts only signed kiln trials, and what two categories does that report exclude?",
+    "answer": "Needle Orchard; prototypes and desk simulations.",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-blueshingle-report-s01",
+      "cst-blueshingle-report-s02",
+      "cst-blueshingle-report-s03",
+      "cst-blueshingle-report-s04"
+    ],
+    "haystack_dates": [
+      "2035-01-02",
+      "2035-02-14",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The Blue Shingle report counts only signed kiln trials; prototypes and desk simulations are outside its scope.",
+          "has_answer": true
+        },
+        {
+          "role": "assistant",
+          "content": "I copied the report rule into the review checklist."
+        },
+        {
+          "role": "user",
+          "content": "Unnumbered sketches stay in the workshop binder."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Project Glass Flume tracks its own bench notebook."
+        },
+        {
+          "role": "assistant",
+          "content": "I kept that notebook with the other Glass Flume records."
+        },
+        {
+          "role": "user",
+          "content": "Its cover is pale green."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The workshop measured the kiln frame before the April inspection."
+        },
+        {
+          "role": "assistant",
+          "content": "I added the kiln-frame measurement to the workshop log."
+        },
+        {
+          "role": "user",
+          "content": "The register was printed on recycled paper."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The April Blue Shingle packet is marked archived."
+        },
+        {
+          "role": "assistant",
+          "content": "I stored the packet in the monthly cabinet."
+        },
+        {
+          "role": "user",
+          "content": "The work register assigns report Blue Shingle to project Needle Orchard; Glass Flume is a separate project record.",
+          "has_answer": true
+        }
+      ]
+    ],
+    "answer_session_ids": [
+      "cst-blueshingle-report-s01",
+      "cst-blueshingle-report-s04"
+    ]
+  },
+  {
+    "question_id": "cst-hushglass-causality_abs",
+    "question_type": "temporal-reasoning",
+    "question": "Did the February 14 humidity increase cause the Hushglass turbine lamp to blink two minutes later?",
+    "answer": "UNKNOWN",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-hushglass-causality_abs-s01",
+      "cst-hushglass-causality_abs-s02",
+      "cst-hushglass-causality_abs-s03",
+      "cst-hushglass-causality_abs-s04"
+    ],
+    "haystack_dates": [
+      "2035-02-15",
+      "2035-03-01",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The nearby room hygrometer rose from 40 percent to 44 percent at 16:40 on February 14."
+        },
+        {
+          "role": "assistant",
+          "content": "I added that reading to the sensor log."
+        },
+        {
+          "role": "user",
+          "content": "The supply door was checked after the reading."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The workshop inventory lists three brass clamps."
+        },
+        {
+          "role": "assistant",
+          "content": "I updated the inventory card."
+        },
+        {
+          "role": "user",
+          "content": "The spare labels are in the top drawer."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The Hushglass turbine lamp blinked at 16:42 on February 14."
+        },
+        {
+          "role": "assistant",
+          "content": "I put the lamp note in the maintenance ledger."
+        },
+        {
+          "role": "user",
+          "content": "The technician left the shift at 17:00."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "A routine light check was completed on April 18."
+        },
+        {
+          "role": "assistant",
+          "content": "I filed the check under routine maintenance."
+        },
+        {
+          "role": "user",
+          "content": "The checklist has a blue cover."
+        }
+      ]
+    ],
+    "answer_session_ids": []
+  },
+  {
+    "question_id": "cst-rook-badge-identity_abs",
+    "question_type": "multi-session",
+    "question": "Which named coordinator used badge Rook-8 to approve the Tallow Reef sample case?",
+    "answer": "UNKNOWN",
+    "question_date": "2035-04-19",
+    "haystack_session_ids": [
+      "cst-rook-badge-identity_abs-s01",
+      "cst-rook-badge-identity_abs-s02",
+      "cst-rook-badge-identity_abs-s03",
+      "cst-rook-badge-identity_abs-s04"
+    ],
+    "haystack_dates": [
+      "2035-01-02",
+      "2035-02-14",
+      "2035-03-23",
+      "2035-04-18"
+    ],
+    "haystack_sessions": [
+      [
+        {
+          "role": "user",
+          "content": "The roster names Anya Pell as coordinator for the Tallow Reef survey."
+        },
+        {
+          "role": "assistant",
+          "content": "I filed the roster with the survey packet."
+        },
+        {
+          "role": "user",
+          "content": "The survey samples use numbered paper sleeves."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The blue cabinet contains spare sample seals."
+        },
+        {
+          "role": "assistant",
+          "content": "I added the cabinet location to the supply list."
+        },
+        {
+          "role": "user",
+          "content": "The east lamp was replaced last week."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Badge Rook-8 was recorded as approving the Tallow Reef sample case."
+        },
+        {
+          "role": "assistant",
+          "content": "I saved the approval entry in the case log."
+        },
+        {
+          "role": "user",
+          "content": "The case log lists a time but no staff name."
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The remaining sleeves were counted on April 18."
+        },
+        {
+          "role": "assistant",
+          "content": "I put the count on the inventory sheet."
+        },
+        {
+          "role": "user",
+          "content": "The archive box is labeled with the survey year."
+        }
+      ]
+    ],
+    "answer_session_ids": []
+  }
+]

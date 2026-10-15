@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "license": "MIT",
+  "provenance": "Newly authored fictional transcripts and questions created for the TraceMem cross-session test fixture; no real conversations or copied benchmark records are included.",
+  "assigned_split": "test",
+  "annotation_status": "agent_authored_provisional",
+  "independence_limit": "Source, scenario, template, and entity identifiers are unique bookkeeping labels for split-audit support. Their uniqueness does not establish semantic independence, and agent-authored labels are not human or independent ground truth.",
+  "cases": [
+    {
+      "question_id": "cst-moonbridge-route",
+      "source_id": "cst-source-01",
+      "scenario_id": "cst-scenario-01-route-version",
+      "scenario_group": "cst-scenario-group-01",
+      "template_group": "cst-template-group-01",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-01-map",
+        "cst-entity-01-fern",
+        "cst-entity-01-lichen",
+        "cst-entity-01-quartz"
+      ],
+      "support_dependencies": [
+        {
+          "session_id": "cst-moonbridge-route-s01",
+          "turn_number": 1,
+          "component": "The opening stop in the first-edition route is Fern Atrium."
+        },
+        {
+          "session_id": "cst-moonbridge-route-s03",
+          "turn_number": 1,
+          "component": "The second stop in that first edition is Lichen Steps; the March replacement is a later version."
+        }
+      ],
+      "nonadjacency_rationale": "The component turns are in s01 and s03, with the unmarked February s02 draft between them; the two old-version stops must be combined."
+    },
+    {
+      "question_id": "cst-hearth-reed-rule",
+      "source_id": "cst-source-02",
+      "scenario_id": "cst-scenario-02-vault-rule",
+      "scenario_group": "cst-scenario-group-02",
+      "template_group": "cst-template-group-02",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-02-vault",
+        "cst-entity-02-hearth-reed",
+        "cst-entity-02-dry-shelf"
+      ],
+      "support_dependencies": [
+        {
+          "session_id": "cst-hearth-reed-rule-s01",
+          "turn_number": 1,
+          "component": "The rule directs staff to move the jar to the Dry Shelf if both consecutive readings are below 18 percent, and otherwise to leave it in the vault."
+        },
+        {
+          "session_id": "cst-hearth-reed-rule-s03",
+          "turn_number": 1,
+          "component": "The jar readings are 16 and 15 percent on consecutive mornings."
+        }
+      ],
+      "nonadjacency_rationale": "The rule is in s01 and the later measurements are in s03, separated by the unmarked s02 session; neither component alone determines the action."
+    },
+    {
+      "question_id": "cst-quietpine-identity",
+      "source_id": "cst-source-03",
+      "scenario_id": "cst-scenario-03-alias-bridge",
+      "scenario_group": "cst-scenario-group-03",
+      "template_group": "cst-template-group-03",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-03-studio",
+        "cst-entity-03-quietpine",
+        "cst-entity-03-ivo",
+        "cst-entity-03-sketch"
+      ],
+      "support_dependencies": [
+        {
+          "session_id": "cst-quietpine-identity-s02",
+          "turn_number": 3,
+          "component": "The QuietPine alias is registered to Ivo Maren."
+        },
+        {
+          "session_id": "cst-quietpine-identity-s04",
+          "turn_number": 3,
+          "component": "The final Ember Heron sketch was uploaded from QuietPine."
+        }
+      ],
+      "nonadjacency_rationale": "The alias mapping in s02 and upload event in s04 are separated by the unmarked s03 notes; the event turn alone identifies an account but not its registered person."
+    },
+    {
+      "question_id": "cst-blueshingle-report",
+      "source_id": "cst-source-04",
+      "scenario_id": "cst-scenario-04-report-project",
+      "scenario_group": "cst-scenario-group-04",
+      "template_group": "cst-template-group-04",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-04-report",
+        "cst-entity-04-needle-orchard",
+        "cst-entity-04-glass-flume",
+        "cst-entity-04-kiln-trials"
+      ],
+      "support_dependencies": [
+        {
+          "session_id": "cst-blueshingle-report-s01",
+          "turn_number": 1,
+          "component": "Blue Shingle counts signed kiln trials and excludes prototypes and desk simulations."
+        },
+        {
+          "session_id": "cst-blueshingle-report-s04",
+          "turn_number": 3,
+          "component": "The work register assigns Blue Shingle to project Needle Orchard."
+        }
+      ],
+      "nonadjacency_rationale": "The report scope in s01 and project attribution in s04 are separated by the unmarked s02 and s03 sessions."
+    },
+    {
+      "question_id": "cst-hushglass-causality_abs",
+      "source_id": "cst-source-05",
+      "scenario_id": "cst-scenario-05-temporal-coincidence",
+      "scenario_group": "cst-scenario-group-05",
+      "template_group": "cst-template-group-05",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-05-turbine",
+        "cst-entity-05-lamp",
+        "cst-entity-05-hygrometer"
+      ],
+      "support_dependencies": [],
+      "nonadjacency_rationale": "No turn asserts a causal relationship; the February 14 events are two minutes apart, which is temporal proximity only."
+    },
+    {
+      "question_id": "cst-rook-badge-identity_abs",
+      "source_id": "cst-source-06",
+      "scenario_id": "cst-scenario-06-unbound-badge",
+      "scenario_group": "cst-scenario-group-06",
+      "template_group": "cst-template-group-06",
+      "split": "test",
+      "entity_ids": [
+        "cst-entity-06-survey",
+        "cst-entity-06-anya",
+        "cst-entity-06-rook-badge",
+        "cst-entity-06-case"
+      ],
+      "support_dependencies": [],
+      "nonadjacency_rationale": "The history names a coordinator and separately records badge Rook-8, but includes no identity binding between them."
+    }
+  ]
+}
