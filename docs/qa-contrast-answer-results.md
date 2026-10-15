@@ -30,6 +30,11 @@ The runner created the original local [primary receipt](../examples/synthetic/qw
 
 An independent audit rebuilt all 72 cells and 12 groups from frozen pre-output expectations and the raw 46 outputs without importing the analyzer. It matched the report and receipts; the final Modal inventory showed zero active GPU jobs. A fresh installed replay also compared source and copied CLI output byte-for-byte against the report, using the existing pinned wheel and blocking Modal, torch, transformers, and tokenizers imports.
 
-The signed runner commit `7f7c08f7cee05c73d377d437b0200020f9dac6f2` passed [CI run 38671571328](https://github.com/1337mus/tracemem/actions/runs/38671571328): source tests 513 passed / 1 skipped; installed-wheel tests 260 passed / 2 skipped. The root full check attempted 520 tests: 519 passed and 1 was skipped in 27.861s; Ruff checked 115 files, and mypy checked 32 source files. Analyzer/report delivery and its CI run are pending.
+The signed runner commit `7f7c08f7cee05c73d377d437b0200020f9dac6f2` passed [CI run 38671571328](https://github.com/1337mus/tracemem/actions/runs/38671571328): source tests 513 passed / 1 skipped; installed-wheel tests 260 passed / 2 skipped. The root full check attempted 520 tests: 519 passed and 1 was skipped in 27.861s; Ruff checked 115 files, and mypy checked 32 source files. The analyzer, report and fictional receipts were signed and privately pushed as
+[`743bb2f`](https://github.com/1337mus/tracemem/commit/743bb2fe76b67d652d4d349a5b01f369019e01ef).
+[Exact CI 38673059955](https://github.com/1337mus/tracemem/actions/runs/38673059955)
+passed: 519 source tests passed / 1 skipped; 266 installed tests passed / 2 skipped,
+including actual-report byte equality outside the checkout. The validation JSON
+is the preserved pre-push snapshot; this paragraph records later delivery evidence.
 
 These results do not establish semantic QA accuracy, calibrated abstention, test performance, model superiority, training readiness, or cost per correct answer. They do not support training or model selection.

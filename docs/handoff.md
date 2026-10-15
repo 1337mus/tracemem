@@ -7,17 +7,19 @@ read-only. Private conversations, vectors, claims and checkpoints stay local.
 
 ## Verified delivery
 
-Runner commit [`7f7c08f7cee05c73d377d437b0200020f9dac6f2`](https://github.com/1337mus/tracemem/commit/7f7c08f7cee05c73d377d437b0200020f9dac6f2)
+Analysis commit [`743bb2fe76b67d652d4d349a5b01f369019e01ef`](https://github.com/1337mus/tracemem/commit/743bb2fe76b67d652d4d349a5b01f369019e01ef)
 was signed, signature verified and pushed after confirming personal owner,
 origin and PRIVATE visibility immediately before push.
-[Exact CI38671571328](https://github.com/1337mus/tracemem/actions/runs/38671571328)
-passed: 514 source tests (one skip), 262 installed tests (two skips).
-Source and installed checks also passed locally. All 37 runtime members match
-wheel SHA-256 `0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`.
+[Exact CI 38673059955](https://github.com/1337mus/tracemem/actions/runs/38673059955)
+passed: 520 source tests (one skip), 268 installed tests (two skips), including
+actual source/copied/expected report byte equality. All 37 runtime members remain
+unchanged from wheel SHA-256
+`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`.
+The earlier runner commit was `7f7c08f7cee05c73d377d437b0200020f9dac6f2`.
 
-This checkpoint includes the separately reviewed offline analysis and fictional
-result artifacts. Check active-cycle for the exact newest signed delivery and
-CI outcome; never infer pushed from implemented.
+Check active-cycle for the exact newest signed delivery and CI outcome;
+never infer pushed from implemented. The validation JSON records the pre-push
+validation snapshot; this handoff records the subsequently verified delivery.
 
 ## Completed bounded experiment
 
@@ -63,13 +65,35 @@ The first post-return audit omitted PYTHONPATH and failed setup; its corrected
 rerun passed without another inference. The runner log named `red-reconstructed`
 passed, so it is not RED evidence. Detailed chronology stays in validation docs.
 
+## Qualitative review preparation
+
+The [QA review workflow](qa-contrast-answer-review.md) now exports 46 explicit
+question/prompt/source/answer tasks, a separate authored-reference/provenance key
+and a completely blank response template. All 72 cell mappings are preserved.
+It reuses strict parsing, reviewer checks and exclusive output creation; it does
+not misrepresent QA as claim extraction or reuse the claim-only HTML schema.
+Full-source correctness and supplied-prompt support are separate review fields.
+
+Root reviewed both new files and independently checked every task against saved
+preparation expectations. Full checks passed: 526 tests (one skip), Ruff 117
+files and mypy 32. Six installed focused tests pass; all three actual export
+files match source/copy bytes outside checkout with heavy imports blocked.
+All 37 runtime members still match the prior wheel. See the
+[validation snapshot](validation-qa-contrast-reviews.json) for exact hashes and
+honest RED/GREEN limits. Review source and tests are ready for signed delivery;
+check active-cycle for the later push and exact CI result.
+
+The actual local packet is `.local/qa-contrast-reviews-source-export/`.
+`bundle.json` and `response-template.json` may go to a blinded reviewer;
+withhold `key.json`. No review labels have been filled in.
+
 ## Next useful action
 
-Verify the latest signed private delivery and exact CI in active-cycle. Then
-inspect existing annotation and blind-review interfaces to prepare a reusable
-review of these six cases.
-Keep semantic review separate from the predeclared literal metric; no automatic
-metric relaxation or new inference is needed for that step.
+Verify the newest signed private delivery and exact CI in active-cycle. Then
+use the prepared packet for a bounded qualitative review; report any agent labels
+as agent-only and keep them separate from independent human labels. Validate the
+completed response document and add descriptive per-condition accounting without
+relaxing the predeclared literal metric. No new GPU inference is needed.
 
 Phase 0/1 is complete. Gate A remains unmet: zero independent human labels,
 no selected model or training. No public release, private-data upload,

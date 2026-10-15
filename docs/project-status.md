@@ -1,9 +1,9 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. Verified runner delivery:
-[`7f7c08f`](https://github.com/1337mus/tracemem/commit/7f7c08f7cee05c73d377d437b0200020f9dac6f2).
-Its [CI](https://github.com/1337mus/tracemem/actions/runs/38671571328) passed
-514 source tests (one skip) and 262 installed tests (two skips). Repository
+Updated 2026-10-15 UTC. Verified analysis delivery:
+[`743bb2f`](https://github.com/1337mus/tracemem/commit/743bb2fe76b67d652d4d349a5b01f369019e01ef).
+Its [CI](https://github.com/1337mus/tracemem/actions/runs/38673059955) passed
+520 source tests (one skip) and 268 installed tests (two skips). Repository
 visibility was verified PRIVATE before that push. Verify live delivery and
 worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
 
@@ -76,6 +76,13 @@ The app stopped with zero tasks. The separately reviewed analysis passes full
 checks: 520 tests (one skip), Ruff and mypy, plus six installed tests. Its source,
 fictional receipts and final report are included here. Source and installed
 report bytes match exactly; active-cycle records the newest delivery and CI.
+
+A separate [qualitative QA review workflow](qa-contrast-answer-review.md) prepares
+46 unique prompt/source/answer tasks, all 72 condition mappings, a separate key
+and blank response fields. It distinguishes correctness against the full source
+from support in the actual supplied prompt. Root checks passed 526 tests (one
+skip), lint/type checks and six installed tests; actual source/copied exports
+match byte-for-byte. It has not created semantic or independent human labels.
 
 Gate A remains unmet: there are zero independent human labels and insufficient
 independently validated, legally reviewed held-out scenarios. Training,

@@ -1,0 +1,103 @@
+{
+  "behavioral_red_logs": [
+    {
+      "path": ".local/qa-contrast-reviews-red.log",
+      "sha256": "22eae227ecc653bf65021a428c6edf7ae6fbfb3cd66e989cffad3f3197f291b7"
+    },
+    {
+      "path": ".local/qa-contrast-review-producer-red.log",
+      "sha256": "34cff8f5006715f2613b9bb0b95d5291d601b8975880f8a259bf2a4885659b5a"
+    }
+  ],
+  "delivery": {
+    "analysis_ci": "success; 520 source/1 skipped; 268 installed/2 skipped",
+    "analysis_ci_run": 38673059955,
+    "analysis_commit": "743bb2fe76b67d652d4d349a5b01f369019e01ef",
+    "status": "pending signed PRIVATE push and exact CI"
+  },
+  "focused_tests": {
+    "log": ".local/qa-contrast-reviews-green-final.log",
+    "methods": 6,
+    "passed": 6,
+    "sha256": "f4bdec32756eda9178f51e0bf7870a2c0ced2104eef0fd0519430541e5bdd3c8"
+  },
+  "full_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "log": ".local/qa-contrast-reviews-root-full-check.log",
+    "mypy_source_files": 32,
+    "ruff_files": 117,
+    "seconds": 39.69,
+    "tests_attempted": 526,
+    "tests_passed": 525,
+    "tests_skipped": 1
+  },
+  "independent_actual_content_audit": {
+    "all_editable_response_fields_blank": true,
+    "all_visible_content_matches_independent_expectations": true,
+    "bundle_sha256": "86763f7ed5efcc0ed4407b61f9caa7a7a86463ad188a0daaa92ff6c2498dc5d8",
+    "cell_mappings": 72,
+    "checked_at_utc": "2026-10-15T03:00:53.684413+00:00",
+    "content_and_bundle_hashes_reconstructed": true,
+    "frozen_literal_report_unchanged": true,
+    "human_labels_created": 0,
+    "inference_run": false,
+    "literal_report_sha256": "9c70c0cb841d2f4310e228b875db04ecbdf762b8de6a29806fcb13950bceeca7",
+    "network_used": false,
+    "question_count": 6,
+    "review_source_sha256": "38dc47848594c168699a136aa084e7b45781bcf8dcaa63972bb5c7c84f3d0eee",
+    "scope": "actual fictional receipt; full expected source/prompt/raw-output/mapping comparison, not semantic labels",
+    "status": "passed",
+    "tasks": 46,
+    "tests_sha256": "9c67a98652db7734f62ca483f3f200b1b5f82aa4582fb4ddb497993b5325ffdf"
+  },
+  "installed_checks": {
+    "blocked_imports": [
+      "modal",
+      "torch",
+      "transformers",
+      "tokenizers"
+    ],
+    "installed_tests": 6,
+    "installed_tests_exit_code": 0,
+    "network_used": false,
+    "new_wheel_built": false,
+    "outputs": {
+      "bundle.json": "03f2adcc6069c347a92eba8467bb550e19e8cfc7a0593ed07946c6d193958b98",
+      "key.json": "a4b5372d7a6bab0cc98097d76ec021b863d1e0834d37862613ddc1045eab90de",
+      "response-template.json": "e5b390825c92bbc5ff780b327063361eea83d3f36beabd8dc17cfc10bb5b5cdb"
+    },
+    "remote_started": false,
+    "runtime_members_verified": 37,
+    "runtime_source_wheel_installed_hashes_match": true,
+    "source_and_installed_actual_export_byte_equal": true,
+    "status": "passed",
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "limitations": [
+    "Six fictional agent-authored dev scenarios; no held-out test partition.",
+    "46 unique prompt tasks map to 72 correlated cells; not independent trials.",
+    "Reviewer identity and kind are self-attested.",
+    "Response templates contain no semantic labels; human_label_count remains zero.",
+    "Claim-review HTML/response import does not accept this separate QA schema.",
+    "No semantic accuracy, training readiness, model selection or cost-per-correct-answer claim."
+  ],
+  "local_artifacts": {
+    "installed_receipt": ".local/qa-contrast-reviews-installed-receipt.json",
+    "review_export": ".local/qa-contrast-reviews-source-export",
+    "root_audit": ".local/qa-contrast-reviews-root-audit.json"
+  },
+  "schema_version": 1,
+  "scope": "explicit offline qualitative QA review preparation; no new inference or semantic judgments",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "bfbf6769cc953d0d01b88de018305219f5da6c7affd46d931ea57976031e5796",
+    "experiments/prepare_qa_contrast_reviews.py": "38dc47848594c168699a136aa084e7b45781bcf8dcaa63972bb5c7c84f3d0eee",
+    "tests/test_qa_contrast_reviews.py": "9c67a98652db7734f62ca483f3f200b1b5f82aa4582fb4ddb497993b5325ffdf"
+  },
+  "status": "root reviewed and verified locally; signed private delivery pending",
+  "tdd_chronology": [
+    "First invocation without PYTHONPATH was setup failure, not behavioral RED.",
+    "A test against an empty preparation stub failed at the required bundle version; subsequent validator/CLI coverage was added after initial implementation, not a full per-behavior RED/GREEN cycle.",
+    "A separate report-binding test failed before correcting the key to hash the actual supplied receipt analysis rather than read an unrelated published report file; final GREEN passed."
+  ]
+}
