@@ -122,6 +122,9 @@ make check
   It does not create independent human labels or satisfy Gate A.
 - [Synthetic QA preparation](docs/synthetic-qa.md): 72 request cells from eight
   new fictional questions, with separate provisional references and no inference.
+- [New development-only QA contrasts](docs/qa-contrast-preparation.md): six fictional
+  cases with measured ranking/byte-budget differences and 399 source-only candidate
+  prompts; actual token counts and QA answers remain unmeasured.
 - [Fixed context budgets](docs/context-budget.md): measured evidence retention
   after packing identical rankings under UTF-8 byte ceilings. This is a retrieval
   diagnostic; answer accuracy and tokenizer counts are not measured.

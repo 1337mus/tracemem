@@ -1,0 +1,119 @@
+{
+  "artifact_file_sha256": {
+    "audit": "0277b458556cdd2d912baf666e9412c55aa7110e5f9274a207d3dd9d8a49788f",
+    "catalog": "823041d52b516f07c7db3431ac8d9a1191d84bb97739661c662be4744e034e82",
+    "references": "a00b4335ad92ec90d5d2d779a6e0a9d61393b27e2bd646d0953531779904be5c"
+  },
+  "baseline_head": "07ff6bf533b1ff7508346a95e771ee03a1305f6b",
+  "canonical_catalog_sha256": "2c18978bea31ba5c4e77d20fa6103a2a7a182bb93c7d94dd5c257b029e9662cf",
+  "checked_at_utc": "2026-10-15T00:48:08.181796+00:00",
+  "contrast_counts": {
+    "differing_ordered_mode_rankings": {
+      "count": 6,
+      "denominator": 6
+    },
+    "differing_positive_byte_budget_evidence_within_mode": {
+      "count": 6,
+      "denominator": 6
+    },
+    "differing_retained_label_coverage": {
+      "count": 3,
+      "denominator": 4
+    }
+  },
+  "fixture": {
+    "answerable": 4,
+    "cases": 6,
+    "erratum": "Before any retrieval, exactly one assistant source line referring to the downstream question was replaced. Original preimage/freeze and new erratum-freeze preserved; root verified exact single-line difference. No ranking outputs were inspected before correction.",
+    "final_sha256": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+    "human_reviewers": 0,
+    "original_sha256": "0186b52bc4f5d363d25b76ab10bf6c01d72f01a9fec3ee2fda596d67e7b27263",
+    "provenance": "authored-fictional-agent-only",
+    "sessions": 12,
+    "split": "dev only; no held-out test",
+    "turns": 60,
+    "unknown": 2
+  },
+  "focused_installed": {
+    "all_runtime_members_unchanged": 37,
+    "artifacts_equal_source_bytes": true,
+    "new_wheel_build": false,
+    "tests": 7,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "full_check": {
+    "elapsed_seconds": 15.173,
+    "exit_code": 0,
+    "mypy_runtime_files": 32,
+    "ruff_files": 104,
+    "skips": 1,
+    "tests_attempted": 479
+  },
+  "historical_catalog_sha256_after": "85682edbcdd728103e6540c86106de953f400e217a9341ffbd82420d0429e478",
+  "independent_verification_method": "Raw-source record/revision/citation reconstruction; exact full subset messages; independent greedy byte packing and explicit-label outcomes; no adapter or production packing calls",
+  "installed_receipt_sha256": "5730311d38b5b303b4d66dc366dcb3f123f3f563714ee1d924fe0360ed67dffc",
+  "limits": [
+    "Provisional authored labels, separate nonblind root source review, zero human labels",
+    "All scenarios development-only; repeated cells are correlated",
+    "Hash-vector features are weak lexical vectors, not semantic embeddings",
+    "Explicit-label coverage is not semantic evidence sufficiency or QA accuracy",
+    "No measured prompt tokens, QA answers, cost, model selection, training readiness or Gate A conclusion"
+  ],
+  "log_sha256": {
+    "qa-contrast-budget-axis-final-tests.log": "761e48b07c9dd612d6ee019c8b7c9bc950fda0890749a882f983323ccef27255",
+    "qa-contrast-budget-axis-red-2.log": "6dc63800bde852ba924a91731dbcbffe91d2f305e17018072e159303a96df8af",
+    "qa-contrast-budget-axis-red.log": "b8ecb6818f1a2cefaee431127b86c08185b29195ea1b105b68ec19a4bb53e078",
+    "qa-contrast-installed-tests.log": "dc65fcbe6c8ae7b51b2d16019f57c51a0274ada5a215f1598ebdb7c0b8456cdb",
+    "qa-contrast-preparation-audit-contract-red.log": "618457c23d0f1ba6d025a0924adbcbb6f884a23e98b1fba63bf3d6c4adffb204",
+    "qa-contrast-preparation-cycle-02-pythonpath-error.log": "2137f8f883c32bd3de8ba7cc3b6b81a6bcb7c89b787068acdcca48842d852b28",
+    "qa-contrast-preparation-red.log": "51ebe972918bf5a56379fda5c031a16bdc64fba9a4ee5858c97e35cddd59c933",
+    "qa-contrast-root-full-check.log": "4912f232923622890988fe18b7ff3bbe5519d7875da60ddafd3ce15fbe4a0430"
+  },
+  "macro_explicit_label_recall_by_mode_byte_ceiling": {
+    "bm25": {
+      "0": 0.0,
+      "1024": 0.875,
+      "2048": 1.0,
+      "512": 0.5
+    },
+    "hybrid": {
+      "0": 0.0,
+      "1024": 0.875,
+      "2048": 1.0,
+      "512": 0.375
+    },
+    "vector": {
+      "0": 0.0,
+      "1024": 0.875,
+      "2048": 0.875,
+      "512": 0.5
+    }
+  },
+  "packing_cells": 72,
+  "proposed_token_ceilings_configuration_only": [
+    128,
+    256,
+    512,
+    1024
+  ],
+  "raw_turn_label_counts": [
+    1,
+    2,
+    2,
+    2,
+    0,
+    0
+  ],
+  "remote_model_tokenizer_gpu_training_calls": 0,
+  "retrieval_groups": 18,
+  "root_audit_receipt_sha256": "8f7e1a5a5e81449e66f9c3c21ace808b159170b2e8a8fcef734643a1796da81b",
+  "scope": "Development-only fictional fixture and offline prompt-catalog/byte-packing preparation",
+  "source_sha256": {
+    "examples/synthetic/qa-contrast-dev-v1.json": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+    "experiments/prepare_qa_contrast.py": "dc6e72187e6bafd64e133f4304d60d71caa72f14823470b6ed8bc0069b87a09d",
+    "tests/test_qa_contrast.py": "0406b822ba48661632e5388515126d14b1485a90e090595291ce73dd79328771"
+  },
+  "status": "passed",
+  "token_counts_measured": false,
+  "unique_prompts": 399
+}
