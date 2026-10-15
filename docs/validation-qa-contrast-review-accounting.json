@@ -1,0 +1,136 @@
+{
+  "delivery_state": "implemented and locally validated; signed private delivery recorded separately in ignored active-cycle",
+  "file_sha256": {
+    ".github/workflows/ci.yml": "292da783fc3f81b90a7519076edc7b3b3dd05b4397218f73814800f86c1d138d",
+    "docs/qa-contrast-review-accounting.md": "684b4d285a3b8a19b888cee3aec8b79e7e964f6f5b8a39c80f39c445cf216ea3",
+    "docs/qa-contrast-review-results.md": "325217bc4fd1e0c377c91747b99ce49e3e0fcece52143e3145e19ef096decc32",
+    "experiments/analyze_qa_contrast_reviews.py": "16c213761b4090fd7522723f0982cea7580bcdee3fe979b8aa7f3f78ee85ba20",
+    "tests/test_qa_contrast_review_analysis.py": "0c1eb85cfc47476f5524f06ccf5109e1c39c5061b72dde66f1898eb1128f1ef6"
+  },
+  "local_receipts": {
+    "full_check": ".local/qa-review-accounting-root-full-check.log",
+    "implementer_tdd": ".local/qa-review-accounting-tdd.log",
+    "installed": ".local/qa-review-accounting-installed-receipt.json",
+    "root_accounting_audit": ".local/qa-review-accounting-root-audit.json",
+    "root_semantic_adjudication": ".local/qa-contrast-semantic-root-audit.json"
+  },
+  "report_provenance": {
+    "accounting_tool_source_sha256": "16c213761b4090fd7522723f0982cea7580bcdee3fe979b8aa7f3f78ee85ba20",
+    "bundle_sha256": "86763f7ed5efcc0ed4407b61f9caa7a7a86463ad188a0daaa92ff6c2498dc5d8",
+    "literal_analysis_report_sha256": "9c70c0cb841d2f4310e228b875db04ecbdf762b8de6a29806fcb13950bceeca7",
+    "receipt_sha256": "753d16e54d322903fdc6d2047df4f9eaa4d179ae46d26cd9d4d57319ee60026a",
+    "response_documents": [
+      {
+        "reviewer_id": "tracemem-luna-qa-review-20261015",
+        "sha256": "f62df3b1a4beb617603a20ae00f4538b46760d11903215922fe3bd43a9bcd674"
+      },
+      {
+        "reviewer_id": "tracemem-root-qa-adjudication-20261015",
+        "sha256": "6a158052a53383e325c2d3122ca930b5ba05f007ae566e1f5fe8abc2d06f1752"
+      }
+    ],
+    "review_preparer_source_sha256": "38dc47848594c168699a136aa084e7b45781bcf8dcaa63972bb5c7c84f3d0eee",
+    "seed": 1729
+  },
+  "report_sha256": "f295aa0f0cd0ac5524e47819d8db63d0b36c2f3a389a48c0d61788d4b91a7b19",
+  "response_raw_sha256": {
+    "qa-contrast-agent-review-v1.json": "8962fc0d8f796179d4521356817d1ecc31245194e0ac54c09c5a1d91b101d18e",
+    "qa-contrast-root-review-v1.json": "ad25038368d79f0ee9b92803d207fbc266a88c255fff4284cba47beddd336880"
+  },
+  "review_counts": [
+    {
+      "correlated_cells": {
+        "correct": 44,
+        "incorrect": 27,
+        "uncertain": 1
+      },
+      "prompt": {
+        "supported": 38,
+        "uncertain": 1,
+        "unsupported": 7
+      },
+      "reviewer_id": "tracemem-luna-qa-review-20261015",
+      "unique": {
+        "correct": 32,
+        "incorrect": 13,
+        "uncertain": 1
+      }
+    },
+    {
+      "correlated_cells": {
+        "correct": 44,
+        "incorrect": 28,
+        "uncertain": 0
+      },
+      "prompt": {
+        "supported": 38,
+        "uncertain": 0,
+        "unsupported": 8
+      },
+      "reviewer_id": "tracemem-root-qa-adjudication-20261015",
+      "unique": {
+        "correct": 32,
+        "incorrect": 14,
+        "uncertain": 0
+      }
+    }
+  ],
+  "review_limitations": [
+    "One fresh procedurally blinded, self-attested agent annotation; key and authored references withheld. This is not independent human truth.",
+    "Root adjudication is unblinded and derived from original review;45 task agreements and one stricter change. No pooling or consensus.",
+    "Six fictional dev scenarios;46 unique prompts map to72 correlated cells. Test partition empty; frozen literal report unchanged.",
+    "Actual response files and detailed per-cell review report remain ignored/local. Reproducing the actual report requires those local response documents; fictional automated tests run from the repository alone.",
+    "Hashes bind consistency, not identity, independence or semantic truth. No model selected or trained; Gate A unmet."
+  ],
+  "scope": "offline QA agent-review accounting only; no runtime package changes or new inference",
+  "tdd_chronology": {
+    "evidence_kind": "Implementer-reported observed RED/GREEN chronology preserved locally; not a reconstructed failing historical checkout.",
+    "limits": [
+      "Initial missing-python and missing-PYTHONPATH attempts were setup errors, not RED evidence.",
+      "Strict-JSON diagnostic assertion was corrected after implementation; cell-ID coverage strengthened after implementation.",
+      "Do not interpret this as per-behavior RED proof for all eight final test methods."
+    ],
+    "reported_behavioral_reds": [
+      "NotImplemented unique counts stub",
+      "missing expanded_cells",
+      "unstable reviewer input order",
+      "missing strata",
+      "absent duplicate-reviewer rejection",
+      "NotImplemented CLI stub",
+      "missing explicit authored-reference human count before root correction"
+    ]
+  },
+  "updated_at_utc": "2026-10-15",
+  "validation": {
+    "installed": {
+      "blocked_imports": [
+        "modal",
+        "torch",
+        "transformers",
+        "tokenizers"
+      ],
+      "exit_code": 0,
+      "focused_tests": 8,
+      "new_wheel_built": false,
+      "runtime_members_unchanged": 37,
+      "source_copied_actual_report_bytes_equal": true,
+      "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+    },
+    "root_independent_accounting_audit": {
+      "cells_per_review": 72,
+      "groups_per_review": 12,
+      "reviews": 2,
+      "source_prompts_and_rationales_reviewed": 46,
+      "status": "passed"
+    },
+    "source": {
+      "command": "make check PYTHON=.venv/bin/python",
+      "exit_code": 0,
+      "mypy_runtime_files": 32,
+      "ruff_files": 119,
+      "skips": 1,
+      "tests_attempted": 534,
+      "tests_passed": 533
+    }
+  }
+}

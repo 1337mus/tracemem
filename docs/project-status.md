@@ -1,6 +1,9 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. Verified QA review tooling delivery:
+Updated 2026-10-15 UTC. New offline review accounting passes 534 source tests
+(one skip), lint/type checks and eight installed focused tests. Its actual
+source/copied report bytes match. Check active-cycle for newest delivery.
+Previously verified QA review tooling delivery:
 [`125d366`](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb).
 Its [CI](https://github.com/1337mus/tracemem/actions/runs/38674186708) passed
 526 source tests (one skip) and 274 installed tests (two skips). Repository
@@ -78,11 +81,17 @@ fictional receipts and final report are included here. Source and installed
 report bytes match exactly; active-cycle records the newest delivery and CI.
 
 A separate [qualitative QA review workflow](qa-contrast-answer-review.md) prepares
-46 unique prompt/source/answer tasks, all 72 condition mappings, a separate key
-and blank response fields. It distinguishes correctness against the full source
-from support in the actual supplied prompt. Root checks passed 526 tests (one
-skip), lint/type checks and six installed tests; actual source/copied exports
-match byte-for-byte. It has not created semantic or independent human labels.
+46 unique prompt/source/answer tasks across all 72 condition mappings. It
+separates correctness against the full source from support in the actual prompt.
+Root checks passed 526 tests (one skip), lint/type checks and six installed
+tests; actual source/copied exports match byte-for-byte. One self-attested agent
+completed all 46 reviews: source answer 32 correct, 13 incorrect, 1 uncertain;
+prompt support 38 supported, 7 unsupported, 1 uncertain. Root reread all tasks
+and audited rationales, agreeing on 45 and making one stricter, unblinded
+derivative change: root counts are 32 correct, 14 incorrect, 38 supported and
+8 unsupported. This is not an independent second sample, consensus or human
+label set. The frozen literal report remains unchanged. See [review results](qa-contrast-review-results.md)
+and [review accounting](qa-contrast-review-accounting.md).
 
 Gate A remains unmet: there are zero independent human labels and insufficient
 independently validated, legally reviewed held-out scenarios. Training,

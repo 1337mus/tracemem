@@ -26,7 +26,15 @@ answers. The [source-only request bundle](qa-contrast-requests.md) now freezes
 46 unique prompts for all 72 cells; root compared every prompt, mapping and
 reference independently. Full checks passed 502 tests (one skip), with six
 installed tests and exact three-artifact replay. No inference occurred in this
-preparation. A separately reviewed source-free answering runner is next.
+preparation. The source-free answering runner and frozen comparison have since
+completed. The separate 46-task QA review has one self-attested agent label each
+for full-source answer and actual-prompt support: original counts are 32 correct,
+13 incorrect, 1 uncertain and 38 supported, 7 unsupported, 1 uncertain. Root
+reread all tasks, audited rationales and agreed on 45; its one stricter change
+produces 32 correct, 14 incorrect, 38 supported and 8 unsupported. That review
+is an unblinded derivative, not an independent sample or consensus. There are no
+human labels, and the frozen literal report is unchanged. See [review results](qa-contrast-review-results.md)
+and [review accounting](qa-contrast-review-accounting.md).
 
 The earlier 24-case claim challenge is a single `diagnostic` partition, with no
 assigned train/dev/test/held-out cases. Its Qwen V1 and explicit-v2 runs share

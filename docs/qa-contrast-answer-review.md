@@ -70,4 +70,14 @@ passed [exact CI 38674186708](https://github.com/1337mus/tracemem/actions/runs/3
 525 source tests passed / one skipped; 272 installed tests passed / two skipped.
 The [validation snapshot](validation-qa-contrast-reviews.json) preserves the earlier
 local checks, hashes and RED/GREEN chronology. Source and copied actual export
-files match byte-for-byte outside the checkout. No semantic labels were created.
+files match byte-for-byte outside the checkout. The export tooling itself creates
+no semantic labels; a later separate, self-attested agent review completed all 46
+tasks across the two source-answer and prompt-support axes. Original counts were
+32 correct, 13 incorrect, 1 uncertain for source answer, and 38 supported, 7
+unsupported, 1 uncertain for prompt support. Root audited all rationales, agreed
+on 45 tasks and made one stricter derivative change, yielding 32 correct, 14
+incorrect, 38 supported and 8 unsupported. Root saw the original judgments, so
+this is not an independent sample, consensus or human truth. The frozen literal
+report remains unchanged. See [review results](qa-contrast-review-results.md)
+and [review accounting](qa-contrast-review-accounting.md). Completed response
+artifacts remain ignored and local under `.local/`.
