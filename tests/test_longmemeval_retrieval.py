@@ -143,6 +143,156 @@ def _aggregate(report: dict[str, Any], mode: str, cutoff: int) -> dict[str, Any]
 
 
 class LongMemEvalRetrievalTests(unittest.TestCase):
+    def test_injected_embedder_controls_vector_ranking_without_changing_bm25(self) -> None:
+        from tracemem.adapters.longmemeval import parse_longmemeval_bytes
+        from tracemem.remote_vectors import PrecomputedEmbedder, text_sha256
+
+        items = [
+            _question(
+                "fictional-controlled-embedding",
+                "Which fictional object was selected?",
+                "fictional-controlled-session",
+                [
+                    {"role": "user", "content": "Fictional evidence answer.", "has_answer": True},
+                    {"role": "user", "content": "Fictional distractor text."},
+                ],
+            )
+        ]
+        raw = _raw(items)
+        question = parse_longmemeval_bytes(raw, namespace=_NAMESPACE, variant="s")[0]
+        embedder = PrecomputedEmbedder(
+            model_id="synthetic/test-only",
+            revision="test-revision",
+            dimensions=2,
+            vectors={
+                text_sha256(question.question): [1.0, 0.0],
+                text_sha256(question.records[0].text): [1.0, 0.0],
+                text_sha256(question.records[1].text): [0.0, 1.0],
+            },
+        )
+
+        default = evaluator.evaluate_retrieval_bytes(
+            raw, namespace=_NAMESPACE, variant="s", cutoffs=(1, 2)
+        )
+        measured = evaluator.evaluate_retrieval_bytes(
+            raw,
+            namespace=_NAMESPACE,
+            variant="s",
+            cutoffs=(1, 2),
+            embedder=embedder,
+        )
+
+        default_question, measured_question = default["questions"][0], measured["questions"][0]
+        self.assertEqual(
+            measured_question["retrieval"]["bm25"], default_question["retrieval"]["bm25"]
+        )
+        vector_at_one = measured_question["retrieval"]["vector"][0]
+        self.assertEqual(vector_at_one["returned"][0]["record_id"], question.records[0].record_id)
+        self.assertEqual(vector_at_one["label_recall"], 1.0)
+        self.assertEqual(measured["embedding"]["metadata"], embedder.metadata)
+
+    def test_injected_embedder_missing_vector_fails_without_fallback(self) -> None:
+        from tracemem.remote_vectors import PrecomputedEmbedder
+
+        raw = _raw(
+            [
+                _question(
+                    "fictional-missing-vector",
+                    "Which fictional color was selected?",
+                    "fictional-missing-vector-session",
+                    [{"role": "user", "content": "A fictional color was violet."}],
+                )
+            ]
+        )
+        embedder = PrecomputedEmbedder(
+            model_id="synthetic/test-only",
+            revision="test-revision",
+            dimensions=2,
+            vectors={},
+        )
+
+        with self.assertRaisesRegex(ValueError, "no precomputed vector"):
+            evaluator.evaluate_retrieval_bytes(
+                raw,
+                namespace=_NAMESPACE,
+                variant="s",
+                cutoffs=(1,),
+                embedder=embedder,
+            )
+
+    def test_empty_question_evaluation_keeps_injected_embedder_metadata(self) -> None:
+        from tracemem.remote_vectors import PrecomputedEmbedder
+
+        embedder = PrecomputedEmbedder(
+            model_id="synthetic/test-only",
+            revision="test-revision",
+            dimensions=2,
+            vectors={},
+        )
+
+        report = evaluator._evaluate_questions(
+            (),
+            input_sha256="0" * 64,
+            variant="s",
+            cutoffs=(1,),
+            embedder=embedder,
+        )
+
+        self.assertEqual(report["embedding"]["metadata"], embedder.metadata)
+        self.assertEqual(report["questions"], [])
+        self.assertEqual(report["counts"]["question_count"], 0)
+
+    def test_file_api_passes_injected_embedder_through(self) -> None:
+        from tracemem.adapters.longmemeval import parse_longmemeval_bytes
+        from tracemem.remote_vectors import PrecomputedEmbedder, text_sha256
+
+        raw = _raw(
+            [
+                _question(
+                    "fictional-file-embedding",
+                    "Which fictional object was selected?",
+                    "fictional-file-embedding-session",
+                    [
+                        {
+                            "role": "user",
+                            "content": "Fictional evidence answer.",
+                            "has_answer": True,
+                        },
+                        {"role": "user", "content": "Fictional distractor text."},
+                    ],
+                )
+            ]
+        )
+        question = parse_longmemeval_bytes(raw, namespace=_NAMESPACE, variant="s")[0]
+        embedder = PrecomputedEmbedder(
+            model_id="synthetic/test-only",
+            revision="test-revision",
+            dimensions=2,
+            vectors={
+                text_sha256(question.question): [1.0, 0.0],
+                text_sha256(question.records[0].text): [1.0, 0.0],
+                text_sha256(question.records[1].text): [0.0, 1.0],
+            },
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fixture.json"
+            path.write_bytes(raw)
+
+            report = evaluator.evaluate_retrieval_file(
+                path,
+                namespace=_NAMESPACE,
+                variant="s",
+                question_ids=("fictional-file-embedding",),
+                cutoffs=(1, 2),
+                embedder=embedder,
+            )
+
+        self.assertEqual(report["embedding"]["metadata"], embedder.metadata)
+        self.assertEqual(
+            report["questions"][0]["retrieval"]["vector"][0]["returned"][0]["record_id"],
+            question.records[0].record_id,
+        )
+
     def test_partial_and_complete_multilabel_turn_retrieval(self) -> None:
         raw = _raw()
 

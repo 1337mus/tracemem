@@ -15,7 +15,7 @@ from typing import Any
 
 from tracemem.adapters.longmemeval import LongMemEvalQuestion, parse_longmemeval_bytes
 from tracemem.adapters.longmemeval_file import scan_longmemeval_file
-from tracemem.retrieval import Retriever, SignedHashEmbedder
+from tracemem.retrieval import Embedder, Retriever, SignedHashEmbedder
 from tracemem.schema import EVIDENCE_SCHEMA_VERSION
 from tracemem.storage import EvidenceStore
 
@@ -35,9 +35,9 @@ def _validate_cutoffs(cutoffs: tuple[int, ...]) -> None:
         raise ValueError("cutoffs must be a nonempty tuple of unique integers from 1 to 100")
 
 
-def _default_embedding_report() -> dict[str, Any]:
-    embedder = SignedHashEmbedder()
-    metadata = embedder.metadata
+def _embedding_report(embedder: Embedder | None = None) -> dict[str, Any]:
+    selected = embedder if embedder is not None else SignedHashEmbedder()
+    metadata = selected.metadata
     fingerprint_payload = json.dumps(
         metadata, sort_keys=True, ensure_ascii=False, separators=(",", ":")
     )
@@ -48,14 +48,20 @@ def _default_embedding_report() -> dict[str, Any]:
 
 
 def _question_retrieval(
-    question: LongMemEvalQuestion, cutoff_list: tuple[int, ...]
+    question: LongMemEvalQuestion,
+    cutoff_list: tuple[int, ...],
+    *,
+    embedder: Embedder | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any], int]:
     max_cutoff = max(cutoff_list)
     with tempfile.TemporaryDirectory(prefix="tracemem-longmemeval-") as directory:
         database_path = Path(directory) / "evidence.sqlite"
         with EvidenceStore(database_path) as store:
             store.ingest(question.records)
-            retriever = Retriever(store, rrf_k=_DEFAULT_RRF_K)
+            if embedder is None:
+                retriever = Retriever(store, rrf_k=_DEFAULT_RRF_K)
+            else:
+                retriever = Retriever(store, embedder=embedder, rrf_k=_DEFAULT_RRF_K)
             mode_hits = {
                 mode: retriever.search(question.question, mode=mode, k=max_cutoff)
                 for mode in _MODES
@@ -127,12 +133,13 @@ def _evaluate_questions(
     schema_version: int = 1,
     input_bytes: int | None = None,
     selection: dict[str, int | str] | None = None,
+    embedder: Embedder | None = None,
 ) -> dict[str, Any]:
     question_results: list[dict[str, Any]] = []
-    embedding_report = _default_embedding_report()
+    embedding_report = _embedding_report(embedder)
     rrf_k = _DEFAULT_RRF_K
     for question in questions:
-        result, embedding_report, rrf_k = _question_retrieval(question, cutoffs)
+        result, embedding_report, rrf_k = _question_retrieval(question, cutoffs, embedder=embedder)
         question_results.append(result)
 
     question_count = len(questions)
@@ -215,6 +222,7 @@ def evaluate_retrieval_bytes(
     namespace: str,
     variant: str,
     cutoffs: tuple[int, ...] = _DEFAULT_CUTOFFS,
+    embedder: Embedder | None = None,
 ) -> dict[str, Any]:
     """Evaluate explicit turn-label retrieval using isolated local evidence stores."""
     _validate_cutoffs(cutoffs)
@@ -226,6 +234,7 @@ def evaluate_retrieval_bytes(
         input_sha256=hashlib.sha256(raw).hexdigest(),
         variant=variant,
         cutoffs=cutoffs,
+        embedder=embedder,
     )
 
 
@@ -236,6 +245,7 @@ def evaluate_retrieval_file(
     variant: str,
     question_ids: tuple[str, ...],
     cutoffs: tuple[int, ...] = _DEFAULT_CUTOFFS,
+    embedder: Embedder | None = None,
 ) -> dict[str, Any]:
     """Evaluate selected questions after the complete file passes validation."""
     _validate_cutoffs(cutoffs)
@@ -264,6 +274,7 @@ def evaluate_retrieval_file(
             "source_question_count": scan.question_count,
             "evaluated_question_count": len(questions),
         },
+        embedder=embedder,
     )
 
 

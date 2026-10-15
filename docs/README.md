@@ -76,6 +76,10 @@ Paths in this index are relative to this `docs/` directory.
   [validation record](validation-cross-session-test.json): six newly authored
   fictional cases and a CPU turn-retrieval diagnostic; labels remain provisional
   and do not establish held-out quality.
+- [Cross-session MiniLM comparison](cross-session-minilm.md), [replay report](cross-session-minilm-retrieval.json),
+  and [validation record](validation-cross-session-minilm.json): remote MiniLM
+  vectors compared with BM25, hash vectors, and hybrid retrieval on the same
+  small fictional slice; no held-out or QA quality claim.
 - [Dataset readiness report](dataset-readiness.json): assigned split and duplicate counts.
 - [Dataset isolation audit](dataset-isolation.md), [report](dataset-isolation-report.json),
   and [validation record](validation-dataset-isolation.json): cross-split lexical

@@ -61,12 +61,14 @@ jobs:
 
           test_root="$(mktemp -d "$RUNNER_TEMP/tracemem-installed-tests.XXXXXX")"
           test_dir="$test_root/tests"
-          mkdir -p "$test_dir" "$test_root/examples/synthetic" "$test_root/experiments"
+          mkdir -p "$test_dir" "$test_root/examples/synthetic" "$test_root/experiments" "$test_root/docs" "$test_root/configs"
           touch "$test_dir/__init__.py"
           cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py \
             tests/test_adapter.py tests/test_transcript_bounds.py tests/test_transcript_consistency.py \
             tests/test_dataset_audit.py tests/test_audit_dataset_cli.py \
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
+            tests/test_cross_session_embeddings.py \
+            tests/test_modal_baseline.py \
             tests/test_longmemeval_file.py tests/test_longmemeval_selection.py \
             tests/test_retention.py tests/test_retention_report.py tests/test_synthetic_qa.py \
             tests/test_modal_synthetic_qa.py tests/test_synthetic_qa_analysis.py \
@@ -97,6 +99,9 @@ jobs:
           cp examples/synthetic/longitudinal-dev-v2.json examples/synthetic/longitudinal-dev-v2-foils.json examples/synthetic/longitudinal-dev-v2-unlabeled.json "$test_root/examples/synthetic/"
           cp examples/synthetic/scope-exceptions-dev-v1.json examples/synthetic/scope-exceptions-dev-v1-foils.json "$test_root/examples/synthetic/"
           cp examples/synthetic/cross-session-test-v1.json examples/synthetic/cross-session-test-v1-metadata.json "$test_root/examples/synthetic/"
+          cp examples/synthetic/minilm-cross-session-remote.json "$test_root/examples/synthetic/"
+          cp docs/cross-session-test-retrieval.json "$test_root/docs/"
+          cp configs/embedding-model.json configs/model-candidates.json "$test_root/configs/"
           cp examples/synthetic/chatgpt-export.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json "$test_root/examples/synthetic/"
@@ -104,6 +109,8 @@ jobs:
           cp docs/qa-contrast-answer-dev.json "$test_root/qa-contrast-answer-expected.json"
           cp docs/qa-controls-answer-dev.json "$test_root/qa-controls-answer-expected.json"
           cp experiments/audit_dataset.py experiments/evaluate_longmemeval_retrieval.py \
+            experiments/evaluate_cross_session_embeddings.py \
+            experiments/modal_baseline.py \
             experiments/prepare_synthetic_qa.py \
             experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \
             experiments/scenario_payload.py experiments/token_catalog.py "$test_root/experiments/"
@@ -124,6 +131,10 @@ jobs:
           cp experiments/prepare_qa_controls_reviews.py "$test_root/experiments/"
           cp experiments/analyze_qa_controls_reviews.py "$test_root/experiments/"
 
+          PYTHONPATH=src:. .venv/bin/python -m experiments.evaluate_cross_session_embeddings \
+            --receipt examples/synthetic/minilm-cross-session-remote.json \
+            --output "$test_root/cross-session-minilm-source.json"
+
           PYTHONPATH=src .venv/bin/python -m experiments.prepare_qa_controls_reviews \
             --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
             --output-dir "$test_root/qa-controls-source-export" \
@@ -142,6 +153,10 @@ jobs:
             -s "$test_dir" \
             -p 'test_*.py' \
             -v
+          "$smoke_venv/bin/python" -m experiments.evaluate_cross_session_embeddings \
+            --receipt examples/synthetic/minilm-cross-session-remote.json \
+            --output cross-session-minilm-installed.json
+          cmp cross-session-minilm-source.json cross-session-minilm-installed.json
           "$smoke_venv/bin/python" -m experiments.analyze_qa_contrast_answers \
             examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json \
             --output qa-contrast-answer-actual.json

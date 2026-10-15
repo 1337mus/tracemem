@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-15T09:23:44.756396+00:00",
+  "source_facts": ".local/cross-embedding/validation-facts.json",
+  "scope": "One reviewed synthetic-only remote embedding call and offline cross-session retrieval comparison; no runtime package change, model training, or human labeling.",
+  "input": {
+    "sha256": "dc7e301a9acb0e0d26293c2d8fa80bf8ebe838ecd543a7917a64bcd8f3cdfedf",
+    "unique_texts_embedded": 78,
+    "composition": "72 turns and 6 questions; no separate answer keys or label fields were sent.",
+    "payload_sha256": "95158af854e806eb14c19ee4f3635446c912d5a1efddd7933f7e639f5f43aada"
+  },
+  "remote_embedding": {
+    "call_count": 1,
+    "mode": "embeddings",
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimensions": 384,
+    "gpu": "Tesla T4",
+    "gpu_compute_seconds": 0.789242,
+    "remote_function_elapsed_seconds": 13.476377,
+    "client_wall_seconds_including_image_and_startup": 30.813097,
+    "model_load_seconds": 9.707271,
+    "peak_gpu_memory_bytes": 59987456,
+    "remote_python_version": "3.12.10",
+    "torch_cuda_version": "12.6",
+    "payload_sha256": "95158af854e806eb14c19ee4f3635446c912d5a1efddd7933f7e639f5f43aada",
+    "checked_in_receipt": "examples/synthetic/minilm-cross-session-remote.json",
+    "local_receipt_capture": ".local/cross-embedding/captures/remote-inference.stdout",
+    "receipt_sha256": "870abdfdce0c6488d7db001fd4f7c8d345cc1b2e96f9d144a18e5fd9c71f2b77",
+    "launch_source_sha256": "043b2c34e8d226c5dd77fb06a6b254f36886edb0217d841218570da19f89942e",
+    "billing_cost": "not measured"
+  },
+  "annotation_and_limits": {
+    "status": "agent_authored_provisional",
+    "human_labels": 0,
+    "assigned_split": "test",
+    "held_out_quality_established": false,
+    "qa_accuracy_measured": false,
+    "abstention_accuracy_measured": false,
+    "unknowns_excluded_from_recall": true,
+    "both_unknown_questions_received_retrieval_hits": true,
+    "private_data_used": false,
+    "training_run": false
+  },
+  "results": {
+    "scored_questions": 4,
+    "unknown_questions": 2,
+    "cutoffs": [1, 3, 5],
+    "metrics": {
+      "bm25": {
+        "macro_turn_label_recall": [0.5, 1.0, 1.0],
+        "complete_question_coverage": ["0/4", "4/4", "4/4"]
+      },
+      "hash_vector": {
+        "macro_turn_label_recall": [0.5, 0.75, 1.0],
+        "complete_question_coverage": ["0/4", "2/4", "4/4"]
+      },
+      "minilm_vector": {
+        "macro_turn_label_recall": [0.5, 0.875, 1.0],
+        "complete_question_coverage": ["0/4", "3/4", "4/4"]
+      },
+      "bm25_plus_hash_vector": {
+        "macro_turn_label_recall": [0.5, 1.0, 1.0],
+        "complete_question_coverage": ["0/4", "4/4", "4/4"]
+      },
+      "bm25_plus_minilm_vector": {
+        "macro_turn_label_recall": [0.5, 1.0, 1.0],
+        "complete_question_coverage": ["0/4", "4/4", "4/4"]
+      }
+    },
+    "minilm_k3_missed_label": "One Blue Shingle report evidence turn.",
+    "conclusion": "MiniLM does not improve on BM25 at these cutoffs; this small provisional slice supports no general method-quality claim.",
+    "report": "docs/cross-session-minilm-retrieval.json",
+    "report_sha256": "6c6bbaaee3c9dd0221316448fd262137195e26b4fb43b22037a03f186665a4e2"
+  },
+  "validation": {
+    "source_check": {
+      "command": ["make", "check", "PYTHON=.venv/bin/python"],
+      "exit_code": 0,
+      "attempted": 632,
+      "passed": 631,
+      "skipped": 1,
+      "receipt": ".local/cross-embedding/captures/full-check.json",
+      "stdout_sha256": "33e1448e9e5266195a52f95176f0e5576601a630a108ad118f875bc7718be993",
+      "stderr_sha256": "fd81ad8b640987098ca1226a20984257cab54705d74b743d6eb400dc8d418871"
+    },
+    "focused_tests": {
+      "source_worker_passed": 41,
+      "source_receipt": ".local/cross-embedding/captures/source-focused.json",
+      "installed_root_passed": 41,
+      "installed_receipt": ".local/cross-embedding/captures/installed-focused-py312.json",
+      "installed_python_version": "3.12.14",
+      "installed_environment_outside_checkout": true,
+      "pythonpath_and_pythonhome_unset": true
+    },
+    "quality_checks": {
+      "ruff_check": "passed",
+      "ruff_format_files": 138,
+      "mypy_source_files": 32,
+      "actionlint": "passed",
+      "git_diff_check": "passed"
+    },
+    "source_installed_parity": {
+      "report_bytes_equal": true,
+      "report_sha256": "6c6bbaaee3c9dd0221316448fd262137195e26b4fb43b22037a03f186665a4e2",
+      "runtime_package_files_matching_source_wheel_install": 37,
+      "pinned_wheel_sha256": "8e9bcdd2fb2f756419f7ed4ddc2bb16a8c7d66c9b81bc301e4291e328170d8b0",
+      "runtime_package_changed": false,
+      "rebuild_required": false
+    },
+    "independent_replay_audit": {
+      "historical_launch_source_sha256": "043b2c34e8d226c5dd77fb06a6b254f36886edb0217d841218570da19f89942e",
+      "formatted_source_sha256": "e07984f2b99fe7bbd8569dd6a107e41c379c4b3e99d65ed4eb3d97fc3ce3042f",
+      "whole_module_ast_equal_after_formatting": true,
+      "receipt_validator_pins_reviewed_launch_hash": true,
+      "direct_diagnostic_cells_match_final_report": true,
+      "ranking_cells_independently_audited": 54,
+      "arithmetic_and_citation_cells_independently_audited": 54,
+      "ranking_method": "Normalized cosine and reciprocal-rank-fusion arithmetic with shared EvidenceStore FTS and adapter; no Retriever used.",
+      "bm25_all_cells_equal_frozen": true,
+      "direct_diagnostic_environment": {
+        "python": "3.14.6",
+        "sqlite": "3.53.3"
+      },
+      "final_environment": {
+        "python": "3.12.14",
+        "sqlite": "3.53.1"
+      },
+      "frozen_full_cpu_report_unchanged": true,
+      "ml_dependencies_absent_locally": true
+    },
+    "historical_pins": {
+      "checked": 791,
+      "unchanged": 788,
+      "intentional_paths_with_exact_preimages": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "original_sha256": "6908f3003316e245aab25ced9a6ed61e5caca1600fde2dab560f388b71ec8a99",
+          "preimage": ".local/cross-embedding/preimages/.github/workflows/ci.yml"
+        },
+        {
+          "path": "docs/README.md",
+          "original_sha256": "1c6a89cb0574aeeeb1e65f95c620d0deea8144917db4a314d913d5231b606eb5",
+          "preimage": ".local/cross-embedding/preimages/docs/README.md"
+        },
+        {
+          "path": "docs/handoff.md",
+          "original_sha256": "8b1450fc132febec735ca95db67971f7d98985c102a8d6f7fb6886d9d25f12c6",
+          "preimage": ".local/cross-embedding/preimages/docs/handoff.md"
+        }
+      ]
+    }
+  },
+  "validation_setup_corrections": [
+    {
+      "issue": "An initial installed verification selected a historical wheel that predated dataset_audit.py.",
+      "correction": "Selected the pinned wheel 8e9bcdd2fb2f756419f7ed4ddc2bb16a8c7d66c9b81bc301e4291e328170d8b0; no runtime file changed.",
+      "evidence": "The initial old-wheel failure appeared in direct tool output only; no local raw receipt was saved.",
+      "failed_attempt_receipts": [],
+      "corrected_receipts": [
+        ".local/cross-embedding/captures/installed-verify-py312.json",
+        ".local/cross-embedding/captures/installed-replay-py312.json"
+      ]
+    },
+    {
+      "issue": "An initial reused installed Python 3.14 environment retrieved the same cells but failed exact environment/report comparison.",
+      "correction": "Recreated an isolated Python 3.12.14 environment and repeated focused tests and report comparison successfully; code did not change.",
+      "failed_attempt_receipts": [
+        ".local/cross-embedding/captures/installed-verify.json",
+        ".local/cross-embedding/captures/installed-focused.json",
+        ".local/cross-embedding/captures/installed-replay.json"
+      ],
+      "corrected_receipts": [
+        ".local/cross-embedding/captures/installed-focused-py312.json",
+        ".local/cross-embedding/captures/installed-replay-py312.json"
+      ]
+    }
+  ],
+  "context_doctor": {
+    "exit_code": 1,
+    "stdout_sha256_unchanged_from_prior": "63406a9cfc1af2d59796d5eff219bcb6d2fc027b31454163542f979fcbe8e3a6",
+    "original_context_kept_read_only": true,
+    "receipt": ".local/cross-embedding/captures/context-doctor.json",
+    "note": "Exit 1 reflects unchanged prior findings unrelated to this slice; personal context details are omitted."
+  },
+  "workflow_limits": {
+    "initial_replay_import_error_is_valid_behavioral_red": false,
+    "initial_replay_failure": "Worker reported ImportError: cannot import name evaluate_cross_session_embeddings from experiments because the new module did not exist; this is not a behavioral TDD RED.",
+    "selector_and_evaluator_injection_have_saved_behavioral_red_green": true,
+    "selector_red_receipt": ".local/cross-embedding/worker-captures/selector-payload-red-01.json",
+    "selector_green_receipt": ".local/cross-embedding/worker-captures/selector-payload-green-01.json",
+    "evaluator_injection_red_receipt": ".local/cross-embedding/worker-captures/evaluator-injection-red-01.json",
+    "evaluator_injection_green_receipt": ".local/cross-embedding/worker-captures/evaluator-injection-green-01.json",
+    "annotation_keyerror_red": "Observed in worker tool output only; no local raw receipt was saved and no log was reconstructed.",
+    "initial_replay_failure_evidence": "Worker tool output only; no separate local raw receipt was saved.",
+    "complete_behavioral_tdd_or_raw_red_coverage_claimed": false
+  },
+  "runtime_inventory": {
+    "reviewed_embedding_calls": 1,
+    "postcall_inventory_utc": "2026-10-15T09:16:23Z",
+    "worker_stopped": true,
+    "active_tasks": 0,
+    "receipt": ".local/cross-embedding/captures/postcall-inventory.json"
+  },
+  "delivery": "Local validation passed. Signed/private delivery and exact-head hosted CI are unverified here; .local/active-cycle.json remains authoritative. Gate A remains unmet, with zero human labels and no selected or trained system model."
+}

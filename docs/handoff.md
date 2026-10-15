@@ -1,6 +1,13 @@
 # TraceMem handoff
 
-Updated 2026-10-15 UTC. Verify by: 2026-10-15. This checkpoint leads with the
+Updated 2026-10-15 UTC. Verify by: 2026-10-15. The current diagnostic is the
+[cross-session MiniLM comparison](cross-session-minilm.md), its replay report
+([cross-session-minilm-retrieval.json](cross-session-minilm-retrieval.json)),
+and [local validation record](validation-cross-session-minilm.json). Source and
+isolated installed checks passed; signed/private delivery and exact-head hosted
+CI remain governed by `.local/active-cycle.json`. The comparison uses the
+existing six fictional cases and does not establish held-out quality or answer
+accuracy. The earlier checkpoint below remains the
 [scoped defaults/exceptions data card](scope-exceptions-data-card.md), its
 [source replay](scope-exceptions-report.json), [unblinded semantic audit](scope-exceptions-semantic-audit.json),
 and [validation record](validation-scope-exceptions.json). The six fictional
@@ -34,9 +41,10 @@ agent-only evidence. The full 26-task human review packet is still available.
 Keep Context Kit, original conversations, historical receipts, and
 `~/.llm-context` read-only. Keep private conversation data, vectors, claims, and
 checkpoints local. Reviewed code, docs, and fictional fixtures may be signed
-and pushed only after a fresh check confirms the repository is PRIVATE. No new
-model-serving inference, training, Modal, or GPU work is needed for this slice;
-the completed agent annotation is recorded separately. Recheck active jobs
+and pushed only after a fresh check confirms the repository is PRIVATE. Exactly
+one reviewed synthetic-only embedding call completed for this slice. The
+postcall inventory at 2026-10-15T09:16:23Z showed the worker stopped and zero
+tasks. No further runtime work is needed for this slice. Recheck active jobs
 before future runtime work; never duplicate a live call. Training still
 requires separate approval.
 
@@ -85,6 +93,22 @@ cells were audited and points to the raw receipts; the replay report contains
 the per-question cells. Local validation does not establish signed
 delivery or hosted CI; use `.local/active-cycle.json` for those states.
 
+## Cross-session MiniLM comparison
+
+The new [comparison note](cross-session-minilm.md) records the remote MiniLM
+embedding receipt and compares its vectors with the existing BM25, hash-vector,
+and hybrid methods on the same 72 turns and six questions. MiniLM reaches 0.875
+macro labeled-turn recall and 3/4 complete coverage at k=3; BM25 and both hybrid
+methods reach 1.0 and 4/4. All methods reach complete coverage at k=5. These
+provisional labels are agent-only, with zero human ground truth; the assigned
+`test` split is bookkeeping. The two `UNKNOWN` cases are excluded from recall,
+and no QA or abstention accuracy was measured. Local source and isolated
+installed validation passed; see the [validation record](validation-cross-session-minilm.json)
+for full counts, parity, the independent ranking audit, and preserved setup
+corrections. Signed/private delivery and exact-head hosted CI remain unverified;
+`.local/active-cycle.json` is authoritative. The raw receipt is
+[`minilm-cross-session-remote.json`](../examples/synthetic/minilm-cross-session-remote.json).
+
 ## Longitudinal v2 dataset details
 
 The v2 data revision and fixture history remain in the
@@ -97,9 +121,11 @@ checkpoint carries the current review status above.
 
 Proceed with human review of the full longitudinal v2 packet and the scoped
 defaults/exceptions packet, then review labels and dataset readiness separately.
-Rights and scenario adequacy remain open; do not infer Gate A progress from agent
-reviews or other diagnostics. The frozen cross-session retrieval
-slice remains documented in its [data card](cross-session-test-data-card.md),
+Do not repeat this embedding call or create another near-duplicate retrieval
+slice. Keep rights and scenario adequacy open; do not infer Gate A progress from
+agent reviews or other diagnostics.
+The original CPU cross-session retrieval slice
+remains documented in its [data card](cross-session-test-data-card.md),
 [replay](cross-session-test-retrieval.json), and
 [validation record](validation-cross-session-test.json). Check the documentation
 index before repeating prior work.

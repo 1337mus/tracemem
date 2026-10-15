@@ -26,6 +26,8 @@ _REVISION = re.compile(r"[0-9a-f]{40}")
 _EMBEDDING_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 _EXTRACTION_MODEL_ID = "Qwen/Qwen3-4B"
 _MAX_EXTRACTION_CASES = 24
+_CROSS_SESSION_FIXTURE = "cross-session-test-v1"
+_CROSS_SESSION_FIXTURE_SHA256 = "dc7e301a9acb0e0d26293c2d8fa80bf8ebe838ecd543a7917a64bcd8f3cdfedf"
 _MAX_GENERATED_TOKENS = 512
 _MAX_PROMPT_TOKENS = 4096
 _MAX_TEXT_BYTES = 20_000
@@ -116,10 +118,15 @@ def build_payload(
     *,
     max_cases: int = _MAX_EXTRACTION_CASES,
     prompt_version: str = "v1",
+    fixture: str = "original",
 ) -> dict[str, Any]:
     """Build only fixture-derived inputs; no user-supplied source paths exist."""
     if mode not in {"embeddings", "extraction"}:
         raise ValueError("mode must be embeddings or extraction")
+    if type(fixture) is not str or fixture not in {"original", _CROSS_SESSION_FIXTURE}:
+        raise ValueError("fixture must be original or cross-session-test-v1")
+    if mode == "extraction" and fixture != "original":
+        raise ValueError("cross-session-test-v1 is available only for embeddings")
     if type(prompt_version) is not str or prompt_version not in {"v1", "explicit-v2"}:
         raise ValueError("prompt version must be v1 or explicit-v2")
     if mode == "embeddings" and prompt_version != "v1":
@@ -130,9 +137,24 @@ def build_payload(
         raise ValueError("extraction supports between 1 and 24 cases")
 
     if mode == "embeddings":
-        records, queries, fixture_hash = load_synthetic_data()
+        if fixture == "original":
+            records, queries, fixture_hash = load_synthetic_data()
+            texts = [*(record.text for record in records), *(query["query"] for query in queries)]
+        else:
+            from tracemem.adapters.longmemeval import parse_longmemeval_bytes
+
+            fixture_path = _ROOT / "examples/synthetic/cross-session-test-v1.json"
+            raw = fixture_path.read_bytes()
+            fixture_hash = hashlib.sha256(raw).hexdigest()
+            if fixture_hash != _CROSS_SESSION_FIXTURE_SHA256:
+                raise ValueError("cross-session fixture bytes do not match the pinned input")
+            questions = parse_longmemeval_bytes(raw, namespace=_CROSS_SESSION_FIXTURE, variant="s")
+            texts = [
+                *(record.text for question in questions for record in question.records),
+                *(question.question for question in questions),
+            ]
         text_by_hash: dict[str, str] = {}
-        for text in [*(record.text for record in records), *(query["query"] for query in queries)]:
+        for text in texts:
             if not isinstance(text, str) or not text:
                 raise ValueError("synthetic fixture contains invalid text")
             if len(text.encode("utf-8")) > _MAX_TEXT_BYTES:
@@ -358,6 +380,9 @@ def _safe_exception_message(error: Exception) -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="modal-baseline")
     parser.add_argument("--mode", required=True, choices=("embeddings", "extraction"))
+    parser.add_argument(
+        "--fixture", choices=("original", _CROSS_SESSION_FIXTURE), default="original"
+    )
     parser.add_argument("--max-cases", type=int, default=_MAX_EXTRACTION_CASES)
     parser.add_argument("--prompt-version", choices=("v1", "explicit-v2"), default="v1")
     parser.add_argument("--launch", action="store_true", help="run one reviewed remote call")
@@ -638,7 +663,10 @@ def main(argv: list[str] | None = None) -> int:
     try:
         runner_sha256 = _runner_sha256()
         payload = build_payload(
-            args.mode, max_cases=args.max_cases, prompt_version=args.prompt_version
+            args.mode,
+            max_cases=args.max_cases,
+            prompt_version=args.prompt_version,
+            fixture=args.fixture,
         )
         approved_hash = payload_sha256(payload)
         if not args.launch:

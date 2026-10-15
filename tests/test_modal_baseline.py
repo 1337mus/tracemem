@@ -19,6 +19,83 @@ from tracemem.remote_vectors import text_sha256
 
 
 class ModalPayloadTests(unittest.TestCase):
+    def test_cross_session_embedding_payload_is_allowlisted_and_default_unchanged(self) -> None:
+        original = modal_baseline.build_payload("embeddings")
+        self.assertEqual(
+            modal_baseline.payload_sha256(original),
+            "0f402a3474d7c94e979553a2623f58ef6fd72bc072218feebe872ebe10b7ae53",
+        )
+
+        from tracemem.adapters.longmemeval import parse_longmemeval_bytes
+
+        raw = Path("examples/synthetic/cross-session-test-v1.json").read_bytes()
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "dc7e301a9acb0e0d26293c2d8fa80bf8ebe838ecd543a7917a64bcd8f3cdfedf",
+        )
+        questions = parse_longmemeval_bytes(raw, namespace="cross-session-test-v1", variant="s")
+        expected_texts = {record.text for question in questions for record in question.records}
+        expected_texts.update(question.question for question in questions)
+        expected_hashes = {text_sha256(text) for text in expected_texts}
+
+        payload = modal_baseline.build_payload("embeddings", fixture="cross-session-test-v1")
+
+        self.assertEqual(payload["input_sha256"], hashlib.sha256(raw).hexdigest())
+        self.assertEqual(
+            modal_baseline.payload_sha256(payload),
+            "95158af854e806eb14c19ee4f3635446c912d5a1efddd7933f7e639f5f43aada",
+        )
+        self.assertEqual(len(expected_hashes), 78)
+        self.assertEqual(len(payload["items"]), 78)
+        self.assertEqual({item["text_sha256"] for item in payload["items"]}, expected_hashes)
+        self.assertEqual(
+            [item["text_sha256"] for item in payload["items"]],
+            sorted(expected_hashes),
+        )
+        self.assertTrue(all(set(item) == {"text_sha256", "text"} for item in payload["items"]))
+        self.assertNotIn('"answer"', json.dumps(payload))
+
+    def test_cross_session_fixture_rejects_unknown_fixture_and_extraction(self) -> None:
+        with self.assertRaisesRegex(ValueError, "fixture must be original"):
+            modal_baseline.build_payload("embeddings", fixture="unreviewed-fixture")
+        with self.assertRaisesRegex(ValueError, "available only for embeddings"):
+            modal_baseline.build_payload("extraction", fixture="cross-session-test-v1")
+
+    def test_cross_session_fixture_hash_is_checked_before_parsing(self) -> None:
+        from tracemem.adapters import longmemeval
+
+        fixture = Path("examples/synthetic/cross-session-test-v1.json").resolve()
+        original_read_bytes = Path.read_bytes
+
+        def read_bytes(path: Path) -> bytes:
+            if path.resolve() == fixture:
+                return original_read_bytes(path) + b"\n"
+            return original_read_bytes(path)
+
+        with (
+            patch.object(Path, "read_bytes", read_bytes),
+            patch.object(longmemeval, "parse_longmemeval_bytes") as parse,
+        ):
+            with self.assertRaisesRegex(ValueError, "pinned input"):
+                modal_baseline.build_payload("embeddings", fixture="cross-session-test-v1")
+        parse.assert_not_called()
+
+    def test_cross_session_fixture_cli_prepares_without_launch(self) -> None:
+        stdout = io.StringIO()
+        with redirect_stdout(stdout):
+            exit_code = modal_baseline.main(
+                ["--mode", "embeddings", "--fixture", "cross-session-test-v1"]
+            )
+
+        prepared = json.loads(stdout.getvalue())
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(prepared["item_count"], 78)
+        self.assertEqual(
+            prepared["input_sha256"],
+            "dc7e301a9acb0e0d26293c2d8fa80bf8ebe838ecd543a7917a64bcd8f3cdfedf",
+        )
+        self.assertFalse(prepared["remote_started"])
+
     def test_embedding_payload_contains_only_packaged_corpus_and_query_text(self) -> None:
         payload = modal_baseline.build_payload("embeddings")
         records, queries, _ = load_synthetic_data()
