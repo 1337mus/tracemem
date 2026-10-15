@@ -22,7 +22,11 @@ now measures 72 complete-prompt packing cells from the separately measured
 reconstructed every count, selection and label metric; full checks passed
 496 tests (one skip), with nine focused installed tests and exact CLI replay.
 This is dev-only authored-label retention, with zero human labels and no QA
-answers. A separate source-only QA bundle is the next bounded preparation step.
+answers. The [source-only request bundle](qa-contrast-requests.md) now freezes
+46 unique prompts for all 72 cells; root compared every prompt, mapping and
+reference independently. Full checks passed 502 tests (one skip), with six
+installed tests and exact three-artifact replay. No inference occurred in this
+preparation. A separately reviewed source-free answering runner is next.
 
 The earlier 24-case claim challenge is a single `diagnostic` partition, with no
 assigned train/dev/test/held-out cases. Its Qwen V1 and explicit-v2 runs share

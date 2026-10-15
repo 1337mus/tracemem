@@ -127,6 +127,8 @@ make check
   prompts. A [separate CPU-only counter](docs/qa-contrast-token-counter.md) measured
   82–907 tokens per complete prompt. An [offline token-budget replay](docs/qa-contrast-token-replay.md)
   measures 72 whole-evidence packing cells at 128/256/512/1,024 tokens; QA remains unmeasured.
+  A [source-only request preparer](docs/qa-contrast-requests.md) freezes 46 unique
+  prompts and their 72-cell map with separate provisional references.
 - [Fixed context budgets](docs/context-budget.md): measured evidence retention
   after packing identical rankings under UTF-8 byte ceilings. This is a retrieval
   diagnostic; answer accuracy and tokenizer counts are not measured.

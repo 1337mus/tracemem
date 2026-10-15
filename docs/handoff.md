@@ -90,14 +90,28 @@ See [compact cells](qa-contrast-token-replay-dev.json) and
 [validation](validation-qa-contrast-token-replay.json). Read active-cycle for
 the exact signed private delivery and CI state; verify it live before continuing.
 
-Next: prepare a separately frozen source-only QA request bundle from these
-72 cells, with references and scoring metadata isolated. There are 46 unique
-prompts (23,533 input tokens) versus 28,944 across all 72 cells, so identical
-prompts can share deterministic answers with an explicit cell mapping. Freeze
-the model revision, decoding and output limits before any inference. Begin
-with offline code/tests and independent payload review; no remote call is
-needed for preparation. Gate A remains unmet. No worker, GPU call or local
-session remains active at this checkpoint.
+The [source-only QA request preparer](qa-contrast-requests.md) is implemented
+and root reviewed. All 46 unique prompts, 72 cell mappings and six references
+match independently frozen expectations. A separate protocol freeze matches
+the full Qwen revision, decoding and measured tokenizer settings. References
+and scoring remain outside the payload. Totals are 23,533 unique input tokens
+and at most 5,888 generated tokens; this is a bound, not measured cost.
+
+Full checks passed 502 tests (one skip), Ruff 110 files and mypy 32 runtime
+files. Six installed tests passed and all three JSON files reproduced
+byte-for-byte, with all 37 runtime members unchanged. The request preparer
+now binds its own source hash separately from the historical preparer hash.
+A saved RED/GREEN proves that correction; the initial missing-API RED was
+observed but its raw log was not saved. See [validation](validation-qa-contrast-requests.json).
+No remote, GPU, local model or tokenizer call ran. Active-cycle records the
+exact signed private delivery and CI once verified.
+
+Next: implement and review a separate source-free Modal answering runner
+for the frozen 46-prompt payload. Pin payload/runner hashes, recheck exact
+token counts/template/backend before generation, retain raw responses before
+validation, and verify the personal workspace and zero active jobs before
+any single bounded synthetic-only GPU call. Gate A remains unmet; this is
+an answering diagnostic and does not select an extractor.
 
 Before continuing, read `.local/active-cycle.json` and verify live ownership,
 jobs, sessions, and next action; do not duplicate a remote job. Modal work is

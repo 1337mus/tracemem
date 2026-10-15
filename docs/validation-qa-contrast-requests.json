@@ -1,0 +1,128 @@
+{
+  "baseline_head": "27e83ae47ed7ee7c51641dd679462f9ca27c7a23",
+  "canonical_hashes": {
+    "audit_sha256": "b1ed803c465f6250986ae41d344b7083141f885544d611a9c45e051d0d7a63dd",
+    "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+    "references_sha256": "ad628ce021099887dec30acf4885bee53adeddbf63442cd099834a1db6c47c02"
+  },
+  "checked_at_utc": "2026-10-15T01:56:48.901413+00:00",
+  "counts": {
+    "cells": 72,
+    "combined_token_bound": 29421,
+    "generation_token_cap": 5888,
+    "input_tokens_all_cells": 28944,
+    "input_tokens_unique": 23533,
+    "longest_selected_prompt_tokens": 907,
+    "questions": 6,
+    "reused_cells": 26,
+    "unique_prompts": 46
+  },
+  "frozen_input_sha256": {
+    "examples/synthetic/qa-contrast-dev-v1.json": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+    "examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json": "a48defa04fad82435a979980a3d327232b83260adb7eafe42aa165bef35400bd",
+    "experiments/modal_qa_contrast_token_count.py": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18",
+    "experiments/modal_token_count.py": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+    "experiments/prepare_qa_contrast.py": "dc6e72187e6bafd64e133f4304d60d71caa72f14823470b6ed8bc0069b87a09d",
+    "experiments/replay_qa_contrast_tokens.py": "8215826c528dcde9a7ba06de46d3871e7ad4e84f26136c5f1119fbd6621ddeb9",
+    "experiments/token_catalog.py": "b1e1453d94f8510dbaf887810e79a9cf0677f5666dd749f7f7f8634d2288dfbf"
+  },
+  "full_check": {
+    "exit_code": 0,
+    "log": ".local/qa-contrast-requests-root-full-check.log",
+    "mypy_runtime_files": 32,
+    "ruff_files": 110,
+    "seconds": 19.299,
+    "skips": 1,
+    "tests_attempted": 502
+  },
+  "gate_a": "unmet",
+  "historical_artifacts_unchanged": true,
+  "human_reviewers": 0,
+  "installed": {
+    "all_three_artifacts_byte_identical": true,
+    "environment_unset": [
+      "PYTHONPATH",
+      "PYTHONHOME"
+    ],
+    "model_tokenizer_modal_imports": false,
+    "new_wheel_build": false,
+    "probe_exit_code": 0,
+    "runtime_members_verified_unchanged": 37,
+    "status": "passed",
+    "tests": 6,
+    "tests_exit_code": 0,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "limits": [
+    "Six correlated agent-authored dev cases; no held-out test cases or independent human labels",
+    "No QA accuracy, calibrated abstention, billing, latency, model selection or training-readiness inference",
+    "Source-only runner still requires separate review before any remote call"
+  ],
+  "local_model_tokenizer_calls": 0,
+  "log_sha256": {
+    "qa-contrast-requests-correction-format-check.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "qa-contrast-requests-correction-format.log": "43affe539ba0ae8b202b306a3294d04f3b7fc062316c1c825399076d966c8f2d",
+    "qa-contrast-requests-correction-green.log": "1f7f0c9b19080583fa23d62d63e835d961b48a8eca15fb78a3771b4308d56f65",
+    "qa-contrast-requests-correction-hashes.log": "a9b6b10e5968a8d932f454c52519c2f2d37cb4719882cccd85e32611ca3f9210",
+    "qa-contrast-requests-correction-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "qa-contrast-requests-format-check.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "qa-contrast-requests-format.log": "10869b88a75066aa23546ef1f95fcd4678c3fb92a56ed46ef91688052b67976a",
+    "qa-contrast-requests-green.log": "59df30021e39f802fec81aa34bafc98f4e5c8c14be96172bdbc48a918a30d8cb",
+    "qa-contrast-requests-installed-probe.log": "a850503362d8af580d898d78a7856d57fcde41d29426dbf4fec43df501381428",
+    "qa-contrast-requests-installed-tests.log": "b58d890d7e5b1a595d01150202e9226f80a2e58a24783a63a41c7ae2481420dd",
+    "qa-contrast-requests-red-provenance.log": "b1026f52bae9db6beb3ef96dfb416f88df3e3b1b9b7aad0e75e43e113bb968a3",
+    "qa-contrast-requests-root-full-check.log": "9642eee7818fca6225a087c71746e562df71346df661bfaa2878f864f0cac8ce",
+    "qa-contrast-requests-ruff-fix.log": "6f4e3c8cb6a43f32a8b47add0b65207f17bd814c84308623b3720ad789c0d769",
+    "qa-contrast-requests-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "qa-contrast-requests-setup.log": "1fbab3965e067c55aa9212396c2fd756f478b931e325c2f291791edc06cbb6a9"
+  },
+  "model_protocol": {
+    "attn_implementation": "eager",
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_new_tokens": 128,
+    "max_prompt_tokens": 1024,
+    "model_id": "Qwen/Qwen3-4B",
+    "num_beams": 1,
+    "precision": "float16",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "seed": 0,
+    "trust_remote_code": false,
+    "use_fast": true,
+    "use_safetensors": true
+  },
+  "remote_calls": 0,
+  "review": {
+    "all_source_tests_ci_and_docs_reviewed": true,
+    "findings_corrected": [
+      "preparer_source_sha256 bound historical preparer rather than new request preparer; now distinct hashes",
+      "model setting keys standardized to historical model_id/precision vocabulary",
+      "integration assertions now compare all46items and72mappings including counts, selected/scoring fields and six references"
+    ],
+    "tdd_evidence": "Actual source-hash regression RED and GREEN persisted. Implementer observed initial missing-API RED but did not save raw log; no historical failure recreated."
+  },
+  "root_independent_audit": {
+    "audit_sha256": "b1ed803c465f6250986ae41d344b7083141f885544d611a9c45e051d0d7a63dd",
+    "cells_compared": 72,
+    "expected_sha256": "305280c6472baeb63e6779ea2b34201211178cec108ea2e8101a698fa9fee951",
+    "items_compared": 46,
+    "method": "Compared every46item and72mapping field against independent subset-mask replay expectations frozen before inspecting candidate output; compared complete model/tokenizer against independently frozen protocol",
+    "model_tokenizer_modal_imports": false,
+    "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+    "protocol_sha256": "5f51d2a8bf8c23f220b7a3042202277f354c6f053379a7e3728243a748ffc9c7",
+    "reference_questions_compared": 6,
+    "references_sha256": "ad628ce021099887dec30acf4885bee53adeddbf63442cd099834a1db6c47c02",
+    "remote_calls": 0,
+    "source_sha256": "59270049e744629bdbbda16670160120c3135c6028c933af2a84fa8979462fe7",
+    "status": "passed"
+  },
+  "schema_version": 1,
+  "scope": "Offline fictional dev-only source-only QA request preparation; no inference",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "1e3784a727990005715f0f1933e7d002d33ff08a466f217af46290070e36b152",
+    "experiments/prepare_qa_contrast_requests.py": "59270049e744629bdbbda16670160120c3135c6028c933af2a84fa8979462fe7",
+    "tests/test_qa_contrast_requests.py": "45893b368948a986b9e74c4ba94ac069a943308688f8a633fd0a2a3edec90ad0"
+  },
+  "status": "passed",
+  "training_started": false
+}
