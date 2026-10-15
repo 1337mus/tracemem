@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "status": "verified; signed analyzer and report delivery pending",
+  "artifacts": {
+    "report": {
+      "path": "docs/qa-contrast-answer-dev.json",
+      "sha256": "9c70c0cb841d2f4310e228b875db04ecbdf762b8de6a29806fcb13950bceeca7"
+    },
+    "primary_receipt": {
+      "path": "examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json",
+      "sha256": "03c218ae3e84cb7856130e2dce862f3f0a7c479a08d543f888090c64c083df25",
+      "mode": "0600"
+    },
+    "raw_receipt": {
+      "path": "examples/synthetic/qwen3-4b-qa-contrast-answer-raw.json",
+      "sha256": "511887732e0e3028c4362b8b04e706df34b894bea086a928c5aeb6cea04d4b52",
+      "mode": "0600",
+      "result_equal_to_primary": true
+    }
+  },
+  "source_sha256": {
+    "runner": "1e1b7409c7a19bc4c0d51db72eb9256e6b1667ebc311af01d257e395e734a3db",
+    "receipt_validator": "63e9bcfa37447f9b6e81b091d4f928bb1ba36668426260c5d99239156a7b0461",
+    "request_preparer": "59270049e744629bdbbda16670160120c3135c6028c933af2a84fa8979462fe7",
+    "analyzer": "86b737d8fa4584532f055e5a986f5bc483599dee75126500e059b0642188e90b",
+    "analyzer_tests": "5c05b18b9624a97b991c6767ed5bfbfb6d3365e5f37e981104140b27c0da938b",
+    "ci_workflow_current": "c7a793aee1998ed4bae6f58a7a15c6ead5cda0fb3572e29e8a92a740d458d777"
+  },
+  "frozen_inputs": {
+    "payload_sha256": "80bd1b68eb0f4fabc7262f00ba17ddfbeeaa4079b924d1228881253029bc7b4e",
+    "references_sha256": "ad628ce021099887dec30acf4885bee53adeddbf63442cd099834a1db6c47c02",
+    "report_audit_sha256": "b1ed803c465f6250986ae41d344b7083141f885544d611a9c45e051d0d7a63dd",
+    "analyzer_receipt_sha256": "753d16e54d322903fdc6d2047df4f9eaa4d179ae46d26cd9d4d57319ee60026a",
+    "fixture": "examples/synthetic/qa-contrast-dev-v1.json",
+    "fixture_scope": "six fictional dev-only scenarios; zero human labels; test partition empty"
+  },
+  "analysis_audit": {
+    "path": ".local/qa-contrast-answer-inference-root-audit.json",
+    "sha256": "5a297d4cb5a54b448aefa30041423bab7b84cec66b3c31a097708524c94e69fa",
+    "passed": true,
+    "method": "independently reconstructed 72 cells and 12 groups from frozen expectations and raw 46 outputs without importing the analyzer",
+    "cells": 72,
+    "groups": 12,
+    "unique_prompts": 46,
+    "unique_input_tokens": 23533,
+    "mapped_cell_input_tokens": 28944,
+    "generated_tokens": 479,
+    "raw_primary_result_equal": true,
+    "active_gpu_jobs_after_run": 0
+  },
+  "literal_outcomes_per_group": {
+    "groups": 12,
+    "cells": 6,
+    "answerable_exact_match": "0/4",
+    "unknown_literal_UNKNOWN": "2/2",
+    "all_reference_exact_match": "2/6",
+    "semantic_accuracy_claim": false,
+    "false_literal_UNKNOWN_on_answerable_counts_by_ceiling": {
+      "ceilings": [128, 256, 512, 1024],
+      "bm25": [4, 0, 1, 0],
+      "vector": [4, 1, 2, 1],
+      "hybrid": [4, 0, 2, 1],
+      "denominator_each": 4
+    }
+  },
+  "inference": {
+    "calls": 1,
+    "gpu": "Tesla T4",
+    "model": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "precision": "float16",
+    "decoding": "greedy; no prompt truncation",
+    "maximum_new_tokens_per_unique_prompt": 128,
+    "unique_prompt_input_tokens": 23533,
+    "mapped_cell_input_tokens_not_used_as_compute_total": 28944,
+    "generation_cap_tokens": 5888,
+    "measured_generated_tokens": 479,
+    "EOS_outputs": 46,
+    "empty_outputs": 0,
+    "length_stops": 0,
+    "cap_hits": 0,
+    "truncated_outputs": 0,
+    "model_load_seconds": 78.372997,
+    "gpu_event_duration_seconds": 39.131037,
+    "remote_elapsed_seconds": 129.994857,
+    "client_elapsed_seconds": 234.095551,
+    "gpu_peak_allocated_memory_bytes": 8822848512,
+    "billing_or_cost_per_correct_inference": false
+  },
+  "runtime_image": {
+    "direct_pins": {
+      "torch": "2.7.1",
+      "transformers": "4.51.3",
+      "accelerate": "1.6.0",
+      "tokenizers": "0.21.1",
+      "jinja2": "3.1.6"
+    },
+    "transitive_dependencies": "resolved during image build; no fully hashed transitive lock is claimed",
+    "resolution_log": ".local/qa-contrast-answer-modal-startup.log"
+  },
+  "focused_verification": {
+    "tests": 6,
+    "passed": 6,
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "red_green_chronology": [
+      "Initial normalization test failed because the analyzer module was unavailable; this was a non-behavioral setup/availability failure, not a behavioral RED.",
+      "Overflow RED exposed unbounded integer timing; the analyzer now rejects it and GREEN passed.",
+      "Correction RED showed validator source mutation was accepted and semantic unsupported keys were emitted; both were corrected and GREEN passed.",
+      "The first installed-harness attempt had a setup KeyError before tests; it was not a behavioral RED. The corrected retry passed."
+    ],
+    "red_logs": [
+      ".local/qa-contrast-answer-analysis-red.log",
+      ".local/qa-contrast-answer-analysis-red-overflow.log",
+      ".local/qa-contrast-answer-analysis-corrections-red.log"
+    ],
+    "green_log": ".local/qa-contrast-answer-analysis-corrections-green.log"
+  },
+  "installed_replay": {
+    "receipt": ".local/qa-contrast-answer-analysis-installed-replay-receipt.json",
+    "source_cli_exit_code": 0,
+    "copied_cli_exit_code": 0,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+    "python_version": "3.12.14",
+    "runtime_members_verified": 37,
+    "source_wheel_installed_runtime_hashes_match": true,
+    "environment_unset": ["PYTHONPATH", "PYTHONHOME"],
+    "blocked_imports": ["modal", "torch", "transformers", "tokenizers"],
+    "source_copied_expected_report_byte_equal": true,
+    "report_sha256": "9c70c0cb841d2f4310e228b875db04ecbdf762b8de6a29806fcb13950bceeca7",
+    "network_used": false,
+    "remote_started": false
+  },
+  "local_full_check": {
+    "log": ".local/qa-contrast-answer-analysis-root-full-check.log",
+    "exit_code": 0,
+    "tests_attempted": 520,
+    "tests_passed": 519,
+    "tests_skipped": 1,
+    "test_seconds": 27.861,
+    "ruff_files": 115,
+    "mypy_source_files": 32
+  },
+  "focused_installed_tests": {
+    "tests": 6,
+    "exit_code": 0,
+    "receipt": ".local/qa-contrast-answer-analysis-installed-receipt.json"
+  },
+  "runner_delivery": {
+    "signed_commit": "7f7c08f7cee05c73d377d437b0200020f9dac6f2",
+    "ci_run_id": 38671571328,
+    "ci_result": "passed",
+    "source_tests": "513 passed; 1 skipped",
+    "installed_wheel_tests": "260 passed; 2 skipped"
+  },
+  "analysis_delivery": {
+    "status": "pending signed private push and final CI",
+    "current_workflow_adds": [
+      "copy analyzer and focused tests",
+      "copy actual primary receipt and expected report",
+      "run offline CLI and byte-compare the report"
+    ],
+    "gate_a_met": false,
+    "training_or_model_selection_supported": false
+  }
+}

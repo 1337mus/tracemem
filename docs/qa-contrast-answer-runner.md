@@ -55,6 +55,14 @@ Root reviewed both source modules, all focused tests and installed-CI copies.
 Full checks passed 514 tests (one skip), Ruff on 113 files and mypy on 32
 runtime files. All 12 installed tests pass outside the checkout; all 37 runtime
 members match the existing wheel. Offline source and copied-launcher summaries
-match with model and Modal imports blocked. Private delivery is pending; no
-QA answer or resource result for this payload has been measured. See the
-[validation receipt](validation-qa-contrast-answer-runner.json) for exact state.
+match with model and Modal imports blocked. Signed private delivery
+[`7f7c08f`](https://github.com/1337mus/tracemem/commit/7f7c08f7cee05c73d377d437b0200020f9dac6f2)
+passed exact [CI](https://github.com/1337mus/tracemem/actions/runs/38671571328):
+514 source tests (one skip) and 262 installed tests (two skips). See the
+[offline validation snapshot](validation-qa-contrast-answer-runner.json).
+
+One reviewed call subsequently completed: 46 outputs, 23,533 input tokens,
+479 generated tokens, all EOS stops and no truncation. Raw and validated
+results match. The app stopped with zero tasks; no retry or second call ran.
+The separate [answering report](qa-contrast-answer-results.md) records the
+descriptive results and limits.

@@ -1,9 +1,9 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. Latest verified delivery:
-[`d8d0847`](https://github.com/1337mus/tracemem/commit/d8d0847c058559aff791fae70a0ed757c7510dfa).
-Its [CI](https://github.com/1337mus/tracemem/actions/runs/38668432855) passed
-502 source tests (one skip) and 250 installed tests (two skips). Repository
+Updated 2026-10-15 UTC. Verified runner delivery:
+[`7f7c08f`](https://github.com/1337mus/tracemem/commit/7f7c08f7cee05c73d377d437b0200020f9dac6f2).
+Its [CI](https://github.com/1337mus/tracemem/actions/runs/38671571328) passed
+514 source tests (one skip) and 262 installed tests (two skips). Repository
 visibility was verified PRIVATE before that push. Verify live delivery and
 worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
 
@@ -59,22 +59,23 @@ A valid citation proves source identity and quote integrity, not entailment.
 | MiniLM retrieval | Recall@5 1.0 on 14 answerable queries; 0/3 unknown abstentions | 40 fictional records; no generalization or calibration claim |
 | Two-model extraction | Qwen emitted 83 schema-valid candidates across 48 cases; Phi emitted one | Separate 24-case dev/test partitions; substantial schema, attribution and temporal failures remain |
 | Token-budget retrieval | At 128/256/512/1,024 tokens, hybrid retained authored labels at macro recall 0/.125/.75/1 | Six agent-authored dev scenarios; four answerable and two unknown exclusions per group |
-| New answering preparation | 72 comparison cells map to 46 prompts, using 23,533 unique input tokens | Source-only payload; references/scoring isolated; no answers measured yet |
+| Matched-budget answering diagnostic | Every group: 0/4 answerable literal matches, 2/2 unknown matches; 479 generated tokens over 46 prompts | Six fictional dev scenarios; verbose paraphrases occur, so this is not semantic accuracy |
 
 See [model comparison](experiments-scenarios.md),
 [token replay](qa-contrast-token-replay.md) and
-[request preparation](qa-contrast-requests.md) for exact denominators and receipts.
+[answering results](qa-contrast-answer-results.md) for exact denominators and receipts.
 Model outputs and agent judgments are not independent human ground truth.
 
 ## Current work and remaining gates
 
 Phase 0 inventory and Phase 1 runnable infrastructure are complete. The next
-bounded implementation is a [source-free answering runner](qa-contrast-answer-runner.md)
-for the frozen 46 prompts. Root review and full checks pass: 514 tests (one
-skip), Ruff and mypy. All 12 installed tests and exact offline CLI replay pass.
-Private delivery is being finalized before one reviewed, synthetic-only Modal
-call. The configured generation
-bound is 5,888 tokens; no new answers have been measured yet.
+bounded diagnostic completed one [source-free answering call](qa-contrast-answer-runner.md).
+It used a remote T4, 23,533 input tokens and 479 generated tokens. Raw responses
+were preserved and independently checked against all 72 comparison cells.
+The app stopped with zero tasks. The separately reviewed analysis passes full
+checks: 520 tests (one skip), Ruff and mypy, plus six installed tests. Its source,
+fictional receipts and final report are included here. Source and installed
+report bytes match exactly; active-cycle records the newest delivery and CI.
 
 Gate A remains unmet: there are zero independent human labels and insufficient
 independently validated, legally reviewed held-out scenarios. Training,
