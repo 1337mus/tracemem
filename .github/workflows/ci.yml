@@ -62,6 +62,7 @@ jobs:
           test_root="$(mktemp -d "$RUNNER_TEMP/tracemem-installed-tests.XXXXXX")"
           test_dir="$test_root/tests"
           mkdir -p "$test_dir" "$test_root/examples/synthetic" "$test_root/experiments"
+          touch "$test_dir/__init__.py"
           cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py \
             tests/test_adapter.py tests/test_transcript_bounds.py tests/test_transcript_consistency.py \
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
@@ -80,6 +81,7 @@ jobs:
           cp tests/test_qa_contrast_requests.py "$test_dir/"
           cp tests/test_qa_interpretation_controls.py "$test_dir/"
           cp tests/test_qa_interpretation_answer_receipt.py "$test_dir/"
+          cp tests/test_qa_controls_reviews.py "$test_dir/"
           cp tests/test_modal_qa_interpretation_answer.py "$test_dir/"
           cp tests/test_qa_interpretation_answer_analysis.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
@@ -107,6 +109,12 @@ jobs:
           cp experiments/qa_interpretation_answer_receipt.py "$test_root/experiments/"
           cp experiments/modal_qa_interpretation_answer.py "$test_root/experiments/"
           cp experiments/analyze_qa_interpretation_answers.py "$test_root/experiments/"
+          cp experiments/prepare_qa_controls_reviews.py "$test_root/experiments/"
+
+          .venv/bin/python -m experiments.prepare_qa_controls_reviews \
+            --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
+            --output-dir "$test_root/qa-controls-source-export" \
+            --seed 17
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
@@ -129,3 +137,11 @@ jobs:
             --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
             --output qa-controls-answer-actual.json
           cmp qa-controls-answer-expected.json qa-controls-answer-actual.json
+          "$smoke_venv/bin/python" -m experiments.prepare_qa_controls_reviews \
+            --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
+            --output-dir qa-controls-installed-export \
+            --seed 17
+          for output in bundle.json key.json response-template.json; do
+            cmp "$test_root/qa-controls-source-export/$output" \
+              "qa-controls-installed-export/$output"
+          done

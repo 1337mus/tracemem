@@ -1,0 +1,94 @@
+{
+  "ci_workflow_actionlint_exit_code": 0,
+  "delivery": "Local pre-delivery snapshot; exact signed private delivery and CI recorded in .local/active-cycle.json.",
+  "export": {
+    "bundle_sha256": "0ac1c3bde75773b6dd7f0c521b36635973317a0f9dc71b584af3a02a1242541a",
+    "directory_mode": "0700",
+    "file_mode": "0600",
+    "files_sha256": {
+      "bundle.json": "38c120ef8c842fcf3d53e1a3f45393624ba19dbda5e4f07f368da4a9369510ae",
+      "key.json": "75ae03d8b80d6bb33f0b148e062973eae73f453c08630a3ed135f2ed34428451",
+      "response-template.json": "0936f5e48e9ede5c640b7cfb4472fd51d5dd9f65620abc9b987ea486af911f52"
+    },
+    "seed": 1729
+  },
+  "focused_tests_passed": 9,
+  "full_source_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "finished_at_utc": "2026-10-15T05:28:20.712879+00:00",
+    "log": ".local/qa-controls-review-root-full-check.log",
+    "log_sha256": "2c3a3504bc1eeff55bab2082e64c4e724817b8b3d9b4e1145fc41ed2039bfc4d",
+    "mypy_files": 32,
+    "passed": 584,
+    "reviewed_source_hashes": {
+      ".github/workflows/ci.yml": "acebfe9362b84a909d0d32a9e29e6f56ff1a34426f321d280f3cb5213ec3c8e4",
+      "experiments/prepare_qa_controls_reviews.py": "e4300d44839ff816721215b6b8aa0f02a38082a1b2f23e6205d361a35bc04924",
+      "tests/test_qa_controls_reviews.py": "c2076a9f6f73fe297ff920fb8989385f327e7f7a7b72f4010f0a7639ee30c025"
+    },
+    "ruff_files": 129,
+    "skipped": 1,
+    "source_hashes_unchanged_during_check": true,
+    "started_at_utc": "2026-10-15T05:27:17.915065+00:00",
+    "tests_attempted": 585
+  },
+  "gate_a": "unmet",
+  "installed": {
+    "all_three_files_byte_equal": true,
+    "errors": 0,
+    "failures": 0,
+    "new_wheel_built": false,
+    "outside_checkout": true,
+    "passed": 9,
+    "positive_import_blocker_probes": [
+      "modal",
+      "torch",
+      "transformers",
+      "tokenizers"
+    ],
+    "real_model_modules_loaded": [],
+    "receipt": ".local/qa-controls-review-installed-receipt.json",
+    "receipt_sha256": "eaef14b2ffa0880f8541f71b74da0e3f48573af4ce06222c6510b638c854e8ed",
+    "runtime_members_hash_matched": 37,
+    "skipped": 0,
+    "tests_attempted": 9
+  },
+  "kind": "qa-controls-review-preparation-validation",
+  "model_selected": false,
+  "new_inference": false,
+  "recorded_at_utc": "2026-10-15T05:29:07.848484+00:00",
+  "root_audit": {
+    "additional_rejection_probes": 5,
+    "blank_annotation_rows": 36,
+    "experimental_condition_blinded": false,
+    "hidden_cells_verified": 36,
+    "input_pins_unchanged": true,
+    "reference_key_withheld": true,
+    "rejection_qualification": "One rejects an unexpected wrapper field; it does not exercise an existing result hash pin.",
+    "tasks_verified_against_pre_export_expectation": 36
+  },
+  "root_review": "Full source/tests, corrections, installed harness/receipt and CI diff reviewed; no remaining blocking findings. Tests are focused on mapping, provenance, shuffling, privacy modes and preserved failure artifacts.",
+  "scope": {
+    "correlated_groups": 6,
+    "human_labels_created": 0,
+    "questions": 12,
+    "scenario_groups": 6,
+    "semantic_labels_created": 0,
+    "split": "dev",
+    "tasks": 36,
+    "test": []
+  },
+  "source_sha256": {
+    ".github/workflows/ci.yml": "acebfe9362b84a909d0d32a9e29e6f56ff1a34426f321d280f3cb5213ec3c8e4",
+    "experiments/prepare_qa_controls_reviews.py": "e4300d44839ff816721215b6b8aa0f02a38082a1b2f23e6205d361a35bc04924",
+    "tests/test_qa_controls_reviews.py": "c2076a9f6f73fe297ff920fb8989385f327e7f7a7b72f4010f0a7639ee30c025"
+  },
+  "tdd": {
+    "log": ".local/qa-controls-review-preparation-tdd.log",
+    "log_sha256": "e7aa5721b872904e9315aa3453d3d9d1f29a08afff5bbd7d6c0adff1cd5b99b4",
+    "observed_behavioral_reds": 6,
+    "qualification": "Initial absent-module failure was setup; mapping/rejection/shuffle assertions also followed implementation.",
+    "strict_one_red_per_behavior_claimed": false
+  },
+  "training_started": false
+}

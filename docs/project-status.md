@@ -1,25 +1,21 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. The source-free QA controls runner's full check passed
-569 tests (568 passed, one skipped), Ruff on 125 files and mypy on 32 runtime
-files. Thirteen focused and 13 installed tests passed; all 37 runtime members
-match the existing wheel. The runner was delivered in signed private commit
-[`7c5bf12`](https://github.com/1337mus/tracemem/commit/7c5bf12f08eee3594a4173c9cac65f3747d79a36)
-with valid signature and successful exact [CI run 38683345935](https://github.com/1337mus/tracemem/actions/runs/38683345935):
-568 source tests (one skip), 315 installed tests (two skips), Ruff, mypy and
-wheel build passed. The separate pre-delivery [validation snapshot](validation-qa-controls-answer-runner.json)
-is preserved. Its prerequisite answer contract was delivered in signed private commit
-[`8b9561b`](https://github.com/1337mus/tracemem/commit/8b9561bce29934a121247f305cf83110016c9f69)
-with a valid signature; remote main matched at verification. Exact [CI run 38681376612](https://github.com/1337mus/tracemem/actions/runs/38681376612)
-passed 555 source tests (one skipped) and 302 installed tests (two skipped).
-Earlier controls preparation passed exact [CI run 38679061711](https://github.com/1337mus/tracemem/actions/runs/38679061711).
-Check active-cycle for current delivery.
-Previously verified QA review tooling delivery:
-[`125d366`](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb).
-Its [CI](https://github.com/1337mus/tracemem/actions/runs/38674186708) passed
-526 source tests (one skip) and 274 installed tests (two skips). Repository
-visibility was verified PRIVATE before that push. Verify live delivery and
-worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
+Updated 2026-10-15 UTC. The latest offline slice prepares a 36-task,
+reference-key-withheld review packet with separate source-answer and
+prompt-support axes. It creates blank responses, with no semantic or human
+labels. Nine source and nine installed-runtime tests passed. All three files
+replayed byte-for-byte outside the checkout. The full source check passed
+584/585 tests (one optional Context Kit skip), Ruff on 129 files and mypy on 32
+runtime files; Actionlint passed. See the [protocol](qa-controls-answer-review.md)
+and [validation snapshot](validation-qa-controls-answer-review.json).
+
+The preceding literal analyzer was delivered in signed private commit
+[`edd66f7`](https://github.com/1337mus/tracemem/commit/edd66f734087e31d79a58b8ae0b13c6a26bd2b64).
+Exact [CI 38685597953](https://github.com/1337mus/tracemem/actions/runs/38685597953)
+passed 575/576 source tests (one skip), 322/324 installed tests (two skips),
+Ruff, mypy, wheel build and report replay. The GitHub signature was valid and
+repository visibility was PRIVATE before that push. Verify latest delivery,
+CI and worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
 
 The working result is an evidence and evaluation system. The specialist model
 is still a research objective: no model has been selected or trained.

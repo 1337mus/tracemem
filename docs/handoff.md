@@ -7,6 +7,16 @@ read-only. Private data stays local.
 
 ## Current checkpoint
 
+The new offline [review packet preparer](qa-controls-answer-review.md) exports
+36 key-withheld tasks and blank response rows from the fixed fictional receipt.
+Root matched all visible contents and hidden mappings against pre-export
+expectations. Nine focused source and nine installed-runtime tests passed; all
+three exports replayed byte-for-byte outside the checkout. Full source checks
+passed 584/585 tests (one optional skip), Ruff 129 files, mypy 32 runtime files
+and Actionlint. The packet withholds references but does not hide conditions or
+create labels. See [validation](validation-qa-controls-answer-review.json).
+Exact delivery and CI are in `.local/active-cycle.json`; verify them live.
+
 Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 remains
 synthetic diagnostics; no model is selected or trained. Gate A is unmet, with
 zero independently verified human labels.
@@ -82,11 +92,13 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Prepare a blinded review packet for these fixed outputs using the existing
-review tooling, with separate prompt-support and source-correctness labels and
-reference answers withheld. Record reviewer kind honestly; only human work can
-add human labels. Do not infer semantic quality from literal counts. Check
-active-cycle and live worker state before further work.
+Add bounded offline validation/accounting for completed controls-review
+responses, reusing the fixed packet identity and two judgment axes. Reject
+changed bundles, missing/duplicate/foreign task IDs, invalid labels, blank
+metadata and unsupported reviewer-kind claims. Keep reviewer-kind counts
+self-attested; structural validation cannot authenticate a human. Preserve
+uncertain labels and report dev separately from the empty test split. Only
+human work can add human labels. Check active-cycle and live workers first.
 Do not launch another call or train/select a model through the unmet gate. No
 weights or tokenizers were loaded on the Mac.
 
