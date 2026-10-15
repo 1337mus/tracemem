@@ -1,0 +1,155 @@
+{
+  "baseline_head": "fdc45be01115fa68227c6ce959ef498322164ba3",
+  "canonical_full_report_sha256": "0b7efb6dc7e54d9e099333445ae6d5ae692d0f92e4f37e8c336e1c68246a27f4",
+  "checked_at_utc": "2026-10-15T01:30:27.984520+00:00",
+  "compact_report_sha256": "225e45eaf7223aa25e64641250b4fa4387c0e120a7c2d835bd9b32eb693209f7",
+  "fixture": {
+    "answerable": 4,
+    "human_reviewers": 0,
+    "provenance": "authored-fictional-agent-only",
+    "provisional": true,
+    "questions": 6,
+    "split": "dev",
+    "unknown": 2
+  },
+  "frozen_input_sha256": {
+    "examples/synthetic/qa-contrast-dev-v1.json": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+    "examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json": "a48defa04fad82435a979980a3d327232b83260adb7eafe42aa165bef35400bd",
+    "experiments/modal_qa_contrast_token_count.py": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18",
+    "experiments/modal_token_count.py": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+    "experiments/prepare_qa_contrast.py": "dc6e72187e6bafd64e133f4304d60d71caa72f14823470b6ed8bc0069b87a09d",
+    "experiments/token_catalog.py": "b1e1453d94f8510dbaf887810e79a9cf0677f5666dd749f7f7f8634d2288dfbf"
+  },
+  "full_check": {
+    "exit_code": 0,
+    "mypy_runtime_files": 32,
+    "ruff_files": 108,
+    "skips": 1,
+    "test_seconds": 16.163,
+    "tests_attempted": 496
+  },
+  "gate_a": "unmet",
+  "historical_artifacts_unchanged": true,
+  "independent_root_audit": {
+    "aggregates": 12,
+    "all72_prompt_counts_match": true,
+    "canonical_report_sha256": "0b7efb6dc7e54d9e099333445ae6d5ae692d0f92e4f37e8c336e1c68246a27f4",
+    "cells": 72,
+    "default_infeasible_cells": 0,
+    "method": "Root built expected outcomes with independent subset-mask greedy replay over previously audited frozen catalog/counts without production packing or replay calls; then compared candidate API output against every expected cell and aggregate",
+    "mixed_feasibility_budgets": [
+      82,
+      90
+    ],
+    "runtime_model_tokenizer_imports": false,
+    "skip_then_accept_events": 3,
+    "source_sha256": "8215826c528dcde9a7ba06de46d3871e7ad4e84f26136c5f1119fbd6621ddeb9",
+    "status": "passed"
+  },
+  "installed": {
+    "cli_report_equals_root": true,
+    "exit_code": 0,
+    "model_tokenizer_modal_imports": false,
+    "new_wheel_build": false,
+    "runtime_members_unchanged": 37,
+    "tests": 9,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "limits": [
+    "Six correlated development cases, no held-out test set or independent human labels",
+    "Authored label retention does not establish evidence sufficiency, QA accuracy, calibrated abstention or retrieval superiority",
+    "Hash vectors are weak lexical features, not semantic embeddings",
+    "Counts apply only to exact pinned complete messages/tokenizer/template/options",
+    "No QA, cost, model-selection or training-readiness claim"
+  ],
+  "local_model_tokenizer_calls": 0,
+  "log_sha256": {
+    "qa-contrast-token-replay-cli-check.log": "bdda445a409e17ac77e280e28771cdf839d8cabb17b5d57d073d684201876549",
+    "qa-contrast-token-replay-focused-01.log": "ba2521ecba5a6f88ae6705b702901f464a3ba79906e75616c2ab6f509ed3ecf4",
+    "qa-contrast-token-replay-focused-02.log": "040e831ac5cbf97a80659c801d4e6be3e3c4e7baaf5340d9e988001256fd4443",
+    "qa-contrast-token-replay-focused-final-01.log": "bb7c1b1b12294ca4b4b21ad030abf19078eca6abd5825f2308f674d2f05c63ed",
+    "qa-contrast-token-replay-focused-final-02.log": "1aad4404ce0b870c9efc68ade03d2175769df64cecf7d0dabe9e42d5e6e7f458",
+    "qa-contrast-token-replay-green-01.log": "d0de91b42432e4a09c8f952d3dc883ed03ad7bc065d9cc707eb89915229386ca",
+    "qa-contrast-token-replay-green-02.log": "5a398bf9b3e8ffe598e92eba069519cad400ad10c9c351e58172bbcb30150c94",
+    "qa-contrast-token-replay-green-03.log": "479821c00005a4c4b911ec35d7f28e4c068be805bae935cc6477f01c4d5d93f3",
+    "qa-contrast-token-replay-green-04.log": "23fc221cf43c349295d3f499e965eda56c2a4322ad8e490cfe811a37056e3237",
+    "qa-contrast-token-replay-green-05.log": "0c9cbf5b106d7b0b25c329f08b14ea0db0029c857eecf6d24db49020be86f45f",
+    "qa-contrast-token-replay-green-06.log": "d79907215439e1d0a73011fc9d11d30f915c6d9bb9a8803b34607e024602534f",
+    "qa-contrast-token-replay-green-07.log": "eb707bf879acd102a3e26c31871d4ef2325fea1f381e179f3b6f5d7831b82bf5",
+    "qa-contrast-token-replay-green-08.log": "6655919e0d52b83b4348699789f34f2c6c4f8aff6d66ee0008ac99638202bb70",
+    "qa-contrast-token-replay-green-09.log": "f370ca829dbee156e31c0edf8ea18923ca5d76c481b2ba4b4c792be9eecef552",
+    "qa-contrast-token-replay-installed-tests.log": "0d368067a4821ad2926d2d2e183bb07455bd6090d0254e3fa2d4c5f6e9646d66",
+    "qa-contrast-token-replay-red-01.log": "9b46d99f4c3ad7ace97819812ebabb4fd4e2710a96d10cc2ec80775dbae0887d",
+    "qa-contrast-token-replay-red-02.log": "1bd3ddefc7571e7458baa0bbabca3052010f101239045b7c2a326731c7d19e6c",
+    "qa-contrast-token-replay-red-03.log": "d2df11981895fdd940f37490516f40648d8a1d959e1cd145bf9ffa80eff4e1bd",
+    "qa-contrast-token-replay-red-04.log": "daa43fb88680cc2435c42a346ccc32ef46ea659e96be27a3ec4ebf3cada8bf35",
+    "qa-contrast-token-replay-root-full-check.log": "bd9b817d8aa9a6ca9eac5854abda3a20bc146041898e58da86235aeca9e0aabe",
+    "qa-contrast-token-replay-ruff-check-01.log": "2d0df1c1286df9f25cf12b5bec535c45eb4e11f811a7f5f2ae99444f055b0a8d",
+    "qa-contrast-token-replay-ruff-check-02.log": "c99cc594edaa05b0222e62189683055658fbabb6225952caeccf5aa8d93c36d8",
+    "qa-contrast-token-replay-ruff-check-03.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "qa-contrast-token-replay-ruff-format-check.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938"
+  },
+  "next_preparation_counts": {
+    "cells": 72,
+    "input_tokens_all_cells": 28944,
+    "input_tokens_unique_prompts": 23533,
+    "meaning": "Offline request counts only; no inference launched",
+    "unique_prompt_ids": 46
+  },
+  "remote_calls": 0,
+  "results": {
+    "aggregate_cells": 12,
+    "cells": 72,
+    "complete_prompt_ceilings": [
+      128,
+      256,
+      512,
+      1024
+    ],
+    "default_infeasible_cells": 0,
+    "evidence_lines_per_prompt": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "groups": 18,
+    "macro_denominator_per_mode_ceiling": 4,
+    "macro_label_recall": {
+      "bm25": [
+        0,
+        0.25,
+        0.75,
+        1
+      ],
+      "hybrid": [
+        0,
+        0.125,
+        0.75,
+        1
+      ],
+      "vector": [
+        0,
+        0.25,
+        0.875,
+        0.875
+      ]
+    },
+    "skip_then_accept_events": 3,
+    "unknown_exclusions_per_mode_ceiling": 2
+  },
+  "root_review": {
+    "all_resulting_source_and_test_changes_reviewed": true,
+    "production_findings": [],
+    "test_gap_corrected": "Add default12aggregate golden table and per-cell label/record assertions so retained-label scoring regressions cannot pass"
+  },
+  "schema_version": 1,
+  "scope": "Offline dev-only measured complete-prompt token packing; no QA inference",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "83c2ddde4128e782c54fba8052e947f000463a3c8c697d999f107153679ce9cf",
+    "experiments/replay_qa_contrast_tokens.py": "8215826c528dcde9a7ba06de46d3871e7ad4e84f26136c5f1119fbd6621ddeb9",
+    "tests/test_qa_contrast_token_replay.py": "ef7e4ece61ba09366671746354cbc262f2a18e445c2a8e9cf98e2e81b2f5e479"
+  },
+  "status": "passed",
+  "training_started": false
+}

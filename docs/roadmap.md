@@ -16,6 +16,14 @@ acceptance boundary is not met.
 
 ## Evaluation state
 
+The six-case [development token-budget replay](qa-contrast-token-replay.md)
+now measures 72 complete-prompt packing cells from the separately measured
+399-prompt catalog. Default ceilings retain 0/1/2/5 passages. Root independently
+reconstructed every count, selection and label metric; full checks passed
+496 tests (one skip), with nine focused installed tests and exact CLI replay.
+This is dev-only authored-label retention, with zero human labels and no QA
+answers. A separate source-only QA bundle is the next bounded preparation step.
+
 The earlier 24-case claim challenge is a single `diagnostic` partition, with no
 assigned train/dev/test/held-out cases. Its Qwen V1 and explicit-v2 runs share
 the same cases and are prompt-development diagnostics, not independent

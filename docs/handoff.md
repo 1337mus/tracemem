@@ -68,13 +68,36 @@ stopped with zero tasks; no GPU, model inference or training ran. See
 [validation](validation-qa-contrast-token-counter.json) and the fictional receipt.
 The historical counter and receipts remain unchanged.
 
-Next: implement and test development-only token-budget packing replay for this
-exact catalog and measured receipt, at the already frozen 128/256/512/1024
-complete-prompt ceilings. Reuse the shared whole-evidence token packer, preserve
-explicit-label exclusions and report infeasible empty prompts explicitly.
-Do not infer QA accuracy from retained labels. No remote call is needed for
-that slice; no worker, GPU call or local session remains active at this
-checkpoint. Verify live state and private delivery/CI before continuing.
+The counter was privately delivered in signed commit
+[fdc45be01115fa68227c6ce959ef498322164ba3](https://github.com/1337mus/tracemem/commit/fdc45be01115fa68227c6ce959ef498322164ba3).
+Its [CI](https://github.com/1337mus/tracemem/actions/runs/38664410629) passed
+487 source tests (one skip) and 235 installed tests (two skips).
+
+The [offline token-budget replay](qa-contrast-token-replay.md) is implemented
+and root reviewed. All 72 cells match independently reconstructed subset-mask
+packing, prompt identities/counts, citations and authored-label metrics. At
+128/256/512/1,024 tokens the prompts retain 0/1/2/5 evidence lines. BM25 macro
+label recall is 0/.25/.75/1; hash vectors 0/.25/.875/.875; hybrid 0/.125/.75/1.
+Each aggregate has four answerable questions and two unknown exclusions.
+All default cells are feasible; zero and mixed-feasibility ceilings are also
+verified. These are provisional development labels, not QA accuracy.
+
+Full checks passed 496 tests (one skip), Ruff 108 files and mypy 32 runtime
+files. Nine installed tests passed; installed CLI output equals root exactly.
+All 37 runtime members match the existing wheel, and historical inputs and
+runners remain unchanged. No remote call or local model/tokenizer import ran.
+See [compact cells](qa-contrast-token-replay-dev.json) and
+[validation](validation-qa-contrast-token-replay.json). Read active-cycle for
+the exact signed private delivery and CI state; verify it live before continuing.
+
+Next: prepare a separately frozen source-only QA request bundle from these
+72 cells, with references and scoring metadata isolated. There are 46 unique
+prompts (23,533 input tokens) versus 28,944 across all 72 cells, so identical
+prompts can share deterministic answers with an explicit cell mapping. Freeze
+the model revision, decoding and output limits before any inference. Begin
+with offline code/tests and independent payload review; no remote call is
+needed for preparation. Gate A remains unmet. No worker, GPU call or local
+session remains active at this checkpoint.
 
 Before continuing, read `.local/active-cycle.json` and verify live ownership,
 jobs, sessions, and next action; do not duplicate a remote job. Modal work is

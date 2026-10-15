@@ -72,14 +72,17 @@ jobs:
           cp tests/test_modal_token_count.py "$test_dir/"
           cp tests/test_qa_contrast.py "$test_dir/"
           cp tests/test_modal_qa_contrast_token_count.py "$test_dir/"
+          cp tests/test_qa_contrast_token_replay.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qa-contrast-dev-v1.json "$test_root/examples/synthetic/"
+          cp examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json "$test_root/examples/synthetic/"
           cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py \
             experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \
             experiments/scenario_payload.py experiments/token_catalog.py "$test_root/experiments/"
           cp experiments/modal_token_count.py "$test_root/experiments/"
           cp experiments/prepare_qa_contrast.py "$test_root/experiments/"
           cp experiments/modal_qa_contrast_token_count.py "$test_root/experiments/"
+          cp experiments/replay_qa_contrast_tokens.py "$test_root/experiments/"
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
