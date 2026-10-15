@@ -1,6 +1,6 @@
 {
   "updated_at_utc": "2026-10-15T21:18:08.955688+00:00",
-  "implementation_state": "local; reviewed; not yet committed or pushed",
+  "implementation_state": "reviewed source, reports, and fictional receipts committed and pushed to private repository",
   "base_head": "92dcfc90cd28bce48d1218fc366f50ae31449432",
   "authorization": {
     "path": ".local/sft-pilot-20261015/training-owner-authorization-v1.json",
@@ -151,5 +151,7 @@
   "tracked_replay": {
     "report_bytes_identical": true,
     "receipt": ".local/sft-pilot-20261015/root-review/training-tracked-replay-v1.json"
-  }
+  },
+  "implementation_commit": "a2c2439aa9d5022047e7e412d56b17538c11e2da",
+  "signature_delivery_note": "Implementation commit verifies locally; GitHub reports bad_email. Docs-only follow-up uses the existing GitHub-verified key UID. Latest remote verification and exact-head CI are in .local/active-cycle.json; no history rewrite."
 }

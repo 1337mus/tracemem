@@ -30,8 +30,13 @@ receipts are unchanged under `.local/sft-pilot-20261015/`.
 
 The final local `make check` passed: 702 tests passed, one optional skip;
 Ruff, formatting across 155 files, and strict mypy across 41 source files passed.
-Source and report changes are being prepared for signed private delivery;
-`.local/active-cycle.json` is authoritative for actual commit, push, and CI state.
+Source, reports, and fictional receipts were pushed to the private repository
+in commit `a2c2439aa9d5022047e7e412d56b17538c11e2da`. Its GPG signature
+verifies locally; GitHub reports `bad_email` because the commit email differs
+from the key UID. A documentation follow-up uses the existing verified signing
+identity without changing the key, account, or earlier history.
+`.local/active-cycle.json` is authoritative for the latest signed tip, push,
+GitHub signature verification, and exact-head CI state.
 Do not infer hosted CI from these local checks.
 
 Personal inventory at 2026-10-15T21:15:34Z showed the app stopped with zero tasks.
