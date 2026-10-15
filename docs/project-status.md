@@ -1,8 +1,11 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. New offline review accounting passes 534 source tests
-(one skip), lint/type checks and eight installed focused tests. Its actual
-source/copied report bytes match. Check active-cycle for newest delivery.
+Updated 2026-10-15 UTC. Offline QA interpretation controls pass 543 source tests
+(542 passed, one skipped), Ruff on 121 files, mypy on 32 runtime files and nine
+installed focused tests. See the [validation snapshot](validation-qa-interpretation-controls.json).
+The preceding review-accounting run passed 534 source tests (one skip), lint/type
+checks and eight installed tests; its actual source/copied report bytes match.
+Check active-cycle for newest delivery.
 Previously verified QA review tooling delivery:
 [`125d366`](https://github.com/1337mus/tracemem/commit/125d3660066cd610e8229fc131714fcb33019cdb).
 Its [CI](https://github.com/1337mus/tracemem/actions/runs/38674186708) passed
@@ -12,6 +15,16 @@ worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
 
 The working result is an evidence and evaluation system. The specialist model
 is still a research objective: no model has been selected or trained.
+
+The new frozen offline QA interpretation controls contain six correlated groups
+(7 sessions, 22 messages, 12 questions and 36 distinct prompt/cells). Ten
+full-source answers are answerable and two are unknown; all 24 support-omitted
+and empty cells expect `UNKNOWN`. Full-source answers and prompt-supported
+answers remain separate, and shared prompt templates are unchanged. The
+always-`UNKNOWN` baseline matches 26/36 prompt expectations but only 6/36
+full-source answers. These dev-derived controls have no model outputs, inference,
+token measurement, human labels or Gate A evidence. See [controls](qa-interpretation-controls.md)
+and the [validation snapshot](validation-qa-interpretation-controls.json).
 
 ## What works
 

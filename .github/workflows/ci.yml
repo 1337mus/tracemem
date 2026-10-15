@@ -78,8 +78,10 @@ jobs:
           cp tests/test_qa_contrast_review_analysis.py "$test_dir/"
           cp tests/test_qa_contrast_token_replay.py "$test_dir/"
           cp tests/test_qa_contrast_requests.py "$test_dir/"
+          cp tests/test_qa_interpretation_controls.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qa-contrast-dev-v1.json "$test_root/examples/synthetic/"
+          cp examples/synthetic/qa-interpretation-controls-dev-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json "$test_root/examples/synthetic/"
           cp docs/qa-contrast-answer-dev.json "$test_root/qa-contrast-answer-expected.json"
@@ -96,6 +98,7 @@ jobs:
           cp experiments/analyze_qa_contrast_reviews.py "$test_root/experiments/"
           cp experiments/replay_qa_contrast_tokens.py "$test_root/experiments/"
           cp experiments/prepare_qa_contrast_requests.py "$test_root/experiments/"
+          cp experiments/prepare_qa_interpretation_controls.py "$test_root/experiments/"
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"

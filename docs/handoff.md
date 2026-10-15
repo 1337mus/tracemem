@@ -1,99 +1,90 @@
 # TraceMem handoff
 
-Updated 2026-10-15 UTC. Verify live state by 2026-10-15. Read this file and
-ignored `.local/active-cycle.json` first. Verify live git/process/worker state
-before resuming; never duplicate an active GPU call or worker. Context Kit,
-original conversations, historical receipts and `~/.llm-context` remain read-only.
-Private conversations, derived claims, vectors and checkpoints stay local.
+Updated 2026-10-15 UTC. Verify by: 2026-10-15. Read this file and ignored
+`.local/active-cycle.json` first. Check live git/process/worker state before
+resuming; never duplicate an active GPU call. Context Kit, original conversations,
+historical receipts and `~/.llm-context` remain read-only. Private data stays local.
 
 ## Current checkpoint
 
-Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 has working
-synthetic diagnostics, not a selected or trained specialist model. Gate A is
-unmet. There are zero independently verified human labels.
+Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 has synthetic
+diagnostics, not a selected or trained specialist model. Gate A is unmet; there
+are zero independently verified human labels.
 
-The latest slice adds an [offline QA review accountant](qa-contrast-review-accounting.md)
-and [descriptive results](qa-contrast-review-results.md). One fresh agent reviewed
-all 46 unique fictional answers with the key and authored references withheld:
-32 source-correct, 13 incorrect, one uncertain; 38 prompt-supported, seven
-unsupported, one uncertain. This is self-attested procedural blinding, not human
-truth. Root read every full source, exact prompt, output and rationale. Root
-agreed on 45 tasks and separately judged one mixed answer incorrect/unsupported:
-it states 3:00 PM but concludes UNKNOWN. Root labels are an unblinded derivative,
-not an independent second sample or consensus. Original responses stay unchanged.
+The latest offline QA interpretation controls use six correlated groups, seven
+sessions, 22 messages, 12 questions and 36 distinct prompts/cells. Full source has
+10 answerable questions and two unknowns; support-omitted and empty variants are
+all `UNKNOWN` (24 cells). Full-source expected answers and prompt-supported
+expected answers are separate. Shared prompt templates are unchanged. Root
+independently reconstructed all 36 prompts/cells without importing the preparer.
+The fixture and scoring policy are frozen; see [controls](qa-interpretation-controls.md)
+and [validation](validation-qa-interpretation-controls.json).
 
-The accountant validates complete responses against the regenerated bundle/key,
-rejects repeated reviewer IDs, and preserves each review separately. It reports
-both axes and 3x3 joint counts for all/answerable/unknown strata. It distinguishes
-46 unique prompts from 72 correlated cells and carries all cell IDs, explicit
-denominators and canonical response/source/receipt/report hashes. Reviewer kind
-is self-attested; it never verifies human identity or promotes semantic truth.
+The deterministic always-`UNKNOWN` baseline matches 2/12 full-context prompts,
+12/12 omitted prompts and 12/12 empty prompts (26/36 prompt-axis matches).
+Against the full-source reference, it matches 6/36 cells. This is not a model
+result. These controls derive from correlated dev errors and template
+reuse, not held-out truth or Gate A progress. There are no model outputs,
+inference runs or token measurements; zero human labels; no model selected and no
+training.
 
-Root-adjudicated answerable-correct counts at 128/256/512/1,024 complete-prompt
-tokens are BM25 0/1/3/3, hybrid 0/1/2/3 and vector 0/2/2/3, each out of four.
-Every group also has two correct unknown abstentions. Six dev scenarios and
-reused answers cannot establish significance, superiority or generalization.
-The frozen literal metric remains 0/4 answerable and 2/2 unknown in every group.
-No scoring rules or historical receipts changed, and no new inference ran.
+The earlier fictional review covered 46 unique answers: the original reviewer
+reported 32 source-correct, 13 incorrect and one uncertain; prompt support was
+38 supported, seven unsupported and one uncertain. Root's unblinded derivative
+counts are 32/14 for source correctness and 38/8 for support. This is neither an
+independent second sample nor consensus. The frozen literal report is unchanged.
+See [review results](qa-contrast-review-results.md) and
+[review accounting](qa-contrast-review-accounting.md). At 128/256/512/1,024
+complete-prompt tokens, root-adjudicated answerable-correct counts were BM25
+0/1/3/3, hybrid 0/1/2/3 and vector 0/2/2/3. Six dev scenarios cannot establish
+significance or generalization.
 
 ## Validation and delivery
 
-Root's final local `make check PYTHON=.venv/bin/python` passed: 534 tests
-attempted, 533 passed, one skipped; Ruff 119 files; mypy 32 runtime files.
-Eight focused tests passed outside the checkout against the installed runtime,
-with Modal/Torch/Transformers/tokenizers imports blocked. All 37 runtime members
-still match wheel SHA-256
-`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`.
-Actual source/copied two-review reports match byte-for-byte. Root independently
-reconstructed all 72 cells and 12 groups per review without importing the new
-accountant. The report SHA-256 is
-`f295aa0f0cd0ac5524e47819d8db63d0b36c2f3a389a48c0d61788d4b91a7b19`.
-See [validation snapshot](validation-qa-contrast-review-accounting.json), including
-honest RED/GREEN chronology and its limits. CI now includes the eight tests in
-the installed-package job. Actual response files and detailed report stay local;
-repository-only tests use fictional completed-response fixtures.
+The controls' final local check passed: 543 tests attempted, 542 passed and one
+skipped; Ruff checked/formatted 121 files; mypy passed 32 runtime files. Nine
+focused installed tests passed with Modal, Torch, Transformers and Tokenizers
+imports blocked. All three source and installed artifacts match byte-for-byte;
+37 runtime members still match wheel SHA-256
+`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`. See the
+[validation snapshot](validation-qa-interpretation-controls.json) for hashes,
+receipts and honest TDD chronology. Offline preparation/replay used no network
+or model inference.
 
-Check active-cycle for the exact newest signed private commit, GitHub signature
-verification, push and exact CI outcome. This document records implementation
-and local checks; do not infer delivery from those facts alone. The prior
-[documentation checkpoint](https://github.com/1337mus/tracemem/commit/5b7bbdbe090c3b7ece90eeb9b3bfe7bd5847d295)
-had a verified GitHub signature and [successful exact CI](https://github.com/1337mus/tracemem/actions/runs/38674757217).
-Use per-command email matching the registered verified signing key; do not alter
-global identity settings or rewrite historical commits.
+The earlier review-accounting check passed 534 source tests (one skipped), Ruff
+and mypy, plus eight installed tests. Its actual source/copied reports matched.
+The prior signed private head
+[`2d12af7`](https://github.com/1337mus/tracemem/commit/2d12af7a4f3b7e47f779bd17779bda34fbb0fe20)
+and [exact CI run](https://github.com/1337mus/tracemem/actions/runs/38676821494)
+were independently reverified: CI succeeded and the GitHub signature is valid.
+Check `.local/active-cycle.json` for the controls' exact commit,
+signature, push and CI state. Do not infer delivery from local checks.
 
-## Local artifacts and active ownership
+The output was prepared exclusively under
+`.local/qa-interpretation-controls-v1` with a mode-0700 directory and mode-0600
+files. Existing outputs are not overwritten. Preparation verifies the pinned
+fixture; it does not alter original inputs or shared templates.
 
-- Original review: `.local/qa-contrast-agent-review-v1.json` and its notes.
-- Root response/audit: `.local/qa-contrast-root-review-v1.json`,
-  `.local/qa-contrast-semantic-root-audit.json`; root pre-response expectations
-  are separately saved in `.local/qa-contrast-semantic-root-expectations.json`.
-- Detailed report: `.local/qa-review-accounting-source-report.json`.
-- Independent mapping/count audit: `.local/qa-review-accounting-root-audit.json`.
-- Installed replay: `.local/qa-review-accounting-installed-receipt.json`.
-- Full check: `.local/qa-review-accounting-root-full-check.log`.
-- Exact prior handoff bytes: `.local/handoff-before-qa-review-accounting.md`.
+## Local artifacts and ownership
 
-All annotation, accounting and documentation implementers released ownership.
-Root owns final delivery. Inspect active-cycle for any remaining command or
-CI watcher. Fresh read-only Modal inventory in
-`.local/qa-contrast-review-modal-inventory.json` showed answering app
-`ap-kGBUTuuMF5u3lgRYeVmdwp` stopped with zero tasks. No new GPU call is needed.
+- Frozen controls: `examples/synthetic/qa-interpretation-controls-dev-v1.json`.
+- Root fixture, artifact and scope audits: `.local/qa-controls-root-{fixture,artifact,scope}-audit.json`.
+- Installed replay and full check: `.local/qa-controls-installed-receipt.json` and `.local/qa-controls-root-full-check.json`.
+- Detailed control validation: `docs/validation-qa-interpretation-controls.json`.
+- Earlier review artifacts and exact archived handoff remain under `.local/`; see the linked review accounting and `.local/handoff-before-qa-controls.md`.
 
-## Next useful bounded action
+Root owns final delivery and verifies private repository visibility immediately
+before the authorized signed push. No new commit or push is recorded here.
 
-Confirm delivery and no active owners, then prepare a small fictional development
-control set for the observed time-to versus time-of-change misreading and
-abstention despite sufficient evidence. Separate evidence omission from answer
-interpretation; freeze expected answers and scoring before any new output.
-Keep this development evidence distinct from test partitions and human labels.
-Preparation and tests need no new GPU inference. A future call still needs exact
-payload/source review, fresh personal Modal workspace/inventory checks and one
-active GPU call at most. Do not train or select a model through an unmet gate.
+## Next bounded action
 
-No public publication, private-data upload, destructive change or expensive
-training is authorized. Verify personal owner/origin/PRIVATE visibility immediately
-before every signed push. Keep weights, tokenizers and inference off this Mac.
-Computer Use remains unused. Continuation automation remains active.
+Prepare and review a synthetic-only remote control-inference wrapper with exact
+payload/source hashes and a bounded receipt contract. Before any launch, verify
+the active personal Modal workspace and take a fresh inventory. Use at most one
+GPU call; keep model weights, tokenizers and inference off the Mac. Do not train
+or select a model through the unmet gate. No GPU job started in this slice. A
+later authorized bounded synthetic-only launch still requires reviewed source,
+exact payload hashes and fresh personal workspace/inventory checks.
 
 ## Background
 

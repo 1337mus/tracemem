@@ -1,0 +1,635 @@
+{
+  "kind": "qa-interpretation-controls-candidate",
+  "version": 1,
+  "provenance": "authored-fictional-agent-only",
+  "split": "dev",
+  "provisional": true,
+  "human_labels": 0,
+  "scenario_groups": [
+    {
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "source_sessions": [
+        {
+          "session_id": "session_01_2043_03_08",
+          "date": "2043-03-08",
+          "messages": [
+            {
+              "message_id": "msg_s01_user_move_request",
+              "role": "user",
+              "content": "Please move my Sable Quay letterpress tour from 10:00 AM to 2:40 PM next Thursday; the earlier slot conflicts with my class."
+            },
+            {
+              "message_id": "msg_s01_assistant_confirmation",
+              "role": "assistant",
+              "content": "I updated the Sable Quay tour to 2:40 PM Thursday."
+            },
+            {
+              "message_id": "msg_s01_user_lobby_note",
+              "role": "user",
+              "content": "The tour entrance is beside the west courtyard sign."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s01_destination_time",
+          "question": "What new start time did I request for the Sable Quay tour?",
+          "authored_answer": "2:40 PM",
+          "full_source_expected_answer": "2:40 PM",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s01_user_move_request",
+            "msg_s01_assistant_confirmation"
+          ],
+          "rationale": "The user requests the new destination time and the assistant confirms the booking update.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s01_user_move_request",
+                "msg_s01_assistant_confirmation",
+                "msg_s01_user_lobby_note"
+              ],
+              "expected_prompt_answer": "2:40 PM",
+              "rationale": "The request and confirmation both state the destination time."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s01_user_lobby_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The remaining lobby note gives no tour start time."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s01_request_send_clock_time",
+          "question": "At what clock time did I send the request to change the Sable Quay tour?",
+          "authored_answer": "UNKNOWN",
+          "full_source_expected_answer": "UNKNOWN",
+          "is_answerable": false,
+          "supporting_message_ids": [],
+          "rationale": "The source gives a calendar date and the requested destination time, but no clock timestamp for sending the request.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s01_user_move_request",
+                "msg_s01_assistant_confirmation",
+                "msg_s01_user_lobby_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No message records the clock time when the user sent the request."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s01_user_lobby_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The remaining lobby note contains no send-time evidence."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "source_sessions": [
+        {
+          "session_id": "session_02_2043_03_12",
+          "date": "2043-03-12",
+          "messages": [
+            {
+              "message_id": "msg_s02_user_move_request",
+              "role": "user",
+              "content": "Please move my Cinder Lake dome tour from 11:00 AM to 4:20 PM Saturday; I arrive after lunch."
+            },
+            {
+              "message_id": "msg_s02_user_send_time",
+              "role": "user",
+              "content": "I sent that change request at 8:10 AM."
+            },
+            {
+              "message_id": "msg_s02_assistant_confirmation",
+              "role": "assistant",
+              "content": "The reservation is now set for 4:20 PM Saturday."
+            },
+            {
+              "message_id": "msg_s02_user_map_note",
+              "role": "user",
+              "content": "The printed route map is in the outside pocket."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s02_destination_time",
+          "question": "What new start time did I request for the Cinder Lake tour?",
+          "authored_answer": "4:20 PM",
+          "full_source_expected_answer": "4:20 PM",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s02_user_move_request",
+            "msg_s02_assistant_confirmation"
+          ],
+          "rationale": "The user specifies 4:20 PM as the destination and the assistant confirms it.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s02_user_move_request",
+                "msg_s02_user_send_time",
+                "msg_s02_assistant_confirmation",
+                "msg_s02_user_map_note"
+              ],
+              "expected_prompt_answer": "4:20 PM",
+              "rationale": "The request and confirmation state the new start time."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s02_user_send_time",
+                "msg_s02_user_map_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The remaining messages do not state the tour destination time."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s02_request_send_clock_time",
+          "question": "At what clock time did I send the Cinder Lake change request?",
+          "authored_answer": "8:10 AM",
+          "full_source_expected_answer": "8:10 AM",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s02_user_send_time"
+          ],
+          "rationale": "The user explicitly records the send time as 8:10 AM; this differs from the 4:20 PM destination.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s02_user_move_request",
+                "msg_s02_user_send_time",
+                "msg_s02_assistant_confirmation",
+                "msg_s02_user_map_note"
+              ],
+              "expected_prompt_answer": "8:10 AM",
+              "rationale": "The user explicitly says the request was sent at 8:10 AM."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s02_user_move_request",
+                "msg_s02_assistant_confirmation",
+                "msg_s02_user_map_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The destination-time messages do not reveal when the request was sent."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "source_sessions": [
+        {
+          "session_id": "session_03_2043_03_18",
+          "date": "2043-03-18",
+          "messages": [
+            {
+              "message_id": "msg_s03_user_original_booking",
+              "role": "user",
+              "content": "I booked the Plover Glassworks tour for 9:00 AM Friday."
+            },
+            {
+              "message_id": "msg_s03_assistant_proposal",
+              "role": "assistant",
+              "content": "Would you like to change it to 3:30 PM?"
+            },
+            {
+              "message_id": "msg_s03_user_final_choice",
+              "role": "user",
+              "content": "No, set the final tour start to 5:10 PM instead."
+            },
+            {
+              "message_id": "msg_s03_assistant_final_confirmation",
+              "role": "assistant",
+              "content": "Done, the tour is booked for 5:10 PM."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s03_final_chosen_time",
+          "question": "What time did I choose for the Plover Glassworks tour after the assistant proposed a change?",
+          "authored_answer": "5:10 PM",
+          "full_source_expected_answer": "5:10 PM",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s03_user_final_choice",
+            "msg_s03_assistant_final_confirmation"
+          ],
+          "rationale": "The user explicitly chooses 5:10 PM after the assistant proposes 3:30 PM, and the assistant confirms that booking.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s03_user_original_booking",
+                "msg_s03_assistant_proposal",
+                "msg_s03_user_final_choice",
+                "msg_s03_assistant_final_confirmation"
+              ],
+              "expected_prompt_answer": "5:10 PM",
+              "rationale": "After the assistant proposes 3:30 PM, the user chooses 5:10 PM and the assistant confirms it."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s03_user_original_booking",
+                "msg_s03_assistant_proposal"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "Only the original booking and the assistant’s unaccepted 3:30 PM proposal remain; no post-proposal user choice appears."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s03_assistant_proposed_time",
+          "question": "What start time did the assistant propose before I chose?",
+          "authored_answer": "3:30 PM",
+          "full_source_expected_answer": "3:30 PM",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s03_assistant_proposal"
+          ],
+          "rationale": "The assistant proposes 3:30 PM; the user later chooses a different time.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s03_user_original_booking",
+                "msg_s03_assistant_proposal",
+                "msg_s03_user_final_choice",
+                "msg_s03_assistant_final_confirmation"
+              ],
+              "expected_prompt_answer": "3:30 PM",
+              "rationale": "The assistant proposal explicitly says 3:30 PM."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s03_user_original_booking",
+                "msg_s03_user_final_choice",
+                "msg_s03_assistant_final_confirmation"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The user’s final choice does not reveal the assistant’s omitted proposal."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "source_sessions": [
+        {
+          "session_id": "session_04_2043_04_02",
+          "date": "2043-04-02",
+          "messages": [
+            {
+              "message_id": "msg_s04_user_snack",
+              "role": "user",
+              "content": "For the Nacre Hall evening shift, I packed pear leather as my snack."
+            },
+            {
+              "message_id": "msg_s04_user_container",
+              "role": "user",
+              "content": "I tucked the wrapped snack in a lavender tin."
+            },
+            {
+              "message_id": "msg_s04_assistant_snack_suggestion",
+              "role": "assistant",
+              "content": "Roasted chickpeas could be easier to share during the shift."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s04_actual_snack",
+          "question": "What snack did I pack for the Nacre Hall shift?",
+          "authored_answer": "Pear leather",
+          "full_source_expected_answer": "Pear leather",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s04_user_snack"
+          ],
+          "rationale": "The user names pear leather as the packed snack; roasted chickpeas are only an assistant suggestion.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s04_user_snack",
+                "msg_s04_user_container",
+                "msg_s04_assistant_snack_suggestion"
+              ],
+              "expected_prompt_answer": "Pear leather",
+              "rationale": "The user directly identifies pear leather; the assistant suggestion is separate."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s04_user_container",
+                "msg_s04_assistant_snack_suggestion"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "A container and an assistant suggestion remain, but the user’s actual snack is omitted."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s04_container",
+          "question": "What container did I use for the wrapped snack?",
+          "authored_answer": "Lavender tin",
+          "full_source_expected_answer": "Lavender tin",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s04_user_container"
+          ],
+          "rationale": "The user says the wrapped snack was put in a lavender tin.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s04_user_snack",
+                "msg_s04_user_container",
+                "msg_s04_assistant_snack_suggestion"
+              ],
+              "expected_prompt_answer": "Lavender tin",
+              "rationale": "The user directly names the container."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s04_user_snack",
+                "msg_s04_assistant_snack_suggestion"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The snack and suggestion are present, but the container is omitted."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "source_sessions": [
+        {
+          "session_id": "session_05_2043_04_14",
+          "date": "2043-04-14",
+          "messages": [
+            {
+              "message_id": "msg_s05_user_conditional_instruction",
+              "role": "user",
+              "content": "If I leave the north greenhouse vent open overnight, secure it with a ceramic wedge so it cannot swing."
+            },
+            {
+              "message_id": "msg_s05_user_pending_decision",
+              "role": "user",
+              "content": "I will check the forecast at dusk before deciding whether to leave the vent open."
+            },
+            {
+              "message_id": "msg_s05_user_seed_trays",
+              "role": "user",
+              "content": "The seed trays are on the lower shelf."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s05_conditional_repair_item",
+          "question": "What repair item did I specify if the north vent stays open overnight?",
+          "authored_answer": "Ceramic wedge",
+          "full_source_expected_answer": "Ceramic wedge",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s05_user_conditional_instruction"
+          ],
+          "rationale": "The user explicitly names a ceramic wedge for the stated overnight-open condition.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s05_user_conditional_instruction",
+                "msg_s05_user_pending_decision",
+                "msg_s05_user_seed_trays"
+              ],
+              "expected_prompt_answer": "Ceramic wedge",
+              "rationale": "The conditional instruction directly names the repair item."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s05_user_pending_decision",
+                "msg_s05_user_seed_trays"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The remaining messages give no repair item for the vent."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s05_condition_outcome",
+          "question": "Did I leave the north vent open overnight after checking the forecast?",
+          "authored_answer": "UNKNOWN",
+          "full_source_expected_answer": "UNKNOWN",
+          "is_answerable": false,
+          "supporting_message_ids": [],
+          "rationale": "The source records a pending decision but no later outcome, so whether the vent stayed open is unknown.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s05_user_conditional_instruction",
+                "msg_s05_user_pending_decision",
+                "msg_s05_user_seed_trays"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The user says the decision will follow a forecast check; the conversation records no outcome."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s05_user_seed_trays"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The remaining seed-tray note contains no ventilation outcome."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "source_sessions": [
+        {
+          "session_id": "session_06a_2043_05_02",
+          "date": "2043-05-02",
+          "messages": [
+            {
+              "message_id": "msg_s06_user_flask_commitment",
+              "role": "user",
+              "content": "For the ridge astronomy outing, I will bring a green flask with mint tea."
+            },
+            {
+              "message_id": "msg_s06_assistant_path_suggestion",
+              "role": "assistant",
+              "content": "Reflective trail ribbon could help mark the path after dark."
+            },
+            {
+              "message_id": "msg_s06_user_meeting_note",
+              "role": "user",
+              "content": "The group will meet beside the wooden sign."
+            }
+          ]
+        },
+        {
+          "session_id": "session_06b_2043_05_03",
+          "date": "2043-05-03",
+          "messages": [
+            {
+              "message_id": "msg_s06_user_chart_commitment",
+              "role": "user",
+              "content": "I will also bring the folded moon chart for the outing."
+            },
+            {
+              "message_id": "msg_s06_assistant_packing_note",
+              "role": "assistant",
+              "content": "I will keep the packing note with the weekend plan."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "q_s06_user_packing_commitments",
+          "question": "What two items did I say I would bring to the ridge astronomy outing?",
+          "authored_answer": "A green flask with mint tea and a folded moon chart",
+          "full_source_expected_answer": "A green flask with mint tea and a folded moon chart",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s06_user_flask_commitment",
+            "msg_s06_user_chart_commitment"
+          ],
+          "rationale": "Two user commitments across separate sessions name the flask and the folded moon chart.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s06_user_flask_commitment",
+                "msg_s06_assistant_path_suggestion",
+                "msg_s06_user_meeting_note",
+                "msg_s06_user_chart_commitment",
+                "msg_s06_assistant_packing_note"
+              ],
+              "expected_prompt_answer": "A green flask with mint tea and a folded moon chart",
+              "rationale": "Both user commitments are present across the two sessions."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s06_assistant_path_suggestion",
+                "msg_s06_user_meeting_note",
+                "msg_s06_assistant_packing_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "Both user packing commitments are omitted; the assistant suggestion is not a user commitment."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        },
+        {
+          "question_id": "q_s06_assistant_suggestion",
+          "question": "What item did the assistant suggest for marking the path after dark?",
+          "authored_answer": "Reflective trail ribbon",
+          "full_source_expected_answer": "Reflective trail ribbon",
+          "is_answerable": true,
+          "supporting_message_ids": [
+            "msg_s06_assistant_path_suggestion"
+          ],
+          "rationale": "The assistant, rather than the user, suggests reflective trail ribbon.",
+          "context_variants": {
+            "full_all_message_ids": {
+              "message_ids": [
+                "msg_s06_user_flask_commitment",
+                "msg_s06_assistant_path_suggestion",
+                "msg_s06_user_meeting_note",
+                "msg_s06_user_chart_commitment",
+                "msg_s06_assistant_packing_note"
+              ],
+              "expected_prompt_answer": "Reflective trail ribbon",
+              "rationale": "The assistant’s suggestion explicitly names reflective trail ribbon."
+            },
+            "support_omitted": {
+              "message_ids": [
+                "msg_s06_user_flask_commitment",
+                "msg_s06_user_meeting_note",
+                "msg_s06_user_chart_commitment",
+                "msg_s06_assistant_packing_note"
+              ],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "The assistant’s path suggestion is omitted; user packing items do not identify it."
+            },
+            "empty": {
+              "message_ids": [],
+              "expected_prompt_answer": "UNKNOWN",
+              "rationale": "No source messages are supplied."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "license": "MIT"
+}

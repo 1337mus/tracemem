@@ -16,6 +16,16 @@ acceptance boundary is not met.
 
 ## Evaluation state
 
+The frozen [offline QA interpretation controls](qa-interpretation-controls.md)
+separate full-source expected answers from prompt-supported answers across 36
+cells: six correlated groups, 12 questions, 10 full-source answerable and two
+unknown. All support-omitted and empty variants expect `UNKNOWN`. The deterministic
+always-`UNKNOWN` baseline is 26/36 on prompt expectations and 6/36 on full-source
+answers; this is not model quality. The dev-derived controls add no held-out or
+human truth, model output, inference, token measurement or Gate A progress. Their
+offline preparation passed 543 source tests (one skipped) and nine installed
+tests; see the [validation snapshot](validation-qa-interpretation-controls.json).
+
 The six-case [development token-budget replay](qa-contrast-token-replay.md)
 now measures 72 complete-prompt packing cells from the separately measured
 399-prompt catalog. Default ceilings retain 0/1/2/5 passages. Root independently

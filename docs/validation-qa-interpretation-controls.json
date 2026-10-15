@@ -1,0 +1,141 @@
+{
+  "schema": "tracemem.qa-interpretation-controls-validation.v1",
+  "updated_at_utc": "2026-10-15",
+  "fixture": {
+    "path": "examples/synthetic/qa-interpretation-controls-dev-v1.json",
+    "sha256": "09698c216d3f8f9751383bef8e984bf4385701b7e199fa7413b70f23fae31d53",
+    "counts": {
+      "groups": 6,
+      "sessions": 7,
+      "messages": 22,
+      "questions": 12,
+      "distinct_prompts_and_cells": 36,
+      "full_source_answerable": 10,
+      "full_source_unknown": 2,
+      "support_omitted_unknown": 12,
+      "empty_unknown": 12
+    },
+    "shared_prompt_templates_unchanged": true
+  },
+  "references_and_scoring": {
+    "axes": [
+      "expected answer against the full source",
+      "expected answer supported by the supplied prompt"
+    ],
+    "literal_policy": "Exact literal comparison after case-folding and whitespace normalization; UNKNOWN must match exactly after normalization.",
+    "always_unknown_baseline": {
+      "full_source": {
+        "matches": 2,
+        "denominator": 12
+      },
+      "support_omitted_prompt": {
+        "matches": 12,
+        "denominator": 12
+      },
+      "empty_prompt": {
+        "matches": 12,
+        "denominator": 12
+      },
+      "prompt_axis_total": {
+        "matches": 26,
+        "denominator": 36
+      },
+      "full_source_total": {
+        "matches": 6,
+        "denominator": 36
+      },
+      "is_model_run": false
+    }
+  },
+  "source_hashes": {
+    "experiments/prepare_qa_interpretation_controls.py": "62c1775ffe6d295e5da39d2743fb7c97d67ccb356c19be1b012f7b01b1ebec5b",
+    "tests/test_qa_interpretation_controls.py": "064b0c7a5f868589a056c995dfccdacf954a9d32d29e68747f19d1890926abf9",
+    "examples/synthetic/qa-interpretation-controls-dev-v1.json": "09698c216d3f8f9751383bef8e984bf4385701b7e199fa7413b70f23fae31d53"
+  },
+  "prepared_artifacts": {
+    "directory": ".local/qa-interpretation-controls-v1",
+    "directory_mode_octal": "0700",
+    "file_mode_octal": "0600",
+    "canonical_sha256": {
+      "audit": "6b350e68ae1dfb965003b55937048601462feca2ba525baa9e5e3fd95aeaa44e",
+      "payload": "36a03f56b69500674feb219fc40f8479965982bc9041de7a74b4464cace5bed1",
+      "references": "7669d8bcae3f9dffe71c1cdd19d4b8c2c5a8fa150435675d7128a24f26d43894"
+    },
+    "raw_sha256": {
+      "audit.json": "15b5234ba2fea7164bc017afa9eb787d7ecc144c2409c89aeddf0d59a430c499",
+      "payload.json": "3617fba64d04fdeae8ac49fab090b2ea8445aecfdb0a428aeae6f0c708a752e4",
+      "references.json": "4ef31a59094e0d056fbf9d13c6ecec0451961412a97805b6b122f0f45ae20e86"
+    },
+    "source_and_installed_artifacts_byte_equal": true,
+    "existing_output_overwrite_refused": true
+  },
+  "root_independent_audit": {
+    "status": "passed",
+    "prompts_reconstructed": 36,
+    "cells_reconstructed": 36,
+    "preparer_imported": false,
+    "all_prompts_and_cells_exact": true,
+    "source_audit_path": ".local/qa-controls-root-artifact-audit.json"
+  },
+  "full_check_receipt": {
+    "receipt_path": ".local/qa-controls-root-full-check.json",
+    "exit_code": 0,
+    "status": "passed",
+    "started_at_utc": "2026-10-15T03:53:44.313864+00:00",
+    "finished_at_utc": "2026-10-15T03:54:41.406018+00:00",
+    "log_sha256": "98dfe493af2f8b1a3b4aac53cbcb0e56fd09b01d1d9ff6631ad54e465d5f849e",
+    "tests_attempted": 543,
+    "tests_passed": 542,
+    "tests_skipped": 1,
+    "ruff_files_checked_and_formatted": 121,
+    "mypy_runtime_files": 32,
+    "source_hashes_unchanged_during_check": true,
+    "reviewed_source_hashes": {
+      ".github/workflows/ci.yml": "f9917707e16e07833f9596562b8c0a7c59a645c658e58298acbae152d450ba44",
+      "examples/synthetic/qa-interpretation-controls-dev-v1.json": "09698c216d3f8f9751383bef8e984bf4385701b7e199fa7413b70f23fae31d53",
+      "experiments/prepare_qa_interpretation_controls.py": "62c1775ffe6d295e5da39d2743fb7c97d67ccb356c19be1b012f7b01b1ebec5b",
+      "tests/test_qa_interpretation_controls.py": "064b0c7a5f868589a056c995dfccdacf954a9d32d29e68747f19d1890926abf9"
+    }
+  },
+  "installed_runtime_check": {
+    "receipt_path": ".local/qa-controls-installed-receipt.json",
+    "exit_code": 0,
+    "status": "passed",
+    "installed_tests": 9,
+    "runtime_members_verified": 37,
+    "source_wheel_installed_runtime_hashes_match": true,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+    "all_three_artifacts_byte_equal": true,
+    "blocked_imports": [
+      "modal",
+      "torch",
+      "transformers",
+      "tokenizers"
+    ],
+    "model_inference": false,
+    "network_used": false,
+    "new_wheel_built": false
+  },
+  "tdd_chronology_and_limits": {
+    "pytest_attempt": "pytest was not installed in the project .venv; this was a setup failure, not a RED test. The repository unittest runner was used instead.",
+    "missing_pythonpath_attempt": "The first independent reconstruction test invocation lacked PYTHONPATH=src and failed during setup; it was not counted as RED. Re-running with the repository import path produced the intended failing assertion.",
+    "baseline_cycle": "The always-UNKNOWN helper was briefly included with the prior core implementation, then reset to the prior green state so a missing-field assertion could produce an observed RED before the baseline was re-added and passed.",
+    "post_implementation_assertions": "Some audit-integrity and determinism assertions were added after implementation; they required no implementation change.",
+    "claim": "The log records several observed RED/GREEN cycles, but not a pristine TDD cycle for every line of code or test."
+  },
+  "limitations": {
+    "control_origin": "Correlated development controls derived from prior dev errors and template reuse; not held-out evidence or independent truth.",
+    "human_labels": 0,
+    "model_outputs": 0,
+    "model_inference": false,
+    "token_counts": "UNMEASURED",
+    "gate_a_met": false,
+    "model_selected": false,
+    "training_run": false,
+    "split": "dev",
+    "test": [],
+    "held_out_test_cases": false,
+    "provisional": true
+  },
+  "delivery": "Implemented and locally validated. Exact signed private commit, signature, push and CI state are recorded separately in ignored .local/active-cycle.json; local checks alone do not establish delivery."
+}
