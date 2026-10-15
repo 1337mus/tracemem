@@ -1,0 +1,83 @@
+{
+  "ci_workflow_actionlint_exit_code": 0,
+  "delivery": "Local pre-delivery snapshot; exact signed private delivery and hosted CI recorded in .local/active-cycle.json.",
+  "focused_tests_passed": 7,
+  "full_source_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "finished_at_utc": "2026-10-15T05:43:51.173343+00:00",
+    "log": ".local/qa-controls-response-root-full-check.log",
+    "log_sha256": "d5729feea011155884c5e72b158965c2f665a31abff4dc1079593cad7a869f04",
+    "mypy_files": 32,
+    "passed": 591,
+    "reviewed_source_hashes": {
+      ".github/workflows/ci.yml": "74246854ba309af927431452cb1124965fab7ab399cfbcbe795db115d0e2ceb2",
+      "experiments/analyze_qa_controls_reviews.py": "6d77c9493c381b82f70c9dc3950145fef6fecd1902b8cc13cb3f82918d042a96",
+      "tests/test_qa_controls_review_analysis.py": "cd6deb7fae008adf572787ebba357069313c6837be3c976d3a6265b62ad7b942"
+    },
+    "ruff_files": 131,
+    "skipped": 1,
+    "source_hashes_unchanged_during_check": true,
+    "started_at_utc": "2026-10-15T05:42:51.428755+00:00",
+    "tests_attempted": 592
+  },
+  "gate_a": "unmet",
+  "installed": {
+    "errors": 0,
+    "failures": 0,
+    "new_wheel_built": false,
+    "outside_checkout": true,
+    "passed": 7,
+    "positive_import_blocker_probes": [
+      "modal",
+      "torch",
+      "transformers",
+      "tokenizers"
+    ],
+    "real_model_modules_loaded": [],
+    "receipt": ".local/qa-controls-response-installed-receipt.json",
+    "receipt_sha256": "2bca8e32016426109c7f79cd4ad77779faf27d9a96e19bcb68396ec443b8ef67",
+    "report_byte_equal": true,
+    "report_sha256": "916fa69a48c00647593fd40707bec0d11c31f26a2229785efcaef712b06089eb",
+    "runtime_members_hash_matched": 37,
+    "skipped": 0,
+    "tests_attempted": 7
+  },
+  "kind": "qa-controls-response-accounting-validation",
+  "model_selected": false,
+  "new_inference": false,
+  "recorded_at_utc": "2026-10-15T05:47:22.337715+00:00",
+  "root_audit": {
+    "expectation_sha256": "8fcd0efc34f612b2510206daa9c4ed29d3472ef4f7a4f15685712089c8fd9684",
+    "malformed_or_blank_rejections": 27,
+    "matched_procedural_rows": 72,
+    "qualification": "No model inference, semantic annotation or human work. Self-attested human string is a rejection-of-authentication test. Labels assigned mechanically before candidate release.",
+    "report_sha256": "916fa69a48c00647593fd40707bec0d11c31f26a2229785efcaef712b06089eb",
+    "variant_tables": 6
+  },
+  "root_review": "Full analyzer and tests, pinned preparer dependency, independent pre-release procedural expectations, installed harness/receipt/copies, and CI diff reviewed. No blocking findings remain. Self-attested human fixture tests zero verified humans; it is not a human annotation.",
+  "scope": {
+    "correlated_groups": 6,
+    "human_labels_created": 0,
+    "procedural_reviewer_streams": 2,
+    "semantic_annotations_created": 0,
+    "split": "dev",
+    "tasks_per_reviewer": 36,
+    "tasks_per_variant": 12,
+    "test": [],
+    "variants": 3
+  },
+  "source_sha256": {
+    ".github/workflows/ci.yml": "74246854ba309af927431452cb1124965fab7ab399cfbcbe795db115d0e2ceb2",
+    "experiments/analyze_qa_controls_reviews.py": "6d77c9493c381b82f70c9dc3950145fef6fecd1902b8cc13cb3f82918d042a96",
+    "tests/test_qa_controls_review_analysis.py": "cd6deb7fae008adf572787ebba357069313c6837be3c976d3a6265b62ad7b942"
+  },
+  "tdd": {
+    "log": ".local/qa-controls-response-accounting-tdd.log",
+    "log_sha256": "b024d8b7cca1fcd2e756bbd439608bb29304252c053a2c9450feb0823d48c623",
+    "observed_behavioral_red_groups": 3,
+    "qualification": "Detached-row and report API stubs raised NotImplementedError; malformed-document group failed behavioral assertions. Initial absent module, missing CLI API and shell/path failures were setup failures. Several guards and CLI checks were added after implementation.",
+    "strict_one_red_per_guard_claimed": false
+  },
+  "training_started": false
+}

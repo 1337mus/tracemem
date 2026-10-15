@@ -7,15 +7,22 @@ read-only. Private data stays local.
 
 ## Current checkpoint
 
-The new offline [review packet preparer](qa-controls-answer-review.md) exports
-36 key-withheld tasks and blank response rows from the fixed fictional receipt.
-Root matched all visible contents and hidden mappings against pre-export
-expectations. Nine focused source and nine installed-runtime tests passed; all
-three exports replayed byte-for-byte outside the checkout. Full source checks
-passed 584/585 tests (one optional skip), Ruff 129 files, mypy 32 runtime files
-and Actionlint. The packet withholds references but does not hide conditions or
-create labels. See [validation](validation-qa-controls-answer-review.json).
-Exact delivery and CI are in `.local/active-cycle.json`; verify them live.
+The new offline [response validator and accounting tool](qa-controls-review-accounting.md)
+regenerates the pinned 36-task bundle and validates completed templates. It
+reports reviewers separately, preserves uncertain labels and always reports
+zero verified humans. Seven source and seven installed tests passed; the
+procedural CLI report replayed byte-for-byte. Root independently matched 72
+mechanically assigned rows, six variant tables and 27 rejection cases. No
+semantic annotation or inference occurred. Full source checks passed 591/592
+(one optional skip), Ruff 131 files, mypy 32 runtime files and Actionlint.
+See [validation](validation-qa-controls-review-accounting.json). Exact signed
+delivery and final-head CI are in ignored `.local/active-cycle.json`; verify live.
+
+The preceding packet commit's CI failed before installed tests because its
+source export omitted `PYTHONPATH=src`. A one-line signed fix was privately
+pushed as `87f0dcd75edcedf69a8adf6b695592c85de26e31`; local source/installed
+exports matched after the fix. Preserve the failed run and authoritative
+receipts. Exact fix/final delivery CI must be checked separately.
 
 Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 remains
 synthetic diagnostics; no model is selected or trained. Gate A is unmet, with
@@ -92,15 +99,15 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Add bounded offline validation/accounting for completed controls-review
-responses, reusing the fixed packet identity and two judgment axes. Reject
-changed bundles, missing/duplicate/foreign task IDs, invalid labels, blank
-metadata and unsupported reviewer-kind claims. Keep reviewer-kind counts
-self-attested; structural validation cannot authenticate a human. Preserve
-uncertain labels and report dev separately from the empty test split. Only
-human work can add human labels. Check active-cycle and live workers first.
-Do not launch another call or train/select a model through the unmet gate. No
-weights or tokenizers were loaded on the Mac.
+Finish exact private delivery and observe final-head hosted CI, including the
+installed suite and all three packet byte comparisons. Then collect one fresh,
+reference-key-withheld agent review of the real fictional 36-task packet using
+only its bundle, blank template and rubric. Freeze the response before root
+adjudication; distinguish agent labels, root derivatives and human work.
+Validate/count the review offline and report dev separately from the empty test
+split. Do not mistake procedural fixtures for annotation or agent agreement for
+independent ground truth. Gate A needs distinct license-clean scenarios and
+independent audit before training. No new GPU call is needed.
 
 ## Background
 

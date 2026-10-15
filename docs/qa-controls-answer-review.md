@@ -83,3 +83,7 @@ withheld for any review described as reference-key-withheld; agent judgments
 remain agent judgments. No automated judge is included. Do not infer semantic
 accuracy, calibration, held-out performance, Gate A progress, model selection,
 or training readiness from packet creation.
+
+Completed templates can now be checked by the separate offline
+[response validator and accounting tool](qa-controls-review-accounting.md).
+It preserves each reviewer separately and treats reviewer kind as self-attested.

@@ -1,13 +1,16 @@
 # TraceMem: current prototype and design
 
-Updated 2026-10-15 UTC. The latest offline slice prepares a 36-task,
-reference-key-withheld review packet with separate source-answer and
-prompt-support axes. It creates blank responses, with no semantic or human
-labels. Nine source and nine installed-runtime tests passed. All three files
-replayed byte-for-byte outside the checkout. The full source check passed
-584/585 tests (one optional Context Kit skip), Ruff on 129 files and mypy on 32
-runtime files; Actionlint passed. See the [protocol](qa-controls-answer-review.md)
-and [validation snapshot](validation-qa-controls-answer-review.json).
+Updated 2026-10-15 UTC. The latest offline slice validates completed responses
+for the 36-task QA controls review packet and reports separate reviewer counts,
+including uncertain labels and joint tables. It regenerates the pinned bundle
+and rejects altered, missing, duplicate or malformed responses. Reviewer kind
+is self-attested; independently verified human reviewers remain zero. Seven
+source and seven installed tests passed, and procedural CLI reports matched
+byte-for-byte. The full source check passed 591/592 tests (one optional skip),
+Ruff on 131 files and mypy on 32 runtime files; Actionlint passed. Root audited
+72 mechanically assigned rows and 27 rejection cases. These are plumbing tests,
+with no semantic annotations or new inference. See the [accounting tool](qa-controls-review-accounting.md)
+and [validation snapshot](validation-qa-controls-review-accounting.json).
 
 The preceding literal analyzer was delivered in signed private commit
 [`edd66f7`](https://github.com/1337mus/tracemem/commit/edd66f734087e31d79a58b8ae0b13c6a26bd2b64).
