@@ -1,0 +1,829 @@
+{
+  "baseline": {
+    "correlated_dev_only": true,
+    "kind": "deterministic-always-unknown-reference-baseline",
+    "metrics": {
+      "full_source": {
+        "denominator": 36,
+        "numerator": 6,
+        "rate": 0.16666666666666666
+      },
+      "prompt": {
+        "denominator": 36,
+        "numerator": 26,
+        "rate": 0.7222222222222222
+      }
+    },
+    "model_run": false,
+    "not_model_quality": true,
+    "prediction": "UNKNOWN"
+  },
+  "by_variant": {
+    "empty": {
+      "cap_count": 0,
+      "empty_outputs": 0,
+      "exact_unknown_abstentions": 12,
+      "metrics": {
+        "full_source": {
+          "denominator": 12,
+          "numerator": 2,
+          "rate": 0.16666666666666666
+        },
+        "prompt": {
+          "denominator": 12,
+          "numerator": 12,
+          "rate": 1.0
+        }
+      },
+      "stop_counts": {
+        "eos_token": 12,
+        "max_new_tokens": 0
+      },
+      "unique_prompt_generated_tokens": 24,
+      "unique_prompt_input_tokens": 1006,
+      "unique_prompts": 12
+    },
+    "full_all_message_ids": {
+      "cap_count": 0,
+      "empty_outputs": 0,
+      "exact_unknown_abstentions": 3,
+      "metrics": {
+        "full_source": {
+          "denominator": 12,
+          "numerator": 2,
+          "rate": 0.16666666666666666
+        },
+        "prompt": {
+          "denominator": 12,
+          "numerator": 2,
+          "rate": 0.16666666666666666
+        }
+      },
+      "stop_counts": {
+        "eos_token": 12,
+        "max_new_tokens": 0
+      },
+      "unique_prompt_generated_tokens": 148,
+      "unique_prompt_input_tokens": 3536,
+      "unique_prompts": 12
+    },
+    "support_omitted": {
+      "cap_count": 0,
+      "empty_outputs": 0,
+      "exact_unknown_abstentions": 12,
+      "metrics": {
+        "full_source": {
+          "denominator": 12,
+          "numerator": 2,
+          "rate": 0.16666666666666666
+        },
+        "prompt": {
+          "denominator": 12,
+          "numerator": 12,
+          "rate": 1.0
+        }
+      },
+      "stop_counts": {
+        "eos_token": 12,
+        "max_new_tokens": 0
+      },
+      "unique_prompt_generated_tokens": 24,
+      "unique_prompt_input_tokens": 2451,
+      "unique_prompts": 12
+    }
+  },
+  "counts": {
+    "cap_count": 0,
+    "empty_outputs": 0,
+    "exact_unknown_abstentions": 27,
+    "stop_counts": {
+      "eos_token": 36,
+      "max_new_tokens": 0
+    },
+    "unique_prompt_generated_tokens": 196,
+    "unique_prompt_input_tokens": 6993,
+    "unique_prompts": 36
+  },
+  "interpretation": "Literal exact matching against provisional agent-authored dev labels only; not semantic QA accuracy or calibration. Cells are correlated within six groups; no independent-cell confidence intervals are reported.",
+  "kind": "qa-interpretation-controls-answer-analysis",
+  "metrics": {
+    "full_source": {
+      "denominator": 36,
+      "numerator": 6,
+      "rate": 0.16666666666666666
+    },
+    "prompt": {
+      "denominator": 36,
+      "numerator": 26,
+      "rate": 0.7222222222222222
+    }
+  },
+  "per_cell": [
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_destination_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 23,
+      "hit_max_new_tokens": false,
+      "input_tokens": 273,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the new start time requested for the sable quay tour was 2:40 pm next thursday.",
+      "prompt_id": "25a60b4d5d8ce003347df0d492f58c3982564731c4787cb0d64a7aae3de2c6ed",
+      "question_id": "q_s01_destination_time",
+      "raw_output": "The new start time requested for the Sable Quay tour was 2:40 PM next Thursday.",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_destination_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 137,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "388d77f67ec7327e287eb3416b9b2b5ed29fe89d228c63f48015e68c953653af",
+      "question_id": "q_s01_destination_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_destination_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 85,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "a9a206befba6aa76a169fb66fdfe6a70caf5398ac6045bea8f2639b011d11766",
+      "question_id": "q_s01_destination_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_request_send_clock_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 276,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "1a244744d2d1f5eec7ccdb944390a4e05f95f9e66e48d811acce34d6d7b7290f",
+      "question_id": "q_s01_request_send_clock_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_request_send_clock_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 140,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "2d3c9b1c36a93c72f93f8cac16b651b944f5213c6cae363fca78d2c3c3783440",
+      "question_id": "q_s01_request_send_clock_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_01_sable_quay_destination_vs_send_time::q_s01_request_send_clock_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 88,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "0d66d7564b08ae0c8176ba95047d45e77747d9b2e2e851bb1ec11a95275de630",
+      "question_id": "q_s01_request_send_clock_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_01_sable_quay_destination_vs_send_time",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_destination_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 20,
+      "hit_max_new_tokens": false,
+      "input_tokens": 314,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the new start time requested for the cinder lake tour was 4:20 pm saturday.",
+      "prompt_id": "dc75d2f1b1e1d6855dfcce4b221e6af05f335022d9e052ba04df98b7804d9a84",
+      "question_id": "q_s02_destination_time",
+      "raw_output": "The new start time requested for the Cinder Lake tour was 4:20 PM Saturday.",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_destination_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 188,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "56ee28006962cc01fe96ca5b5a1b947ada6165179aa74ee3391d4fcf746fb169",
+      "question_id": "q_s02_destination_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_destination_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 83,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "a60b81a20f5ca7ad0b6dbc0470b64cda95420af56b780786dc7ca4ce8da92cfe",
+      "question_id": "q_s02_destination_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_request_send_clock_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 7,
+      "hit_max_new_tokens": false,
+      "input_tokens": 314,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "8:10 am.",
+      "prompt_id": "30978e9c9642bbbdb42bc2c60952532761f19acb751c3aa0fed71351d6c62ff9",
+      "question_id": "q_s02_request_send_clock_time",
+      "raw_output": "8:10 AM.",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_request_send_clock_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 260,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "484e3244318b3b7d38a218600e3d8483f4b278675274f065f9d0c6ff91f333a2",
+      "question_id": "q_s02_request_send_clock_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_02_cinder_lake_two_distinct_times::q_s02_request_send_clock_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 83,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "ca7f7efa415ac726a4c8721d5916ba5d78c7abbd13be09921f1ed230fcd73888",
+      "question_id": "q_s02_request_send_clock_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_02_cinder_lake_two_distinct_times",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_final_chosen_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 7,
+      "hit_max_new_tokens": false,
+      "input_tokens": 318,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "5:10 pm.",
+      "prompt_id": "17a43bbd7d1bbc46a94e7009c3950d6017cc19af3e6fa56441f4e840c1084fe3",
+      "question_id": "q_s03_final_chosen_time",
+      "raw_output": "5:10 PM.",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_final_chosen_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 204,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "98fa8261f4f977175dbacc382afead85270729fbe31b85b912ee94d8e6bc7301",
+      "question_id": "q_s03_final_chosen_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_final_chosen_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 89,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "753d20b2dadcdd92b9a578fd3723dc629ad758f6e52779c74359a04da8b7fa81",
+      "question_id": "q_s03_final_chosen_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_assistant_proposed_time::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 25,
+      "hit_max_new_tokens": false,
+      "input_tokens": 310,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the assistant proposed a start time of 3:30 pm before the user chose 5:10 pm.",
+      "prompt_id": "698396316bf64ef6a030a57594dc658ee5be3784b8b5225e9f793d7c0e7d8f90",
+      "question_id": "q_s03_assistant_proposed_time",
+      "raw_output": "The assistant proposed a start time of 3:30 PM before the user chose 5:10 PM.",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_assistant_proposed_time::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 253,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "60352ecf94c1015d18f2f9f64a4fb7f1e3ccb557eb8c710ad15375850456882a",
+      "question_id": "q_s03_assistant_proposed_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_03_plover_glassworks_proposal_vs_choice::q_s03_assistant_proposed_time::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 81,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "6501894ba8ab1100f5bab955ec299dd71ca3559587b52ae00726636b7dd9e1b1",
+      "question_id": "q_s03_assistant_proposed_time",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_03_plover_glassworks_proposal_vs_choice",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_actual_snack::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 14,
+      "hit_max_new_tokens": false,
+      "input_tokens": 248,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the snack packed for the nacre hall shift was pear leather.",
+      "prompt_id": "f357504fe5b0267cfce1db0f4ef09ffaad534d0f48555a3cb96e65a0ad6d0c56",
+      "question_id": "q_s04_actual_snack",
+      "raw_output": "The snack packed for the Nacre Hall shift was pear leather.",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_actual_snack::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 191,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "9038aaebdb5ac5237ec8348f0832e0c7df57175c9c9b8ca0b4f03fb6287329be",
+      "question_id": "q_s04_actual_snack",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_actual_snack::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 82,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "cf36e98363f896a9fa18aeddd04625d5da3a6b5eedc54911f5bfb658d0632cbd",
+      "question_id": "q_s04_actual_snack",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_container::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 13,
+      "hit_max_new_tokens": false,
+      "input_tokens": 246,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the container used for the wrapped snack was a lavender tin.",
+      "prompt_id": "78e80c2387220dff9186a61030a6b7b001cf11abd0dc534d3ddb94b1dd86d816",
+      "question_id": "q_s04_container",
+      "raw_output": "The container used for the wrapped snack was a lavender tin.",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_container::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 196,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "adace5b1727d3644a832efb6940754d53b0cd1e1bddc32e9e1af6b1e049f7ed4",
+      "question_id": "q_s04_container",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_04_nacre_hall_snack_vs_container::q_s04_container::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 80,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "ccdb6b2b0c95544a647c0722cd6e2c9e8ff3dda9af28a0d248a56db613ab4570",
+      "question_id": "q_s04_container",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_04_nacre_hall_snack_vs_container",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_conditional_repair_item::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 255,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "73e6af2a91a1db230ff8f7c038b0dd10ac2553082e9354eb4acff066f0a5d252",
+      "question_id": "q_s05_conditional_repair_item",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_conditional_repair_item::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 192,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "29f632050751902b4678cd98c933d9d24ff4323a3ba9acfa007eeec1bdea7b45",
+      "question_id": "q_s05_conditional_repair_item",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_conditional_repair_item::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 84,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "34db57b29341796063684047f207988999039b32405d5e12845881bc391f46e6",
+      "question_id": "q_s05_conditional_repair_item",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_condition_outcome::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 254,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "035f009ef612a7f087eb8bd529d88cc3063a6dda0cad29379fbb1780af40fdd0",
+      "question_id": "q_s05_condition_outcome",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_condition_outcome::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 134,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "6e1ebc01f9bebb1192bbf3b4376967235d48bd64bbdb677085bc94acb028040d",
+      "question_id": "q_s05_condition_outcome",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_05_north_greenhouse_condition_without_outcome::q_s05_condition_outcome::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 83,
+      "matches": {
+        "full_source": true,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "64245f1a401eb828ea5d4c43aacb0d9662e46de7c2b5e631d29bc6a47375ce35",
+      "question_id": "q_s05_condition_outcome",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_05_north_greenhouse_condition_without_outcome",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_user_packing_commitments::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 18,
+      "hit_max_new_tokens": false,
+      "input_tokens": 365,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the two items mentioned were a green flask with mint tea and the folded moon chart.",
+      "prompt_id": "f0ffeb0a792242de40a709a7b6fb5426a23564df60029b5704b1d3aacbc07580",
+      "question_id": "q_s06_user_packing_commitments",
+      "raw_output": "The two items mentioned were a green flask with mint tea and the folded moon chart.",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_user_packing_commitments::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 250,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "c76f0186c6d0ba945adfc1e5f7e25624145609dac7703a7e60db100e05d83fd2",
+      "question_id": "q_s06_user_packing_commitments",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_user_packing_commitments::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 85,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "9de37ba8b87d8e9eae168878a8cfdb4e3be11c3446c0740ef339891f6714cb89",
+      "question_id": "q_s06_user_packing_commitments",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_assistant_suggestion::full_all_message_ids",
+      "empty_output": false,
+      "exact_unknown_abstention": false,
+      "generated_tokens": 15,
+      "hit_max_new_tokens": false,
+      "input_tokens": 363,
+      "matches": {
+        "full_source": false,
+        "prompt": false
+      },
+      "normalized_output": "the assistant suggested a reflective trail ribbon for marking the path after dark.",
+      "prompt_id": "a2bdf6ab1991fbe355d16eeb9bdd8b2a45e6c98d9a22ae89c578ac5667f4da5d",
+      "question_id": "q_s06_assistant_suggestion",
+      "raw_output": "The assistant suggested a reflective trail ribbon for marking the path after dark.",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "full_all_message_ids"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_assistant_suggestion::support_omitted",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 306,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "d2166c88c187a46774df2a6ecac6bddc2531a5ec5643c1b661ec74de85a3a250",
+      "question_id": "q_s06_assistant_suggestion",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "support_omitted"
+    },
+    {
+      "cell_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion::q_s06_assistant_suggestion::empty",
+      "empty_output": false,
+      "exact_unknown_abstention": true,
+      "generated_tokens": 2,
+      "hit_max_new_tokens": false,
+      "input_tokens": 83,
+      "matches": {
+        "full_source": false,
+        "prompt": true
+      },
+      "normalized_output": "unknown",
+      "prompt_id": "4af7b6c5406ee231217f255f62e52c80f73ef1279e543f283da7522fad315c47",
+      "question_id": "q_s06_assistant_suggestion",
+      "raw_output": "UNKNOWN",
+      "scenario_id": "scenario_06_ridge_outing_user_items_vs_assistant_suggestion",
+      "stop_reason": "eos_token",
+      "variant_id": "empty"
+    }
+  ],
+  "provenance": {
+    "contract_sha256": "8f03a1c2b7767cdc5095fc51d28e066fa32750c127954ec0f6946862c8ee7278",
+    "payload_sha256": "36a03f56b69500674feb219fc40f8479965982bc9041de7a74b4464cace5bed1",
+    "preparer_sha256": "62c1775ffe6d295e5da39d2743fb7c97d67ccb356c19be1b012f7b01b1ebec5b",
+    "receipt_sha256": "19d6d08574dd5d87a449cdfff3acc14677e47257166bdbb191169f91eac0fa37",
+    "references_sha256": "7669d8bcae3f9dffe71c1cdd19d4b8c2c5a8fa150435675d7128a24f26d43894",
+    "request_sha256": "df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871",
+    "result_sha256": "127882535b04a8cf7a12a1ee12dd43dc894dde9cb92623ef9355895fe0a3654f",
+    "runner_sha256": "9ee4f7fbb440d166eff415c978239ca71da69a6e607fe63f98cc47fcf9a8568c"
+  },
+  "schema_version": 1,
+  "scope": {
+    "cells": 36,
+    "cells_are_independent_trials": false,
+    "correlated_groups": 6,
+    "human_label_count": 0,
+    "questions": 12,
+    "scenario_groups": 6,
+    "split": "dev",
+    "test": [],
+    "unique_prompts": 36
+  }
+}

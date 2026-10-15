@@ -22,18 +22,33 @@ cells: six correlated groups, 12 questions, 10 full-source answerable and two
 unknown. All support-omitted and empty variants expect `UNKNOWN`. The deterministic
 always-`UNKNOWN` baseline is 26/36 on prompt expectations and 6/36 on full-source
 answers; this is not model quality. The dev-derived controls add no held-out or
-human truth, model output, inference, token measurement or Gate A progress. Their
-offline preparation passed 543 source tests (one skipped) and nine installed
-tests; see the [validation snapshot](validation-qa-interpretation-controls.json).
+human truth. Their offline preparation passed 543 source tests (one skipped) and
+nine installed tests. One separate model call over the frozen controls is
+recorded as a dev-only run; it adds no human labels or Gate A progress. See the
+[run results](qa-controls-answer-run-results.md) and the [validation snapshot](validation-qa-interpretation-controls.json).
 
 An offline [request/receipt contract](qa-controls-answer-contract.md) binds
 36 fictional prompts, and a separate [source-free Modal runner](qa-controls-answer-runner.md)
 now provides hash-gated launch mode. Root matched every request item, rejected
-seven altered requests and 61 invalid receipt mutations, and tested only fake
-call modes. Focused checks passed 13 tests; the full check passed 569 (one skip),
-and installed replay passed 13. Input/output ceilings are not measured counts.
-No GPU call, scorer or model inference has run. The runner's private delivery
-remains pending; see its [validation snapshot](validation-qa-controls-answer-runner.json).
+seven altered requests and 61 invalid receipt mutations, and tested fake call
+modes. Focused checks passed 13 tests; the full check passed 569 (one skip), and
+installed replay passed 13. The runner was delivered in signed private commit
+`7c5bf12`; exact [CI run 38683345935](https://github.com/1337mus/tracemem/actions/runs/38683345935)
+passed 568 source tests (one skip), 315 installed tests (two skips), Ruff, mypy
+and wheel build. One reviewed synthetic call produced 36 complete, nonempty
+outputs, with 6,993 producer-reported input tokens and 196 generated tokens;
+every output stopped at EOS. Counts were structurally audited, not independently
+retokenized. The six groups are correlated, there are no human labels, and this
+is not an answer-quality score or Gate A evidence. See the [dev-only run
+record](qa-controls-answer-run-results.md) and preserved pre-delivery
+[validation snapshot](validation-qa-controls-answer-runner.json).
+
+The offline result is a strict literal comparison only: 26/36 prompt-label
+matches, 6/36 full-source-label matches and 27 exact `UNKNOWN` outputs after
+casefolding and whitespace collapse. The always-`UNKNOWN` baseline has the same
+first two totals, which is not evidence of equivalent semantic quality. There
+are still zero human labels, no held-out split, and no Gate A progress. See the
+[analysis and limits](qa-controls-answer-run-results.md).
 
 The six-case [development token-budget replay](qa-contrast-token-replay.md)
 now measures 72 complete-prompt packing cells from the separately measured

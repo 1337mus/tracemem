@@ -1,0 +1,111 @@
+{
+  "delivery": "Local pre-delivery snapshot; exact signed private delivery and CI recorded separately in .local/active-cycle.json.",
+  "fixtures": [
+    {
+      "bytes": 125866,
+      "copy": "examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json",
+      "exact_bytes": true,
+      "sha256": "5ee39bc640d5c767858f7a2dfa631cafc871c703ccb3f844a8acae3347ec4fe7",
+      "source": ".local/qa-controls-answer-20261015T044852Z.json"
+    },
+    {
+      "bytes": 125827,
+      "copy": "examples/synthetic/qwen3-4b-qa-controls-answer-raw.json",
+      "exact_bytes": true,
+      "sha256": "3112fb466073e6e7ae42f916b957e7d98db7a9d170be293581cac6518b690504",
+      "source": ".local/qa-controls-answer-20261015T044852Z.json.remote.json"
+    }
+  ],
+  "focused_tests_passed": 7,
+  "full_source_check": {
+    "exit_code": 0,
+    "finished_at_utc": "2026-10-15T05:08:07.332573+00:00",
+    "log": ".local/qa-controls-analysis-root-full-check.log",
+    "log_sha256": "da90d7c1c057d88347e06d61c54655a9c52ce4544e7ae8da3cca3eb6fcc3b431",
+    "mypy_files": 32,
+    "passed": 575,
+    "reviewed_source_hashes": {
+      ".github/workflows/ci.yml": "2a1ee9e78aab2dee97a6f512846af6bdca4a0d450caa6127c6deec491810ba05",
+      "experiments/analyze_qa_interpretation_answers.py": "b3b19ca9163ab77855b6005bfcb7dd7d6fda925b77000edc56292f6f14984fca",
+      "tests/test_qa_interpretation_answer_analysis.py": "1ac3ea218a7bca62d79dc4bbce087b712163fe9d37416418e9b32d104cdd779a"
+    },
+    "ruff_files": 127,
+    "skipped": 1,
+    "source_hashes_unchanged_during_check": true,
+    "started_at_utc": "2026-10-15T05:07:05.627097+00:00",
+    "tests_attempted": 576
+  },
+  "gate_a": "unmet",
+  "installed": {
+    "errors": 0,
+    "failures": 0,
+    "input_receipts_preserved": true,
+    "new_wheel_built": false,
+    "outside_checkout": true,
+    "passed": 7,
+    "positive_import_blocker_probes": [
+      "modal",
+      "torch",
+      "transformers",
+      "tokenizers"
+    ],
+    "real_model_modules_loaded": [],
+    "receipt": ".local/qa-controls-analysis-installed-receipt.json",
+    "receipt_sha256": "72dcd6b5a3c76ed54b5833931779733b699a5e8c7b328110aa38a6a716303505",
+    "report_byte_equal": true,
+    "report_bytes": 30752,
+    "report_sha256": "fd6fc6933b0c83b5905181109393965f1dd6706ae25f85fc1d6ffd0421112665",
+    "runtime_members_hash_matched": 37,
+    "skipped": 0,
+    "tests_attempted": 7
+  },
+  "kind": "qa-controls-answer-analysis-validation",
+  "model_selected": false,
+  "no_new_inference_for_analysis": true,
+  "recorded_at_utc": "2026-10-15T05:12:14.883562+00:00",
+  "result": {
+    "always_unknown_same_literal_totals": true,
+    "exact_unknown_outputs": 27,
+    "full_source_denominator": 36,
+    "full_source_literal_matches": 6,
+    "prompt_denominator": 36,
+    "prompt_literal_matches": 26,
+    "semantic_equivalence_claimed": false
+  },
+  "root_audit": {
+    "cells_checked": 36,
+    "expectation_preceded_analyzer_actual_replay": true,
+    "historical_literal_report_preserved": true,
+    "independent_semantic_review": false,
+    "malformed_receipt_reference_rejections": 16,
+    "receipt_original_preserved": true,
+    "variants_checked": 3
+  },
+  "scope": {
+    "cells": 36,
+    "cells_are_independent_trials": false,
+    "human_label_count": 0,
+    "questions": 12,
+    "scenario_groups": 6,
+    "split": "dev",
+    "test": []
+  },
+  "size": {
+    "approved_cap": 400,
+    "nonblank_lines": 334,
+    "physical_lines": 369,
+    "production_lines_excluding_comment_docstring_lines": 330
+  },
+  "source_sha256": {
+    ".github/workflows/ci.yml": "2a1ee9e78aab2dee97a6f512846af6bdca4a0d450caa6127c6deec491810ba05",
+    "experiments/analyze_qa_interpretation_answers.py": "b3b19ca9163ab77855b6005bfcb7dd7d6fda925b77000edc56292f6f14984fca",
+    "tests/test_qa_interpretation_answer_analysis.py": "1ac3ea218a7bca62d79dc4bbce087b712163fe9d37416418e9b32d104cdd779a"
+  },
+  "tdd": {
+    "log": ".local/qa-controls-analysis-tdd.log",
+    "log_sha256": "156ff59e4ca5694e30168f83fbd267d12f715717d51855f222096e40e0315e5e",
+    "qualification": "Observed behavioral failures are separated from absent-module/setup, fixture overlap and malformed FIFO-child-script failures; some rejection assertions followed implementation.",
+    "strict_one_red_per_behavior_claimed": false
+  },
+  "training_started": false
+}

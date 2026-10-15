@@ -3,9 +3,12 @@
 Updated 2026-10-15 UTC. The source-free QA controls runner's full check passed
 569 tests (568 passed, one skipped), Ruff on 125 files and mypy on 32 runtime
 files. Thirteen focused and 13 installed tests passed; all 37 runtime members
-match the existing wheel. The runner's private delivery is pending; see the
-[validation snapshot](validation-qa-controls-answer-runner.json). Its prerequisite
-answer contract was delivered in signed private commit
+match the existing wheel. The runner was delivered in signed private commit
+[`7c5bf12`](https://github.com/1337mus/tracemem/commit/7c5bf12f08eee3594a4173c9cac65f3747d79a36)
+with valid signature and successful exact [CI run 38683345935](https://github.com/1337mus/tracemem/actions/runs/38683345935):
+568 source tests (one skip), 315 installed tests (two skips), Ruff, mypy and
+wheel build passed. The separate pre-delivery [validation snapshot](validation-qa-controls-answer-runner.json)
+is preserved. Its prerequisite answer contract was delivered in signed private commit
 [`8b9561b`](https://github.com/1337mus/tracemem/commit/8b9561bce29934a121247f305cf83110016c9f69)
 with a valid signature; remote main matched at verification. Exact [CI run 38681376612](https://github.com/1337mus/tracemem/actions/runs/38681376612)
 passed 555 source tests (one skipped) and 302 installed tests (two skipped).
@@ -26,10 +29,29 @@ prompts to request SHA-256 `df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284c
 Root independently reconstructed all items, accepted a fake receipt, rejected
 61 invalid mutations and verified three stop-boundary variants. The 1,024/128
 input/output limits are upper bounds, not measurements. The separate
-[source-free runner](qa-controls-answer-runner.md) has hash-gated launch mode;
-no call has run. It adds no answer scorer, and every receipt is fictional. See
-the contract [validation](validation-qa-controls-answer-contract.json) and
-runner [validation](validation-qa-controls-answer-runner.json).
+[source-free runner](qa-controls-answer-runner.md) completed one approved
+synthetic call. The structurally audited receipt reports 6,993 input and 196
+generated tokens across 36 complete, nonempty outputs; all stopped at EOS. This
+does not establish semantic truth or answer quality: the six groups are
+correlated, no human labels exist, and Gate A remains unmet. See the
+[dev-only run record](qa-controls-answer-run-results.md), contract
+[validation](validation-qa-controls-answer-contract.json), and preserved
+pre-delivery runner [validation snapshot](validation-qa-controls-answer-runner.json).
+
+An offline analyzer now compares the 36 outputs to provisional dev labels using
+casefold-plus-whitespace normalization only. It reports 26/36 prompt matches,
+6/36 full-source matches and 27 exact `UNKNOWN` outputs. Those literal counts
+match the always-`UNKNOWN` baseline on the two label-match totals, but do not
+imply equivalent semantic quality: nine full-context strings contain expected
+information rejected by strict punctuation/wording comparison, and one
+answerable conditional-item output is `UNKNOWN`. No semantic accuracy is
+assigned. Root verified all 36 rows across three variants and rejection of 16
+malformed receipt/reference cases. Seven focused tests passed; the full local
+source check passed 575/576 (one optional Context Kit skip), Ruff 127 files and
+mypy 32 files. Seven installed tests passed and the report reproduced
+byte-for-byte outside the checkout; all 37 runtime members match the source and
+pinned wheel. See the [analysis validation](validation-qa-controls-answer-analysis.json).
+Details and the reproducible command are in the [run record](qa-controls-answer-run-results.md).
 
 The new frozen offline QA interpretation controls contain six correlated groups
 (7 sessions, 22 messages, 12 questions and 36 distinct prompt/cells). Ten
@@ -37,9 +59,11 @@ full-source answers are answerable and two are unknown; all 24 support-omitted
 and empty cells expect `UNKNOWN`. Full-source answers and prompt-supported
 answers remain separate, and shared prompt templates are unchanged. The
 always-`UNKNOWN` baseline matches 26/36 prompt expectations but only 6/36
-full-source answers. These dev-derived controls have no model outputs, inference,
-token measurement, human labels or Gate A evidence. See [controls](qa-interpretation-controls.md)
-and the [validation snapshot](validation-qa-interpretation-controls.json).
+full-source answers. The controls contain only prompts and expectations; one
+separate inference run is recorded as a dev-only diagnostic. It adds no human
+labels, held-out truth or Gate A evidence. See [controls](qa-interpretation-controls.md),
+the [answer-run results](qa-controls-answer-run-results.md), and the
+[validation snapshot](validation-qa-interpretation-controls.json).
 
 ## What works
 

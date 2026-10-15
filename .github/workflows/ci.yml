@@ -81,12 +81,15 @@ jobs:
           cp tests/test_qa_interpretation_controls.py "$test_dir/"
           cp tests/test_qa_interpretation_answer_receipt.py "$test_dir/"
           cp tests/test_modal_qa_interpretation_answer.py "$test_dir/"
+          cp tests/test_qa_interpretation_answer_analysis.py "$test_dir/"
           cp examples/synthetic/longmemeval-format.json examples/synthetic/qa-diagnostic-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qa-contrast-dev-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qa-interpretation-controls-dev-v1.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json "$test_root/examples/synthetic/"
           cp examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json "$test_root/examples/synthetic/"
+          cp examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json "$test_root/examples/synthetic/"
           cp docs/qa-contrast-answer-dev.json "$test_root/qa-contrast-answer-expected.json"
+          cp docs/qa-controls-answer-dev.json "$test_root/qa-controls-answer-expected.json"
           cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py \
             experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \
             experiments/scenario_payload.py experiments/token_catalog.py "$test_root/experiments/"
@@ -103,6 +106,7 @@ jobs:
           cp experiments/prepare_qa_interpretation_controls.py "$test_root/experiments/"
           cp experiments/qa_interpretation_answer_receipt.py "$test_root/experiments/"
           cp experiments/modal_qa_interpretation_answer.py "$test_root/experiments/"
+          cp experiments/analyze_qa_interpretation_answers.py "$test_root/experiments/"
 
           unset PYTHONPATH PYTHONHOME
           work_dir="$("$smoke_venv/bin/python" -c 'import tempfile; print(tempfile.mkdtemp(prefix="tracemem-smoke-work-"))')"
@@ -121,3 +125,7 @@ jobs:
             examples/synthetic/qwen3-4b-qa-contrast-answer-remote.json \
             --output qa-contrast-answer-actual.json
           cmp qa-contrast-answer-expected.json qa-contrast-answer-actual.json
+          "$smoke_venv/bin/python" -m experiments.analyze_qa_interpretation_answers \
+            --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
+            --output qa-controls-answer-actual.json
+          cmp qa-controls-answer-expected.json qa-controls-answer-actual.json
