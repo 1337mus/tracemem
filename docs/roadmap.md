@@ -26,6 +26,13 @@ human truth, model output, inference, token measurement or Gate A progress. Thei
 offline preparation passed 543 source tests (one skipped) and nine installed
 tests; see the [validation snapshot](validation-qa-interpretation-controls.json).
 
+An offline [request/receipt contract](qa-controls-answer-contract.md) now binds
+the 36 fictional prompts. Root reconstructed all request items, accepted a fake
+receipt and rejected 61 invalid mutations; full checks passed 556 tests (one
+skip) and installed replay passed 13. Limits of 1,024 input and 128 generated
+tokens are not measured counts. There is still no launcher, scorer or inference;
+delivery is pending. See the [validation snapshot](validation-qa-controls-answer-contract.json).
+
 The six-case [development token-budget replay](qa-contrast-token-replay.md)
 now measures 72 complete-prompt packing cells from the separately measured
 399-prompt catalog. Default ceilings retain 0/1/2/5 passages. Root independently

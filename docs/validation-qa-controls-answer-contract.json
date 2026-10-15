@@ -1,0 +1,114 @@
+{
+  "schema": "tracemem.qa-controls-answer-contract-validation.v1",
+  "updated_at_utc": "2026-10-15",
+  "status": "local_validation_passed_delivery_pending",
+  "scope": "Offline request construction and fake answer-receipt validation only; no launcher or inference.",
+  "request": {
+    "request_sha256": "df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871",
+    "prepared_payload_sha256": "36a03f56b69500674feb219fc40f8479965982bc9041de7a74b4464cace5bed1",
+    "prompt_count": 36,
+    "data_scope": "Fictional development controls only; source-only prompts."
+  },
+  "model_and_limits": {
+    "model": "Qwen3-4B",
+    "revision_and_generation_settings": "Same as the legacy QA runner; root reviewed the final request and receipt contract.",
+    "measured_input_token_counts": false,
+    "per_prompt_max_input_tokens": 1024,
+    "per_prompt_max_new_tokens": 128,
+    "aggregate_input_token_upper_bound": 36864,
+    "aggregate_generated_token_upper_bound": 4608,
+    "bounds_are_measured_usage": false,
+    "oversize_prompt_policy": "Reject without truncation."
+  },
+  "offline_contract": {
+    "source_path": "experiments/qa_interpretation_answer_receipt.py",
+    "test_path": "tests/test_qa_interpretation_answer_receipt.py",
+    "api": ["build_request", "request_sha256", "validate_request", "validate_result"],
+    "receipt_content": [
+      "Input token IDs",
+      "Generated token IDs",
+      "Structural provenance",
+      "Runtime provenance"
+    ],
+    "all_receipt_tests_are_fake": true,
+    "source_hash_sha256": "8f03a1c2b7767cdc5095fc51d28e066fa32750c127954ec0f6946862c8ee7278",
+    "test_hash_sha256": "09ca2d410019505f90234fd6e953997a8cb0bf0182300012f3282f13dd3fee49",
+    "ci_workflow_hash_sha256": "23e90045faa86109741101491143afbd8302adc7e4697a9eb7caa68c31db7ddb"
+  },
+  "root_independent_audit": {
+    "status": "passed",
+    "audit_path": ".local/qa-controls-answer-contract-root-audit.json",
+    "independent_request_bytes_match": true,
+    "independent_request_items_matched": 36,
+    "independent_fake_receipt_accepted": true,
+    "accepted_stop_boundaries": ["EOS only", "EOS at cap", "cap without EOS"],
+    "invalid_mutations_rejected": 61,
+    "blocked_imports": ["modal", "torch", "transformers", "tokenizers"],
+    "inference_performed": false
+  },
+  "root_review": {
+    "status": "passed",
+    "review_path": ".local/qa-controls-answer-contract-root-review.json",
+    "blocking_findings": 0,
+    "tdd_qualification": "Observed missing-module/API, request/deepcopy and runtime-string failures; several validation rules preceded grouped negative regression tests. No strict one-RED-per-behavior claim."
+  },
+  "validation": {
+    "source_review": "Passed; root reviewed source, tests and CI diff.",
+    "root_full_check": {
+      "receipt_path": ".local/qa-controls-answer-contract-root-full-check.json",
+      "exit_code": 0,
+      "tests_attempted": 556,
+      "tests_passed": 555,
+      "tests_skipped": 1,
+      "ruff_files": 123,
+      "mypy_files": 32,
+      "source_hashes_unchanged": true,
+      "log_sha256": "6954c03cda1b5d42732575c476168826a49e8bf209f54c115544d6bf5193d582"
+    },
+    "installed_runtime_replay": {
+      "receipt_path": ".local/qa-controls-answer-contract-installed-receipt.json",
+      "status": "passed",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "runtime_members_verified": 37,
+      "runtime_hashes_match_existing_wheel": true,
+      "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+      "source_test_hashes_match": true,
+      "blocked_imports": ["modal", "tokenizers", "torch", "transformers"],
+      "network_used": false,
+      "new_wheel_built": false,
+      "model_inference": false,
+      "log_sha256": "837dd66bbe1d7b30ab754c25737fb84e80749aed9ba834277ac4184a9e5baeb6"
+    }
+  },
+  "previous_controls_preparation_delivery": {
+    "commit": "a00d6f4fc02d28ea4580ec01ce3ccc927c267619",
+    "github_signature_valid": true,
+    "ci_run_id": 38679061711,
+    "ci_url": "https://github.com/1337mus/tracemem/actions/runs/38679061711",
+    "source_tests_attempted": 543,
+    "source_tests_passed": 542,
+    "source_tests_skipped": 1,
+    "installed_tests_attempted": 291,
+    "installed_tests_passed": 289,
+    "installed_tests_skipped": 2
+  },
+  "limits": {
+    "launcher_exists": false,
+    "gpu_calls": 0,
+    "model_inference": false,
+    "model_outputs": 0,
+    "human_labels": 0,
+    "gate_a_met": false,
+    "model_selected": false,
+    "training_run": false,
+    "receipt_validation_proves_actual_execution": false,
+    "receipt_validation_proves_correct_tokenization_or_decoding": false,
+    "receipt_validation_proves_semantic_correctness": false,
+    "weights_or_tokenizers_on_mac": false
+  },
+  "delivery": "Signed private push and exact CI for this contract are pending; this validation snapshot makes no delivery claim.",
+  "next_step": "Root records exact private commit, signature and CI in active-cycle after delivery. Any future launch separately requires reviewed exact source/payload and a fresh personal Modal workspace and inventory check; at most one GPU call."
+}

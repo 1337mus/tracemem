@@ -1,95 +1,66 @@
 # TraceMem handoff
 
-Updated 2026-10-15 UTC. Verify by: 2026-10-15. Read this file and ignored
-`.local/active-cycle.json` first. Check live git/process/worker state before
-resuming; never duplicate an active GPU call. Context Kit, original conversations,
-historical receipts and `~/.llm-context` remain read-only. Private data stays local.
+Updated 2026-10-15 UTC. Verify by: 2026-10-15. Read this file and ignored `.local/active-cycle.json`
+first. Verify live git/process/worker state before resuming; never duplicate an
+active GPU call. Context Kit, original conversations and `~/.llm-context` remain
+read-only. Private data stays local.
 
 ## Current checkpoint
 
-Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 has synthetic
-diagnostics, not a selected or trained specialist model. Gate A is unmet; there
-are zero independently verified human labels.
+Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 remains
+synthetic diagnostics; no model is selected or trained. Gate A is unmet, with
+zero independently verified human labels.
 
-The latest offline QA interpretation controls use six correlated groups, seven
-sessions, 22 messages, 12 questions and 36 distinct prompts/cells. Full source has
-10 answerable questions and two unknowns; support-omitted and empty variants are
-all `UNKNOWN` (24 cells). Full-source expected answers and prompt-supported
-expected answers are separate. Shared prompt templates are unchanged. Root
-independently reconstructed all 36 prompts/cells without importing the preparer.
-The fixture and scoring policy are frozen; see [controls](qa-interpretation-controls.md)
-and [validation](validation-qa-interpretation-controls.json).
+The latest offline work defines a source-only request and fake receipt contract
+for 36 fictional QA control prompts. Request SHA-256:
+`df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871`; prepared
+payload SHA-256:
+`36a03f56b69500674feb219fc40f8479965982bc9041de7a74b4464cace5bed1`. Per-prompt
+ceilings are 1,024 input and 128 generated tokens; aggregate limits are upper
+bounds only. No input-token counts are measured. The API validates reported
+structure/provenance, not actual execution, correct tokenization/decoding or
+semantic truth. See [contract](qa-controls-answer-contract.md) and
+[validation](validation-qa-controls-answer-contract.json).
 
-The deterministic always-`UNKNOWN` baseline matches 2/12 full-context prompts,
-12/12 omitted prompts and 12/12 empty prompts (26/36 prompt-axis matches).
-Against the full-source reference, it matches 6/36 cells. This is not a model
-result. These controls derive from correlated dev errors and template
-reuse, not held-out truth or Gate A progress. There are no model outputs,
-inference runs or token measurements; zero human labels; no model selected and no
-training.
+Root independently reconstructed every request item and accepted only a fake
+receipt; 61 invalid mutations were rejected. The accepted stop-boundary variants
+are EOS only, EOS at the cap and cap without EOS. Full checks passed 556 tests
+(555 passed, one skipped), Ruff 123 files and mypy 32 files. Installed replay
+passed 13 tests, with all 37 runtime members matching the existing wheel. No
+model, Modal or tokenizer imports were loaded. The TDD record includes observed
+failures but does not claim one RED per rejection rule.
 
-The earlier fictional review covered 46 unique answers: the original reviewer
-reported 32 source-correct, 13 incorrect and one uncertain; prompt support was
-38 supported, seven unsupported and one uncertain. Root's unblinded derivative
-counts are 32/14 for source correctness and 38/8 for support. This is neither an
-independent second sample nor consensus. The frozen literal report is unchanged.
-See [review results](qa-contrast-review-results.md) and
-[review accounting](qa-contrast-review-accounting.md). At 128/256/512/1,024
-complete-prompt tokens, root-adjudicated answerable-correct counts were BM25
-0/1/3/3, hybrid 0/1/2/3 and vector 0/2/2/3. Six dev scenarios cannot establish
-significance or generalization.
+No launcher, scorer, GPU call, inference, model output or token measurement was
+added. All receipt fixtures are fake. Model weights/tokenizers stay off the Mac.
+The current contract's signed private delivery is pending; check active-cycle for
+the exact commit and CI after delivery. Do not infer delivery from local checks.
 
-## Validation and delivery
+The controls fixture has six correlated groups, seven sessions, 22 messages, 12
+questions and 36 cells; full source has 10 answerable and two unknown questions,
+while all 24 support-omitted/empty cells expect `UNKNOWN`. The always-`UNKNOWN`
+baseline is 26/36 on prompt expectations and 6/36 against the full-source axis.
+It is not model quality or held-out evidence. See [controls](qa-interpretation-controls.md)
+and [validation](validation-qa-interpretation-controls.json). The preceding
+controls preparation has valid GitHub signature and successful exact
+[CI run 38679061711](https://github.com/1337mus/tracemem/actions/runs/38679061711).
 
-The controls' final local check passed: 543 tests attempted, 542 passed and one
-skipped; Ruff checked/formatted 121 files; mypy passed 32 runtime files. Nine
-focused installed tests passed with Modal, Torch, Transformers and Tokenizers
-imports blocked. All three source and installed artifacts match byte-for-byte;
-37 runtime members still match wheel SHA-256
-`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`. See the
-[validation snapshot](validation-qa-interpretation-controls.json) for hashes,
-receipts and honest TDD chronology. Offline preparation/replay used no network
-or model inference.
+The earlier 46-answer review reported source correctness 32/13/1 and prompt
+support 38/7/1; Root's unblinded derivative is 32/14 and 38/8. This is not an
+independent sample or consensus; the frozen literal report is unchanged. See
+[review results](qa-contrast-review-results.md) and
+[review accounting](qa-contrast-review-accounting.md).
 
-The earlier review-accounting check passed 534 source tests (one skipped), Ruff
-and mypy, plus eight installed tests. Its actual source/copied reports matched.
-The prior signed private head
-[`2d12af7`](https://github.com/1337mus/tracemem/commit/2d12af7a4f3b7e47f779bd17779bda34fbb0fe20)
-and [exact CI run](https://github.com/1337mus/tracemem/actions/runs/38676821494)
-were independently reverified: CI succeeded and the GitHub signature is valid.
-Check `.local/active-cycle.json` for the controls' exact commit,
-signature, push and CI state. Do not infer delivery from local checks.
+## Next useful slice
 
-The output was prepared exclusively under
-`.local/qa-interpretation-controls-v1` with a mode-0700 directory and mode-0600
-files. Existing outputs are not overwritten. Preparation verifies the pinned
-fixture; it does not alter original inputs or shared templates.
-
-## Local artifacts and ownership
-
-- Frozen controls: `examples/synthetic/qa-interpretation-controls-dev-v1.json`.
-- Root fixture, artifact and scope audits: `.local/qa-controls-root-{fixture,artifact,scope}-audit.json`.
-- Installed replay and full check: `.local/qa-controls-installed-receipt.json` and `.local/qa-controls-root-full-check.json`.
-- Detailed control validation: `docs/validation-qa-interpretation-controls.json`.
-- Earlier review artifacts and exact archived handoff remain under `.local/`; see the linked review accounting and `.local/handoff-before-qa-controls.md`.
-
-Root owns final delivery and verifies private repository visibility immediately
-before the authorized signed push. No new commit or push is recorded here.
-
-## Next bounded action
-
-Prepare and review a synthetic-only remote control-inference wrapper with exact
-payload/source hashes and a bounded receipt contract. Before any launch, verify
-the active personal Modal workspace and take a fresh inventory. Use at most one
-GPU call; keep model weights, tokenizers and inference off the Mac. Do not train
-or select a model through the unmet gate. No GPU job started in this slice. A
-later authorized bounded synthetic-only launch still requires reviewed source,
-exact payload hashes and fresh personal workspace/inventory checks.
+Prepare a source-free Modal producer for this exact request/receipt contract.
+Before any launch, root must review exact source and payload bytes and verify the
+active personal Modal workspace and a fresh inventory. Use at most one GPU call;
+do not load weights, tokenizers or run inference on the Mac. Do not train or
+select a model through the unmet gate. No new job has started.
 
 ## Background
 
-[Project status/design](project-status.md), [Context Kit inventory](context-kit-inventory.md),
-[roadmap](roadmap.md), [model comparison](experiments-scenarios.md),
-[token replay](qa-contrast-token-replay.md), [answering results](qa-contrast-answer-results.md),
-[QA review workflow](qa-contrast-answer-review.md),
+[Project status](project-status.md), [roadmap](roadmap.md),
+[legacy answer runner](qa-contrast-answer-runner.md),
+[Context Kit inventory](context-kit-inventory.md),
 [older handoff archive](handoff-history-2026-10-14.md).
