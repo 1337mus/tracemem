@@ -1,0 +1,265 @@
+{
+  "long-dev-case-01": [
+    {
+      "subject": "the user",
+      "predicate": "DECIDED",
+      "object": "to reissue the inventory sheet today",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-01-s02",
+          "message_id": "long-dev-case-01-m06",
+          "char_start": 17,
+          "char_end": 57,
+          "quote": "I prefer pot labels grouped by bench row"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "PREFERS",
+      "object": "pot labels grouped by plant name for this season",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "preference",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-01-s02",
+          "message_id": "long-dev-case-01-m04",
+          "char_start": 29,
+          "char_end": 75,
+          "quote": "row labels were sorted by plant name last year"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-02": [
+    {
+      "subject": "the user",
+      "predicate": "COMPLETED",
+      "object": "the west table reservation for the moon chart",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "completed",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-02-s02",
+          "message_id": "long-dev-case-02-m06",
+          "char_start": 33,
+          "char_end": 84,
+          "quote": "I plan to reserve the west table for the moon chart"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-03": [
+    {
+      "subject": "the user",
+      "predicate": "DECIDED",
+      "object": "to send the alternating-room schedule to the coordinator",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-03-s02",
+          "message_id": "long-dev-case-03-m05",
+          "char_start": 25,
+          "char_end": 72,
+          "quote": "I have not approved a schedule or sent anything"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-04": [
+    {
+      "subject": "the user",
+      "predicate": "PLANS",
+      "object": "switch off the kiln before loading a test tile",
+      "speaker_role": "user",
+      "attribution": "quoted_text",
+      "modality": "intention",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-04-s02",
+          "message_id": "long-dev-case-04-m04",
+          "char_start": 65,
+          "char_end": 113,
+          "quote": "That is the card speaking, not a request from me"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-05": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "portable heater in the archive annex",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-05-s01",
+          "message_id": "long-dev-case-05-m03",
+          "char_start": 0,
+          "char_end": 45,
+          "quote": "I do not use the portable heater in the annex"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-06": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the east entrance at the Red Kiln ceramic fair",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-06-s01",
+          "message_id": "long-dev-case-06-m03",
+          "char_start": 36,
+          "char_end": 60,
+          "quote": "I used the east entrance"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-07": [],
+  "long-dev-case-08": [
+    {
+      "subject": "the north shed",
+      "predicate": "HAS",
+      "object": "a confirmed closing time before dusk",
+      "speaker_role": "user",
+      "attribution": "third_party_report",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-08-s02",
+          "message_id": "long-dev-case-08-m04",
+          "char_start": 0,
+          "char_end": 48,
+          "quote": "Mara thinks the north shed may close before dusk"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-09": [
+    {
+      "subject": "the foam liner swap",
+      "predicate": "CAUSES",
+      "object": "the high tide-gauge reading",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-09-s02",
+          "message_id": "long-dev-case-09-m06",
+          "char_start": 52,
+          "char_end": 101,
+          "quote": "the liner change alone does not establish a cause"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-10": [
+    {
+      "subject": "the user",
+      "predicate": "DECIDED",
+      "object": "to use waterproof cue cards for the festival",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-10-s03",
+          "message_id": "long-dev-case-10-m09",
+          "char_start": 0,
+          "char_end": 59,
+          "quote": "I could consider them if the test survives the mist machine"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-11": [
+    {
+      "subject": "the user",
+      "predicate": "DECIDED",
+      "object": "to borrow the red glider case for the hill launch",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-11-s04",
+          "message_id": "long-dev-case-11-m12",
+          "char_start": 5,
+          "char_end": 40,
+          "quote": "I am only sketching options for now"
+        }
+      ]
+    }
+  ],
+  "long-dev-case-12": [
+    {
+      "subject": "the teacher",
+      "predicate": "PREFERS",
+      "object": "the paper map over the audio guide",
+      "speaker_role": "user",
+      "attribution": "third_party_report",
+      "modality": "preference",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-12-s03",
+          "message_id": "long-dev-case-12-m09",
+          "char_start": 44,
+          "char_end": 85,
+          "quote": "I have not received a preference from her"
+        }
+      ]
+    }
+  ]
+}

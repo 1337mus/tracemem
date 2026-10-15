@@ -1,0 +1,1737 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "cases": [
+    {
+      "case_id": "long-dev-case-01",
+      "scenario_id": "long-dev-lantern-marsh-greenhouse",
+      "split": "dev",
+      "tags": [
+        "preference",
+        "correction",
+        "sparse_followup"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-01-s01",
+          "message_id": "long-dev-case-01-m01",
+          "role": "user",
+          "text": "I am cataloging the Lantern Marsh greenhouse trays before the spring volunteers arrive.",
+          "recorded_at": "2026-01-05T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s01",
+          "message_id": "long-dev-case-01-m02",
+          "role": "assistant",
+          "text": "Are the clay labels part of the inventory?",
+          "recorded_at": "2026-01-05T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s01",
+          "message_id": "long-dev-case-01-m03",
+          "role": "user",
+          "text": "Yes, but the east bench has three cracked saucers, so I am moving those first.",
+          "recorded_at": "2026-01-05T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s02",
+          "message_id": "long-dev-case-01-m04",
+          "role": "user",
+          "text": "The old inventory sheet says row labels were sorted by plant name last year.",
+          "recorded_at": "2026-01-19T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s02",
+          "message_id": "long-dev-case-01-m05",
+          "role": "assistant",
+          "text": "That could explain why volunteers missed the bay numbers.",
+          "recorded_at": "2026-01-19T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s02",
+          "message_id": "long-dev-case-01-m06",
+          "role": "user",
+          "text": "For this season, I prefer pot labels grouped by bench row; people find trays faster that way.",
+          "recorded_at": "2026-01-19T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s03",
+          "message_id": "long-dev-case-01-m07",
+          "role": "user",
+          "text": "I printed the sheet, but Neri spotted the old sort when we checked the north bench.",
+          "recorded_at": "2026-02-07T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s03",
+          "message_id": "long-dev-case-01-m08",
+          "role": "assistant",
+          "text": "Should the sheet be reissued?",
+          "recorded_at": "2026-02-07T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s03",
+          "message_id": "long-dev-case-01-m09",
+          "role": "user",
+          "text": "Not today. I will ask Ivo to check the west shelf before changing the paper.",
+          "recorded_at": "2026-02-07T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s04",
+          "message_id": "long-dev-case-01-m10",
+          "role": "user",
+          "text": "I checked that west shelf. The cracked saucers are on the bottom rack.",
+          "recorded_at": "2026-02-25T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s04",
+          "message_id": "long-dev-case-01-m11",
+          "role": "assistant",
+          "text": "Does the sorting preference still apply to the labels?",
+          "recorded_at": "2026-02-25T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-01-s04",
+          "message_id": "long-dev-case-01-m12",
+          "role": "user",
+          "text": "Yes, row first is still easier. The amber seedlings need their own tray because they dry quickly.",
+          "recorded_at": "2026-02-25T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "PREFERS",
+          "object": "pot labels grouped by bench row for this season",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-01-s02",
+              "message_id": "long-dev-case-01-m06",
+              "char_start": 0,
+              "char_end": 57,
+              "quote": "For this season, I prefer pot labels grouped by bench row"
+            },
+            {
+              "session_id": "long-dev-case-01-s04",
+              "message_id": "long-dev-case-01-m12",
+              "char_start": 0,
+              "char_end": 31,
+              "quote": "Yes, row first is still easier."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-02",
+      "scenario_id": "long-dev-blue-hour-observatory-atlas",
+      "split": "dev",
+      "tags": [
+        "conditional_plan",
+        "completion_boundary"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-02-s01",
+          "message_id": "long-dev-case-02-m01",
+          "role": "user",
+          "text": "The Blue Hour observatory is making a paper atlas for the winter visitors.",
+          "recorded_at": "2026-02-03T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s01",
+          "message_id": "long-dev-case-02-m02",
+          "role": "assistant",
+          "text": "Do you already have a place for the moon chart?",
+          "recorded_at": "2026-02-03T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s01",
+          "message_id": "long-dev-case-02-m03",
+          "role": "user",
+          "text": "The west table is open, though the tripod case still blocks one corner.",
+          "recorded_at": "2026-02-03T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s02",
+          "message_id": "long-dev-case-02-m04",
+          "role": "user",
+          "text": "Dr. Venn is checking whether the balcony map can be printed at the larger scale.",
+          "recorded_at": "2026-02-20T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s02",
+          "message_id": "long-dev-case-02-m05",
+          "role": "assistant",
+          "text": "Would that change where the chart goes?",
+          "recorded_at": "2026-02-20T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s02",
+          "message_id": "long-dev-case-02-m06",
+          "role": "user",
+          "text": "If Dr. Venn signs off by Friday, I plan to reserve the west table for the moon chart.",
+          "recorded_at": "2026-02-20T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s03",
+          "message_id": "long-dev-case-02-m07",
+          "role": "user",
+          "text": "The scale review is late, so I have not sent the reservation request.",
+          "recorded_at": "2026-03-03T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s03",
+          "message_id": "long-dev-case-02-m08",
+          "role": "assistant",
+          "text": "Could you use the north stand instead?",
+          "recorded_at": "2026-03-03T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s03",
+          "message_id": "long-dev-case-02-m09",
+          "role": "user",
+          "text": "Maybe, but it faces the service door and visitors crowd there after the talk.",
+          "recorded_at": "2026-03-03T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s04",
+          "message_id": "long-dev-case-02-m10",
+          "role": "user",
+          "text": "The review came back yesterday, but it asks for one more projection check.",
+          "recorded_at": "2026-03-19T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s04",
+          "message_id": "long-dev-case-02-m11",
+          "role": "assistant",
+          "text": "Then the west table is still unreserved.",
+          "recorded_at": "2026-03-19T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s04",
+          "message_id": "long-dev-case-02-m12",
+          "role": "user",
+          "text": "Right. I am leaving the floor plan in pencil until the check is done.",
+          "recorded_at": "2026-03-19T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s05",
+          "message_id": "long-dev-case-02-m13",
+          "role": "user",
+          "text": "The projection check passed this morning. I still need to ask the caretaker about the table, so the reservation is not complete.",
+          "recorded_at": "2026-03-26T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-02-s05",
+          "message_id": "long-dev-case-02-m14",
+          "role": "assistant",
+          "text": "That makes sense. The west table remains open until the caretaker confirms the aisle width.",
+          "recorded_at": "2026-03-26T09:07:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "PLANS",
+          "object": "reserve the west table for the moon chart if Dr. Venn signs off by Friday",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-02-s02",
+              "message_id": "long-dev-case-02-m06",
+              "char_start": 0,
+              "char_end": 84,
+              "quote": "If Dr. Venn signs off by Friday, I plan to reserve the west table for the moon chart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-03",
+      "scenario_id": "long-dev-tideline-volunteer-rota",
+      "split": "dev",
+      "tags": [
+        "speaker_attribution",
+        "draft_vs_decision"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-03-s01",
+          "message_id": "long-dev-case-03-m01",
+          "role": "user",
+          "text": "The Tideline archive needs a rota for the evening chart readers.",
+          "recorded_at": "2026-03-02T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s01",
+          "message_id": "long-dev-case-03-m02",
+          "role": "assistant",
+          "text": "I can draft a rota that alternates the two reading rooms.",
+          "recorded_at": "2026-03-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s01",
+          "message_id": "long-dev-case-03-m03",
+          "role": "user",
+          "text": "Please draft it, but keep the west room free for the map cases.",
+          "recorded_at": "2026-03-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s02",
+          "message_id": "long-dev-case-03-m04",
+          "role": "assistant",
+          "text": "I will send the alternating-room draft to the coordinator after you review it.",
+          "recorded_at": "2026-03-15T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s02",
+          "message_id": "long-dev-case-03-m05",
+          "role": "user",
+          "text": "That is your draft plan. I have not approved a schedule or sent anything.",
+          "recorded_at": "2026-03-15T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s02",
+          "message_id": "long-dev-case-03-m06",
+          "role": "assistant",
+          "text": "Understood. I will leave the file marked draft.",
+          "recorded_at": "2026-03-15T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s03",
+          "message_id": "long-dev-case-03-m07",
+          "role": "user",
+          "text": "The coordinator found an old key list mixed into the rota folder.",
+          "recorded_at": "2026-04-04T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s03",
+          "message_id": "long-dev-case-03-m08",
+          "role": "assistant",
+          "text": "I can remove it from the working copy.",
+          "recorded_at": "2026-04-04T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s03",
+          "message_id": "long-dev-case-03-m09",
+          "role": "user",
+          "text": "Keep the old list in the archive. It explains why the west room key was missing.",
+          "recorded_at": "2026-04-04T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s04",
+          "message_id": "long-dev-case-03-m10",
+          "role": "assistant",
+          "text": "The coordinator asked whether the alternating-room schedule is final.",
+          "recorded_at": "2026-04-21T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s04",
+          "message_id": "long-dev-case-03-m11",
+          "role": "user",
+          "text": "It is not. I only asked you to prepare a draft for discussion.",
+          "recorded_at": "2026-04-21T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-03-s04",
+          "message_id": "long-dev-case-03-m12",
+          "role": "assistant",
+          "text": "I will mark it as awaiting review.",
+          "recorded_at": "2026-04-21T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the assistant",
+          "predicate": "PLANS",
+          "object": "send the alternating-room draft to the coordinator after user review",
+          "speaker_role": "assistant",
+          "attribution": "assistant_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-03-s02",
+              "message_id": "long-dev-case-03-m04",
+              "char_start": 0,
+              "char_end": 77,
+              "quote": "I will send the alternating-room draft to the coordinator after you review it"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "COMPLETED",
+          "object": "approval of the alternating-room schedule",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-03-s02",
+              "message_id": "long-dev-case-03-m05",
+              "char_start": 25,
+              "char_end": 73,
+              "quote": "I have not approved a schedule or sent anything."
+            },
+            {
+              "session_id": "long-dev-case-03-s04",
+              "message_id": "long-dev-case-03-m11",
+              "char_start": 0,
+              "char_end": 62,
+              "quote": "It is not. I only asked you to prepare a draft for discussion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-04",
+      "scenario_id": "long-dev-ashgrove-kiln-card",
+      "split": "dev",
+      "tags": [
+        "quoted_instruction",
+        "attribution"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-04-s01",
+          "message_id": "long-dev-case-04-m01",
+          "role": "user",
+          "text": "The Ashgrove makerspace is revising its kiln checklist before the tile workshop.",
+          "recorded_at": "2026-03-01T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s01",
+          "message_id": "long-dev-case-04-m02",
+          "role": "assistant",
+          "text": "Is the card written for the old kiln model?",
+          "recorded_at": "2026-03-01T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s01",
+          "message_id": "long-dev-case-04-m03",
+          "role": "user",
+          "text": "I think so. The newer controller has a separate cooling indicator.",
+          "recorded_at": "2026-03-01T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s02",
+          "message_id": "long-dev-case-04-m04",
+          "role": "user",
+          "text": "The card says, \"Switch off the kiln before loading a test tile.\" That is the card speaking, not a request from me.",
+          "recorded_at": "2026-03-16T09:00:00Z",
+          "content_kind": "mixed_untrusted"
+        },
+        {
+          "session_id": "long-dev-case-04-s02",
+          "message_id": "long-dev-case-04-m05",
+          "role": "assistant",
+          "text": "I will treat that as quoted checklist text.",
+          "recorded_at": "2026-03-16T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s02",
+          "message_id": "long-dev-case-04-m06",
+          "role": "user",
+          "text": "The margin note says the rule was added after a cracked shelf, but it does not name the kiln model.",
+          "recorded_at": "2026-03-16T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s03",
+          "message_id": "long-dev-case-04-m07",
+          "role": "user",
+          "text": "Miro brought the updated controller guide, and its pictures show a different latch.",
+          "recorded_at": "2026-04-02T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s03",
+          "message_id": "long-dev-case-04-m08",
+          "role": "assistant",
+          "text": "Should the old card be removed?",
+          "recorded_at": "2026-04-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s03",
+          "message_id": "long-dev-case-04-m09",
+          "role": "user",
+          "text": "Not until the workshop lead compares both versions.",
+          "recorded_at": "2026-04-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s04",
+          "message_id": "long-dev-case-04-m10",
+          "role": "user",
+          "text": "We found the card belongs in the retired-equipment folder.",
+          "recorded_at": "2026-04-18T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s04",
+          "message_id": "long-dev-case-04-m11",
+          "role": "assistant",
+          "text": "Does that confirm the instruction applies to the new kiln?",
+          "recorded_at": "2026-04-18T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-04-s04",
+          "message_id": "long-dev-case-04-m12",
+          "role": "user",
+          "text": "No, the folder only tells us which card is old. The lead still has to check the new model.",
+          "recorded_at": "2026-04-18T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the Ashgrove checklist card",
+          "predicate": "REPORTS",
+          "object": "switch off the kiln before loading a test tile",
+          "speaker_role": "user",
+          "attribution": "quoted_text",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-04-s02",
+              "message_id": "long-dev-case-04-m04",
+              "char_start": 16,
+              "char_end": 62,
+              "quote": "Switch off the kiln before loading a test tile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-05",
+      "scenario_id": "long-dev-archive-annex-heater",
+      "split": "dev",
+      "tags": [
+        "negation",
+        "equipment_context"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-05-s01",
+          "message_id": "long-dev-case-05-m01",
+          "role": "user",
+          "text": "The archive annex is being cleared before the map boxes are moved.",
+          "recorded_at": "2026-04-02T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s01",
+          "message_id": "long-dev-case-05-m02",
+          "role": "assistant",
+          "text": "Is the portable heater still stored there?",
+          "recorded_at": "2026-04-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s01",
+          "message_id": "long-dev-case-05-m03",
+          "role": "user",
+          "text": "I do not use the portable heater in the annex; its cord is frayed.",
+          "recorded_at": "2026-04-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s02",
+          "message_id": "long-dev-case-05-m04",
+          "role": "user",
+          "text": "The facilities crew tagged the heater for inspection.",
+          "recorded_at": "2026-04-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s02",
+          "message_id": "long-dev-case-05-m05",
+          "role": "assistant",
+          "text": "Did they find a replacement cord?",
+          "recorded_at": "2026-04-17T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s02",
+          "message_id": "long-dev-case-05-m06",
+          "role": "user",
+          "text": "They have not checked it yet. I moved the paper maps away from the outlet.",
+          "recorded_at": "2026-04-17T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s03",
+          "message_id": "long-dev-case-05-m07",
+          "role": "user",
+          "text": "The annex has a draft near the loading door, so the boxes need a cover.",
+          "recorded_at": "2026-05-06T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s03",
+          "message_id": "long-dev-case-05-m08",
+          "role": "assistant",
+          "text": "Could the crew bring a safe heater?",
+          "recorded_at": "2026-05-06T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s03",
+          "message_id": "long-dev-case-05-m09",
+          "role": "user",
+          "text": "They can decide that after inspection; I am not choosing equipment for that room.",
+          "recorded_at": "2026-05-06T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s04",
+          "message_id": "long-dev-case-05-m10",
+          "role": "user",
+          "text": "The heater is still tagged. The crew asked us to keep the aisle open.",
+          "recorded_at": "2026-05-22T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s04",
+          "message_id": "long-dev-case-05-m11",
+          "role": "assistant",
+          "text": "That leaves room for the map cart.",
+          "recorded_at": "2026-05-22T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-05-s04",
+          "message_id": "long-dev-case-05-m12",
+          "role": "user",
+          "text": "Yes, and the paper boxes are now on the raised shelf.",
+          "recorded_at": "2026-05-22T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "portable heater in the archive annex",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-05-s01",
+              "message_id": "long-dev-case-05-m03",
+              "char_start": 0,
+              "char_end": 45,
+              "quote": "I do not use the portable heater in the annex"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-06",
+      "scenario_id": "long-dev-ceramic-fair-entrances",
+      "split": "dev",
+      "tags": [
+        "temporal_boundary",
+        "historical_use",
+        "correction"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-06-s01",
+          "message_id": "long-dev-case-06-m01",
+          "role": "user",
+          "text": "The Red Kiln ceramic fair is changing its visitor route for the courtyard repairs.",
+          "recorded_at": "2026-05-19T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s01",
+          "message_id": "long-dev-case-06-m02",
+          "role": "assistant",
+          "text": "Which door is open during the repair week?",
+          "recorded_at": "2026-05-19T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s01",
+          "message_id": "long-dev-case-06-m03",
+          "role": "user",
+          "text": "From 2026-05-12 through 2026-05-18, I used the east entrance while the courtyard was closed.",
+          "recorded_at": "2026-05-19T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s02",
+          "message_id": "long-dev-case-06-m04",
+          "role": "user",
+          "text": "The printed volunteer note says the east door stays open after the repair week.",
+          "recorded_at": "2026-05-26T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s02",
+          "message_id": "long-dev-case-06-m05",
+          "role": "assistant",
+          "text": "Was that copied from last year?",
+          "recorded_at": "2026-05-26T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s02",
+          "message_id": "long-dev-case-06-m06",
+          "role": "user",
+          "text": "Probably. I have not checked the latest schedule yet.",
+          "recorded_at": "2026-05-26T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s03",
+          "message_id": "long-dev-case-06-m07",
+          "role": "user",
+          "text": "Correction: the courtyard reopened on 2026-05-19, and I have used the courtyard door since then.",
+          "recorded_at": "2026-06-03T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s03",
+          "message_id": "long-dev-case-06-m08",
+          "role": "assistant",
+          "text": "So the east entrance was temporary.",
+          "recorded_at": "2026-06-03T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s03",
+          "message_id": "long-dev-case-06-m09",
+          "role": "user",
+          "text": "Yes. The east door is now for deliveries, not the visitor route.",
+          "recorded_at": "2026-06-03T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s04",
+          "message_id": "long-dev-case-06-m10",
+          "role": "user",
+          "text": "The fair guide still lists the east entrance on its first page.",
+          "recorded_at": "2026-06-24T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s04",
+          "message_id": "long-dev-case-06-m11",
+          "role": "assistant",
+          "text": "Should it be updated before the weekend?",
+          "recorded_at": "2026-06-24T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-06-s04",
+          "message_id": "long-dev-case-06-m12",
+          "role": "user",
+          "text": "I asked the guide team to change it. I do not know when they will publish the revision.",
+          "recorded_at": "2026-06-24T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the east entrance at the Red Kiln ceramic fair",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "historical",
+          "polarity": "positive",
+          "valid_from": "2026-05-12",
+          "valid_to": "2026-05-18",
+          "evidence": [
+            {
+              "session_id": "long-dev-case-06-s01",
+              "message_id": "long-dev-case-06-m03",
+              "char_start": 0,
+              "char_end": 60,
+              "quote": "From 2026-05-12 through 2026-05-18, I used the east entrance"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the courtyard door at the Red Kiln ceramic fair",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2026-05-19",
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-06-s03",
+              "message_id": "long-dev-case-06-m07",
+              "char_start": 0,
+              "char_end": 96,
+              "quote": "Correction: the courtyard reopened on 2026-05-19, and I have used the courtyard door since then."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-07",
+      "scenario_id": "long-dev-juniper-astronomy-keys",
+      "split": "dev",
+      "tags": [
+        "same_name_ambiguity",
+        "identity_resolution"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-07-s01",
+          "message_id": "long-dev-case-07-m01",
+          "role": "user",
+          "text": "The Juniper astronomy club is sorting keys for the rooftop observation nights.",
+          "recorded_at": "2026-05-02T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s01",
+          "message_id": "long-dev-case-07-m02",
+          "role": "assistant",
+          "text": "Who keeps the balcony key?",
+          "recorded_at": "2026-05-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s01",
+          "message_id": "long-dev-case-07-m03",
+          "role": "user",
+          "text": "Elise Mora keeps the balcony key. Elise Tan lent us the narrow-field filter.",
+          "recorded_at": "2026-05-02T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s02",
+          "message_id": "long-dev-case-07-m04",
+          "role": "user",
+          "text": "The old checkout note just says Elise, which is why the filter return went to the wrong shelf.",
+          "recorded_at": "2026-05-16T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s02",
+          "message_id": "long-dev-case-07-m05",
+          "role": "assistant",
+          "text": "Would adding surnames fix that?",
+          "recorded_at": "2026-05-16T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s02",
+          "message_id": "long-dev-case-07-m06",
+          "role": "user",
+          "text": "Yes, the two Elis are different members and should not share one key record.",
+          "recorded_at": "2026-05-16T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s03",
+          "message_id": "long-dev-case-07-m07",
+          "role": "user",
+          "text": "Elise left a note saying she will bring the filter to Friday practice.",
+          "recorded_at": "2026-06-04T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s03",
+          "message_id": "long-dev-case-07-m08",
+          "role": "assistant",
+          "text": "Do you know which Elise wrote that?",
+          "recorded_at": "2026-06-04T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s03",
+          "message_id": "long-dev-case-07-m09",
+          "role": "user",
+          "text": "No. The note has no surname, so I cannot tell whether it is Mora or Tan.",
+          "recorded_at": "2026-06-04T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s04",
+          "message_id": "long-dev-case-07-m10",
+          "role": "user",
+          "text": "Mora confirmed the key is in the rooftop lockbox.",
+          "recorded_at": "2026-06-23T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s04",
+          "message_id": "long-dev-case-07-m11",
+          "role": "assistant",
+          "text": "And the filter?",
+          "recorded_at": "2026-06-23T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-07-s04",
+          "message_id": "long-dev-case-07-m12",
+          "role": "user",
+          "text": "Tan returned it to the optics drawer. I updated those as separate entries.",
+          "recorded_at": "2026-06-23T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "Mora",
+          "predicate": "REPORTS",
+          "object": "the balcony key she keeps is in the rooftop lockbox",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-07-s01",
+              "message_id": "long-dev-case-07-m03",
+              "char_start": 0,
+              "char_end": 33,
+              "quote": "Elise Mora keeps the balcony key."
+            },
+            {
+              "session_id": "long-dev-case-07-s04",
+              "message_id": "long-dev-case-07-m10",
+              "char_start": 0,
+              "char_end": 49,
+              "quote": "Mora confirmed the key is in the rooftop lockbox."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-08",
+      "scenario_id": "long-dev-north-shed-opening-rumor",
+      "split": "dev",
+      "tags": [
+        "third_party_report",
+        "uncertainty",
+        "source_attribution"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-08-s01",
+          "message_id": "long-dev-case-08-m01",
+          "role": "user",
+          "text": "The North Quay tool shed is changing its volunteer hours for the summer.",
+          "recorded_at": "2026-05-10T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s01",
+          "message_id": "long-dev-case-08-m02",
+          "role": "assistant",
+          "text": "Has the caretaker posted the schedule?",
+          "recorded_at": "2026-05-10T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s01",
+          "message_id": "long-dev-case-08-m03",
+          "role": "user",
+          "text": "Not on the gate yet. There is a handwritten note in the office.",
+          "recorded_at": "2026-05-10T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s02",
+          "message_id": "long-dev-case-08-m04",
+          "role": "user",
+          "text": "Mara thinks the north shed may close before dusk, but she has not heard it from the caretaker.",
+          "recorded_at": "2026-05-28T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s02",
+          "message_id": "long-dev-case-08-m05",
+          "role": "assistant",
+          "text": "So that is a report to check, not a confirmed closing time.",
+          "recorded_at": "2026-05-28T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s02",
+          "message_id": "long-dev-case-08-m06",
+          "role": "user",
+          "text": "Right. I will ask at the next key handoff.",
+          "recorded_at": "2026-05-28T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s03",
+          "message_id": "long-dev-case-08-m07",
+          "role": "user",
+          "text": "The caretaker was away when I stopped by, and the office note had no date.",
+          "recorded_at": "2026-06-12T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s03",
+          "message_id": "long-dev-case-08-m08",
+          "role": "assistant",
+          "text": "Did Mara see who wrote it?",
+          "recorded_at": "2026-06-12T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s03",
+          "message_id": "long-dev-case-08-m09",
+          "role": "user",
+          "text": "She did not. She only saw it beside the sign-in book.",
+          "recorded_at": "2026-06-12T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s04",
+          "message_id": "long-dev-case-08-m10",
+          "role": "user",
+          "text": "The new schedule is still pending because the summer crew has not agreed on coverage.",
+          "recorded_at": "2026-06-30T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s04",
+          "message_id": "long-dev-case-08-m11",
+          "role": "assistant",
+          "text": "Then the early-closing rumor remains unresolved.",
+          "recorded_at": "2026-06-30T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-08-s04",
+          "message_id": "long-dev-case-08-m12",
+          "role": "user",
+          "text": "Yes. Please keep the source attached if we mention it in the handoff.",
+          "recorded_at": "2026-06-30T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "Mara",
+          "predicate": "REPORTS",
+          "object": "the north shed may close before dusk",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-08-s02",
+              "message_id": "long-dev-case-08-m04",
+              "char_start": 0,
+              "char_end": 48,
+              "quote": "Mara thinks the north shed may close before dusk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-09",
+      "scenario_id": "long-dev-reef-station-gauge-drift",
+      "split": "dev",
+      "tags": [
+        "causal_uncertainty",
+        "unsupported_causation"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-09-s01",
+          "message_id": "long-dev-case-09-m01",
+          "role": "user",
+          "text": "At Reef Station, we replaced the foam liner around the tide gauge housing.",
+          "recorded_at": "2026-06-01T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s01",
+          "message_id": "long-dev-case-09-m02",
+          "role": "assistant",
+          "text": "Was the sensor recalibrated at the same time?",
+          "recorded_at": "2026-06-01T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s01",
+          "message_id": "long-dev-case-09-m03",
+          "role": "user",
+          "text": "No, the calibration visit was moved to the following week.",
+          "recorded_at": "2026-06-01T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s02",
+          "message_id": "long-dev-case-09-m04",
+          "role": "user",
+          "text": "The gauge read high the morning after the liner swap.",
+          "recorded_at": "2026-06-12T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s02",
+          "message_id": "long-dev-case-09-m05",
+          "role": "assistant",
+          "text": "That timing might look connected.",
+          "recorded_at": "2026-06-12T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s02",
+          "message_id": "long-dev-case-09-m06",
+          "role": "user",
+          "text": "The readings also rose at the neighboring inlet, so the liner change alone does not establish a cause.",
+          "recorded_at": "2026-06-12T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s03",
+          "message_id": "long-dev-case-09-m07",
+          "role": "user",
+          "text": "The station log has the swap date and the first high reading.",
+          "recorded_at": "2026-06-29T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s03",
+          "message_id": "long-dev-case-09-m08",
+          "role": "assistant",
+          "text": "Will you record them together?",
+          "recorded_at": "2026-06-29T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s03",
+          "message_id": "long-dev-case-09-m09",
+          "role": "user",
+          "text": "I will list the dates separately until the technician compares both sensors.",
+          "recorded_at": "2026-06-29T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s04",
+          "message_id": "long-dev-case-09-m10",
+          "role": "user",
+          "text": "The technician found salt on one connector, but has not tested the second gauge yet.",
+          "recorded_at": "2026-07-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s04",
+          "message_id": "long-dev-case-09-m11",
+          "role": "assistant",
+          "text": "That does not settle whether the liner affected this reading.",
+          "recorded_at": "2026-07-17T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-09-s04",
+          "message_id": "long-dev-case-09-m12",
+          "role": "user",
+          "text": "Correct. We should keep the cause open until the comparison is finished.",
+          "recorded_at": "2026-07-17T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "PLANS",
+          "object": "record the foam liner swap and next-morning high reading as separate dates until a technician compares both sensors",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "intention",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-09-s01",
+              "message_id": "long-dev-case-09-m01",
+              "char_start": 17,
+              "char_end": 73,
+              "quote": "we replaced the foam liner around the tide gauge housing"
+            },
+            {
+              "session_id": "long-dev-case-09-s02",
+              "message_id": "long-dev-case-09-m04",
+              "char_start": 0,
+              "char_end": 53,
+              "quote": "The gauge read high the morning after the liner swap."
+            },
+            {
+              "session_id": "long-dev-case-09-s03",
+              "message_id": "long-dev-case-09-m09",
+              "char_start": 0,
+              "char_end": 75,
+              "quote": "I will list the dates separately until the technician compares both sensors"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-10",
+      "scenario_id": "long-dev-bellweather-lantern-festival-audio",
+      "split": "dev",
+      "tags": [
+        "preference",
+        "consideration_vs_decision",
+        "sparse_correction"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-10-s01",
+          "message_id": "long-dev-case-10-m01",
+          "role": "user",
+          "text": "The Bellweather lantern festival needs cue notes for the outdoor sound team.",
+          "recorded_at": "2026-06-05T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s01",
+          "message_id": "long-dev-case-10-m02",
+          "role": "assistant",
+          "text": "Do you want one note per performer?",
+          "recorded_at": "2026-06-05T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s01",
+          "message_id": "long-dev-case-10-m03",
+          "role": "user",
+          "text": "Last year I asked for notes grouped by performer, but that made the stage calls hard to scan.",
+          "recorded_at": "2026-06-05T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s02",
+          "message_id": "long-dev-case-10-m04",
+          "role": "user",
+          "text": "I prefer cue cards ordered by show time now; the crew reads them at the stage edge.",
+          "recorded_at": "2026-06-22T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s02",
+          "message_id": "long-dev-case-10-m05",
+          "role": "assistant",
+          "text": "Should the digital copy use the same order?",
+          "recorded_at": "2026-06-22T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s02",
+          "message_id": "long-dev-case-10-m06",
+          "role": "user",
+          "text": "Yes, keep both versions in show-time order so a late cue is easy to spot.",
+          "recorded_at": "2026-06-22T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s03",
+          "message_id": "long-dev-case-10-m07",
+          "role": "user",
+          "text": "The printer can make waterproof cards, though the ink test is not finished.",
+          "recorded_at": "2026-07-11T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s03",
+          "message_id": "long-dev-case-10-m08",
+          "role": "assistant",
+          "text": "Will you switch to those?",
+          "recorded_at": "2026-07-11T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s03",
+          "message_id": "long-dev-case-10-m09",
+          "role": "user",
+          "text": "I could consider them if the test survives the mist machine. I have not decided.",
+          "recorded_at": "2026-07-11T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s04",
+          "message_id": "long-dev-case-10-m10",
+          "role": "user",
+          "text": "The ink smudged during the second mist test.",
+          "recorded_at": "2026-07-29T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s04",
+          "message_id": "long-dev-case-10-m11",
+          "role": "assistant",
+          "text": "Then the waterproof cards are still an option, not a choice.",
+          "recorded_at": "2026-07-29T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-10-s04",
+          "message_id": "long-dev-case-10-m12",
+          "role": "user",
+          "text": "Exactly. We will use the ordinary stock for this rehearsal and review later.",
+          "recorded_at": "2026-07-29T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "PREFERS",
+          "object": "cue cards ordered by show time",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "preference",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-10-s02",
+              "message_id": "long-dev-case-10-m04",
+              "char_start": 0,
+              "char_end": 43,
+              "quote": "I prefer cue cards ordered by show time now"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "REPORTS",
+          "object": "could consider waterproof cue cards if the ink test survives the mist machine",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "tentative",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "long-dev-case-10-s03",
+              "message_id": "long-dev-case-10-m07",
+              "char_start": 0,
+              "char_end": 75,
+              "quote": "The printer can make waterproof cards, though the ink test is not finished."
+            },
+            {
+              "session_id": "long-dev-case-10-s03",
+              "message_id": "long-dev-case-10-m09",
+              "char_start": 0,
+              "char_end": 60,
+              "quote": "I could consider them if the test survives the mist machine."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "long-dev-case-11",
+      "scenario_id": "long-dev-windglass-glider-case-fit",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "question",
+        "hypothetical",
+        "ambiguous_referent"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-11-s01",
+          "message_id": "long-dev-case-11-m01",
+          "role": "user",
+          "text": "The Windglass club has two glider cases, one slate and one red, and neither label lists the model.",
+          "recorded_at": "2026-06-08T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s01",
+          "message_id": "long-dev-case-11-m02",
+          "role": "assistant",
+          "text": "Are you trying to identify which case fits the short-wing glider?",
+          "recorded_at": "2026-06-08T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s01",
+          "message_id": "long-dev-case-11-m03",
+          "role": "user",
+          "text": "Maybe. Could you tell from the old packing photo, or is that one the spare sail bag?",
+          "recorded_at": "2026-06-08T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s02",
+          "message_id": "long-dev-case-11-m04",
+          "role": "user",
+          "text": "If the short-wing frame fits the red case, we might borrow it for the hill launch.",
+          "recorded_at": "2026-06-25T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s02",
+          "message_id": "long-dev-case-11-m05",
+          "role": "assistant",
+          "text": "Do you know the inside dimensions?",
+          "recorded_at": "2026-06-25T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s02",
+          "message_id": "long-dev-case-11-m06",
+          "role": "user",
+          "text": "No, the ruler in the photo could be the six-inch one or the twelve-inch one.",
+          "recorded_at": "2026-06-25T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s03",
+          "message_id": "long-dev-case-11-m07",
+          "role": "user",
+          "text": "The club list has two entries called \"Juniper\" and no owner initials.",
+          "recorded_at": "2026-07-12T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s03",
+          "message_id": "long-dev-case-11-m08",
+          "role": "assistant",
+          "text": "Is Juniper a glider name or a case label?",
+          "recorded_at": "2026-07-12T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s03",
+          "message_id": "long-dev-case-11-m09",
+          "role": "user",
+          "text": "That is what I am trying to work out. I do not want to reserve the wrong one.",
+          "recorded_at": "2026-07-12T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s04",
+          "message_id": "long-dev-case-11-m10",
+          "role": "user",
+          "text": "Could the red case be borrowed if the other team has not packed it?",
+          "recorded_at": "2026-07-30T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s04",
+          "message_id": "long-dev-case-11-m11",
+          "role": "assistant",
+          "text": "We would need to ask them and verify the dimensions first.",
+          "recorded_at": "2026-07-30T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-11-s04",
+          "message_id": "long-dev-case-11-m12",
+          "role": "user",
+          "text": "Yes, I am only sketching options for now; the launch date may move if the ridge is wet.",
+          "recorded_at": "2026-07-30T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "long-dev-case-12",
+      "scenario_id": "long-dev-mosslight-museum-audio-layout",
+      "split": "dev",
+      "tags": [
+        "no_memory",
+        "question",
+        "hypothetical",
+        "ambiguous_referent"
+      ],
+      "messages": [
+        {
+          "session_id": "long-dev-case-12-s01",
+          "message_id": "long-dev-case-12-m01",
+          "role": "user",
+          "text": "Mosslight Museum is testing two audio-guide layouts, a numbered route and a room-by-room route.",
+          "recorded_at": "2026-07-01T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s01",
+          "message_id": "long-dev-case-12-m02",
+          "role": "assistant",
+          "text": "Which one did the visitors try yesterday?",
+          "recorded_at": "2026-07-01T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s01",
+          "message_id": "long-dev-case-12-m03",
+          "role": "user",
+          "text": "I am not sure whether \"the second one\" means the route in the folder or the second recording.",
+          "recorded_at": "2026-07-01T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s02",
+          "message_id": "long-dev-case-12-m04",
+          "role": "user",
+          "text": "If we moved the harbor recording earlier, would that make the stairs less crowded?",
+          "recorded_at": "2026-07-19T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s02",
+          "message_id": "long-dev-case-12-m05",
+          "role": "assistant",
+          "text": "It might, but we would need visitor-flow notes.",
+          "recorded_at": "2026-07-19T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s02",
+          "message_id": "long-dev-case-12-m06",
+          "role": "user",
+          "text": "The notes mention a queue near the blue door, but not which recording was playing.",
+          "recorded_at": "2026-07-19T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s03",
+          "message_id": "long-dev-case-12-m07",
+          "role": "user",
+          "text": "Could the paper map be easier for the school group than the audio guide?",
+          "recorded_at": "2026-08-07T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s03",
+          "message_id": "long-dev-case-12-m08",
+          "role": "assistant",
+          "text": "Possibly. Did the teacher ask for a different format?",
+          "recorded_at": "2026-08-07T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s03",
+          "message_id": "long-dev-case-12-m09",
+          "role": "user",
+          "text": "She asked whether either option could work. I have not received a preference from her.",
+          "recorded_at": "2026-08-07T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s04",
+          "message_id": "long-dev-case-12-m10",
+          "role": "user",
+          "text": "The editor asked if \"that version\" should go in the trial packet.",
+          "recorded_at": "2026-08-25T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s04",
+          "message_id": "long-dev-case-12-m11",
+          "role": "assistant",
+          "text": "Can you tell which version the note refers to?",
+          "recorded_at": "2026-08-25T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "long-dev-case-12-s04",
+          "message_id": "long-dev-case-12-m12",
+          "role": "user",
+          "text": "No, it only says version two. We should ask before changing the packet.",
+          "recorded_at": "2026-08-25T09:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    }
+  ],
+  "case_metadata": {
+    "long-dev-case-01": {
+      "scenario_group": "long-dev-sg-01",
+      "template_group": "long-dev-tg-01",
+      "entity_ids": [
+        "long-dev-entity-01-person",
+        "long-dev-entity-01-setting"
+      ]
+    },
+    "long-dev-case-02": {
+      "scenario_group": "long-dev-sg-02",
+      "template_group": "long-dev-tg-02",
+      "entity_ids": [
+        "long-dev-entity-02-person",
+        "long-dev-entity-02-setting"
+      ]
+    },
+    "long-dev-case-03": {
+      "scenario_group": "long-dev-sg-03",
+      "template_group": "long-dev-tg-03",
+      "entity_ids": [
+        "long-dev-entity-03-person",
+        "long-dev-entity-03-setting"
+      ]
+    },
+    "long-dev-case-04": {
+      "scenario_group": "long-dev-sg-04",
+      "template_group": "long-dev-tg-04",
+      "entity_ids": [
+        "long-dev-entity-04-person",
+        "long-dev-entity-04-setting"
+      ]
+    },
+    "long-dev-case-05": {
+      "scenario_group": "long-dev-sg-05",
+      "template_group": "long-dev-tg-05",
+      "entity_ids": [
+        "long-dev-entity-05-person",
+        "long-dev-entity-05-setting"
+      ]
+    },
+    "long-dev-case-06": {
+      "scenario_group": "long-dev-sg-06",
+      "template_group": "long-dev-tg-06",
+      "entity_ids": [
+        "long-dev-entity-06-person",
+        "long-dev-entity-06-setting"
+      ]
+    },
+    "long-dev-case-07": {
+      "scenario_group": "long-dev-sg-07",
+      "template_group": "long-dev-tg-07",
+      "entity_ids": [
+        "long-dev-entity-07-person",
+        "long-dev-entity-07-setting"
+      ]
+    },
+    "long-dev-case-08": {
+      "scenario_group": "long-dev-sg-08",
+      "template_group": "long-dev-tg-08",
+      "entity_ids": [
+        "long-dev-entity-08-person",
+        "long-dev-entity-08-setting"
+      ]
+    },
+    "long-dev-case-09": {
+      "scenario_group": "long-dev-sg-09",
+      "template_group": "long-dev-tg-09",
+      "entity_ids": [
+        "long-dev-entity-09-person",
+        "long-dev-entity-09-setting"
+      ]
+    },
+    "long-dev-case-10": {
+      "scenario_group": "long-dev-sg-10",
+      "template_group": "long-dev-tg-10",
+      "entity_ids": [
+        "long-dev-entity-10-person",
+        "long-dev-entity-10-setting"
+      ]
+    },
+    "long-dev-case-11": {
+      "scenario_group": "long-dev-sg-11",
+      "template_group": "long-dev-tg-11",
+      "entity_ids": [
+        "long-dev-entity-11-person",
+        "long-dev-entity-11-setting"
+      ]
+    },
+    "long-dev-case-12": {
+      "scenario_group": "long-dev-sg-12",
+      "template_group": "long-dev-tg-12",
+      "entity_ids": [
+        "long-dev-entity-12-person",
+        "long-dev-entity-12-setting"
+      ]
+    }
+  }
+}

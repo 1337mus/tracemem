@@ -8,6 +8,7 @@ Paths in this index are relative to this `docs/` directory.
   architecture, measurements, and open research gates.
 - [Roadmap](roadmap.md): phase status and acceptance boundaries.
 - [Handoff](handoff.md): current work checkpoint and what to verify before resuming.
+- [Handoff archive (2026-10-15 v2)](handoff-history-2026-10-15-v2.md): byte-identical pre-compaction project history.
 - [Implementation brief](implementation-brief.md): initial scope and design notes.
 - [Phase 1 validation](validation-phase1.json) and [latest finalized validation](validation.json): machine-readable check records.
 - [Phase 2 baseline validation](validation-phase2-baseline.json): completed checks
@@ -60,6 +61,9 @@ Paths in this index are relative to this `docs/` directory.
   fixture scope and provisional labels.
 - [Longer development conversations](longitudinal-data-card.md): new fictional
   cases with distant corrections and separate semantic foils; agent labels only.
+- [Longitudinal revision v2](longitudinal-revision-v2.md): the same fictional
+  development slice with one unresolved candidate kept unlabeled; see its
+  [validation record](validation-longitudinal-v2.json).
 - [Dataset readiness report](dataset-readiness.json): assigned split and duplicate counts.
 - [Scenario curation notes](scenario-curation-notes.md) and [scenario dataset brief](scenario-dataset-brief.md):
   fixture construction records.

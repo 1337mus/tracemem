@@ -1,0 +1,24 @@
+{
+  "long-dev-case-07": [
+    {
+      "subject": "Elise Tan",
+      "predicate": "PLANS",
+      "object": "bring the narrow-field filter to Friday practice",
+      "speaker_role": "user",
+      "attribution": "third_party_report",
+      "modality": "intention",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "long-dev-case-07-s03",
+          "message_id": "long-dev-case-07-m07",
+          "char_start": 0,
+          "char_end": 69,
+          "quote": "Elise left a note saying she will bring the filter to Friday practice"
+        }
+      ]
+    }
+  ]
+}

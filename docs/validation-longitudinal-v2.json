@@ -1,0 +1,110 @@
+{
+  "kind": "longitudinal-v2-validation",
+  "updated_at_utc": "2026-10-15",
+  "scope": "Static-data revision and integrity checks; runtime code was not changed.",
+  "delivery": {
+    "slice_base_head": "20ce1eb8f6cda361ab03494e1c7e7fd1cee82817",
+    "snapshot_status": "Local pre-delivery validation snapshot; it does not state current delivery status.",
+    "delivery_state_source": ".local/active-cycle.json",
+    "verification_required": "Verify the intended SHA, signature, and exact-head CI result in the delivery record before calling the slice delivered."
+  },
+  "dataset": {
+    "revision": "v2",
+    "fixture": "examples/synthetic/longitudinal-dev-v2.json",
+    "fixture_sha256": "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+    "foils": "examples/synthetic/longitudinal-dev-v2-foils.json",
+    "foils_sha256": "4e257e21091b62a35693135020faac11a37d9aeccbea7de246d1ef0ff3f490ec",
+    "unlabeled_candidates": "examples/synthetic/longitudinal-dev-v2-unlabeled.json",
+    "unlabeled_sha256": "f2df24c71c19b86207b2ad74d9e2570b3c568021992b063a5bdee9787e57bea4",
+    "counts": {
+      "cases": 12,
+      "messages": 146,
+      "case_scoped_sessions": 49,
+      "provisional_targets": 13,
+      "foils": 12,
+      "unlabeled_candidates": 1,
+      "review_tasks": 26,
+      "new_independent_cases": 0
+    },
+    "changes": [
+      "Case long-dev-case-10 removes evidence message m06 from its second target; m07 and m09 remain.",
+      "One long-dev-case-07 candidate moves unchanged from the foil set to the unlabeled set."
+    ],
+    "cross_session_citation_count": 4,
+    "cross_session_limit": "Four targets cite evidence across multiple sessions; this does not establish four distinct reasoning requirements or independent examples.",
+    "frozen_v1": {
+      "fixture_sha256": "d75b2237e739bfd8ff72be25d234f62004b6641a48a8bd9893442d64e8bc8fda",
+      "foils_sha256": "26f65c6c80f8e1abcb4c9d7eaa1e7215dc41d114113f33f781550612d77f91be",
+      "review_responses_retained": true
+    }
+  },
+  "review_status": {
+    "v1_labels": "agent-authored and provisional",
+    "prior_v1_blind_review": {
+      "counts": {
+        "supported": 13,
+        "unsupported": 12,
+        "uncertain": 1
+      },
+      "model_family": "Luna; same family as the label-authoring model",
+      "independent_validation": false
+    },
+    "fresh_v2_reviewers": 0,
+    "human_labels": 0,
+    "gate_a": "unmet"
+  },
+  "source_checks": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "tests_attempted": 600,
+    "tests_passed": 599,
+    "tests_skipped": 1,
+    "ruff": "passed",
+    "format_files": 133,
+    "mypy_files": 32
+  },
+  "installed_checks": {
+    "v2_revision_tests": {
+      "attempted": 3,
+      "passed": 3,
+      "skipped": 0
+    },
+    "v1_fixture_tests": {
+      "attempted": 5,
+      "passed": 5,
+      "skipped": 0
+    },
+    "runtime_py_json_files": 37,
+    "source_wheel_installed_bytes_equal": true,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+    "historical_artifact_pins": 24,
+    "historical_artifacts_unchanged": true,
+    "raw_capture_receipt": ".local/longitudinal-v2-installed-captured-receipt.json",
+    "raw_capture_directory": ".local/longitudinal-v2-installed-captured/raw/"
+  },
+  "export_parity": {
+    "seed": 1729,
+    "task_counts": {
+      "total": 26,
+      "gold": 13,
+      "foil": 12,
+      "unlabeled": 1
+    },
+    "source_and_installed_byte_equal": true,
+    "blind_output": {
+      "sha256": "f20591b39319ae2d986243aa3f844b4646f9f47098f6f415c6439623a84a3cd2",
+      "bytes": 117270
+    },
+    "answer_key_output": {
+      "sha256": "88dc55032ce43879af0f1c196a9b3b5746fd83f80c9c6e3804d3a5b98cdf5ebe",
+      "bytes": 9124
+    }
+  },
+  "superseded_receipt_note": "The earlier local installed receipt's export stdout was reconstructed and then edited; its doubled-brace text is invalid as producer output and is not evidence. Use the raw-captured receipt above.",
+  "limits": {
+    "inference_launched_for_this_slice": false,
+    "human_annotation_added": false,
+    "semantic_support_or_generalization_proven": false,
+    "benchmark_or_gate_a_approval": false
+  }
+}
