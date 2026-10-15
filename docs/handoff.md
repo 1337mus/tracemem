@@ -7,6 +7,13 @@ read-only. Private data stays local.
 
 ## Current checkpoint
 
+The [README](../README.md) now explains the project in plain language, includes
+an architecture diagram, and separates working search from model experiments.
+The long reference list moved into the [documentation index](README.md).
+Both documented quickstart commands, `make demo` and `make benchmark`, passed
+locally with fictional data and default hash vectors. Exact README delivery
+and CI are in ignored `.local/active-cycle.json`; verify live.
+
 The new offline [response validator and accounting tool](qa-controls-review-accounting.md)
 regenerates the pinned 36-task bundle and validates completed templates. It
 reports reviewers separately, preserves uncertain labels and always reports
@@ -22,7 +29,10 @@ The preceding packet commit's CI failed before installed tests because its
 source export omitted `PYTHONPATH=src`. A one-line signed fix was privately
 pushed as `87f0dcd75edcedf69a8adf6b695592c85de26e31`; local source/installed
 exports matched after the fix. Preserve the failed run and authoritative
-receipts. Exact fix/final delivery CI must be checked separately.
+receipts. The fix CI38688228098 and accounting CI38688823456 succeeded. The subsequent
+results-docs CI38689584406 also passed:591/592 source tests and338/340 installed
+tests, plus lint, types, wheel build and all three packet comparisons. These
+are separate from any later README-only delivery CI.
 
 The actual 36-task packet also has a frozen key-withheld agent review and
 separate unblinded root derivative. Both report source15correct/21incorrect;
@@ -108,16 +118,18 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Verify exact final-head private delivery and hosted CI from active-cycle,
-including installed tests and all three packet byte comparisons. The controls
-review/accounting work is complete locally; do not repeat inference or add more
-wrappers around this fixture. Next research work is a bounded primary-source
-audit of LongMemEval/LoCoMo code-versus-data rights and provenance, followed by
-more distinct license-clean scenarios and independent annotation. Check the
-active rights-audit worker/artifacts before duplicating it. Dataset permissions,
-scenario adequacy and independent validation are still unresolved; Gate A is
-unmet. No model selection, training or new GPU call is authorized by these
-results. Context Kit and private inputs remain read-only.
+Verify final README-only delivery/CI from active-cycle before repeating work.
+The controls review and accounting slice is complete and privately delivered;
+do not repeat its inference or build more wrappers around the same fixture.
+A fresh rights check matched all five pinned primary text files already covered
+by `longmemeval-rights.md` and `benchmark-contracts.md`; it adds no new dataset
+permission. Retain `.local/public-dataset-rights-root-audit-v1.json` and avoid
+repeating this metadata audit. Next research priority is genuinely new,
+license-clean scenarios kept separate from existing diagnostics and benchmark
+tests, with provisional labels and an independent annotation path. Scenario
+adequacy and independent validation remain unresolved; Gate A is unmet.
+Training still needs separate approval. Context Kit and private inputs remain
+read-only; no GPU call is needed for documentation or dataset preparation.
 
 ## Background
 
