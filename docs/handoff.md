@@ -24,6 +24,15 @@ pushed as `87f0dcd75edcedf69a8adf6b695592c85de26e31`; local source/installed
 exports matched after the fix. Preserve the failed run and authoritative
 receipts. Exact fix/final delivery CI must be checked separately.
 
+The actual 36-task packet also has a frozen key-withheld agent review and
+separate unblinded root derivative. Both report source15correct/21incorrect;
+original prompt-support36/0 becomes35/1 under root. Root reviewed every
+rationale and corrected one mistaken claim that the full conditional-item
+prompt was empty. Six variant tables/72 reviewer-task rows were audited and
+the actual report replayed byte-for-byte outside the checkout. Original labels
+are preserved; no human labels exist. See [results](qa-controls-review-results.md)
+and [validation](validation-qa-controls-review-results.json).
+
 Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 remains
 synthetic diagnostics; no model is selected or trained. Gate A is unmet, with
 zero independently verified human labels.
@@ -99,15 +108,16 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Finish exact private delivery and observe final-head hosted CI, including the
-installed suite and all three packet byte comparisons. Then collect one fresh,
-reference-key-withheld agent review of the real fictional 36-task packet using
-only its bundle, blank template and rubric. Freeze the response before root
-adjudication; distinguish agent labels, root derivatives and human work.
-Validate/count the review offline and report dev separately from the empty test
-split. Do not mistake procedural fixtures for annotation or agent agreement for
-independent ground truth. Gate A needs distinct license-clean scenarios and
-independent audit before training. No new GPU call is needed.
+Verify exact final-head private delivery and hosted CI from active-cycle,
+including installed tests and all three packet byte comparisons. The controls
+review/accounting work is complete locally; do not repeat inference or add more
+wrappers around this fixture. Next research work is a bounded primary-source
+audit of LongMemEval/LoCoMo code-versus-data rights and provenance, followed by
+more distinct license-clean scenarios and independent annotation. Check the
+active rights-audit worker/artifacts before duplicating it. Dataset permissions,
+scenario adequacy and independent validation are still unresolved; Gate A is
+unmet. No model selection, training or new GPU call is authorized by these
+results. Context Kit and private inputs remain read-only.
 
 ## Background
 

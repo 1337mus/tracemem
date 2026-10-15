@@ -12,6 +12,17 @@ Ruff on 131 files and mypy on 32 runtime files; Actionlint passed. Root audited
 with no semantic annotations or new inference. See the [accounting tool](qa-controls-review-accounting.md)
 and [validation snapshot](validation-qa-controls-review-accounting.json).
 
+A fresh reference-key-withheld agent review and separate unblinded root review
+now assess the actual fictional answers. Both judge 15/36 source-correct:
+11/12 with full context, 2/12 each with support omitted or context empty. Root
+judges actual-prompt support 35/36; the agent reports 36/36 because it misread
+one full-context conditional-item prompt as empty. The original is preserved.
+Nine paraphrases are accepted beyond the frozen strict literal total of 6/36;
+this is agent judgment on correlated dev data, with zero human validation.
+The actual report reproduced byte-for-byte outside the checkout. See the
+[review results](qa-controls-review-results.md) and
+[validation](validation-qa-controls-review-results.json).
+
 The preceding literal analyzer was delivered in signed private commit
 [`edd66f7`](https://github.com/1337mus/tracemem/commit/edd66f734087e31d79a58b8ae0b13c6a26bd2b64).
 Exact [CI 38685597953](https://github.com/1337mus/tracemem/actions/runs/38685597953)

@@ -1,0 +1,86 @@
+{
+  "code_commit": "0e3c666572cd9c7b858d8ea1f0c734c3493de097",
+  "delivery": "Pre-delivery documentation snapshot; exact signed commit and hosted CI recorded in .local/active-cycle.json.",
+  "frozen_literal_report_sha256": "fd6fc6933b0c83b5905181109393965f1dd6706ae25f85fc1d6ffd0421112665",
+  "gate_a": "unmet",
+  "installed_actual_replay": {
+    "exit_code": 0,
+    "new_tests_run": false,
+    "qualification": "Reused previously verified installed runtime, copied analyzer and positive import-blocker infrastructure; actual inputs copied mode0400 and report mode0600. Source and installed copies were rechecked by root.",
+    "real_model_modules_loaded": [],
+    "receipt": ".local/qa-controls-semantic-installed-receipt.json",
+    "receipt_sha256": "ae99d0e8922338c0732895c9b565862dea2406e5d09e81674b0baed11380de3c",
+    "report_byte_equal": true,
+    "report_bytes": 54259,
+    "report_sha256": "8c6981337ca282e907cfb707fc7c960d14f5f4a767b8a5b5f1e754cb847a4054",
+    "runtime_members_verified_in_reused_workspace": 37
+  },
+  "kind": "qa-controls-agent-semantic-review-validation",
+  "limitations": [
+    "One agent stream and an unblinded root derivative are not independent ground truth or human validation.",
+    "Six correlated dev groups with no test split cannot establish generalization or calibration.",
+    "Original agent mislabeled one full-context prompt as empty; its response remains preserved.",
+    "Exact source/installed replay verifies accounting only. Actual responses/reports remain local and are required to reproduce these judgments."
+  ],
+  "model_selected": false,
+  "new_inference": false,
+  "original_agent": {
+    "experimental_conditions_blinded": false,
+    "procedure_self_attested": true,
+    "prompt_support": {
+      "supported": 36,
+      "uncertain": 0,
+      "unsupported": 0
+    },
+    "reference_key_withheld": true,
+    "response": ".local/qa-controls-agent-review-v1.json",
+    "response_sha256": "372fc6d4e7d4309b9d4025da4d7476ce828d4a56a16725b513b2d25d84fe4bb5",
+    "reviewer_kind": "agent",
+    "source_answer": {
+      "correct": 15,
+      "incorrect": 21,
+      "uncertain": 0
+    }
+  },
+  "recorded_at_utc": "2026-10-15T05:53:47.993536+00:00",
+  "root_accounting_audit": {
+    "all_prompt_contexts_exactly_reconstructed": true,
+    "cells_verified": 72,
+    "original_rationales_reviewed": 36,
+    "original_response_preserved": true,
+    "root_expectation_sha256": "be0807af67334fe232570c1f513acd92772d51d4e356c0ab2fd9cb3cca0200f1",
+    "source_report_sha256": "8c6981337ca282e907cfb707fc7c960d14f5f4a767b8a5b5f1e754cb847a4054",
+    "variant_tables_verified": 6
+  },
+  "root_derivative": {
+    "agreed_label_pairs": 35,
+    "changed_label_pairs": 1,
+    "changed_task_id": "qa_controls_task_bc09265d4221c86929dd167475209324a679809f6bdb65629a5e469e87f9edb7",
+    "independent": false,
+    "prompt_support": {
+      "supported": 35,
+      "uncertain": 0,
+      "unsupported": 1
+    },
+    "reason": "msg_s05_user_conditional_instruction explicitly names a ceramic wedge under the stated condition. The question asks the conditional item, not whether the vent was actually left open; UNKNOWN is unsupported even in the actual full prompt.",
+    "reference_blinded": false,
+    "response": ".local/qa-controls-root-review-v1.json",
+    "response_sha256": "6fb4afbc6416348469cebe9c765787b0c976de55ee770ff62137dff1f81b7e96",
+    "reviewer_kind": "agent",
+    "source_answer": {
+      "correct": 15,
+      "incorrect": 21,
+      "uncertain": 0
+    }
+  },
+  "scope": {
+    "correlated_groups": 6,
+    "human_labels": 0,
+    "questions": 12,
+    "split": "dev",
+    "tasks": 36,
+    "test": [],
+    "variants": 3
+  },
+  "training_started": false
+}

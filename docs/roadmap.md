@@ -50,6 +50,15 @@ first two totals, which is not evidence of equivalent semantic quality. There
 are still zero human labels, no held-out split, and no Gate A progress. See the
 [analysis and limits](qa-controls-answer-run-results.md).
 
+The separate key-withheld agent review reports 15/36 source-correct answers;
+root's unblinded derivative agrees on source labels and changes one
+actual-prompt-support judgment from supported to unsupported. With full source
+context, 11/12 answers are judged correct; support-omitted and empty variants
+are 2/12 each. Nine paraphrases explain the difference from the frozen literal
+6/36 source-match total. These are agent judgments, not human or held-out
+truth. Source/installed accounting replay matched byte-for-byte. See the
+[semantic review results](qa-controls-review-results.md).
+
 The six-case [development token-budget replay](qa-contrast-token-replay.md)
 now measures 72 complete-prompt packing cells from the separately measured
 399-prompt catalog. Default ceilings retain 0/1/2/5 passages. Root independently
