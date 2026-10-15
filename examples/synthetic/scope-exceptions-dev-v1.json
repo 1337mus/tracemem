@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "cases": [
+    {
+      "case_id": "scope-dev-case-01",
+      "scenario_id": "scope-dev-scenario-01",
+      "split": "dev",
+      "tags": [
+        "scoped_default",
+        "performed_exception",
+        "routine"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-01-s1",
+          "message_id": "scope-dev-case-01-m01",
+          "role": "user",
+          "text": "At the Copperleaf archive, I use the west vestibule for ordinary catalog visits.",
+          "recorded_at": "2026-03-02T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-01-s1",
+          "message_id": "scope-dev-case-01-m02",
+          "role": "assistant",
+          "text": "What route do you take with oversized map tubes?",
+          "recorded_at": "2026-03-02T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-01-s2",
+          "message_id": "scope-dev-case-01-m03",
+          "role": "user",
+          "text": "Whenever I carry an oversized map tube, I use the north loading door instead; I have taken it on every tube-carrying visit this month.",
+          "recorded_at": "2026-03-18T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-01-s2",
+          "message_id": "scope-dev-case-01-m04",
+          "role": "assistant",
+          "text": "Is the west vestibule still your normal route without a tube?",
+          "recorded_at": "2026-03-18T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-01-s2",
+          "message_id": "scope-dev-case-01-m05",
+          "role": "user",
+          "text": "Yes, for an ordinary catalog visit without the tube I still enter through the west vestibule.",
+          "recorded_at": "2026-03-18T09:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the west vestibule for ordinary catalog visits when not carrying an oversized map tube",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-01-s1",
+              "message_id": "scope-dev-case-01-m01",
+              "char_start": 27,
+              "char_end": 79,
+              "quote": "I use the west vestibule for ordinary catalog visits"
+            },
+            {
+              "session_id": "scope-dev-01-s2",
+              "message_id": "scope-dev-case-01-m05",
+              "char_start": 5,
+              "char_end": 92,
+              "quote": "for an ordinary catalog visit without the tube I still enter through the west vestibule"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the north loading door whenever carrying an oversized map tube",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-01-s2",
+              "message_id": "scope-dev-case-01-m03",
+              "char_start": 0,
+              "char_end": 76,
+              "quote": "Whenever I carry an oversized map tube, I use the north loading door instead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-02",
+      "scenario_id": "scope-dev-scenario-02",
+      "split": "dev",
+      "tags": [
+        "quoted_text",
+        "unendorsed_rule",
+        "scoped_exception"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-02-s1",
+          "message_id": "scope-dev-case-02-m01",
+          "role": "user",
+          "text": "The Fenwick Instrument Library handbook has a route rule for returned packages.",
+          "recorded_at": "2026-04-06T10:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-02-s1",
+          "message_id": "scope-dev-case-02-m02",
+          "role": "assistant",
+          "text": "Does that describe how you handle returns?",
+          "recorded_at": "2026-04-06T10:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-02-s2",
+          "message_id": "scope-dev-case-02-m03",
+          "role": "user",
+          "text": "The handbook says, “Staff use the blue intake for non-damp returns; if a parcel is damp, staff use the sealed drying bay instead.” I am quoting its text, not describing my own routine.",
+          "recorded_at": "2026-04-20T10:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-02-s2",
+          "message_id": "scope-dev-case-02-m04",
+          "role": "assistant",
+          "text": "So is that your personal route?",
+          "recorded_at": "2026-04-20T10:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-02-s2",
+          "message_id": "scope-dev-case-02-m05",
+          "role": "user",
+          "text": "No. I do not handle their intake; I only transcribed the handbook rule.",
+          "recorded_at": "2026-04-20T10:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the Fenwick Instrument Library handbook",
+          "predicate": "REPORTS",
+          "object": "staff use the blue intake for non-damp returns and the sealed drying bay for damp parcels",
+          "speaker_role": "user",
+          "attribution": "quoted_text",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-02-s2",
+              "message_id": "scope-dev-case-02-m03",
+              "char_start": 20,
+              "char_end": 129,
+              "quote": "Staff use the blue intake for non-damp returns; if a parcel is damp, staff use the sealed drying bay instead."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-03",
+      "scenario_id": "scope-dev-scenario-03",
+      "split": "dev",
+      "tags": [
+        "third_party_report",
+        "reported_default",
+        "reported_exception"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-03-s1",
+          "message_id": "scope-dev-case-03-m01",
+          "role": "user",
+          "text": "At Irongate observatory, Dena coordinates the volunteer updates.",
+          "recorded_at": "2026-05-04T11:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-03-s1",
+          "message_id": "scope-dev-case-03-m02",
+          "role": "assistant",
+          "text": "Did Dena explain which channels she uses for schedule updates?",
+          "recorded_at": "2026-05-04T11:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-03-s2",
+          "message_id": "scope-dev-case-03-m03",
+          "role": "user",
+          "text": "Dena told me she uses email for routine schedule updates except during overnight duty, when she sends an SMS instead.",
+          "recorded_at": "2026-05-21T11:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-03-s2",
+          "message_id": "scope-dev-case-03-m04",
+          "role": "assistant",
+          "text": "Have you observed one of those updates?",
+          "recorded_at": "2026-05-21T11:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-03-s2",
+          "message_id": "scope-dev-case-03-m05",
+          "role": "user",
+          "text": "No, I am repeating what Dena reported, not something I observed.",
+          "recorded_at": "2026-05-21T11:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "Dena",
+          "predicate": "REPORTS",
+          "object": "uses email for routine schedule updates outside overnight duty",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-03-s2",
+              "message_id": "scope-dev-case-03-m03",
+              "char_start": 0,
+              "char_end": 117,
+              "quote": "Dena told me she uses email for routine schedule updates except during overnight duty, when she sends an SMS instead."
+            }
+          ]
+        },
+        {
+          "subject": "Dena",
+          "predicate": "REPORTS",
+          "object": "sends an SMS for routine schedule updates during overnight duty",
+          "speaker_role": "user",
+          "attribution": "third_party_report",
+          "modality": "reported",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-03-s2",
+              "message_id": "scope-dev-case-03-m03",
+              "char_start": 0,
+              "char_end": 117,
+              "quote": "Dena told me she uses email for routine schedule updates except during overnight duty, when she sends an SMS instead."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-04",
+      "scenario_id": "scope-dev-scenario-04",
+      "split": "dev",
+      "tags": [
+        "dated_exception",
+        "temporary_scope",
+        "return_to_default"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-04-s1",
+          "message_id": "scope-dev-case-04-m01",
+          "role": "user",
+          "text": "For weekly checks at the Bracken Mill greenhouse, I use the glasshouse side door.",
+          "recorded_at": "2026-06-01T08:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-04-s1",
+          "message_id": "scope-dev-case-04-m02",
+          "role": "assistant",
+          "text": "Was that true during the roof repair?",
+          "recorded_at": "2026-06-01T08:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-04-s2",
+          "message_id": "scope-dev-case-04-m03",
+          "role": "user",
+          "text": "No. From 2026-06-12 through 2026-06-15, during the posted roof-repair closure, I used the courtyard work entrance instead.",
+          "recorded_at": "2026-06-16T08:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-04-s2",
+          "message_id": "scope-dev-case-04-m04",
+          "role": "assistant",
+          "text": "What happened after the closure?",
+          "recorded_at": "2026-06-16T08:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-04-s2",
+          "message_id": "scope-dev-case-04-m05",
+          "role": "user",
+          "text": "On 2026-06-16 I used the glasshouse side door again; the repair crew had reopened it.",
+          "recorded_at": "2026-06-16T08:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the glasshouse side door for weekly greenhouse checks outside the roof-repair closure",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-04-s1",
+              "message_id": "scope-dev-case-04-m01",
+              "char_start": 0,
+              "char_end": 81,
+              "quote": "For weekly checks at the Bracken Mill greenhouse, I use the glasshouse side door."
+            },
+            {
+              "session_id": "scope-dev-04-s2",
+              "message_id": "scope-dev-case-04-m05",
+              "char_start": 0,
+              "char_end": 51,
+              "quote": "On 2026-06-16 I used the glasshouse side door again"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "the courtyard work entrance during the roof-repair closure",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": "2026-06-12",
+          "valid_to": "2026-06-15",
+          "evidence": [
+            {
+              "session_id": "scope-dev-04-s2",
+              "message_id": "scope-dev-case-04-m03",
+              "char_start": 4,
+              "char_end": 121,
+              "quote": "From 2026-06-12 through 2026-06-15, during the posted roof-repair closure, I used the courtyard work entrance instead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-05",
+      "scenario_id": "scope-dev-scenario-05",
+      "split": "dev",
+      "tags": [
+        "revoked_plan",
+        "negative_completion",
+        "default_retained"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-05-s1",
+          "message_id": "scope-dev-case-05-m01",
+          "role": "user",
+          "text": "For my case reviews at the Larkspur hearing office, I use double-sided printouts.",
+          "recorded_at": "2026-07-07T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-05-s1",
+          "message_id": "scope-dev-case-05-m02",
+          "role": "assistant",
+          "text": "Would you consider a single-sided printout for the next docket?",
+          "recorded_at": "2026-07-07T09:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-05-s2",
+          "message_id": "scope-dev-case-05-m03",
+          "role": "user",
+          "text": "I considered a single-sided hearing printout for the next docket, but canceled the proposal before printing any copies.",
+          "recorded_at": "2026-07-22T09:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-05-s2",
+          "message_id": "scope-dev-case-05-m04",
+          "role": "assistant",
+          "text": "Did you print any copies?",
+          "recorded_at": "2026-07-22T09:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-05-s2",
+          "message_id": "scope-dev-case-05-m05",
+          "role": "user",
+          "text": "No single-sided copies were printed; I kept using double-sided printouts for case review.",
+          "recorded_at": "2026-07-22T09:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "USES",
+          "object": "double-sided printouts for case reviews at the Larkspur hearing office",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-05-s1",
+              "message_id": "scope-dev-case-05-m01",
+              "char_start": 0,
+              "char_end": 80,
+              "quote": "For my case reviews at the Larkspur hearing office, I use double-sided printouts"
+            },
+            {
+              "session_id": "scope-dev-05-s2",
+              "message_id": "scope-dev-case-05-m05",
+              "char_start": 37,
+              "char_end": 88,
+              "quote": "I kept using double-sided printouts for case review"
+            }
+          ]
+        },
+        {
+          "subject": "the user",
+          "predicate": "COMPLETED",
+          "object": "print a single-sided hearing printout for the next docket",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "completed",
+          "polarity": "negative",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-05-s2",
+              "message_id": "scope-dev-case-05-m03",
+              "char_start": 0,
+              "char_end": 118,
+              "quote": "I considered a single-sided hearing printout for the next docket, but canceled the proposal before printing any copies"
+            },
+            {
+              "session_id": "scope-dev-05-s2",
+              "message_id": "scope-dev-case-05-m05",
+              "char_start": 0,
+              "char_end": 35,
+              "quote": "No single-sided copies were printed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-06",
+      "scenario_id": "scope-dev-scenario-06",
+      "split": "dev",
+      "tags": [
+        "prerequisite",
+        "decision_boundary",
+        "no_selection"
+      ],
+      "messages": [
+        {
+          "session_id": "scope-dev-06-s1",
+          "message_id": "scope-dev-case-06-m01",
+          "role": "user",
+          "text": "The Kestrel bindery has two compatible foil presses, Aster and Lumen.",
+          "recorded_at": "2026-08-03T10:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-06-s1",
+          "message_id": "scope-dev-case-06-m02",
+          "role": "assistant",
+          "text": "Would the conservator’s approval choose one?",
+          "recorded_at": "2026-08-03T10:07:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-06-s2",
+          "message_id": "scope-dev-case-06-m03",
+          "role": "user",
+          "text": "I have decided to wait for Oren’s written approval before choosing a press. His approval only makes either press eligible; it does not select one for me.",
+          "recorded_at": "2026-08-19T10:14:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-06-s2",
+          "message_id": "scope-dev-case-06-m04",
+          "role": "assistant",
+          "text": "Have you made a selection or placed an order?",
+          "recorded_at": "2026-08-19T10:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "scope-dev-06-s2",
+          "message_id": "scope-dev-case-06-m05",
+          "role": "user",
+          "text": "No. I have not chosen or ordered either press.",
+          "recorded_at": "2026-08-19T10:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "subject": "the user",
+          "predicate": "DECIDED",
+          "object": "wait for Oren’s written approval before choosing a press",
+          "speaker_role": "user",
+          "attribution": "direct_user_statement",
+          "modality": "asserted",
+          "polarity": "positive",
+          "valid_from": null,
+          "valid_to": null,
+          "evidence": [
+            {
+              "session_id": "scope-dev-06-s2",
+              "message_id": "scope-dev-case-06-m03",
+              "char_start": 0,
+              "char_end": 74,
+              "quote": "I have decided to wait for Oren’s written approval before choosing a press"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "case_metadata": {
+    "scope-dev-case-01": {
+      "scenario_group": "scope-dev-sg-01",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-01-person",
+        "scope-dev-entity-01-setting"
+      ]
+    },
+    "scope-dev-case-02": {
+      "scenario_group": "scope-dev-sg-02",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-02-person",
+        "scope-dev-entity-02-setting"
+      ]
+    },
+    "scope-dev-case-03": {
+      "scenario_group": "scope-dev-sg-03",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-03-person",
+        "scope-dev-entity-03-setting"
+      ]
+    },
+    "scope-dev-case-04": {
+      "scenario_group": "scope-dev-sg-04",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-04-person",
+        "scope-dev-entity-04-setting"
+      ]
+    },
+    "scope-dev-case-05": {
+      "scenario_group": "scope-dev-sg-05",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-05-person",
+        "scope-dev-entity-05-setting"
+      ]
+    },
+    "scope-dev-case-06": {
+      "scenario_group": "scope-dev-sg-06",
+      "template_group": "scope-dev-tg-exception-branch",
+      "entity_ids": [
+        "scope-dev-entity-06-person",
+        "scope-dev-entity-06-setting"
+      ]
+    }
+  }
+}

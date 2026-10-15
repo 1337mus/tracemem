@@ -1,0 +1,105 @@
+{
+  "updated_at_utc": "2026-10-15T08:53:38.052782+00:00",
+  "base_head": "5c8ebcde54d4ef09740bf0a6a2c49d35262ae1a0",
+  "scope": "Static fictional dev cases for scoped defaults/exceptions; no runtime changes",
+  "tests": {
+    "source_attempted": 618,
+    "source_passed": 617,
+    "source_skipped": 1,
+    "source_focused_passed": 5,
+    "installed_focused_passed": 5,
+    "ruff_check": true,
+    "ruff_format_files": 136,
+    "mypy_source_files": 32,
+    "actionlint": true
+  },
+  "raw_local_receipts": ".local/scenario-gap-root-captures/",
+  "full_check_receipt": ".local/scenario-gap-root-captures/full-check.json",
+  "full_check_stdout_sha256": "7f890bbfbd6cd5c9d982eb975e241eb05612105d797242c861a8be2acfeb189b",
+  "full_check_stderr_sha256": "2b90aa98a39c130a072c917dd9ffbb0c8b9d49e1333db66d3bcc472c586dacbf",
+  "input_sha256": {
+    "src/tracemem/data/scenarios_v1.json": "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "src/tracemem/data/claim_challenge.json": "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67",
+    "examples/synthetic/longitudinal-dev-v2.json": "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+    "examples/synthetic/scope-exceptions-dev-v1.json": "58af765d06497afaad3c5cfbc276704b33d3a3828f63d5a6d888297c527b50dc",
+    "examples/synthetic/scope-exceptions-dev-v1-foils.json": "0bdfff504e40c360c6f2af4cfe6607f3e52acd8ba9c00b3bd25eaba9bebbf37a"
+  },
+  "replay_artifact_sha256": {
+    "report.json": "9370c4b3099f1c2d429810bf8ac6d7f2a11e59f40b1443833507d0c8d3e867f0",
+    "reviewer/blind.json": "a8e4e4c2caca772ab5d2ca22d374fe003ad2e2c3feaa6fdd18d4b1acdcd97b53",
+    "reviewer/review.html": "a972ccf9991aefc0339b61a6d6fcd24c38f35f7326ecd4300d8a32dbb577a0bf",
+    "curator/answer-key.json": "7dc379c79f37027731e05fdbdb2aba2654b7b347f1b4f4ea30d63ffcfd8d10d7"
+  },
+  "parity": {
+    "runtime_package_files_matched": 37,
+    "reused_unchanged_wheel_sha256": "8e9bcdd2fb2f756419f7ed4ddc2bb16a8c7d66c9b81bc301e4291e328170d8b0",
+    "fresh_installed_test_directory": true,
+    "source_installed_four_replay_artifacts_identical": true,
+    "new_build_required": false
+  },
+  "measured": {
+    "cases": 6,
+    "messages": 30,
+    "case_scoped_sessions": 12,
+    "provisional_targets": 10,
+    "semantic_foils": 12,
+    "blind_review_tasks": 22,
+    "exact_evidence_spans": 26,
+    "integrity_review_targets": 10,
+    "integrity_review_foils": 12,
+    "combined_cases": 90,
+    "assigned_splits": {
+      "dev": 42,
+      "diagnostic": 24,
+      "test": 24,
+      "train": 0
+    },
+    "metadata_covered": 66,
+    "metadata_missing": 24,
+    "lexical_or_declared_identifier_flags": 0
+  },
+  "semantic_audit": "docs/scope-exceptions-semantic-audit.json",
+  "semantic_audit_sha256": "16494f6011e92b8aecbc9d726c82d87eb08ea2ade7ea57fd43fb17bdf485f93f",
+  "review_status": "Unblinded root agent judgments: ten targets provisionally supported; twelve foils unsupported. Root supplied revision guidance; not independent or human truth.",
+  "tdd": "Static data/CI/docs exempt; new tests exercise existing runtime. No runtime behavior or RED cycle claimed.",
+  "preservation": {
+    "prior_pin_count": 487,
+    "preimages": ".local/scope-exceptions-preimages/",
+    "intentionally_mutable_prior_paths": [
+      ".github/workflows/ci.yml",
+      "docs/README.md",
+      "docs/handoff.md"
+    ],
+    "other_historical_pins": "Must all match in final root review"
+  },
+  "handoff": {
+    "context_inputs": "Read-only as authorized; workspace handoff maintained",
+    "ctx_doctor_exit_code": 1,
+    "ctx_doctor_stdout_sha256": "63406a9cfc1af2d59796d5eff219bcb6d2fc027b31454163542f979fcbe8e3a6",
+    "ctx_doctor_note": "Byte-identical prior unrelated findings; original context not modified."
+  },
+  "boundaries": {
+    "new_model_serving_or_gpu_calls": 0,
+    "training_started": false,
+    "private_data_uploaded": false,
+    "original_fixtures_modified": false,
+    "human_labels": 0,
+    "gate_a": "unmet"
+  },
+  "limitations": [
+    "Selective synthetic agent targets cannot establish extraction recall, human agreement or model quality.",
+    "Literal IDs and lexical checks cannot establish semantic or template independence.",
+    "Assigned test splits are bookkeeping; no held-out quality measured.",
+    "No model selected or trained and no Gate A readiness claim."
+  ],
+  "delivery": "This record describes local validation. Verify signed push and exact-head hosted CI via .local/active-cycle.json.",
+  "documentation_replay": {
+    "exact_markdown_commands_executed": true,
+    "three_packet_artifacts_identical": true,
+    "combined_audit_fields_identical": true,
+    "receipts": [
+      ".local/scenario-gap-root-captures/docs-packet.json",
+      ".local/scenario-gap-root-captures/docs-audit.json"
+    ]
+  }
+}

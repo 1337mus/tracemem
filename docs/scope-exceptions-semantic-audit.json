@@ -1,0 +1,169 @@
+{
+  "updated_at_utc": "2026-10-15T08:51:53.519462+00:00",
+  "review_class": "unblinded_accountable_root_agent_review",
+  "independent": false,
+  "human_labels": 0,
+  "fixture_sha256": "58af765d06497afaad3c5cfbc276704b33d3a3828f63d5a6d888297c527b50dc",
+  "foils_sha256": "0bdfff504e40c360c6f2af4cfe6607f3e52acd8ba9c00b3bd25eaba9bebbf37a",
+  "gate_a": "unmet",
+  "limitations": [
+    "Root knew authored target/foil membership and gave revision guidance.",
+    "Judgments are provisional support-in-conversation judgments, not real-world truth.",
+    "Selective targets do not establish extraction recall or annotation completeness.",
+    "No human or independent semantic validation and no model accuracy measured."
+  ],
+  "cases": [
+    {
+      "case_id": "scope-dev-case-01",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m01 and m05 explicitly retain west entry only for ordinary visits without the map tube."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "supported",
+          "reason": "m03 explicitly states the north-door exception whenever carrying an oversized map tube."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "Including tube-carrying visits erases the explicit exception."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "All visits extends a tube-only exception into the ordinary default."
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-02",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m03 reports both non-damp/damp handbook branches as quoted text; it does not establish observed staff practice."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "The handbook quotation is not the user's routine; m05 explicitly denies handling intake."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "The drying-bay statement belongs to the quoted handbook, not the user."
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-03",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m03 attributes email outside overnight duty to Dena's report, without claiming observation."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "supported",
+          "reason": "m03 attributes SMS for routine schedule updates during overnight duty to Dena's report."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "Dena's routine is reassigned to the user and its overnight exception is lost."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "The exception condition is reversed; SMS is reported during overnight duty."
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-04",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m01 gives the ordinary side-door routine and m05 confirms resumption after the closure; the target excludes the closure."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "supported",
+          "reason": "m03 explicitly dates courtyard entry from June 12 through June 15."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "Extending the courtyard interval to June 16 is unsupported and conflicts with m05."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "Including the closure ignores the dated courtyard exception."
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-05",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m01 gives the double-sided default and m05 explicitly says it continued."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "supported",
+          "reason": "m03 cancels before any printing; m05 confirms no single-sided copies, supporting negative completion."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "Considering a print run is not performing it; later text explicitly denies copies."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "A canceled proposal does not establish use or replacement of the double-sided default."
+        }
+      ]
+    },
+    {
+      "case_id": "scope-dev-case-06",
+      "targets": [
+        {
+          "index": 0,
+          "provisional_judgment": "supported",
+          "reason": "m03 explicitly decides to wait for written approval before choosing, without selecting either press."
+        }
+      ],
+      "foils": [
+        {
+          "index": 0,
+          "provisional_judgment": "unsupported",
+          "reason": "Eligibility does not select Aster; no choice has been made."
+        },
+        {
+          "index": 1,
+          "provisional_judgment": "unsupported",
+          "reason": "m05 explicitly denies ordering either press; approval is only a prerequisite."
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,19 @@
 # TraceMem handoff
 
 Updated 2026-10-15 UTC. Verify by: 2026-10-15. This checkpoint leads with the
-[dataset isolation audit](dataset-isolation.md), its [report](dataset-isolation-report.json),
-and [validation record](validation-dataset-isolation.json). The CLI now audits
+[scoped defaults/exceptions data card](scope-exceptions-data-card.md), its
+[source replay](scope-exceptions-report.json), [unblinded semantic audit](scope-exceptions-semantic-audit.json),
+and [validation record](validation-scope-exceptions.json). The six fictional
+cases cover branch scope, attribution, dated exceptions, canceled proposals,
+and prerequisites. Root's local `make check` passed 617 tests with one optional
+skip; source and installed focused runs each passed 5 tests. These are local
+results; verify signed delivery and exact-head hosted CI in
+`.local/active-cycle.json`. The combined audit found no lexical duplicates or
+declared cross-split identifier overlaps; semantic isolation and independence are
+not established. Gate A remains unmet.
+
+The prior [dataset isolation audit](dataset-isolation.md), its [report](dataset-isolation-report.json),
+and [validation record](validation-dataset-isolation.json) remain useful. The CLI now audits
 multiple claim fixture files together and reports declared scenario, template,
 and entity identifier reuse across splits. Its original no-argument output is
 byte-identical. Metadata is optional, with explicit missing-case coverage.
@@ -84,10 +95,10 @@ checkpoint carries the current review status above.
 
 ## Next useful work
 
-Proceed with human annotation of the full blinded longitudinal v2 packet, then
-review those labels and dataset readiness criteria separately. Rights, scenario
-adequacy, and independent validation remain open; do not infer Gate A progress
-from this agent probe or other diagnostics. The frozen cross-session retrieval
+Proceed with human review of the full longitudinal v2 packet and the scoped
+defaults/exceptions packet, then review labels and dataset readiness separately.
+Rights and scenario adequacy remain open; do not infer Gate A progress from agent
+reviews or other diagnostics. The frozen cross-session retrieval
 slice remains documented in its [data card](cross-session-test-data-card.md),
 [replay](cross-session-test-retrieval.json), and
 [validation record](validation-cross-session-test.json). Check the documentation

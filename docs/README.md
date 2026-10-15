@@ -61,6 +61,10 @@ Paths in this index are relative to this `docs/` directory.
   fixture scope and provisional labels.
 - [Longer development conversations](longitudinal-data-card.md): new fictional
   cases with distant corrections and separate semantic foils; agent labels only.
+- [Scoped defaults and exceptions](scope-exceptions-data-card.md), [replay report](scope-exceptions-report.json),
+  [semantic audit](scope-exceptions-semantic-audit.json), and
+  [validation record](validation-scope-exceptions.json): six fictional dev cases
+  for branch scope, attribution, dated exceptions, canceled proposals, and prerequisites.
 - [Longitudinal revision v2](longitudinal-revision-v2.md): the same fictional
   development slice with one unresolved candidate kept unlabeled; see its
   [validation record](validation-longitudinal-v2.json).

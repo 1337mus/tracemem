@@ -1,0 +1,254 @@
+{
+  "scope-dev-case-01": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the west vestibule for every catalog visit, including when carrying an oversized map tube",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-01-s1",
+          "message_id": "scope-dev-case-01-m01",
+          "char_start": 27,
+          "char_end": 79,
+          "quote": "I use the west vestibule for ordinary catalog visits"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the north loading door for all catalog visits",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-01-s2",
+          "message_id": "scope-dev-case-01-m03",
+          "char_start": 40,
+          "char_end": 76,
+          "quote": "I use the north loading door instead"
+        }
+      ]
+    }
+  ],
+  "scope-dev-case-02": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the blue intake for ordinary package returns",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-02-s2",
+          "message_id": "scope-dev-case-02-m03",
+          "char_start": 20,
+          "char_end": 66,
+          "quote": "Staff use the blue intake for non-damp returns"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the sealed drying bay for damp package returns",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-02-s2",
+          "message_id": "scope-dev-case-02-m03",
+          "char_start": 89,
+          "char_end": 128,
+          "quote": "staff use the sealed drying bay instead"
+        }
+      ]
+    }
+  ],
+  "scope-dev-case-03": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "uses email for routine schedule updates",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-03-s2",
+          "message_id": "scope-dev-case-03-m03",
+          "char_start": 0,
+          "char_end": 117,
+          "quote": "Dena told me she uses email for routine schedule updates except during overnight duty, when she sends an SMS instead."
+        }
+      ]
+    },
+    {
+      "subject": "Dena",
+      "predicate": "REPORTS",
+      "object": "sends an SMS for routine updates outside overnight duty",
+      "speaker_role": "user",
+      "attribution": "third_party_report",
+      "modality": "reported",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-03-s2",
+          "message_id": "scope-dev-case-03-m03",
+          "char_start": 0,
+          "char_end": 117,
+          "quote": "Dena told me she uses email for routine schedule updates except during overnight duty, when she sends an SMS instead."
+        }
+      ]
+    }
+  ],
+  "scope-dev-case-04": [
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the courtyard work entrance during the roof-repair closure",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": "2026-06-12",
+      "valid_to": "2026-06-16",
+      "evidence": [
+        {
+          "session_id": "scope-dev-04-s2",
+          "message_id": "scope-dev-case-04-m03",
+          "char_start": 4,
+          "char_end": 121,
+          "quote": "From 2026-06-12 through 2026-06-15, during the posted roof-repair closure, I used the courtyard work entrance instead"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "the glasshouse side door for weekly greenhouse checks, including during the roof-repair closure",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-04-s1",
+          "message_id": "scope-dev-case-04-m01",
+          "char_start": 50,
+          "char_end": 80,
+          "quote": "I use the glasshouse side door"
+        }
+      ]
+    }
+  ],
+  "scope-dev-case-05": [
+    {
+      "subject": "the user",
+      "predicate": "COMPLETED",
+      "object": "print a single-sided hearing printout for the next docket",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "completed",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-05-s2",
+          "message_id": "scope-dev-case-05-m03",
+          "char_start": 0,
+          "char_end": 64,
+          "quote": "I considered a single-sided hearing printout for the next docket"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "USES",
+      "object": "single-sided hearing printouts for the next docket",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-05-s2",
+          "message_id": "scope-dev-case-05-m03",
+          "char_start": 0,
+          "char_end": 64,
+          "quote": "I considered a single-sided hearing printout for the next docket"
+        }
+      ]
+    }
+  ],
+  "scope-dev-case-06": [
+    {
+      "subject": "the user",
+      "predicate": "DECIDED",
+      "object": "choose the Aster press once Oren’s approval arrives",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "asserted",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-06-s2",
+          "message_id": "scope-dev-case-06-m03",
+          "char_start": 76,
+          "char_end": 152,
+          "quote": "His approval only makes either press eligible; it does not select one for me"
+        }
+      ]
+    },
+    {
+      "subject": "the user",
+      "predicate": "COMPLETED",
+      "object": "order the Lumen press after Oren’s approval",
+      "speaker_role": "user",
+      "attribution": "direct_user_statement",
+      "modality": "completed",
+      "polarity": "positive",
+      "valid_from": null,
+      "valid_to": null,
+      "evidence": [
+        {
+          "session_id": "scope-dev-06-s2",
+          "message_id": "scope-dev-case-06-m05",
+          "char_start": 4,
+          "char_end": 45,
+          "quote": "I have not chosen or ordered either press"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "blind_tasks": 22,
+  "case_count": 6,
+  "case_scoped_session_count": 12,
+  "combined_actual_split_audit": {
+    "automatic_gate_a_approval": false,
+    "case_count": 90,
+    "comparison": {
+      "exact_duplicate": "Compare every case pair's ordered sequence of literal message roles and normalized per-message text, preserving message and role boundaries.",
+      "near_duplicate": {
+        "inclusive": true,
+        "method": "token-set Jaccard similarity",
+        "scope": "Cross-split only; exact-duplicate pairs are reported separately.",
+        "threshold": 0.8,
+        "tokenization": "Split each normalized message on whitespace and union tokens across the conversation; word order, repetitions, roles, and message boundaries are ignored."
+      },
+      "normalization": "Per-message text is Unicode NFKC normalized, casefolded, and has all Unicode whitespace collapsed to single spaces."
+    },
+    "declared_metadata": {
+      "complete": false,
+      "covered_case_count": 66,
+      "covered_case_counts_by_split": {
+        "dev": 42,
+        "diagnostic": 0,
+        "test": 24,
+        "train": 0
+      },
+      "limitations": [
+        "Declared identifiers are bookkeeping and do not prove semantic isolation.",
+        "Partial metadata cannot establish isolation for uncovered cases.",
+        "Declared identifier values may be sensitive; protect this report accordingly."
+      ],
+      "missing_case_ids": [
+        "case_001_tentative_timer",
+        "case_002_preference_not_decision",
+        "case_003_temporal_revision",
+        "case_004_assistant_decoy",
+        "case_005_quoted_invoice",
+        "case_006_third_party_report",
+        "case_007_negated_location",
+        "case_008_intention_not_completion",
+        "case_009_ambiguous_reference",
+        "case_010_unsupported_causality",
+        "case_011_resolved_temporal_conflict",
+        "case_012_multi_evidence_location",
+        "case_013_unknown_question",
+        "case_014_hypothetical",
+        "case_015_question_not_preference",
+        "case_016_explicit_preference",
+        "case_017_tool_observation",
+        "case_018_shipping_label_report",
+        "case_019_unresolved_source_conflict",
+        "case_020_explicit_decision",
+        "case_021_completed_action",
+        "case_022_abandoned_historical_plan",
+        "case_023_supported_causality",
+        "case_024_tentative_ownership"
+      ],
+      "overlaps": {
+        "entity_id": [],
+        "scenario_group": [],
+        "template_group": []
+      }
+    },
+    "diagnostic_case_count": 24,
+    "exact_duplicate_pairs": [],
+    "held_out_case_count": 24,
+    "held_out_split_names": [
+      "test"
+    ],
+    "limitations": [
+      "Pairwise candidate enumeration is O(n²) in case count.",
+      "Lexical overlap cannot prove entity or user isolation.",
+      "Lexical overlap cannot prove template isolation.",
+      "This diagnostic does not establish legal permission.",
+      "This diagnostic does not assess annotation quality or sample adequacy.",
+      "No automatic Gate A approval is granted."
+    ],
+    "near_duplicate_pairs": [],
+    "no_memory_case_count": 14,
+    "no_memory_case_counts_by_split": {
+      "dev": 6,
+      "diagnostic": 4,
+      "test": 4,
+      "train": 0
+    },
+    "no_memory_definition": "A case whose expected claim list is empty.",
+    "scenarios_across_splits": [],
+    "split_case_counts": {
+      "dev": 42,
+      "diagnostic": 24,
+      "test": 24,
+      "train": 0
+    },
+    "unique_scenario_count": 90,
+    "unique_scenario_counts_by_split": {
+      "dev": 42,
+      "diagnostic": 24,
+      "test": 24,
+      "train": 0
+    }
+  },
+  "evidence_spans_checked": 26,
+  "fixture_sha256": "58af765d06497afaad3c5cfbc276704b33d3a3828f63d5a6d888297c527b50dc",
+  "foil_count": 12,
+  "foils_sha256": "0bdfff504e40c360c6f2af4cfe6607f3e52acd8ba9c00b3bd25eaba9bebbf37a",
+  "gate_a": "unmet",
+  "human_labels": 0,
+  "integrity_statuses": {
+    "foils": {
+      "REVIEW": 12
+    },
+    "targets": {
+      "REVIEW": 10
+    }
+  },
+  "limitations": [
+    "Agent-authored selective targets and foils; not human or independent labels.",
+    "REVIEW confirms schema and citation integrity, not semantic support.",
+    "No model quality, training readiness or held-out evaluation measured.",
+    "Shared logical structures and assigned IDs do not prove semantic isolation."
+  ],
+  "message_count": 30,
+  "model_serving_calls": 0,
+  "per_case": [
+    {
+      "case_id": "scope-dev-case-01",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 2
+    },
+    {
+      "case_id": "scope-dev-case-02",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 1
+    },
+    {
+      "case_id": "scope-dev-case-03",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 2
+    },
+    {
+      "case_id": "scope-dev-case-04",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 2
+    },
+    {
+      "case_id": "scope-dev-case-05",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 2
+    },
+    {
+      "case_id": "scope-dev-case-06",
+      "foils": 2,
+      "messages": 5,
+      "sessions": 2,
+      "targets": 1
+    }
+  ],
+  "target_count": 10
+}
