@@ -7,6 +7,16 @@ read-only. Private data stays local.
 
 ## Current checkpoint
 
+The new [longer development slice](longitudinal-data-card.md) contains 12
+fictional dev cases: 146 messages over 49 sessions, 13 provisional targets and
+13 semantic foils. Five targets cite multiple sessions. Root reviewed every
+target/foil, corrected chronology, attribution and scope, and prepared a local
+26-task blind review page. All labels remain agent-only. Citation checks return
+`REVIEW` for all targets and foils; that is not semantic acceptance. See the
+[readiness report](longitudinal-readiness.json) and
+[validation](validation-longitudinal.json). No inference or training ran.
+Exact delivery, review-page path and final-head CI are in `.local/active-cycle.json`.
+
 The [README](../README.md) now explains the project in plain language, includes
 an architecture diagram, and separates working search from model experiments.
 The long reference list moved into the [documentation index](README.md).
@@ -118,16 +128,20 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Verify final README-only delivery/CI from active-cycle before repeating work.
+README-only CI38690426159 succeeded on its exact signed head: 591/592 source
+tests and 338/340 installed tests, with the remaining tests skipped. Verify the
+new longitudinal delivery/CI from active-cycle before repeating work.
 The controls review and accounting slice is complete and privately delivered;
 do not repeat its inference or build more wrappers around the same fixture.
 A fresh rights check matched all five pinned primary text files already covered
 by `longmemeval-rights.md` and `benchmark-contracts.md`; it adds no new dataset
 permission. Retain `.local/public-dataset-rights-root-audit-v1.json` and avoid
-repeating this metadata audit. Next research priority is genuinely new,
-license-clean scenarios kept separate from existing diagnostics and benchmark
-tests, with provisional labels and an independent annotation path. Scenario
-adequacy and independent validation remain unresolved; Gate A is unmet.
+repeating this metadata audit. The new longitudinal dev slice is prepared;
+do not regenerate it or count its reference self-replay as model performance.
+Next research priority is independent annotation and additional distinct,
+license-clean scenarios with source-group isolation. The existing offline page
+supports annotation; it does not create human labels. Scenario adequacy and
+independent validation remain unresolved; Gate A is unmet.
 Training still needs separate approval. Context Kit and private inputs remain
 read-only; no GPU call is needed for documentation or dataset preparation.
 

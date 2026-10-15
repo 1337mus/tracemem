@@ -58,6 +58,8 @@ Paths in this index are relative to this `docs/` directory.
 - [Multi-session comparison](experiments-scenarios.md): frozen fictional scenario comparison.
 - [Scenario data card](scenarios-data-card.md) and [annotation workflow](annotation-workflow.md):
   fixture scope and provisional labels.
+- [Longer development conversations](longitudinal-data-card.md): new fictional
+  cases with distant corrections and separate semantic foils; agent labels only.
 - [Dataset readiness report](dataset-readiness.json): assigned split and duplicate counts.
 - [Scenario curation notes](scenario-curation-notes.md) and [scenario dataset brief](scenario-dataset-brief.md):
   fixture construction records.

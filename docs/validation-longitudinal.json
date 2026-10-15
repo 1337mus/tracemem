@@ -1,0 +1,42 @@
+{
+  "final_lint_format_types_actionlint_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "fixture_sha256": "d75b2237e739bfd8ff72be25d234f62004b6641a48a8bd9893442d64e8bc8fda",
+  "foils_sha256": "26f65c6c80f8e1abcb4c9d7eaa1e7215dc41d114113f33f781550612d77f91be",
+  "full_check": {
+    "attempted": 597,
+    "exit_code": 0,
+    "fixture_sha256_at_full_run": "09b2a254f0fc5801bff8ad12ab4d29e64384e0ff9ea58d8721ae6e8203617da2",
+    "log_sha256": "ab4313f886690a1529528bb8a2f6f57f9fe2cd6a04857ee4198e9ecaf03e04a6",
+    "note": "Full check preceded single case03 atomic-label refinement; final fixture covered by focused source/installed tests and final lint/types.",
+    "passed": 596,
+    "skipped": 1
+  },
+  "gate_a": "unmet",
+  "human_labels": 0,
+  "inference_performed": false,
+  "installed_focused_tests": {
+    "attempted": 5,
+    "passed": 5,
+    "reused_wheel_runtime_only": true,
+    "runtime_members_matching_source": 37,
+    "skipped": 0
+  },
+  "root_semantic_review": "Unblinded agent inspection; all targets and foils remain provisional.",
+  "scope": "Original fictional data, fixture integrity tests and installed CI coverage; no runtime logic changes",
+  "source_focused_tests": {
+    "attempted": 5,
+    "passed": 5,
+    "skipped": 0
+  },
+  "source_installed_blind_replay": {
+    "file_sha256": "b626c125d4490d8506ba3e1eb513a7af0d6f47d25c365333ab4d252e56fa3aca",
+    "final_bytes_equal": true
+  },
+  "tdd": "Static fixtures exempt; no runtime feature logic. Initial missing-PYTHONPATH import failure preserved as setup failure, not RED.",
+  "training_started": false
+}
