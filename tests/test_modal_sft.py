@@ -39,8 +39,12 @@ class ModalSFTPayloadTests(unittest.TestCase):
             return {}
 
         helper.run_once = record_run_once  # type: ignore[attr-defined]
+        package = importlib.import_module("experiments")
         stdout = io.StringIO()
-        with patch.dict(sys.modules, {"experiments.sft_launch": helper}):
+        with (
+            patch.dict(sys.modules, {"experiments.sft_launch": helper}),
+            patch.object(package, "sft_launch", helper, create=True),
+        ):
             with contextlib.redirect_stdout(stdout):
                 exit_code = runner.main(
                     [

@@ -1,0 +1,1553 @@
+{
+  "seed": 23,
+  "split": "train",
+  "variants": 16,
+  "value_banks": {
+    "person": [
+      "Nora",
+      "Imani",
+      "Elio",
+      "Jun",
+      "Talia",
+      "Soren",
+      "Asha",
+      "Milo",
+      "Ren",
+      "Cora",
+      "Davi",
+      "Leena",
+      "Oren",
+      "Faye",
+      "Kian",
+      "Zuri"
+    ],
+    "product": [
+      "MapleNote",
+      "CoveList",
+      "LumenPad",
+      "MossBoard",
+      "PineDraft",
+      "TernTrack",
+      "SlateNest",
+      "PoppyDesk",
+      "QuietQuill",
+      "HarborLog",
+      "FableSheet",
+      "JuniperGrid",
+      "MicaMemo",
+      "OrchidPlan",
+      "CedarLoop",
+      "TidalCard"
+    ],
+    "object": [
+      "brass compass",
+      "indigo folder",
+      "wool blanket",
+      "glass carafe",
+      "copper kettle",
+      "paper lantern",
+      "linen pouch",
+      "oak tray",
+      "canvas satchel",
+      "ceramic bowl",
+      "silver clip",
+      "wooden ruler",
+      "blue umbrella",
+      "stone mug",
+      "bamboo basket",
+      "felt case"
+    ],
+    "place": [
+      "room Alder",
+      "studio Finch",
+      "shelf Juniper",
+      "closet Birch",
+      "cabinet Maple",
+      "hallway Fern",
+      "desk Cedar",
+      "porch Willow",
+      "drawer Hazel",
+      "bench Rowan",
+      "corner Iris",
+      "locker Aspen",
+      "shed Clover",
+      "rack Pecan",
+      "loft Elm",
+      "sill Olive"
+    ],
+    "date_from": [
+      "2025-03-01",
+      "2025-03-02",
+      "2025-03-03",
+      "2025-03-04",
+      "2025-03-05",
+      "2025-03-06",
+      "2025-03-07",
+      "2025-03-08",
+      "2025-03-09",
+      "2025-03-10",
+      "2025-03-11",
+      "2025-03-12",
+      "2025-03-13",
+      "2025-03-14",
+      "2025-03-15",
+      "2025-03-16"
+    ],
+    "date_to": [
+      "2025-03-03",
+      "2025-03-04",
+      "2025-03-05",
+      "2025-03-06",
+      "2025-03-07",
+      "2025-03-08",
+      "2025-03-09",
+      "2025-03-10",
+      "2025-03-11",
+      "2025-03-12",
+      "2025-03-13",
+      "2025-03-14",
+      "2025-03-15",
+      "2025-03-16",
+      "2025-03-17",
+      "2025-03-18"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "T01-committed-note-choice",
+      "tags": [
+        "preference",
+        "decision",
+        "purpose_scope"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "For quick field notes, I choose {product}; I use it when I need to search a name later."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user chooses {product} for quick field notes and uses it to search a name later.",
+          "message_ref": "u1",
+          "quote": "For quick field notes, I choose {product}; I use it when I need to search a name later.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T02-tentative-sketch-tool",
+      "tags": [
+        "preference",
+        "tentative",
+        "uncertainty"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I might test {product} for morning sketches, but I have not picked a tool yet."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user might test {product} for morning sketches and has not chosen a tool.",
+          "message_ref": "u1",
+          "quote": "I might test {product} for morning sketches, but I have not picked a tool yet.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T03-reported-coworker-preference",
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "preference"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "{person} told me that they prefer {product} for keeping field notes."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that {person} prefers {product} for field notes.",
+          "message_ref": "u1",
+          "quote": "{person} told me that they prefer {product} for keeping field notes.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T04-next-month-plan",
+      "tags": [
+        "intention",
+        "future_plan"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I plan to move my weekend checklist into {product} next month."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user plans to move their weekend checklist into {product} next month.",
+          "message_ref": "u1",
+          "quote": "I plan to move my weekend checklist into {product} next month.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T05-considered-recorder-trial",
+      "tags": [
+        "intention",
+        "uncertainty",
+        "not_decided"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I am considering trying {product} when I replace my old recorder; I have not decided."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user is considering trying {product} when replacing an old recorder and has not decided.",
+          "message_ref": "u1",
+          "quote": "I am considering trying {product} when I replace my old recorder; I have not decided.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T06-explicit-negative-work-use",
+      "tags": [
+        "negative_fact",
+        "scope"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I do not use {product} for work notes; the shared board is enough for that."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user does not use {product} for work notes.",
+          "message_ref": "u1",
+          "quote": "I do not use {product} for work notes; the shared board is enough for that.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T07-withdrawn-workshop-proposal",
+      "tags": [
+        "proposal",
+        "cancellation",
+        "negative_fact"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I suggested {product} for the workshop, then withdrew the suggestion before anyone adopted it."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user suggested {product} for a workshop and withdrew the proposal before it was adopted.",
+          "message_ref": "u1",
+          "quote": "I suggested {product} for the workshop, then withdrew the suggestion before anyone adopted it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T08-forwarded-profile-quote",
+      "tags": [
+        "quoted_document",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "quoted_document",
+          "text": "Copied profile text: “{person} uses {product} every day.”"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T09-assistant-only-profile-guess",
+      "tags": [
+        "assistant_only",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The sample profile suggests {person} prefers {product} for personal lists."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T10-hypothetical-purchase-question",
+      "tags": [
+        "hypothetical",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "If I bought a {object} for {place}, would it fit beside the window?"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T11-question-with-unresolved-referent",
+      "tags": [
+        "unresolved_coreference",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "What label would fit the {object}?"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T12-explicit-personal-ownership",
+      "tags": [
+        "ownership",
+        "location"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The {object} belongs to me, and I keep it in {place}."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user owns the {object} and keeps it in {place}.",
+          "message_ref": "u1",
+          "quote": "The {object} belongs to me, and I keep it in {place}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T13-storing-friends-property",
+      "tags": [
+        "ownership",
+        "location",
+        "third_party"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I am storing the {object} for {person}; it belongs to them, not me."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user stores the {object} for {person}, who owns it.",
+          "message_ref": "u1",
+          "quote": "I am storing the {object} for {person}; it belongs to them, not me.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T14-borrowed-not-owned",
+      "tags": [
+        "ownership",
+        "negation",
+        "attribution"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I borrowed the {object} from {person}; it is not mine."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user borrowed the {object} from {person} and does not own it.",
+          "message_ref": "u1",
+          "quote": "I borrowed the {object} from {person}; it is not mine.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T15-timing-without-causality",
+      "tags": [
+        "noncausality",
+        "chronology",
+        "uncertainty"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I moved my desk near {place} the same week the printer failed; I do not know if those events are related."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user moved a desk near {place} the week the printer failed and does not know whether the events are related.",
+          "message_ref": "u1",
+          "quote": "I moved my desk near {place} the same week the printer failed; I do not know if those events are related.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T16-explicit-purpose-for-action",
+      "tags": [
+        "causality",
+        "purpose",
+        "behavior"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I switch the lamp off early to keep the room cool while I read near {place}."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user switches the lamp off early to keep the room cool while reading near {place}.",
+          "message_ref": "u1",
+          "quote": "I switch the lamp off early to keep the room cool while I read near {place}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T17-reported-cause-from-neighbor",
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "causality"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "{person} says the spill happened because the lid on a jar beside {object} was loose."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that {person} attributes the spill to a loose lid on a jar beside {object}.",
+          "message_ref": "u1",
+          "quote": "{person} says the spill happened because the lid on a jar beside {object} was loose.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T18-explicit-date-event",
+      "tags": [
+        "completed",
+        "explicit_date",
+        "chronology"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "On {date_from}, I mailed the {object} to {person}."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user says they mailed the {object} to {person} on {date_from}.",
+          "message_ref": "u1",
+          "quote": "On {date_from}, I mailed the {object} to {person}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T19-clear-effective-interval",
+      "tags": [
+        "explicit_date",
+        "validity_interval",
+        "preference"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "From {date_from} through {date_to}, I use {product} for weekly planning."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user uses {product} for weekly planning during the stated interval.",
+          "message_ref": "u1",
+          "quote": "From {date_from} through {date_to}, I use {product} for weekly planning.",
+          "valid_from": "{date_from}",
+          "valid_to": "{date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "T20-imprecise-seasonal-event",
+      "tags": [
+        "imprecise_time",
+        "completed",
+        "unknown_bounds"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Last autumn I planted tulip bulbs near {place}, but I never wrote down the day."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user planted tulip bulbs near {place} last autumn and did not write down the day.",
+          "message_ref": "u1",
+          "quote": "Last autumn I planted tulip bulbs near {place}, but I never wrote down the day.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T21-preference-effective-from-date",
+      "tags": [
+        "explicit_date",
+        "validity_interval",
+        "preference"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Starting on {date_from}, I use {product} for my reading list."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user uses {product} for a reading list starting on {date_from}.",
+          "message_ref": "u1",
+          "quote": "Starting on {date_from}, I use {product} for my reading list.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T22-conditional-future-delivery",
+      "tags": [
+        "intention",
+        "conditional",
+        "explicit_date"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I will deliver the {object} on {date_from} if the courier confirms."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user plans to deliver the {object} on {date_from}, conditional on courier confirmation.",
+          "message_ref": "u1",
+          "quote": "I will deliver the {object} on {date_from} if the courier confirms.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T23-canceled-trip-plan",
+      "tags": [
+        "intention",
+        "cancellation",
+        "negation"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I had planned to take the {object} to {place}, but I canceled that trip and am not going."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user canceled a planned trip to {place} with the {object} and is not going.",
+          "message_ref": "u1",
+          "quote": "I had planned to take the {object} to {place}, but I canceled that trip and am not going.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T24-correction-to-final-decision",
+      "tags": [
+        "correction",
+        "chronology",
+        "intention",
+        "decision"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction: I said I might try {product}, but I have decided to use it for sketching."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user first considered trying {product} and later decided to use it for sketching.",
+          "message_ref": "u1",
+          "quote": "Correction: I said I might try {product}, but I have decided to use it for sketching.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T25-cross-session-list-change",
+      "tags": [
+        "multiple_sessions",
+        "chronology",
+        "preference_update"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Earlier, I kept my travel lists in {product}; that was my old setup."
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 2,
+          "content_kind": "conversation",
+          "text": "I no longer use it. My travel lists now go in a paper journal."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user previously kept travel lists in {product}.",
+          "message_ref": "u1",
+          "quote": "Earlier, I kept my travel lists in {product}; that was my old setup.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user no longer uses the old tool and now keeps travel lists in a paper journal.",
+          "message_ref": "u2",
+          "quote": "I no longer use it. My travel lists now go in a paper journal.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T26-cross-session-preference-reversal",
+      "tags": [
+        "multiple_sessions",
+        "chronology",
+        "preference_update"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I used to prefer {product} for recipes."
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 2,
+          "content_kind": "conversation",
+          "text": "I do not prefer it anymore; I choose a paper card now."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user previously preferred {product} for recipes.",
+          "message_ref": "u1",
+          "quote": "I used to prefer {product} for recipes.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user no longer prefers the old tool and now chooses a paper card.",
+          "message_ref": "u2",
+          "quote": "I do not prefer it anymore; I choose a paper card now.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T27-narrow-use-scope",
+      "tags": [
+        "scope",
+        "negation",
+        "preference"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I use {product} only for recipes, not for general notes."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user uses {product} for recipes only and not for general notes.",
+          "message_ref": "u1",
+          "quote": "I use {product} only for recipes, not for general notes.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T28-user-corrects-assistant-scope",
+      "tags": [
+        "assistant_decoy",
+        "correction",
+        "scope"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I use {product} to file mileage slips, and only mileage slips."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Then perhaps you also use it for receipts?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "No, I use {product} only for mileage slips; receipts stay on paper."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user uses {product} only for mileage slips and keeps receipts on paper.",
+          "message_ref": "u2",
+          "quote": "No, I use {product} only for mileage slips; receipts stay on paper.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T29-dispatchers-uncertain-report",
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "uncertainty"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The dispatcher thinks {person} may have moved the parcel to {place}."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that the dispatcher thinks {person} may have moved the parcel to {place}.",
+          "message_ref": "u1",
+          "quote": "The dispatcher thinks {person} may have moved the parcel to {place}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T30-undecided-repair-request",
+      "tags": [
+        "intention",
+        "uncertainty",
+        "not_decided"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I may ask {person} to repair the {object}, but I have not decided yet."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user may ask {person} to repair the {object} and has not decided.",
+          "message_ref": "u1",
+          "quote": "I may ask {person} to repair the {object}, but I have not decided yet.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T31-completed-replacement",
+      "tags": [
+        "completed",
+        "behavior",
+        "unknown_bounds"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yesterday, I replaced the damaged {object} with a new one."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user replaced a damaged {object} with a new one yesterday.",
+          "message_ref": "u1",
+          "quote": "Yesterday, I replaced the damaged {object} with a new one.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T32-conditional-ask",
+      "tags": [
+        "intention",
+        "conditional",
+        "scope"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I intend to ask {person} to check the {object} if they have a free afternoon."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user intends to ask {person} to check the {object}, conditional on their availability.",
+          "message_ref": "u1",
+          "quote": "I intend to ask {person} to check the {object} if they have a free afternoon.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T33-explicit-no-causal-link",
+      "tags": [
+        "noncausality",
+        "chronology",
+        "uncertainty"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I switched to {product} after the printer jam; that timing alone does not tell me whether one caused the other."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user switched to {product} after a printer jam and says the timing does not establish causation.",
+          "message_ref": "u1",
+          "quote": "I switched to {product} after the printer jam; that timing alone does not tell me whether one caused the other.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T34-owned-item-and-storage-place",
+      "tags": [
+        "ownership",
+        "location",
+        "two_claims"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The {object} is mine; I store it at {place} during repairs."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user owns the {object}.",
+          "message_ref": "u1",
+          "quote": "The {object} is mine; I store it at {place} during repairs.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user stores the {object} at {place} during repairs.",
+          "message_ref": "u1",
+          "quote": "The {object} is mine; I store it at {place} during repairs.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T35-location-with-unknown-owner",
+      "tags": [
+        "location",
+        "unknown_ownership"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I found a {object} on my shelf and do not know who owns it."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "A {object} is on the user's shelf; the user does not know who owns it.",
+          "message_ref": "u1",
+          "quote": "I found a {object} on my shelf and do not know who owns it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T36-neighbor-property-in-storage",
+      "tags": [
+        "ownership",
+        "location",
+        "third_party"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The {object} belongs to my neighbor {person}; I am keeping it at {place} until Friday."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user's neighbor {person} owns the {object}, which the user is keeping at {place} until Friday.",
+          "message_ref": "u1",
+          "quote": "The {object} belongs to my neighbor {person}; I am keeping it at {place} until Friday.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T37-sister-reported-tool-choice",
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "preference"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "My sister {person} says she prefers {product} when planning a garden."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that their sister {person} prefers {product} for garden planning.",
+          "message_ref": "u1",
+          "quote": "My sister {person} says she prefers {product} when planning a garden.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T38-unverified-repair-belief",
+      "tags": [
+        "uncertainty",
+        "belief",
+        "not_verified"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I think the {object} was repaired, but I have not tested it myself."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user believes the {object} may have been repaired but has not tested it.",
+          "message_ref": "u1",
+          "quote": "I think the {object} was repaired, but I have not tested it myself.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T39-assistant-suggestion-unadopted",
+      "tags": [
+        "assistant_decoy",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Which tool would you recommend for tracking the {object}?"
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "You could try {product}; it may be convenient for tracking."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T40-tool-result-only",
+      "tags": [
+        "tool_observation",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Can you check the delivery status for the {object}?"
+        },
+        {
+          "ref": "tool1",
+          "role": "tool",
+          "session": 1,
+          "content_kind": "tool_result",
+          "text": "Status lookup returned: {object} delivered to {place}."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T41-corrects-assumed-rental",
+      "tags": [
+        "correction",
+        "ownership",
+        "negation"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "That guess is wrong: I do not rent the {object}; {person} rents it and lent it to me."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user does not rent the {object}; {person} rents it and lent it to the user.",
+          "message_ref": "u1",
+          "quote": "That guess is wrong: I do not rent the {object}; {person} rents it and lent it to me.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T42-postponed-visit",
+      "tags": [
+        "intention",
+        "postponement",
+        "conditional",
+        "explicit_date"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I planned to visit {place} on {date_from}, but I postponed the visit until {date_to}."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user postponed a planned visit to {place} from {date_from} until {date_to}.",
+          "message_ref": "u1",
+          "quote": "I planned to visit {place} on {date_from}, but I postponed the visit until {date_to}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T43-rejected-tool-adoption",
+      "tags": [
+        "negative_fact",
+        "decision",
+        "scope"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I decided against adopting {product} for the reading group; we will keep using paper cards."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user decided not to adopt {product} for the reading group and will keep using paper cards.",
+          "message_ref": "u1",
+          "quote": "I decided against adopting {product} for the reading group; we will keep using paper cards.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "T44-explicit-end-of-use",
+      "tags": [
+        "explicit_date",
+        "validity_interval",
+        "negative_fact"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Until {date_to}, I used {product} for supply lists; I stopped using it after that date."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user used {product} for supply lists until {date_to}, then stopped.",
+          "message_ref": "u1",
+          "quote": "Until {date_to}, I used {product} for supply lists; I stopped using it after that date.",
+          "valid_from": null,
+          "valid_to": "{date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "T45-defined-season-range",
+      "tags": [
+        "explicit_date",
+        "validity_interval",
+        "behavior"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "From {date_from} to {date_to}, I water the herb pot near {place} every other morning."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user waters the herb pot near {place} every other morning during the stated interval.",
+          "message_ref": "u1",
+          "quote": "From {date_from} to {date_to}, I water the herb pot near {place} every other morning.",
+          "valid_from": "{date_from}",
+          "valid_to": "{date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "T46-question-about-unnamed-item",
+      "tags": [
+        "unresolved_coreference",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Where did I put the {object}?"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T47-question-about-unknown-choice",
+      "tags": [
+        "question",
+        "unknown_source",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Which planner did I say I canceled, was it {product}?"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "T48-hypothetical-garden-comparison",
+      "tags": [
+        "hypothetical",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "entity_slots": [
+        "speaker",
+        "subject"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would {product} be better for garden notes than a paper notebook?"
+        }
+      ],
+      "expected": []
+    }
+  ]
+}

@@ -19,7 +19,10 @@ from training.train_sft import select_training_rows
 _ROOT = Path(__file__).resolve().parents[1]
 _TRAIN_PATH = _ROOT / "datasets/sft-pilot/train.json"
 _DEV_PATH = _ROOT / "datasets/sft-pilot/eval.json"
+_QUOTE_TRAIN_PATH = _ROOT / "datasets/sft-quote-v2/train.json"
+_QUOTE_DEV_PATH = _ROOT / "datasets/sft-quote-v2/dev.json"
 _REMOTE_VOLUME_PATH = "/mnt/tracemem-sft-pilot"
+_QUOTE_REMOTE_VOLUME_PATH = "/mnt/tracemem-sft-quote-v2"
 _RUN_ID = re.compile(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\Z")
 _FIRST_DEV_VARIANT = re.compile(r"-V01\Z")
 _COMMON_PACKAGES = (
@@ -45,6 +48,7 @@ _MODULE_PATHS = (
     "src/tracemem/challenge.py",
     "src/tracemem/prompts.py",
 )
+_QUOTE_MODULE_PATHS = ("training/quote_data.py", "training/build_quote_data.py")
 
 
 def _canonical_bytes(value: object) -> bytes:
@@ -98,10 +102,24 @@ def dependency_pins(mode: str) -> tuple[str, ...]:
     raise ValueError("mode must be preflight or train")
 
 
-def build_payload(mode: str = "preflight", *, run_id: str | None = None) -> dict[str, Any]:
+def build_payload(
+    mode: str = "preflight", *, run_id: str | None = None, profile: str = "pilot"
+) -> dict[str, Any]:
     """Build a fixed, validated request without importing Modal or ML packages."""
     if mode not in {"preflight", "train"}:
         raise ValueError("mode must be preflight or train")
+    if type(profile) is not str or profile not in {"pilot", "quote-v2"}:
+        raise ValueError("profile must be pilot or quote-v2")
+    if profile == "quote-v2":
+        if mode == "train":
+            if type(run_id) is not str or _RUN_ID.fullmatch(run_id) is None:
+                raise ValueError("train mode requires a unique lowercase run-id slug")
+            remote_run_dir = f"{_QUOTE_REMOTE_VOLUME_PATH}/adapters/{run_id}"
+        else:
+            if run_id is not None:
+                raise ValueError("run-id is only valid for train mode")
+            remote_run_dir = None
+        return _build_quote_v2_payload(mode, remote_run_dir)
     if mode == "train":
         if type(run_id) is not str or _RUN_ID.fullmatch(run_id) is None:
             raise ValueError("train mode requires a unique lowercase run-id slug")
@@ -239,10 +257,114 @@ def build_payload(mode: str = "preflight", *, run_id: str | None = None) -> dict
     return job
 
 
+def _build_quote_v2_payload(mode: str, remote_run_dir: str | None) -> dict[str, Any]:
+    from training.quote_data import render_quote_prompt, validate_dataset
+
+    cases_by_split: dict[str, list[dict[str, Any]]] = {}
+    source_bytes: dict[str, bytes] = {}
+    case_ids: set[str] = set()
+    message_ids: set[str] = set()
+    conversation_contents: set[tuple[tuple[str, str, str], ...]] = set()
+    group_splits: dict[tuple[str, str], str] = {}
+
+    for split, path in (("train", _QUOTE_TRAIN_PATH), ("dev", _QUOTE_DEV_PATH)):
+        payload, raw = _read_payload(path)
+        source_bytes[split] = raw
+        cases = validate_dataset(payload, split)
+        for case in cases:
+            case_id = case["case_id"]
+            if case_id in case_ids:
+                raise ValueError(f"duplicate case_id across train and dev: {case_id}")
+            case_ids.add(case_id)
+            for kind, values in (
+                ("scenario_group", [case["scenario_group"]]),
+                ("template_group", [case["template_group"]]),
+                ("entity_id", case["entity_ids"]),
+            ):
+                for value in values:
+                    key = (kind, value)
+                    prior = group_splits.setdefault(key, split)
+                    if prior != split:
+                        raise ValueError(f"{kind} {value} appears in both train and dev")
+
+            ordered_content: list[tuple[str, str, str]] = []
+            for message in case["messages"]:
+                message_id = message["message_id"]
+                if message_id in message_ids:
+                    raise ValueError(f"duplicate global message identity: {message_id}")
+                message_ids.add(message_id)
+                normalized_text = " ".join(message["text"].split())
+                ordered_content.append((message["role"], message["content_kind"], normalized_text))
+            content_key = tuple(ordered_content)
+            if content_key in conversation_contents:
+                raise ValueError(f"duplicate conversation content: {case_id}")
+            conversation_contents.add(content_key)
+        cases_by_split[split] = cases
+
+    train_cases = cases_by_split["train"]
+    dev_cases = cases_by_split["dev"]
+    if len(train_cases) != 768 or len(dev_cases) != 24:
+        raise ValueError("quote-v2 sources must contain 768 train and 24 dev cases")
+    train_groups = Counter(case["scenario_group"] for case in train_cases)
+    dev_groups = Counter(case["scenario_group"] for case in dev_cases)
+    if len(train_groups) != 48 or set(train_groups.values()) != {16}:
+        raise ValueError("quote-v2 train source must contain 48 families with 16 variants each")
+    if len(dev_groups) != 24 or set(dev_groups.values()) != {1}:
+        raise ValueError("quote-v2 dev source must contain 24 families with one case each")
+
+    train_rows = [
+        {
+            "case_id": case["case_id"],
+            "split": "train",
+            "messages": [
+                {"role": "user", "content": render_quote_prompt(case)},
+                {
+                    "role": "assistant",
+                    "content": json.dumps(
+                        {"claims": case["expected"]},
+                        ensure_ascii=False,
+                        separators=(",", ":"),
+                        allow_nan=False,
+                    ),
+                },
+            ],
+        }
+        for case in train_cases
+    ]
+    selected_train_rows = select_training_rows(train_rows, max_rows=768, seed=17)
+    dev_prompts = [
+        {"case_id": case["case_id"], "prompt": render_quote_prompt(case)} for case in dev_cases
+    ]
+    request = {
+        "mode": mode,
+        "profile": "quote-v2",
+        "train_rows": selected_train_rows,
+        "dev_prompts": dev_prompts,
+        "remote_run_dir": remote_run_dir,
+    }
+    module_paths = (*_MODULE_PATHS, *_QUOTE_MODULE_PATHS)
+    job: dict[str, Any] = {
+        "schema_version": 1,
+        "request": request,
+        "source_sha256": {
+            name: hashlib.sha256(raw).hexdigest() for name, raw in source_bytes.items()
+        },
+        "module_sha256": {
+            relative: hashlib.sha256((_ROOT / relative).read_bytes()).hexdigest()
+            for relative in module_paths
+        },
+        "runner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "resource_options": modal_function_options(mode),
+        "dependency_pins": dependency_pins(mode),
+    }
+    job["job_sha256"] = hashlib.sha256(_canonical_bytes(job)).hexdigest()
+    return job
+
+
 def build_summary(job: dict[str, Any]) -> dict[str, Any]:
     """Return launch preparation evidence without exposing prompts or labels."""
     request = job["request"]
-    return {
+    summary = {
         "schema_version": job["schema_version"],
         "mode": request["mode"],
         "train_row_count": len(request["train_rows"]),
@@ -253,11 +375,15 @@ def build_summary(job: dict[str, Any]) -> dict[str, Any]:
         "module_sha256": job["module_sha256"],
         "remote_started": False,
     }
+    if "profile" in request:
+        summary["profile"] = request["profile"]
+    return summary
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="modal-sft")
     parser.add_argument("--mode", choices=("preflight", "train"), default="preflight")
+    parser.add_argument("--profile", choices=("pilot", "quote-v2"), default="pilot")
     parser.add_argument("--run-id", help="unique lowercase run slug required for train mode")
     parser.add_argument("--launch", action="store_true", help="run one explicitly approved call")
     parser.add_argument("--approve-job-sha256", help="exact job hash from offline preparation")
@@ -272,7 +398,7 @@ def _write_json(value: object) -> None:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        job = build_payload(args.mode, run_id=args.run_id)
+        job = build_payload(args.mode, run_id=args.run_id, profile=args.profile)
         summary = build_summary(job)
         if not args.launch:
             if args.approve_job_sha256 is not None or args.output is not None:

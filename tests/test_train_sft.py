@@ -313,6 +313,51 @@ class TrainSftTests(unittest.TestCase):
         self.assertEqual(batch["attention_mask"], [[1, 1, 1], [1, 1, 0]])
         self.assertEqual(batch["labels"], [[-100, 2, 2], [-100, 2, -100]])
 
+    def test_quote_v2_preflight_uses_its_fixed_row_and_prompt_counts(self) -> None:
+        rows = [{**_row(), "case_id": f"case-{index}"} for index in range(768)]
+        dev_prompts = [
+            {"case_id": f"dev-{index}", "prompt": "source prompt"} for index in range(24)
+        ]
+
+        report = preflight_train_rows(
+            rows,
+            FakeTokenizer(),
+            dev_prompts=dev_prompts,
+            selected_in_order=True,
+            profile="quote-v2",
+        )
+
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(report["limits"]["max_train_rows"], 768)
+        self.assertEqual(report["limits"]["max_train_steps"], 192)
+        self.assertEqual(report["train"]["selected_rows"], 768)
+        self.assertEqual(report["dev"]["prompt_count"], 24)
+        self.assertEqual(report["limits"]["dev_max_new_tokens"], 512)
+
+    def test_remote_quote_v2_preflight_accepts_only_its_fixed_profile_field(self) -> None:
+        request = {
+            "mode": "preflight",
+            "profile": "quote-v2",
+            "train_rows": [{**_row(), "case_id": f"case-{index}"} for index in range(768)],
+            "dev_prompts": [
+                {"case_id": f"dev-{index}", "prompt": "source prompt"} for index in range(24)
+            ],
+            "remote_run_dir": None,
+        }
+        with (
+            patch.dict(os.environ, {"TRACEMEM_SFT_REMOTE": "1"}),
+            patch("training.train_sft._check_dependency_versions", return_value={}),
+            patch("training.train_sft._load_pinned_tokenizer", return_value=FakeTokenizer()),
+            patch("training.train_sft._tokenizer_provenance", return_value={}),
+        ):
+            report = run_remote_request(request)
+
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(report["limits"]["profile"], "quote-v2")
+        self.assertEqual(report["limits"]["max_train_rows"], 768)
+        self.assertEqual(report["limits"]["max_train_steps"], 192)
+        self.assertEqual(report["dev"]["prompt_count"], 24)
+
 
 if __name__ == "__main__":
     unittest.main()

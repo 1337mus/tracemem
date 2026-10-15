@@ -8,8 +8,10 @@ import os
 import random
 import sys
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from importlib import metadata
 from pathlib import Path
+from types import MappingProxyType
 from typing import Any, cast
 
 MODEL_ID = "Qwen/Qwen3-4B"
@@ -47,6 +49,39 @@ _TRAIN_DEPENDENCIES = {
 }
 _DEV_MODEL_CONTEXT = 4096
 _DEV_MAX_NEW_TOKENS = 1024
+
+
+@dataclass(frozen=True)
+class SFTProfile:
+    name: str
+    train_rows: int
+    train_steps: int
+    dev_prompts: int
+    dev_max_new_tokens: int
+    train_context_tokens: int
+    dev_context_tokens: int
+
+
+_SFT_PROFILES: Mapping[str, SFTProfile] = MappingProxyType(
+    {
+        "pilot": SFTProfile(
+            "pilot",
+            MAX_TRAIN_ROWS,
+            MAX_TRAIN_STEPS,
+            8,
+            _DEV_MAX_NEW_TOKENS,
+            MAX_TRAIN_CONTEXT_TOKENS,
+            _DEV_MODEL_CONTEXT,
+        ),
+        "quote-v2": SFTProfile("quote-v2", 768, 192, 24, 512, 2048, 4096),
+    }
+)
+
+
+def resolve_sft_profile(name: str = "pilot") -> SFTProfile:
+    if type(name) is not str or name not in _SFT_PROFILES:
+        raise ValueError("profile must be pilot or quote-v2")
+    return _SFT_PROFILES[name]
 
 
 def encode_sft_example(
@@ -186,27 +221,38 @@ def preflight_train_rows(
     *,
     dev_prompts: Sequence[Mapping[str, Any]],
     max_context_tokens: int = 2048,
-    max_rows: int = 128,
+    max_rows: int | None = None,
     seed: int = 17,
     selected_in_order: bool = False,
+    profile: str = "pilot",
 ) -> dict[str, Any]:
+    config = resolve_sft_profile(profile)
     if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
         raise ValueError("training rows must be a non-empty sequence")
     if isinstance(max_context_tokens, bool) or not isinstance(max_context_tokens, int):
         raise TypeError("max_context_tokens must be a positive integer")
     if max_context_tokens < 1:
         raise ValueError("max_context_tokens must be a positive integer")
-    clean_dev_prompts = _validated_dev_prompts(dev_prompts)
+    if profile == "quote-v2" and max_context_tokens != config.train_context_tokens:
+        raise ValueError("quote-v2 training context limit is fixed")
+    if profile == "quote-v2" and seed != SEED:
+        raise ValueError("quote-v2 seed is fixed")
+    effective_max_rows = config.train_rows if max_rows is None else max_rows
+    if profile == "quote-v2" and effective_max_rows != config.train_rows:
+        raise ValueError("quote-v2 training row limit is fixed")
+    clean_dev_prompts = _validated_dev_prompts(dev_prompts, config)
 
     train_report: list[dict[str, Any]] = []
     oversized_train: list[str] = []
     selected = (
         list(rows)
         if selected_in_order
-        else select_training_rows(rows, max_rows=max_rows, seed=seed)
+        else select_training_rows(rows, max_rows=effective_max_rows, seed=seed)
     )
-    if selected_in_order and len(selected) != max_rows:
-        raise ValueError(f"preselected training rows must contain exactly {max_rows} rows")
+    if selected_in_order and len(selected) != effective_max_rows:
+        raise ValueError(
+            f"preselected training rows must contain exactly {effective_max_rows} rows"
+        )
     selected_ids: set[str] = set()
     for row in selected:
         if not isinstance(row, Mapping) or row.get("split") != "train":
@@ -243,31 +289,32 @@ def preflight_train_rows(
     oversized_dev: list[str] = []
     for case_id, prompt_text in clean_dev_prompts:
         prefix_tokens = len(_encode_user_prompt(prompt_text, tokenizer))
-        required_context = prefix_tokens + _DEV_MAX_NEW_TOKENS
-        within_limit = required_context <= _DEV_MODEL_CONTEXT
+        required_context = prefix_tokens + config.dev_max_new_tokens
+        within_limit = required_context <= config.dev_context_tokens
         if not within_limit:
             oversized_dev.append(case_id)
         dev_report.append(
             {
                 "case_id": case_id,
                 "prefix_tokens": prefix_tokens,
-                "max_new_tokens": _DEV_MAX_NEW_TOKENS,
+                "max_new_tokens": config.dev_max_new_tokens,
                 "required_context_tokens": required_context,
                 "within_context_limit": within_limit,
             }
         )
 
     rejected = bool(oversized_train or oversized_dev)
-    return {
+    limits: dict[str, Any] = {
+        "train_context_tokens": max_context_tokens,
+        "dev_context_tokens": config.dev_context_tokens,
+        "dev_max_new_tokens": config.dev_max_new_tokens,
+        "max_train_rows": effective_max_rows,
+        "seed": seed,
+        "selection_order": "input" if selected_in_order else "seeded_shuffle",
+    }
+    result: dict[str, Any] = {
         "status": "rejected_oversized" if rejected else "ready",
-        "limits": {
-            "train_context_tokens": max_context_tokens,
-            "dev_context_tokens": _DEV_MODEL_CONTEXT,
-            "dev_max_new_tokens": _DEV_MAX_NEW_TOKENS,
-            "max_train_rows": max_rows,
-            "seed": seed,
-            "selection_order": "input" if selected_in_order else "seeded_shuffle",
-        },
+        "limits": limits,
         "train": {
             "selected_rows": len(train_report),
             "selected_case_ids": [item["case_id"] for item in train_report],
@@ -282,6 +329,10 @@ def preflight_train_rows(
             "rows": dev_report,
         },
     }
+    if profile == "quote-v2":
+        limits["max_train_steps"] = config.train_steps
+        limits["profile"] = config.name
+    return result
 
 
 def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
@@ -292,10 +343,17 @@ def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
     mode = request.get("mode")
     if type(mode) is not str or mode not in {"preflight", "train"}:
         raise ValueError("mode must be preflight or train")
-    if set(request) != {"mode", "train_rows", "dev_prompts", "remote_run_dir"}:
-        raise ValueError(
-            "request must contain exactly mode, train_rows, dev_prompts, remote_run_dir"
-        )
+    request_keys = {"mode", "train_rows", "dev_prompts", "remote_run_dir"}
+    profile_name = request.get("profile", "pilot")
+    if "profile" in request:
+        if profile_name != "quote-v2":
+            raise ValueError("profile field is only valid for quote-v2")
+        expected_keys = request_keys | {"profile"}
+    else:
+        expected_keys = request_keys
+    config = resolve_sft_profile(profile_name)
+    if set(request) != expected_keys:
+        raise ValueError("request must contain exactly the fixed fields for its SFT profile")
     train_rows = request["train_rows"]
     dev_prompts = request["dev_prompts"]
     if type(train_rows) is not list or any(not isinstance(row, Mapping) for row in train_rows):
@@ -322,6 +380,7 @@ def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
             tokenizer,
             dev_prompts=dev_prompts,
             selected_in_order=True,
+            profile=config.name,
         )
         return {
             "mode": "preflight",
@@ -335,10 +394,11 @@ def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _validated_dev_prompts(
-    prompts: Sequence[Mapping[str, Any]],
+    prompts: Sequence[Mapping[str, Any]], profile: SFTProfile | None = None
 ) -> list[tuple[str, str]]:
-    if type(prompts) is not list or len(prompts) != 8:
-        raise ValueError("preflight requires exactly eight DEV prompt-only objects")
+    config = profile or resolve_sft_profile()
+    if type(prompts) is not list or len(prompts) != config.dev_prompts:
+        raise ValueError(f"preflight requires exactly {config.dev_prompts} DEV prompt-only objects")
     validated: list[tuple[str, str]] = []
     seen: set[str] = set()
     for prompt in prompts:

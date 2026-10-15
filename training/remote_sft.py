@@ -27,10 +27,16 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
 
     rows = request["train_rows"]
     dev_prompts = request["dev_prompts"]
+    profile = support.resolve_sft_profile(request.get("profile", "pilot"))
     tokenizer = support._load_pinned_tokenizer()
     tokenizer_provenance = support._tokenizer_provenance(tokenizer, versions)
     preflight = support.preflight_train_rows(
-        rows, tokenizer, dev_prompts=dev_prompts, selected_in_order=True
+        rows,
+        tokenizer,
+        dev_prompts=dev_prompts,
+        selected_in_order=True,
+        profile=profile.name,
+        max_context_tokens=profile.train_context_tokens,
     )
     response: dict[str, Any] = {
         "mode": "train",
@@ -43,14 +49,17 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     if preflight["status"] != "ready":
         return {**response, "status": preflight["status"]}
 
-    train_examples = [support.encode_sft_example(row, tokenizer) for row in rows]
+    train_examples = [
+        support.encode_sft_example(row, tokenizer, max_context_tokens=profile.train_context_tokens)
+        for row in rows
+    ]
     dev_records = [
         {
             "case_id": case_id,
             "prompt": prompt,
             "input_ids": support._encode_user_prompt(prompt, tokenizer),
         }
-        for case_id, prompt in support._validated_dev_prompts(dev_prompts)
+        for case_id, prompt in support._validated_dev_prompts(dev_prompts, profile)
     ]
     run_dir = _reserve_run_directory(Path(request["remote_run_dir"]))
     if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():
@@ -87,7 +96,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     model.eval()
     base_started = time.perf_counter()
     base_outputs = _generate_outputs(
-        model, tokenizer, dev_records, torch, input_device, support._DEV_MAX_NEW_TOKENS
+        model, tokenizer, dev_records, torch, input_device, profile.dev_max_new_tokens
     )
     torch.cuda.synchronize()
     base_seconds = time.perf_counter() - base_started
@@ -117,9 +126,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     losses: list[float] = []
     accumulated_loss = 0.0
     micro_examples = 0
-    consumed_examples = train_examples[
-        : support.MAX_TRAIN_STEPS * support.GRADIENT_ACCUMULATION_STEPS
-    ]
+    consumed_examples = train_examples[: profile.train_steps * support.GRADIENT_ACCUMULATION_STEPS]
     training_started = time.perf_counter()
     model.train()
     for example in consumed_examples:
@@ -140,12 +147,12 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
             optimizer.zero_grad(set_to_none=True)
             losses.append(accumulated_loss / support.GRADIENT_ACCUMULATION_STEPS)
             accumulated_loss = 0.0
-            if len(losses) >= support.MAX_TRAIN_STEPS:
+            if len(losses) >= profile.train_steps:
                 break
     torch.cuda.synchronize()
     training_seconds = time.perf_counter() - training_started
-    if len(losses) != support.MAX_TRAIN_STEPS:
-        raise RuntimeError(f"expected {support.MAX_TRAIN_STEPS} optimizer steps; got {len(losses)}")
+    if len(losses) != profile.train_steps:
+        raise RuntimeError(f"expected {profile.train_steps} optimizer steps; got {len(losses)}")
     final_adapter_hash = _adapter_state_hash(model, torch)
     _require_adapter_mutation(initial_adapter_hash, final_adapter_hash)
 
@@ -161,7 +168,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     model.config.use_cache = True
     tuned_started = time.perf_counter()
     tuned_outputs = _generate_outputs(
-        model, tokenizer, dev_records, torch, input_device, support._DEV_MAX_NEW_TOKENS
+        model, tokenizer, dev_records, torch, input_device, profile.dev_max_new_tokens
     )
     torch.cuda.synchronize()
     tuned_seconds = time.perf_counter() - tuned_started
@@ -175,7 +182,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
         **response,
         "status": "completed",
         "generation": {
-            "max_new_tokens": support._DEV_MAX_NEW_TOKENS,
+            "max_new_tokens": profile.dev_max_new_tokens,
             "do_sample": False,
             "base_seconds": base_seconds,
             "tuned_seconds": tuned_seconds,
@@ -185,7 +192,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
         "training": {
             "optimizer": "AdamW",
             "learning_rate": support.LEARNING_RATE,
-            "max_steps": support.MAX_TRAIN_STEPS,
+            "max_steps": profile.train_steps,
             "optimizer_steps": len(losses),
             "microbatch_size": support.MICROBATCH_SIZE,
             "gradient_accumulation_steps": support.GRADIENT_ACCUMULATION_STEPS,

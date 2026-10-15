@@ -110,6 +110,8 @@ class RemoteSftTests(unittest.TestCase):
         from training import remote_sft
 
         events: list[tuple[str, str]] = []
+        generation_calls: list[tuple[list[tuple[str, list[int]]], int]] = []
+        preflight_profiles: list[str] = []
 
         class FakeLoss:
             def detach(self) -> FakeLoss:
@@ -220,10 +222,14 @@ class RemoteSftTests(unittest.TestCase):
 
         def generate_outputs(
             model: FakeModel,
-            *_: object,
+            *args: object,
             **__: object,
         ) -> list[dict[str, str]]:
             events.append(("generate", model.label))
+            prompts = args[1]
+            generation_calls.append(
+                ([(prompt["case_id"], prompt["input_ids"]) for prompt in prompts], args[4])
+            )
             return [{"model": model.label}]
 
         torch_module = types.ModuleType("torch")
@@ -250,35 +256,41 @@ class RemoteSftTests(unittest.TestCase):
         transformers_module.BitsAndBytesConfig = lambda **kwargs: kwargs
 
         tokenizer = FakeTokenizer()
+        from training.train_sft import resolve_sft_profile
+
+        def preflight_rows(*_args: object, **kwargs: object) -> dict[str, str]:
+            preflight_profiles.append(kwargs["profile"])
+            return {"status": "ready"}
+
         support = types.SimpleNamespace(
             MODEL_ID="fake/model",
             MODEL_REVISION="pinned-revision",
+            resolve_sft_profile=resolve_sft_profile,
             _check_dependency_versions=lambda _: {"torch": "fake"},
             _TRAIN_DEPENDENCIES={},
             _load_pinned_tokenizer=lambda: tokenizer,
             _tokenizer_provenance=lambda *_: {"revision": "pinned"},
-            preflight_train_rows=lambda *_args, **_kwargs: {"status": "ready"},
-            encode_sft_example=lambda *_: {
+            preflight_train_rows=preflight_rows,
+            encode_sft_example=lambda *_args, **_kwargs: {
                 "input_ids": [1, 2],
                 "attention_mask": [1, 1],
                 "labels": [-100, 2],
             },
-            _validated_dev_prompts=lambda prompts: [
+            _validated_dev_prompts=lambda prompts, *_: [
                 (prompt["case_id"], prompt["prompt"]) for prompt in prompts
             ],
             _encode_user_prompt=lambda *_: [3, 4],
-            _DEV_MAX_NEW_TOKENS=1024,
             SEED=17,
             _LORA_TARGETS=("q_proj",),
-            MAX_TRAIN_STEPS=1,
-            GRADIENT_ACCUMULATION_STEPS=1,
+            GRADIENT_ACCUMULATION_STEPS=4,
             LEARNING_RATE=0.001,
             MICROBATCH_SIZE=1,
         )
         request = {
-            "train_rows": [{"case_id": "train-1"}],
+            "profile": "quote-v2",
+            "train_rows": [{"case_id": f"train-{index}"} for index in range(768)],
             "dev_prompts": [
-                {"case_id": f"dev-{index}", "prompt": f"prompt-{index}"} for index in range(8)
+                {"case_id": f"dev-{index}", "prompt": f"prompt-{index}"} for index in range(24)
             ],
         }
 
@@ -306,6 +318,11 @@ class RemoteSftTests(unittest.TestCase):
         self.assertLess(
             events.index(("attach_lora", "prepared")), events.index(("generate", "adapter"))
         )
+        self.assertEqual(preflight_profiles, ["quote-v2"])
+        self.assertEqual(result["training"]["optimizer_steps"], 192)
+        self.assertEqual(result["training"]["examples_consumed"], 768)
+        self.assertEqual(generation_calls[0], generation_calls[1])
+        self.assertEqual(generation_calls[0][1], 512)
 
     def test_artifact_hashes_are_sha256_and_base_weights_are_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_dir:

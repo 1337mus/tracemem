@@ -1,0 +1,799 @@
+{
+  "version": 2,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "cases": [
+    {
+      "case_id": "DEV-CASE-D01-committed-garden-ledger-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D01-committed-garden-ledger",
+      "template_group": "DEV-TEMPLATE-D01-committed-garden-ledger",
+      "entity_ids": [
+        "DEV-ENTITY-D01-committed-garden-ledger-V01-SPEAKER",
+        "DEV-ENTITY-D01-committed-garden-ledger-V01-SUBJECT"
+      ],
+      "tags": [
+        "decision",
+        "preference",
+        "scope"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0001-01",
+          "message_id": "DEV-MSG-00001",
+          "role": "user",
+          "text": "For garden schedules, I chose FjordMemo; it keeps each watering date beside the plant name.",
+          "recorded_at": "2026-01-01T00:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user chose FjordMemo for garden schedules and says it keeps each watering date beside the plant name.",
+          "message_id": "DEV-MSG-00001",
+          "quote": "For garden schedules, I chose FjordMemo; it keeps each watering date beside the plant name.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D02-possible-audio-trial-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D02-possible-audio-trial",
+      "template_group": "DEV-TEMPLATE-D02-possible-audio-trial",
+      "entity_ids": [
+        "DEV-ENTITY-D02-possible-audio-trial-V01-SPEAKER",
+        "DEV-ENTITY-D02-possible-audio-trial-V01-SUBJECT"
+      ],
+      "tags": [
+        "tentative",
+        "intention",
+        "uncertainty"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0002-01",
+          "message_id": "DEV-MSG-00002",
+          "role": "user",
+          "text": "I might try FjordMemo for recording walks, but I am still comparing options.",
+          "recorded_at": "2026-01-01T00:02:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user might try FjordMemo for recording walks and is still comparing options.",
+          "message_id": "DEV-MSG-00002",
+          "quote": "I might try FjordMemo for recording walks, but I am still comparing options.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D03-reported-neighbor-preference-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D03-reported-neighbor-preference",
+      "template_group": "DEV-TEMPLATE-D03-reported-neighbor-preference",
+      "entity_ids": [
+        "DEV-ENTITY-D03-reported-neighbor-preference-V01-SPEAKER",
+        "DEV-ENTITY-D03-reported-neighbor-preference-V01-SUBJECT"
+      ],
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0003-01",
+          "message_id": "DEV-MSG-00003",
+          "role": "user",
+          "text": "Amara told me they prefer FjordMemo for planning volunteer shifts.",
+          "recorded_at": "2026-01-01T00:03:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that Amara prefers FjordMemo for volunteer shift planning.",
+          "message_id": "DEV-MSG-00003",
+          "quote": "Amara told me they prefer FjordMemo for planning volunteer shifts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D04-tentative-repair-plan-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D04-tentative-repair-plan",
+      "template_group": "DEV-TEMPLATE-D04-tentative-repair-plan",
+      "entity_ids": [
+        "DEV-ENTITY-D04-tentative-repair-plan-V01-SPEAKER",
+        "DEV-ENTITY-D04-tentative-repair-plan-V01-SUBJECT"
+      ],
+      "tags": [
+        "intention",
+        "uncertainty",
+        "conditional"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0004-01",
+          "message_id": "DEV-MSG-00004",
+          "role": "user",
+          "text": "I may ask Amara to repair the yellow thermos if the part is still available.",
+          "recorded_at": "2026-01-01T00:04:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user may ask Amara to repair the yellow thermos, conditional on the part being available.",
+          "message_id": "DEV-MSG-00004",
+          "quote": "I may ask Amara to repair the yellow thermos if the part is still available.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D05-negative-garden-use-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D05-negative-garden-use",
+      "template_group": "DEV-TEMPLATE-D05-negative-garden-use",
+      "entity_ids": [
+        "DEV-ENTITY-D05-negative-garden-use-V01-SPEAKER",
+        "DEV-ENTITY-D05-negative-garden-use-V01-SUBJECT"
+      ],
+      "tags": [
+        "negative_fact",
+        "scope"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0005-01",
+          "message_id": "DEV-MSG-00005",
+          "role": "user",
+          "text": "I do not use FjordMemo for garden notes; I keep those in a paper log.",
+          "recorded_at": "2026-01-01T00:05:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user does not use FjordMemo for garden notes and keeps them in a paper log.",
+          "message_id": "DEV-MSG-00005",
+          "quote": "I do not use FjordMemo for garden notes; I keep those in a paper log.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D06-canceled-recipe-proposal-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D06-canceled-recipe-proposal",
+      "template_group": "DEV-TEMPLATE-D06-canceled-recipe-proposal",
+      "entity_ids": [
+        "DEV-ENTITY-D06-canceled-recipe-proposal-V01-SPEAKER",
+        "DEV-ENTITY-D06-canceled-recipe-proposal-V01-SUBJECT"
+      ],
+      "tags": [
+        "cancellation",
+        "proposal",
+        "negative_fact"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0006-01",
+          "message_id": "DEV-MSG-00006",
+          "role": "user",
+          "text": "I suggested FjordMemo for the recipe club, then canceled the idea before the group tried it.",
+          "recorded_at": "2026-01-01T00:06:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user suggested FjordMemo for the recipe club and canceled the idea before it was tried.",
+          "message_id": "DEV-MSG-00006",
+          "quote": "I suggested FjordMemo for the recipe club, then canceled the idea before the group tried it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D07-owned-travel-clock-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D07-owned-travel-clock",
+      "template_group": "DEV-TEMPLATE-D07-owned-travel-clock",
+      "entity_ids": [
+        "DEV-ENTITY-D07-owned-travel-clock-V01-SPEAKER",
+        "DEV-ENTITY-D07-owned-travel-clock-V01-SUBJECT"
+      ],
+      "tags": [
+        "ownership",
+        "location"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0007-01",
+          "message_id": "DEV-MSG-00007",
+          "role": "user",
+          "text": "The yellow thermos is mine, and I keep it in room Amber when I travel.",
+          "recorded_at": "2026-01-01T00:07:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user owns the yellow thermos and keeps it in room Amber when traveling.",
+          "message_id": "DEV-MSG-00007",
+          "quote": "The yellow thermos is mine, and I keep it in room Amber when I travel.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D08-location-not-ownership-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D08-location-not-ownership",
+      "template_group": "DEV-TEMPLATE-D08-location-not-ownership",
+      "entity_ids": [
+        "DEV-ENTITY-D08-location-not-ownership-V01-SPEAKER",
+        "DEV-ENTITY-D08-location-not-ownership-V01-SUBJECT"
+      ],
+      "tags": [
+        "location",
+        "unknown_ownership"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0008-01",
+          "message_id": "DEV-MSG-00008",
+          "role": "user",
+          "text": "There is a yellow thermos on the counter at room Amber, but I do not know whose it is.",
+          "recorded_at": "2026-01-01T00:08:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "A yellow thermos is on the counter at room Amber; its owner is unknown to the user.",
+          "message_id": "DEV-MSG-00008",
+          "quote": "There is a yellow thermos on the counter at room Amber, but I do not know whose it is.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D09-reported-repair-cause-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D09-reported-repair-cause",
+      "template_group": "DEV-TEMPLATE-D09-reported-repair-cause",
+      "entity_ids": [
+        "DEV-ENTITY-D09-reported-repair-cause-V01-SPEAKER",
+        "DEV-ENTITY-D09-reported-repair-cause-V01-SUBJECT"
+      ],
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "causality"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0009-01",
+          "message_id": "DEV-MSG-00009",
+          "role": "user",
+          "text": "Amara says the cracked yellow thermos failed because it was left in the rain.",
+          "recorded_at": "2026-01-01T00:09:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that Amara attributes the yellow thermos failure to rain exposure.",
+          "message_id": "DEV-MSG-00009",
+          "quote": "Amara says the cracked yellow thermos failed because it was left in the rain.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D10-no-causal-conclusion-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D10-no-causal-conclusion",
+      "template_group": "DEV-TEMPLATE-D10-no-causal-conclusion",
+      "entity_ids": [
+        "DEV-ENTITY-D10-no-causal-conclusion-V01-SPEAKER",
+        "DEV-ENTITY-D10-no-causal-conclusion-V01-SUBJECT"
+      ],
+      "tags": [
+        "noncausality",
+        "chronology",
+        "uncertainty"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0010-01",
+          "message_id": "DEV-MSG-00010",
+          "role": "user",
+          "text": "I put the yellow thermos by room Amber before the lights went out, but I do not know whether one event caused the other.",
+          "recorded_at": "2026-01-01T00:10:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user placed the yellow thermos by room Amber before a power outage and does not know if they are causally related.",
+          "message_id": "DEV-MSG-00010",
+          "quote": "I put the yellow thermos by room Amber before the lights went out, but I do not know whether one event caused the other.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D11-effective-tool-window-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D11-effective-tool-window",
+      "template_group": "DEV-TEMPLATE-D11-effective-tool-window",
+      "entity_ids": [
+        "DEV-ENTITY-D11-effective-tool-window-V01-SPEAKER",
+        "DEV-ENTITY-D11-effective-tool-window-V01-SUBJECT"
+      ],
+      "tags": [
+        "explicit_date",
+        "validity_interval",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0011-01",
+          "message_id": "DEV-MSG-00011",
+          "role": "user",
+          "text": "Between 2025-09-01 and 2025-10-01, I use FjordMemo for the book club schedule.",
+          "recorded_at": "2026-01-01T00:11:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user uses FjordMemo for the book club schedule during the stated interval.",
+          "message_id": "DEV-MSG-00011",
+          "quote": "Between 2025-09-01 and 2025-10-01, I use FjordMemo for the book club schedule.",
+          "valid_from": "2025-09-01",
+          "valid_to": "2025-10-01"
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D12-uncertain-seasonal-plan-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D12-uncertain-seasonal-plan",
+      "template_group": "DEV-TEMPLATE-D12-uncertain-seasonal-plan",
+      "entity_ids": [
+        "DEV-ENTITY-D12-uncertain-seasonal-plan-V01-SPEAKER",
+        "DEV-ENTITY-D12-uncertain-seasonal-plan-V01-SUBJECT"
+      ],
+      "tags": [
+        "imprecise_time",
+        "intention",
+        "unknown_bounds"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0012-01",
+          "message_id": "DEV-MSG-00012",
+          "role": "user",
+          "text": "Sometime this spring I hope to move my notes into FjordMemo, but I have no exact date.",
+          "recorded_at": "2026-01-01T00:12:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user hopes to move notes into FjordMemo sometime this spring and has no exact date.",
+          "message_id": "DEV-MSG-00012",
+          "quote": "Sometime this spring I hope to move my notes into FjordMemo, but I have no exact date.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D13-cross-session-storage-change-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D13-cross-session-storage-change",
+      "template_group": "DEV-TEMPLATE-D13-cross-session-storage-change",
+      "entity_ids": [
+        "DEV-ENTITY-D13-cross-session-storage-change-V01-SPEAKER",
+        "DEV-ENTITY-D13-cross-session-storage-change-V01-SUBJECT"
+      ],
+      "tags": [
+        "multiple_sessions",
+        "chronology",
+        "preference_update"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0013-01",
+          "message_id": "DEV-MSG-00013",
+          "role": "user",
+          "text": "Last season, I kept the yellow thermos in room Amber.",
+          "recorded_at": "2026-01-01T00:13:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "DEV-SESSION-0013-02",
+          "message_id": "DEV-MSG-00014",
+          "role": "user",
+          "text": "I moved it to the hall closet; it is no longer in room Amber.",
+          "recorded_at": "2026-01-01T00:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user previously kept the yellow thermos in room Amber.",
+          "message_id": "DEV-MSG-00013",
+          "quote": "Last season, I kept the yellow thermos in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user moved the object to a hall closet and says it is no longer in room Amber.",
+          "message_id": "DEV-MSG-00014",
+          "quote": "I moved it to the hall closet; it is no longer in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D14-correction-from-maybe-to-choice-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D14-correction-from-maybe-to-choice",
+      "template_group": "DEV-TEMPLATE-D14-correction-from-maybe-to-choice",
+      "entity_ids": [
+        "DEV-ENTITY-D14-correction-from-maybe-to-choice-V01-SPEAKER",
+        "DEV-ENTITY-D14-correction-from-maybe-to-choice-V01-SUBJECT"
+      ],
+      "tags": [
+        "correction",
+        "chronology",
+        "decision"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0014-01",
+          "message_id": "DEV-MSG-00015",
+          "role": "user",
+          "text": "I first said I might use FjordMemo; correction, I chose it for the event calendar.",
+          "recorded_at": "2026-01-01T00:15:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user changed from possibly using FjordMemo to choosing it for the event calendar.",
+          "message_id": "DEV-MSG-00015",
+          "quote": "I first said I might use FjordMemo; correction, I chose it for the event calendar.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D15-assistant-only-schedule-claim-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D15-assistant-only-schedule-claim",
+      "template_group": "DEV-TEMPLATE-D15-assistant-only-schedule-claim",
+      "entity_ids": [
+        "DEV-ENTITY-D15-assistant-only-schedule-claim-V01-SPEAKER",
+        "DEV-ENTITY-D15-assistant-only-schedule-claim-V01-SUBJECT"
+      ],
+      "tags": [
+        "assistant_only",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0015-01",
+          "message_id": "DEV-MSG-00016",
+          "role": "assistant",
+          "text": "Amara keeps a garden schedule in FjordMemo, according to this sample.",
+          "recorded_at": "2026-01-01T00:16:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "DEV-CASE-D16-forwarded-manual-instruction-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D16-forwarded-manual-instruction",
+      "template_group": "DEV-TEMPLATE-D16-forwarded-manual-instruction",
+      "entity_ids": [
+        "DEV-ENTITY-D16-forwarded-manual-instruction-V01-SPEAKER",
+        "DEV-ENTITY-D16-forwarded-manual-instruction-V01-SUBJECT"
+      ],
+      "tags": [
+        "quoted_document",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0016-01",
+          "message_id": "DEV-MSG-00017",
+          "role": "user",
+          "text": "Manual excerpt: “Store the yellow thermos at room Amber after each use.”",
+          "recorded_at": "2026-01-01T00:17:00Z",
+          "content_kind": "quoted_document"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "DEV-CASE-D17-hypothetical-shopping-question-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D17-hypothetical-shopping-question",
+      "template_group": "DEV-TEMPLATE-D17-hypothetical-shopping-question",
+      "entity_ids": [
+        "DEV-ENTITY-D17-hypothetical-shopping-question-V01-SPEAKER",
+        "DEV-ENTITY-D17-hypothetical-shopping-question-V01-SUBJECT"
+      ],
+      "tags": [
+        "hypothetical",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0017-01",
+          "message_id": "DEV-MSG-00018",
+          "role": "user",
+          "text": "If I bought a yellow thermos, would it fit in the cabinet at room Amber?",
+          "recorded_at": "2026-01-01T00:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "DEV-CASE-D18-question-about-unnamed-item-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D18-question-about-unnamed-item",
+      "template_group": "DEV-TEMPLATE-D18-question-about-unnamed-item",
+      "entity_ids": [
+        "DEV-ENTITY-D18-question-about-unnamed-item-V01-SPEAKER",
+        "DEV-ENTITY-D18-question-about-unnamed-item-V01-SUBJECT"
+      ],
+      "tags": [
+        "unresolved_coreference",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0018-01",
+          "message_id": "DEV-MSG-00019",
+          "role": "user",
+          "text": "Which item did I say belonged there?",
+          "recorded_at": "2026-01-01T00:19:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "DEV-CASE-D19-tool-only-weather-result-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D19-tool-only-weather-result",
+      "template_group": "DEV-TEMPLATE-D19-tool-only-weather-result",
+      "entity_ids": [
+        "DEV-ENTITY-D19-tool-only-weather-result-V01-SPEAKER",
+        "DEV-ENTITY-D19-tool-only-weather-result-V01-SUBJECT"
+      ],
+      "tags": [
+        "tool_observation",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0019-01",
+          "message_id": "DEV-MSG-00020",
+          "role": "user",
+          "text": "Can you check the forecast for room Amber?",
+          "recorded_at": "2026-01-01T00:20:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "DEV-SESSION-0019-01",
+          "message_id": "DEV-MSG-00021",
+          "role": "tool",
+          "text": "Forecast result for room Amber: light rain tomorrow.",
+          "recorded_at": "2026-01-01T00:21:00Z",
+          "content_kind": "tool_result"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "DEV-CASE-D20-reported-family-preference-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D20-reported-family-preference",
+      "template_group": "DEV-TEMPLATE-D20-reported-family-preference",
+      "entity_ids": [
+        "DEV-ENTITY-D20-reported-family-preference-V01-SPEAKER",
+        "DEV-ENTITY-D20-reported-family-preference-V01-SUBJECT"
+      ],
+      "tags": [
+        "third_party_report",
+        "attribution",
+        "preference"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0020-01",
+          "message_id": "DEV-MSG-00022",
+          "role": "user",
+          "text": "My cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "recorded_at": "2026-01-01T00:22:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that their cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "message_id": "DEV-MSG-00022",
+          "quote": "My cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D21-storing-someone-elses-item-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D21-storing-someone-elses-item",
+      "template_group": "DEV-TEMPLATE-D21-storing-someone-elses-item",
+      "entity_ids": [
+        "DEV-ENTITY-D21-storing-someone-elses-item-V01-SPEAKER",
+        "DEV-ENTITY-D21-storing-someone-elses-item-V01-SUBJECT"
+      ],
+      "tags": [
+        "ownership",
+        "location",
+        "third_party"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0021-01",
+          "message_id": "DEV-MSG-00023",
+          "role": "user",
+          "text": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "recorded_at": "2026-01-01T00:23:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "Amara owns the yellow thermos, which the user is keeping at room Amber while Amara moves.",
+          "message_id": "DEV-MSG-00023",
+          "quote": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D22-unverified-status-belief-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D22-unverified-status-belief",
+      "template_group": "DEV-TEMPLATE-D22-unverified-status-belief",
+      "entity_ids": [
+        "DEV-ENTITY-D22-unverified-status-belief-V01-SPEAKER",
+        "DEV-ENTITY-D22-unverified-status-belief-V01-SUBJECT"
+      ],
+      "tags": [
+        "belief",
+        "uncertainty",
+        "not_verified"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0022-01",
+          "message_id": "DEV-MSG-00024",
+          "role": "user",
+          "text": "I think the yellow thermos is fixed, although I have not tested it.",
+          "recorded_at": "2026-01-01T00:24:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user thinks the yellow thermos is fixed but has not tested it.",
+          "message_id": "DEV-MSG-00024",
+          "quote": "I think the yellow thermos is fixed, although I have not tested it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D23-completed-craft-action-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D23-completed-craft-action",
+      "template_group": "DEV-TEMPLATE-D23-completed-craft-action",
+      "entity_ids": [
+        "DEV-ENTITY-D23-completed-craft-action-V01-SPEAKER",
+        "DEV-ENTITY-D23-completed-craft-action-V01-SUBJECT"
+      ],
+      "tags": [
+        "completed",
+        "behavior",
+        "unknown_bounds"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0023-01",
+          "message_id": "DEV-MSG-00025",
+          "role": "user",
+          "text": "I replaced the torn strap on the yellow thermos with a stitched one yesterday.",
+          "recorded_at": "2026-01-01T00:25:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user replaced the torn strap on the yellow thermos yesterday.",
+          "message_id": "DEV-MSG-00025",
+          "quote": "I replaced the torn strap on the yellow thermos with a stitched one yesterday.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "DEV-CASE-D24-hypothetical-roster-tool-question-V01",
+      "split": "dev",
+      "scenario_group": "DEV-SCENARIO-D24-hypothetical-roster-tool-question",
+      "template_group": "DEV-TEMPLATE-D24-hypothetical-roster-tool-question",
+      "entity_ids": [
+        "DEV-ENTITY-D24-hypothetical-roster-tool-question-V01-SPEAKER",
+        "DEV-ENTITY-D24-hypothetical-roster-tool-question-V01-SUBJECT"
+      ],
+      "tags": [
+        "hypothetical",
+        "question",
+        "abstention",
+        "empty_target"
+      ],
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0024-01",
+          "message_id": "DEV-MSG-00026",
+          "role": "user",
+          "text": "Would FjordMemo help if I ever organized volunteer rosters?",
+          "recorded_at": "2026-01-01T00:26:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    }
+  ]
+}

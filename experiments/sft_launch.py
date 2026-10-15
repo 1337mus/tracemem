@@ -26,6 +26,8 @@ _ROOT = Path(__file__).resolve().parents[1]
 _LAUNCH_LOCK = _ROOT / ".local" / "sft-pilot-launch.lock"
 _VOLUME_NAME = "tracemem-sft-pilot"
 _VOLUME_MOUNT = "/mnt/tracemem-sft-pilot"
+_QUOTE_VOLUME_NAME = "tracemem-sft-quote-v2"
+_QUOTE_VOLUME_MOUNT = "/mnt/tracemem-sft-quote-v2"
 _REMOTE_TRAINING_DIR = Path("/root/training")
 _EXPECTED_JOB_METADATA: dict[str, Any] = {}
 _EXPECTED_JOB_SHA256 = ""
@@ -67,6 +69,9 @@ def _run_id_from_job(job: dict[str, Any]) -> str | None:
     if type(request) is not dict:
         raise ValueError("job request must be an object")
     mode = request.get("mode")
+    profile = request.get("profile", "pilot")
+    if type(profile) is not str or profile not in {"pilot", "quote-v2"}:
+        raise ValueError("training job has an unsupported profile")
     if mode == "preflight":
         if request.get("remote_run_dir") is not None:
             raise ValueError("preflight jobs must not name a remote run directory")
@@ -76,7 +81,8 @@ def _run_id_from_job(job: dict[str, Any]) -> str | None:
     remote_run_dir = request.get("remote_run_dir")
     if type(remote_run_dir) is not str:
         raise ValueError("training job must use the fixed remote run path")
-    prefix = f"{_VOLUME_MOUNT}/adapters/"
+    volume_mount = _QUOTE_VOLUME_MOUNT if profile == "quote-v2" else _VOLUME_MOUNT
+    prefix = f"{volume_mount}/adapters/"
     if not remote_run_dir.startswith(prefix):
         raise ValueError("training job must use the fixed remote run path")
     run_id = remote_run_dir[len(prefix) :]
@@ -99,7 +105,8 @@ def _validate_approved_job(job: dict[str, Any], approved_job_sha256: str) -> dic
 
     run_id = _run_id_from_job(job)
     mode = job["request"]["mode"]
-    rebuilt = modal_sft.build_payload(mode, run_id=run_id)
+    profile = job["request"].get("profile", "pilot")
+    rebuilt = modal_sft.build_payload(mode, run_id=run_id, profile=profile)
     if _canonical_bytes(job) != _canonical_bytes(rebuilt):
         raise ValueError("job differs from the current fixed SFT payload")
     return rebuilt
@@ -292,14 +299,25 @@ def _build_modal_function(job: dict[str, Any]) -> tuple[Any, Any]:
             copy=True,
         )
 
+    profile = job["request"].get("profile", "pilot")
+    if profile == "quote-v2":
+        volume_name, volume_mount, app_name = (
+            _QUOTE_VOLUME_NAME,
+            _QUOTE_VOLUME_MOUNT,
+            "tracemem-sft-quote-v2",
+        )
+    elif profile == "pilot":
+        volume_name, volume_mount, app_name = _VOLUME_NAME, _VOLUME_MOUNT, "tracemem-sft-pilot"
+    else:
+        raise ValueError("job has an unsupported profile")
     volume = (
-        modal.Volume.from_name(_VOLUME_NAME, create_if_missing=True) if mode == "train" else None
+        modal.Volume.from_name(volume_name, create_if_missing=True) if mode == "train" else None
     )
     options = dict(job["resource_options"])
     options["env"] = {"TRACEMEM_SFT_REMOTE": "1"}
     if volume is not None:
-        options["volumes"] = {_VOLUME_MOUNT: volume}
-    app = modal.App("tracemem-sft-pilot")
+        options["volumes"] = {volume_mount: volume}
+    app = modal.App(app_name)
     remote_entry = _make_remote_entry(job, volume=volume)
     function = app.function(image=image, **options)(remote_entry)
     return app, function
