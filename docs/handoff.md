@@ -1,188 +1,65 @@
 # TraceMem handoff
 
-Updated 2026-10-14. This checkpoint records the completed synthetic QA run and
-the completed CPU-only synthetic token-count measurement. Verify live GitHub
-and worker state before any operational action by 2026-10-15. No new inference
-is authorized by this handoff.
+Updated 2026-10-14. This is the latest delivery checkpoint; read
+[active-cycle.json](../.local/active-cycle.json) for freshest owner, job,
+session, receipts, and next action. Verify live state by 2026-10-15. The exact
+previous handoff, including its full narrative, receipts, and links, is archived
+in [handoff-history-2026-10-14.md](handoff-history-2026-10-14.md).
 
-## Current state
+## Delivered checkpoint
 
-Corrected-source commit `814c5ca09aa251f6d06c918adf0e621a35dd888a` is signed
-and pushed to private `1337mus/tracemem`. CI [38648259693](https://github.com/1337mus/tracemem/actions/runs/38648259693)
-passed: 447 tests in 42.572s (one optional Context Kit skip), 195 installed
-tests in 16.149s (two skips), Ruff on 96 files, and source mypy on 31 files.
-The earlier Python 3.11 image initialization failure remains documented with
-its original receipt and hashes in
-[`validation-synthetic-qa-inference.json`](validation-synthetic-qa-inference.json).
+Latest signed source commit
+[70fa402c654b0125870b73f254e8763f49a7c8f4](https://github.com/1337mus/tracemem/commit/70fa402c654b0125870b73f254e8763f49a7c8f4)
+and documentation commit
+[05fa0afbc76097042e1a5ae513b0088bbf32b4be](https://github.com/1337mus/tracemem/commit/05fa0afbc76097042e1a5ae513b0088bbf32b4be)
+were delivered privately. Source CI [38657047378](https://github.com/1337mus/tracemem/actions/runs/38657047378)
+and docs CI [38657330528](https://github.com/1337mus/tracemem/actions/runs/38657330528)
+both succeeded. Root checks: 472 tests (one skip), Ruff on 102 files, mypy
+on 32; installed focused checks: 69 tests and fictional evaluator/import
+check. Hosted CI: 472 source tests (one skip), 220 installed tests (two skips).
+The new wheel SHA-256 is
+`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`.
 
-Exactly one corrected-source Qwen3-4B call completed successfully with 72
-answers. The Modal app is stopped with zero tasks; the read-only live snapshot
-reported zero active GPU jobs. Root independently replayed all 18 analysis
-cells, all 72 literal outcomes, and token/empty/finish counts. An installed-wheel
-reproduction outside the checkout, with `PYTHONPATH` and `PYTHONHOME` unset and
-no model or network calls, reproduced the analysis byte-for-byte. The raw receipt,
-full analysis, root replay, and installed replay are preserved under `.local/`;
-their durable documentation copies and limitations are listed in
-[`synthetic-qa-qwen3-results.md`](synthetic-qa-qwen3-results.md).
+The pinned 15,388,478-byte oracle replay passed all 500-question parsing,
+normalization, evidence-tuple, scan, selected-five, and unchanged-input-file
+checks. This verifies the narrow format compatibility described in
+[the report](longmemeval-compatibility.md) and
+[validation receipt](validation-longmemeval-integer-answer.json); it does not
+establish QA or evaluator equivalence, data-use rights, or Gate A.
 
-The generic offline token-budget packing foundation is implemented and root-
-reviewed locally. The full suite, static checks, independent oracle, and an
-installed-wheel replay passed; exact evidence and limitations are recorded in
-[`validation-token-budget-packing.json`](validation-token-budget-packing.json).
-Root signed the exact reviewed source, test, documentation, and workflow change
-as commit `717ff8c986238cbbf5b133238df9ad17729bc8bb`, delivered privately with
-validation documentation at `d7bb4f8bec846295ecb2eb8a96e0e55aff20dc79`.
-CI [38650751759](https://github.com/1337mus/tracemem/actions/runs/38650751759)
-passed: 454 source tests (one skip), 202 installed tests (two skips), Ruff on
-98 files, and mypy on 32 source files. Matched-token QA has not run. A bounded
-offline prompt-count catalog is now implemented and root-reviewed in signed
-commit `2f959a8347fd4ccbb97c4db100c1d1b587746650`. Root's full check passed 460
-tests (one optional Context Kit skip), Ruff on 100 files, and mypy on 32 source
-files; the independent oracle and isolated installed-wheel replay also passed.
-Catalog source and validation docs were delivered privately at
-`403cc47edc54ae462466cec0522842dd6aceda01`. Catalog-specific
-CI [38652529551](https://github.com/1337mus/tracemem/actions/runs/38652529551)
-passed: 460 source tests (one skip), 208 installed tests (two skips), Ruff on
-100 files, and source mypy on 32 files. Exact hashes, test chronology, the
-preserved installed-harness failure, and remaining limitations are recorded in
-[`validation-token-count-catalog.json`](validation-token-count-catalog.json).
-The catalog prepares 28 synthetic prompt items from 84 subset instances and
-replays caller-supplied counts; its invented test/oracle integers are not
-measurements. A separate source-free CPU-only Modal call has now measured all
-28 complete fictional prompts with the pinned Qwen tokenizer. Root replay
-confirmed 72 historical input-token cross-checks over 16 unique prompts with
-zero mismatches, and checked 72 packing outcomes split 36/36 across
-dev and test. Details, provenance, and boundaries are in
-[`token-count-results.md`](token-count-results.md); the durable raw and split
-receipts are listed under [Durable evidence](#durable-evidence).
+## Current bounded work
 
-The count source is signed in local commit
-`efa9434052d5b927a101fc119044ec6dc5571471` and was delivered privately.
-[Source CI](https://github.com/1337mus/tracemem/actions/runs/38655447870)
-passed with 468 source tests (one skip) and 216 installed tests (two skips). Root's full check passed 468 tests with one skip in 15.848s,
-Ruff on 102 files, source mypy on 32 files, and eight installed focused tests.
-All 37 runtime files remained byte-identical. A real Modal serialization
-roundtrip and isolated-body fake-tokenizer test passed without a remote call.
-The one actual tokenizer count call used CPU only and no GPU, model weights,
-generation, inference, or QA calls. App `ap-NiLyZ3rdVPfd9Nx4kkn3Eb` is stopped
-with zero tasks.
+Phase 0/1 is complete; Gate A is unmet, with zero human labels, no selected
+model, and no training. The frozen first-five oracle retrieval diagnostic is
+complete: BM25/hash/hybrid each recovered 0.80 macro explicit-label recall at
+cutoff 5, with all labels found for 3/5 questions. This is five oracle questions,
+not QA or an official score. Root independently reconstructed IDs, revisions,
+labels, citations and metrics. See [results](longmemeval-oracle-retrieval-results.md)
+and [validation](validation-oracle-retrieval.json). No model call occurred.
+The runner wrote a final passed receipt; the outer memory-measurement wrapper
+exited 1 on a denied macOS sysctl, so RSS is unavailable. Do not rerun it.
 
-The raw measurement receipt and its separately generated dev/test packing
-reports are durable. Before any source push, separately verify that the GitHub
-repository is still PRIVATE. The measured run checked only the reviewed
-fictional payload; it did not perform QA scoring or inference. The generic
-packer still accepts caller-supplied, unattested count flags. Its split report
-metadata does not cryptographically attest those inputs; the separately
-reviewed measurement receipt supplies the tokenizer provenance. Do not load
-model weights, run new QA inference, or train.
+Next: prepare a new development-only fictional retrieval/QA fixture where modes
+and context budgets retain different evidence. Freeze its protocol before any
+inference; do not tune against prior test cases. No worker or GPU call remains
+active at this checkpoint; verify live state before continuing.
 
-Phase 0/1 remain complete; see [`roadmap.md`](roadmap.md) and
-[`context-kit-inventory.md`](context-kit-inventory.md). Context Kit at
-`/Users/raj/Projects/ctxkit`, original conversations, and `~/.llm-context` remain
-read-only. Keep model weights, tokenizers, and inference off this Mac. Reviewed
-code, docs, and fictional fixtures may be signed and pushed only to private
-`1337mus/tracemem`; assert the repository is still PRIVATE immediately before
-each push. No public publication, private-data upload, or training is authorized.
+Before continuing, read `.local/active-cycle.json` and verify live ownership,
+jobs, sessions, and next action; do not duplicate a remote job. Modal work is
+limited to exact reviewed, bounded, synthetic-only single jobs; none is needed
+for this slice. Original sources, Context Kit, and `~/.llm-context` stay
+read-only. Keep private data and IDs local. Do not use local models or
+tokenizers, train, or publish. Before each signed push, verify repository
+owner, origin, and PRIVATE status.
 
-## Next bounded work
+## Durable references
 
-The root replay now passes the narrow format check against the pinned oracle
-object: all 500 questions parsed, 468 string answers remained unchanged, 32
-integer answers were normalized to canonical decimal strings, and all 500
-question/evidence tuples matched a transient string-normalized clone. The whole
-scanner returned 500 with no retained questions; the first-five selected scan
-matched the bytes parser. The input hash, size, mode, and mtime were unchanged.
-The 3.160915-second observation and 226,820,096-byte process peak include the
-JSON clone and two scanner passes; they are not a parser-latency or scale
-guarantee. See the [compatibility report](longmemeval-compatibility.md).
-
-Root's full `make check` passed 472 tests (one skip) in 15.085 seconds, Ruff on
-102 files, and mypy on 32 files. The package build and smoke test passed with a
-new wheel whose SHA256 is
-`0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60`; all 37
-runtime members matched the approved manifest. Installed validation passed 69
-tests plus the fictional evaluator/import check; the adapter imported from
-site-packages with reviewed SHA256
-`dc292e7f3eeb0eeb4ee253f7227c92c3b36eb8ea2e85ff2e14a75dd2d2b8551e`. The
-source change is signed and pushed after exact personal owner, origin, and
-PRIVATE verification: [commit
-70fa402c654b0125870b73f254e8763f49a7c8f4](https://github.com/1337mus/tracemem/commit/70fa402c654b0125870b73f254e8763f49a7c8f4).
-[Source CI](https://github.com/1337mus/tracemem/actions/runs/38657047378) passed:
-472 source tests (one skip) and 220 installed tests (two skips). The source
-watcher finished with exit 0. Documentation delivery and its CI are tracked in
-`.local/active-cycle.json`. No active GPU or Modal job was found in the personal
-workspace inventory; verify live state before work.
-
-The next bounded step is an offline retrieval diagnostic using the same frozen
-first-five source-order selection, fixed cutoffs 1, 3, and 5, and BM25, hash, and
-hybrid retrieval. Do not tune the setup or make model calls; keep real question
-IDs and result rows local. This does not establish QA or evaluator equivalence,
-data-use rights, or Gate A. Read `.local/active-cycle.json` for current ownership
-and exact receipts before continuing, and do not duplicate any remote job.
-
-## Token-budget packing checkpoint
-
-`tracemem.token_budget.pack_context_by_tokens` now packs whole ranked
-citation/evidence lines using a caller-supplied counter for the complete final
-prompt. It measures the empty prompt and each complete proposed context, skips
-over-budget hits while trying later hits, and returns the exact selected hits.
-The packer itself has no tokenizer integration and does not establish actual
-model token usage. A separate reviewed receipt now supplies measured counts
-for the fixed synthetic fixture; see the [token-count results](token-count-results.md).
-The packer's count fields remain caller-supplied and are not attested by the
-generic packer.
-
-The packing implementation was validated offline. Private source text stayed
-local; the remote count used authored fictional prompts only. Matched-token QA
-has not run, and this checkpoint does not authorize new inference.
-
-## Result boundary
-
-All 18 cells report literal agreement 1/4 overall, 0/3 for answerable questions,
-and 1/1 for unknown questions. Every zero-context cell returns `UNKNOWN` for
-all four questions. All 72 outputs ended in EOS; none were empty, length-stopped,
-truncated, or hit the generation limit. The 18,078 input tokens range from 78
-to 384; outputs used 636 generated tokens including EOS. GPU compute took
-54.679459s, model loading 76.35161s, remote execution 137.175618s, and peak
-allocated GPU memory was 8,822,848,512 bytes.
-Cleanup inventory `.local/synthetic-qa-python312-cleanup.json` (checked at
-`2026-10-14T22:39:23.111435Z`) records both apps stopped with zero tasks and
-zero active GPU jobs.
-
-Root replay found that each question's nonzero rendered context was identical
-across retrieval modes and 512/2048-byte ceilings. This run cannot compare
-retrieval modes or context capacity. Literal matching does not normalize
-punctuation or semantic equivalence; observed differences include `teal` vs
-`Teal.`, `bassoon` vs a full-sentence answer, and `No` vs `UNKNOWN`. Do not
-rescore, claim semantic accuracy, salvage test performance, or call this
-training-ready. References are provisional agent-authored; Gate A and
-independent human labels remain unmet. Byte ceilings are UTF-8 bytes, not
-tokenizer-matched budgets. There is no pooled score or model ranking.
-
-## Durable evidence
-
-- Raw answer receipt copy: `examples/synthetic/qwen3-4b-qa-diagnostic-remote.json`
-  (SHA256 `1da725c57bf858a6cf205bb300122616904520ad2966ff212f84605ca25d0738`).
-- Full analyzer output: `docs/synthetic-qa-qwen3-analysis.json` (SHA256
-  `0b3932af0f140f16fd98e7d01d60f94072162c01bba312173f32a6c4886af89f`).
-- Split artifacts: `docs/synthetic-qa-qwen3-dev.json` and
-  `docs/synthetic-qa-qwen3-test.json`; each contains only its split's nine
-  cells and 36 outcomes.
-- Analysis procedure and separate results: `docs/synthetic-qa-analysis.md` and
-  `docs/synthetic-qa-qwen3-results.md`.
-- Measured token-count report: [`token-count-results.md`](token-count-results.md).
-- Raw tokenizer receipt: [`examples/synthetic/qwen3-4b-token-count-remote.json`](../examples/synthetic/qwen3-4b-token-count-remote.json)
-  (SHA256 `5f4b8cd5c5215b8a82c4cccd610f57e32bcedc20586379a10f73611d0124a0f8`).
-- Split packing reports: [`token-count-dev.json`](token-count-dev.json) (SHA256
-  `42f28d9127c1ed0d815dff48395d5adb2499e79db303d3d7b55180e8e93f8e20`) and
-  [`token-count-test.json`](token-count-test.json) (SHA256
-  `36377991c30df8e0183e29334be3fd1671584874b6466b7668d4dc92de44a412`).
-- Measurement and replay validation: [`validation-modal-token-count.json`](validation-modal-token-count.json)
-  and [`token-count-replay-validation.json`](token-count-replay-validation.json).
-- Correction, original failure receipt/hash, prior source-validation hashes,
-  corrected run, root replay, cleanup, and CI facts:
-  `docs/validation-synthetic-qa-inference.json`.
-
-Root maintains [`.local/active-cycle.json`](../.local/active-cycle.json) with
-exact live delivery, job, and next-action state. Keep private artifacts under
-ignored `.local` with restrictive permissions; recheck live jobs before work.
+- [Roadmap](roadmap.md) and [Context Kit inventory](context-kit-inventory.md).
+- [Token-count results](token-count-results.md).
+- [Synthetic QA results](synthetic-qa-qwen3-results.md) and
+  [inference validation](validation-synthetic-qa-inference.json).
+- [LongMemEval compatibility](longmemeval-compatibility.md) and
+  [integer-answer validation](validation-longmemeval-integer-answer.json).
+- [Frozen-five retrieval results](longmemeval-oracle-retrieval-results.md).
+- Full previous checkpoint and its detailed receipts:
+  [handoff history](handoff-history-2026-10-14.md).

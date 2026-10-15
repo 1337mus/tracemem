@@ -77,8 +77,9 @@ make check
   for the frozen retrieval/extraction baseline only, not the NLI verifier slice.
 - [Data governance](docs/data-governance.md): private-source handling and release gates.
 - [Pinned benchmark contracts](docs/benchmark-contracts.md): exact LongMemEval and
-  LoCoMo evaluator semantics, source hashes, and unresolved dataset rights. No benchmark
-  conversations were downloaded or evaluated.
+  LoCoMo evaluator semantics, source hashes, and unresolved dataset rights. A later
+  [local oracle format probe](docs/longmemeval-compatibility.md) parsed the pinned
+  LongMemEval oracle file; no official benchmark QA score exists.
 - [LongMemEval format adapter](docs/longmemeval-adapter.md): strict fixture-only parsing,
   separate question stores, reference-label separation, and historical Unicode citations.
   The [dataset metadata audit](docs/longmemeval-rights.md) records the MIT card declaration
@@ -90,6 +91,8 @@ make check
   and limited question selection for local fictional-format files larger than 64 MiB.
 - [Selected-file retrieval](docs/longmemeval-selection.md): explicit one-to-five-question
   evaluation with full-file validation and selected-only score denominators.
+- [Frozen-five oracle diagnostic](docs/longmemeval-oracle-retrieval-results.md):
+  locally verified turn-label recall at cutoffs 1/3/5, with no QA or official score.
 - [Source-retention impact](docs/source-retention.md): a pure dependency diagnostic
   for historical evidence, candidate quotes, ambiguous spans and correction lineage.
   It opens no stores and performs no deletion.

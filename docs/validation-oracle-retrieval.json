@@ -1,0 +1,188 @@
+{
+  "aggregates": {
+    "bm25": [
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.0,
+        "cutoff": 1,
+        "macro_label_recall": 0.5,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.2,
+        "cutoff": 3,
+        "macro_label_recall": 0.6,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.6,
+        "cutoff": 5,
+        "macro_label_recall": 0.8,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      }
+    ],
+    "hybrid": [
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.0,
+        "cutoff": 1,
+        "macro_label_recall": 0.4,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.6,
+        "cutoff": 3,
+        "macro_label_recall": 0.8,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.6,
+        "cutoff": 5,
+        "macro_label_recall": 0.8,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      }
+    ],
+    "vector": [
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.0,
+        "cutoff": 1,
+        "macro_label_recall": 0.1,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.4,
+        "cutoff": 3,
+        "macro_label_recall": 0.6,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      },
+      {
+        "abstention_count": 0,
+        "all_labels_found_fraction": 0.6,
+        "cutoff": 5,
+        "macro_label_recall": 0.8,
+        "nonempty_retrieval_question_count": 5,
+        "question_count": 5,
+        "scored_question_count": 5,
+        "unlabeled_count": 0
+      }
+    ]
+  },
+  "baseline_head": "05fa0afbc76097042e1a5ae513b0088bbf32b4be",
+  "checker_evidence_sha256": {
+    "green": "e6ec182765cd965f2837d8eeaef5a64af48a104f245cd1a0b7281559194c57c1",
+    "red": "d3de8a4fb94093aab9f33e2c30c2a1666319bd6154211e98a6d302502469d74f",
+    "sensitivity": "526bbe4f5bd7c20dcd6a4ee4d1539f130fa3e28e4f172dcdc423d3721df2d77c"
+  },
+  "checker_sha256": "ed1099736168461c5c54d309e613f04b573e21b74ef81c4724e03871a5eab6c3",
+  "counts": {
+    "abstention_count": 0,
+    "question_count": 5,
+    "scored_count": 5,
+    "unlabeled_count": 0
+  },
+  "cutoffs": [
+    1,
+    3,
+    5
+  ],
+  "embedding": {
+    "fingerprint": "28b6e0a31b0c3c581a9fe288b92a76a62fbc9f7655e641e68a5394ddad4ca112",
+    "metadata": {
+      "dimensions": 384,
+      "kind": "signed-token-hash",
+      "label": "weak lexical feature vectors; not semantic embeddings",
+      "normalization": "l2",
+      "version": 1
+    }
+  },
+  "evaluator_sha256": "eec4e15f287398cfe0edcc6241b37ea215cd3ee944b18ff76d33a0aa1296d1ed",
+  "evidence_schema_version": 3,
+  "explicit_turn_label_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "fictional_checker_tests": 4,
+  "file_equals_bytes_clone": true,
+  "first_five_raw_checks": true,
+  "input_bytes": 15388478,
+  "input_sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+  "input_unchanged_checks": [
+    "sha256",
+    "size",
+    "mode",
+    "mtime_ns"
+  ],
+  "launch_outcome": {
+    "diagnostic_final_receipt": "passed",
+    "outer_exit_code": 1,
+    "peak_rss_bytes": null,
+    "rerun": false,
+    "stderr": "time: sysctl kern.clockrate: Operation not permitted"
+  },
+  "limits": [
+    "five oracle questions, not independent benchmark test",
+    "correlated modes/cutoffs",
+    "hash vectors are weak lexical features",
+    "no QA score, semantic quality or official evaluator equivalence",
+    "no rights, model selection, training readiness or Gate A conclusion"
+  ],
+  "modes": [
+    "bm25",
+    "vector",
+    "hybrid"
+  ],
+  "network_model_tokenizer_gpu_training_calls": 0,
+  "observed_total_seconds": 1.668904,
+  "package_manifest_sha256": "fa20e2ecad30e004d0dde6157160a49b6a9561896e490df5ba5839886760ef53",
+  "raw_reports_sha256": {
+    "bytes_clone_sha256": "2558fe292a8268e1a4a0d6d086f6c0508b088296c2fb1bf7cb143c52b0485b04",
+    "file_sha256": "c9ed755f28acd0d3408738869ebb6e44446bdb3a46c0d7641c9ad13d626c5099"
+  },
+  "root_independent_method": "Reconstruct record IDs/revisions directly from raw source fields without adapter calls, then verify labels, membership, citations and aggregate scores in both reports.",
+  "root_independent_verification_sha256": "b44ce10f985e9906ab7028e3d7d790a0f35724c5cf1200522eb4551434b5e8e8",
+  "rrf_k": 60,
+  "runner_sha256": "79ccf366a44cae84c9ea6b97273d8c9c834ab8e1a2964667a5ae1cba9d8ee639",
+  "selected_count": 5,
+  "selection": {
+    "evaluated_question_count": 5,
+    "kind": "explicit_question_ids",
+    "source_question_count": 500
+  },
+  "selection_rule": "first five source-order questions frozen before format inspection; no replacement or tuning",
+  "status": "diagnostic_passed_with_failed_resource_wrapper",
+  "timing_note": "whole diagnostic overhead; not query latency or a scale guarantee",
+  "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+}
