@@ -55,11 +55,13 @@ across every cell. Root reconstructed record identities/revisions from raw sourc
 fields and independently checked all subset messages, greedy byte packs and
 label outcomes, without adapter or production packing calls.
 
-Full-prompt token ceilings 128, 256, 512 and 1024 are proposed configuration
-only. No token counts, tokenizer measurement, model answers or QA accuracy have
-been produced for this fixture. The historical pinned Modal counter does not
-accept this new catalog; it requires a separately reviewed adaptation. Do not
-substitute byte lengths for token counts or upload private conversations.
+Full-prompt token ceilings 128, 256, 512 and 1024 were frozen as configuration
+only during this preparation. A later, separately reviewed
+[CPU-only counter](qa-contrast-token-counter.md) measured all 399 candidate
+prompts at 82–907 tokens. Token-budget packing, model answers and QA accuracy
+remain unmeasured for this fixture. The historical pinned Modal counter remains
+unchanged. Do not substitute byte lengths for token counts or upload private
+conversations.
 
 The six scenarios and repeated mode/budget cells are a development diagnostic.
 They do not establish dataset diversity, calibrated abstention, model selection,

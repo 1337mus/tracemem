@@ -50,13 +50,31 @@ and prompts. Full checks: 479 tests (one skip), Ruff 104 files, mypy 32 runtime
 files. Seven installed tests and byte-identical artifact replay passed; all 37
 installed runtime members and the historical catalog remain unchanged. See
 [validation](validation-qa-contrast-preparation.json). References are provisional
-agent-only; no token counts or QA answers were measured for this new fixture.
+agent-only; that preparation did not measure token counts or QA answers.
 
-Next: prepare a separately reviewed source-free CPU-only tokenizer counter for
-this exact 399-prompt catalog. Preserve the historical pinned runner. Review
-payload/runtime hashes and verify the personal Modal workspace before any new
-remote call; no GPU inference is needed yet. No worker or GPU call remains
-active at this checkpoint; verify live state before continuing.
+That preparation was privately delivered in signed commit
+[7ada8c7841c74c24df9f2df0ced1edb50897a1c8](https://github.com/1337mus/tracemem/commit/7ada8c7841c74c24df9f2df0ced1edb50897a1c8).
+Its [CI](https://github.com/1337mus/tracemem/actions/runs/38662273569) passed
+479 source tests (one skip) and 227 installed tests (two skips).
+
+A separately reviewed [CPU-only tokenizer counter](qa-contrast-token-counter.md)
+then measured all 399 complete fictional prompts: 82–907 tokens, median 553.
+Root checked exact identities/provenance and raw/validated equality; installed
+replay accepted all counts without importing a tokenizer. The backend fingerprint
+matches the historical counter. Full checks passed 487 tests (one skip), Ruff
+106 files and mypy 32 runtime files; eight installed tests and exact payload
+replay passed, with all 37 runtime members unchanged. The one Modal CPU app
+stopped with zero tasks; no GPU, model inference or training ran. See
+[validation](validation-qa-contrast-token-counter.json) and the fictional receipt.
+The historical counter and receipts remain unchanged.
+
+Next: implement and test development-only token-budget packing replay for this
+exact catalog and measured receipt, at the already frozen 128/256/512/1024
+complete-prompt ceilings. Reuse the shared whole-evidence token packer, preserve
+explicit-label exclusions and report infeasible empty prompts explicitly.
+Do not infer QA accuracy from retained labels. No remote call is needed for
+that slice; no worker, GPU call or local session remains active at this
+checkpoint. Verify live state and private delivery/CI before continuing.
 
 Before continuing, read `.local/active-cycle.json` and verify live ownership,
 jobs, sessions, and next action; do not duplicate a remote job. Modal work is
@@ -76,5 +94,6 @@ owner, origin, and PRIVATE status.
   [integer-answer validation](validation-longmemeval-integer-answer.json).
 - [Frozen-five retrieval results](longmemeval-oracle-retrieval-results.md).
 - [Development-only QA contrasts](qa-contrast-preparation.md).
+- [Exact development prompt token counts](qa-contrast-token-counter.md).
 - Full previous checkpoint and its detailed receipts:
   [handoff history](handoff-history-2026-10-14.md).

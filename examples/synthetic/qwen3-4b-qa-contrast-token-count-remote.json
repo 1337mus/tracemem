@@ -1,0 +1,1634 @@
+{
+  "schema_version": 1,
+  "payload_sha256": "7f3055ef98fec05f77676b3b995b27c6c6ebcfc2566fdd668177f065a3d9fcc2",
+  "runner_sha256": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18",
+  "client_elapsed_seconds": 11.436858,
+  "result": {
+    "schema_version": 1,
+    "count_receipt": {
+      "schema_version": 1,
+      "catalog_sha256": "2c18978bea31ba5c4e77d20fa6103a2a7a182bb93c7d94dd5c257b029e9662cf",
+      "counter_id": "Qwen/Qwen3-4B@1cfa9a7208912126459214e8b04321603b3df60c+transformers-4.51.3+template-a55ee1b1",
+      "counts": [
+        {
+          "prompt_id": "0253feb65056c6dcf6530a2d0c8579cb073733aef4fabdd1a66d5ea7f0a5d1a6",
+          "prompt_tokens": 240
+        },
+        {
+          "prompt_id": "02efa8e0b81547ca50158f41cdb8a240d8e2fe66e08950ddcbd3759b525ffc9a",
+          "prompt_tokens": 414
+        },
+        {
+          "prompt_id": "031d1e785df15501e7011cfb07478e53b199ccc4a44f6ccdeee503dc1bb8ce53",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "031f7b45998b192b890a13889448c90ee0141f8b791e21cf14d5b5a7e70868fd",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "037dc5cbd77949d08bf7e0c51178cec559ab9820359a980bf0dd90528f6401be",
+          "prompt_tokens": 562
+        },
+        {
+          "prompt_id": "03e31839dbf7ec55357dc240486c6e683092dba795282bfb46b7cf7d72f99cdf",
+          "prompt_tokens": 552
+        },
+        {
+          "prompt_id": "03e6f6ea71fdae47272a03e2c27668163f3e28545cecb21c93207566623ccf93",
+          "prompt_tokens": 408
+        },
+        {
+          "prompt_id": "03f74b752bdd91417604015aed2a33fe3fe4b6377541eaa18214cc540a8bf631",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "04887f6f60b38a7f68aad949ba3c6de951b63002799ac1c347f43dc5907563af",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "04b0c34e4af818d8f20de06a8e0305c771283cdec1ee40e5bc327ed9ea488958",
+          "prompt_tokens": 420
+        },
+        {
+          "prompt_id": "051ee162605d7722e3e971661e0c60e1d6d64061e56b2257c0978229481f858d",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "054ba8641f059c13f9d2587917e48547b0fbe9bdd027ec20e4a6f42127d094ab",
+          "prompt_tokens": 706
+        },
+        {
+          "prompt_id": "056bda82fe1325c014878fb5160e2eac0001247603f3ffdc47c822636cb7ede9",
+          "prompt_tokens": 235
+        },
+        {
+          "prompt_id": "064f12254712774c7a75842127dbd9ca89d45682e50c7846274ab14f25c74089",
+          "prompt_tokens": 241
+        },
+        {
+          "prompt_id": "069d5013834aa7ef30a857615d3de3ad877b7d3c34a05a1e023f66169aacb478",
+          "prompt_tokens": 545
+        },
+        {
+          "prompt_id": "0a77cec462b452c46d21307e67473e37de3fbd0544288958c68076eeef060369",
+          "prompt_tokens": 557
+        },
+        {
+          "prompt_id": "0b247e4e34c9c5dc95be3dddcc4df7966d99ea2cb8361809cb488694a26133f5",
+          "prompt_tokens": 545
+        },
+        {
+          "prompt_id": "0dc2c22d4461ed10b2e2227b5e77578c4742370dc66ddd4753b031971a756f4a",
+          "prompt_tokens": 417
+        },
+        {
+          "prompt_id": "0e26a2b75948893e7bf07a1a2fc4fece2bf7a04cd2a45b1a9b47fa9dfbddab91",
+          "prompt_tokens": 725
+        },
+        {
+          "prompt_id": "0e28701bf57a8fa416a88dfce497fb01307638aacedb7293efef4effc43ff18a",
+          "prompt_tokens": 580
+        },
+        {
+          "prompt_id": "0e484d4e1c1094d91a4d34b853c8144ea87c2c24aa3e665111eadbf6205d9e04",
+          "prompt_tokens": 694
+        },
+        {
+          "prompt_id": "0e88ad0eb0de807e01427ac065bc1d1e92be20844d144b4028f267deaae38ae3",
+          "prompt_tokens": 863
+        },
+        {
+          "prompt_id": "0fdf88ed47cabc1bd03aa5f5f2addcd48a832112edb844db38e05559399d52d9",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "10e06515e9290136a80afd563d1a3b81946bd75d8f43b017e9dea0186037af77",
+          "prompt_tokens": 723
+        },
+        {
+          "prompt_id": "113543454566c9f92a9a78e5cf924a3a960cf51f2b3d5527ab69bd513c9c2cb3",
+          "prompt_tokens": 589
+        },
+        {
+          "prompt_id": "1226631d2f6e745df349c4313876646c9b32e3ea27dc23e2a70c20ef47d9e7a7",
+          "prompt_tokens": 701
+        },
+        {
+          "prompt_id": "135b51137e46d0459ebc1bc6e93c3f86c9505bade9a0ba9449322cdd13d119cb",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "142dca1db538a54f295144865dc0613c70d8dab37b2c980fc6b1892f07c41bdd",
+          "prompt_tokens": 390
+        },
+        {
+          "prompt_id": "14f6fe139c0c75c2ff482585226e6c0a68fa7b36358a164993152f8284f2c156",
+          "prompt_tokens": 420
+        },
+        {
+          "prompt_id": "151c198dfb8de3c5678a8d5a7167a1c6a47da899bbb611f14ca0c0cefef9d3c4",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "154431f3a19c2d6770318cdf516f6d4758e493b30b263f98d5c650d2b12f547a",
+          "prompt_tokens": 232
+        },
+        {
+          "prompt_id": "15839be6e91804bba7a6b0865c37846438c6df5d9a0b8819de0e1c8767d528e7",
+          "prompt_tokens": 700
+        },
+        {
+          "prompt_id": "161b45a2d5824be9b2d2060b693e6b04bfbcd2de1608e9872ffa2ec8bf7f7c14",
+          "prompt_tokens": 743
+        },
+        {
+          "prompt_id": "164c8da3a06d0cedb8adec3a9fd2c51b39e2bd5e3ea387d9690b75ce20b36c58",
+          "prompt_tokens": 578
+        },
+        {
+          "prompt_id": "16ac22bd1b7c75eeb2250dd5b175626be757a51d4d327cf6624d19335056c2d3",
+          "prompt_tokens": 577
+        },
+        {
+          "prompt_id": "16bb79f4de07d398c63995a32718bbc8601f8ed1324a20c5f2c5c7b1866eb3db",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "170cc8674b2231c245d9a12902b0b0a25ed5599f7a429e474c65ce8ea35e3305",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "17ffe65963b569af0e828a8298565440d4286daf39929d70502fd14761548e94",
+          "prompt_tokens": 701
+        },
+        {
+          "prompt_id": "192cb604e92b25e78c958e223ff11b0f6c0a5191d44fca626296b04d030803a4",
+          "prompt_tokens": 260
+        },
+        {
+          "prompt_id": "19405f9f67934086ce40635d4d878e81ee096560e8f12270f7eb78e82586ce24",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "19414d5f76300433393b9ecb73e83d208e5d32ca17f4f020fb931d73ef14730f",
+          "prompt_tokens": 713
+        },
+        {
+          "prompt_id": "199191747b68a03798da1ecba5751ee589033f621636d8010bed447a3896f041",
+          "prompt_tokens": 585
+        },
+        {
+          "prompt_id": "1b52280a534a5d16c9b23a9e78543acc642cc6a16f34ddc0b056b95fed4fff8c",
+          "prompt_tokens": 707
+        },
+        {
+          "prompt_id": "1b9ae83317354c6df8400dc7461aa3d6231288ff34100c7b03d66c29c5a78995",
+          "prompt_tokens": 407
+        },
+        {
+          "prompt_id": "1f7da032862a9096b5bc511d1ac19bcd82259c4cab0a95f39769507a13460169",
+          "prompt_tokens": 710
+        },
+        {
+          "prompt_id": "1fa962dc75e80783ae7b3b7393df6e8257b2479d5de6dd94afd8346aece9ca94",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "2149edf715d5b1e8d8ab1265d54f315f695dd41b3dbfb29b221ca47baaffa28a",
+          "prompt_tokens": 241
+        },
+        {
+          "prompt_id": "21b4683cf180aa9e3ca9489b72fdd89b84bf2e8bcbe9589635a31638e64606bb",
+          "prompt_tokens": 242
+        },
+        {
+          "prompt_id": "228de519688bbc866960a2dab55b709d794e72448921ba790fd4141e67b63304",
+          "prompt_tokens": 553
+        },
+        {
+          "prompt_id": "22dbae821bfa5ff417ba565a6c5f404d97b9c0d854c2db615e03c086d5ed170e",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "22dc2b2cff76f9a48c8a172c0628755f26e5b07e678048bde45a629435ea6698",
+          "prompt_tokens": 374
+        },
+        {
+          "prompt_id": "231827c85b9d4ee6a15283148447fe739fc5b9b2cd6a734bdef740164a743612",
+          "prompt_tokens": 747
+        },
+        {
+          "prompt_id": "23a1ffa529ee953448bbe6c837996f8c9ee53afcea629f67c1210ba0621c05e7",
+          "prompt_tokens": 741
+        },
+        {
+          "prompt_id": "25c7727791c135e9bd7515cdb753f774263de5eb5d97178eb227f1a3adef0708",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "26b44e3d5636db4fee0ede98478a0399e584cb8454b7da9074f5e56e0a61f6b0",
+          "prompt_tokens": 405
+        },
+        {
+          "prompt_id": "26da1fdedbabf5bad4fe7fbce72a7777de8939d62817eb7295e61e89389820e8",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "282f55022353221c678ec2acdaf0a110d4b0f48b12509ad7a4caec09044940c6",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "2870ac0f019287783c644b8cf778102d17ba7e3a668f71d02ed9a24e65278a49",
+          "prompt_tokens": 721
+        },
+        {
+          "prompt_id": "2963970b7785a541683c7451932d10e00ed329db6fd34f9c18829b90bfe117cc",
+          "prompt_tokens": 720
+        },
+        {
+          "prompt_id": "29ccbe606362623d142c21004b970537165c775d4bd1fcef2f5f9e7a1517d73d",
+          "prompt_tokens": 394
+        },
+        {
+          "prompt_id": "29d580a71d6ac6288c74f521bcf622bc7d7d9c89d2589d43345af4b2bd72841b",
+          "prompt_tokens": 396
+        },
+        {
+          "prompt_id": "2bc7bf5d7cc2bdbc42082d3aedb550ab7863cefc3286f474a2af65bd798ade86",
+          "prompt_tokens": 583
+        },
+        {
+          "prompt_id": "2bd887c9e473d0da384e2c7e9da3996775668cf16e0eb65f7d85bb76b86dcd20",
+          "prompt_tokens": 562
+        },
+        {
+          "prompt_id": "2c4b2260c1d739ec7cf543a1e660ae3375fb8f6ac94ad517bfb5ea66360a5756",
+          "prompt_tokens": 563
+        },
+        {
+          "prompt_id": "2ca772d0f9d2e3468a776ef5ebae0615bf4eca28534740e221890ac95e3e2373",
+          "prompt_tokens": 405
+        },
+        {
+          "prompt_id": "2e10ad1605b55d061e7277e232cbdc90086565701b7750ed6d3e89087f5e452e",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "2e3effe68b9a80fb7a65f73bd80ab597320fe70cdf18578487787265115bdbbc",
+          "prompt_tokens": 547
+        },
+        {
+          "prompt_id": "2f64c1cd36256e27442508ac0c0fcb3275118ca1f75e91605994d4f7c04f9ba3",
+          "prompt_tokens": 868
+        },
+        {
+          "prompt_id": "30bd9d28a6bff9e600f10048fc6f56c6cc5a23d90d6b09c1748c10f01de7b4f5",
+          "prompt_tokens": 543
+        },
+        {
+          "prompt_id": "30fdb5170c648f06aae5b867a265b47dec95d8d8fce064f015f1c43b34875d7b",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "31ac5a16a0b775c84d0a65c77159be49a8b44fb4a590a2f3077428cd0e666629",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "332ca211d2632921678f8b6e8bb05aab86a8399f2d197ec07280450759a96686",
+          "prompt_tokens": 563
+        },
+        {
+          "prompt_id": "340971164269be3fdbfd572cd603a45b0ef83b7035a0d4fc802f3bc6d294dcd1",
+          "prompt_tokens": 392
+        },
+        {
+          "prompt_id": "3420058740021aa29032a26a35bfd2e1fd9a0778407ce02b07989e63d9492688",
+          "prompt_tokens": 567
+        },
+        {
+          "prompt_id": "3480874800967512a1b87a58ca0f6394be016c122b9ee8b137773f8b98f9b62a",
+          "prompt_tokens": 547
+        },
+        {
+          "prompt_id": "3526c66bf05084d8e95d8d4811cd424b2091062f1c960387ed47044a7ef14ab8",
+          "prompt_tokens": 396
+        },
+        {
+          "prompt_id": "353398f7b2dc3c21eb0ea0d4e07225b53cb1c7e9b32194cf50d469c4946a9a4b",
+          "prompt_tokens": 878
+        },
+        {
+          "prompt_id": "35759e8f698f508c58adbdf227dd4d4e9780b83e286ea830374f1d7b24d3c72b",
+          "prompt_tokens": 551
+        },
+        {
+          "prompt_id": "35a25578d3ee1695dc4e8d1ef6368ba88531b56a8422940dd434e41aea468ed4",
+          "prompt_tokens": 389
+        },
+        {
+          "prompt_id": "36d42ffc78ccf4ad812454a2c89f5d2420bd128b6171fb8bdc696d2759293313",
+          "prompt_tokens": 551
+        },
+        {
+          "prompt_id": "3720b7b62f66bc4911e59c3ac3d05a1fb0d41e04032605aeba42edff9f85bf2c",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "3778de2d2b75f09edf00fd8f4aadca9efa9e31a02a61f07d7e0acf7397cc125e",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "385bee90203c1c55b7732afb5ab26ec101541c7a434978e735b929ea8baade97",
+          "prompt_tokens": 716
+        },
+        {
+          "prompt_id": "3893c898e83a58854862bf29c784a71fc4184fa08829639c5e3da9fceacf3b49",
+          "prompt_tokens": 705
+        },
+        {
+          "prompt_id": "3a89ce17a34a4cdc6832e4b953feee64dcbd05bfa0a8de9ce55e125bfab61f24",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "3b00044c826eaa1c8e051a1fd72bc89410fc1e487a05f6d7d6333f73f5d2e590",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "3b9c00f3db0d16c351e114339d3a850309e73637efeea701863bd6b7fa9cca52",
+          "prompt_tokens": 701
+        },
+        {
+          "prompt_id": "3c4a5a5bf19a66c49570e344e25f7364b4656b27318240c5eeabb568e0b7a0bc",
+          "prompt_tokens": 390
+        },
+        {
+          "prompt_id": "3c5e41203161bd29b01d79583a84811767c11895bca0924accbde9e705138e81",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "3c95e30808e621ec05a265c158441f6e93b4405c805f6a043024f4b7b05c5904",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "3cb3e425fbccfb365256f47e886012a24f816116ccebfb46d000481091dd6e03",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "3d89a704333be7eeac40993f07b88215feba8521b3fe32caf41b3f3912621372",
+          "prompt_tokens": 87
+        },
+        {
+          "prompt_id": "3df9501ad41e2a186c1770cd3d5d2a7c30735cd75238addc6ca47e261f13677e",
+          "prompt_tokens": 547
+        },
+        {
+          "prompt_id": "3e80b14addfa3891a77d6729c2da4dddb59142f0d7b636f11f82d27ea5b510ea",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "406c62c1cb8ff04afa3ba0d7397f3756e83041debcb0639369ca8a40ab04d9df",
+          "prompt_tokens": 713
+        },
+        {
+          "prompt_id": "41532c75e0aaf7cd58511abaa5f429edff1914a26e179637339767cb6f93bf90",
+          "prompt_tokens": 256
+        },
+        {
+          "prompt_id": "41f7bb4492a88913d2dc5ec704d0390e6c0872eeac54b05cca1c94c11ec5ac1b",
+          "prompt_tokens": 545
+        },
+        {
+          "prompt_id": "4223a3e96f3839f2079581dad3a79a021f70b062c85a4c08b0cc5da603f59da5",
+          "prompt_tokens": 564
+        },
+        {
+          "prompt_id": "43a3901a3494b8856a3b127e509b712df24c3efd6f34dbcf7c46d41ff96ce139",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "4496a5ec85d408411086c46373307d54592d24fab3fd2aebbd1a661539391fd9",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "455d0daa9a14d1b2b9fc70b92399fb3cc3bbbdc3c2c8189b93e1d878fba119b8",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "45859f829ae781c408d3ab8c20b21465bdf3dffc78e424343e2cac69463dc4b8",
+          "prompt_tokens": 550
+        },
+        {
+          "prompt_id": "45a249cb99cfc27404aeaef44e1c3fbdaea1328554343ac93f278e12b90100b4",
+          "prompt_tokens": 747
+        },
+        {
+          "prompt_id": "462317f070ed56923b2a63f6c59ec37b0d8af40a12256f334d5301deb538e94c",
+          "prompt_tokens": 564
+        },
+        {
+          "prompt_id": "4676a815be6f81d165b66ab4de9d65b1588508bc9a47d4aea18295244bf9851e",
+          "prompt_tokens": 583
+        },
+        {
+          "prompt_id": "4792cbfc37419d2f992d8dbc2a939f567ee5fa7e4bd9278b44110dba9d72cfaa",
+          "prompt_tokens": 553
+        },
+        {
+          "prompt_id": "47b0f164b325d96e2afe29fc23903d4b87aeba852db1acdd90675d94cd50488a",
+          "prompt_tokens": 718
+        },
+        {
+          "prompt_id": "47c6665fa7b4bdab4b378eb110d44414bf4ca3b2ec76eb1f8a2d5092729388cb",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "48508790afc188c8bcef5a57b284d7ee6f19dae54fb216edc49a1c757ee5ec34",
+          "prompt_tokens": 584
+        },
+        {
+          "prompt_id": "49141cfa5770688734b3b94d28169793d401b15c6ad1f222b530cc806723f853",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "4999198bb1409bc8079acc0644ed8482c41ac46c1a1b12eab4ede6b26a689b29",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "4a381e3be24ab7960634b92b3f1f3b88af9f47b08f548ca7b981e51b398fc4ab",
+          "prompt_tokens": 586
+        },
+        {
+          "prompt_id": "4ae2de9e62ade64e1f3dea5f25ff338e3bb81108bce47d5cc2c91d292f5f3993",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "4b096011dfbb9b945ef8f76091be361b672cc94ccf4a63439043a251869cda31",
+          "prompt_tokens": 409
+        },
+        {
+          "prompt_id": "4b632695fee2259a33779ab5416be803b01e70c8e201baa6dfb7dca2349e2c74",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "4b842de1178fbea0c2067f1d5d25342b6dc96092e817004b53f18c1f492d114f",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "4b84d6ff939b28af020b5e407090816df6e5df79a3053336e2443ed071dcdbc0",
+          "prompt_tokens": 567
+        },
+        {
+          "prompt_id": "4c3728338d04789de566dbe87a24c95370d81b16a3410b0dbf5710bd2d51e92e",
+          "prompt_tokens": 406
+        },
+        {
+          "prompt_id": "4cdf527aad8281ec13803915e1e1e6ae88430531259b8a2729ef8481776ac0d4",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "4e6d75075e16abf1c60b0eb09a91f021d9b0756ce18ba8ce4698c6eb0dc04caa",
+          "prompt_tokens": 236
+        },
+        {
+          "prompt_id": "4ea327baba0ab012312a105083fb651a025b27b5cc28620cdc9005cb22b23c20",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "4ef4ba8c64602c51b50c72a530c9e54954b2c71a354b690cc1413a127d62c8ce",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "4f322c4077c56bb083ac63cbbf65ff6efca84a763fe8275132796d1593574d72",
+          "prompt_tokens": 720
+        },
+        {
+          "prompt_id": "4f4751366d1b1aacc6cb056b75e640e01a41469aa466cf0a5dc0a63fa701e824",
+          "prompt_tokens": 563
+        },
+        {
+          "prompt_id": "4f7c6bea13677771ddb240c7d5c6da0c062795f85de26dc61b0d13ac475d537b",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "4fa27feb5227e206fd73ccd8d068676c6124006cf1760a3b8b6491d6234c77f8",
+          "prompt_tokens": 711
+        },
+        {
+          "prompt_id": "4fccbb705cb257fe1d0cbecfd05b41932c5ed95f59a66d3b84ef2ef1079b798e",
+          "prompt_tokens": 250
+        },
+        {
+          "prompt_id": "50e772493d13213b1f02c0b71b59560fe6fcc2fa7783345f79ba73e1a8b99721",
+          "prompt_tokens": 405
+        },
+        {
+          "prompt_id": "516bbe673e2b77b81de396ab51c72132cecbe97546870ff2c45e0c0fcb691374",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "5175b631491f3e250fd2447c9c0862b9d8897133c7852a6512339477a0257ff7",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "51bc71857870398a2af9c34d27f08eb555d001b2a1f61b9225278f6f9e401cc8",
+          "prompt_tokens": 406
+        },
+        {
+          "prompt_id": "525770606162354b1a777d8a4ebbf1b1f902933e06d891396789689796273d1c",
+          "prompt_tokens": 864
+        },
+        {
+          "prompt_id": "53441bb115e3d63a0c2c9687bded94d79b58b81c129f5947eebf7d86fb902bf2",
+          "prompt_tokens": 395
+        },
+        {
+          "prompt_id": "54a867a1b688f8ad81cf603a8eae912cf9e321a31b4ff691a59132258030559e",
+          "prompt_tokens": 565
+        },
+        {
+          "prompt_id": "567744a2a15dde34df14acf8ae9d67584e568326ce49c662a1ba807b21a50e2d",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "5746ee32bd1a47528a2e843d69261b379b6f16816b71509992f2c36ea9f8e393",
+          "prompt_tokens": 407
+        },
+        {
+          "prompt_id": "579db85da557c4962ba945fc8da7b28c5a84e64a49023313bced422141099b7e",
+          "prompt_tokens": 246
+        },
+        {
+          "prompt_id": "57b33ee212ec057695dd529b76d0670d648b9ce81b0488b9be03ce3af63758d3",
+          "prompt_tokens": 542
+        },
+        {
+          "prompt_id": "57c42224c121c29ba2a7d1025617dad9fce4f49388aec8f0a5bdb352347b256a",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "58f9f1307917dac85215e3556ecf5b7195ebcda1b8276f6710815f2781287d85",
+          "prompt_tokens": 718
+        },
+        {
+          "prompt_id": "59ec2f885b43c61c30b0758638288e862bb8a418865ce052ccbd8e3282fe6b33",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "59ecc60d93ce7583379605224ef12ddbb3335cce2f93dcec8a6c573f7d245e63",
+          "prompt_tokens": 719
+        },
+        {
+          "prompt_id": "5a3d6c241791707b3eee686d8deea5a6267b24fe3f8f643bf0e45859d27d862b",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "5ab84280bbb104ac7925deff53c83e865c76ab1c053fbeb1a2f78fca1f743168",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "5ac4507ec0c9ed9a5863859bcce024230d4017e46d60a279792c8db57a1b9258",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "5af843e41f98cf9372386373195870086fd35b168b881a1445fd5fc910fbf3ab",
+          "prompt_tokens": 712
+        },
+        {
+          "prompt_id": "5b314dc297ca93b8fd55a4902454422b6b01ac15c80de587f6c25852415ecfa1",
+          "prompt_tokens": 418
+        },
+        {
+          "prompt_id": "5b64c4c6535ac8e9d7b68c8bf521dff8e6b0074aad762509fb9f8178566eb0a7",
+          "prompt_tokens": 704
+        },
+        {
+          "prompt_id": "5bb92cf6491b0f1168c997d05f01c05d7db667669d1ec9ab0176df03511b2ad2",
+          "prompt_tokens": 703
+        },
+        {
+          "prompt_id": "5c71ab18064b6ba02c6ed18ec901a3eb8ff83b7403b301163e649551f4a98025",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "5c9466c0148569d7a8dca665b64ccda510322f9464993e6bd85f871cf7183c06",
+          "prompt_tokens": 563
+        },
+        {
+          "prompt_id": "5fd38488ace144123a657b6e52c46b8931e065f381099e0c2240c0d0752eab2e",
+          "prompt_tokens": 548
+        },
+        {
+          "prompt_id": "60d66b9cc68a1e8f4753b646a1ac90cf1166a119186256a408a96e5246f0e0da",
+          "prompt_tokens": 567
+        },
+        {
+          "prompt_id": "6106451ea2f5a1983b4d7979ca28d6ac340300582584eab88717293a7e6b73ae",
+          "prompt_tokens": 866
+        },
+        {
+          "prompt_id": "61cada65094ba58f1274e6eced5fed9e4ebfaf649db575bc1b384bfa286c3c9a",
+          "prompt_tokens": 403
+        },
+        {
+          "prompt_id": "62737230614e09a5bd44e0420017b494e567dc8c6da84a9d3faa67af96f51810",
+          "prompt_tokens": 229
+        },
+        {
+          "prompt_id": "64c3e2872699bee5cdc83279d5a6a77e6018c999f814b7114a31a3cc330f64c9",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "657ca7af8b697adba4bb15fe8070a819dfeee4d5bd39c3bc87aa2d8c72a23c27",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "666ce3765e456402158be78b7590d8cc57e9c0d694b6ac941a2c924a60ba2711",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "67dba3dc8b2ee11c6a7759761282d007dd10152b9d05a10a08e782b2e633fde0",
+          "prompt_tokens": 404
+        },
+        {
+          "prompt_id": "6941ccd75a0df113509897a00355c0099a530e4f3de8eab87216f102cbdfd284",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "6962f77e73b6e558f3150112422cf8cfaca68e058cadedfd151ec86a602c1927",
+          "prompt_tokens": 703
+        },
+        {
+          "prompt_id": "6a08e48aaf56fc0dff63751c951850fa5c5e80d0e9952f8c6f2cb869a99e7500",
+          "prompt_tokens": 241
+        },
+        {
+          "prompt_id": "6a97153a9b33f2dd3a829aadc6430532a55fc262d94c9d3997d7ec1ec711c7fe",
+          "prompt_tokens": 227
+        },
+        {
+          "prompt_id": "6b2dedd0ce2311e1345a98e0580ac927dddfd4a0101a12ec388deef582204d69",
+          "prompt_tokens": 703
+        },
+        {
+          "prompt_id": "6c62c47546dfd4de8b5103935d328994ee156af9c2b60dfbf7c443526c758523",
+          "prompt_tokens": 744
+        },
+        {
+          "prompt_id": "6d40aabe28a7fb256e30483b69a024d31e566441a6ecd7fbc989e2fab924ad49",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "6d5c0995a2e73a2903cbe69766b71753d7921ead00a40ebabb5c17e7d73662ed",
+          "prompt_tokens": 557
+        },
+        {
+          "prompt_id": "6d6810c0e09b2cd4442c3f1d1100b98a93f5f7dffac21b84e1ae34fc55380b77",
+          "prompt_tokens": 722
+        },
+        {
+          "prompt_id": "6dba8955d94999dc16d7c929557c6917c1ace2053fc4004297b943d25306a4a1",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "6e46d7ce99cedddc2c1fc7c9ffc76baed8feadda2c5881f7306275f64aa2b5da",
+          "prompt_tokens": 714
+        },
+        {
+          "prompt_id": "6e9cdcaa4ecfe986ceb7247937bb3aad8d89cf8e914eca7e726a735c06f22ed7",
+          "prompt_tokens": 535
+        },
+        {
+          "prompt_id": "6f6e4c1b88e7317feaf80a0c5db2a285b918566a04a531afc158e86a7eea87ab",
+          "prompt_tokens": 557
+        },
+        {
+          "prompt_id": "6f78395fc2c5eba688a6c0cd83d36d34da753f24d27cbb412e3becb02e35a395",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "704420e04fd1964116f4de3fb148ce7cfcfd351c642e5db46b162484e62c4284",
+          "prompt_tokens": 419
+        },
+        {
+          "prompt_id": "74242416d3ae09efb95bc68c48b402b45fc41a2f0310299ef42f012d6cfb271d",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "754c62d22886e4a06c392c553a2671e5299d1911a106d8dbe4a27f6489e40df0",
+          "prompt_tokens": 578
+        },
+        {
+          "prompt_id": "756bc80d704ad7d383909645bccb1475a62819cd0114811dad23d8bd4797af99",
+          "prompt_tokens": 390
+        },
+        {
+          "prompt_id": "765619d888c6c033b82b8de0acf06620bc67c65201b76561499b968290626c59",
+          "prompt_tokens": 553
+        },
+        {
+          "prompt_id": "771fc5af834f495a641f63b8ccb30c675bb7d53d39fff6f44267c3b8ddf2bdce",
+          "prompt_tokens": 701
+        },
+        {
+          "prompt_id": "785dca3e0cd2636b0f16b86b48d37fd03b573397c0949cceaa2d1b38ec9cd094",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "79608a8396c9470de6c0464a536436fb4b7e6890e97305739912207b2a379c94",
+          "prompt_tokens": 571
+        },
+        {
+          "prompt_id": "7961a77187e9bcc5bdde3b79d0ae889af03818821e897406bc39d246767977e2",
+          "prompt_tokens": 848
+        },
+        {
+          "prompt_id": "79a7f08a9a9cddd2ea045976f310a4c921d427578024a5f50cd79129ded93db3",
+          "prompt_tokens": 546
+        },
+        {
+          "prompt_id": "79dd637514b58768a2a9296411d70a7a1987a8d093273f8b494ae9fb9a3c7cbd",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "79e622a54e72e5578dcf2f4852812b023b05ee90803aeab52e5e44c2b67f22a7",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "7af1e0ea384fe66b03834662984d7336ec7947db46a1ababa558d5a52d29330a",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "7b5f29503b870b11f7b389853c032d2311a7d40c7db095a370dc37dc4c405a0b",
+          "prompt_tokens": 533
+        },
+        {
+          "prompt_id": "7bf955bf9cbea15f93a26944c0a8ac86311aeddf457359f1d63ca8d296b03bd9",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "7c82be445df80198214b10f72b7a1ac528d5d72b4eeefd6c524aac375a7cd884",
+          "prompt_tokens": 566
+        },
+        {
+          "prompt_id": "7c877f271e377b10a303e6c42047d406ff2b524a2335d52639b7160165464831",
+          "prompt_tokens": 569
+        },
+        {
+          "prompt_id": "7cc6a3609afb694a0490b248e49f62d58a4a86f6b20851f1c4ebef0d234c94cc",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "7dc9dee5be458b46362b10382c15a24950c8d83a529f7f838ce811a9a4a8da39",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "7dce2a8f5b7fe68ec02e83929a69eb11640feddf904c1c083e1518ca48d5ad69",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "7ddc80d58ff1e25b4994f9fe42321125d02d1c7c76c9d131a272e907ae3fd3ce",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "81498ebff244971213106778caf250191824ed41e323c28ae17943c18aaf4b8a",
+          "prompt_tokens": 417
+        },
+        {
+          "prompt_id": "828007241ee9e00fe1f25fc26b3c8ef214e22743eaf6d9ec801806f37b1ad358",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "8306c499fdee7179de91e655ee4045d2d9042cec9fcc0e8c01769d4dd382779a",
+          "prompt_tokens": 749
+        },
+        {
+          "prompt_id": "83a97b397cad33331df6063207e26c4f845fd99d4ea5eee79c06b5a1395fed99",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "844d7220be96d925f69526ac2a5735a975037b8a5bc9521a69513dcc06d9e294",
+          "prompt_tokens": 717
+        },
+        {
+          "prompt_id": "85b6650c9c50336e6bc9817e8b757b547fd7ef9b36fb084ca21ab1ff819338fa",
+          "prompt_tokens": 381
+        },
+        {
+          "prompt_id": "86b7f4d07323240cec0e4cbc0bfdf6cd7f5b38eb6f5059f11578d31930a002a3",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "86dec6d7176eda1105a2b537d82321232ec1f6fae3959de0b74604934b95613e",
+          "prompt_tokens": 425
+        },
+        {
+          "prompt_id": "86e8869a1200340f7f131381d46bd0f08eb134da710a8396d4533e5e963437d1",
+          "prompt_tokens": 542
+        },
+        {
+          "prompt_id": "87e21781f00a29dbaa1a0ee03943e7950eaf3b1d785b9a3161a94e86d074a020",
+          "prompt_tokens": 85
+        },
+        {
+          "prompt_id": "884fd500bc1346eabe9e070d172eebc825ccaf480d7fcaa95e10365748e3b5a8",
+          "prompt_tokens": 410
+        },
+        {
+          "prompt_id": "88f153f146682e92d3740acbec0356254e96ea9d5cb825b8e3ebddd58b6aa3e0",
+          "prompt_tokens": 715
+        },
+        {
+          "prompt_id": "895e64b6b446394f0c1cd665e86cbe3351d817ce04a90d3cf92343f7fd591abd",
+          "prompt_tokens": 723
+        },
+        {
+          "prompt_id": "89e59fdfe641103699efbb68a4f3a638eedbe6629a8ff4dc4c1f411fb7a09a7c",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "8a0c6cb400ab65da7d4033e94d4f89c39d44ad3b74381485954aa69cd1bcf57f",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "8a67d992c43017c088b67a3f227064b10cd4cf75181b427a405037232acd104d",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "8bbe06840973853fa071700efdd7e5030dd0edef456e35b1ec5c18bc7718485c",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "8c8da357e8d4e272b908cc2321fac052f4b719fc8dab55d2b25acd24e280819b",
+          "prompt_tokens": 866
+        },
+        {
+          "prompt_id": "8d79ef11512e5895a012ebdefa14c8aeb533a27eb66077fc3e4e163835f0f543",
+          "prompt_tokens": 547
+        },
+        {
+          "prompt_id": "8d7fc0dcdc5da9752fb34f009a4b0c058ad5a436338d6960e7b3a9d039a1e76e",
+          "prompt_tokens": 544
+        },
+        {
+          "prompt_id": "8f097ef0aa0a3f760e0018eb5c4649b7d7f70f75b3e2b1a301d39f1fcbceed2a",
+          "prompt_tokens": 589
+        },
+        {
+          "prompt_id": "8f2acf9172073cc934e064579b1d14e777a795e651c20994f7673ae2072873c9",
+          "prompt_tokens": 409
+        },
+        {
+          "prompt_id": "8f2d91f978ceeef064de43a6c8c6afa43d54397792aca6f5d9985fee8199c1b7",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "8f7357370edf373bcde24a11a5a46b4204a88b1dcf1dbaebe3344c4eb0bfb86c",
+          "prompt_tokens": 715
+        },
+        {
+          "prompt_id": "903a2b3ac93d285ad4360752190dca639f89d28b14ea3b57b420921e4d3a5c09",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "911fb71cfd554c2367a5f9fcd74f107fa450b8eef45b0d099b48768675fd18bc",
+          "prompt_tokens": 743
+        },
+        {
+          "prompt_id": "91d617a110bf9452bcfb0d8bd5548b9766d2b21c143e77139bca775722b9c88c",
+          "prompt_tokens": 392
+        },
+        {
+          "prompt_id": "923f12dd2147fedaaeec2bd48c2fe9dd2176797c327206ec11708dad5883ee93",
+          "prompt_tokens": 701
+        },
+        {
+          "prompt_id": "92f077ea84b6e7b41c83f9a2d16160e1dc4ecf7fcdf71f4df742d62a007b23a1",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "951de8ae5a2142943cf2782e8c40bfd911dd88fa133b987c5ef8a6ca11e8fe01",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "9582f3ac08c6e57bcd27c7216af910c49fc661c7e4c6f76b6e3c4119868ce3a5",
+          "prompt_tokens": 249
+        },
+        {
+          "prompt_id": "9600151c61b483f11030bf3982cef423d021a67e208f258d085a91733e2add4d",
+          "prompt_tokens": 565
+        },
+        {
+          "prompt_id": "97ee86057aa4cd6e231d0ca19c7d70d538b5febcf19010dc1732f82982c66b7e",
+          "prompt_tokens": 423
+        },
+        {
+          "prompt_id": "98dc27c6492561debb09557e841d57b9bbfcbba3bfb1ed0bd68ed6c3b7b4152e",
+          "prompt_tokens": 580
+        },
+        {
+          "prompt_id": "99825a6a4c7cf277d2811e7604a14d0736d060a5e02d2c2e1c4c609e773d5ac0",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "9ab264220dce032bed0ea7597dc5081c0f09eac443d1160a3c06fe1c26cd0197",
+          "prompt_tokens": 411
+        },
+        {
+          "prompt_id": "9b20a9c9d825f20b1c1765e76e513a4080b1c276b1cd4ecc1abc0cb397e1edf6",
+          "prompt_tokens": 89
+        },
+        {
+          "prompt_id": "9b26456a4784681368cd49bf1136eca80a30c305b3c8ccbc6e279c7baee95676",
+          "prompt_tokens": 907
+        },
+        {
+          "prompt_id": "9b5bec887744690f56d8bf0a9d3d06592fd7af4b407c34d96f3dc50f4fc18620",
+          "prompt_tokens": 544
+        },
+        {
+          "prompt_id": "9b64073422962c56a0f9d7fc5f4b67f3b1fc50b781fc0b887fbb39b33eef9578",
+          "prompt_tokens": 577
+        },
+        {
+          "prompt_id": "9d53ff76a3bd4b1088a2dc648fae02dfaea90ec869aa91cc6b6295f2e26d51a7",
+          "prompt_tokens": 711
+        },
+        {
+          "prompt_id": "9e6025b01c0c49443899ecfc883dd7a4d2b51c1fdf4b2b39ffc2b9edb295301d",
+          "prompt_tokens": 426
+        },
+        {
+          "prompt_id": "9e821c94dfcec8724a39c6208d78f55b856422766f96479036ad1fe3ade4f120",
+          "prompt_tokens": 702
+        },
+        {
+          "prompt_id": "9effd95e9c4ca36d186706860f594e837fa61fd667530782efd00dfaea7fc818",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "9fcf38b04c7911c9227e06db93e6d78dff2eb222e9c305a920345dbb6fe6448b",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "a0092bb1433d7deaa758c67d883ed98ec978c430b8fb3989bff38e9e716403fe",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "a0359f186ef8a8625725d83ed9abd568b2d7d767de795dc4cbdf44259cf442e5",
+          "prompt_tokens": 749
+        },
+        {
+          "prompt_id": "a1b1b467aa8957dd9bf047a5c1fe45603f397fe9ae48fa37a40112366e31cda4",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "a234b635284be3d0fe8cd63ddcb5132d9c226ee95f7029c37c9760aef964e735",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "a26974639d7aa46b0b2269d418a3109de0251fe602f6c861a9912482c83be7f3",
+          "prompt_tokens": 717
+        },
+        {
+          "prompt_id": "a2dc13a01d464434cabdd898b7d81252ca7e2235fb4bc46acdb13403b0739f30",
+          "prompt_tokens": 689
+        },
+        {
+          "prompt_id": "a31fa4fe4ec5bce39fe0ff17c01984371a140f3d0f031ae567be389354da1ed6",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "a358d5fee1844780a0354199c3ca87d3c07490c88a687c15017ff9faed01ed38",
+          "prompt_tokens": 564
+        },
+        {
+          "prompt_id": "a3a359b625b7b5bd28b3b74d4da76accafd6da177da43739499f66825488204c",
+          "prompt_tokens": 710
+        },
+        {
+          "prompt_id": "a3df92ab323a9a44276d99160a4d6b17c23002eb98e7efa62860091f13b59f4d",
+          "prompt_tokens": 542
+        },
+        {
+          "prompt_id": "a45c5935f806b39fc608a7ca87ac4a79fea74d557990f34c33ba23813fe6bc11",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "a53fad5fec4fb8282e9d182f6d1445c1ff9ddeb0a5fb9705ae25ed8695034747",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "a5b5c724c52ae26ce576b8a3547debc8ff9114eb5dca21a202679d3c0d09c71a",
+          "prompt_tokens": 420
+        },
+        {
+          "prompt_id": "a824523e7aaa7ddbf16425826b5aa1f4a83fd7751d64a4dcdd5b49b52588f97a",
+          "prompt_tokens": 738
+        },
+        {
+          "prompt_id": "a88e48031deca8caa622887be41af8934a859bf24ccf53bf23474b2430fb87b8",
+          "prompt_tokens": 581
+        },
+        {
+          "prompt_id": "a98063bcddb26d8ba62190fd8dac1b1321cd64210297c9e68335e1b49681fc4c",
+          "prompt_tokens": 707
+        },
+        {
+          "prompt_id": "aa0d4507fb9d42f3cc1e652676d9acafb375b48a63077af2639e050f3cfe9ea4",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "aa87484904ad707e39ab7214fa73f3f5ece21a1c4519fcf8203f73ea1a3733cb",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "aa93c7d1b4f772d63392a4bca81c7b442b6f2d5b5a6bbb8f19c646a577193125",
+          "prompt_tokens": 705
+        },
+        {
+          "prompt_id": "ab2fb26cf715fe80a290c9b09ae97418eed45e57e4a9f415f1f90d334b2d08b5",
+          "prompt_tokens": 711
+        },
+        {
+          "prompt_id": "abbd9c8976daf7d2feea5c7a835d12790753bf99b64240f800cc2e3d09e386be",
+          "prompt_tokens": 383
+        },
+        {
+          "prompt_id": "ac64ae947973cd28623eca85582483c46e9fc61a685bc77efce511eaffc9cb15",
+          "prompt_tokens": 540
+        },
+        {
+          "prompt_id": "ac919b27282aaaf60b2e71fa14f2e0c2f9035e45ab4dd7de65206236e7e5003f",
+          "prompt_tokens": 700
+        },
+        {
+          "prompt_id": "ad1ce9379ec826e9dcb68c2155da846b321619a341109304c8e1da5ba9b77f8b",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "ad99f8379f9dce44f43b3c44e00828ec0482cc66cd80ed02a16fc1a34e941998",
+          "prompt_tokens": 862
+        },
+        {
+          "prompt_id": "ae98a862a0da84e0787833054ab924a18e2e101d4ad571b435dd302b666e8355",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "aff7f0c6d07df78e6126c2cc579010453be162b1d9636804859abd5b467fbed5",
+          "prompt_tokens": 403
+        },
+        {
+          "prompt_id": "b0b6d4324d5d3f9859bfd167ddd88b7a960a1316c76987b169070d525e26a602",
+          "prompt_tokens": 245
+        },
+        {
+          "prompt_id": "b0df65d059f65b9c290e81268e6e194ac44ce7ad9c9efd27a2f1b8a52147e851",
+          "prompt_tokens": 741
+        },
+        {
+          "prompt_id": "b12a355ae4bf5e20db6760ece4195207835561761baff31a3df956af56daa09e",
+          "prompt_tokens": 687
+        },
+        {
+          "prompt_id": "b188b74c64d84dc146130dcc360b5c041daa5491ebc6e18dcc50229a58082f8d",
+          "prompt_tokens": 553
+        },
+        {
+          "prompt_id": "b1fa7f64f967d5a0754126ce53d76aaa48da1a775924208cfcabba25c6135cd9",
+          "prompt_tokens": 241
+        },
+        {
+          "prompt_id": "b24c649f066dc0fcbfc78ba0cadbeee4fcfc830226802d5c3401a0e83beb9011",
+          "prompt_tokens": 725
+        },
+        {
+          "prompt_id": "b2635bd57ae69eb5c1e54a2ac9970ba3b4fdf7dfc5e7a29ca8c9ec5b6a66fa6d",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "b4ddda6ba2732453ee07fe8b7c62db1b23743781c2100a88aaffdb620c6280d3",
+          "prompt_tokens": 717
+        },
+        {
+          "prompt_id": "b59d60b68ffa0354df0a0db3063a24b274160223305fccc5f33b4fb4c47afa58",
+          "prompt_tokens": 861
+        },
+        {
+          "prompt_id": "b6339d2c0666793d39cb5ce94a13008943edd841dd7230fa7b128132288f791e",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "b6a0f9071014d96b62aac440c985b8f34d54001d6e57cf01c68514b92aa83bd1",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "b6af6c8349e869e8000ddc72fb848c2a185a61e86c9b28684a8333a2c25ad7d2",
+          "prompt_tokens": 557
+        },
+        {
+          "prompt_id": "b719f47250cfbcc6d448478a176bed0adfd639bf02a15d12724230a052bb1a9d",
+          "prompt_tokens": 406
+        },
+        {
+          "prompt_id": "b7c1aeca3c89023c9c0d8c1254e92aedb164bb7de28260650b826f7781934384",
+          "prompt_tokens": 711
+        },
+        {
+          "prompt_id": "b83f0ad1a69cfe061496f260934d3d2c8988885b5d3d0d1074484233f2d92162",
+          "prompt_tokens": 706
+        },
+        {
+          "prompt_id": "b8ea226b6c669e0e9c56a70a3d87dcc25a0d2936c4ec21f437d31bc9e0b44860",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "b96da5e86b04791ed52aaf2cfc5560d32bdd99c0bfb213359e7ed2e30dcbe602",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "b979f81b9eddcc1cbe1aeea45f8714dc997df276fd9db76cb7388843cad8d756",
+          "prompt_tokens": 583
+        },
+        {
+          "prompt_id": "b9dfd397ce7e6cd3383cbfdfc1af85789c7768419d9da1b3662fcb83d99ddadb",
+          "prompt_tokens": 703
+        },
+        {
+          "prompt_id": "bab58dd3557d1cea701ee5732586ab495fe63ed5f70dfa6cba7110d711845626",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "bb71351af9f8c0d584f4713bce965d7ef8b9b97b669b579d700fd6ae52c42399",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "bc025519c3f11116318d071ed079afe81017dfe30852933d566753c3b4a48973",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "bc2f1f7501c6a0cec3367d155bb16e941341a97bcb843cd038112b95c830bb78",
+          "prompt_tokens": 552
+        },
+        {
+          "prompt_id": "bc8d1e6f82bfb50c8592841c944f644f4e0a090582845a7599a2ba76b3d442d1",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "bd29dbb1cce56d3ead225825f686577bb5a5101165d2e96f46d9d9b92f449b3f",
+          "prompt_tokens": 542
+        },
+        {
+          "prompt_id": "be0d484bbf05192073c748b07c2712b72d659c53181b4ee67534469b64d24885",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "bef11def83972144a1d4f0f3be940b493a6042c1e5ace3278da0585ff7be936e",
+          "prompt_tokens": 568
+        },
+        {
+          "prompt_id": "bf3be8d0964ed76b95c7f947f4d8ed515e4f7067c79628372a0234a2e5ea1603",
+          "prompt_tokens": 408
+        },
+        {
+          "prompt_id": "bfb8f7f898cd7e45841c35fd602d3a344e6ac7c59c48344b84a49a313f3418e4",
+          "prompt_tokens": 542
+        },
+        {
+          "prompt_id": "c01c189e4d430a90537a992a102d1cf1d7e88a74819650ca4f6d4eac26117a4a",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "c079e19bcf60d226e7b09c6e76eac39735399af5affbd1f3bb131fa7c9983081",
+          "prompt_tokens": 707
+        },
+        {
+          "prompt_id": "c086742a9efa970dd7fb48ce0d97b96ff98708e3f730136af9ea6e56a4ee0090",
+          "prompt_tokens": 735
+        },
+        {
+          "prompt_id": "c0fe342b943b76a4e440718ddbba335051df29a9d82de7413749b57e9add4768",
+          "prompt_tokens": 545
+        },
+        {
+          "prompt_id": "c10415c6ed19accc19a54501bfe0e49ff883b187a7451a1dd87ee0d0f17f39d5",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "c1cb44acb281b7187f053687e8eef6c63dccd194f9e01db1f799dd5d36ad0589",
+          "prompt_tokens": 403
+        },
+        {
+          "prompt_id": "c34ba48cb848bac77f8df544bf1acd20005a3b5c93163766201e087b19b42ab6",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "c352c9c6cafd9377f58dd2e3f82bd17eb423436af95a372fae1bfd626a9beb0e",
+          "prompt_tokens": 552
+        },
+        {
+          "prompt_id": "c36f9961962c9ff647393cffc3155dbc23cecb062b44ce444171863822085523",
+          "prompt_tokens": 712
+        },
+        {
+          "prompt_id": "c43df3a786a10c078ee942822ce449b9de2e80b10b8a0bc6941d9b8892028f75",
+          "prompt_tokens": 414
+        },
+        {
+          "prompt_id": "c53fd21b6114183400f0df70d1ee3272a646167abe2159fabc26544ec0ffdc00",
+          "prompt_tokens": 557
+        },
+        {
+          "prompt_id": "c58163f89b7ae0a694c7b3ead365c1117be52f6b454c14eb75ddbdd19e1d3d2b",
+          "prompt_tokens": 559
+        },
+        {
+          "prompt_id": "c6079924598c34383f38fe2f65d020732731d0047a37e7bb5a6d4f3f7e637569",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "c6322ebb28c6a37773e9af4dc0d3597dc7ff26d5c8e9e843f442d6f361737d72",
+          "prompt_tokens": 262
+        },
+        {
+          "prompt_id": "c795d29a70ddd983021dfbadfbc5b3d08f812ee84650e0af7c7c65ca95cd8fa0",
+          "prompt_tokens": 709
+        },
+        {
+          "prompt_id": "c7eaf4da4d88ed2c20d5944eadfed4b512f6fef91ce735bfc8515d803be40fd3",
+          "prompt_tokens": 545
+        },
+        {
+          "prompt_id": "c8d0d197ee333f0238b17478c5a716b309111fa0d1690c239898d813d7b32ba6",
+          "prompt_tokens": 898
+        },
+        {
+          "prompt_id": "ca0f0e478ea0b33fdcf1fc5f8eb899e923b4d3872ec641ee32de91babfd2b898",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "ca52a5a96b1c3ee9352ff8217277333b0e43b3079d6c8407c6cdea9d0f4f1f0b",
+          "prompt_tokens": 862
+        },
+        {
+          "prompt_id": "caa2f3997f8ddbac071ed5a75e6a71f870eff74ab2cd537d5c8874eac78aad2c",
+          "prompt_tokens": 563
+        },
+        {
+          "prompt_id": "caf0f1ecd63440cc3f5251e705d8ec01627db13a1735c9dc379b698dc059fa3f",
+          "prompt_tokens": 528
+        },
+        {
+          "prompt_id": "cba315910c4e3e44102878875d0e7405c58cf7d367f0b24752769477e2c01027",
+          "prompt_tokens": 734
+        },
+        {
+          "prompt_id": "cc09bcb4a1bc7466722ce976cb622bc9a0015a5631b2edbb94c15b6104716692",
+          "prompt_tokens": 554
+        },
+        {
+          "prompt_id": "cd4887be972e5327cf9ccc080bb594385cd39a1694e5d9362a6f729d3dd33faa",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "cd7696272001323826205ed8a17d64f9e9f408c304b2662e0bbd1407ce631a62",
+          "prompt_tokens": 552
+        },
+        {
+          "prompt_id": "cd91ce7b2df6652db65f2a7171328277693b6528b99ffdc385f5ed0312a8de9c",
+          "prompt_tokens": 567
+        },
+        {
+          "prompt_id": "cda61ab15000e0f54103ab1fd82f662606cde930da899afd6cd1ccc3bbe7780c",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "cdbc583d03a1614d238a0c9db469d0b5419ff491f1abc431df106d284f48b4cf",
+          "prompt_tokens": 423
+        },
+        {
+          "prompt_id": "cdc71ac6611fa4494f7537514a19c9e331586069dcf8817799b88a8bcab2a48f",
+          "prompt_tokens": 82
+        },
+        {
+          "prompt_id": "cf52e2f8c06b9340744935bcbfb7982975e818aa2020a538831a355ebcc6fafc",
+          "prompt_tokens": 722
+        },
+        {
+          "prompt_id": "d05d59e174db6f61d4aa09df3fe0ed73c3e8c7f620841c78758d158f81b1028a",
+          "prompt_tokens": 392
+        },
+        {
+          "prompt_id": "d07c6517f8c82dd91163bdf2d6d1f45143d441c0dce0f6ea1a529b19eb2d021b",
+          "prompt_tokens": 386
+        },
+        {
+          "prompt_id": "d09abeb7d5bab440f7e63afe3f41a5d2cf942b319db54b3d8ed829e5cca7de9b",
+          "prompt_tokens": 586
+        },
+        {
+          "prompt_id": "d0dca642cc84f6dde3e443d5c869ee6b04219900009f910d9c1451cdeb7d51b9",
+          "prompt_tokens": 244
+        },
+        {
+          "prompt_id": "d1789685b9b556eb8fc5a8f8fd9f39707ebe61bd1b4daeb27618014625221b29",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "d226a4242eb5eab0ab14896e845070dad7369421543f1b729f8dd9379ba5ad7b",
+          "prompt_tokens": 394
+        },
+        {
+          "prompt_id": "d2bf084a0142b8d40303ccbc04592f38d0e73ce86a3c4355e09c28a9f54aba71",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "d2e84d8a58308c2053f9918feb407fb13dd01d9467375a903737d0c5194365fc",
+          "prompt_tokens": 749
+        },
+        {
+          "prompt_id": "d31636756994c8717c62db8a2cc83950934382df7b3ada417b15c1e753a6167c",
+          "prompt_tokens": 574
+        },
+        {
+          "prompt_id": "d362ecb7f526a8a691db2ab921b36b96345096732dbcfb9de1f8259a0f3f4e1f",
+          "prompt_tokens": 390
+        },
+        {
+          "prompt_id": "d39600cff8694e7960a62a5b84c92f1cb6c448e941e80984905b6e63f6ba9d34",
+          "prompt_tokens": 407
+        },
+        {
+          "prompt_id": "d413d6443bbf4f7aa75527c8102043b4f22ba9fff0868432f2239712a3c760a7",
+          "prompt_tokens": 878
+        },
+        {
+          "prompt_id": "d6d03816716c5bd659564e7b3f22245997f3aad5f89781f965fb46263b97eec2",
+          "prompt_tokens": 744
+        },
+        {
+          "prompt_id": "d76c3698f079afed9882b325987eb6f9683b1f02e4fa527a545e19cb409a26dd",
+          "prompt_tokens": 259
+        },
+        {
+          "prompt_id": "d78e1267be76a35da3143bcfcc4ab4951fd4bec169d4f6aa051bdb6e30990d98",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "d79d12310c603af08f8aeab7154d3898d540030f53bd160b1fad683eca2e34a1",
+          "prompt_tokens": 551
+        },
+        {
+          "prompt_id": "d81e2360b104582582846722d11d55b3c656ffc6e2b6cba3674c61ce96b72095",
+          "prompt_tokens": 388
+        },
+        {
+          "prompt_id": "d824e717a74aa51682de3b8e9c0a6e0bee35f5aa1133c45731b1f60a3277fb95",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "d9857f504b56d242dfd16ad0d062da0d96dc70970f13de8873c181824715db03",
+          "prompt_tokens": 552
+        },
+        {
+          "prompt_id": "db9b6192a40037e928b9ece4184979bb15b8377ac030dfaf587baa9275454253",
+          "prompt_tokens": 710
+        },
+        {
+          "prompt_id": "dbcdfe779bbadd77119c3f65cc098db33e4eacbef114f1f727195d3a0285ef02",
+          "prompt_tokens": 398
+        },
+        {
+          "prompt_id": "dc538fb89b08eccf5d990c1cd5d0b67012aceb500ba6a321bbfd4f7f01c37878",
+          "prompt_tokens": 543
+        },
+        {
+          "prompt_id": "dd034e36d4130965e8f8b054eadc8a2dbf4f715e020e58745d4b9a36c01b317f",
+          "prompt_tokens": 717
+        },
+        {
+          "prompt_id": "df0fa6be8e95d3d5f435e4eb4783e87842b6ad6e5a8f64f8758b05b1b6306df2",
+          "prompt_tokens": 242
+        },
+        {
+          "prompt_id": "df223e8a908edcd850955ab2becf948320c36c349552e74dff3a8cdc0a302bd8",
+          "prompt_tokens": 558
+        },
+        {
+          "prompt_id": "df87b429028a356a0ca0c05c8c34d3b00ebcbb91977a4d2b51c0a04b86bae0cd",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "e030388ba5d640c7353bb731f4933674c8487b321692a5cb42eac7c50876b0fa",
+          "prompt_tokens": 402
+        },
+        {
+          "prompt_id": "e194ea2ffcf2f88ee901c416d01bbb0db6ae7daed44d15907757474e6396158b",
+          "prompt_tokens": 407
+        },
+        {
+          "prompt_id": "e29a10845486139fbcb0beb22ea1e05a4764f3f78692fe9b9d12796ff50bf257",
+          "prompt_tokens": 400
+        },
+        {
+          "prompt_id": "e301ef4026dc8de583ef5dc1bfda8ee403a3da5bac62fb47cde97d98621e5c1c",
+          "prompt_tokens": 907
+        },
+        {
+          "prompt_id": "e3517c357852d65c3130ccd8e37e4f1725d1fbde7a8ba2dc3f979de04e3d2f30",
+          "prompt_tokens": 422
+        },
+        {
+          "prompt_id": "e3adfb05b63faa6606d4afeeeaadb03d7f611bae89d89d1495e4168f2f914ccb",
+          "prompt_tokens": 395
+        },
+        {
+          "prompt_id": "e3e6016ef8b258d28ba5bfc906ff01471ff07896ed8dc94761efeeada6e57a09",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "e47951280e3489c92aa446d372cb335d88fb6663113487102fab44e04eaf2235",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "e4d2e950b231879d5b518bee24eefc43499115f5bd95c58a651c42140b110cee",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "e70e065e6670a332debd219889fc8dc7c81b035001a073c7e9064be6ed415267",
+          "prompt_tokens": 551
+        },
+        {
+          "prompt_id": "e7600a33c6a2a679e3d1813d76addd7644b46ff2b3666a110d4ed05159565235",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "e89512e23053ff364b04a9ba89d5d452ffba8cf4fc143be86dd6c244903ccb52",
+          "prompt_tokens": 565
+        },
+        {
+          "prompt_id": "e8a21bb4e743674c3d706a24bdfe567b584f4fcb11babd6c756a904221f1dc5a",
+          "prompt_tokens": 566
+        },
+        {
+          "prompt_id": "e8dac4f2e2ec344f95c770000f96be88ea6fec8edf8cceb1d393af3d41034aaf",
+          "prompt_tokens": 86
+        },
+        {
+          "prompt_id": "e96e9d5af68a5f36a5a44ad9e6e45119aae084566c42c65c3e2acd7929675cbb",
+          "prompt_tokens": 708
+        },
+        {
+          "prompt_id": "e999765f6de848f2fd44de744e1bca7e8a27a9c84b86feee32f0ea0758d17415",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "eb42fefa767357f4975b451cd9c328c84188b4d36d371691ba6c14e2e5b62c09",
+          "prompt_tokens": 397
+        },
+        {
+          "prompt_id": "ecc3a6bf215e3e8f1798ff12b29d800b6a9a9709d1e5e307d5637bdee6e645c2",
+          "prompt_tokens": 550
+        },
+        {
+          "prompt_id": "ed166293fdcc51ae620fc7b95db9c8c8cd23c8366069dd4970ba91e146f3c0f4",
+          "prompt_tokens": 547
+        },
+        {
+          "prompt_id": "ed59c23275f8cc39ad7bb25368c37c63f92166e66a02b9fe3ec72015a05b0741",
+          "prompt_tokens": 572
+        },
+        {
+          "prompt_id": "edd039f1ec504871cd46fe146a54fba36f2a6fdc09d69ee718a2f0829cc0bdfe",
+          "prompt_tokens": 583
+        },
+        {
+          "prompt_id": "eebb0c1cc9b538f920299614b89082b8665ac6a68b39e0bcafea67c1fd51a8d6",
+          "prompt_tokens": 549
+        },
+        {
+          "prompt_id": "eedb42e89ceee7d54b0bd34eb622ddea0489fd50a36ff71ad505b5b3e924c154",
+          "prompt_tokens": 866
+        },
+        {
+          "prompt_id": "f03ca7d65c3274479ed9de45727558725bdb30a966558175f93df98f25ba4d6f",
+          "prompt_tokens": 720
+        },
+        {
+          "prompt_id": "f05e10301a6d62471dd3aa5b1993dc30455f9c39b32896ec68f4936bdbbb75b5",
+          "prompt_tokens": 879
+        },
+        {
+          "prompt_id": "f17fb8befcee9f6d49a066d138ab199cb00976e040443a24ea9f03c091809453",
+          "prompt_tokens": 556
+        },
+        {
+          "prompt_id": "f262b03e9395981afbe397ddf8942aa2b74e314cb005d70bd64d6f694ee9141e",
+          "prompt_tokens": 711
+        },
+        {
+          "prompt_id": "f308d7f666b68df185bf013e3ecf2cd1276815fdec27252f2e127773bc6b0bd7",
+          "prompt_tokens": 732
+        },
+        {
+          "prompt_id": "f36ca7feb7c15480a692ea126029ed067b65b4e9d30166681e305c1c81a3e3a0",
+          "prompt_tokens": 575
+        },
+        {
+          "prompt_id": "f40ef9d7557e6efc2cbd2d2fa8ab4088fa40e15e906decee296d3d4c783c462c",
+          "prompt_tokens": 560
+        },
+        {
+          "prompt_id": "f41819300e3c5fa5e16e5ae6689d371acc792f2933e0dd06014476588628b767",
+          "prompt_tokens": 548
+        },
+        {
+          "prompt_id": "f6c9ab2fee3af21df1c18fbc9b986472d54e4c7e111ab41ad5ea485738adbd74",
+          "prompt_tokens": 96
+        },
+        {
+          "prompt_id": "f97e4f2abc63a4a5430e87262edcac6076b39ccf9eb66f250c5f548ae2546bd6",
+          "prompt_tokens": 581
+        },
+        {
+          "prompt_id": "f9aa72752894486410ce60948170c2c5a6d4050be43b6633e4ed417570c954ed",
+          "prompt_tokens": 395
+        },
+        {
+          "prompt_id": "f9b5e2f4e8f66f3599d9606c81b2e4dfb1a307ee54203132cf5801033df1546f",
+          "prompt_tokens": 698
+        },
+        {
+          "prompt_id": "f9d4f7e84c81a7b03d2e3160ee1e19460d335b63008647a019f6510933c6c5a5",
+          "prompt_tokens": 555
+        },
+        {
+          "prompt_id": "fb831d3c270167418e51d7320bfbe30a8b7b3d14cfcd0687f7fdea40e02971f0",
+          "prompt_tokens": 583
+        },
+        {
+          "prompt_id": "fb841445cde9d9bfd947bf397bd44b7f13ba95b6f1cc911adadcd9fbbbe3607d",
+          "prompt_tokens": 237
+        },
+        {
+          "prompt_id": "fbe356ff978dd2d25f479fb802e07ace60ac59f89a79825ea391f0f3436cdd38",
+          "prompt_tokens": 401
+        },
+        {
+          "prompt_id": "fc1626150903b72b5f86dc147bc7a0ae038902c43f98c4181556e6df276e1be9",
+          "prompt_tokens": 551
+        },
+        {
+          "prompt_id": "fc1c0451b18e7afc5d4e68e11cb03dfc39ee9b41d14f4b3196d1b362824e30a6",
+          "prompt_tokens": 855
+        },
+        {
+          "prompt_id": "fd1ccb48eb6eed760682f4b83635add581376031c1f762e642ef6e57b0288a31",
+          "prompt_tokens": 399
+        },
+        {
+          "prompt_id": "fd9184a8ad007b42cb0870cdb12915c4fd9d4dd54edc607f662c85622b9b478f",
+          "prompt_tokens": 247
+        },
+        {
+          "prompt_id": "fe1c3b3535f3c835db242e0c16d439146ed4762ad33d3016249b5e8763e2edae",
+          "prompt_tokens": 243
+        },
+        {
+          "prompt_id": "fe4660a2fe63869f1b9b05fa8ff9cbace6ad90206bc5c88985cea065783e26e4",
+          "prompt_tokens": 254
+        },
+        {
+          "prompt_id": "ff55faf104e198999c0073dc5f92c344e97a4a1031de977cca5d63d159c7bd46",
+          "prompt_tokens": 875
+        },
+        {
+          "prompt_id": "ffa713f4c060a3e6b780429548dcff2fc4a97dc50400dfdccb5fd6f27890958b",
+          "prompt_tokens": 547
+        }
+      ]
+    },
+    "tokenizer_provenance": {
+      "model_id": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "use_fast": true,
+      "trust_remote_code": false,
+      "package_versions": {
+        "transformers": "4.51.3",
+        "tokenizers": "0.21.1",
+        "jinja2": "3.1.6"
+      },
+      "python_version": "3.12.10",
+      "template_options": {
+        "tokenize": true,
+        "add_generation_prompt": true,
+        "enable_thinking": false
+      },
+      "backend_tokenizer_sha256": "a63080b4b30dc861fe1b0e420c53a241304dc81aff3d9bb315e6e33e2a1ab794",
+      "elapsed_seconds": 4.970632,
+      "payload_sha256": "7f3055ef98fec05f77676b3b995b27c6c6ebcfc2566fdd668177f065a3d9fcc2",
+      "runner_sha256": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18"
+    }
+  }
+}

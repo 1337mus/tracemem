@@ -1,0 +1,153 @@
+{
+  "baseline_head": "7ada8c7841c74c24df9f2df0ced1edb50897a1c8",
+  "catalog_sha256": "2c18978bea31ba5c4e77d20fa6103a2a7a182bb93c7d94dd5c257b029e9662cf",
+  "checked_at_utc": "2026-10-15T01:11:59.458530+00:00",
+  "empty_prompt_tokens_range": [
+    82,
+    96
+  ],
+  "fictional_measured_receipt": {
+    "path": "examples/synthetic/qwen3-4b-qa-contrast-token-count-remote.json",
+    "sha256": "a48defa04fad82435a979980a3d327232b83260adb7eafe42aa165bef35400bd"
+  },
+  "full_check": {
+    "exit_code": 0,
+    "mypy_runtime_files": 32,
+    "ruff_files": 106,
+    "skips": 1,
+    "tests_attempted": 487
+  },
+  "full_top5_prompt_tokens_range": [
+    848,
+    907
+  ],
+  "historical_runner_unchanged_sha256": "9d8acf587422248275cd71376378a84033c0332d3b08da789ec1b0d2cbabaa5a",
+  "human_reviewers": 0,
+  "independent_root_checks": [
+    "Literal provenance, exact399sorted IDs and integer count coverage",
+    "Raw response equals validated result; both0600",
+    "Backend tokenizer fingerprint equals historical pinned counter",
+    "Regenerated payload byte-identical to pre-implementation root freeze"
+  ],
+  "installed": {
+    "exit_code": 0,
+    "measured_count_replay": 399,
+    "new_wheel_build": false,
+    "payload_byte_identical_to_root_freeze": true,
+    "runtime_members_unchanged": 37,
+    "tests": 8,
+    "tokenizer_imported": false,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60"
+  },
+  "limits": [
+    "All six cases are development-only and agent-authored; zero independent human labels",
+    "399correlated subset prompts are not399independent scenarios",
+    "Token counts depend on exact pinned tokenizer/template/options",
+    "No measured token-budget packing, matched-budget QA, accuracy, cost, model selection or training",
+    "Gate A remains unmet"
+  ],
+  "log_sha256": {
+    "qa-contrast-counter-final-ruff.txt": "d3d6280374011ebb1c93a3c7169c328a161f6950ab45e37709b42d487cd18f63",
+    "qa-contrast-counter-final-tests.txt": "6a2b5f55b11a927f99c50f8424d8bba0e3e1f1bd02218ab7d589bd023749b6ff",
+    "qa-contrast-counter-format-ruff.txt": "5add93f2a5a444cdfa56b11d793a48db1e46260bea8db5915ffb6ab23cd27569",
+    "qa-contrast-counter-green-01-runner-available.txt": "97e4689e589e75394db2e21e3b009aa0cd1d0d0ba8e636dd899347ae5e1ae255",
+    "qa-contrast-counter-green-02-payload-srcpath.txt": "c4eb7a80add3325142cd2317f9a9439300774dacd86f40d414e5419286d9872e",
+    "qa-contrast-counter-green-02-payload.txt": "b0665300a0056f6e6c128ad3ead52dad1fc7bad1180f6b065057dffa3b5c931b",
+    "qa-contrast-counter-green-03-offline-cli.txt": "2c1252c6b440593ca7c88d501d7a240dde1d2d43c4eaf2e06677bdcf926184a1",
+    "qa-contrast-counter-green-04-launch-preflight.txt": "8bc0e3635d2e425cbcdba1fa2baa16b8c33b4373d2fd0aca1b21fa0e91e7fdeb",
+    "qa-contrast-counter-green-05-remote-body.txt": "6a26cbf102c445fb93840a38351fcd42568d8c9b69c317087b1020b80ac8a5e6",
+    "qa-contrast-counter-green-06-modal-isolation-retry.txt": "730852050f517f3068f80861cd3ea81cf24f96b6c3d9aa52142707322fb370f4",
+    "qa-contrast-counter-green-06-modal-isolation.txt": "4d46427ea757b35bb60b24bf99f82838da2126db5815af0c56e6a3bca8b2f9b9",
+    "qa-contrast-counter-green-07-result-validation.txt": "43cec121a807c91a30bf8e56efe3a2271f32d4e29cbe41f39974a55a30bbbd35",
+    "qa-contrast-counter-green-08-one-shot-retry.txt": "fce9428a3281cff462e44bc587d8ad052d6dd62340005ba9bec057e1462f216a",
+    "qa-contrast-counter-green-08-one-shot.txt": "654f71875f8e9deabd6868b3f521b6d3b8b35809992fa5722f2a235f8443f398",
+    "qa-contrast-counter-green-09-fixture-guard.txt": "fc3463c60b04a800365bb430b3a9f95a13b7b240c648028acca702e939ff8173",
+    "qa-contrast-counter-green-10-expanded-safety.txt": "d91b461d4ba8d96628f64f45c87e8cf0f5bd871c2672a804ea78954c13df4bee",
+    "qa-contrast-counter-green-11-remote-guard-table.txt": "66ac3ae8e5e84d59c61f0fd15eb37890714e70b12a398a7d709a19f03c58c26c",
+    "qa-contrast-counter-green-12-teardown-preservation.txt": "816aa1879cdf8e89a96620cfa99b24cd0ab1fb841b41e93308c473e2e8cc3d68",
+    "qa-contrast-counter-installed-tests.log": "3a173f0db9bfaa6185bd8a4eae3309b229ca173f0a85781366a8baa637861c58",
+    "qa-contrast-counter-red-01-runner-available-unittest.txt": "13708f2f1881c026d97be64dada79b0f71bb3cb659679894a866f92437f164d6",
+    "qa-contrast-counter-red-01-runner-available.txt": "56201bed65db942b68881ecfb0f0ac597e5a83ee0875ab3d45b5cf7394425172",
+    "qa-contrast-counter-red-02-payload.txt": "02e7acb367ecdeaac244c37c7748ddf54862e34bcb34e5f181b1e0928f8710a3",
+    "qa-contrast-counter-red-03-offline-cli.txt": "9d211e25f3da12eb367c04abd5ed81b61cde2feaa626428529afa2a7412f064e",
+    "qa-contrast-counter-red-04-launch-preflight.txt": "1feb6db962ef5c1cfa59994ebb8ef9808c0d181d6a5704e30c51b4e418b4c660",
+    "qa-contrast-counter-red-05-remote-body.txt": "17d7b1d9f75ef9efada28c36bf73f841e7b024c932fcfca30a21b6ed6ecab887",
+    "qa-contrast-counter-red-06-modal-isolation.txt": "df1732ca4c6b9b817cee70e067423e64f4aa9959e8829cf029aaa0536d9ddb0f",
+    "qa-contrast-counter-red-07-result-validation.txt": "bb1046d43bbc1f3ea5ff13808b6ec6901b52739911ed7ead6fc7bd9dc675a3dc",
+    "qa-contrast-counter-red-08-one-shot.txt": "46d43999f1c6bd2e3c22da18dee5add3808d5e3ba73fdece4e945ceb61b95638",
+    "qa-contrast-counter-red-12-teardown-preservation.txt": "1befaebbae7f88c4f34df2cfc79e060849b280c7cfa554f4891c5446bdfb66b1",
+    "qa-contrast-counter-root-full-check.log": "87467c6d7f2c64a684567f514ffe10ae297d12f6f246411a788fa3a748d6058e",
+    "qa-contrast-counter-root-setup-failure.txt": "6ba326d15ad8ec896c1850bd4abf2dcf085b00d00db7a6f23a1a39309dd96a29",
+    "qa-contrast-counter-ruff-fix.txt": "4e5100b7acb3e8bdaf5069bff65fc25fcbd793efe7805b5d89738df06c4d6070",
+    "qa-contrast-counter-setup-failure-01.txt": "012e037f5e386620d1ce1d62f0ce4f44236feaa7efba202349c7ff88617cec18",
+    "qa-contrast-token-count-20261015T010926Z.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "observed_complete_prompt_tokens": {
+    "max": 907,
+    "median": 553,
+    "min": 82
+  },
+  "observed_prompt_count": 399,
+  "payload_bytes": 534629,
+  "payload_sha256": "7f3055ef98fec05f77676b3b995b27c6c6ebcfc2566fdd668177f065a3d9fcc2",
+  "preserved_failure_evidence": "RED/GREEN, harness/setup and formatter failures retained locally; final8focused tests passed after corrections",
+  "remote": {
+    "active_jobs_after": 0,
+    "active_jobs_before": 0,
+    "active_tasks_after": 0,
+    "app_state": "stopped",
+    "calls": 1,
+    "generation": false,
+    "gpu_calls": 0,
+    "inference": false,
+    "model_weights": false,
+    "private_inputs": false,
+    "tokenizer_provenance": {
+      "backend_tokenizer_sha256": "a63080b4b30dc861fe1b0e420c53a241304dc81aff3d9bb315e6e33e2a1ab794",
+      "elapsed_seconds": 4.970632,
+      "model_id": "Qwen/Qwen3-4B",
+      "package_versions": {
+        "jinja2": "3.1.6",
+        "tokenizers": "0.21.1",
+        "transformers": "4.51.3"
+      },
+      "payload_sha256": "7f3055ef98fec05f77676b3b995b27c6c6ebcfc2566fdd668177f065a3d9fcc2",
+      "python_version": "3.12.10",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "runner_sha256": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18",
+      "template_options": {
+        "add_generation_prompt": true,
+        "enable_thinking": false,
+        "tokenize": true
+      },
+      "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "trust_remote_code": false,
+      "use_fast": true
+    },
+    "workspace_verified_before_launch": true
+  },
+  "root_findings_corrected": [
+    "Completed remote response must be fsynced before app teardown",
+    "Exercise remote tokenizer guards and fake remote Python independently of host"
+  ],
+  "schema_version": 1,
+  "scope": "Exact frozen fictional development prompt counting; no token-budget packing or QA scoring",
+  "source_free_serialization": {
+    "closure": null,
+    "remote_free_variables": [],
+    "remote_globals_keys": [
+      "__builtins__",
+      "__name__"
+    ],
+    "serialized_remote_bytes": 7907,
+    "serialized_remote_sha256": "28e9b225d4da6745c7bd1836ddf1fb215948db2f1362977fc847f8938eb5d89f"
+  },
+  "source_sha256": {
+    "examples/synthetic/qa-contrast-dev-v1.json": "b4fb6ea6242c294574ca9ed15549f5b524a77d3154b4c87b9831d2f357beefed",
+    "experiments/modal_qa_contrast_token_count.py": "5c2585188a712b731015f08a026f41903feabdacc77890bef1f629f265022c18",
+    "experiments/prepare_qa_contrast.py": "dc6e72187e6bafd64e133f4304d60d71caa72f14823470b6ed8bc0069b87a09d",
+    "tests/test_modal_qa_contrast_token_count.py": "b5182c4529ed82624dea48833b231bbe02142bd41840c92daaa16246e038c6ee"
+  },
+  "status": "passed",
+  "training_started": false
+}
