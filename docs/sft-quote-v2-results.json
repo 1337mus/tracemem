@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-15",
+  "status": "completed_diagnostic",
+  "summary": "The synthetic quote-v2 run completed. Strict raw scoring found 23/24 base parse failures from Markdown fences and 0/24 tuned parse failures; reference-string matches were 0/19 and 2/19. Separate fence-only and agent-only semantic analyses are recorded below.",
+  "data": {
+    "training_rows": 768,
+    "training_family_count": 48,
+    "correlated_variants_per_family": 16,
+    "development_family_count": 24,
+    "development_prompts": 24,
+    "development_slice": "Small adaptive development slice; not held out.",
+    "private_test_used": false,
+    "private_test_read": false,
+    "human_reviewers": 0,
+    "gate_a_met": false,
+    "training_seed": 17,
+    "scenario_expansion_seed": 23
+  },
+  "training": {
+    "model_id": "Qwen/Qwen3-4B",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "canonical_job_sha256": "d7e21b15326af544a19f6f29be8158fe822560997ba6fd2565e6f4fc41c8e6e2",
+    "job_file_sha256": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+    "remote_receipt_file_sha256": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf",
+    "job_path": "examples/synthetic/sft-quote-v2-job-v1.json",
+    "remote_receipt_path": "examples/synthetic/sft-quote-v2-remote-v1.json",
+    "configuration": {
+      "epochs": 1,
+      "optimizer_steps": 192,
+      "gpu": "A10G",
+      "max_containers": 1,
+      "retries": 0,
+      "timeout_seconds": 3600,
+      "training_seed": 17
+    },
+    "examples_consumed": 768,
+    "input_tokens_consumed": 239135,
+    "supervised_tokens_consumed": 47693,
+    "training_seconds": 901.998412695,
+    "worker_seconds": 1169.919839198,
+    "client_seconds": 1184.560092,
+    "adapter": {
+      "bytes": 132187888,
+      "sha256": "3b30cbf98a685792734d8c16ffd7f31e000707f8f2b72a74e5ca9bc364214093",
+      "private_volume_path": "tracemem-sft-quote-v2/adapters/quote-v2-20261015-01/adapter",
+      "downloaded_to_mac": false
+    },
+    "worker_resource_cost_estimate_usd": 0.5,
+    "cost_estimate_excludes": [
+      "startup",
+      "storage"
+    ],
+    "actual_billing_available": false,
+    "personal_modal_apps_stopped_at_utc": "2026-10-15T23:01Z",
+    "active_tasks_after_stop": 0,
+    "apps_stopped_at_inventory": 2,
+    "all_apps_stopped": true
+  },
+  "strict_raw_output_evaluation": {
+    "source_report_path": ".local/sft-quote-v2-20261015/dev-report/quote-v2-dev-report.json",
+    "source_report_sha256": "1a15403d4d8011a2e9146257b5891539952a321ac7f517e82ac9a8f4b70d2a42",
+    "case_count_per_arm": 24,
+    "metric_definition": "Strict evaluator consumes the frozen raw response text without formatting repair. Citation integrity checks exact source, quote, and explicit dates; it is not a semantic support judgment.",
+    "base": {
+      "parse_failures": {
+        "count": 23,
+        "denominator": 24,
+        "cause": "Markdown-fenced JSON is rejected by the strict parser."
+      },
+      "schema_failures": 0,
+      "intact_citations": {
+        "valid": 1,
+        "checked": 1
+      },
+      "reference_string_matches": {
+        "matched": 0,
+        "expected": 19,
+        "predicted": 1
+      },
+      "correct_empty_target_abstentions": {
+        "correct": 0,
+        "empty_target_cases": 6
+      }
+    },
+    "tuned": {
+      "parse_failures": {
+        "count": 0,
+        "denominator": 24
+      },
+      "schema_failures": 0,
+      "intact_citations": {
+        "valid": 19,
+        "checked": 19
+      },
+      "reference_string_matches": {
+        "matched": 2,
+        "expected": 19,
+        "predicted": 19
+      },
+      "correct_empty_target_abstentions": {
+        "correct": 6,
+        "empty_target_cases": 6
+      }
+    }
+  },
+  "posthoc_fence_only_analysis": {
+    "source_path": ".local/sft-quote-v2-20261015/posthoc-fence-analysis-v1.json",
+    "source_sha256": "a4e6418fb2748f410744c30d731757e4b905c5505ee9404d1c4cdebfcff901ba",
+    "analysis_type": "Post-hoc exact outer JSON code-fence presentation normalization only.",
+    "base": {
+      "parse_failures": {
+        "count": 0,
+        "denominator": 24
+      },
+      "intact_citations": {
+        "valid": 24,
+        "checked": 26
+      },
+      "reference_string_matches": {
+        "matched": 0,
+        "expected": 19
+      },
+      "correct_empty_target_abstentions": {
+        "correct": 1,
+        "empty_target_cases": 6
+      }
+    },
+    "tuned": {
+      "unchanged_from_strict_raw_output_evaluation": true,
+      "parse_failures": {
+        "count": 0,
+        "denominator": 24
+      },
+      "intact_citations": {
+        "valid": 19,
+        "checked": 19
+      },
+      "reference_string_matches": {
+        "matched": 2,
+        "expected": 19
+      },
+      "correct_empty_target_abstentions": {
+        "correct": 6,
+        "empty_target_cases": 6
+      }
+    },
+    "semantic_acceptance": false,
+    "original_receipt_and_strict_metrics_changed": false,
+    "analysis_script_copied": false
+  },
+  "semantic_review": {
+    "protocol_path": "examples/synthetic/sft-quote-v2-semantic-protocol-v1.json",
+    "reviewer_artifact_path": "examples/synthetic/sft-quote-v2-blind-review-v1.json",
+    "packet_path": "examples/synthetic/sft-quote-v2-blind-packet-v1.json",
+    "curator_map_path": "examples/synthetic/sft-quote-v2-curator-map-v1.json",
+    "root_adjudication_path": "examples/synthetic/sft-quote-v2-root-adjudication-v1.json",
+    "fresh_blind_agent_review": {
+      "responses_readable_and_reviewed": 48,
+      "claims_judged": 45,
+      "semantically_unreadable_responses": 0,
+      "human_reviewers": 0,
+      "packet_builder_strict_parser_flagged_unreviewable": 23,
+      "parser_flag_explanation": "The packet builder strict-parsed the outputs and mechanically marked the 23 fenced base responses unreviewable with empty generated_claims. The reviewer nevertheless read all 48 raw-text values, including fenced JSON, and judged all 45 extracted claims. Parser status was not treated as semantic unreadability."
+    },
+    "root_unblinded_adjudication": {
+      "all_source_messages_and_candidate_claims_reviewed": true,
+      "agent_claim_judgments_reviewed": 45,
+      "label_changes": 0,
+      "independent_or_human_review": false,
+      "formatting_may_reveal_model_arm": true
+    },
+    "base": {
+      "supported_claims": 18,
+      "unsupported_claims": 8,
+      "uncertain_claims": 0,
+      "fully_supported_nonempty_responses": 16,
+      "correct_empty_responses": 1,
+      "empty_target_cases": 6
+    },
+    "tuned": {
+      "supported_claims": 17,
+      "unsupported_claims": 1,
+      "uncertain_claims": 1,
+      "fully_supported_nonempty_responses": 16,
+      "correct_empty_responses": 6,
+      "empty_target_cases": 6
+    },
+    "case_findings": {
+      "D01_and_D03": "Tuned output improved cause/attribution handling.",
+      "D14": "Tuned output invented unsupported chronology.",
+      "D21": "Tuned output left an ambiguous keeper/subject attachment, labeled uncertain."
+    },
+    "interpretation": "Agent-only support labels remain provisional. Claim counts are not recall: claim segmentation differs, and the review was not exhaustive over possible source facts.",
+    "base_unsupported_label_caveat": "The eight base unsupported labels include summaries of ineligible questions, assistant content, or tool content. These are extraction-policy violations, not necessarily false descriptions of dialogue."
+  },
+  "limitations": {
+    "no_model_quality_or_generalization_claim": true,
+    "no_production_checkpoint_selected": true,
+    "gate_a": "unmet",
+    "development_data_is_held_out": false,
+    "human_reviewers": 0,
+    "independent_human_ground_truth": false,
+    "private_test_used_or_read": false,
+    "public_publication": false
+  },
+  "next_research_step": "Strengthen annotations and make paired chronology and subject-attachment corrections with distinct scenario families and a separate frozen test. Do not assume that adding training steps is the remedy.",
+  "tracked_artifacts": [
+    {
+      "path": "examples/synthetic/sft-quote-v2-job-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/training-job-v1.json",
+      "sha256": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+      "bytes": 1203928
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-remote-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/remote-training-v1.json",
+      "sha256": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf",
+      "bytes": 332522
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-blind-packet-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/blind-review-packet.json",
+      "sha256": "b4fba1646db95a8a2ad356ec0d26e0db43c922b8f31385583da98d590628e473",
+      "bytes": 69778
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-blind-review-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/blind-semantic-review-v1.json",
+      "sha256": "42364367617cd4a9d42b1b80988d61b9d73e9064336d9e0fb75768e59541b379",
+      "bytes": 39777
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-curator-map-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/curator-map.json",
+      "sha256": "105f9e0fb402896970428c13349d36fd0028c7488c0d60ac238358af1dcf7218",
+      "bytes": 6334
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-semantic-protocol-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/semantic-review-protocol.json",
+      "sha256": "e313b9f9af14b50bc7f0f98b8c03ab5519d97a6493f07d24455818edb3da15a3",
+      "bytes": 1912
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-root-adjudication-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/root-semantic-adjudication-v1.json",
+      "sha256": "b529ae1efc2ce01406abd69225029dd3662c6b6770db6a357d25c2b77dc82f5b",
+      "bytes": 2513
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-fence-analysis-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/posthoc-fence-analysis-v1.json",
+      "sha256": "a4e6418fb2748f410744c30d731757e4b905c5505ee9404d1c4cdebfcff901ba",
+      "bytes": 5735
+    }
+  ]
+}

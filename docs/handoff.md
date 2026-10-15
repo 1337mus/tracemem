@@ -1,4 +1,58 @@
-# Current checkpoint: first trained adapter, negative quality result
+# Current checkpoint: quote-v2 training completed
+
+Updated 2026-10-15 UTC. The second synthetic-only QLoRA run and its frozen
+development scoring, blind agent review, and root adjudication are complete.
+The new [results report](sft-quote-v2-results.md), [aggregate JSON](sft-quote-v2-results.json),
+and [validation record](validation-sft-quote-v2.json) keep strict raw scoring,
+fence-only normalization, and semantic labels separate.
+
+The run used 768 rows from 48 families with 16 correlated variants each and
+192 optimizer steps; the 24 development families are a small adaptive slice,
+not held out. Strict scoring found 23/24 base parse failures from Markdown
+fences versus 0/24 tuned, intact citations 1/1 versus 19/19, reference-string
+matches 0/19 versus 2/19, and correct empty-source abstentions 0/6 versus 6/6.
+The separate fence-only analysis changes base presentation metrics only; it
+does not establish meaning or support.
+
+One fresh-context blinded agent read all 48 readable raw responses and judged
+45 claims. The packet builder's strict parser mechanically marked the 23
+fenced base tasks unreviewable and left their generated-claim arrays empty, but
+the reviewer read every raw response, including fenced JSON. Root's later
+unblinded review covered all sources and all 45 judgments and accepted every
+label. These are agent-only provisional labels: zero human reviewers, visible
+formatting differences may reveal the arms, and no recall or generalization
+claim follows. D14 has unsupported invented chronology; D21's keeper/subject
+attachment remains uncertain; D01 and D03 show better cause or attribution
+handling. Gate A is unmet and no production checkpoint was selected.
+
+The adapter (132,187,888 bytes; SHA-256
+`3b30cbf98a685792734d8c16ffd7f31e000707f8f2b72a74e5ca9bc364214093`) remains
+in the personal private Modal volume at
+`tracemem-sft-quote-v2/adapters/quote-v2-20261015-01/adapter`; no weights were
+downloaded to this Mac. Training took 901.998 seconds, the worker 1,169.920
+seconds, and the client 1,184.560 seconds. The approximate `$0.50` worker
+resource estimate excludes startup, build, and storage; billing was not
+available. The recorded 2026-10-15 23:01 UTC inventory showed both apps stopped
+with zero active tasks. Verify live operational state by 2026-10-15.
+
+The preserved local source check attempted 734 tests, passed 733, and skipped
+one optional test; Ruff covered 161 formatted files and mypy checked 44 source
+files. It predates this documentation closeout. Check
+`.local/active-cycle.json` for the current signed tip, push, and hosted-CI
+state; this handoff makes no delivery claim for the new results documents.
+No new training or model-runtime calls were needed; CPU replay and exact-copy
+checks passed.
+
+Next research work is paired chronology and subject-attachment corrections
+with distinct scenario families and a separate frozen test, alongside stronger
+annotations. Do not assume additional optimizer steps are the remedy. The
+historical checkpoints below are retained for context; use the current status
+above and `.local/active-cycle.json` for live state. Original `.local` receipts
+remain unchanged.
+
+## Historical checkpoints and earlier work
+
+## Historical checkpoint: first trained adapter, negative quality result
 
 Updated 2026-10-15 UTC. Verify live jobs before resuming.
 
@@ -60,9 +114,9 @@ reviewed code, documentation and fictional fixtures may be signed and pushed
 to `1337mus/tracemem` after a fresh PRIVATE check. Publication remains unauthorized.
 Continuation automation stays paused. Computer-use tools were unused.
 
-## Earlier checkpoint and history
+### Earlier project checkpoint and history
 
-# TraceMem handoff
+#### TraceMem handoff (historical)
 
 Updated 2026-10-15 UTC. Verify by: 2026-10-15. The current diagnostic is the
 [cross-session MiniLM comparison](cross-session-minilm.md), its replay report

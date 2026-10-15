@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-15",
+  "status": "completed_local_documentation_closeout",
+  "run_status": "training_and_frozen_development_scoring_completed",
+  "training_provenance": {
+    "canonical_job_sha256": "d7e21b15326af544a19f6f29be8158fe822560997ba6fd2565e6f4fc41c8e6e2",
+    "job_file_sha256": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+    "receipt_sha256": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf",
+    "source_model_verification": {
+      "path": ".local/sft-quote-v2-20261015/observer/source-model-verification-v3.json",
+      "sha256": "e8aecd862818cb765cec04e4bd8b18dd8a14169ae92b0d39b248bf1f2b8bb1a9",
+      "all_checks_pass": true,
+      "actual_job_file_sha256": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+      "receipt_job_sha256": "d7e21b15326af544a19f6f29be8158fe822560997ba6fd2565e6f4fc41c8e6e2",
+      "source_file_hashes_checked": 15,
+      "remote_module_hashes_checked": 9
+    },
+    "observer_result": {
+      "path": ".local/sft-quote-v2-20261015/observer/training-result-v3.json",
+      "sha256": "8b6f789309cbd1d0fe48435ea68495ac3fb1a18d2372a9b7ccfa3bafed695770",
+      "status": "completed",
+      "examples_consumed": 768,
+      "optimizer_steps": 192,
+      "training_seconds": 901.998412695
+    },
+    "development_report": {
+      "path": ".local/sft-quote-v2-20261015/dev-report/quote-v2-dev-report.json",
+      "sha256": "1a15403d4d8011a2e9146257b5891539952a321ac7f517e82ac9a8f4b70d2a42"
+    },
+    "semantic_adjudication": {
+      "path": ".local/sft-quote-v2-20261015/root-semantic-adjudication-v1.json",
+      "sha256": "b529ae1efc2ce01406abd69225029dd3662c6b6770db6a357d25c2b77dc82f5b"
+    },
+    "fence_analysis": {
+      "path": ".local/sft-quote-v2-20261015/posthoc-fence-analysis-v1.json",
+      "sha256": "a4e6418fb2748f410744c30d731757e4b905c5505ee9404d1c4cdebfcff901ba"
+    }
+  },
+  "local_source_check": {
+    "path": ".local/sft-quote-v2-20261015/root-review/final-make-check-v1.json",
+    "sha256": "8f51a21162e01dda3f65b47da9c9774d3dd2972f41e5264679c9530577f6bff6",
+    "command": [
+      "make",
+      "check",
+      "PYTHON=.venv/bin/python"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-15T22:37:19.346899+00:00",
+    "stdout": {
+      "path": ".local/sft-quote-v2-20261015/root-review/final-make-check-v1.stdout",
+      "sha256": "bdfc22d691e9f0419cab75254673f6ed5b158f71c28832ef72feb470c1a20384"
+    },
+    "stderr": {
+      "path": ".local/sft-quote-v2-20261015/root-review/final-make-check-v1.stderr",
+      "sha256": "64b25a355e806e46a9cbdcc46e3fdaa7fd20d0375fa446c1153e2e5d765a7d08"
+    },
+    "tests_attempted": 734,
+    "tests_passed": 733,
+    "optional_tests_skipped": 1,
+    "ruff_check": "passed",
+    "ruff_format_files": 161,
+    "mypy_files_without_issues": 44,
+    "scope_note": "This source check predates the documentation closeout and does not validate its Markdown or JSON."
+  },
+  "artifact_copies": [
+    {
+      "path": "examples/synthetic/sft-quote-v2-job-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/training-job-v1.json",
+      "sha256": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+      "bytes": 1203928
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-remote-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/remote-training-v1.json",
+      "sha256": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf",
+      "bytes": 332522
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-blind-packet-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/blind-review-packet.json",
+      "sha256": "b4fba1646db95a8a2ad356ec0d26e0db43c922b8f31385583da98d590628e473",
+      "bytes": 69778
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-blind-review-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/blind-semantic-review-v1.json",
+      "sha256": "42364367617cd4a9d42b1b80988d61b9d73e9064336d9e0fb75768e59541b379",
+      "bytes": 39777
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-curator-map-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/curator-map.json",
+      "sha256": "105f9e0fb402896970428c13349d36fd0028c7488c0d60ac238358af1dcf7218",
+      "bytes": 6334
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-semantic-protocol-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/semantic-review-protocol.json",
+      "sha256": "e313b9f9af14b50bc7f0f98b8c03ab5519d97a6493f07d24455818edb3da15a3",
+      "bytes": 1912
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-root-adjudication-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/root-semantic-adjudication-v1.json",
+      "sha256": "b529ae1efc2ce01406abd69225029dd3662c6b6770db6a357d25c2b77dc82f5b",
+      "bytes": 2513
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v2-fence-analysis-v1.json",
+      "source_path": ".local/sft-quote-v2-20261015/posthoc-fence-analysis-v1.json",
+      "sha256": "a4e6418fb2748f410744c30d731757e4b905c5505ee9404d1c4cdebfcff901ba",
+      "bytes": 5735
+    }
+  ],
+  "mechanical_closeout_checks": {
+    "json_syntax_checked": true,
+    "source_and_copy_sha256_match": true,
+    "copied_inputs_json_parse": true,
+    "credential_scan": "No sensitive credential keys or credential-like token patterns found in the eight copied JSON inputs.",
+    "local_receipts_modified": false,
+    "new_tests_run": 0,
+    "new_training_or_model_runtime_calls": 0,
+    "source_data_hashes_verified_unchanged": 15,
+    "cpu_replay_report_byte_identical": true,
+    "author_scope": {
+      "new_tests_run": 0,
+      "new_training_or_model_runtime_calls": 0,
+      "external_service_writes": 0,
+      "original_source_receipts_modified": false
+    }
+  },
+  "delivery_authority": {
+    "path": ".local/active-cycle.json",
+    "note": "Consult the current local delivery record for signed tip, push, and CI state. This validation record makes no delivery or hosted-CI claim for the new results documentation."
+  },
+  "cpu_only_replay": {
+    "command": [
+      "PYTHONPATH=src:.",
+      ".venv/bin/python",
+      "-m",
+      "training.evaluate_quote_sft",
+      "--job",
+      "examples/synthetic/sft-quote-v2-job-v1.json",
+      "--receipt",
+      "examples/synthetic/sft-quote-v2-remote-v1.json",
+      "--fixture",
+      "datasets/sft-quote-v2/dev.json",
+      "--output",
+      ".local/sft-quote-v2-20261015/root-review/example-cpu-replay-v1.json"
+    ],
+    "receipt": {
+      "path": ".local/sft-quote-v2-20261015/root-review/closeout-example-cpu-replay-v2.json",
+      "sha256": "4f9aceee45a3e3d1281367764e31c3481dbcc2126e3650cb043539771836791d",
+      "exit_code": 0,
+      "case_count": 24,
+      "output_path": ".local/sft-quote-v2-20261015/root-review/example-cpu-replay-v1.json",
+      "output_sha256": "1a15403d4d8011a2e9146257b5891539952a321ac7f517e82ac9a8f4b70d2a42"
+    },
+    "byte_compare_receipt": {
+      "path": ".local/sft-quote-v2-20261015/root-review/closeout-example-cpu-compare-v1.json",
+      "sha256": "a044ea4f1f28ac4a6807493facaa375c334e5f0c1f4cb5460713b926e19ac9e4",
+      "exit_code": 0,
+      "compared_with": ".local/sft-quote-v2-20261015/dev-report/quote-v2-dev-report.json",
+      "byte_identical": true
+    },
+    "copy_verification_receipt": {
+      "path": ".local/sft-quote-v2-20261015/root-review/closeout-example-copy-verification-v1.json",
+      "sha256": "c7e73d58850698acf492bd57ad5fca135716c6e9a4f2b17d5943f6e931dc45a7",
+      "exit_code": 0,
+      "byte_identical_json_copies": 8
+    },
+    "scope": "CPU-only frozen report replay; no model or GPU call."
+  },
+  "implementation_commit_reference": {
+    "commit": "778e70ee754d8b50b8876535df7a1cb9a8ab4198",
+    "locally_signed": true,
+    "current_delivery_state_source": ".local/active-cycle.json",
+    "delivery_claim_for_new_docs": false
+  }
+}

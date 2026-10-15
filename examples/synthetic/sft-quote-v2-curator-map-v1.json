@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "mapping": [
+    {
+      "task_id": "TASK-001",
+      "case_id": "DEV-CASE-D09-reported-repair-cause-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-002",
+      "case_id": "DEV-CASE-D05-negative-garden-use-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-003",
+      "case_id": "DEV-CASE-D01-committed-garden-ledger-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-004",
+      "case_id": "DEV-CASE-D17-hypothetical-shopping-question-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-005",
+      "case_id": "DEV-CASE-D19-tool-only-weather-result-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-006",
+      "case_id": "DEV-CASE-D21-storing-someone-elses-item-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-007",
+      "case_id": "DEV-CASE-D11-effective-tool-window-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-008",
+      "case_id": "DEV-CASE-D15-assistant-only-schedule-claim-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-009",
+      "case_id": "DEV-CASE-D24-hypothetical-roster-tool-question-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-010",
+      "case_id": "DEV-CASE-D10-no-causal-conclusion-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-011",
+      "case_id": "DEV-CASE-D16-forwarded-manual-instruction-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-012",
+      "case_id": "DEV-CASE-D12-uncertain-seasonal-plan-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-013",
+      "case_id": "DEV-CASE-D07-owned-travel-clock-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-014",
+      "case_id": "DEV-CASE-D23-completed-craft-action-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-015",
+      "case_id": "DEV-CASE-D24-hypothetical-roster-tool-question-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-016",
+      "case_id": "DEV-CASE-D21-storing-someone-elses-item-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-017",
+      "case_id": "DEV-CASE-D22-unverified-status-belief-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-018",
+      "case_id": "DEV-CASE-D20-reported-family-preference-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-019",
+      "case_id": "DEV-CASE-D06-canceled-recipe-proposal-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-020",
+      "case_id": "DEV-CASE-D17-hypothetical-shopping-question-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-021",
+      "case_id": "DEV-CASE-D20-reported-family-preference-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-022",
+      "case_id": "DEV-CASE-D03-reported-neighbor-preference-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-023",
+      "case_id": "DEV-CASE-D08-location-not-ownership-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-024",
+      "case_id": "DEV-CASE-D14-correction-from-maybe-to-choice-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-025",
+      "case_id": "DEV-CASE-D12-uncertain-seasonal-plan-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-026",
+      "case_id": "DEV-CASE-D19-tool-only-weather-result-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-027",
+      "case_id": "DEV-CASE-D09-reported-repair-cause-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-028",
+      "case_id": "DEV-CASE-D22-unverified-status-belief-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-029",
+      "case_id": "DEV-CASE-D18-question-about-unnamed-item-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-030",
+      "case_id": "DEV-CASE-D06-canceled-recipe-proposal-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-031",
+      "case_id": "DEV-CASE-D18-question-about-unnamed-item-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-032",
+      "case_id": "DEV-CASE-D11-effective-tool-window-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-033",
+      "case_id": "DEV-CASE-D04-tentative-repair-plan-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-034",
+      "case_id": "DEV-CASE-D08-location-not-ownership-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-035",
+      "case_id": "DEV-CASE-D15-assistant-only-schedule-claim-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-036",
+      "case_id": "DEV-CASE-D13-cross-session-storage-change-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-037",
+      "case_id": "DEV-CASE-D02-possible-audio-trial-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-038",
+      "case_id": "DEV-CASE-D04-tentative-repair-plan-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-039",
+      "case_id": "DEV-CASE-D10-no-causal-conclusion-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-040",
+      "case_id": "DEV-CASE-D23-completed-craft-action-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-041",
+      "case_id": "DEV-CASE-D16-forwarded-manual-instruction-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-042",
+      "case_id": "DEV-CASE-D02-possible-audio-trial-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-043",
+      "case_id": "DEV-CASE-D03-reported-neighbor-preference-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-044",
+      "case_id": "DEV-CASE-D01-committed-garden-ledger-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-045",
+      "case_id": "DEV-CASE-D07-owned-travel-clock-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-046",
+      "case_id": "DEV-CASE-D05-negative-garden-use-V01",
+      "arm": "tuned"
+    },
+    {
+      "task_id": "TASK-047",
+      "case_id": "DEV-CASE-D13-cross-session-storage-change-V01",
+      "arm": "base"
+    },
+    {
+      "task_id": "TASK-048",
+      "case_id": "DEV-CASE-D14-correction-from-maybe-to-choice-V01",
+      "arm": "base"
+    }
+  ],
+  "input_sha256": {
+    "dev_fixture": "1357ce09175e0d40b5ff5fb8eb5b6aa83a7f713a5147d55df09fdde4afd20030",
+    "remote_receipt": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf"
+  },
+  "builder_sha256": "4b097a3710c972b8419b5669fe70897c5f35119e874591ac20d905976aa154e5"
+}

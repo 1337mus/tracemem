@@ -1,0 +1,864 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b4fba1646db95a8a2ad356ec0d26e0db43c922b8f31385583da98d590628e473",
+  "reviewer_model": "gpt-6-astra",
+  "provisional_agent_only": true,
+  "human_reviewers": 0,
+  "tasks": [
+    {
+      "task_id": "TASK-001",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that Amara attributes the failure of a cracked yellow thermos to it being left in the rain.",
+          "label": "supported",
+          "reason": "DEV-MSG-00009 explicitly reports Amara's causal account. The candidate preserves Amara as the person attributing the failure to rain, rather than asserting a verified cause.",
+          "message_id": "DEV-MSG-00009",
+          "quote": "Amara says the cracked yellow thermos failed because it was left in the rain.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-002",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user does not use FjordMemo for garden notes; they keep those in a paper log.",
+          "label": "supported",
+          "reason": "DEV-MSG-00005 directly states both non-use of FjordMemo for garden notes and use of a paper log. The negation and purpose are preserved.",
+          "message_id": "DEV-MSG-00005",
+          "quote": "I do not use FjordMemo for garden notes; I keep those in a paper log.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-003",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user chose FjordMemo for garden schedules, which keeps each watering date beside the plant name.",
+          "label": "supported",
+          "reason": "DEV-MSG-00001 directly states the completed choice for garden schedules and the feature of keeping each watering date beside its plant name.",
+          "message_id": "DEV-MSG-00001",
+          "quote": "For garden schedules, I chose FjordMemo; it keeps each watering date beside the plant name.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-004",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user asked if a yellow thermos would fit in a cabinet at room Amber.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00018 is a hypothetical purchase question. The candidate accurately describes the question, but questions and hypotheticals are excluded as eligible memory facts; no purchase, ownership, or storage fact is asserted.",
+          "message_id": "DEV-MSG-00018",
+          "quote": "If I bought a yellow thermos, would it fit in the cabinet at room Amber?",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-005",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user asked for the forecast for room Amber.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00020 is a request to check a forecast. Summarizing that request does not yield an eligible user-stated or explicitly reported memory fact under the exclusion of questions.",
+          "message_id": "DEV-MSG-00020",
+          "quote": "Can you check the forecast for room Amber?",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim_index": 1,
+          "claim": "The tool reported that the forecast for room Amber is light rain tomorrow.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00021 is tool output, not a user statement or an explicit user report. Preserving its tool attribution does not make it an eligible source for memory extraction.",
+          "message_id": "DEV-MSG-00021",
+          "quote": "Forecast result for room Amber: light rain tomorrow.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-006",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "label": "supported",
+          "reason": "DEV-MSG-00023 is reproduced faithfully: Amara owns the thermos, while the user is temporarily keeping it at room Amber during Amara's move. The first-person wording retains the source speaker.",
+          "message_id": "DEV-MSG-00023",
+          "quote": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-007",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "Between 2025-09-01 and 2025-10-01, I use FjordMemo for the book club schedule.",
+          "label": "supported",
+          "reason": "DEV-MSG-00011 explicitly states FjordMemo use for the book club schedule between 2025-09-01 and 2025-10-01. Both date bounds occur literally in the source quote; the later message timestamp does not change that stated interval.",
+          "message_id": "DEV-MSG-00011",
+          "quote": "Between 2025-09-01 and 2025-10-01, I use FjordMemo for the book club schedule.",
+          "valid_from": "2025-09-01",
+          "valid_to": "2025-10-01"
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-008",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "The only message, DEV-MSG-00016, is assistant-authored sample content. It offers no eligible user-stated or explicitly reported fact."
+      }
+    },
+    {
+      "task_id": "TASK-009",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00026 is a hypothetical question about ever organizing volunteer rosters. It does not assert actual organizing, a concrete plan, or tool use."
+      }
+    },
+    {
+      "task_id": "TASK-010",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user put the yellow thermos by room Amber before the lights went out.",
+          "label": "supported",
+          "reason": "DEV-MSG-00010 directly states placement by room Amber before the lights went out. The candidate preserves temporal sequence without asserting a causal connection.",
+          "message_id": "DEV-MSG-00010",
+          "quote": "I put the yellow thermos by room Amber before the lights went out, but I do not know whether one event caused the other.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim_index": 1,
+          "claim": "The user does not know whether one event caused the other.",
+          "label": "supported",
+          "reason": "DEV-MSG-00010 explicitly disclaims knowledge of a causal connection. In the supplied context, the two events are thermos placement and the lights going out; this candidate retains that uncertainty.",
+          "message_id": "DEV-MSG-00010",
+          "quote": "I put the yellow thermos by room Amber before the lights went out, but I do not know whether one event caused the other.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-011",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00017 is marked quoted_document and consists of a manual instruction. It is not the user's assertion of actual storage or an adopted personal practice."
+      },
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-012",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user hopes to move notes into FjordMemo sometime this spring and has no exact date.",
+          "label": "supported",
+          "reason": "DEV-MSG-00012 states a hope to move notes sometime this spring and the absence of an exact date. The candidate preserves hope rather than completed migration, and correctly leaves calendar bounds null.",
+          "message_id": "DEV-MSG-00012",
+          "quote": "Sometime this spring I hope to move my notes into FjordMemo, but I have no exact date.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-013",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user owns a yellow thermos and keeps it in room Amber when they travel.",
+          "label": "supported",
+          "reason": "DEV-MSG-00007 directly establishes the user's ownership and room Amber storage specifically when traveling. The candidate retains that conditional scope.",
+          "message_id": "DEV-MSG-00007",
+          "quote": "The yellow thermos is mine, and I keep it in room Amber when I travel.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-014",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user replaced the torn strap on the yellow thermos with a stitched one.",
+          "label": "supported",
+          "reason": "DEV-MSG-00025 explicitly reports a completed replacement of the torn strap with a stitched one. The candidate is a supported past-event summary; the source additionally says yesterday, and the null bounds avoid inventing a literal calendar date.",
+          "message_id": "DEV-MSG-00025",
+          "quote": "I replaced the torn strap on the yellow thermos with a stitched one yesterday.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-015",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user is asking if FjordMemo would help with organizing volunteer rosters.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00026 asks about a hypothetical future activity. Although the candidate describes the question faithfully, it extracts a question rather than an eligible asserted fact, plan, or belief.",
+          "message_id": "DEV-MSG-00026",
+          "quote": "Would FjordMemo help if I ever organized volunteer rosters?",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-016",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that Amara owns the yellow thermos and is keeping it at room Amber while they move.",
+          "label": "uncertain",
+          "reason": "DEV-MSG-00023 clearly assigns ownership to Amara and temporary keeping to the user. In the candidate, and is keeping it can attach either to Amara inside the reported clause or to the user at the main-clause level. The former reading changes the keeper and is unsupported; the latter is supported. The subject attachment is genuinely ambiguous.",
+          "message_id": "DEV-MSG-00023",
+          "quote": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "The keeper-subject ambiguity merits adjudication; no single subject reading was silently selected."
+      ]
+    },
+    {
+      "task_id": "TASK-017",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user believes the yellow thermos may be fixed but has not tested it.",
+          "label": "supported",
+          "reason": "DEV-MSG-00024 presents the repair as the user's untested belief. The candidate retains uncertainty and explicitly retains the absence of testing rather than asserting a confirmed repair.",
+          "message_id": "DEV-MSG-00024",
+          "quote": "I think the yellow thermos is fixed, although I have not tested it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-018",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that their cousin Amara believes FjordMemo works best for organizing travel receipts.",
+          "label": "supported",
+          "reason": "DEV-MSG-00022 identifies Amara as the user's cousin and reports Amara's endorsement of FjordMemo for travel receipts. The candidate retains the reported opinion and its attribution.",
+          "message_id": "DEV-MSG-00022",
+          "quote": "My cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-019",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user suggested FjordMemo for a recipe club and canceled the idea before the group tried it.",
+          "label": "supported",
+          "reason": "DEV-MSG-00006 states that the user suggested the tool and then canceled the idea before the recipe club tried it. The candidate preserves cancellation and non-adoption.",
+          "message_id": "DEV-MSG-00006",
+          "quote": "I suggested FjordMemo for the recipe club, then canceled the idea before the group tried it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-020",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00018 is a hypothetical purchase and fit question. It does not establish ownership, purchase intent, or actual storage at room Amber."
+      }
+    },
+    {
+      "task_id": "TASK-021",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "My cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "label": "supported",
+          "reason": "DEV-MSG-00022 is reproduced with the cousin relationship and Amara's says attribution intact. It records the reported assessment rather than independently verifying that the product works best.",
+          "message_id": "DEV-MSG-00022",
+          "quote": "My cousin Amara says FjordMemo works best for organizing travel receipts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-022",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that Amara prefers FjordMemo for volunteer shift planning.",
+          "label": "supported",
+          "reason": "DEV-MSG-00003 explicitly reports Amara's preference. The candidate retains the user-report framing, Amara as the subject, and the volunteer-shift purpose.",
+          "message_id": "DEV-MSG-00003",
+          "quote": "Amara told me they prefer FjordMemo for planning volunteer shifts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-023",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "There is a yellow thermos on the counter at room Amber, but I do not know whose it is.",
+          "label": "supported",
+          "reason": "DEV-MSG-00008 directly reports the thermos's precise location and the user's lack of ownership knowledge. The first-person wording preserves that uncertainty and does not assign ownership.",
+          "message_id": "DEV-MSG-00008",
+          "quote": "There is a yellow thermos on the counter at room Amber, but I do not know whose it is.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-024",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user first considered using FjordMemo for an event calendar and later chose it.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00015 corrects an earlier statement of possible use to a statement that the user chose FjordMemo for the event calendar. It establishes the order of statements, not that an actual period of consideration was followed by a later decision. The candidate converts a correction into an unsupported decision chronology.",
+          "message_id": "DEV-MSG-00015",
+          "quote": "I first said I might use FjordMemo; correction, I chose it for the event calendar.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-025",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user hopes to move their notes into FjordMemo sometime this spring, but does not have an exact date.",
+          "label": "supported",
+          "reason": "DEV-MSG-00012 directly supports the hope, the relative spring timing, and the lack of an exact date. No completed migration or calendar date is inferred.",
+          "message_id": "DEV-MSG-00012",
+          "quote": "Sometime this spring I hope to move my notes into FjordMemo, but I have no exact date.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-026",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00020 is only a forecast request, and DEV-MSG-00021 is tool output. Neither is an eligible user-stated or explicitly reported memory fact."
+      }
+    },
+    {
+      "task_id": "TASK-027",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "Amara says the cracked yellow thermos failed because it was left in the rain.",
+          "label": "supported",
+          "reason": "DEV-MSG-00009 is reproduced with Amara says intact. The rain explanation remains Amara's reported causal account.",
+          "message_id": "DEV-MSG-00009",
+          "quote": "Amara says the cracked yellow thermos failed because it was left in the rain.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-028",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user thinks the yellow thermos is fixed, although they have not tested it.",
+          "label": "supported",
+          "reason": "DEV-MSG-00024 explicitly states the user thinks the thermos is fixed but has not tested it. Both the belief modality and the testing limitation are preserved.",
+          "message_id": "DEV-MSG-00024",
+          "quote": "I think the yellow thermos is fixed, although I have not tested it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-029",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00019 is only a question with no supplied item or location referents. No eligible asserted fact can be extracted from it."
+      }
+    },
+    {
+      "task_id": "TASK-030",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user suggested FjordMemo for the recipe club and later canceled the idea before the group tried it.",
+          "label": "supported",
+          "reason": "DEV-MSG-00006 explicitly supplies the sequence of suggesting FjordMemo and later canceling the idea before the recipe club tried it. The candidate does not turn the suggestion into use.",
+          "message_id": "DEV-MSG-00006",
+          "quote": "I suggested FjordMemo for the recipe club, then canceled the idea before the group tried it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-031",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user is asking which item they mentioned belonged somewhere.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00019 is solely a question with unresolved item and location references. Describing that question does not establish an eligible memory fact under the question exclusion.",
+          "message_id": "DEV-MSG-00019",
+          "quote": "Which item did I say belonged there?",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-032",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user uses FjordMemo for a book club schedule during the stated interval.",
+          "label": "supported",
+          "reason": "DEV-MSG-00011 explicitly supplies book-club-schedule use during 2025-09-01 through 2025-10-01. The candidate's stated interval is supplied by its literal, matching valid_from and valid_to bounds, with no timestamp-derived date.",
+          "message_id": "DEV-MSG-00011",
+          "quote": "Between 2025-09-01 and 2025-10-01, I use FjordMemo for the book club schedule.",
+          "valid_from": "2025-09-01",
+          "valid_to": "2025-10-01"
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-033",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user may ask Amara to repair the yellow thermos if the part is still available.",
+          "label": "supported",
+          "reason": "DEV-MSG-00004 directly states a possible request to Amara conditional on the part still being available. The candidate retains both uncertainty and the condition without claiming the request or repair occurred.",
+          "message_id": "DEV-MSG-00004",
+          "quote": "I may ask Amara to repair the yellow thermos if the part is still available.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-034",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "A yellow thermos is on the counter at room Amber; the user does not know whose it is.",
+          "label": "supported",
+          "reason": "DEV-MSG-00008 directly supports the location on the counter at room Amber and the user's lack of knowledge about ownership. No ownership is inferred.",
+          "message_id": "DEV-MSG-00008",
+          "quote": "There is a yellow thermos on the counter at room Amber, but I do not know whose it is.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-035",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "Amara keeps a garden schedule in FjordMemo.",
+          "label": "unsupported",
+          "reason": "The sole source, DEV-MSG-00016, is assistant-authored sample content. There is no eligible user assertion or explicit user report supporting the claim, and the candidate also drops the sample qualification.",
+          "message_id": "DEV-MSG-00016",
+          "quote": "Amara keeps a garden schedule in FjordMemo, according to this sample.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-036",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user kept the yellow thermos in room Amber last season.",
+          "label": "supported",
+          "reason": "DEV-MSG-00013 explicitly locates the thermos in room Amber last season. The later DEV-MSG-00014 relocation does not contradict this properly historical statement.",
+          "message_id": "DEV-MSG-00013",
+          "quote": "Last season, I kept the yellow thermos in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim_index": 1,
+          "claim": "The user moved the yellow thermos to the hall closet and no longer has it in room Amber.",
+          "label": "supported",
+          "reason": "DEV-MSG-00014 follows the prior thermos message and reports moving it to the hall closet, explicitly excluding room Amber as its current location. Resolving it to the yellow thermos is supported by the supplied context.",
+          "message_id": "DEV-MSG-00014",
+          "quote": "I moved it to the hall closet; it is no longer in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-037",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user might try FjordMemo for recording walks and is comparing options.",
+          "label": "supported",
+          "reason": "DEV-MSG-00002 directly states possible future trial for recording walks and ongoing comparison of options. The candidate preserves consideration rather than adoption.",
+          "message_id": "DEV-MSG-00002",
+          "quote": "I might try FjordMemo for recording walks, but I am still comparing options.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-038",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user may ask Amara to repair a yellow thermos, conditional on the availability of the part.",
+          "label": "supported",
+          "reason": "DEV-MSG-00004 supports a possible request to Amara, conditional on part availability. The paraphrase retains the modality and condition and does not imply completed repair.",
+          "message_id": "DEV-MSG-00004",
+          "quote": "I may ask Amara to repair the yellow thermos if the part is still available.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-039",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user placed a yellow thermos by room Amber before the lights went out and does not know whether one event caused the other.",
+          "label": "supported",
+          "reason": "DEV-MSG-00010 states the placement-before-outage sequence while expressly withholding causal knowledge. The candidate preserves both chronology and the causal uncertainty.",
+          "message_id": "DEV-MSG-00010",
+          "quote": "I put the yellow thermos by room Amber before the lights went out, but I do not know whether one event caused the other.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-040",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user replaced a torn strap on a yellow thermos with a stitched one yesterday.",
+          "label": "supported",
+          "reason": "DEV-MSG-00025 explicitly reports replacing the torn strap with a stitched one yesterday. The candidate preserves the completed event and relative timing, while correctly leaving literal calendar bounds null.",
+          "message_id": "DEV-MSG-00025",
+          "quote": "I replaced the torn strap on the yellow thermos with a stitched one yesterday.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-041",
+      "reviewability": "reviewable",
+      "claims": [],
+      "empty_response": {
+        "source_offers_eligible_facts": false,
+        "reason": "DEV-MSG-00017 is quoted_document content containing a manual instruction. The user does not adopt the instruction or report following it."
+      }
+    },
+    {
+      "task_id": "TASK-042",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user is considering trying FjordMemo for recording walks but is still comparing options.",
+          "label": "supported",
+          "reason": "DEV-MSG-00002 directly supports considering a trial for recording walks while comparing options. The candidate does not promote consideration to a completed choice or ongoing use.",
+          "message_id": "DEV-MSG-00002",
+          "quote": "I might try FjordMemo for recording walks, but I am still comparing options.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-043",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "Amara prefers FjordMemo for planning volunteer shifts.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00003 establishes that Amara told the user about a preference. The candidate turns that attributed report into an unqualified assertion about Amara's preference, materially dropping the reporting qualification required by the review policy.",
+          "message_id": "DEV-MSG-00003",
+          "quote": "Amara told me they prefer FjordMemo for planning volunteer shifts.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-044",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user chose FjordMemo for garden schedules, as it keeps each watering date beside the plant name.",
+          "label": "unsupported",
+          "reason": "DEV-MSG-00001 states a choice and then describes a feature. The candidate's as connects the feature causally to why the user chose FjordMemo. That explanatory connection is plausible, but the source does not establish it as the user's reason for the choice.",
+          "message_id": "DEV-MSG-00001",
+          "quote": "For garden schedules, I chose FjordMemo; it keeps each watering date beside the plant name.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review.",
+        "This judgment uses the ordinary explanatory reading of as; the feature itself and the completed choice are supported individually."
+      ]
+    },
+    {
+      "task_id": "TASK-045",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user owns the yellow thermos and keeps it in room Amber during travel.",
+          "label": "supported",
+          "reason": "DEV-MSG-00007 directly supports ownership and storage in room Amber during the user's travel. The candidate preserves the travel-limited location claim.",
+          "message_id": "DEV-MSG-00007",
+          "quote": "The yellow thermos is mine, and I keep it in room Amber when I travel.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-046",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user does not use FjordMemo for garden notes.",
+          "label": "supported",
+          "reason": "DEV-MSG-00005 explicitly states non-use of FjordMemo for garden notes. The claim preserves that negation and purpose. Omission of the separate paper-log fact does not make this nonempty candidate unsupported.",
+          "message_id": "DEV-MSG-00005",
+          "quote": "I do not use FjordMemo for garden notes; I keep those in a paper log.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "task_id": "TASK-047",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user kept the yellow thermos in room Amber last season.",
+          "label": "supported",
+          "reason": "DEV-MSG-00013 states last season's storage in room Amber. The candidate preserves its historical scope despite the subsequent relocation message.",
+          "message_id": "DEV-MSG-00013",
+          "quote": "Last season, I kept the yellow thermos in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim_index": 1,
+          "claim": "The user moved the yellow thermos to the hall closet; it is no longer in room Amber.",
+          "label": "supported",
+          "reason": "DEV-MSG-00014 states the move to the hall closet and that the thermos is no longer in room Amber. The preceding message resolves it to the yellow thermos, and the candidate preserves the updated location and negation.",
+          "message_id": "DEV-MSG-00014",
+          "quote": "I moved it to the hall closet; it is no longer in room Amber.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    },
+    {
+      "task_id": "TASK-048",
+      "reviewability": "reviewable",
+      "claims": [
+        {
+          "claim_index": 0,
+          "claim": "The user mentioned choosing FjordMemo for the event calendar.",
+          "label": "supported",
+          "reason": "DEV-MSG-00015 explicitly corrects possible use to a completed choice for the event calendar. The candidate records that stated choice without inventing when the underlying decision occurred.",
+          "message_id": "DEV-MSG-00015",
+          "quote": "I first said I might use FjordMemo; correction, I chose it for the event calendar.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "notes": [
+        "Claims were read from the fenced response in their original order. The packet's strict JSON-interface failure does not prevent semantic review."
+      ]
+    }
+  ],
+  "coverage": {
+    "task_count": 48,
+    "unique_task_ids": 48,
+    "reviewable_tasks": 48,
+    "unreviewable_tasks": 0,
+    "claim_count": 45,
+    "empty_response_count": 7,
+    "claim_label_counts": {
+      "supported": 35,
+      "uncertain": 1,
+      "unsupported": 9
+    },
+    "all_candidate_texts_and_order_preserved": true
+  },
+  "limitations": [
+    "One blinded agent-only semantic pass against the supplied packet; no human ground truth or independent verification of the fictional testimony.",
+    "Only this packet was read. No datasets, training sources, metrics, curator mappings, task history, network resources, other agents, or model calls were consulted.",
+    "Supported denotes support from eligible user testimony, not independent real-world truth. Accurate dialogue summaries of excluded questions, assistant content, or tool content are labeled unsupported under the supplied extraction policy.",
+    "The packet's strict interface statuses were not treated as semantic judgments. All 48 responses were readable, including fenced JSON; no task was discarded.",
+    "Null date bounds were retained unless literal source dates supported the supplied bounds. Message timestamps were not converted into fact dates.",
+    "Empty outputs were checked for eligible source facts. Nonempty outputs were judged claim by claim without an exhaustive recall evaluation.",
+    "TASK-016 contains a genuine subject-attachment ambiguity. TASK-024 and TASK-044 are judged against the policy against added event chronology and causal explanations; these remain provisional agent judgments for adjudication."
+  ]
+}

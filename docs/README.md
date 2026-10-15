@@ -53,6 +53,10 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Second SFT run: quote-v2](sft-quote-v2-results.md), [aggregate results](sft-quote-v2-results.json),
+  and [validation record](validation-sft-quote-v2.json): strict raw scoring,
+  separate fence-only analysis, agent-only semantic review, and exact fictional
+  job, receipt, and audit copies.
 - [First training pilot](sft-pilot.md): fictional data and the completed bounded
   QLoRA run. [Results](sft-pilot-results.md) include matched base/tuned
   development metrics and an offline replay record.

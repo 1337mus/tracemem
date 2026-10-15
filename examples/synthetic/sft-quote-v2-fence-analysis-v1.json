@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "command": [
+    "/Users/raj/Projects/tracemem/.venv/bin/python",
+    ".local/sft-quote-v2-20261015/analyze_fences.py",
+    "--job",
+    ".local/sft-quote-v2-20261015/training-job-v1.json",
+    "--receipt",
+    ".local/sft-quote-v2-20261015/remote-training-v1.json",
+    "--fixture",
+    "datasets/sft-quote-v2/dev.json",
+    "--output",
+    ".local/sft-quote-v2-20261015/posthoc-fence-analysis-v1.json"
+  ],
+  "analysis_type": "POSTHOC ONLY: exact outer JSON codefence presentation repair",
+  "frozen_evaluator_provenance_verified": true,
+  "input_sha256": {
+    "job": "c785928c465af646407c6e16055203864149df3e0098e45c1c621043f11e17bb",
+    "receipt": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf",
+    "dev_fixture": "1357ce09175e0d40b5ff5fb8eb5b6aa83a7f713a5147d55df09fdde4afd20030"
+  },
+  "transformation": {
+    "method": "Remove only a full-response triple-backtick fence with optional json label and outer whitespace; no prose stripping or other repairs.",
+    "regex": "\\A\\s*```[ \\t]*(?:json[ \\t]*)?\\r?\\n(.*?)\\r?\\n```[ \\t]*\\s*\\Z",
+    "changed_case_ids": {
+      "base": [
+        "DEV-CASE-D01-committed-garden-ledger-V01",
+        "DEV-CASE-D02-possible-audio-trial-V01",
+        "DEV-CASE-D03-reported-neighbor-preference-V01",
+        "DEV-CASE-D04-tentative-repair-plan-V01",
+        "DEV-CASE-D05-negative-garden-use-V01",
+        "DEV-CASE-D06-canceled-recipe-proposal-V01",
+        "DEV-CASE-D07-owned-travel-clock-V01",
+        "DEV-CASE-D09-reported-repair-cause-V01",
+        "DEV-CASE-D10-no-causal-conclusion-V01",
+        "DEV-CASE-D11-effective-tool-window-V01",
+        "DEV-CASE-D12-uncertain-seasonal-plan-V01",
+        "DEV-CASE-D13-cross-session-storage-change-V01",
+        "DEV-CASE-D14-correction-from-maybe-to-choice-V01",
+        "DEV-CASE-D15-assistant-only-schedule-claim-V01",
+        "DEV-CASE-D16-forwarded-manual-instruction-V01",
+        "DEV-CASE-D17-hypothetical-shopping-question-V01",
+        "DEV-CASE-D18-question-about-unnamed-item-V01",
+        "DEV-CASE-D19-tool-only-weather-result-V01",
+        "DEV-CASE-D20-reported-family-preference-V01",
+        "DEV-CASE-D21-storing-someone-elses-item-V01",
+        "DEV-CASE-D22-unverified-status-belief-V01",
+        "DEV-CASE-D23-completed-craft-action-V01",
+        "DEV-CASE-D24-hypothetical-roster-tool-question-V01"
+      ],
+      "tuned": []
+    },
+    "changed_counts": {
+      "base": 23,
+      "tuned": 0
+    },
+    "script_sha256": "508e2c7b31636c04df9f04512a879c181cd919ce8eb144ba2d1d7d4f6d562a57"
+  },
+  "original_strict_metrics_unchanged": {
+    "base": {
+      "parse_failures": 23,
+      "schema_failures": 0,
+      "citation_validation_failure_cases": 0,
+      "citation_integrity": {
+        "claims_checked": 1,
+        "valid_claims": 1,
+        "invalid_claims": 0,
+        "interpretation": "exact source, quote, and explicit-date validation only"
+      },
+      "reference_string_scores": {
+        "matched_reference_strings": 0,
+        "predicted_claims": 1,
+        "expected_claims": 19,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "abstention": {
+        "empty_target_cases": 6,
+        "valid_empty_target_abstentions": 0,
+        "missed_nonempty_target_cases": 17
+      }
+    },
+    "tuned": {
+      "parse_failures": 0,
+      "schema_failures": 0,
+      "citation_validation_failure_cases": 0,
+      "citation_integrity": {
+        "claims_checked": 19,
+        "valid_claims": 19,
+        "invalid_claims": 0,
+        "interpretation": "exact source, quote, and explicit-date validation only"
+      },
+      "reference_string_scores": {
+        "matched_reference_strings": 2,
+        "predicted_claims": 19,
+        "expected_claims": 19,
+        "precision": 0.10526315789473684,
+        "recall": 0.10526315789473684,
+        "f1": 0.10526315789473684
+      },
+      "abstention": {
+        "empty_target_cases": 6,
+        "valid_empty_target_abstentions": 6,
+        "missed_nonempty_target_cases": 0
+      }
+    }
+  },
+  "posthoc_fence_normalized_metrics": {
+    "base": {
+      "parse_failures": 0,
+      "schema_failures": 0,
+      "citation_validation_failure_cases": 2,
+      "citation_integrity": {
+        "claims_checked": 26,
+        "valid_claims": 24,
+        "invalid_claims": 2,
+        "interpretation": "exact source, quote, and explicit-date validation only"
+      },
+      "reference_string_scores": {
+        "matched_reference_strings": 0,
+        "predicted_claims": 26,
+        "expected_claims": 19,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "abstention": {
+        "empty_target_cases": 6,
+        "valid_empty_target_abstentions": 1,
+        "missed_nonempty_target_cases": 0
+      }
+    },
+    "tuned": {
+      "parse_failures": 0,
+      "schema_failures": 0,
+      "citation_validation_failure_cases": 0,
+      "citation_integrity": {
+        "claims_checked": 19,
+        "valid_claims": 19,
+        "invalid_claims": 0,
+        "interpretation": "exact source, quote, and explicit-date validation only"
+      },
+      "reference_string_scores": {
+        "matched_reference_strings": 2,
+        "predicted_claims": 19,
+        "expected_claims": 19,
+        "precision": 0.10526315789473684,
+        "recall": 0.10526315789473684,
+        "f1": 0.10526315789473684
+      },
+      "abstention": {
+        "empty_target_cases": 6,
+        "valid_empty_target_abstentions": 6,
+        "missed_nonempty_target_cases": 0
+      }
+    }
+  },
+  "case_counts": {
+    "base": 24,
+    "tuned": 24
+  },
+  "interpretation": "POSTHOC ONLY. Presentation repair does not prove meaning or support; original receipt and strict metrics remain unchanged."
+}

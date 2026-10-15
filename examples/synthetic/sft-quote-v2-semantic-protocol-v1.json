@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "stage": "declared_before_second_run_outputs",
+  "purpose": "Separate whether a model claim is supported by conversation from schema/citation/string accuracy.",
+  "ground_truth": "Provisional agent review only; zero human reviewers. No claim of independent human ground truth.",
+  "review_scope": "All claims in all24devconversations for botharms when feasible; malformed/truncated outcomes remain in denominators.",
+  "blinding": "Reviewer sees source messages and generated claims with randomized taskIDs. Hide expected claims, arm/model identity, metrics and training data. Curator mapping stays separate.",
+  "labels": [
+    "supported",
+    "unsupported",
+    "uncertain"
+  ],
+  "supported": "Source user explicitly states the claim; preserve subject, reporting attribution, modality, negation, scope and event time. User testimony support is not verification of real-world truth.",
+  "unsupported": "Contradicted by source or adds substantive identity, adoption, date, causation, ownership or certainty not established in source.",
+  "uncertain": "Evidence genuinely insufficient or ambiguous; do not force acceptance.",
+  "citation": "Exact unique quote and source role are necessary but not semantic proof. Read surrounding messages, including corrections.",
+  "review_fields": [
+    "task_id",
+    "claim_index",
+    "label",
+    "reason"
+  ],
+  "recall_policy": "Reference-string recovery is separate from support. Unmatched paraphrases are not automatically false claims. Blind support review does not establish exhaustive recall.",
+  "selection_policy": "Review all predictions, not only parse successes or improved cases. Abstention is correct only when source offers no eligible memory under declared extraction policy.",
+  "production_policy": "No production checkpoint selected solely from this synthetic development experiment.",
+  "private_test": "unopened and untouched"
+}

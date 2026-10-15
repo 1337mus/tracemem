@@ -1,0 +1,60 @@
+{
+  "updated_at_utc": "2026-10-15T23:03:24.581770+00:00",
+  "review_class": "Root unblinded adjudication of one fresh-context blinded agent review; provisional, zero human reviewers",
+  "human_reviewers": 0,
+  "root_reviewed_all_source_messages_and_candidate_claims": true,
+  "root_reviewed_all_45_agent_claim_judgments": true,
+  "label_changes": [],
+  "reason": "All labels accepted against source and declared extraction policy, including unsupported invented event chronology and uncertain custody subject attachment. Ineligible question/tool/assistant summaries are policy violations, not necessarily false statements about dialogue.",
+  "claim_counts": {
+    "base": {
+      "reviewed_responses": 24,
+      "supported": 18,
+      "nonempty_responses_with_all_generated_claims_supported": 16,
+      "unsupported": 8,
+      "empty_responses": 1,
+      "correct_empty_responses": 1
+    },
+    "tuned": {
+      "reviewed_responses": 24,
+      "supported": 17,
+      "nonempty_responses_with_all_generated_claims_supported": 16,
+      "empty_responses": 6,
+      "correct_empty_responses": 6,
+      "uncertain": 1,
+      "unsupported": 1
+    }
+  },
+  "readable_raw_outputs_reviewed": 48,
+  "semantic_unreviewable_responses": 0,
+  "blinding_limit": "Formatting differs visibly between arms, so arm inference may be possible despite hidden identity/mapping. Root review is unblinded and is not another independent reviewer.",
+  "matched_case_findings": {
+    "improved_attribution_or_causality": [
+      "D01",
+      "D03"
+    ],
+    "regressed_chronology": [
+      "D14"
+    ],
+    "regressed_ambiguous_keeper": [
+      "D21"
+    ],
+    "improved_empty_source_abstention": [
+      "D15",
+      "D17",
+      "D18",
+      "D19",
+      "D24"
+    ],
+    "both_correct_empty": [
+      "D16"
+    ]
+  },
+  "interpretation": "Fewer policy violations, cleaner output, improved abstention; semantic regressions remain. Fully supported nonempty responses are16 perarm; claim segmentation differs, so18vs17 supported claim totals are not recall. No exhaustive recall or population accuracy established.",
+  "input_sha256": {
+    "blind-semantic-review-v1.json": "42364367617cd4a9d42b1b80988d61b9d73e9064336d9e0fb75768e59541b379",
+    "blind-review-packet.json": "b4fba1646db95a8a2ad356ec0d26e0db43c922b8f31385583da98d590628e473",
+    "curator-map.json": "105f9e0fb402896970428c13349d36fd0028c7488c0d60ac238358af1dcf7218",
+    "remote-training-v1.json": "1d667c474e4fded5853087d773924827358bc2458c4d3e12581592b5934ddaaf"
+  }
+}

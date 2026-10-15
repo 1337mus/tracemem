@@ -9,13 +9,16 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today. A fiction-only SFT pilot has trained an
-adapter, but no model has been validated or selected for product use.**
+**The local search tool works today. Two fiction-only SFT runs have trained
+adapters, but no model has been validated or selected for product use.**
 
-The [SFT pilot report](docs/sft-pilot-results.md) records the completed run and
-its zero exact claim matches on eight fictional development prompts. The run
-tests the training path; it does not establish model quality or production
-readiness.
+The latest quote-v2 run returned valid JSON for all 24 tuned fictional
+examples. In a separate fence-only comparison, correct empty-source skips
+improved from 1/6 to 6/6; agent review still found one unsupported and one
+ambiguous tuned memory. This was a small development slice with zero human
+reviewers. The [results report](docs/sft-quote-v2-results.md) keeps raw scoring
+and review methods separate. The earlier [SFT pilot report](docs/sft-pilot-results.md)
+records the first run; neither run selected a production model.
 
 ## What works
 

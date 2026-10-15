@@ -10,10 +10,10 @@ has the project overview and architecture diagram.
 ## Phase and boundary
 
 Phase 0 inventory and Phase 1 infrastructure are complete. The project is in
-Phase 2, using fictional data for diagnostics. A small technical SFT pilot has
-trained a Qwen3-4B adapter, but no specialist has been selected for product
-use. Gate A is unmet: there is no independent human validation of the claims
-or evidence.
+Phase 2, using fictional data for diagnostics. Two technical SFT runs have
+trained Qwen3-4B adapters, but no specialist has been selected for product use.
+Gate A is unmet: there is no independent human validation of the claims or
+evidence.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
@@ -33,14 +33,16 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## First training experiment
+## Latest training experiment: quote-v2
 
-The [SFT pilot](sft-pilot.md) completed a Qwen3-4B adapter run on 128 fictional
-examples and compared base and tuned outputs on the same eight development
-prompts. Both had zero exact claim matches. The [results report](sft-pilot-results.md)
-records the limitations and failure analysis. This tested the learning
-pipeline while Gate A remains unmet; it did not select a production specialist
-or establish held-out quality.
+The quote-v2 tuned model returned valid JSON for all 24 fictional development
+examples. In a separate fence-only comparison, correct empty-source skips
+improved from 1/6 to 6/6; agent review still found one unsupported and one
+ambiguous tuned memory. The slice is small and adaptive, with zero human
+reviewers, so it does not establish recall or generalization. No production
+checkpoint was selected. The [results report](sft-quote-v2-results.md) records
+raw scoring and review methods; the [first pilot](sft-pilot-results.md) remains
+separate.
 
 ## Current evidence
 
@@ -71,7 +73,8 @@ and CI state.
 
 ## Next gate
 
-The next research step is independent human review of the full longitudinal
-packet, followed by a separate readiness review. Add more legally usable,
-distinct scenarios before selecting or training a specialist. Do not infer
-Gate A progress from targeted agent probes or retrieval diagnostics.
+Strengthen annotations and make paired chronology and subject-attachment
+corrections with distinct scenario families and a separate frozen test. Seek
+human review before making any Gate A claim. Do not treat more optimizer steps,
+targeted agent probes, or retrieval diagnostics as evidence of specialist
+quality or readiness.
