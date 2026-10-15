@@ -30,10 +30,23 @@ passed 13 tests, with all 37 runtime members matching the existing wheel. No
 model, Modal or tokenizer imports were loaded. The TDD record includes observed
 failures but does not claim one RED per rejection rule.
 
-No launcher, scorer, GPU call, inference, model output or token measurement was
-added. All receipt fixtures are fake. Model weights/tokenizers stay off the Mac.
-The current contract's signed private delivery is pending; check active-cycle for
-the exact commit and CI after delivery. Do not infer delivery from local checks.
+The new source-free Modal producer is
+[`modal_qa_interpretation_answer.py`](../experiments/modal_qa_interpretation_answer.py).
+It has an offline CLI and hash-gated launch mode, but no GPU call, inference,
+model output or token measurement has occurred. Root matched all 36 request
+items, rejected seven altered requests before model imports, and checked four
+fake call modes. The 13 focused tests and final full check passed: 569 attempted,
+568 passed, one skipped; Ruff 125 files; mypy 32 files. Installed replay also
+passed 13 tests with no failures, errors or skips; all 37 runtime members match
+the existing wheel. The local Modal serialization audit was offline only; all
+receipts are fake and weights/tokenizers stay off the Mac.
+
+The preceding answer-contract implementation is delivered in signed private commit
+[`8b9561b`](https://github.com/1337mus/tracemem/commit/8b9561bce29934a121247f305cf83110016c9f69).
+Its signature is valid, remote main matched at verification, and exact [CI run 38681376612](https://github.com/1337mus/tracemem/actions/runs/38681376612)
+passed 555 source tests (one skipped) and 302 installed tests (two skipped).
+The new producer's signed private delivery and exact CI remain pending; check
+active-cycle for live state.
 
 The controls fixture has six correlated groups, seven sessions, 22 messages, 12
 questions and 36 cells; full source has 10 answerable and two unknown questions,
@@ -52,11 +65,11 @@ independent sample or consensus; the frozen literal report is unchanged. See
 
 ## Next useful slice
 
-Prepare a source-free Modal producer for this exact request/receipt contract.
-Before any launch, root must review exact source and payload bytes and verify the
-active personal Modal workspace and a fresh inventory. Use at most one GPU call;
-do not load weights, tokenizers or run inference on the Mac. Do not train or
-select a model through the unmet gate. No new job has started.
+Complete signed private delivery of the validated current producer and record
+its exact CI. Any later launch requires fresh exact source/request review and a
+live check of the active personal Modal workspace and inventory. Use at most
+one GPU call; do not load weights, tokenizers or run inference on the Mac. Do not
+train or select a model through the unmet gate. No new job has started.
 
 ## Background
 

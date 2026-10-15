@@ -26,12 +26,14 @@ human truth, model output, inference, token measurement or Gate A progress. Thei
 offline preparation passed 543 source tests (one skipped) and nine installed
 tests; see the [validation snapshot](validation-qa-interpretation-controls.json).
 
-An offline [request/receipt contract](qa-controls-answer-contract.md) now binds
-the 36 fictional prompts. Root reconstructed all request items, accepted a fake
-receipt and rejected 61 invalid mutations; full checks passed 556 tests (one
-skip) and installed replay passed 13. Limits of 1,024 input and 128 generated
-tokens are not measured counts. There is still no launcher, scorer or inference;
-delivery is pending. See the [validation snapshot](validation-qa-controls-answer-contract.json).
+An offline [request/receipt contract](qa-controls-answer-contract.md) binds
+36 fictional prompts, and a separate [source-free Modal runner](qa-controls-answer-runner.md)
+now provides hash-gated launch mode. Root matched every request item, rejected
+seven altered requests and 61 invalid receipt mutations, and tested only fake
+call modes. Focused checks passed 13 tests; the full check passed 569 (one skip),
+and installed replay passed 13. Input/output ceilings are not measured counts.
+No GPU call, scorer or model inference has run. The runner's private delivery
+remains pending; see its [validation snapshot](validation-qa-controls-answer-runner.json).
 
 The six-case [development token-budget replay](qa-contrast-token-replay.md)
 now measures 72 complete-prompt packing cells from the separately measured

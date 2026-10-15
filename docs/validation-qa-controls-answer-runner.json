@@ -1,0 +1,120 @@
+{
+  "schema": "tracemem.qa-controls-answer-runner-validation.v1",
+  "updated_at_utc": "2026-10-15",
+  "status": "local_validation_passed_delivery_pending",
+  "scope": "Source-free Modal producer for the fictional QA interpretation controls request; no inference performed.",
+  "request": {
+    "request_sha256": "df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871",
+    "prepared_payload_sha256": "36a03f56b69500674feb219fc40f8479965982bc9041de7a74b4464cace5bed1",
+    "prompts": 36,
+    "measured_input_token_counts": false,
+    "per_prompt_limits": { "input_tokens": 1024, "generated_tokens": 128 },
+    "aggregate_upper_bounds": { "input_tokens": 36864, "generated_tokens": 4608 }
+  },
+  "source_hashes": {
+    "experiments/modal_qa_interpretation_answer.py": "9ee4f7fbb440d166eff415c978239ca71da69a6e607fe63f98cc47fcf9a8568c",
+    "experiments/qa_interpretation_answer_receipt.py": "8f03a1c2b7767cdc5095fc51d28e066fa32750c127954ec0f6946862c8ee7278",
+    "tests/test_modal_qa_interpretation_answer.py": "6729b85dc8230fc7c32d3e81d90e941e813bab278b93c64fb8a5014dec6fd06a",
+    ".github/workflows/ci.yml": "f8e88f553926a21c0a4dee68b5c164b67ef909180b4c86222b7200f0828eb8f4"
+  },
+  "source_size": {
+    "physical_lines": 530,
+    "nonblank_lines": 480,
+    "production_lines_excluding_comments_and_docstrings": 475,
+    "root_adjudication": "The production-code count is within the approximately 500-line guidance; no split solely to reduce physical lines."
+  },
+  "focused_validation": {
+    "status": "passed",
+    "tests_passed": 13,
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "diff_check": "passed"
+  },
+  "independent_root_audit": {
+    "status": "passed",
+    "path": ".local/qa-controls-producer-root-audit.json",
+    "altered_requests_rejected_before_model_imports": 7,
+    "fake_call_modes_checked": ["success", "teardown", "validation", "remote"],
+    "positive_import_boundary_reached_blocked_transformers": true,
+    "mode_0600": true,
+    "raw_fsync_inside_app_context": true,
+    "inference": false,
+    "model_packages_imported": false
+  },
+  "offline_modal_serialization_audit": {
+    "path": ".local/qa-controls-producer-serialization-audit.json",
+    "modal_sdk_version": "1.6.1",
+    "isolated_function_round_trip": true,
+    "serialized_bytes": 13436,
+    "serialized_sha256": "4fd9c2cb304302ae109ca4dde2eaad983f937083f3c6b7c2055aa4e50731c691",
+    "globals": ["__builtins__", "__name__"],
+    "free_variables": [],
+    "model_packages_imported": false,
+    "network": false,
+    "inference": false,
+    "limitation": "Offline function serialization does not validate a live Modal invocation or remote execution."
+  },
+  "root_review": {
+    "status": "passed",
+    "path": ".local/qa-controls-producer-root-review.json",
+    "blocking_findings": 0,
+    "tdd_qualification": "Missing API/function REDs were observed. Several regression assertions followed implementation; no strict one-RED-per-behavior claim. System Python/PYTHONPATH setup failures are not behavioral REDs. The size simplification was an approved design correction based on canonical request hash coverage."
+  },
+  "root_full_check": {
+    "status": "passed",
+    "receipt_path": ".local/qa-controls-producer-root-full-check.json",
+    "exit_code": 0,
+    "tests_attempted": 569,
+    "tests_passed": 568,
+    "tests_skipped": 1,
+    "ruff_files": 125,
+    "mypy_files": 32,
+    "source_hashes_unchanged": true,
+    "log_sha256": "ee98d4f60c714f6fba9d096b59838823bcd57d2f8dfda438cce1eddc9a305a25"
+  },
+  "installed_runtime_check": {
+    "status": "passed",
+    "receipt_path": ".local/qa-controls-producer-installed-receipt.json",
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "request_items": 36,
+    "request_sha256": "df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871",
+    "matches_independent_root_request": true,
+    "fake_outputs": 36,
+    "fake_receipt_accepted": true,
+    "runtime_members_verified": 37,
+    "runtime_source_wheel_installed_hashes_match": true,
+    "wheel_sha256": "0d005d093911a42ed850ab4972d79c3ef0daa64356556bc272438060d1674f60",
+    "source_test_hashes_match": true,
+    "blocked_imports": ["modal", "tokenizers", "torch", "transformers"],
+    "network_used": false,
+    "new_wheel_built": false,
+    "model_inference": false,
+    "log_path": ".local/qa-controls-producer-installed-tests.log",
+    "log_sha256": "e7935e3cb3720b01379acbabac8863708b21673d08a9867da0d8307689057bd1"
+  },
+  "prior_contract_delivery": {
+    "commit": "8b9561bce29934a121247f305cf83110016c9f69",
+    "signature_valid": true,
+    "ci_run_id": 38681376612,
+    "ci_url": "https://github.com/1337mus/tracemem/actions/runs/38681376612",
+    "note": "This is the prerequisite offline answer-contract delivery; it does not deliver the new Modal producer."
+  },
+  "current_delivery": "Signed private push and exact CI for this producer remain pending.",
+  "limits": {
+    "modal_launches": 0,
+    "gpu_calls": 0,
+    "model_inference": false,
+    "model_outputs": 0,
+    "token_counts_measured": false,
+    "answer_scoring_added": false,
+    "human_labels": 0,
+    "gate_a_met": false,
+    "model_selected": false,
+    "training_run": false,
+    "local_model_weights_or_tokenizers": false
+  },
+  "next_step": "Root records the exact private commit/signature/CI for this runner after delivery. Any future launch requires fresh exact-byte review and personal Modal workspace/inventory checks."
+}
