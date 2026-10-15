@@ -111,7 +111,7 @@ jobs:
           cp experiments/analyze_qa_interpretation_answers.py "$test_root/experiments/"
           cp experiments/prepare_qa_controls_reviews.py "$test_root/experiments/"
 
-          .venv/bin/python -m experiments.prepare_qa_controls_reviews \
+          PYTHONPATH=src .venv/bin/python -m experiments.prepare_qa_controls_reviews \
             --receipt examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json \
             --output-dir "$test_root/qa-controls-source-export" \
             --seed 17
