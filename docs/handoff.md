@@ -1,3 +1,62 @@
+# Current checkpoint: first trained adapter, negative quality result
+
+Updated 2026-10-15 UTC. Verify live jobs before resuming.
+
+Raj explicitly approved the prepared training pilot. The single guarded call
+completed on personal Modal, using fictional data only. It trained Qwen3-4B
+with QLoRA for 32 optimizer steps on 128 examples and saved a 132,187,888-byte
+adapter plus tokenizer in the private Volume `tracemem-sft-pilot`, under
+`adapters/pilot-20261015-01`. No weights were downloaded to this Mac.
+
+Training took 426.58 seconds; the worker took 768.13 seconds and the full client
+call 855.38 seconds. All losses were finite, all 32 steps completed, and adapter
+parameter hashes changed. Estimated worker execution resources cost about
+$0.33 before build/startup/storage; actual billing was not retrieved.
+
+The matched eight-prompt development result is negative for exact extraction:
+zero exact claim matches before and after training. Parse failures fell from
+two to zero; schema failures remained one; truncations fell from two to zero;
+empty-target abstentions increased from 1/2 to 2/2. Raw evidence integrity was
+0/9 base claims and 0/10 tuned claims. The existing unique-quote matcher repaired
+base integrity to 9/9 and tuned integrity to 8/10, but exact matches stayed zero.
+It repairs offsets only and never establishes semantic support. Attribution,
+temporal bounds, missed negation/intention, and false ownership remain failures.
+
+See [pilot results](sft-pilot-results.md), [aggregate results](sft-pilot-results.json),
+and [training validation](validation-sft-pilot-training.json). Exact fictional
+job/receipt bytes are preserved in `examples/synthetic/sft-pilot-{job,remote}-v1.json`.
+The local scoring CLI replays the same report bytes without a GPU. Raw local
+receipts are unchanged under `.local/sft-pilot-20261015/`.
+
+The final local `make check` passed: 702 tests passed, one optional skip;
+Ruff, formatting across 155 files, and strict mypy across 41 source files passed.
+Source and report changes are being prepared for signed private delivery;
+`.local/active-cycle.json` is authoritative for actual commit, push, and CI state.
+Do not infer hosted CI from these local checks.
+
+Personal inventory at 2026-10-15T21:15:34Z showed the app stopped with zero tasks.
+No training client remains active. Recheck before another job. The completed app
+was `ap-ptp7tOd8DmaNrRsgcaqnI3`; do not reuse run ID `pilot-20261015-01`.
+The exact job approval hash was
+`99cbe61613373a487eda3894e862b47dd72f9f64e3dc212bf3e4ca88ec5a4155`;
+owner authorization is recorded in `.local/sft-pilot-20261015/training-owner-authorization-v1.json`.
+
+Next research work should target the observed attribution, temporal and ownership
+errors, compare candidate base checkpoints, and strengthen distinct training
+scenarios and independent annotation. Preserve the original dev/test split;
+any use of these development failures to revise examples must be disclosed.
+More training steps alone are not established as the remedy. Gate A remains
+unmet, labels are provisional agent-authored, zero human reviewers contributed,
+and the private test split was not used. No production model is selected.
+
+Context Kit, original conversations, historical receipts and `~/.llm-context`
+remain read-only. Private data and checkpoints must not enter GitHub. Only
+reviewed code, documentation and fictional fixtures may be signed and pushed
+to `1337mus/tracemem` after a fresh PRIVATE check. Publication remains unauthorized.
+Continuation automation stays paused. Computer-use tools were unused.
+
+## Earlier checkpoint and history
+
 # TraceMem handoff
 
 Updated 2026-10-15 UTC. Verify by: 2026-10-15. The current diagnostic is the

@@ -1,0 +1,155 @@
+{
+  "updated_at_utc": "2026-10-15T21:18:08.955688+00:00",
+  "implementation_state": "local; reviewed; not yet committed or pushed",
+  "base_head": "92dcfc90cd28bce48d1218fc366f50ae31449432",
+  "authorization": {
+    "path": ".local/sft-pilot-20261015/training-owner-authorization-v1.json",
+    "sha256": "da51a563aed6bf2e9bf902fa94f768a9192b350a225d27fd4de4cb1ca49df917"
+  },
+  "training_receipt": {
+    "path": ".local/sft-pilot-20261015/remote-training-v1.json",
+    "sha256": "8283dfcef4d6753638b460c9705ca7159b7be6bd6c1f6a9caf1b207151b05196"
+  },
+  "job_sha256": "99cbe61613373a487eda3894e862b47dd72f9f64e3dc212bf3e4ca88ec5a4155",
+  "status": "completed",
+  "training": {
+    "adapter_changed": true,
+    "adapter_hash_after_training": "5e1f14bc5ff44aa17bc4eb95b42b797d57284a5d77a23578ad152420fccab166",
+    "adapter_hash_before_training": "830c0b37e6faa70e2f95152cfedd55a48e25e68c15d13dcf7b41005e7829aa03",
+    "base_parameters": 4022468096,
+    "examples_consumed": 128,
+    "gradient_accumulation_steps": 4,
+    "input_tokens_consumed": 140995,
+    "learning_rate": 0.0002,
+    "losses": [
+      0.36873507034033537,
+      0.3369440361857414,
+      0.05732453102245927,
+      0.2839457727968693,
+      0.23557302355766296,
+      0.2530273571610451,
+      0.1762374099344015,
+      0.11540799587965012,
+      0.24624569714069366,
+      0.05546803120523691,
+      0.02944562624907121,
+      0.08757240980048664,
+      0.11174752935767174,
+      0.05741576763102785,
+      0.07016098182066344,
+      0.04262821172596887,
+      0.041460788110271096,
+      0.06724446453154087,
+      0.0606853716308251,
+      0.05511826276779175,
+      0.08848747424781322,
+      0.03225952433422208,
+      0.049628496170043945,
+      0.05640567559748888,
+      0.051898105535656214,
+      0.04287778586149216,
+      0.045523447246523574,
+      0.04944868612801656,
+      0.030608178523834795,
+      0.058167632669210434,
+      0.04588946951844264,
+      0.043171652214368805
+    ],
+    "max_steps": 32,
+    "mean_loss": 0.10458607709051648,
+    "microbatch_size": 1,
+    "optimizer": "AdamW",
+    "optimizer_steps": 32,
+    "seconds": 426.57681591200003,
+    "supervised_tokens_consumed": 14167,
+    "trainable_parameters": 33030144
+  },
+  "timing": {
+    "total_seconds": 768.125770765
+  },
+  "memory": {
+    "device_name": "NVIDIA A10",
+    "peak_allocated_bytes": 7154752512,
+    "peak_reserved_bytes": 19803406336
+  },
+  "client_elapsed_seconds": 855.381325,
+  "launch_checks": {
+    "completed_at_utc": "2026-10-15T21:01:08.686051+00:00",
+    "modal_app_count": 0,
+    "modal_inventory_checked": true,
+    "started_at_utc": "2026-10-15T21:01:07.173095+00:00",
+    "workspace_verified": true
+  },
+  "saved_artifact_sha256": {
+    "adapter/README.md": "d77e992df19e1408fa9a39cc6a0c8ab0d82f7fb0c86bfbe23f255cfe7ca7d017",
+    "adapter/adapter_config.json": "a74598db7628cc9be6fa229b1492d2c79c55ea430f401090e731ac3e80c42dd7",
+    "adapter/adapter_model.safetensors": "0cd247362ca375e2389efbc3ce03d6927f589f76ae555f7b5baf2c8c4506593d",
+    "tokenizer/added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+    "tokenizer/merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "tokenizer/provenance.json": "8ab7e9c16e656e8ea9ac11618d816a62ad58f35897a7d51d905e81392065f4cf",
+    "tokenizer/special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer/tokenizer_config.json": "3c0884a30471f4f542dc89630f62a380bb70a341fafda826136a7be921fec7ea",
+    "tokenizer/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "adapter_volume_listing": {
+    "path": ".local/sft-pilot-20261015/root-review/post-training-artifact-list-v1.stdout",
+    "sha256": "582dc2e87321be89638a72c0d2e06785f461f842c28ae1911c4cb371a68254ad"
+  },
+  "raw_development_report": {
+    "path": ".local/sft-pilot-20261015/dev-report/sft-dev-report-v1.json",
+    "sha256": "72f43cf7501865c047d510d5e007854828e3bc00de794ce124269d339665200b"
+  },
+  "posthoc_anchoring_report": {
+    "path": ".local/sft-pilot-20261015/dev-report/anchoring-ablation-v1.json",
+    "sha256": "13da199db9ff1e3373709284698da310f71e2a24707bee59ca9831903acf15ac"
+  },
+  "replay_analysis_script": {
+    "path": ".local/sft-pilot-20261015/analyze-anchoring-v1.py",
+    "sha256": "c63fc2be108a8409cdf3f4f2a19ade53135e144c064d49054087c0e6b4c7a7ec"
+  },
+  "source_validation": {
+    "attempted": 703,
+    "passed": 702,
+    "optional_skipped": 1,
+    "composite_exit_code": 0,
+    "formatted_files": 155,
+    "strict_mypy_files": 41,
+    "receipt": {
+      "path": ".local/sft-pilot-20261015/root-review/training-final-source-check-v1.json",
+      "sha256": "2bfb1e3a5a6c0894e65928cc53f7baf2b99b440d696b97d190e215d583c0edbd"
+    }
+  },
+  "postcall_inventory": {
+    "checked_at_utc": "2026-10-15T21:15:34.843166+00:00",
+    "all_stopped": true,
+    "apps": 1,
+    "active_tasks": 0,
+    "raw": {
+      "path": ".local/sft-pilot-20261015/root-review/post-training-inventory-v1.stdout",
+      "sha256": "d729b4774b8feac7dbea8456a1535942061ee2d50c1a438e06f558cb2aa683a6"
+    },
+    "verify_again_before_any_new_call": true
+  },
+  "cost": {
+    "execution_hour_estimate_usd": 1.545984,
+    "worker_elapsed_seconds": 768.125770765,
+    "worker_execution_resource_estimate_usd": 0.3298639309973216,
+    "actual_billed_cost": null,
+    "exclusions": "Image build/startup, storage and provider terms; this is an estimate, not billing evidence."
+  },
+  "human_reviewers": 0,
+  "gate_a": "unmet",
+  "private_test_used": false,
+  "independent_semantic_quality_measured": false,
+  "historical_preparation_record": "docs/validation-sft-pilot-preparation.json",
+  "root_review": "Source reviewed before launch; 9-test local dev evaluator reviewed after author correction; all 703 source tests attempted with 702 pass and 1 optional skip; raw model outputs inspected unblinded. No exact-match gain.",
+  "tracked_fictional_inputs": {
+    "examples/synthetic/sft-pilot-job-v1.json": "b349c68f871cf12dccc2eb0d8014736ce0f184b4327a84882cf55d99285b0401",
+    "examples/synthetic/sft-pilot-remote-v1.json": "8283dfcef4d6753638b460c9705ca7159b7be6bd6c1f6a9caf1b207151b05196"
+  },
+  "tracked_replay": {
+    "report_bytes_identical": true,
+    "receipt": ".local/sft-pilot-20261015/root-review/training-tracked-replay-v1.json"
+  }
+}

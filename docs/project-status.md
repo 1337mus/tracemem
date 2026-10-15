@@ -10,9 +10,10 @@ has the project overview and architecture diagram.
 ## Phase and boundary
 
 Phase 0 inventory and Phase 1 infrastructure are complete. The project is in
-Phase 2, using fictional data for diagnostics. No specialist has been selected
-or trained. Gate A is unmet: there is no independent human validation of the
-claims or evidence.
+Phase 2, using fictional data for diagnostics. A small technical SFT pilot has
+trained a Qwen3-4B adapter, but no specialist has been selected for product
+use. Gate A is unmet: there is no independent human validation of the claims
+or evidence.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
@@ -30,8 +31,16 @@ within the consumer's token limit.
 Experiments propose claims from source messages. A separate append-only claim
 ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
-feed the search index. No specialist model has been trained or selected for
-this step.
+feed the search index. No trained model has been selected for this step.
+
+## First training experiment
+
+The [SFT pilot](sft-pilot.md) completed a Qwen3-4B adapter run on 128 fictional
+examples and compared base and tuned outputs on the same eight development
+prompts. Both had zero exact claim matches. The [results report](sft-pilot-results.md)
+records the limitations and failure analysis. This tested the learning
+pipeline while Gate A remains unmet; it did not select a production specialist
+or establish held-out quality.
 
 ## Current evidence
 

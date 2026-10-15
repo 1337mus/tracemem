@@ -1,0 +1,77 @@
+{
+  "updated_at_utc": "2026-10-15T18:33:37.005664+00:00",
+  "implementation_state": "local; not committed or pushed",
+  "base_head": "92dcfc90cd28bce48d1218fc366f50ae31449432",
+  "full_source_tests": {
+    "attempted": 694,
+    "passed": 693,
+    "optional_skipped": 1,
+    "receipt": ".local/sft-pilot-20261015/root-review/full-check.json",
+    "composite_exit_code": 2,
+    "explanation": "All tests passed; composite make check stopped at format gate. Four files were formatted without behavior changes; focused and quality gates then passed."
+  },
+  "final_sft_focused_tests": {
+    "passed": 62,
+    "receipt": ".local/sft-pilot-20261015/root-review/final-sft-integration.json",
+    "exit_code": 0
+  },
+  "final_quality": {
+    "lint": "passed",
+    "format_files": 153,
+    "mypy_source_files": 40,
+    "receipt": ".local/sft-pilot-20261015/root-review/final-quality.json",
+    "exit_code": 0
+  },
+  "wrapper_serialization": {
+    "outside_checkout_without_pythonpath": "passed",
+    "receipt": ".local/sft-pilot-20261015/root-review/wrapper-serialization.json"
+  },
+  "preflight": {
+    "kind": "actual remote CPU tokenizer run",
+    "status": "ready",
+    "client_elapsed_seconds": 24.058089,
+    "selected_rows": 128,
+    "input_tokens": 140995,
+    "supervised_tokens": 14167,
+    "max_train_tokens": 1436,
+    "train_context_limit": 2048,
+    "dev_prompts": 8,
+    "max_dev_prompt_plus_generation_tokens": 2541,
+    "dev_context_limit": 4096,
+    "all_prompt_labels_masked": true,
+    "all_eos_supervised": true,
+    "job_sha256": "cc602ed916c92cad677f0339bf764fb5231716b84e53a77980c89ed0014cf898",
+    "raw_receipt": ".local/sft-pilot-20261015/remote-preflight-v1.json",
+    "raw_receipt_sha256": "742684fe2f51c8469af50fc32853880c4ef3a8c4e58162e155d18e9ff3846ece",
+    "tokenizer_provenance": {
+      "backend_tokenizer_sha256": "a63080b4b30dc861fe1b0e420c53a241304dc81aff3d9bb315e6e33e2a1ab794",
+      "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "dependency_versions": {
+        "huggingface-hub": "0.30.2",
+        "jinja2": "3.1.6",
+        "safetensors": "0.5.3",
+        "tokenizers": "0.21.1",
+        "transformers": "4.51.3"
+      },
+      "model_id": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+    }
+  },
+  "post_preflight_inventory": {
+    "checked_at_utc": "2026-10-15T18:31:18.616130+00:00",
+    "apps": 1,
+    "all_stopped": true,
+    "active_tasks": 0,
+    "raw_receipt": ".local/sft-pilot-20261015/root-review/post-preflight-inventory.json",
+    "verify_again_before_launch": true
+  },
+  "next_training_job_sha256": "99cbe61613373a487eda3894e862b47dd72f9f64e3dc212bf3e4ca88ec5a4155",
+  "training_started": false,
+  "training_approval": "pending separate owner decision",
+  "gpu_calls_this_slice": 0,
+  "remote_cpu_calls_this_slice": 1,
+  "local_model_tokenizer_downloads": 0,
+  "human_reviewers": 0,
+  "gate_a": "unmet",
+  "limits": "Provisional agent-authored fiction, correlated variants, one seed, development-only exact-structure diagnostic. No semantic accuracy, generalization or trained-specialist result."
+}

@@ -53,6 +53,10 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [First training pilot](sft-pilot.md): fictional data and the completed bounded
+  QLoRA run. [Results](sft-pilot-results.md) include matched base/tuned
+  development metrics and an offline replay record.
+
 - [Experiments](experiments.md): commands, measurements, and failure cases.
 - [Phase 2 diagnostics](experiments-phase2.md): retrieval and extraction diagnostic receipts.
 - [Model candidates](model-candidates.md): pinned retrieval, extraction, and verifier comparisons.

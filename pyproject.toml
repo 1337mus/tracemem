@@ -28,7 +28,9 @@ tracemem = ["data/*.json"]
 [tool.mypy]
 python_version = "3.11"
 strict = true
-files = ["src/tracemem"]
+files = ["src/tracemem", "training", "experiments/modal_sft.py", "experiments/sft_launch.py"]
+mypy_path = "src"
+explicit_package_bases = true
 
 [tool.ruff]
 target-version = "py311"

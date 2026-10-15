@@ -9,7 +9,13 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today. No TraceMem model has been trained yet.**
+**The local search tool works today. A fiction-only SFT pilot has trained an
+adapter, but no model has been validated or selected for product use.**
+
+The [SFT pilot report](docs/sft-pilot-results.md) records the completed run and
+its zero exact claim matches on eight fictional development prompts. The run
+tests the training path; it does not establish model quality or production
+readiness.
 
 ## What works
 

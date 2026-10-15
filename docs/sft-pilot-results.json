@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-15",
+  "status": "completed_diagnostic",
+  "summary": "The bounded QLoRA execution completed, but base and tuned outputs each had zero exact-match true positives on eight fictional development prompts.",
+  "run": {
+    "model_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "job_sha256": "99cbe61613373a487eda3894e862b47dd72f9f64e3dc212bf3e4ca88ec5a4155",
+    "job_file_sha256": "b349c68f871cf12dccc2eb0d8014736ce0f184b4327a84882cf55d99285b0401",
+    "remote_receipt_sha256": "8283dfcef4d6753638b460c9705ca7159b7be6bd6c1f6a9caf1b207151b05196",
+    "train_rows_selected": 128,
+    "source_train_rows": 512,
+    "scenario_families": 32,
+    "selection_seed": 17,
+    "dev_prompts": 8,
+    "private_test_cases": 32,
+    "private_test_used": false,
+    "optimizer_steps": 32,
+    "trainable_parameters": 33030144,
+    "input_tokens_consumed": 140995,
+    "supervised_tokens_consumed": 14167,
+    "qlora": {
+      "quantization": "4-bit NF4",
+      "compute_dtype": "BF16",
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "learning_rate": 0.0002,
+      "microbatch_size": 1,
+      "gradient_accumulation_steps": 4
+    }
+  },
+  "labels": {
+    "provenance": "agent-authored provisional",
+    "human_reviewers": 0,
+    "gate_a_met": false,
+    "evaluation_is_held_out": false
+  },
+  "raw_evaluation": {
+    "base": {
+      "exact_match": {
+        "true_positive": 0,
+        "false_positive": 9,
+        "false_negative": 10
+      },
+      "claims_with_intact_citations": 0,
+      "predicted_claims": 9,
+      "parse_failures": 2,
+      "schema_failures": 1,
+      "truncated_outputs": 2,
+      "unknown_cases": 2,
+      "unknown_abstentions": 1
+    },
+    "tuned": {
+      "exact_match": {
+        "true_positive": 0,
+        "false_positive": 10,
+        "false_negative": 10
+      },
+      "claims_with_intact_citations": 0,
+      "predicted_claims": 10,
+      "parse_failures": 0,
+      "schema_failures": 1,
+      "truncated_outputs": 0,
+      "unknown_cases": 2,
+      "unknown_abstentions": 2
+    },
+    "exact_match_caveat": "Targets are authored, selective, and non-exhaustive; extra predictions count as false positives. The score does not establish semantic support."
+  },
+  "unique_quote_anchoring_ablation": {
+    "post_hoc": true,
+    "changes_offsets_only": true,
+    "semantic_acceptance": false,
+    "base": {
+      "claims_with_intact_citations": 9,
+      "predicted_claims": 9,
+      "exact_match_true_positives": 0
+    },
+    "tuned": {
+      "claims_with_intact_citations": 8,
+      "predicted_claims": 10,
+      "exact_match_true_positives": 0
+    }
+  },
+  "execution": {
+    "optimization_seconds": 426.576815912,
+    "worker_seconds": 768.125770765,
+    "client_seconds": 855.381325,
+    "adapter_model_bytes": 132187888,
+    "adapter_downloaded": false,
+    "modal_app_state_after_run": "stopped",
+    "modal_active_tasks_after_run": 0,
+    "quoted_resource_rate_usd_per_hour": 1.545984,
+    "estimated_worker_compute_usd_before_overhead": 0.33,
+    "actual_billing_available": false
+  },
+  "source_validation": {
+    "check_exit_code": 0,
+    "tests_passed": 702,
+    "optional_tests_skipped": 1,
+    "ruff_formatted_files": 155,
+    "mypy_files_without_issues": 41
+  },
+  "audit_files": {
+    "job": "../examples/synthetic/sft-pilot-job-v1.json",
+    "remote_receipt": "../examples/synthetic/sft-pilot-remote-v1.json",
+    "raw_dev_report_location": "author-local .local/sft-pilot-20261015/dev-report/sft-dev-report-v1.json",
+    "anchoring_ablation_location": "author-local .local/sft-pilot-20261015/dev-report/anchoring-ablation-v1.json"
+  },
+  "interpretation": {
+    "model_quality_claim": false,
+    "production_readiness_claim": false,
+    "next_steps": [
+      "Analyze failure modes and improve examples or representation",
+      "Compare behavior with the base checkpoint",
+      "Obtain human validation of labels and evidence"
+    ]
+  }
+}

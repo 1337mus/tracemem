@@ -14,8 +14,8 @@ test:
 	$(PYTHON) -m unittest discover -s tests -v
 
 lint:
-	.venv/bin/ruff check src tests experiments
-	.venv/bin/ruff format --check src tests experiments
+	.venv/bin/ruff check src tests experiments training
+	.venv/bin/ruff format --check src tests experiments training
 
 audit-data: ; $(PYTHON) -m experiments.audit_dataset
 
