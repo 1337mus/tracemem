@@ -73,6 +73,9 @@ Paths in this index are relative to this `docs/` directory.
   fictional cases and a CPU turn-retrieval diagnostic; labels remain provisional
   and do not establish held-out quality.
 - [Dataset readiness report](dataset-readiness.json): assigned split and duplicate counts.
+- [Dataset isolation audit](dataset-isolation.md), [report](dataset-isolation-report.json),
+  and [validation record](validation-dataset-isolation.json): cross-split lexical
+  and declared-identifier diagnostics.
 - [Scenario curation notes](scenario-curation-notes.md) and [scenario dataset brief](scenario-dataset-brief.md):
   fixture construction records.
 - [Modal compute](modal-compute.md): bounded synthetic inference runs and resource notes.

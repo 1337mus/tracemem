@@ -39,7 +39,10 @@ _NEAR_DUPLICATE_COMPARISON: dict[str, object] = {
 
 
 def audit_cases(
-    cases: Sequence[Mapping[str, Any]], *, near_duplicate_threshold: float = 0.8
+    cases: Sequence[Mapping[str, Any]],
+    *,
+    near_duplicate_threshold: float = 0.8,
+    case_metadata: Mapping[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Report split readiness and cross-split lexical overlap without exposing message text."""
     threshold = _validate_threshold(near_duplicate_threshold)
@@ -133,7 +136,7 @@ def audit_cases(
 
     exact_pairs.sort(key=lambda pair: pair["case_ids"])
     near_pairs.sort(key=lambda pair: pair["case_ids"])
-    return {
+    report = {
         "case_count": len(cases),
         "split_case_counts": {split: split_case_counts[split] for split in split_names},
         "unique_scenario_count": len(all_scenarios),
@@ -157,6 +160,102 @@ def audit_cases(
         "no_memory_definition": "A case whose expected claim list is empty.",
         "limitations": list(_LIMITATIONS),
         "automatic_gate_a_approval": False,
+    }
+    if case_metadata is not None:
+        report["declared_metadata"] = _audit_declared_metadata(
+            case_metadata,
+            case_ids=case_ids,
+            split_by_case={case_id: split for case_id, split, _, _ in conversations},
+            split_names=split_names,
+        )
+    return report
+
+
+def _audit_declared_metadata(
+    case_metadata: Mapping[str, dict[str, Any]],
+    *,
+    case_ids: set[str],
+    split_by_case: Mapping[str, str],
+    split_names: Sequence[str],
+) -> dict[str, Any]:
+    if not isinstance(case_metadata, Mapping):
+        raise TypeError("case_metadata must be a mapping")
+
+    validated: dict[str, dict[str, Any]] = {}
+    for case_id, row in case_metadata.items():
+        _required_text(case_id, "case_metadata case_id")
+        if case_id not in case_ids:
+            raise ValueError("case_metadata contains an unknown case_id")
+        if type(row) is not dict or set(row) != {
+            "scenario_group",
+            "template_group",
+            "entity_ids",
+        }:
+            raise ValueError(
+                "each case_metadata row must contain exactly scenario_group, "
+                "template_group, and entity_ids"
+            )
+        scenario_group = _required_text(row["scenario_group"], "scenario_group")
+        template_group = _required_text(row["template_group"], "template_group")
+        entity_ids = row["entity_ids"]
+        if type(entity_ids) is not list or not entity_ids:
+            raise ValueError("entity_ids must be a non-empty list")
+        validated_entity_ids = [_required_text(entity_id, "entity_id") for entity_id in entity_ids]
+        if len(set(validated_entity_ids)) != len(validated_entity_ids):
+            raise ValueError("entity_ids must be unique within a case")
+        validated[case_id] = {
+            "scenario_group": scenario_group,
+            "template_group": template_group,
+            "entity_ids": validated_entity_ids,
+        }
+
+    missing_case_ids = sorted(case_ids - set(validated))
+    covered_case_counts_by_split: Counter[str] = Counter()
+    grouped_values: dict[str, dict[str, tuple[set[str], set[str]]]] = {
+        "scenario_group": defaultdict(lambda: (set(), set())),
+        "template_group": defaultdict(lambda: (set(), set())),
+        "entity_id": defaultdict(lambda: (set(), set())),
+    }
+    for case_id, row in validated.items():
+        split = split_by_case[case_id]
+        covered_case_counts_by_split[split] += 1
+        for group_name, value in (
+            ("scenario_group", row["scenario_group"]),
+            ("template_group", row["template_group"]),
+        ):
+            splits, affected_case_ids = grouped_values[group_name][value]
+            splits.add(split)
+            affected_case_ids.add(case_id)
+        for value in row["entity_ids"]:
+            splits, affected_case_ids = grouped_values["entity_id"][value]
+            splits.add(split)
+            affected_case_ids.add(case_id)
+
+    overlaps = {
+        group_name: [
+            {
+                "value": value,
+                "splits": sorted(splits),
+                "case_ids": sorted(affected_case_ids),
+            }
+            for value, (splits, affected_case_ids) in sorted(values.items())
+            if len(splits) >= 2
+        ]
+        for group_name, values in grouped_values.items()
+    }
+    return {
+        "covered_case_count": len(validated),
+        "missing_case_ids": missing_case_ids,
+        "complete": not missing_case_ids,
+        "covered_case_counts_by_split": {
+            split: covered_case_counts_by_split[split] for split in split_names
+        },
+        "overlaps": overlaps,
+        "limitations": [
+            "Declared identifiers are bookkeeping and do not prove semantic isolation.",
+            "Partial metadata cannot establish isolation for uncovered cases.",
+            "Declared identifier values may be sensitive; protect this report accordingly.",
+        ],
     }
 
 

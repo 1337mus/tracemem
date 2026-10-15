@@ -65,6 +65,7 @@ jobs:
           touch "$test_dir/__init__.py"
           cp tests/test_chatgpt_adapter.py tests/test_chatgpt_snapshot.py \
             tests/test_adapter.py tests/test_transcript_bounds.py tests/test_transcript_consistency.py \
+            tests/test_dataset_audit.py tests/test_audit_dataset_cli.py \
             tests/test_longmemeval_adapter.py tests/test_longmemeval_retrieval.py \
             tests/test_longmemeval_file.py tests/test_longmemeval_selection.py \
             tests/test_retention.py tests/test_retention_report.py tests/test_synthetic_qa.py \
@@ -100,7 +101,8 @@ jobs:
           cp examples/synthetic/qwen3-4b-qa-controls-answer-receipt.json "$test_root/examples/synthetic/"
           cp docs/qa-contrast-answer-dev.json "$test_root/qa-contrast-answer-expected.json"
           cp docs/qa-controls-answer-dev.json "$test_root/qa-controls-answer-expected.json"
-          cp experiments/evaluate_longmemeval_retrieval.py experiments/prepare_synthetic_qa.py \
+          cp experiments/audit_dataset.py experiments/evaluate_longmemeval_retrieval.py \
+            experiments/prepare_synthetic_qa.py \
             experiments/modal_synthetic_qa.py experiments/analyze_synthetic_qa.py \
             experiments/scenario_payload.py experiments/token_catalog.py "$test_root/experiments/"
           cp experiments/modal_token_count.py "$test_root/experiments/"

@@ -1,13 +1,22 @@
 # TraceMem handoff
 
 Updated 2026-10-15 UTC. Verify by: 2026-10-15. This checkpoint leads with the
-longitudinal v2 targeted review slice. Read its [review card](longitudinal-v2-review.md),
-[validation record](validation-longitudinal-v2-review.json), and
-[copied synthetic artifacts](../examples/synthetic/reviews/longitudinal-v2/manifest.json).
-The probe covers four explicitly selected cases and 10 tasks; it is not
-representative. It had 9/9 decisive agreement with provisional authored labels,
-zero human labels, and no Gate A approval. Source and installed replay parity and
-focused tests passed; details and raw local receipts are in the validation record.
+[dataset isolation audit](dataset-isolation.md), its [report](dataset-isolation-report.json),
+and [validation record](validation-dataset-isolation.json). The CLI now audits
+multiple claim fixture files together and reports declared scenario, template,
+and entity identifier reuse across splits. Its original no-argument output is
+byte-identical. Metadata is optional, with explicit missing-case coverage.
+
+The 84-case pool has metadata for 60 cases and lacks it for 24 diagnostic cases.
+No declared overlaps or lexical duplicate pairs were found. These literal IDs
+cannot prove semantic isolation. Assigned test labels are bookkeeping, not held-out
+quality. Gate A remains unmet, with zero human labels and no model selected or trained.
+Source validation passed 612 tests with one optional skip; a fresh installed wheel
+passed all 20 focused audit tests and produced identical report bytes. Runtime
+package files matched source, wheel, and installation. No GPU or inference ran.
+
+The prior [longitudinal v2 review](longitudinal-v2-review.md) remains provisional
+agent-only evidence. The full 26-task human review packet is still available.
 
 ## Resume safely
 

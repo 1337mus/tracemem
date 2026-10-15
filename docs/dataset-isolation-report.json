@@ -1,0 +1,103 @@
+{
+  "automatic_gate_a_approval": false,
+  "case_count": 84,
+  "comparison": {
+    "exact_duplicate": "Compare every case pair's ordered sequence of literal message roles and normalized per-message text, preserving message and role boundaries.",
+    "near_duplicate": {
+      "inclusive": true,
+      "method": "token-set Jaccard similarity",
+      "scope": "Cross-split only; exact-duplicate pairs are reported separately.",
+      "threshold": 0.8,
+      "tokenization": "Split each normalized message on whitespace and union tokens across the conversation; word order, repetitions, roles, and message boundaries are ignored."
+    },
+    "normalization": "Per-message text is Unicode NFKC normalized, casefolded, and has all Unicode whitespace collapsed to single spaces."
+  },
+  "declared_metadata": {
+    "complete": false,
+    "covered_case_count": 60,
+    "covered_case_counts_by_split": {
+      "dev": 36,
+      "diagnostic": 0,
+      "test": 24,
+      "train": 0
+    },
+    "limitations": [
+      "Declared identifiers are bookkeeping and do not prove semantic isolation.",
+      "Partial metadata cannot establish isolation for uncovered cases.",
+      "Declared identifier values may be sensitive; protect this report accordingly."
+    ],
+    "missing_case_ids": [
+      "case_001_tentative_timer",
+      "case_002_preference_not_decision",
+      "case_003_temporal_revision",
+      "case_004_assistant_decoy",
+      "case_005_quoted_invoice",
+      "case_006_third_party_report",
+      "case_007_negated_location",
+      "case_008_intention_not_completion",
+      "case_009_ambiguous_reference",
+      "case_010_unsupported_causality",
+      "case_011_resolved_temporal_conflict",
+      "case_012_multi_evidence_location",
+      "case_013_unknown_question",
+      "case_014_hypothetical",
+      "case_015_question_not_preference",
+      "case_016_explicit_preference",
+      "case_017_tool_observation",
+      "case_018_shipping_label_report",
+      "case_019_unresolved_source_conflict",
+      "case_020_explicit_decision",
+      "case_021_completed_action",
+      "case_022_abandoned_historical_plan",
+      "case_023_supported_causality",
+      "case_024_tentative_ownership"
+    ],
+    "overlaps": {
+      "entity_id": [],
+      "scenario_group": [],
+      "template_group": []
+    }
+  },
+  "diagnostic_case_count": 24,
+  "exact_duplicate_pairs": [],
+  "held_out_case_count": 24,
+  "held_out_split_names": [
+    "test"
+  ],
+  "input_sha256": [
+    "5a12c98d8cc404d8bf229dab9a5d709b7ef106f4d5ffe7ebe3daafb9ca434214",
+    "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+    "d1a7e6f91b8ea81c60f318f0472fb85f4e230d3ac5742e1d6d76c0148f6ffe67"
+  ],
+  "limitations": [
+    "Pairwise candidate enumeration is O(n²) in case count.",
+    "Lexical overlap cannot prove entity or user isolation.",
+    "Lexical overlap cannot prove template isolation.",
+    "This diagnostic does not establish legal permission.",
+    "This diagnostic does not assess annotation quality or sample adequacy.",
+    "No automatic Gate A approval is granted."
+  ],
+  "near_duplicate_pairs": [],
+  "no_memory_case_count": 14,
+  "no_memory_case_counts_by_split": {
+    "dev": 6,
+    "diagnostic": 4,
+    "test": 4,
+    "train": 0
+  },
+  "no_memory_definition": "A case whose expected claim list is empty.",
+  "scenarios_across_splits": [],
+  "split_case_counts": {
+    "dev": 36,
+    "diagnostic": 24,
+    "test": 24,
+    "train": 0
+  },
+  "unique_scenario_count": 84,
+  "unique_scenario_counts_by_split": {
+    "dev": 36,
+    "diagnostic": 24,
+    "test": 24,
+    "train": 0
+  }
+}

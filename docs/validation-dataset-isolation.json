@@ -1,0 +1,71 @@
+{
+  "updated_at_utc": "2026-10-15T08:21:27.119493+00:00",
+  "scope": "CPU-only declared metadata isolation and multiple claim fixture input audit",
+  "base_head": "4f00223114e32b84b74916a5720d10a263aba2cf",
+  "tests": {
+    "source_attempted": 613,
+    "source_passed": 612,
+    "source_skipped": 1,
+    "installed_focused_passed": 20,
+    "ruff_check": true,
+    "ruff_format_files": 135,
+    "mypy_source_files": 32,
+    "actionlint": true
+  },
+  "raw_local_receipts": ".local/metadata-audit-root-captures/",
+  "full_check_receipt": ".local/metadata-audit-root-captures/full-check.json",
+  "full_check_stdout_sha256": "132ba1e42bce0244b492dc5c6cfef9eff07624d4de93bda0db7dc92da74fd190",
+  "full_check_stderr_sha256": "e6583cc5d1da2a5ee059fa9d3630431d7a930208f4fffc302d9df5663466f197",
+  "build": "Offline setuptools.build_meta.build_wheel, installed without index or dependencies in a fresh Python 3.14 venv",
+  "build_attempts": "Initial pip and python -m build attempts were unavailable in the development venv; original failure receipts retained.",
+  "parity": {
+    "runtime_package_files_matched": 37,
+    "wheel_sha256": "8e9bcdd2fb2f756419f7ed4ddc2bb16a8c7d66c9b81bc301e4291e328170d8b0",
+    "source_installed_reports_identical": true,
+    "default_bytes_unchanged": true,
+    "installed_source_tests_and_cli_match": true
+  },
+  "combined_report": "docs/dataset-isolation-report.json",
+  "combined_report_sha256": "f7c5f0af945d9265901646e4e7d7cb320c9848be9328efd8c6bb61e75b5a4280",
+  "measured": {
+    "cases": 84,
+    "assigned_splits": {
+      "dev": 36,
+      "diagnostic": 24,
+      "test": 24,
+      "train": 0
+    },
+    "metadata_covered": 60,
+    "metadata_missing": 24,
+    "metadata_complete": false,
+    "declared_overlaps": 0,
+    "exact_duplicates": 0,
+    "near_duplicates_at_0_8": 0
+  },
+  "tdd": {
+    "receipts": ".local/metadata-audit-tdd/",
+    "observed_red": [
+      "metadata-overlaps.red",
+      "cli-combine.contract-red",
+      "cli-identities.red",
+      "cli-strict-json.contract-red"
+    ],
+    "note": "Additional metadata validation and CLI edge checks are green regressions, without separate RED cycles. The identity-rejection RED failed at unsupported positional parsing; it is not an isolated identity-validation reproduction."
+  },
+  "review": "Accountable root inspected all runtime, test, CLI, CI and documentation changes; independently checked input hashes, count arithmetic, report bytes and source/wheel/installed package parity.",
+  "boundaries": {
+    "new_gpu_calls": 0,
+    "training_started": false,
+    "private_data_uploaded": false,
+    "original_fixtures_modified": false,
+    "human_labels": 0,
+    "gate_a": "unmet"
+  },
+  "limitations": [
+    "Declared literal identifiers do not prove conceptual, semantic or user isolation.",
+    "Coverage is incomplete for the 24-case diagnostic challenge.",
+    "Assigned test labels do not establish held-out quality.",
+    "No rights, annotation adequacy, model selection or training readiness conclusion."
+  ],
+  "delivery": "This record describes local validation. Verify signed delivery and exact-head hosted CI in .local/active-cycle.json."
+}
