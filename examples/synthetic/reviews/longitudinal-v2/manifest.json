@@ -1,0 +1,42 @@
+{
+  "kind": "longitudinal-v2-review-artifacts",
+  "updated_at_utc": "2026-10-15",
+  "fictional_only": true,
+  "fixture_sha256": "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+  "probe": {
+    "case_ids": [
+      "long-dev-case-03",
+      "long-dev-case-04",
+      "long-dev-case-07",
+      "long-dev-case-10"
+    ],
+    "task_count": 10,
+    "seed": 1729,
+    "selection": "Explicit nonrandom subset; not representative.",
+    "blind_bundle_sha256": "65ef70d47d0feb04c3760582835d50487c75e927d82f45afd6422be634cafd6d"
+  },
+  "reviewer": {
+    "reviewer_id": "astra-v2-targeted-01",
+    "reviewer_kind": "agent",
+    "model": "gpt-6-astra",
+    "context": "Fresh fork-none reviewer shown only the probe blind JSON.",
+    "human_reviewers": 0
+  },
+  "policy": "Agent judgments only; authored labels remain provisional. Root audit is unblinded, not independent or human ground truth. Keep curator answer keys away from blind reviewers.",
+  "files": {
+    "agent-astra-responses.json": {
+      "sha256": "552923af805f30cb13e00e2863ae8469730221953ab7d0d2ac6870b42747c070",
+      "source": ".local/longitudinal-v2-review-ready/probe-agent-astra-responses.json"
+    },
+    "agent-report.json": {
+      "sha256": "f629336668301965e514468ca573dbc9ae3c5e4f6f5a89277f35427357199d62",
+      "source": ".local/longitudinal-v2-review-ready/probe-agent-report.json"
+    },
+    "root-semantic-audit.json": {
+      "sha256": "8393890be4e4b1482a57b1206a0423f1c82b6f75b2c003b8371fa46bc6f3edcf",
+      "source": ".local/v2-review-probe-root-semantic-audit.json"
+    }
+  },
+  "answer_key_included": false,
+  "answer_key_location": ".local/longitudinal-v2-review-ready/probe-curator/answer-key.json"
+}

@@ -1,168 +1,68 @@
-# TraceMem: current prototype and design
+# Project status and design
 
-Updated 2026-10-15 UTC. The latest offline slice validates completed responses
-for the 36-task QA controls review packet and reports separate reviewer counts,
-including uncertain labels and joint tables. It regenerates the pinned bundle
-and rejects altered, missing, duplicate or malformed responses. Reviewer kind
-is self-attested; independently verified human reviewers remain zero. Seven
-source and seven installed tests passed, and procedural CLI reports matched
-byte-for-byte. The full source check passed 591/592 tests (one optional skip),
-Ruff on 131 files and mypy on 32 runtime files; Actionlint passed. Root audited
-72 mechanically assigned rows and 27 rejection cases. These are plumbing tests,
-with no semantic annotations or new inference. See the [accounting tool](qa-controls-review-accounting.md)
-and [validation snapshot](validation-qa-controls-review-accounting.json).
+Updated 2026-10-15 UTC.
 
-A fresh reference-key-withheld agent review and separate unblinded root review
-now assess the actual fictional answers. Both judge 15/36 source-correct:
-11/12 with full context, 2/12 each with support omitted or context empty. Root
-judges actual-prompt support 35/36; the agent reports 36/36 because it misread
-one full-context conditional-item prompt as empty. The original is preserved.
-Nine paraphrases are accepted beyond the frozen strict literal total of 6/36;
-this is agent judgment on correlated dev data, with zero human validation.
-The actual report reproduced byte-for-byte outside the checkout. See the
-[review results](qa-controls-review-results.md) and
-[validation](validation-qa-controls-review-results.json).
+TraceMem is a local research prototype for finding past conversation evidence
+with source citations. The current search tool works; interpreting changes in
+belief, decisions, or certainty remains experimental. The [README](../README.md)
+has the project overview and architecture diagram.
 
-The preceding literal analyzer was delivered in signed private commit
-[`edd66f7`](https://github.com/1337mus/tracemem/commit/edd66f734087e31d79a58b8ae0b13c6a26bd2b64).
-Exact [CI 38685597953](https://github.com/1337mus/tracemem/actions/runs/38685597953)
-passed 575/576 source tests (one skip), 322/324 installed tests (two skips),
-Ruff, mypy, wheel build and report replay. The GitHub signature was valid and
-repository visibility was PRIVATE before that push. Verify latest delivery,
-CI and worker state in `docs/handoff.md` and ignored `.local/active-cycle.json`.
+## Phase and boundary
 
-The working result is an evidence and evaluation system. The specialist model
-is still a research objective: no model has been selected or trained.
+Phase 0 inventory and Phase 1 infrastructure are complete. The project is in
+Phase 2, using fictional data for diagnostics. No specialist has been selected
+or trained. Gate A is unmet: there is no independent human validation of the
+claims or evidence.
 
-The offline [answer contract](qa-controls-answer-contract.md) binds 36 fictional
-prompts to request SHA-256 `df91a152242ed6b2942802b5957dc7531a58bad3bffce67a284ce4526f90b871`.
-Root independently reconstructed all items, accepted a fake receipt, rejected
-61 invalid mutations and verified three stop-boundary variants. The 1,024/128
-input/output limits are upper bounds, not measurements. The separate
-[source-free runner](qa-controls-answer-runner.md) completed one approved
-synthetic call. The structurally audited receipt reports 6,993 input and 196
-generated tokens across 36 complete, nonempty outputs; all stopped at EOS. This
-does not establish semantic truth or answer quality: the six groups are
-correlated, no human labels exist, and Gate A remains unmet. See the
-[dev-only run record](qa-controls-answer-run-results.md), contract
-[validation](validation-qa-controls-answer-contract.json), and preserved
-pre-delivery runner [validation snapshot](validation-qa-controls-answer-runner.json).
-
-An offline analyzer now compares the 36 outputs to provisional dev labels using
-casefold-plus-whitespace normalization only. It reports 26/36 prompt matches,
-6/36 full-source matches and 27 exact `UNKNOWN` outputs. Those literal counts
-match the always-`UNKNOWN` baseline on the two label-match totals, but do not
-imply equivalent semantic quality: nine full-context strings contain expected
-information rejected by strict punctuation/wording comparison, and one
-answerable conditional-item output is `UNKNOWN`. No semantic accuracy is
-assigned. Root verified all 36 rows across three variants and rejection of 16
-malformed receipt/reference cases. Seven focused tests passed; the full local
-source check passed 575/576 (one optional Context Kit skip), Ruff 127 files and
-mypy 32 files. Seven installed tests passed and the report reproduced
-byte-for-byte outside the checkout; all 37 runtime members match the source and
-pinned wheel. See the [analysis validation](validation-qa-controls-answer-analysis.json).
-Details and the reproducible command are in the [run record](qa-controls-answer-run-results.md).
-
-The new frozen offline QA interpretation controls contain six correlated groups
-(7 sessions, 22 messages, 12 questions and 36 distinct prompt/cells). Ten
-full-source answers are answerable and two are unknown; all 24 support-omitted
-and empty cells expect `UNKNOWN`. Full-source answers and prompt-supported
-answers remain separate, and shared prompt templates are unchanged. The
-always-`UNKNOWN` baseline matches 26/36 prompt expectations but only 6/36
-full-source answers. The controls contain only prompts and expectations; one
-separate inference run is recorded as a dev-only diagnostic. It adds no human
-labels, held-out truth or Gate A evidence. See [controls](qa-interpretation-controls.md),
-the [answer-run results](qa-controls-answer-run-results.md), and the
-[validation snapshot](validation-qa-interpretation-controls.json).
-
-## What works
-
-- Read-only Claude/Codex transcript adapters and an explicit, fixture-verified
-  ChatGPT export reader. Source roles, stable evidence identity, text revisions
-  and exact character spans are preserved. Context Kit remains unchanged.
-- SQLite evidence storage, indexed FTS5/BM25, vector retrieval and hybrid RRF.
-  Deterministic hash vectors work without model downloads. Pinned MiniLM vectors
-  have a separate synthetic remote measurement and local replay.
-- Exact historical citations, whole-passage context packing with supplied exact
-  full-prompt token counts, an append-only candidate claim ledger, structured
-  validation, quote anchoring, annotation export and blind review tooling.
-- Reproducible fictional demos, separate dev/test extraction reports, raw remote
-  receipts, strict provenance checks and tests outside the source checkout.
-
-Context Kit supplies useful configuration and transcript discovery. Its derived
-Markdown notes and usage events lack the exact original-message evidence
-contract, so TraceMem parses the original records through its own adapters.
-See the dated [inventory](context-kit-inventory.md) for sample coverage and limits.
-Full private-corpus ingestion has not been performed.
+Claude Code and Codex adapters read local transcripts without changing them;
+ChatGPT data enters only through an explicit JSON export reader. Context Kit
+discovery and configuration stay unchanged. Private conversation data and its
+derived evidence stay local.
 
 ## Design
 
-```mermaid
-flowchart TD
-    C[Context Kit configuration and source discovery] --> A[Read-only provider adapters]
-    S[Original conversations] --> A
-    A --> E[SQLite evidence: roles, revisions and source spans]
-    E --> R[BM25, vectors and hybrid retrieval]
-    R --> P[Complete-prompt token packing and exact citations]
-    P --> O[Cited context for an answering model]
-    E -. fictional diagnostic inputs .-> X[Prompt-only candidate extraction]
-    X --> V[Schema, role and evidence-integrity checks]
-    V --> L[Append-only candidate claim ledger]
-    L --> H[Separate semantic review and annotation]
-```
+Adapters normalize messages while preserving speaker roles, source locations,
+and revisions. SQLite stores the messages and citations. Search combines BM25
+keyword ranking with deterministic signed hash-vector ranking; either method
+can also run alone. A budgeted passage packer returns complete cited messages
+within the consumer's token limit.
 
-The solid path is runnable locally without hosted APIs. Model diagnostics use
-fictional inputs in bounded Modal jobs; weights and inference stay off the Mac.
-The ledger records proposals and lineage. It does not resolve current truth,
-perform source erasure, or automatically accept a claim as semantically supported.
-A valid citation proves source identity and quote integrity, not entailment.
+Experiments propose claims from source messages. A separate append-only claim
+ledger stores those proposals and their history. Validators check structure,
+quoted source text, speaker roles, and revision references. Proposals do not
+feed the search index. No specialist model has been trained or selected for
+this step.
 
-## What the measurements show
+## Current evidence
 
-| Evidence | Observed result | Scope |
-| --- | --- | --- |
-| MiniLM retrieval | Recall@5 1.0 on 14 answerable queries; 0/3 unknown abstentions | 40 fictional records; no generalization or calibration claim |
-| Two-model extraction | Qwen emitted 83 schema-valid candidates across 48 cases; Phi emitted one | Separate 24-case dev/test partitions; substantial schema, attribution and temporal failures remain |
-| Token-budget retrieval | At 128/256/512/1,024 tokens, hybrid retained authored labels at macro recall 0/.125/.75/1 | Six agent-authored dev scenarios; four answerable and two unknown exclusions per group |
-| Matched-budget answering diagnostic | Every group: 0/4 answerable literal matches, 2/2 unknown matches; 479 generated tokens over 46 prompts | Six fictional dev scenarios; verbose paraphrases occur, so this is not semantic accuracy |
+The current longitudinal review packet contains 26 tasks and is available at
+`.local/longitudinal-v2-review-ready/reviewer/review.html`.
+The targeted probe selected four development cases and covered 10 tasks: 6
+supported, 3 unsupported, and 1 uncertain. It has zero human validation; these
+labels do not measure accuracy or generalization. V2 revises the same 12
+fictional scenarios as v1 and adds no independent data. The
+[longitudinal v2 review card](longitudinal-v2-review.md) describes the review.
 
-See [model comparison](experiments-scenarios.md),
-[token replay](qa-contrast-token-replay.md) and
-[answering results](qa-contrast-answer-results.md) for exact denominators and receipts.
-Model outputs and agent judgments are not independent human ground truth.
+The six fictional cross-session cases are assigned to a `test` split for
+bookkeeping only. Four answerable cases have complete labeled evidence by k=3
+with BM25 and hybrid retrieval; hash vectors cover 2 of 4 at k=3. Two
+`UNKNOWN` cases are excluded from turn-label recall, so this is not an abstention
+or QA accuracy result. See the [cross-session data card](cross-session-test-data-card.md)
+for the retrieval details and limits.
 
-## Current work and remaining gates
+Focused review verification covered 23 source tests and 23 installed tests.
+Reports were byte-identical, and the full exports and probe exports matched.
+These checks validate the artifact slice, not human agreement or truth.
 
-Phase 0 inventory and Phase 1 runnable infrastructure are complete. The next
-bounded diagnostic completed one [source-free answering call](qa-contrast-answer-runner.md).
-It used a remote T4, 23,533 input tokens and 479 generated tokens. Raw responses
-were preserved and independently checked against all 72 comparison cells.
-The app stopped with zero tasks. The separately reviewed analysis passes full
-checks: 520 tests (one skip), Ruff and mypy, plus six installed tests. Its source,
-fictional receipts and final report are included here. Source and installed
-report bytes match exactly; active-cycle records the newest delivery and CI.
+The verified hosted CI baseline at preparation time is for the delivered head
+`bb5eb2582e9fa35b7b175db643cb159a0dddce17` (run
+`38698341232`): source tests passed 602 with 1 skip; installed tests passed 349
+with 2 skips. Check `.local/active-cycle.json` for the latest exact-delivery
+and CI state.
 
-A separate [qualitative QA review workflow](qa-contrast-answer-review.md) prepares
-46 unique prompt/source/answer tasks across all 72 condition mappings. It
-separates correctness against the full source from support in the actual prompt.
-Root checks passed 526 tests (one skip), lint/type checks and six installed
-tests; actual source/copied exports match byte-for-byte. One self-attested agent
-completed all 46 reviews: source answer 32 correct, 13 incorrect, 1 uncertain;
-prompt support 38 supported, 7 unsupported, 1 uncertain. Root reread all tasks
-and audited rationales, agreeing on 45 and making one stricter, unblinded
-derivative change: root counts are 32 correct, 14 incorrect, 38 supported and
-8 unsupported. This is not an independent second sample, consensus or human
-label set. The frozen literal report remains unchanged. See [review results](qa-contrast-review-results.md)
-and [review accounting](qa-contrast-review-accounting.md).
+## Next gate
 
-Gate A remains unmet: there are zero independent human labels and insufficient
-independently validated, legally reviewed held-out scenarios. Training,
-model selection, broad memory benchmarks, privacy-reviewed release and any
-research-success claim remain ahead. Context Kit, original conversations and
-machine-local context stay read-only; private data stays local.
-
-To try the current fictional end-to-end path:
-
-```sh
-make demo PYTHON=.venv/bin/python
-```
+The next research step is independent human review of the full longitudinal
+packet, followed by a separate readiness review. Add more legally usable,
+distinct scenarios before selecting or training a specialist. Do not infer
+Gate A progress from targeted agent probes or retrieval diagnostics.

@@ -12,6 +12,11 @@ root then read all84 complete conversations, candidates and rationales and made
 nine separate adjudication changes. Root was aware of model identities and the
 first review, so its responses are not a second independent blind review.
 
+The targeted longitudinal v2 probe responses, report, and unblinded root audit
+are copied under [longitudinal-v2](longitudinal-v2/manifest.json); its answer
+key remains in local curator storage and is not included in that artifact
+directory.
+
 Keep `*-answer-key.json` and `scenario-review-provenance.json` away from future
 blind reviewers. The separate controls contain8 authored positive examples and
 8 simple dev-derived foils. Their16/16 agreement does not establish calibration.

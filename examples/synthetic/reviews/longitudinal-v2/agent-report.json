@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "dataset_sha256": "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+  "bundle_sha256": "65ef70d47d0feb04c3760582835d50487c75e927d82f45afd6422be634cafd6d",
+  "task_count": 10,
+  "reviewer_document_count": 1,
+  "by_reviewer_kind": {
+    "human": {
+      "reviewers": 0,
+      "responses": 0,
+      "agreement": 0,
+      "disagreement": 0,
+      "uncertain": 0,
+      "response_uncertain": 0,
+      "response_supported": 0,
+      "response_unsupported": 0,
+      "reference_supported": 0,
+      "reference_unsupported": 0,
+      "reference_labeled_responses": 0,
+      "unlabeled_responses": 0,
+      "expected_responses": 0,
+      "coverage_rate": null,
+      "decisive_responses": 0,
+      "agreement_denominator": 0,
+      "agreement_rate_on_decisive": null
+    },
+    "agent": {
+      "reviewers": 1,
+      "responses": 10,
+      "agreement": 9,
+      "disagreement": 0,
+      "uncertain": 1,
+      "response_uncertain": 1,
+      "response_supported": 6,
+      "response_unsupported": 3,
+      "reference_supported": 6,
+      "reference_unsupported": 3,
+      "reference_labeled_responses": 9,
+      "unlabeled_responses": 1,
+      "expected_responses": 10,
+      "coverage_rate": 1.0,
+      "decisive_responses": 9,
+      "agreement_denominator": 9,
+      "agreement_rate_on_decisive": 1.0
+    }
+  },
+  "human_identity_policy": "reviewer_kind is self-attested; reviewer identity is not verified",
+  "reference_label_policy": "authored expectations are descriptive comparisons; this report never modifies or promotes them",
+  "agreement_scope": "Agreement uses decisive responses to gold and foil tasks only; unlabeled candidates are excluded from its denominator"
+}

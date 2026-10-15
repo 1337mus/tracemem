@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "bundle_sha256": "65ef70d47d0feb04c3760582835d50487c75e927d82f45afd6422be634cafd6d",
+  "responses": [
+    {
+      "task_id": "task_0fe14fd54432e009e574647017a4455e1ff561d600f9414accca4fea40acce26",
+      "label": "unsupported",
+      "rationale": "message-004 attributes the instruction to the checklist card and explicitly disclaims a user request. No user intention to switch off the kiln is stated; message-012 also leaves applicability to the new kiln unresolved.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_8dd440ac82d4c12b0539200e01a530e1e3354298baf5d922a533bfa5af0a6151",
+      "label": "unsupported",
+      "rationale": "The conditional sending plan belongs to the assistant in message-004. The user disclaims approval or sending in message-005 and reiterates in message-011 that only a discussion draft was requested.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_9d6fba94b3e1d590bc57191cad5efe1f4264c598df81a24bae73191a7ef51c46",
+      "label": "supported",
+      "rationale": "message-004 explicitly quotes this instruction from the Ashgrove checklist card. The candidate correctly reports the card content without assigning the user an intention or claiming the rule applies to the new kiln.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_92ac2d64229dfe53cee4eb458a2a98fb9c4e5193b757d0af90002802ae6555b1",
+      "label": "supported",
+      "rationale": "message-007 identifies waterproof cards and the unfinished ink test; message-009 explicitly states conditional consideration, with no decision. The tentative report preserves that condition; messages-010 through message-012 do not establish adoption.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_b2bff7e287dc639921d145ce4206c4a2ca00ad64c60e5c5d8c1c613b72c101be",
+      "label": "unsupported",
+      "rationale": "message-009 says only that the user could consider waterproof cards if the test succeeds and explicitly says no decision was made. message-010 reports smudging, and message-012 chooses ordinary stock for the rehearsal while leaving later review open.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_4fbe10f554482bfdf16c3d7554e8be65bf923f46e8d27a9b73844beebca17e3b",
+      "label": "supported",
+      "rationale": "message-003 identifies Elise Mora as keeper of the balcony key, distinct from Elise Tan. message-010 reports Mora confirming the key is in the rooftop lockbox, supporting the identity, location, and third-party attribution.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_65dc57d0ad861d5f5f3c78f25bf5f7c92e4d3d40873f64c9d01da8a767dd216f",
+      "label": "supported",
+      "rationale": "The negative polarity is supported: message-005 explicitly says the user has not approved a schedule, and message-011 confirms it remains a discussion draft rather than a final schedule.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_bf301b1485d8455e9c8ba99ea9f88c80fd1994834329f23ba114c9c975c3ff6b",
+      "label": "supported",
+      "rationale": "message-004 directly states the current preference for cue cards ordered by show time, replacing the prior performer grouping in message-003. message-006 extends the same ordering to both physical and digital versions.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_388c00a2df0089f35374fb7a6c8085c79055b4448e8f8b936f6fb6547c65b833",
+      "label": "uncertain",
+      "rationale": "message-007 reports a plan by an Elise, but message-009 explicitly cannot distinguish Mora from Tan. Tan lending the filter in message-003 and returning it in message-012 does not resolve who authored the earlier note.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    },
+    {
+      "task_id": "task_b538cb04bf9b77156ad44c2d4069dac786fd744ed507bb17c00f96549e55c95a",
+      "label": "supported",
+      "rationale": "message-004 directly states the assistant intention to send the draft after user review. message-005 identifies it as the assistant plan, while messages-006 and message-012 keep review pending; the candidate does not claim sending or approval occurred.",
+      "reviewer_id": "astra-v2-targeted-01",
+      "reviewer_kind": "agent",
+      "timestamp": "2026-10-15T07:42:18Z"
+    }
+  ]
+}

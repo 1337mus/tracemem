@@ -17,9 +17,31 @@ V2 makes two annotation changes. For case `long-dev-case-10`, the second target 
 
 ## Review status and limits
 
-V1 fixture labels were agent-authored and provisional. The earlier blind v1 review returned 13 supported, 12 unsupported, and 1 uncertain, but it used the same Luna model family that authored the labels; it is not independent validation or truth. V2 has no fresh independent review. Its task IDs bind to the new fixture hash, so do not transfer v1 response labels to v2.
+V1 fixture labels were agent-authored and provisional. The earlier blind v1
+review returned 13 supported, 12 unsupported, and 1 uncertain, but it used the
+same Luna model family that authored the labels; it is not independent
+validation or truth. V2 now has a fresh agent review of an explicit,
+nonrepresentative 10-task probe: 6 supported, 3 unsupported, and 1 uncertain,
+with 9/9 agreement on decisive gold/foil tasks. The unlabeled task is excluded
+from that denominator. A fresh fork-none Astra agent saw only the probe blind
+JSON; earlier labels were authored/reviewed by Luna, so this does not establish
+model-family or version independence. The unblinded root audit agrees on all
+10 labels and checked 13 exact evidence spans; it is not human annotation or
+independent ground truth. There are still zero human labels and Gate A remains
+unmet. See the [review card](longitudinal-v2-review.md) and [review validation
+record](validation-longitudinal-v2-review.json). V2 task IDs bind to the full
+new fixture hash, so do not transfer v1 response labels to v2.
 
-The files are newly authored fictional material under MIT. Names, settings, organizations, and dates are fictional, not observed event truth. All cases remain `dev`; no `train` or `test` data is included. Labels are agent-authored and provisional. There are zero human annotations, no inference results, and no Gate A approval. Integrity tests check schemas and exact evidence spans, not semantic support or real-world truth. A reviewer may choose `uncertain` when the conversation does not resolve identity; that label does not prove the claim false.
+The files are newly authored fictional material under MIT. Names, settings,
+organizations, and dates are fictional, not observed event truth. All cases
+remain `dev`; no `train` or `test` data is included. Labels are agent-authored
+and provisional. There are zero human annotations and no model-serving
+extraction measurements for this v2 fixture; targeted agent annotation is
+reported separately in the [review card](longitudinal-v2-review.md). Gate A
+remains unmet. Integrity tests check schemas and exact evidence spans, not
+semantic support or real-world truth. A reviewer may choose `uncertain` when
+the conversation does not resolve identity; that label does not prove the claim
+false.
 
 ## Validation
 

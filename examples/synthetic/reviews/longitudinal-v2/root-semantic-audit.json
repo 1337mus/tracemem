@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "response_sha256": "552923af805f30cb13e00e2863ae8469730221953ab7d0d2ac6870b42747c070",
+  "root_review": "Unblinded accountable agent review; not independent annotation or human ground truth. Original responses preserved. No reference labels promoted.",
+  "tasks": [
+    {
+      "task_id": "task_0fe14fd54432e009e574647017a4455e1ff561d600f9414accca4fea40acce26",
+      "root_support_judgment": "unsupported",
+      "root_rationale": "message-004 explicitly quotes the card and rejects a user request; no user intention follows.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_8dd440ac82d4c12b0539200e01a530e1e3354298baf5d922a533bfa5af0a6151",
+      "root_support_judgment": "unsupported",
+      "root_rationale": "message-004 is the assistant conditional plan; message-005 and message-011 deny user approval.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_9d6fba94b3e1d590bc57191cad5efe1f4264c598df81a24bae73191a7ef51c46",
+      "root_support_judgment": "supported",
+      "root_rationale": "message-004 reports card text. This does not establish applicability to the current kiln.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_92ac2d64229dfe53cee4eb458a2a98fb9c4e5193b757d0af90002802ae6555b1",
+      "root_support_judgment": "supported",
+      "root_rationale": "message-007 supplies the card referent and message-009 the conditional consideration. This is a historical tentative report, not a current decision.",
+      "source_spans_checked": 2,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_b2bff7e287dc639921d145ce4206c4a2ca00ad64c60e5c5d8c1c613b72c101be",
+      "root_support_judgment": "unsupported",
+      "root_rationale": "message-009 explicitly says no decision; message-010 test failure and message-012 ordinary rehearsal stock do not prove festival adoption.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_4fbe10f554482bfdf16c3d7554e8be65bf923f46e8d27a9b73844beebca17e3b",
+      "root_support_judgment": "supported",
+      "root_rationale": "message-003 assigns the balcony key to Mora; message-010 reports its lockbox location. Ancillary gendered pronoun is not explicitly linked to Mora; prefer neutral wording in a future revision without editing this fixture.",
+      "source_spans_checked": 2,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_65dc57d0ad861d5f5f3c78f25bf5f7c92e4d3d40873f64c9d01da8a767dd216f",
+      "root_support_judgment": "supported",
+      "root_rationale": "Negative polarity preserves nonapproval: message-005 denies approval and message-011 confirms draft status.",
+      "source_spans_checked": 2,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_bf301b1485d8455e9c8ba99ea9f88c80fd1994834329f23ba114c9c975c3ff6b",
+      "root_support_judgment": "supported",
+      "root_rationale": "message-004 directly states show-time preference and message-006 confirms both versions; prior performer grouping is historical.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_388c00a2df0089f35374fb7a6c8085c79055b4448e8f8b936f6fb6547c65b833",
+      "root_support_judgment": "uncertain",
+      "root_rationale": "message-009 explicitly leaves the note author unresolved. Lending and returning the filter do not identify the earlier note author.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    },
+    {
+      "task_id": "task_b538cb04bf9b77156ad44c2d4069dac786fd744ed507bb17c00f96549e55c95a",
+      "root_support_judgment": "supported",
+      "root_rationale": "message-004 is an assistant intention conditional on user review; no sending or approval completion is claimed.",
+      "source_spans_checked": 1,
+      "all_exact_source_spans": true,
+      "agent_label_matches_root": true
+    }
+  ],
+  "support_counts": {
+    "unsupported": 3,
+    "supported": 6,
+    "uncertain": 1
+  },
+  "human_labels": 0,
+  "gate_a": "unmet",
+  "auxiliary_wording_followup": "Prefer a neutral key-keeper pronoun in future curation; preserve exact v2 bytes."
+}

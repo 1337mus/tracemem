@@ -64,6 +64,9 @@ Paths in this index are relative to this `docs/` directory.
 - [Longitudinal revision v2](longitudinal-revision-v2.md): the same fictional
   development slice with one unresolved candidate kept unlabeled; see its
   [validation record](validation-longitudinal-v2.json).
+- [Longitudinal v2 review slice](longitudinal-v2-review.md) and its
+  [validation record](validation-longitudinal-v2-review.json): targeted agent review,
+  preserved artifacts, source/installed replay parity, and limits.
 - [Cross-session test data card](cross-session-test-data-card.md),
   [retrieval replay](cross-session-test-retrieval.json), and
   [validation record](validation-cross-session-test.json): six newly authored
@@ -107,6 +110,8 @@ Paths in this index are relative to this `docs/` directory.
   and [phase 2 prompt brief](phase2-prompt-brief.md).
 - [Fictional review artifacts](../examples/synthetic/reviews/README.md) reproduce
   the agent-support report.
+- [Longitudinal v2 review artifacts](../examples/synthetic/reviews/longitudinal-v2/manifest.json):
+  copied probe responses, report, and unblinded root audit with byte hashes.
 
 ## Benchmarks and dataset formats
 

@@ -1,0 +1,123 @@
+{
+  "kind": "longitudinal-v2-review-validation",
+  "updated_at_utc": "2026-10-15",
+  "scope": "Documentation and byte-preserving review artifact copies for the private repository; no runtime or fixture changes.",
+  "fixture": {
+    "path": "examples/synthetic/longitudinal-dev-v2.json",
+    "sha256": "ea6b8c5a43c5c2c022ebf10b76e12581b46b1b92ff515f5e9be72340a5c0016e",
+    "frozen": true
+  },
+  "probe": {
+    "selection": "Explicit, nonrandom, nonrepresentative subset; full fixture bytes determine task IDs.",
+    "case_ids": [
+      "long-dev-case-03",
+      "long-dev-case-04",
+      "long-dev-case-07",
+      "long-dev-case-10"
+    ],
+    "seed": 1729,
+    "task_count": 10,
+    "counts": {
+      "gold": 6,
+      "foil": 3,
+      "unlabeled": 1
+    },
+    "blind_bundle_sha256": "65ef70d47d0feb04c3760582835d50487c75e927d82f45afd6422be634cafd6d",
+    "blind_json_sha256": "9673a564c12b83823c3a730398c3c82319948633e770e10709a9d7e199102d8b"
+  },
+  "agent_review": {
+    "reviewer_id": "astra-v2-targeted-01",
+    "model": "gpt-6-astra",
+    "session": "fresh fork-none agent",
+    "visible_input": "Probe blind JSON only",
+    "human_labels": 0,
+    "responses": 10,
+    "labels": {
+      "supported": 6,
+      "unsupported": 3,
+      "uncertain": 1
+    },
+    "agreement": {
+      "decisive_authored_label_tasks": 9,
+      "matches": 9,
+      "rate": 1.0,
+      "unlabeled_task_in_denominator": false
+    },
+    "interpretation": "Agreement with provisional authored gold/foil labels only; not accuracy, calibration, or truth.",
+    "independence_limit": "Earlier labels were authored/reviewed by Luna. This comparison does not establish model-family or version independence."
+  },
+  "root_audit": {
+    "kind": "Unblinded accountable agent review; not independent annotation or human ground truth.",
+    "labels_matching_agent": 10,
+    "evidence_spans_checked": 13,
+    "all_exact_source_spans": true,
+    "original_agent_response_preserved": true,
+    "reference_labels_promoted": false,
+    "curation_followup": "Prefer a neutral key-keeper pronoun in a future revision; preserve the frozen v2 fixture bytes."
+  },
+  "review_artifacts": {
+    "manifest": "examples/synthetic/reviews/longitudinal-v2/manifest.json",
+    "files": {
+      "agent-astra-responses.json": {
+        "source": ".local/longitudinal-v2-review-ready/probe-agent-astra-responses.json",
+        "sha256": "552923af805f30cb13e00e2863ae8469730221953ab7d0d2ac6870b42747c070"
+      },
+      "agent-report.json": {
+        "source": ".local/longitudinal-v2-review-ready/probe-agent-report.json",
+        "sha256": "f629336668301965e514468ca573dbc9ae3c5e4f6f5a89277f35427357199d62"
+      },
+      "root-semantic-audit.json": {
+        "source": ".local/v2-review-probe-root-semantic-audit.json",
+        "sha256": "8393890be4e4b1482a57b1206a0423f1c82b6f75b2c003b8371fa46bc6f3edcf"
+      }
+    },
+    "answer_key_included": false,
+    "answer_key_location": ".local/longitudinal-v2-review-ready/probe-curator/answer-key.json"
+  },
+  "source_installed_parity": {
+    "source_replay_exit_code": 0,
+    "installed_replay_exit_code": 0,
+    "replay_metadata_diff_only_in_package_origin": true,
+    "source_and_installed_reports_byte_equal": true,
+    "report_sha256": "f629336668301965e514468ca573dbc9ae3c5e4f6f5a89277f35427357199d62",
+    "source_installed_full_and_probe_exports_match": true,
+    "html_matches_renderer": true,
+    "annotation_and_html_tests": {
+      "source": {
+        "command": ".venv/bin/python -m unittest tests.test_annotations tests.test_review_html -v",
+        "exit_code": 0,
+        "passed": 23
+      },
+      "installed": {
+        "same_test_modules": true,
+        "exit_code": 0,
+        "passed": 23
+      }
+    },
+    "runtime_members_matched": 37,
+    "runtime_member_counts": {
+      "python_files": 32,
+      "data_assets": 5
+    },
+    "receipt_sources": {
+      "parity": ".local/v2-review-probe-root-parity.json",
+      "runtime_pins": ".local/v2-review-probe-runtime-pins.json",
+      "installed_environment": ".local/v2-review-probe-installed-environment.json",
+      "raw_captures": ".local/v2-review-probe-root-captures/"
+    }
+  },
+  "limits": {
+    "human_labels": 0,
+    "gate_a": "unmet",
+    "representative_sample": false,
+    "semantic_support_or_generalization_proven": false,
+    "agent_annotation_performed": true,
+    "new_model_serving_experiment_launched": false,
+    "training_launched": false,
+    "gpu_used": false,
+    "private_source_ingestion": false,
+    "runtime_changed": false,
+    "next_step": "Human annotation of the full blinded packet, then a separate label review against readiness criteria."
+  },
+  "validation_policy": "Artifact-only slice: no runtime behavior or new tests changed, no TDD RED claimed, focused existing tools exercised; no repeated full local suite or gate-chain required. Hosted CI is recorded separately in .local/active-cycle.json."
+}
