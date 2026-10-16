@@ -1,0 +1,1047 @@
+{
+  "version": 1,
+  "source_sha256": "f894fb6fc72956b96b8f3f12cd72bb2411dd88d34547d05f8402c4b63cdc683d",
+  "annotation_status": "agent_reviewed_provisional",
+  "provenance": "newly_authored_fiction",
+  "families": [
+    {
+      "family_id": "T01-committed-note-choice",
+      "original_expected_sha256": "dc6635dff938c4fdc720a35fc633fa4c976561a40ffc35b78d5a2b1fab79e382",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user chooses the product for the stated note purpose.; The user uses it to search for a name later..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user chooses the product for the stated note purpose.",
+          "source_ref": "u1",
+          "source_quote": "For quick field notes, I choose {product}",
+          "target_claim_index": 0,
+          "target_quote": "chooses {product} for quick field notes"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user uses it to search for a name later.",
+          "source_ref": "u1",
+          "source_quote": "I use it when I need to search a name later",
+          "target_claim_index": 0,
+          "target_quote": "uses it to search a name later"
+        }
+      ]
+    },
+    {
+      "family_id": "T02-tentative-sketch-tool",
+      "original_expected_sha256": "8cbcfdb10566869d53ae6ec1fbcbc86c55853ba09476d69c555fc5e0edbcd9f2",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The product is only a possible test for morning sketches.; The user has not selected a tool..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The product is only a possible test for morning sketches.",
+          "source_ref": "u1",
+          "source_quote": "I might test {product} for morning sketches",
+          "target_claim_index": 0,
+          "target_quote": "might test {product} for morning sketches"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user has not selected a tool.",
+          "source_ref": "u1",
+          "source_quote": "I have not picked a tool yet",
+          "target_claim_index": 0,
+          "target_quote": "has not chosen a tool"
+        }
+      ]
+    },
+    {
+      "family_id": "T03-reported-coworker-preference",
+      "original_expected_sha256": "e08514ab3bd03628bfab83f568ff73bb4e5c56802896a9a79871a49bea67a74a",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The preference is reported to the user by the other person..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The preference is reported to the user by the other person.",
+          "source_ref": "u1",
+          "source_quote": "{person} told me that they prefer {product}",
+          "target_claim_index": 0,
+          "target_quote": "reports that {person} prefers {product} for field notes"
+        }
+      ]
+    },
+    {
+      "family_id": "T04-next-month-plan",
+      "original_expected_sha256": "bf60b80d9b55f3b26b0758f0f4d3443e8a4d594e622e481268a1c6c67db34060",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user plans the move next month and names the checklist and destination..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user plans the move next month and names the checklist and destination.",
+          "source_ref": "u1",
+          "source_quote": "I plan to move my weekend checklist into {product} next month",
+          "target_claim_index": 0,
+          "target_quote": "plans to move their weekend checklist into {product} next month"
+        }
+      ]
+    },
+    {
+      "family_id": "T05-considered-recorder-trial",
+      "original_expected_sha256": "b1511c4f4b1e8adfb24830a5910fed9a4d2eaf54c4006e1692fe2748844862a0",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Trying the product is under consideration in the recorder-replacement context.; The user explicitly has not decided..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Trying the product is under consideration in the recorder-replacement context.",
+          "source_ref": "u1",
+          "source_quote": "I am considering trying {product} when I replace my old recorder",
+          "target_claim_index": 0,
+          "target_quote": "is considering trying {product} when replacing an old recorder"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user explicitly has not decided.",
+          "source_ref": "u1",
+          "source_quote": "I have not decided",
+          "target_claim_index": 0,
+          "target_quote": "has not decided"
+        }
+      ]
+    },
+    {
+      "family_id": "T06-explicit-negative-work-use",
+      "original_expected_sha256": "aa50cb7fda40d8cfb784ae381d1bf79bf269766c10d71eb66aaa86c28bbbb90b",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user explicitly excludes work notes from product use..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user explicitly excludes work notes from product use.",
+          "source_ref": "u1",
+          "source_quote": "I do not use {product} for work notes",
+          "target_claim_index": 0,
+          "target_quote": "does not use {product} for work notes"
+        }
+      ]
+    },
+    {
+      "family_id": "T07-withdrawn-workshop-proposal",
+      "original_expected_sha256": "c0d46ba79744f2b9d8151575034eb34faa578c9b6990c7b3826e7ec7c48fdb77",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user had suggested the product for the workshop.; The user withdrew the suggestion before adoption..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user had suggested the product for the workshop.",
+          "source_ref": "u1",
+          "source_quote": "I suggested {product} for the workshop",
+          "target_claim_index": 0,
+          "target_quote": "suggested {product} for a workshop"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user withdrew the suggestion before adoption.",
+          "source_ref": "u1",
+          "source_quote": "withdrew the suggestion before anyone adopted it",
+          "target_claim_index": 0,
+          "target_quote": "withdrew the proposal before it was adopted"
+        }
+      ]
+    },
+    {
+      "family_id": "T08-forwarded-profile-quote",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because this is copied profile text, not a user-endorsed claim about the user's own state or an adopted fact.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T09-assistant-only-profile-guess",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the family has no user-authored message supporting a fact; the profile guess is assistant-authored.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T10-hypothetical-purchase-question",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks a hypothetical purchase question and asserts no purchase, ownership, or placement.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T11-question-with-unresolved-referent",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the question asks for a label but supplies no resolved fact about the referent.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T12-explicit-personal-ownership",
+      "original_expected_sha256": "90f6bb245f0d46a75a65e49a7e34f21275f73e9873681edde4b88e15c7770359",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user states that the object belongs to them.; The user states the storage place..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user states that the object belongs to them.",
+          "source_ref": "u1",
+          "source_quote": "The {object} belongs to me",
+          "target_claim_index": 0,
+          "target_quote": "owns the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user states the storage place.",
+          "source_ref": "u1",
+          "source_quote": "I keep it in {place}",
+          "target_claim_index": 0,
+          "target_quote": "keeps it in {place}"
+        }
+      ]
+    },
+    {
+      "family_id": "T13-storing-friends-property",
+      "original_expected_sha256": "ac43e7106ed1367ee3e97799afcd937f80ca2c2800f74f1664d84508dea598ee",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user is storing the object for the other person.; The other person owns it, not the user..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user is storing the object for the other person.",
+          "source_ref": "u1",
+          "source_quote": "I am storing the {object} for {person}",
+          "target_claim_index": 0,
+          "target_quote": "stores the {object} for {person}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The target records that the other person owns the object; the source also says it is not the user's, but that contrast is not separately selected as a literal requirement.",
+          "source_ref": "u1",
+          "source_quote": "it belongs to them, not me",
+          "target_claim_index": 0,
+          "target_quote": "who owns it"
+        }
+      ]
+    },
+    {
+      "family_id": "T14-borrowed-not-owned",
+      "original_expected_sha256": "cf747a55e63e49a0c11bc4cf453bfc90ee9252cc0e727be0b03330f6f874d182",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user borrowed the object from the named person.; The user explicitly says the object is not theirs..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user borrowed the object from the named person.",
+          "source_ref": "u1",
+          "source_quote": "I borrowed the {object} from {person}",
+          "target_claim_index": 0,
+          "target_quote": "borrowed the {object} from {person}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user explicitly says the object is not theirs.",
+          "source_ref": "u1",
+          "source_quote": "it is not mine",
+          "target_claim_index": 0,
+          "target_quote": "does not own it"
+        }
+      ]
+    },
+    {
+      "family_id": "T15-timing-without-causality",
+      "original_expected_sha256": "2a40e819efd40a8f1c8de500e8b941a428cc3fbbe986c09e3a038c803b0b5d4c",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The desk move and printer failure occurred in the same week.; The user does not know whether the events are related..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The desk move and printer failure occurred in the same week.",
+          "source_ref": "u1",
+          "source_quote": "I moved my desk near {place} the same week the printer failed",
+          "target_claim_index": 0,
+          "target_quote": "moved a desk near {place} the week the printer failed"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user does not know whether the events are related.",
+          "source_ref": "u1",
+          "source_quote": "I do not know if those events are related",
+          "target_claim_index": 0,
+          "target_quote": "does not know whether the events are related"
+        }
+      ]
+    },
+    {
+      "family_id": "T16-explicit-purpose-for-action",
+      "original_expected_sha256": "5bd3f67999a7d64b034ff212f241d139089611e804de311c19c3579293c5d13c",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user switches the lamp off early.; The stated purpose is keeping the room cool while reading near the place..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user switches the lamp off early.",
+          "source_ref": "u1",
+          "source_quote": "I switch the lamp off early",
+          "target_claim_index": 0,
+          "target_quote": "switches the lamp off early"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The stated purpose is keeping the room cool while reading near the place.",
+          "source_ref": "u1",
+          "source_quote": "to keep the room cool while I read near {place}",
+          "target_claim_index": 0,
+          "target_quote": "to keep the room cool while reading near {place}"
+        }
+      ]
+    },
+    {
+      "family_id": "T17-reported-cause-from-neighbor",
+      "original_expected_sha256": "9645c422a95c7844839e6224ac37b0b0b6106b28d9a7eb0fefa8b5a6b5f9f7fe",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user attributes the causal account to what the person says.; The reported cause is a loose lid on a jar beside the object..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user attributes the causal account to what the person says.",
+          "source_ref": "u1",
+          "source_quote": "{person} says the spill happened because",
+          "target_claim_index": 0,
+          "target_quote": "reports that {person} attributes the spill"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The reported cause is a loose lid on a jar beside the object.",
+          "source_ref": "u1",
+          "source_quote": "the lid on a jar beside {object} was loose",
+          "target_claim_index": 0,
+          "target_quote": "to a loose lid on a jar beside {object}"
+        }
+      ]
+    },
+    {
+      "family_id": "T18-explicit-date-event",
+      "original_expected_sha256": "0ed6d34a0eae3a675f50501efd7e2922eef246fcf5f893b242dae887004b6373",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user reports mailing the object to the person on the specified date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user reports mailing the object to the person on the specified date.",
+          "source_ref": "u1",
+          "source_quote": "On {date_from}, I mailed the {object} to {person}",
+          "target_claim_index": 0,
+          "target_quote": "says they mailed the {object} to {person} on {date_from}"
+        }
+      ]
+    },
+    {
+      "family_id": "T19-clear-effective-interval",
+      "original_expected_sha256": "46db90c192aece054f725f8983a335ea0a1c48483d46d3ac81bbb881eaf3d322",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Product use is for weekly planning within the quoted interval.. The exact interval is represented by valid_from and valid_to.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The claim text refers to the stated interval; exact start and end dates remain in valid_from and valid_to metadata, not in this target fragment.",
+          "source_ref": "u1",
+          "source_quote": "From {date_from} through {date_to}, I use {product} for weekly planning",
+          "target_claim_index": 0,
+          "target_quote": "uses {product} for weekly planning during the stated interval"
+        }
+      ]
+    },
+    {
+      "family_id": "T20-imprecise-seasonal-event",
+      "original_expected_sha256": "91324af5834f88931c4815edeb648be6edf9ed5919450c42552e264b03b2df55",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The planting happened last autumn near the place.; The user did not record the specific day..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The planting happened last autumn near the place.",
+          "source_ref": "u1",
+          "source_quote": "Last autumn I planted tulip bulbs near {place}",
+          "target_claim_index": 0,
+          "target_quote": "planted tulip bulbs near {place} last autumn"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user did not record the specific day.",
+          "source_ref": "u1",
+          "source_quote": "I never wrote down the day",
+          "target_claim_index": 0,
+          "target_quote": "did not write down the day"
+        }
+      ]
+    },
+    {
+      "family_id": "T21-preference-effective-from-date",
+      "original_expected_sha256": "da9b9194df02dab16588df65a3b395b9205ca37f000aa80bc3818a867c93b97a",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The stated product use begins on the specified date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The stated product use begins on the specified date.",
+          "source_ref": "u1",
+          "source_quote": "Starting on {date_from}, I use {product} for my reading list",
+          "target_claim_index": 0,
+          "target_quote": "uses {product} for a reading list starting on {date_from}"
+        }
+      ]
+    },
+    {
+      "family_id": "T22-conditional-future-delivery",
+      "original_expected_sha256": "805bc0c587116d7436d9f2f3244c86020261ee42cf4a91e996e85306a8ccb1df",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Delivery is planned for the specified date.; The delivery plan depends on courier confirmation..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Delivery is planned for the specified date.",
+          "source_ref": "u1",
+          "source_quote": "I will deliver the {object} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "plans to deliver the {object} on {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The delivery plan depends on courier confirmation.",
+          "source_ref": "u1",
+          "source_quote": "if the courier confirms",
+          "target_claim_index": 0,
+          "target_quote": "conditional on courier confirmation"
+        }
+      ]
+    },
+    {
+      "family_id": "T23-canceled-trip-plan",
+      "original_expected_sha256": "804b6deb3371de46088fea7ae062c38c2448016e5bd1c9bfa0ca63c37d657d65",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The object was part of the planned trip to the place.; The trip was canceled and the user says they are not going..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The object was part of the planned trip to the place.",
+          "source_ref": "u1",
+          "source_quote": "I had planned to take the {object} to {place}",
+          "target_claim_index": 0,
+          "target_quote": "planned trip to {place} with the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user canceled the trip.",
+          "source_ref": "u1",
+          "source_quote": "I canceled that trip",
+          "target_claim_index": 0,
+          "target_quote": "canceled a planned trip"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The user says they are not going.",
+          "source_ref": "u1",
+          "source_quote": "am not going",
+          "target_claim_index": 0,
+          "target_quote": "is not going"
+        }
+      ]
+    },
+    {
+      "family_id": "T24-correction-to-final-decision",
+      "original_expected_sha256": "67582cb1a1b5f96ea93f6e1c07afb964dfa2865676b31656670797a5efb7529d",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user corrects their earlier statement that they might try {product} and says they have decided to use {product} for sketching.",
+          "message_ref": "u1",
+          "quote": "Correction: I said I might try {product}, but I have decided to use it for sketching.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Revise to preserve the user's correction and final decision without asserting an actual prior consideration or a later event sequence.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the wording of an earlier statement that they might try the product.",
+          "source_ref": "u1",
+          "source_quote": "Correction: I said I might try {product}",
+          "target_claim_index": 0,
+          "target_quote": "corrects their earlier statement that they might try {product}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user says they have decided to use the product for sketching.",
+          "source_ref": "u1",
+          "source_quote": "I have decided to use it for sketching",
+          "target_claim_index": 0,
+          "target_quote": "says they have decided to use {product} for sketching"
+        }
+      ]
+    },
+    {
+      "family_id": "T25-cross-session-list-change",
+      "original_expected_sha256": "f0c57473825e379f9c16ffb2ed18dcf5807f2851e8f512d692e51528b2db5649",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user previously kept travel lists in the product.; The user says they no longer use the old tool.; Travel lists now go in a paper journal..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user previously kept travel lists in the product.",
+          "source_ref": "u1",
+          "source_quote": "Earlier, I kept my travel lists in {product}",
+          "target_claim_index": 0,
+          "target_quote": "previously kept travel lists in {product}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user says they no longer use the old tool.",
+          "source_ref": "u2",
+          "source_quote": "I no longer use it",
+          "target_claim_index": 1,
+          "target_quote": "no longer uses the old tool"
+        },
+        {
+          "fact_id": "f03",
+          "description": "Travel lists now go in a paper journal.",
+          "source_ref": "u2",
+          "source_quote": "My travel lists now go in a paper journal",
+          "target_claim_index": 1,
+          "target_quote": "now keeps travel lists in a paper journal"
+        }
+      ]
+    },
+    {
+      "family_id": "T26-cross-session-preference-reversal",
+      "original_expected_sha256": "5120771659dc9ff7fc8218d8e9124172a994ae6d875ef347ed97ac77019341fc",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user used to prefer the product for recipes.; The user says the former preference no longer holds.; The user now chooses a paper card..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user used to prefer the product for recipes.",
+          "source_ref": "u1",
+          "source_quote": "I used to prefer {product} for recipes",
+          "target_claim_index": 0,
+          "target_quote": "previously preferred {product} for recipes"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user says the former preference no longer holds.",
+          "source_ref": "u2",
+          "source_quote": "I do not prefer it anymore",
+          "target_claim_index": 1,
+          "target_quote": "no longer prefers the old tool"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The user now chooses a paper card.",
+          "source_ref": "u2",
+          "source_quote": "I choose a paper card now",
+          "target_claim_index": 1,
+          "target_quote": "now chooses a paper card"
+        }
+      ]
+    },
+    {
+      "family_id": "T27-narrow-use-scope",
+      "original_expected_sha256": "7a0bb9db8d018e4713cac9133bfca5649b4a0a50c081790df1e4d233a4191603",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Product use is restricted to recipes.; The user excludes general notes..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Product use is restricted to recipes.",
+          "source_ref": "u1",
+          "source_quote": "I use {product} only for recipes",
+          "target_claim_index": 0,
+          "target_quote": "uses {product} for recipes only"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user excludes general notes.",
+          "source_ref": "u1",
+          "source_quote": "not for general notes",
+          "target_claim_index": 0,
+          "target_quote": "not for general notes"
+        }
+      ]
+    },
+    {
+      "family_id": "T28-user-corrects-assistant-scope",
+      "original_expected_sha256": "58e1a929b7f44654822deb31e628d99ef1d7746fadf318d6ed32c739a86f2c9e",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user corrects the scope to mileage slips only.; Receipts remain on paper..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the scope to mileage slips only.",
+          "source_ref": "u2",
+          "source_quote": "No, I use {product} only for mileage slips",
+          "target_claim_index": 0,
+          "target_quote": "uses {product} only for mileage slips"
+        },
+        {
+          "fact_id": "f02",
+          "description": "Receipts remain on paper.",
+          "source_ref": "u2",
+          "source_quote": "receipts stay on paper",
+          "target_claim_index": 0,
+          "target_quote": "keeps receipts on paper"
+        }
+      ]
+    },
+    {
+      "family_id": "T29-dispatchers-uncertain-report",
+      "original_expected_sha256": "fe54127b0f0c2ebff5b4583de0b453f3f60f366fdc90df688ac5e2e8dd8cbd3f",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user attributes the uncertain movement claim to the dispatcher.; The reported parcel destination is the specified place..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user attributes the uncertain movement claim to the dispatcher.",
+          "source_ref": "u1",
+          "source_quote": "The dispatcher thinks {person} may have moved",
+          "target_claim_index": 0,
+          "target_quote": "reports that the dispatcher thinks {person} may have moved"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The reported parcel destination is the specified place.",
+          "source_ref": "u1",
+          "source_quote": "the parcel to {place}",
+          "target_claim_index": 0,
+          "target_quote": "the parcel to {place}"
+        }
+      ]
+    },
+    {
+      "family_id": "T30-undecided-repair-request",
+      "original_expected_sha256": "c2e40375f3711638e907ec11d8b5ed51866c7627b94526af1e2a74c1134d49fe",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Asking the person to repair the object is only a possibility.; The user has not decided..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Asking the person to repair the object is only a possibility.",
+          "source_ref": "u1",
+          "source_quote": "I may ask {person} to repair the {object}",
+          "target_claim_index": 0,
+          "target_quote": "may ask {person} to repair the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user has not decided.",
+          "source_ref": "u1",
+          "source_quote": "I have not decided yet",
+          "target_claim_index": 0,
+          "target_quote": "has not decided"
+        }
+      ]
+    },
+    {
+      "family_id": "T31-completed-replacement",
+      "original_expected_sha256": "3eefffaf864e61a2b7bdf200173307379430ccd9f63b3ac659bb94975b7e83a0",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user replaced a damaged object with a new one.; The replacement happened yesterday..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user replaced a damaged object with a new one.",
+          "source_ref": "u1",
+          "source_quote": "replaced the damaged {object} with a new one",
+          "target_claim_index": 0,
+          "target_quote": "replaced a damaged {object} with a new one"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The replacement happened yesterday.",
+          "source_ref": "u1",
+          "source_quote": "Yesterday",
+          "target_claim_index": 0,
+          "target_quote": "yesterday"
+        }
+      ]
+    },
+    {
+      "family_id": "T32-conditional-ask",
+      "original_expected_sha256": "1d775dc4b5c81c54076bcd325d2acbcdbc8e7546275da9b4079040e1f5e57044",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user intends to ask the person to check the object.; The ask depends on the person's availability..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user intends to ask the person to check the object.",
+          "source_ref": "u1",
+          "source_quote": "I intend to ask {person} to check the {object}",
+          "target_claim_index": 0,
+          "target_quote": "intends to ask {person} to check the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The ask depends on the person's availability.",
+          "source_ref": "u1",
+          "source_quote": "if they have a free afternoon",
+          "target_claim_index": 0,
+          "target_quote": "conditional on their availability"
+        }
+      ]
+    },
+    {
+      "family_id": "T33-explicit-no-causal-link",
+      "original_expected_sha256": "7f03d4916bed18d7bf905805bb181f25f241285dcb35b8ccf684e21094c7e6ca",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user switched to the product after the printer jam.; The user says timing alone does not establish causation..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user switched to the product after the printer jam.",
+          "source_ref": "u1",
+          "source_quote": "I switched to {product} after the printer jam",
+          "target_claim_index": 0,
+          "target_quote": "switched to {product} after a printer jam"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user says timing alone does not establish causation.",
+          "source_ref": "u1",
+          "source_quote": "that timing alone does not tell me whether one caused the other",
+          "target_claim_index": 0,
+          "target_quote": "says the timing does not establish causation"
+        }
+      ]
+    },
+    {
+      "family_id": "T34-owned-item-and-storage-place",
+      "original_expected_sha256": "454e589031ddc820fbbc11abf7478e88757368b68d77eb642d3ed620e953fb49",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user says the object is theirs.; The user stores it at the stated place during repairs..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user says the object is theirs.",
+          "source_ref": "u1",
+          "source_quote": "The {object} is mine",
+          "target_claim_index": 0,
+          "target_quote": "owns the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user stores it at the stated place during repairs.",
+          "source_ref": "u1",
+          "source_quote": "I store it at {place} during repairs",
+          "target_claim_index": 1,
+          "target_quote": "stores the {object} at {place} during repairs"
+        }
+      ]
+    },
+    {
+      "family_id": "T35-location-with-unknown-owner",
+      "original_expected_sha256": "45ec3442911391b0764ff4e490cdd3151ebed164ef637bb4985685145bda1d27",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user found a {object} on their shelf and does not know who owns it.",
+          "message_ref": "u1",
+          "quote": "I found a {object} on my shelf and do not know who owns it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Revise to state the user's finding and unknown owner without asserting the object is currently on the shelf.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user found the object on their shelf.",
+          "source_ref": "u1",
+          "source_quote": "I found a {object} on my shelf",
+          "target_claim_index": 0,
+          "target_quote": "found a {object} on their shelf"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user does not know who owns the object.",
+          "source_ref": "u1",
+          "source_quote": "do not know who owns it",
+          "target_claim_index": 0,
+          "target_quote": "does not know who owns it"
+        }
+      ]
+    },
+    {
+      "family_id": "T36-neighbor-property-in-storage",
+      "original_expected_sha256": "0c29bbeb1c2a8a9ef56621645c6298e137c7923f894d07c8190c10ab4633b021",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The neighbor is identified as owner of the object.; The user is keeping it at the place until Friday..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The neighbor is identified as owner of the object.",
+          "source_ref": "u1",
+          "source_quote": "The {object} belongs to my neighbor {person}",
+          "target_claim_index": 0,
+          "target_quote": "neighbor {person} owns the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user is keeping it at the place until Friday.",
+          "source_ref": "u1",
+          "source_quote": "I am keeping it at {place} until Friday",
+          "target_claim_index": 0,
+          "target_quote": "the user is keeping at {place} until Friday"
+        }
+      ]
+    },
+    {
+      "family_id": "T37-sister-reported-tool-choice",
+      "original_expected_sha256": "d8851be2aaecc94bddc206bf490b6efc767032e228f086d3dbf6cb502015b3da",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The preference is attributed to the user's sister.; The sister prefers the product for garden planning..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The preference is attributed to the user's sister.",
+          "source_ref": "u1",
+          "source_quote": "My sister {person} says",
+          "target_claim_index": 0,
+          "target_quote": "reports that their sister {person} prefers"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The sister prefers the product for garden planning.",
+          "source_ref": "u1",
+          "source_quote": "prefers {product} when planning a garden",
+          "target_claim_index": 0,
+          "target_quote": "prefers {product} for garden planning"
+        }
+      ]
+    },
+    {
+      "family_id": "T38-unverified-repair-belief",
+      "original_expected_sha256": "1cbf000fe017f09232f85fb15a253f48a29a823302f4263e9a1d2e1f078b5dce",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user presents repair as a belief rather than a verified fact.; The user has not tested the object..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user presents repair as a belief rather than a verified fact.",
+          "source_ref": "u1",
+          "source_quote": "I think the {object} was repaired",
+          "target_claim_index": 0,
+          "target_quote": "believes the {object} may have been repaired"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user has not tested the object.",
+          "source_ref": "u1",
+          "source_quote": "I have not tested it myself",
+          "target_claim_index": 0,
+          "target_quote": "has not tested it"
+        }
+      ]
+    },
+    {
+      "family_id": "T39-assistant-suggestion-unadopted",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks for a recommendation; no suggested tool has been adopted or stated as a user fact.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T40-tool-result-only",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because this is a request to check status, not a user assertion about the delivery result.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T41-corrects-assumed-rental",
+      "original_expected_sha256": "0efd59c90cd6db20cc72fcc0223387693ca7e00b91f54ef6d6a7218a4a3b252c",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user explicitly denies renting the object.; The other person rents it and lent it to the user..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user explicitly denies renting the object.",
+          "source_ref": "u1",
+          "source_quote": "I do not rent the {object}",
+          "target_claim_index": 0,
+          "target_quote": "does not rent the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The other person rents it and lent it to the user.",
+          "source_ref": "u1",
+          "source_quote": "{person} rents it and lent it to me",
+          "target_claim_index": 0,
+          "target_quote": "{person} rents it and lent it to the user"
+        }
+      ]
+    },
+    {
+      "family_id": "T42-postponed-visit",
+      "original_expected_sha256": "188ad6900f79bb630a1dbb7360e17f852588654cda32c7f49ecc7a8d286a6e9c",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The earlier plan was to visit the place on the first date.; The visit was postponed until the second date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The earlier plan was to visit the place on the first date.",
+          "source_ref": "u1",
+          "source_quote": "I planned to visit {place} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "planned visit to {place} from {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The visit was postponed until the second date.",
+          "source_ref": "u1",
+          "source_quote": "I postponed the visit until {date_to}",
+          "target_claim_index": 0,
+          "target_quote": "postponed a planned visit to {place} from {date_from} until {date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "T43-rejected-tool-adoption",
+      "original_expected_sha256": "87c19963848a2a387ca5ad47d76bec169417779e499ca73bc7e40e521ad0265f",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user decided against adopting the product for the reading group.; The group will keep using paper cards..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user decided against adopting the product for the reading group.",
+          "source_ref": "u1",
+          "source_quote": "I decided against adopting {product} for the reading group",
+          "target_claim_index": 0,
+          "target_quote": "decided not to adopt {product} for the reading group"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The group will keep using paper cards.",
+          "source_ref": "u1",
+          "source_quote": "we will keep using paper cards",
+          "target_claim_index": 0,
+          "target_quote": "will keep using paper cards"
+        }
+      ]
+    },
+    {
+      "family_id": "T44-explicit-end-of-use",
+      "original_expected_sha256": "6de8ba97b6333ee7cd64b8267021a2d3ae47d292a1e027db30c0a3b34a7db70f",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Product use was for supply lists through the specified end date.; The user stopped using the product after that date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Product use was for supply lists through the specified end date.",
+          "source_ref": "u1",
+          "source_quote": "Until {date_to}, I used {product} for supply lists",
+          "target_claim_index": 0,
+          "target_quote": "used {product} for supply lists until {date_to}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user stopped using the product after that date.",
+          "source_ref": "u1",
+          "source_quote": "I stopped using it after that date",
+          "target_claim_index": 0,
+          "target_quote": "then stopped"
+        }
+      ]
+    },
+    {
+      "family_id": "T45-defined-season-range",
+      "original_expected_sha256": "5ee0c7fe0417bff8786d0c985aab7b48a27a3050a48fd4b29efe29d291695c55",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The watering interval is bounded by the quoted start and end dates.; The user waters the herb pot near the place every other morning.. The exact interval endpoints are represented by valid_from and valid_to; the claim text describes the interval without repeating endpoint tokens.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The claim text refers to the stated interval; exact start and end dates remain in valid_from and valid_to metadata, not in this target fragment.",
+          "source_ref": "u1",
+          "source_quote": "From {date_from} to {date_to}",
+          "target_claim_index": 0,
+          "target_quote": "during the stated interval"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user waters the herb pot near the place every other morning.",
+          "source_ref": "u1",
+          "source_quote": "I water the herb pot near {place} every other morning",
+          "target_claim_index": 0,
+          "target_quote": "waters the herb pot near {place} every other morning"
+        }
+      ]
+    },
+    {
+      "family_id": "T46-question-about-unnamed-item",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks where an item was put without asserting its location.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T47-question-about-unknown-choice",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks whether a planner was canceled and explicitly leaves the choice unresolved.",
+      "required_facts": []
+    },
+    {
+      "family_id": "T48-hypothetical-garden-comparison",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because this is a hypothetical comparison question with no asserted product preference or use.",
+      "required_facts": []
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "source_sha256": "ab90c807cc714527931dbd621357512f35d252385abd071f664036f07b165548",
+  "annotation_status": "agent_reviewed_provisional",
+  "provenance": "newly_authored_fiction",
+  "families": [
+    {
+      "family_id": "V3T01-wording-leaning-not-choice",
+      "original_expected_sha256": "15ab2ed87b421c3caa26543c95c6ff78a19a52c977c76914c613cae235402812",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user corrects the earlier modal wording.; The user reports that the choice had already been made on the stated date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the earlier modal wording.",
+          "source_ref": "u2",
+          "source_quote": "Correction: the word might in my earlier message was inaccurate",
+          "target_claim_index": 0,
+          "target_quote": "corrects earlier wording"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user reports that the choice had already been made on the stated date.",
+          "source_ref": "u2",
+          "source_quote": "I had already chosen {product} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "had already chosen {product} on {date_from}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T02-corrected-approval-report",
+      "original_expected_sha256": "b691a68f3da2d51ed4fd0d2ac496783d26edda02d7e94451bf1a8737716678f8",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user corrects the earlier update by saying the plan was not approved.; The user had only asked for the product price..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the earlier update by saying the plan was not approved.",
+          "source_ref": "u2",
+          "source_quote": "Correction to my earlier update: I had not approved the {product} plan",
+          "target_claim_index": 0,
+          "target_quote": "had not approved the plan"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user had only asked for the product price.",
+          "source_ref": "u2",
+          "source_quote": "I had only asked for its price",
+          "target_claim_index": 0,
+          "target_quote": "had only asked for the {product} price"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T03-paused-not-rejected",
+      "original_expected_sha256": "db3cb778d33ad462f841916e92ea74a24e6b557e4a9671fe77d743cf9d466015",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user explicitly says they did not reject the product.; The trial was paused while its renewal price was being compared..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user explicitly says they did not reject the product.",
+          "source_ref": "u2",
+          "source_quote": "I did not reject {product}",
+          "target_claim_index": 0,
+          "target_quote": "did not reject it"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The trial was paused while its renewal price was being compared.",
+          "source_ref": "u2",
+          "source_quote": "I paused the trial while comparing its renewal price",
+          "target_claim_index": 0,
+          "target_quote": "paused the {product} trial while comparing its renewal price"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T04-favorite-not-final-pick",
+      "original_expected_sha256": "c5ca60000baa41ab360af83697506339d16543f3c36aaed64be0c88148744ef6",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user corrects the earlier phrase about considering the product.; The user says the product had already been chosen on the stated date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the earlier phrase about considering the product.",
+          "source_ref": "u2",
+          "source_quote": "Correction:",
+          "target_claim_index": 0,
+          "target_quote": "corrects earlier wording"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user says the product had already been chosen on the stated date.",
+          "source_ref": "u2",
+          "source_quote": "I had already chosen {product} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "had already chosen {product} on {date_from}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T05-review-finished-not-subscription-ended",
+      "original_expected_sha256": "1ab7e99755372b5c5833e5520dbe56d33f4e1915eccd9944b681564d5a2780c5",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user clarifies what the earlier phrase meant.; The user had finished reviewing terms and did not mean ending the subscription..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user clarifies what the earlier phrase meant.",
+          "source_ref": "u2",
+          "source_quote": "To clarify my earlier wording",
+          "target_claim_index": 0,
+          "target_quote": "clarifies that the earlier phrase done referred to"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user had finished reviewing terms and did not mean ending the subscription.",
+          "source_ref": "u2",
+          "source_quote": "I had finished reviewing {product}'s terms; I did not mean that I had ended the subscription",
+          "target_claim_index": 0,
+          "target_quote": "finishing review of {product}'s terms, not to ending the subscription"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T06-corrected-switch-report",
+      "original_expected_sha256": "a260c9f454446a3cc33525814466ff9cad098d103ee35e5e9ad944ef4c0fb46f",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user corrects the summary to say annual billing had not been selected.; The user only requested the annual price quote for the product..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user corrects the summary to say annual billing had not been selected.",
+          "source_ref": "u2",
+          "source_quote": "Correction to the summary: I had not switched to annual billing",
+          "target_claim_index": 0,
+          "target_quote": "had not switched to annual billing"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user only requested the annual price quote for the product.",
+          "source_ref": "u2",
+          "source_quote": "I had only requested the annual price quote for {product}",
+          "target_claim_index": 0,
+          "target_quote": "had only requested {product}'s annual price quote"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T07-explicit-choice-change-monthly-to-annual",
+      "original_expected_sha256": "619469a7bcef040ddd13a73d297c4e8d4d670f72ff2adb1341d4868165a43a70",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user chose monthly billing for {product} on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I chose monthly billing for {product} on {date_from}, then changed that decision and chose its annual plan on {date_to}.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user changed that decision and chose the annual plan for {product} on {date_to}.",
+          "message_ref": "u1",
+          "quote": "changed that decision and chose its annual plan on {date_to}",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Revise effective bounds only: these are dated decision events, so retain the dates in claim prose and use null valid_from and valid_to rather than infer state intervals.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user chose monthly billing on the first date.",
+          "source_ref": "u1",
+          "source_quote": "I chose monthly billing for {product} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "chose monthly billing for {product} on {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user later changed that decision and chose the annual plan on the second date.",
+          "source_ref": "u1",
+          "source_quote": "chose its annual plan on {date_to}",
+          "target_claim_index": 1,
+          "target_quote": "chose the annual plan for {product} on {date_to}"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The second expected claim records that the earlier decision changed.",
+          "source_ref": "u1",
+          "source_quote": "changed that decision",
+          "target_claim_index": 1,
+          "target_quote": "changed that decision"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T08-explicit-choice-change-annual-to-monthly",
+      "original_expected_sha256": "a3e8b9ccd316997b10f90aa961a1075a40dba205d69184b9704d7ed96c1f1797",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user committed to the annual {product} plan on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I committed to the annual {product} plan on {date_from}; on {date_to}, I reversed that decision and switched to monthly billing instead.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user reversed the annual {product} plan decision and switched to monthly billing for {product} on {date_to}.",
+          "message_ref": "u1",
+          "quote": "I committed to the annual {product} plan on {date_from}; on {date_to}, I reversed that decision and switched to monthly billing instead.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Revise for standalone-claim clarity: name {product} in the reversal and monthly-switch claim so it remains identifiable when stored alone. Both are dated decision events, so retain dates in claim prose and use null effective bounds without inferring state intervals; this does not explain model coverage.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user committed to the annual plan on the first date.",
+          "source_ref": "u1",
+          "source_quote": "I committed to the annual {product} plan on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "committed to the annual {product} plan on {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The standalone reversal claim identifies the annual product plan.",
+          "source_ref": "u1",
+          "source_quote": "annual {product} plan",
+          "target_claim_index": 1,
+          "target_quote": "annual {product} plan decision"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The user reversed that annual plan decision.",
+          "source_ref": "u1",
+          "source_quote": "on {date_to}, I reversed that decision",
+          "target_claim_index": 1,
+          "target_quote": "reversed the annual {product} plan decision"
+        },
+        {
+          "fact_id": "f04",
+          "description": "The user switched to monthly billing for the product on the second date.",
+          "source_ref": "u1",
+          "source_quote": "switched to monthly billing instead",
+          "target_claim_index": 1,
+          "target_quote": "switched to monthly billing for {product} on {date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T09-failed-upload-not-completed",
+      "original_expected_sha256": "c6b0dc85a92fe5bcec53c9395103c354c05f2d1cd432bd53b764603890e45910",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "On {date_from}, the user tried to upload a scan of the {object} to {product}, but the transfer failed before arrival.",
+          "message_ref": "u1",
+          "quote": "I tried to upload the {object} scan to {product} on {date_from}, but the transfer failed before the file arrived.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Revise to state the dated attempt and failed transfer; the event date belongs in the claim, while valid_from and valid_to remain null because no ongoing state is asserted.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user tried to upload a scan of the object to the product on the specified date.",
+          "source_ref": "u1",
+          "source_quote": "I tried to upload the {object} scan to {product} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "On {date_from}, the user tried to upload a scan of the {object} to {product}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The transfer failed before the file arrived.",
+          "source_ref": "u1",
+          "source_quote": "the transfer failed before the file arrived",
+          "target_claim_index": 0,
+          "target_quote": "the transfer failed before arrival"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T10-tentative-renewal-not-decided",
+      "original_expected_sha256": "cd2128eb5c119ee21a9c35846833323f47f8924f72f3b181fef05998e8b4edf3",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers Renewal is only under consideration on the specified date.; The user has neither chosen a plan nor submitted payment..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "Renewal is only under consideration on the specified date.",
+          "source_ref": "u1",
+          "source_quote": "I am considering renewing {product} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "is considering renewing {product} on {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user has neither chosen a plan nor submitted payment.",
+          "source_ref": "u1",
+          "source_quote": "I have not chosen a plan or submitted payment",
+          "target_claim_index": 0,
+          "target_quote": "has not chosen a plan or submitted payment"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T11-decision-question",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks whether a choice was made but provides no answer establishing the decision.",
+      "required_facts": []
+    },
+    {
+      "family_id": "V3T12-decision-hypothetical",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks about a hypothetical choice and processing outcome, not an actual decision.",
+      "required_facts": []
+    },
+    {
+      "family_id": "V3T13-reported-role-not-accepted",
+      "original_expected_sha256": "8f976f3c3682d0b23aa3d1aab96833cf2682b0c3d455025404b7b3c1e9a2026d",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The nomination is attributed to meeting notes and to the named person.; The user has not accepted the role..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The nomination is attributed to meeting notes and to the named person.",
+          "source_ref": "u1",
+          "source_quote": "The meeting notes say {person} nominated me",
+          "target_claim_index": 0,
+          "target_quote": "reports that the meeting notes say {person} nominated the user"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user has not accepted the role.",
+          "source_ref": "u1",
+          "source_quote": "I have not accepted the role",
+          "target_claim_index": 0,
+          "target_quote": "the user has not accepted the role"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T14-owner-and-repair-custody",
+      "original_expected_sha256": "6d93528743e91d915d1eb543ed5f859554dcb29db7b42e8eab293b9ef98813de",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user states ownership of the object.; The person is repairing it and has the item until the specified date..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user states ownership of the object.",
+          "source_ref": "u1",
+          "source_quote": "I own the {object}",
+          "target_claim_index": 0,
+          "target_quote": "user owns the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The person is repairing it and has the item until the specified date.",
+          "source_ref": "u1",
+          "source_quote": "{person} is repairing it and has the item until {date_to}",
+          "target_claim_index": 0,
+          "target_quote": "{person} is repairing it and has the item until {date_to}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T15-invoice-owner-vs-team-payer",
+      "original_expected_sha256": "dc6001608eee2333fea50ef291fe8fc70ddcbb077a2f6961be8e94369228ebbc",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The owner statement is attributed to what the invoice lists.; The user paid the invoice on behalf of the team..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The owner statement is attributed to what the invoice lists.",
+          "source_ref": "u1",
+          "source_quote": "The invoice lists {person} as owner of the {object}",
+          "target_claim_index": 0,
+          "target_quote": "reports that the invoice lists {person} as owner of the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user paid the invoice on behalf of the team.",
+          "source_ref": "u1",
+          "source_quote": "I paid the invoice on behalf of our team",
+          "target_claim_index": 0,
+          "target_quote": "the user paid the invoice for the team"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T16-title-document-and-current-custody",
+      "original_expected_sha256": "3a6b61376a81e0c7891908cc2c44a960f92b1f48632f44e35657997a7c385126",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user reports that their signed registration lists them as owner of the {object} from {date_from}.",
+          "message_ref": "u1",
+          "quote": "My signed registration lists me as owner of the {object} from {date_from}; {person} keeps the item at {place}.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        },
+        {
+          "claim": "{person} keeps the {object} at {place}.",
+          "message_ref": "u1",
+          "quote": "My signed registration lists me as owner of the {object} from {date_from}; {person} keeps the item at {place}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Split the document's attributed report from present custody. Keep the reported title start date on the first claim and do not date custody from that title date.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user reports what their signed registration lists, including the stated start date.",
+          "source_ref": "u1",
+          "source_quote": "My signed registration lists me as owner of the {object} from {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "reports that their signed registration lists them as owner of the {object} from {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "{person} keeps the item at the stated place.",
+          "source_ref": "u1",
+          "source_quote": "{person} keeps the item at {place}",
+          "target_claim_index": 1,
+          "target_quote": "{person} keeps the {object} at {place}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T17-roster-reviewer-vs-approver",
+      "original_expected_sha256": "048d65d8536335ea536756931bd04f3f92de503c8ff188d941609150ea8da74a",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The roster is the source of the reviewer and approver assignments.; The user can comment but cannot approve..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The roster is the source of the reviewer and approver assignments.",
+          "source_ref": "u1",
+          "source_quote": "The roster names me as reviewer for {product} and {person} as approver",
+          "target_claim_index": 0,
+          "target_quote": "reports that the roster names the user as reviewer for {product} and {person} as approver"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user can comment but cannot approve.",
+          "source_ref": "u1",
+          "source_quote": "I can comment, but I cannot approve",
+          "target_claim_index": 0,
+          "target_quote": "the user can comment but cannot approve"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T18-owner-and-storage-for-user",
+      "original_expected_sha256": "5f5a56c4b53ae665cbc40280ee2957e035e351b896581e0e4301c953c083b70a",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user states that they own the object.; The person stores it for the user at the stated place..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user states that they own the object.",
+          "source_ref": "u1",
+          "source_quote": "I own the {object}",
+          "target_claim_index": 0,
+          "target_quote": "user owns the {object}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The person stores it for the user at the stated place.",
+          "source_ref": "u1",
+          "source_quote": "{person} is storing it for me at {place}",
+          "target_claim_index": 0,
+          "target_quote": "{person} stores the item for the user at {place}"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T19-admin-role-vs-account-owner",
+      "original_expected_sha256": "4166ce7e4c9b4ecd184ab25c3428b4bc920437c4da0405b384ef29a0e384491a",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user's role is administering the product for the committee.; The committee owns the account.; The user cannot transfer the account..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user's role is administering the product for the committee.",
+          "source_ref": "u1",
+          "source_quote": "I administer {product} for the committee",
+          "target_claim_index": 0,
+          "target_quote": "administers {product} for the committee"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The committee owns the account.",
+          "source_ref": "u1",
+          "source_quote": "the committee owns the account",
+          "target_claim_index": 0,
+          "target_quote": "the committee owns the account"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The user cannot transfer the account.",
+          "source_ref": "u1",
+          "source_quote": "I cannot transfer it",
+          "target_claim_index": 0,
+          "target_quote": "the user cannot transfer it"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T20-loan-owner-and-current-holder",
+      "original_expected_sha256": "0c52cb20fe47f9cfb85985bc729cf02727a6a1c75777554a159e7b917db6105c",
+      "disposition": "revise",
+      "replacement_expected": [
+        {
+          "claim": "The user lent the {object} to {person} on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I lent my {object} to {person} on {date_from}; {person} has the item now, but it is still mine.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "{person} currently has the {object}, and the user says the {object} remains the user's property.",
+          "message_ref": "u1",
+          "quote": "I lent my {object} to {person} on {date_from}; {person} has the item now, but it is still mine.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "rationale": "Split the dated loan event from current possession and the user's ownership statement. Do not carry the loan date onto current custody or ownership.",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user lent the object to the person on the specified date.",
+          "source_ref": "u1",
+          "source_quote": "I lent my {object} to {person} on {date_from}",
+          "target_claim_index": 0,
+          "target_quote": "The user lent the {object} to {person} on {date_from}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The person has the item now.",
+          "source_ref": "u1",
+          "source_quote": "{person} has the item now",
+          "target_claim_index": 1,
+          "target_quote": "{person} currently has the {object}"
+        },
+        {
+          "fact_id": "f03",
+          "description": "The user says the item is still theirs.",
+          "source_ref": "u1",
+          "source_quote": "it is still mine",
+          "target_claim_index": 1,
+          "target_quote": "the user says the {object} remains the user's property"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T21-committee-decision-attribution",
+      "original_expected_sha256": "486f35c1595edc2c6ac7b6845861e8e09a2354847c3e32fae85d53a2c90c6ce1",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The retention decision is attributed to a committee vote.; The user recorded the vote and did not decide alone..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The retention decision is attributed to a committee vote.",
+          "source_ref": "u1",
+          "source_quote": "The committee voted to retain {product}",
+          "target_claim_index": 0,
+          "target_quote": "reports that the committee voted to retain {product}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The user recorded the vote and did not decide alone.",
+          "source_ref": "u1",
+          "source_quote": "I recorded the vote, but I did not decide alone",
+          "target_claim_index": 0,
+          "target_quote": "the user recorded the vote and did not decide alone"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T22-custody-of-another-persons-property",
+      "original_expected_sha256": "54a312bfbab0405b167847d6a5bada43a15b82783e1dab7a3b250fc14fb15d07",
+      "disposition": "retain",
+      "replacement_expected": null,
+      "rationale": "Retain the authored target; selected user-authored evidence covers The user is storing the other person's object at the place.; The other person owns it and the user's responsibility is only safekeeping..",
+      "required_facts": [
+        {
+          "fact_id": "f01",
+          "description": "The user is storing the other person's object at the place.",
+          "source_ref": "u1",
+          "source_quote": "I am storing {person}'s {object} at {place}",
+          "target_claim_index": 0,
+          "target_quote": "has custody of the {object} at {place}"
+        },
+        {
+          "fact_id": "f02",
+          "description": "The other person owns it and the user's responsibility is only safekeeping.",
+          "source_ref": "u1",
+          "source_quote": "{person} owns it, and I am responsible only for keeping it safe",
+          "target_claim_index": 0,
+          "target_quote": "{person} owns it, and the user is responsible only for keeping it safe"
+        }
+      ]
+    },
+    {
+      "family_id": "V3T23-ownership-question",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because the user asks whether the person is an owner or custodian and asserts neither status.",
+      "required_facts": []
+    },
+    {
+      "family_id": "V3T24-ownership-hypothetical",
+      "original_expected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "disposition": "abstain",
+      "replacement_expected": null,
+      "rationale": "Abstain because a hypothetical storage arrangement does not establish actual custody or ownership.",
+      "required_facts": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "input_sha256": {
+    "v2_source": "f894fb6fc72956b96b8f3f12cd72bb2411dd88d34547d05f8402c4b63cdc683d",
+    "v2_review": "b585c9391a9c96fed2628b1d5062daf7accdda61bc5ae6b56a6f91e4a567dc66",
+    "v3_source": "ab90c807cc714527931dbd621357512f35d252385abd071f664036f07b165548",
+    "v3_review": "79df4f9a7326d97a699a64a80efa84e9dc646e996e75c2ab6a9cd1a8940a2d22",
+    "historical_train": "077792b408a9dd96735eb64e502f7c694021a9ba7cfd098a3b860020596f78e1"
+  },
+  "v2_review_gate": {
+    "source_raw_sha256": "f894fb6fc72956b96b8f3f12cd72bb2411dd88d34547d05f8402c4b63cdc683d",
+    "corrected_seed_canonical_sha256": "68db897d686c0ee93f48e72a5ecc05417d532eff9b015070ab10404c4109bfe9",
+    "family_count": 48,
+    "row_count": 768,
+    "claim_count": 672,
+    "seed_claim_count": 42,
+    "required_fact_count": 75,
+    "revised_family_count": 2,
+    "retained_family_count": 37,
+    "abstaining_family_count": 9,
+    "human_reviewers": 0,
+    "limitation": "This checks literal annotated coverage and provenance only; it does not establish semantic entailment or exhaustive recall."
+  },
+  "v3_review_gate": {
+    "source_raw_sha256": "ab90c807cc714527931dbd621357512f35d252385abd071f664036f07b165548",
+    "corrected_seed_canonical_sha256": "d7ec72baa61c308a5533113184387aa76e5216aa871f25ed1e7e65613e0ba597",
+    "family_count": 24,
+    "row_count": 192,
+    "claim_count": 192,
+    "seed_claim_count": 24,
+    "required_fact_count": 45,
+    "revised_family_count": 5,
+    "retained_family_count": 15,
+    "abstaining_family_count": 4,
+    "human_reviewers": 0,
+    "limitation": "This checks literal annotated coverage and provenance only; it does not establish semantic entailment or exhaustive recall."
+  },
+  "row_count": 768,
+  "family_count": 72,
+  "empty_target_row_count": 140,
+  "empty_target_family_count": 13,
+  "old_claim_count": 680,
+  "new_claim_count": 696,
+  "changed_row_count": 64,
+  "changed_family_count": 7,
+  "changed_family_groups": [
+    "V3T-REPLAY-TRAIN-SCENARIO-T24-correction-to-final-decision",
+    "V3T-REPLAY-TRAIN-SCENARIO-T35-location-with-unknown-owner",
+    "V3T-TRAIN-TRAIN-SCENARIO-V3T07-explicit-choice-change-monthly-to-annual",
+    "V3T-TRAIN-TRAIN-SCENARIO-V3T08-explicit-choice-change-annual-to-monthly",
+    "V3T-TRAIN-TRAIN-SCENARIO-V3T09-failed-upload-not-completed",
+    "V3T-TRAIN-TRAIN-SCENARIO-V3T16-title-document-and-current-custody",
+    "V3T-TRAIN-TRAIN-SCENARIO-V3T20-loan-owner-and-current-holder"
+  ],
+  "source_preservation": {
+    "historical_rebuild_matches": true,
+    "v2_non_target_fields_match": true,
+    "v3_non_target_fields_match": true,
+    "non_target_fields_match": true
+  },
+  "reviewer_status": "agent-only;zero human reviewers",
+  "quality_assessment": "not assessed by this dataset builder"
+}
