@@ -4,6 +4,10 @@
 not an implemented classifier, a finalized policy, or a human-approved gold
 standard. This draft does not change frozen labels or launch a model run.
 
+The separate [paired-data seed and schema](verifier-pairs-data-card.md) now
+implement these annotation axes for authored research data. This does not
+change the existing runtime verdict format or resolve the scope policy.
+
 The completed [development report](quote-verifier-dev-results.md) records a
 failed filter experiment on reused, agent-labeled data. The current
 [development protocol](quote-verifier-dev-protocol.md) remains the record of

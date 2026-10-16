@@ -1,0 +1,1989 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "scope_policy": "personal-memory-research-v1",
+  "cases": [
+    {
+      "case_id": "case-001",
+      "split": "train",
+      "scenario_group": "scenario-001",
+      "template_group": "template-001",
+      "entity_ids": [
+        "entity-001-a",
+        "entity-001-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-001",
+          "message_id": "message-001-a",
+          "role": "assistant",
+          "text": "What should the note retain from the ferry update?",
+          "recorded_at": "2026-09-01T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-001",
+          "message_id": "message-001-b",
+          "role": "user",
+          "text": "I am checking details for my own ferry crossing: the operator's recorded update says the east ramp is closed until noon, though I have not checked the ramp myself.",
+          "recorded_at": "2026-09-01T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-001",
+          "claim": "For my ferry crossing, the operator's recorded update says the east ramp is closed until noon.",
+          "message_id": "message-001-b",
+          "quote": "I am checking details for my own ferry crossing: the operator's recorded update says the east ramp is closed until noon, though I have not checked the ramp myself.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim keeps the operator's recording as the source.",
+          "eligibility_reason": "It is a practical update the user is checking for their own ferry crossing."
+        },
+        {
+          "candidate_id": "candidate-002",
+          "claim": "For my ferry crossing, the east ramp is closed until noon.",
+          "message_id": "message-001-b",
+          "quote": "I am checking details for my own ferry crossing: the operator's recorded update says the east ramp is closed until noon, though I have not checked the ramp myself.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The user reports what the recording says and has not checked the ramp.",
+          "eligibility_reason": "It is a practical update the user is checking for their own ferry crossing."
+        }
+      ]
+    },
+    {
+      "case_id": "case-002",
+      "split": "train",
+      "scenario_group": "scenario-002",
+      "template_group": "template-002",
+      "entity_ids": [
+        "entity-002-a",
+        "entity-002-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-002",
+          "message_id": "message-002-a",
+          "role": "assistant",
+          "text": "Which detail from the branch reminder belongs in the note?",
+          "recorded_at": "2026-09-02T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-002",
+          "message_id": "message-002-b",
+          "role": "user",
+          "text": "I reserved a paperback at the branch; the library's automated reminder says my hold expires on Saturday, but I have not opened the account page.",
+          "recorded_at": "2026-09-02T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-004",
+          "claim": "My paperback hold expires on Saturday.",
+          "message_id": "message-002-b",
+          "quote": "I reserved a paperback at the branch; the library's automated reminder says my hold expires on Saturday, but I have not opened the account page.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source is only an automated reminder, and the user has not checked the account.",
+          "eligibility_reason": "It concerns the user's own library reservation."
+        },
+        {
+          "candidate_id": "candidate-003",
+          "claim": "The library's automated reminder says my paperback hold expires on Saturday.",
+          "message_id": "message-002-b",
+          "quote": "I reserved a paperback at the branch; the library's automated reminder says my hold expires on Saturday, but I have not opened the account page.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim attributes the expiry statement to the library reminder.",
+          "eligibility_reason": "It concerns the user's own library reservation."
+        }
+      ]
+    },
+    {
+      "case_id": "case-003",
+      "split": "train",
+      "scenario_group": "scenario-003",
+      "template_group": "template-003",
+      "entity_ids": [
+        "entity-003-a",
+        "entity-003-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-003",
+          "message_id": "message-003-a",
+          "role": "assistant",
+          "text": "What does the caretaker's log say in the draft scene?",
+          "recorded_at": "2026-09-03T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-003",
+          "message_id": "message-003-b",
+          "role": "user",
+          "text": "In the locked-room story I am drafting, the caretaker's log says the brass key went back in the drawer at midnight; this is invented plot material.",
+          "recorded_at": "2026-09-03T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-005",
+          "claim": "In my locked-room story, the caretaker's log says the brass key went back in the drawer at midnight.",
+          "message_id": "message-003-b",
+          "quote": "In the locked-room story I am drafting, the caretaker's log says the brass key went back in the drawer at midnight; this is invented plot material.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim preserves the log as the source within the fictional story.",
+          "eligibility_reason": "It is a fact about invented plot material in a story, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-006",
+          "claim": "In my locked-room story, the brass key went back in the drawer at midnight.",
+          "message_id": "message-003-b",
+          "quote": "In the locked-room story I am drafting, the caretaker's log says the brass key went back in the drawer at midnight; this is invented plot material.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The story says the log contains this detail; it does not establish the event without that attribution.",
+          "eligibility_reason": "It is a fact about invented plot material in a story, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-004",
+      "split": "train",
+      "scenario_group": "scenario-004",
+      "template_group": "template-004",
+      "entity_ids": [
+        "entity-004-a",
+        "entity-004-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-004",
+          "message_id": "message-004-a",
+          "role": "assistant",
+          "text": "How should I capture the cue from the radio-play exercise?",
+          "recorded_at": "2026-09-04T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-004",
+          "message_id": "message-004-b",
+          "role": "user",
+          "text": "For a radio-play exercise at my workshop, the stage manager's note says the second bell rings before the door opens; I am recording the exercise, not a show I attended.",
+          "recorded_at": "2026-09-04T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-008",
+          "claim": "In my workshop radio-play exercise, the second bell rings before the door opens.",
+          "message_id": "message-004-b",
+          "quote": "For a radio-play exercise at my workshop, the stage manager's note says the second bell rings before the door opens; I am recording the exercise, not a show I attended.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The user reports what the exercise note says, not that the bell cue is an established event.",
+          "eligibility_reason": "It describes the user's real workshop exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-007",
+          "claim": "In my workshop radio-play exercise, the stage manager's note says the second bell rings before the door opens.",
+          "message_id": "message-004-b",
+          "quote": "For a radio-play exercise at my workshop, the stage manager's note says the second bell rings before the door opens; I am recording the exercise, not a show I attended.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim keeps the stage manager's note as the source within the exercise.",
+          "eligibility_reason": "It describes the user's real workshop exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-005",
+      "split": "dev",
+      "scenario_group": "scenario-005",
+      "template_group": "template-005",
+      "entity_ids": [
+        "entity-005-a",
+        "entity-005-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-005",
+          "message_id": "message-005-a",
+          "role": "assistant",
+          "text": "What report appears in the stage-play outline?",
+          "recorded_at": "2026-09-05T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-005",
+          "message_id": "message-005-b",
+          "role": "user",
+          "text": "In my stage-play outline, the caretaker's handbill says the gallery's west stair is locked after dusk; that notice is an invented plot detail.",
+          "recorded_at": "2026-09-05T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-009",
+          "claim": "In my stage-play outline, the caretaker's handbill says the gallery's west stair is locked after dusk.",
+          "message_id": "message-005-b",
+          "quote": "In my stage-play outline, the caretaker's handbill says the gallery's west stair is locked after dusk; that notice is an invented plot detail.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim preserves the caretaker's handbill as the source within the fictional outline.",
+          "eligibility_reason": "It is a claim about an invented notice inside the user's stage-play outline, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-010",
+          "claim": "In my stage-play outline, the gallery's west stair is locked after dusk.",
+          "message_id": "message-005-b",
+          "quote": "In my stage-play outline, the caretaker's handbill says the gallery's west stair is locked after dusk; that notice is an invented plot detail.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The outline reports what the handbill says; it does not independently establish the stair's status.",
+          "eligibility_reason": "It is a claim about an invented notice inside the user's stage-play outline, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-006",
+      "split": "test",
+      "scenario_group": "scenario-006",
+      "template_group": "template-006",
+      "entity_ids": [
+        "entity-006-a",
+        "entity-006-b"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "session-006",
+          "message_id": "message-006-a",
+          "role": "assistant",
+          "text": "What detail is written on the sample card for the audio-description exercise?",
+          "recorded_at": "2026-09-06T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-006",
+          "message_id": "message-006-b",
+          "role": "user",
+          "text": "In my audio-description workshop exercise, the instructor's sample card says the archive door opens at the third chime; I am documenting the exercise, not an event I attended.",
+          "recorded_at": "2026-09-06T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-012",
+          "claim": "In my audio-description workshop exercise, the archive door opens at the third chime.",
+          "message_id": "message-006-b",
+          "quote": "In my audio-description workshop exercise, the instructor's sample card says the archive door opens at the third chime; I am documenting the exercise, not an event I attended.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The user reports what the sample card says, not an independently confirmed event.",
+          "eligibility_reason": "It describes the user's real audio-description exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-011",
+          "claim": "In my audio-description workshop exercise, the instructor's sample card says the archive door opens at the third chime.",
+          "message_id": "message-006-b",
+          "quote": "In my audio-description workshop exercise, the instructor's sample card says the archive door opens at the third chime; I am documenting the exercise, not an event I attended.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim keeps the instructor's sample card as the source within the exercise.",
+          "eligibility_reason": "It describes the user's real audio-description exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-007",
+      "split": "train",
+      "scenario_group": "scenario-007",
+      "template_group": "template-007",
+      "entity_ids": [
+        "entity-007-a",
+        "entity-007-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-007",
+          "message_id": "message-007-a",
+          "role": "assistant",
+          "text": "What is the plan for the rooftop planter this evening?",
+          "recorded_at": "2026-09-07T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-007",
+          "message_id": "message-007-b",
+          "role": "user",
+          "text": "If my rooftop planter's soil is dry at dusk, I will water it before sunset; I have not promised to water it on cloudy evenings.",
+          "recorded_at": "2026-09-07T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-013",
+          "claim": "I will water my rooftop planter before sunset if its soil is dry at dusk.",
+          "message_id": "message-007-b",
+          "quote": "If my rooftop planter's soil is dry at dusk, I will water it before sunset; I have not promised to water it on cloudy evenings.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim keeps watering conditional on the soil being dry at dusk.",
+          "eligibility_reason": "It records the user's own watering plan for a rooftop planter."
+        },
+        {
+          "candidate_id": "candidate-014",
+          "claim": "I will water my rooftop planter before sunset.",
+          "message_id": "message-007-b",
+          "quote": "If my rooftop planter's soil is dry at dusk, I will water it before sunset; I have not promised to water it on cloudy evenings.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The claim drops the dry-soil condition and makes the plan unconditional.",
+          "eligibility_reason": "It records the user's own watering plan for a rooftop planter."
+        }
+      ]
+    },
+    {
+      "case_id": "case-008",
+      "split": "train",
+      "scenario_group": "scenario-008",
+      "template_group": "template-008",
+      "entity_ids": [
+        "entity-008-a",
+        "entity-008-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-008",
+          "message_id": "message-008-a",
+          "role": "assistant",
+          "text": "What are you planning to carry on the coastal path?",
+          "recorded_at": "2026-09-08T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-008",
+          "message_id": "message-008-b",
+          "role": "user",
+          "text": "For my own coastal-path walk, I will take the folding stool only if the shuttle has room for it.",
+          "recorded_at": "2026-09-08T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-016",
+          "claim": "I will take the folding stool on my coastal-path walk.",
+          "message_id": "message-008-b",
+          "quote": "For my own coastal-path walk, I will take the folding stool only if the shuttle has room for it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The claim omits the only-if condition and overstates the user's plan.",
+          "eligibility_reason": "It records a condition on the user's own coastal-path walk plan."
+        },
+        {
+          "candidate_id": "candidate-015",
+          "claim": "I will take the folding stool on my coastal-path walk only if the shuttle has room for it.",
+          "message_id": "message-008-b",
+          "quote": "For my own coastal-path walk, I will take the folding stool only if the shuttle has room for it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim retains the shuttle-capacity condition on taking the stool.",
+          "eligibility_reason": "It records a condition on the user's own coastal-path walk plan."
+        }
+      ]
+    },
+    {
+      "case_id": "case-009",
+      "split": "train",
+      "scenario_group": "scenario-009",
+      "template_group": "template-009",
+      "entity_ids": [
+        "entity-009-a",
+        "entity-009-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-009",
+          "message_id": "message-009-a",
+          "role": "assistant",
+          "text": "What should happen in the puppet-show scene if the prop fails?",
+          "recorded_at": "2026-09-09T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-009",
+          "message_id": "message-009-b",
+          "role": "user",
+          "text": "In my puppet-show script, if the moon prop jams, Brin waits beside the curtain; I am writing directions for a fictional scene.",
+          "recorded_at": "2026-09-09T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-017",
+          "claim": "In my puppet-show script, Brin waits beside the curtain if the moon prop jams.",
+          "message_id": "message-009-b",
+          "quote": "In my puppet-show script, if the moon prop jams, Brin waits beside the curtain; I am writing directions for a fictional scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim keeps Brin's action conditional on the moon prop jamming.",
+          "eligibility_reason": "It is a condition inside a fictional puppet-show script, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-018",
+          "claim": "In my puppet-show script, Brin waits beside the curtain.",
+          "message_id": "message-009-b",
+          "quote": "In my puppet-show script, if the moon prop jams, Brin waits beside the curtain; I am writing directions for a fictional scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim removes the script's prop-failure condition.",
+          "eligibility_reason": "It is a condition inside a fictional puppet-show script, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-010",
+      "split": "train",
+      "scenario_group": "scenario-010",
+      "template_group": "template-010",
+      "entity_ids": [
+        "entity-010-a",
+        "entity-010-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-010",
+          "message_id": "message-010-a",
+          "role": "assistant",
+          "text": "What is the assigned next step in today's screen-printing practice?",
+          "recorded_at": "2026-09-10T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-010",
+          "message_id": "message-010-b",
+          "role": "user",
+          "text": "During my actual beginner screen-printing exercise, if the ink is tacky by noon, I will peel the test sheet; that is today's assigned practice step.",
+          "recorded_at": "2026-09-10T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-020",
+          "claim": "During my beginner screen-printing exercise, I will peel the test sheet.",
+          "message_id": "message-010-b",
+          "quote": "During my actual beginner screen-printing exercise, if the ink is tacky by noon, I will peel the test sheet; that is today's assigned practice step.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim drops the stated condition for peeling the sheet.",
+          "eligibility_reason": "It describes the user's real screen-printing exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-019",
+          "claim": "During my beginner screen-printing exercise, I will peel the test sheet if the ink is tacky by noon.",
+          "message_id": "message-010-b",
+          "quote": "During my actual beginner screen-printing exercise, if the ink is tacky by noon, I will peel the test sheet; that is today's assigned practice step.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves the tacky-ink condition on peeling the test sheet.",
+          "eligibility_reason": "It describes the user's real screen-printing exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-011",
+      "split": "dev",
+      "scenario_group": "scenario-011",
+      "template_group": "template-011",
+      "entity_ids": [
+        "entity-011-a",
+        "entity-011-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-011",
+          "message_id": "message-011-a",
+          "role": "assistant",
+          "text": "What is the assigned step in the horticulture exercise?",
+          "recorded_at": "2026-09-11T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-011",
+          "message_id": "message-011-b",
+          "role": "user",
+          "text": "In my horticulture class's real seed-starting exercise, if the tray's top cells are dry by noon, I will mist them; that is the assigned practice step.",
+          "recorded_at": "2026-09-11T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-021",
+          "claim": "In my seed-starting exercise, I will mist the tray's top cells if they are dry by noon.",
+          "message_id": "message-011-b",
+          "quote": "In my horticulture class's real seed-starting exercise, if the tray's top cells are dry by noon, I will mist them; that is the assigned practice step.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim keeps misting conditional on the tray's top cells being dry by noon.",
+          "eligibility_reason": "It describes the user's real horticulture exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-022",
+          "claim": "In my seed-starting exercise, I will mist the tray's top cells.",
+          "message_id": "message-011-b",
+          "quote": "In my horticulture class's real seed-starting exercise, if the tray's top cells are dry by noon, I will mist them; that is the assigned practice step.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim drops the dry-cell condition from the assigned practice step.",
+          "eligibility_reason": "It describes the user's real horticulture exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-012",
+      "split": "test",
+      "scenario_group": "scenario-012",
+      "template_group": "template-012",
+      "entity_ids": [
+        "entity-012-a",
+        "entity-012-b"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "session-012",
+          "message_id": "message-012-a",
+          "role": "assistant",
+          "text": "What should Sera do if the beacon fails in the adventure notes?",
+          "recorded_at": "2026-09-12T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-012",
+          "message_id": "message-012-b",
+          "role": "user",
+          "text": "In my tabletop-adventure notes, if the red beacon fades, pilot Sera waits at the north arch; that is an invented scene.",
+          "recorded_at": "2026-09-12T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-024",
+          "claim": "In my tabletop-adventure notes, Sera waits at the north arch.",
+          "message_id": "message-012-b",
+          "quote": "In my tabletop-adventure notes, if the red beacon fades, pilot Sera waits at the north arch; that is an invented scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim removes the beacon condition from the fictional scene.",
+          "eligibility_reason": "It is a conditional action by a fictional character in adventure notes, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-023",
+          "claim": "In my tabletop-adventure notes, Sera waits at the north arch if the red beacon fades.",
+          "message_id": "message-012-b",
+          "quote": "In my tabletop-adventure notes, if the red beacon fades, pilot Sera waits at the north arch; that is an invented scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim keeps Sera's wait conditional on the red beacon fading.",
+          "eligibility_reason": "It is a conditional action by a fictional character in adventure notes, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-013",
+      "split": "train",
+      "scenario_group": "scenario-013",
+      "template_group": "template-013",
+      "entity_ids": [
+        "entity-013-a",
+        "entity-013-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-013",
+          "message_id": "message-013-a",
+          "role": "assistant",
+          "text": "Who handled the courtyard latch repair?",
+          "recorded_at": "2026-09-13T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-013",
+          "message_id": "message-013-b",
+          "role": "user",
+          "text": "My neighbor Dev replaced the courtyard latch in my building yesterday; I only brought him the screwdriver.",
+          "recorded_at": "2026-09-13T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-025",
+          "claim": "Dev replaced the courtyard latch in my building.",
+          "message_id": "message-013-b",
+          "quote": "My neighbor Dev replaced the courtyard latch in my building yesterday; I only brought him the screwdriver.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user assigns the repair to Dev and says they only brought the tool.",
+          "eligibility_reason": "It concerns a repair in the user's building courtyard and the help the user provided."
+        },
+        {
+          "candidate_id": "candidate-026",
+          "claim": "I replaced the courtyard latch in my building.",
+          "message_id": "message-013-b",
+          "quote": "My neighbor Dev replaced the courtyard latch in my building yesterday; I only brought him the screwdriver.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source names Dev as the repairer, not the user.",
+          "eligibility_reason": "It concerns a repair in the user's building courtyard and the help the user provided."
+        }
+      ]
+    },
+    {
+      "case_id": "case-014",
+      "split": "train",
+      "scenario_group": "scenario-014",
+      "template_group": "template-014",
+      "entity_ids": [
+        "entity-014-a",
+        "entity-014-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-014",
+          "message_id": "message-014-a",
+          "role": "assistant",
+          "text": "Whose mug was carried home after the picnic?",
+          "recorded_at": "2026-09-14T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-014",
+          "message_id": "message-014-b",
+          "role": "user",
+          "text": "The blue ceramic mug belongs to my cousin Noor; I only carried it home after the picnic.",
+          "recorded_at": "2026-09-14T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-028",
+          "claim": "The blue ceramic mug belongs to me.",
+          "message_id": "message-014-b",
+          "quote": "The blue ceramic mug belongs to my cousin Noor; I only carried it home after the picnic.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says Noor owns the mug and only says the user carried it.",
+          "eligibility_reason": "It concerns the user's handling of a cousin's mug after a shared picnic."
+        },
+        {
+          "candidate_id": "candidate-027",
+          "claim": "The blue ceramic mug belongs to my cousin Noor.",
+          "message_id": "message-014-b",
+          "quote": "The blue ceramic mug belongs to my cousin Noor; I only carried it home after the picnic.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source assigns ownership of the mug to Noor.",
+          "eligibility_reason": "It concerns the user's handling of a cousin's mug after a shared picnic."
+        }
+      ]
+    },
+    {
+      "case_id": "case-015",
+      "split": "train",
+      "scenario_group": "scenario-015",
+      "template_group": "template-015",
+      "entity_ids": [
+        "entity-015-a",
+        "entity-015-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-015",
+          "message_id": "message-015-a",
+          "role": "assistant",
+          "text": "Which character steers the glider in the outline?",
+          "recorded_at": "2026-09-15T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-015",
+          "message_id": "message-015-b",
+          "role": "user",
+          "text": "In my fantasy outline, pilot Aru steers the glider while mechanic Nela watches the ridge; this is an invented scene.",
+          "recorded_at": "2026-09-15T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-029",
+          "claim": "In my fantasy outline, Aru steers the glider.",
+          "message_id": "message-015-b",
+          "quote": "In my fantasy outline, pilot Aru steers the glider while mechanic Nela watches the ridge; this is an invented scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The outline assigns the steering action to Aru.",
+          "eligibility_reason": "It is an action by fictional characters in a fantasy outline, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-030",
+          "claim": "In my fantasy outline, Nela steers the glider.",
+          "message_id": "message-015-b",
+          "quote": "In my fantasy outline, pilot Aru steers the glider while mechanic Nela watches the ridge; this is an invented scene.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source assigns the steering to Aru and gives Nela a different role.",
+          "eligibility_reason": "It is an action by fictional characters in a fantasy outline, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-016",
+      "split": "train",
+      "scenario_group": "scenario-016",
+      "template_group": "template-016",
+      "entity_ids": [
+        "entity-016-a",
+        "entity-016-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-016",
+          "message_id": "message-016-a",
+          "role": "assistant",
+          "text": "Who cut the cedar strip during the practice build?",
+          "recorded_at": "2026-09-16T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-016",
+          "message_id": "message-016-b",
+          "role": "user",
+          "text": "For my woodshop-class exercise, partner Mae cut the cedar strip while I held the clamp; this was a real practice build, not a commission.",
+          "recorded_at": "2026-09-16T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-032",
+          "claim": "I cut the cedar strip during my woodshop-class exercise.",
+          "message_id": "message-016-b",
+          "quote": "For my woodshop-class exercise, partner Mae cut the cedar strip while I held the clamp; this was a real practice build, not a commission.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The user held the clamp; Mae is the person who cut the strip.",
+          "eligibility_reason": "It describes the user's real woodshop-class exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-031",
+          "claim": "Mae cut the cedar strip during my woodshop-class exercise.",
+          "message_id": "message-016-b",
+          "quote": "For my woodshop-class exercise, partner Mae cut the cedar strip while I held the clamp; this was a real practice build, not a commission.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source assigns the cutting to Mae and says the user held the clamp.",
+          "eligibility_reason": "It describes the user's real woodshop-class exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-017",
+      "split": "dev",
+      "scenario_group": "scenario-017",
+      "template_group": "template-017",
+      "entity_ids": [
+        "entity-017-a",
+        "entity-017-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-017",
+          "message_id": "message-017-a",
+          "role": "assistant",
+          "text": "Who reserved the rehearsal room under the account?",
+          "recorded_at": "2026-09-17T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-017",
+          "message_id": "message-017-b",
+          "role": "user",
+          "text": "My sister Lale booked the rehearsal room under her own account, and I only sent her the availability poll.",
+          "recorded_at": "2026-09-17T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-033",
+          "claim": "Lale booked the rehearsal room under her own account.",
+          "message_id": "message-017-b",
+          "quote": "My sister Lale booked the rehearsal room under her own account, and I only sent her the availability poll.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source assigns the booking to Lale and identifies her account.",
+          "eligibility_reason": "It concerns the user's coordination of a rehearsal-room booking with their sister."
+        },
+        {
+          "candidate_id": "candidate-034",
+          "claim": "I booked the rehearsal room under Lale's account.",
+          "message_id": "message-017-b",
+          "quote": "My sister Lale booked the rehearsal room under her own account, and I only sent her the availability poll.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the user sent a poll; Lale made the booking.",
+          "eligibility_reason": "It concerns the user's coordination of a rehearsal-room booking with their sister."
+        }
+      ]
+    },
+    {
+      "case_id": "case-018",
+      "split": "test",
+      "scenario_group": "scenario-018",
+      "template_group": "template-018",
+      "entity_ids": [
+        "entity-018-a",
+        "entity-018-b"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "session-018",
+          "message_id": "message-018-a",
+          "role": "assistant",
+          "text": "Who owns the handcart used for moving the seed bags?",
+          "recorded_at": "2026-09-18T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-018",
+          "message_id": "message-018-b",
+          "role": "user",
+          "text": "I borrowed my neighbor Tavi's handcart to move the seed bags; Tavi still owns it.",
+          "recorded_at": "2026-09-18T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-036",
+          "claim": "I own the handcart.",
+          "message_id": "message-018-b",
+          "quote": "I borrowed my neighbor Tavi's handcart to move the seed bags; Tavi still owns it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "Borrowing the handcart does not make the user its owner; the source names Tavi.",
+          "eligibility_reason": "It concerns the user's borrowing a neighbor's handcart."
+        },
+        {
+          "candidate_id": "candidate-035",
+          "claim": "Tavi owns the handcart.",
+          "message_id": "message-018-b",
+          "quote": "I borrowed my neighbor Tavi's handcart to move the seed bags; Tavi still owns it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user explicitly says Tavi still owns the borrowed handcart.",
+          "eligibility_reason": "It concerns the user's borrowing a neighbor's handcart."
+        }
+      ]
+    },
+    {
+      "case_id": "case-019",
+      "split": "train",
+      "scenario_group": "scenario-019",
+      "template_group": "template-019",
+      "entity_ids": [
+        "entity-019-a",
+        "entity-019-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-019",
+          "message_id": "message-019-a",
+          "role": "assistant",
+          "text": "What is the user's spare-key arrangement at the studio?",
+          "recorded_at": "2026-09-19T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-019",
+          "message_id": "message-019-b",
+          "role": "user",
+          "text": "I do not keep a spare key at the studio; I use the combination box when I visit.",
+          "recorded_at": "2026-09-19T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-037",
+          "claim": "I do not keep a spare key at the studio.",
+          "message_id": "message-019-b",
+          "quote": "I do not keep a spare key at the studio; I use the combination box when I visit.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim preserves the user's explicit negative statement.",
+          "eligibility_reason": "It records the user's key-storage habit at the studio."
+        },
+        {
+          "candidate_id": "candidate-038",
+          "claim": "I keep a spare key at the studio.",
+          "message_id": "message-019-b",
+          "quote": "I do not keep a spare key at the studio; I use the combination box when I visit.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The claim reverses the user's statement that no spare key is kept there.",
+          "eligibility_reason": "It records the user's key-storage habit at the studio."
+        }
+      ]
+    },
+    {
+      "case_id": "case-020",
+      "split": "train",
+      "scenario_group": "scenario-020",
+      "template_group": "template-020",
+      "entity_ids": [
+        "entity-020-a",
+        "entity-020-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-020",
+          "message_id": "message-020-a",
+          "role": "assistant",
+          "text": "Which bakery item has the user tried before?",
+          "recorded_at": "2026-09-20T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-020",
+          "message_id": "message-020-b",
+          "role": "user",
+          "text": "I have tried the citrus glaze at Mara's bakery, though I still usually order its rye buns.",
+          "recorded_at": "2026-09-20T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-040",
+          "claim": "I have never tried the citrus glaze at Mara's bakery.",
+          "message_id": "message-020-b",
+          "quote": "I have tried the citrus glaze at Mara's bakery, though I still usually order its rye buns.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the user has tried the glaze, not that they never tried it.",
+          "eligibility_reason": "It records the user's bakery preferences and prior tasting experience."
+        },
+        {
+          "candidate_id": "candidate-039",
+          "claim": "I have tried the citrus glaze at Mara's bakery.",
+          "message_id": "message-020-b",
+          "quote": "I have tried the citrus glaze at Mara's bakery, though I still usually order its rye buns.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the user has tried the citrus glaze.",
+          "eligibility_reason": "It records the user's bakery preferences and prior tasting experience."
+        }
+      ]
+    },
+    {
+      "case_id": "case-021",
+      "split": "train",
+      "scenario_group": "scenario-021",
+      "template_group": "template-021",
+      "entity_ids": [
+        "entity-021-a",
+        "entity-021-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-021",
+          "message_id": "message-021-a",
+          "role": "assistant",
+          "text": "What does Dr. Vale carry on the expedition in the draft?",
+          "recorded_at": "2026-09-21T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-021",
+          "message_id": "message-021-b",
+          "role": "user",
+          "text": "In my space-opera notes, Dr. Vale does not carry the silver compass on the expedition; the printed star chart is meant to guide her.",
+          "recorded_at": "2026-09-21T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-041",
+          "claim": "In my space-opera notes, Dr. Vale does not carry the silver compass on the expedition.",
+          "message_id": "message-021-b",
+          "quote": "In my space-opera notes, Dr. Vale does not carry the silver compass on the expedition; the printed star chart is meant to guide her.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim preserves the note's explicit negation about the compass.",
+          "eligibility_reason": "It is a detail about a fictional character in space-opera notes, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-042",
+          "claim": "In my space-opera notes, Dr. Vale carries the silver compass on the expedition.",
+          "message_id": "message-021-b",
+          "quote": "In my space-opera notes, Dr. Vale does not carry the silver compass on the expedition; the printed star chart is meant to guide her.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The fictional note says Dr. Vale does not carry the compass.",
+          "eligibility_reason": "It is a detail about a fictional character in space-opera notes, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-022",
+      "split": "train",
+      "scenario_group": "scenario-022",
+      "template_group": "template-022",
+      "entity_ids": [
+        "entity-022-a",
+        "entity-022-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-022",
+          "message_id": "message-022-a",
+          "role": "assistant",
+          "text": "What did the user do with the letters in today's exercise?",
+          "recorded_at": "2026-09-22T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-022",
+          "message_id": "message-022-b",
+          "role": "user",
+          "text": "For today's letterform exercise, I did not connect the lowercase letters in my sample; the instructor assigned block capitals.",
+          "recorded_at": "2026-09-22T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-044",
+          "claim": "For today's letterform exercise, I connected the lowercase letters in my sample.",
+          "message_id": "message-022-b",
+          "quote": "For today's letterform exercise, I did not connect the lowercase letters in my sample; the instructor assigned block capitals.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source says the user did not connect the lowercase letters.",
+          "eligibility_reason": "It describes the user's real letterform exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-043",
+          "claim": "For today's letterform exercise, I did not connect the lowercase letters in my sample.",
+          "message_id": "message-022-b",
+          "quote": "For today's letterform exercise, I did not connect the lowercase letters in my sample; the instructor assigned block capitals.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves the user's explicit negative about the sample.",
+          "eligibility_reason": "It describes the user's real letterform exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-023",
+      "split": "dev",
+      "scenario_group": "scenario-023",
+      "template_group": "template-023",
+      "entity_ids": [
+        "entity-023-a",
+        "entity-023-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-023",
+          "message_id": "message-023-a",
+          "role": "assistant",
+          "text": "Where did the user put the broadsides in the paper-sorting practice?",
+          "recorded_at": "2026-09-23T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-023",
+          "message_id": "message-023-b",
+          "role": "user",
+          "text": "For my archive class's real paper-sorting exercise, I did not put the sample broadsides in the red folder; the instructor asked us to sort them by printer.",
+          "recorded_at": "2026-09-23T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-045",
+          "claim": "In my paper-sorting exercise, I did not put the sample broadsides in the red folder.",
+          "message_id": "message-023-b",
+          "quote": "For my archive class's real paper-sorting exercise, I did not put the sample broadsides in the red folder; the instructor asked us to sort them by printer.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves the user's explicit negative about the red folder.",
+          "eligibility_reason": "It describes the user's real archive-class exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-046",
+          "claim": "In my paper-sorting exercise, I put the sample broadsides in the red folder.",
+          "message_id": "message-023-b",
+          "quote": "For my archive class's real paper-sorting exercise, I did not put the sample broadsides in the red folder; the instructor asked us to sort them by printer.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source says the user did not put the broadsides in the red folder.",
+          "eligibility_reason": "It describes the user's real archive-class exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-024",
+      "split": "test",
+      "scenario_group": "scenario-024",
+      "template_group": "template-024",
+      "entity_ids": [
+        "entity-024-a",
+        "entity-024-b"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "session-024",
+          "message_id": "message-024-a",
+          "role": "assistant",
+          "text": "What does Jun carry into the greenhouse in the game outline?",
+          "recorded_at": "2026-09-24T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-024",
+          "message_id": "message-024-b",
+          "role": "user",
+          "text": "In my cozy-game outline, Jun carries the blue basket into the greenhouse; the gardeners are still discussing their roles.",
+          "recorded_at": "2026-09-24T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-048",
+          "claim": "In my cozy-game outline, Jun does not carry the blue basket into the greenhouse.",
+          "message_id": "message-024-b",
+          "quote": "In my cozy-game outline, Jun carries the blue basket into the greenhouse; the gardeners are still discussing their roles.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source says Jun carries the basket, the opposite of the claim.",
+          "eligibility_reason": "It is a detail about a fictional game character, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-047",
+          "claim": "In my cozy-game outline, Jun carries the blue basket into the greenhouse.",
+          "message_id": "message-024-b",
+          "quote": "In my cozy-game outline, Jun carries the blue basket into the greenhouse; the gardeners are still discussing their roles.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim matches the outline's affirmative statement that Jun carries the basket.",
+          "eligibility_reason": "It is a detail about a fictional game character, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-025",
+      "split": "train",
+      "scenario_group": "scenario-025",
+      "template_group": "template-025",
+      "entity_ids": [
+        "entity-025-a",
+        "entity-025-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-025",
+          "message_id": "message-025-a",
+          "role": "assistant",
+          "text": "When did the user return the field recorder?",
+          "recorded_at": "2026-09-25T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-025",
+          "message_id": "message-025-b",
+          "role": "user",
+          "text": "I returned the borrowed field recorder after the bird walk, then sent Pia the audio file.",
+          "recorded_at": "2026-09-25T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-049",
+          "claim": "I returned the field recorder after the bird walk.",
+          "message_id": "message-025-b",
+          "quote": "I returned the borrowed field recorder after the bird walk, then sent Pia the audio file.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim retains the stated order: the return followed the walk.",
+          "eligibility_reason": "It records when the user returned borrowed equipment after their bird walk."
+        },
+        {
+          "candidate_id": "candidate-050",
+          "claim": "I returned the field recorder before the bird walk.",
+          "message_id": "message-025-b",
+          "quote": "I returned the borrowed field recorder after the bird walk, then sent Pia the audio file.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the return happened after the walk, not before it.",
+          "eligibility_reason": "It records when the user returned borrowed equipment after their bird walk."
+        }
+      ]
+    },
+    {
+      "case_id": "case-026",
+      "split": "train",
+      "scenario_group": "scenario-026",
+      "template_group": "template-026",
+      "entity_ids": [
+        "entity-026-a",
+        "entity-026-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-026",
+          "message_id": "message-026-a",
+          "role": "assistant",
+          "text": "When does the user turn off the reading lamp?",
+          "recorded_at": "2026-09-26T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-026",
+          "message_id": "message-026-b",
+          "role": "user",
+          "text": "I leave the reading lamp on until my housemate gets home, then turn it off.",
+          "recorded_at": "2026-09-26T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-052",
+          "claim": "I leave the reading lamp on after my housemate gets home.",
+          "message_id": "message-026-b",
+          "quote": "I leave the reading lamp on until my housemate gets home, then turn it off.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the lamp is on until the housemate arrives, then turned off.",
+          "eligibility_reason": "It records the user's home lighting routine with a housemate."
+        },
+        {
+          "candidate_id": "candidate-051",
+          "claim": "I leave the reading lamp on until my housemate gets home.",
+          "message_id": "message-026-b",
+          "quote": "I leave the reading lamp on until my housemate gets home, then turn it off.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim preserves the 'until home' time boundary.",
+          "eligibility_reason": "It records the user's home lighting routine with a housemate."
+        }
+      ]
+    },
+    {
+      "case_id": "case-027",
+      "split": "train",
+      "scenario_group": "scenario-027",
+      "template_group": "template-027",
+      "entity_ids": [
+        "entity-027-a",
+        "entity-027-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-027",
+          "message_id": "message-027-a",
+          "role": "assistant",
+          "text": "When does the lighthouse keeper reach the island in the story?",
+          "recorded_at": "2026-09-27T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-027",
+          "message_id": "message-027-b",
+          "role": "user",
+          "text": "In my illustrated story, the lighthouse keeper reaches the island before the fog rolls in; that timing makes the rescue possible.",
+          "recorded_at": "2026-09-27T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-053",
+          "claim": "In my illustrated story, the lighthouse keeper reaches the island before the fog rolls in.",
+          "message_id": "message-027-b",
+          "quote": "In my illustrated story, the lighthouse keeper reaches the island before the fog rolls in; that timing makes the rescue possible.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim keeps the story's stated order of arrival and fog.",
+          "eligibility_reason": "It is a timing detail in an invented illustrated story, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-054",
+          "claim": "In my illustrated story, the lighthouse keeper reaches the island after the fog rolls in.",
+          "message_id": "message-027-b",
+          "quote": "In my illustrated story, the lighthouse keeper reaches the island before the fog rolls in; that timing makes the rescue possible.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source says the keeper arrives before the fog, not after it.",
+          "eligibility_reason": "It is a timing detail in an invented illustrated story, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-028",
+      "split": "train",
+      "scenario_group": "scenario-028",
+      "template_group": "template-028",
+      "entity_ids": [
+        "entity-028-a",
+        "entity-028-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-028",
+          "message_id": "message-028-a",
+          "role": "assistant",
+          "text": "When did the user copy the address during practice?",
+          "recorded_at": "2026-09-28T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-028",
+          "message_id": "message-028-b",
+          "role": "user",
+          "text": "During my real handwriting practice, I copied the address before lunch and checked each line afterward.",
+          "recorded_at": "2026-09-28T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-056",
+          "claim": "During my handwriting practice, I copied the address after lunch.",
+          "message_id": "message-028-b",
+          "quote": "During my real handwriting practice, I copied the address before lunch and checked each line afterward.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source places the copying before lunch, not after it.",
+          "eligibility_reason": "It describes the user's real handwriting practice, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-055",
+          "claim": "During my handwriting practice, I copied the address before lunch.",
+          "message_id": "message-028-b",
+          "quote": "During my real handwriting practice, I copied the address before lunch and checked each line afterward.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves that copying happened before lunch.",
+          "eligibility_reason": "It describes the user's real handwriting practice, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-029",
+      "split": "dev",
+      "scenario_group": "scenario-029",
+      "template_group": "template-029",
+      "entity_ids": [
+        "entity-029-a",
+        "entity-029-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-029",
+          "message_id": "message-029-a",
+          "role": "assistant",
+          "text": "When does the clockmaker leave the tower in the fable?",
+          "recorded_at": "2026-09-29T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-029",
+          "message_id": "message-029-b",
+          "role": "user",
+          "text": "In my illustrated fable, the clockmaker leaves the tower before the river freezes; that timing lets the mice cross.",
+          "recorded_at": "2026-09-29T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-057",
+          "claim": "In my illustrated fable, the clockmaker leaves the tower before the river freezes.",
+          "message_id": "message-029-b",
+          "quote": "In my illustrated fable, the clockmaker leaves the tower before the river freezes; that timing lets the mice cross.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim preserves the fable's stated order of departure and the river freezing.",
+          "eligibility_reason": "It is a timing detail about fictional characters in an illustrated fable, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-058",
+          "claim": "In my illustrated fable, the clockmaker leaves the tower after the river freezes.",
+          "message_id": "message-029-b",
+          "quote": "In my illustrated fable, the clockmaker leaves the tower before the river freezes; that timing lets the mice cross.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source says the clockmaker leaves before the river freezes, not after it.",
+          "eligibility_reason": "It is a timing detail about fictional characters in an illustrated fable, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-030",
+      "split": "test",
+      "scenario_group": "scenario-030",
+      "template_group": "template-030",
+      "entity_ids": [
+        "entity-030-a",
+        "entity-030-b"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "session-030",
+          "message_id": "message-030-a",
+          "role": "assistant",
+          "text": "When did the user play the scale during flute practice?",
+          "recorded_at": "2026-09-30T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-030",
+          "message_id": "message-030-b",
+          "role": "user",
+          "text": "During my actual flute-practice exercise, I played the scale before tuning the instrument, then marked the breath points.",
+          "recorded_at": "2026-09-30T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-060",
+          "claim": "During my flute-practice exercise, I played the scale after tuning the instrument.",
+          "message_id": "message-030-b",
+          "quote": "During my actual flute-practice exercise, I played the scale before tuning the instrument, then marked the breath points.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source places the scale before tuning, not after it.",
+          "eligibility_reason": "It describes the user's real flute-practice exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-059",
+          "claim": "During my flute-practice exercise, I played the scale before tuning the instrument.",
+          "message_id": "message-030-b",
+          "quote": "During my actual flute-practice exercise, I played the scale before tuning the instrument, then marked the breath points.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves that the scale came before tuning.",
+          "eligibility_reason": "It describes the user's real flute-practice exercise, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-031",
+      "split": "train",
+      "scenario_group": "scenario-031",
+      "template_group": "template-031",
+      "entity_ids": [
+        "entity-031-a",
+        "entity-031-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-031",
+          "message_id": "message-031-a",
+          "role": "assistant",
+          "text": "What is known about why the greenhouse fan stopped?",
+          "recorded_at": "2026-10-01T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-031",
+          "message_id": "message-031-b",
+          "role": "user",
+          "text": "My greenhouse fan stopped sometime after the power flickered; I do not know whether the flicker caused it.",
+          "recorded_at": "2026-10-01T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-061",
+          "claim": "I do not know whether the power flicker caused my greenhouse fan to stop.",
+          "message_id": "message-031-b",
+          "quote": "My greenhouse fan stopped sometime after the power flickered; I do not know whether the flicker caused it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim preserves that the user does not know whether the flicker caused the stop.",
+          "eligibility_reason": "It concerns the user's greenhouse fan and what is known about its stoppage."
+        },
+        {
+          "candidate_id": "candidate-062",
+          "claim": "The power flicker caused my greenhouse fan to stop.",
+          "message_id": "message-031-b",
+          "quote": "My greenhouse fan stopped sometime after the power flickered; I do not know whether the flicker caused it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source states chronology and leaves the cause unknown; it does not establish that the flicker caused the stop.",
+          "eligibility_reason": "It concerns the user's greenhouse fan and what is known about its stoppage."
+        }
+      ]
+    },
+    {
+      "case_id": "case-032",
+      "split": "train",
+      "scenario_group": "scenario-032",
+      "template_group": "template-032",
+      "entity_ids": [
+        "entity-032-a",
+        "entity-032-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-032",
+          "message_id": "message-032-a",
+          "role": "assistant",
+          "text": "What caused the paper lantern to sag?",
+          "recorded_at": "2026-10-02T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-032",
+          "message_id": "message-032-b",
+          "role": "user",
+          "text": "My paper lantern sagged because its wall hook had come loose and tilted it; the window draft did not cause the sagging.",
+          "recorded_at": "2026-10-02T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-064",
+          "claim": "The window draft caused my paper lantern to sag.",
+          "message_id": "message-032-b",
+          "quote": "My paper lantern sagged because its wall hook had come loose and tilted it; the window draft did not cause the sagging.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The user explicitly rules out the window draft as the cause.",
+          "eligibility_reason": "It concerns the user's paper lantern and the stated cause of its sagging."
+        },
+        {
+          "candidate_id": "candidate-063",
+          "claim": "The loose wall hook caused my paper lantern to sag.",
+          "message_id": "message-032-b",
+          "quote": "My paper lantern sagged because its wall hook had come loose and tilted it; the window draft did not cause the sagging.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user states that the loose wall hook caused the lantern to sag.",
+          "eligibility_reason": "It concerns the user's paper lantern and the stated cause of its sagging."
+        }
+      ]
+    },
+    {
+      "case_id": "case-033",
+      "split": "train",
+      "scenario_group": "scenario-033",
+      "template_group": "template-033",
+      "entity_ids": [
+        "entity-033-a",
+        "entity-033-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-033",
+          "message_id": "message-033-a",
+          "role": "assistant",
+          "text": "Has the detective outline settled the reason for the beacon failure?",
+          "recorded_at": "2026-10-03T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-033",
+          "message_id": "message-033-b",
+          "role": "user",
+          "text": "In my detective outline, ranger Eno finds the beacon dark after the tide gauge rattles, but Eno cannot tell whether the surge caused the failure.",
+          "recorded_at": "2026-10-03T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-065",
+          "claim": "In my detective outline, Eno cannot tell whether the surge caused the beacon failure.",
+          "message_id": "message-033-b",
+          "quote": "In my detective outline, ranger Eno finds the beacon dark after the tide gauge rattles, but Eno cannot tell whether the surge caused the failure.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The claim keeps ranger Eno's causal uncertainty inside the fictional scene.",
+          "eligibility_reason": "It is a causal detail about an invented detective story, outside personal-memory scope."
+        },
+        {
+          "candidate_id": "candidate-066",
+          "claim": "In my detective outline, the surge caused the beacon failure.",
+          "message_id": "message-033-b",
+          "quote": "In my detective outline, ranger Eno finds the beacon dark after the tide gauge rattles, but Eno cannot tell whether the surge caused the failure.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The outline gives Eno no basis to conclude that the surge caused the beacon failure.",
+          "eligibility_reason": "It is a causal detail about an invented detective story, outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "case-034",
+      "split": "train",
+      "scenario_group": "scenario-034",
+      "template_group": "template-034",
+      "entity_ids": [
+        "entity-034-a",
+        "entity-034-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-034",
+          "message_id": "message-034-a",
+          "role": "assistant",
+          "text": "What is known about the bowl cracking during practice?",
+          "recorded_at": "2026-10-04T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-034",
+          "message_id": "message-034-b",
+          "role": "user",
+          "text": "During my actual pottery practice, the bowl cracked after I turned it toward the fan; I don't know if the airflow caused the crack.",
+          "recorded_at": "2026-10-04T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-068",
+          "claim": "During my pottery practice, the airflow caused the bowl to crack.",
+          "message_id": "message-034-b",
+          "quote": "During my actual pottery practice, the bowl cracked after I turned it toward the fan; I don't know if the airflow caused the crack.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The user reports no known causal link between airflow and the crack.",
+          "eligibility_reason": "It describes the user's real pottery practice, and policy leaves exercise activity in personal-memory scope unresolved."
+        },
+        {
+          "candidate_id": "candidate-067",
+          "claim": "During my pottery practice, I don't know whether the airflow caused the bowl to crack.",
+          "message_id": "message-034-b",
+          "quote": "During my actual pottery practice, the bowl cracked after I turned it toward the fan; I don't know if the airflow caused the crack.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The claim preserves the user's uncertainty about airflow as the cause.",
+          "eligibility_reason": "It describes the user's real pottery practice, and policy leaves exercise activity in personal-memory scope unresolved."
+        }
+      ]
+    },
+    {
+      "case_id": "case-035",
+      "split": "dev",
+      "scenario_group": "scenario-035",
+      "template_group": "template-035",
+      "entity_ids": [
+        "entity-035-a",
+        "entity-035-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-035",
+          "message_id": "message-035-a",
+          "role": "assistant",
+          "text": "Is the cause of the fountain stoppage known?",
+          "recorded_at": "2026-10-05T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-035",
+          "message_id": "message-035-b",
+          "role": "user",
+          "text": "The fountain in my courtyard went quiet after the grounds crew covered the valve; nobody has confirmed that covering it caused the stoppage.",
+          "recorded_at": "2026-10-05T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-069",
+          "claim": "Nobody has confirmed that covering the valve caused the fountain in my courtyard to stop.",
+          "message_id": "message-035-b",
+          "quote": "The fountain in my courtyard went quiet after the grounds crew covered the valve; nobody has confirmed that covering it caused the stoppage.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The claim preserves that no causal link has been confirmed.",
+          "eligibility_reason": "It concerns a fountain in the user's courtyard and the grounds crew's work."
+        },
+        {
+          "candidate_id": "candidate-070",
+          "claim": "Covering the valve caused the fountain in my courtyard to stop.",
+          "message_id": "message-035-b",
+          "quote": "The fountain in my courtyard went quiet after the grounds crew covered the valve; nobody has confirmed that covering it caused the stoppage.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source reports a sequence and says nobody confirmed the cover caused the stoppage.",
+          "eligibility_reason": "It concerns a fountain in the user's courtyard and the grounds crew's work."
+        }
+      ]
+    },
+    {
+      "case_id": "case-036",
+      "split": "test",
+      "scenario_group": "scenario-036",
+      "template_group": "template-036",
+      "entity_ids": [
+        "entity-036-a",
+        "entity-036-b"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "session-036",
+          "message_id": "message-036-a",
+          "role": "assistant",
+          "text": "What is known about why the seedling wilted?",
+          "recorded_at": "2026-10-06T09:00:00-07:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "session-036",
+          "message_id": "message-036-b",
+          "role": "user",
+          "text": "My seedling wilted because its pot had no drainage and the roots stayed waterlogged; sunlight did not cause the wilting.",
+          "recorded_at": "2026-10-06T09:01:00-07:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "candidate-072",
+          "claim": "Sunlight caused my seedling to wilt.",
+          "message_id": "message-036-b",
+          "quote": "My seedling wilted because its pot had no drainage and the roots stayed waterlogged; sunlight did not cause the wilting.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source explicitly says sunlight did not cause the wilting.",
+          "eligibility_reason": "It concerns the user's seedling and the stated cause of its wilting."
+        },
+        {
+          "candidate_id": "candidate-071",
+          "claim": "Waterlogged roots caused my seedling to wilt.",
+          "message_id": "message-036-b",
+          "quote": "My seedling wilted because its pot had no drainage and the roots stayed waterlogged; sunlight did not cause the wilting.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user identifies waterlogged roots as the cause of the wilting.",
+          "eligibility_reason": "It concerns the user's seedling and the stated cause of its wilting."
+        }
+      ]
+    }
+  ]
+}

@@ -29,6 +29,12 @@ same-family agent labels are provisional; no product model was selected. See
 the [verifier results](docs/quote-verifier-dev-results.md) and
 [prompt baseline](docs/quote-baseline-results.md).
 
+The next experiment teaches a verifier to distinguish a faithful claim from a
+small change in meaning, even when both have valid citations. The new
+[paired-data seed](docs/verifier-pairs-data-card.md) separates source support
+from personal-memory scope. Its CPU audit and train-only exporter prepare a
+controlled comparison; this step does not establish a model-quality gain.
+
 All four adapters trained on newly written fictional conversations. We
 inspected a sample of the owner's real agent logs locally to check the transcript readers,
 but those logs were not training data and have not been evaluated with the

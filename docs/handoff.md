@@ -1,4 +1,51 @@
-# Current checkpoint: verifier criterion failed; no model selected
+# Current checkpoint: verifier seed reviewed; matched model experiment next
+
+Updated 2026-10-16 UTC. The new [paired-data seed](verifier-pairs-data-card.md)
+contains 36 fictional scenarios and 72 candidate claims. Each pair has one
+supported and one minimally changed unsupported claim with identical exact
+citations. Source support and personal-memory scope are separate string labels;
+uncertain scope is retained and excluded from decisive scope scoring.
+
+Implemented `training/verifier_data.py` and `training/audit_verifier_data.py`.
+The validator reuses the opt-in quote-v3 source checks and rejects cross-split
+scenario/template/entity reuse. Prompts omit annotations and curator metadata.
+The export accepts training only and yields 48 rows; dev/test messages are
+absent. The CPU [audit receipt](verifier-pairs-audit.json) pins the corpus bytes
+and separates all three splits. The keep-everything dev control retains 6/6
+supported and 6/6 unsupported claims and rejects zero bad claims.
+
+Root reviewed all 36 pairs, fixed a scope-label error and missing evaluation
+scope coverage, tightened one claim object, and added positive controls against
+simple polarity/causal-uncertainty shortcuts. Labels remain provisional
+same-family agent judgments with zero human reviewers. Each dev/test split has
+only six scenarios; both are curator-visible and not blind holdouts. Matching
+identifiers and literal novelty do not establish semantic independence.
+
+No training or inference ran in this slice. The earlier verifier failure and
+all historical receipts remain unchanged; no model-quality gain or model
+selection is claimed. Context Kit, private conversations and `~/.llm-context`
+remain read-only; the sealed longer-conversation candidate was not opened.
+Automation remains paused. Local validation is recorded in
+[validation-verifier-pairs.json](validation-verifier-pairs.json); signed/private
+delivery and exact-head hosted CI are governed by `.local/active-cycle.json`.
+
+Next: implement and test a strict scorer for the new two-string output schema,
+then freeze matched untuned/tuned controls, the exact run limits, development
+criterion and test-release policy. The [next-experiment note](verifier-pairs-next-experiment.md)
+proposes criteria but does not authorize an automatic launch. Existing owner
+authorization covers bounded synthetic research; root still reviews exact
+payloads and verifies personal Modal plus zero active jobs before any launch.
+Keep uncertain eligibility out of decisive scoring and do not train this data
+through the older boolean verifier schema. Do not run a fifth target-tweak
+extractor SFT or consume the sealed candidate as a shortcut.
+
+Live inventory at slice start showed four stopped apps, zero tasks and no
+training clients. Recheck before runtime use; verify by 2026-10-17. Exact local
+review, data/prompt freeze, exported rows and raw validation logs live under
+`.local/verifier-pairs-20261016/`. Independent human annotation and a larger,
+less correlated evaluation remain necessary before product-quality claims.
+
+## Previous checkpoint: verifier criterion failed; no model selected
 
 Updated 2026-10-16 UTC. The [Qwen3-8B verifier report](quote-verifier-dev-results.md)
 covers 39 Qwen3-4B `quote-v2` candidates from fictional development cases.

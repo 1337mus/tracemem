@@ -1,0 +1,90 @@
+{
+  "created_at_utc": "2026-10-16T09:43:44.083173+00:00",
+  "status": "local_passed_pending_signed_private_delivery_and_hosted_CI",
+  "scope": "new fictional verifier seed, strict schema, train-only rendering and CPU audit/export",
+  "source_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "attempted": 923,
+    "passed": 922,
+    "skipped": 1,
+    "ruff_formatted_files": 192,
+    "configured_mypy_source_files": 55,
+    "log": ".local/verifier-pairs-20261016/root-full-check-v1.log",
+    "log_sha256": "c23f2d7953ed4f03efa7abb0e9d053fccf8810f7a245e7ae6504ea4a4f5e2c6a"
+  },
+  "new_focused_tests": 22,
+  "artifact_hashes": {
+    "training/verifier_data.py": "ada22823e053042d6d20e533f35410d852855607c8f6d51fd3cab93d8a4234c6",
+    "training/audit_verifier_data.py": "40d5cec853564270d19710e899f4e54c45f6b9b45f66c897ec1643ae27bb44d2",
+    "tests/test_verifier_data.py": "f7033b27d1ddd84489fe0831b808ed24e4547e81b8f061a94d038ddee7e25fb2",
+    "tests/test_audit_verifier_data.py": "63806a85a730f4846da25635cff190a873bb5a4360e6d41114165d2d7b4972f5",
+    "examples/synthetic/verifier-pairs-v1.json": "9442f2703ccf98c602579009f1759a41377fd860f5648626c2b26da2f8ea0358",
+    "docs/verifier-pairs-audit.json": "3e7add87d5c9abc2265c0f34eaed6325e1f28df5acc452b75aff59872533b41d"
+  },
+  "corpus": {
+    "scenarios": 36,
+    "candidates": 72,
+    "supported": 36,
+    "unsupported": 36,
+    "human_reviewers": 0,
+    "scope": {
+      "eligible": 32,
+      "ineligible": 20,
+      "uncertain": 20
+    },
+    "train_dev_test_cases": [
+      24,
+      6,
+      6
+    ],
+    "train_dev_test_rows": [
+      48,
+      12,
+      12
+    ]
+  },
+  "pipeline": {
+    "training_rows": 48,
+    "training_export_sha256": "569d45b8b1521c24f9cd3afe932608721e00c584f36e10744d748a6f9b0674c0",
+    "non_train_messages_exported": 0,
+    "source_bytes_pinned": true,
+    "generated_audit_matches_committed_receipt": true
+  },
+  "root_semantic_review": ".local/verifier-pairs-20261016/root-semantic-review-v1.json",
+  "pre_model_data_prompt_freeze": ".local/verifier-pairs-20261016/root-data-prompt-freeze-v1.json",
+  "fault_injection": [
+    "citation validation removal fails specific rejection test",
+    "cross-split guard removal fails scenario/template/entity rejection cases",
+    "train-only guard removal fails non-train rejection",
+    "valid copied-dataset edit fails frozen receipt byte comparison"
+  ],
+  "TDD_process_note": "Initial missing-module import failures are bootstrap evidence only, not qualifying behavioral RED. Audit sentinel RED and behavioral fault-injection checks are preserved locally.",
+  "literal_novelty": {
+    "prior_tracked_fictional_json_files": 70,
+    "prior_distinct_user_texts": 300,
+    "new_user_texts": 36,
+    "exact_casefold_whitespace_matches": 0,
+    "limitation": "Dictionary message spans only; does not prove semantic independence."
+  },
+  "compute": {
+    "gpu_calls": 0,
+    "training_runs": 0,
+    "inference_runs": 0,
+    "model_weights_downloaded": false,
+    "billing": "No GPU launched in slice; agent token billing not measured."
+  },
+  "boundaries": {
+    "private_inputs": "unchanged/read-only",
+    "sealed_candidate": "unopened",
+    "old_receipts": "preserved",
+    "automation": "PAUSED"
+  },
+  "limitations": [
+    "Agent-only unblinded labels, zero human reviewers",
+    "Curator-visible tiny dev/test cohorts, recurring logical forms",
+    "No model-quality measurement or model selection in this slice",
+    "Strict new-schema scorer and frozen exact model-run configuration still required",
+    "No selected-fact retention or extraction recall measured"
+  ]
+}

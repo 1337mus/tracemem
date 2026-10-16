@@ -79,6 +79,11 @@ Paths in this index are relative to this `docs/` directory.
 - [Verifier annotation contract](verifier-annotation-contract.md): prospective
   v0.1 semantic-support and eligibility policy. Unresolved scope stays uncertain;
   independent human review is needed for human-validated or product-quality claims.
+- [Verifier paired-data seed](verifier-pairs-data-card.md): fictional same-citation
+  claim pairs, strict two-axis schema, training-only export and CPU control audit.
+  [Next experiment](verifier-pairs-next-experiment.md) describes the remaining
+  scorer and frozen-run requirements before another GPU call. See the
+  [validation record](validation-verifier-pairs.json) for checks and artifact hashes.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.

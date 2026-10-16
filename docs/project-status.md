@@ -34,6 +34,15 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
+## Current data work: paired verifier seed
+
+A new [36-scenario corpus](verifier-pairs-data-card.md) pairs faithful claims
+with small changes in meaning. Both candidates cite the same valid source span.
+The strict schema keeps source support and memory scope separate, including
+uncertain scope. CPU tooling audits all splits and exports only the 48 training
+rows. Labels and root review are agent-only; the test split is curator-visible.
+This prepares the next diagnostic, with no new model-quality result.
+
 ## Latest completed training experiment: quote-v4
 
 V4 compared the pinned base, unchanged quote-v3 adapter, and a newly trained

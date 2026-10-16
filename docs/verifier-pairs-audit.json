@@ -1,0 +1,130 @@
+{
+  "source_sha256": "9442f2703ccf98c602579009f1759a41377fd860f5648626c2b26da2f8ea0358",
+  "summary": {
+    "annotation_status": "agent_authored",
+    "candidate_count": 72,
+    "case_count": 36,
+    "human_reviewers": 0,
+    "paired_support_cases": 36,
+    "per_split": {
+      "dev": {
+        "candidate_count": 12,
+        "case_count": 6,
+        "eligibility_counts": {
+          "eligible": 4,
+          "ineligible": 4,
+          "uncertain": 4
+        },
+        "no_filter": {
+          "all_candidates_retained": 12,
+          "candidate_count": 12,
+          "eligible_retained": 4,
+          "eligible_total": 4,
+          "ineligible_retained": 4,
+          "ineligible_total": 4,
+          "supported_retained": 6,
+          "supported_total": 6,
+          "uncertain_eligibility_unscored": 4,
+          "uncertain_support_unscored": 0,
+          "unsupported_rejected": 0,
+          "unsupported_retained": 6,
+          "unsupported_total": 6
+        },
+        "phenomenon_counts": {
+          "actor": 1,
+          "attribution": 1,
+          "causality": 1,
+          "condition": 1,
+          "negation": 1,
+          "time": 1
+        },
+        "scenario_count": 6,
+        "support_counts": {
+          "supported": 6,
+          "uncertain": 0,
+          "unsupported": 6
+        }
+      },
+      "test": {
+        "candidate_count": 12,
+        "case_count": 6,
+        "eligibility_counts": {
+          "eligible": 4,
+          "ineligible": 4,
+          "uncertain": 4
+        },
+        "no_filter": {
+          "all_candidates_retained": 12,
+          "candidate_count": 12,
+          "eligible_retained": 4,
+          "eligible_total": 4,
+          "ineligible_retained": 4,
+          "ineligible_total": 4,
+          "supported_retained": 6,
+          "supported_total": 6,
+          "uncertain_eligibility_unscored": 4,
+          "uncertain_support_unscored": 0,
+          "unsupported_rejected": 0,
+          "unsupported_retained": 6,
+          "unsupported_total": 6
+        },
+        "phenomenon_counts": {
+          "actor": 1,
+          "attribution": 1,
+          "causality": 1,
+          "condition": 1,
+          "negation": 1,
+          "time": 1
+        },
+        "scenario_count": 6,
+        "support_counts": {
+          "supported": 6,
+          "uncertain": 0,
+          "unsupported": 6
+        }
+      },
+      "train": {
+        "candidate_count": 48,
+        "case_count": 24,
+        "eligibility_counts": {
+          "eligible": 24,
+          "ineligible": 12,
+          "uncertain": 12
+        },
+        "no_filter": {
+          "all_candidates_retained": 48,
+          "candidate_count": 48,
+          "eligible_retained": 24,
+          "eligible_total": 24,
+          "ineligible_retained": 12,
+          "ineligible_total": 12,
+          "supported_retained": 24,
+          "supported_total": 24,
+          "uncertain_eligibility_unscored": 12,
+          "uncertain_support_unscored": 0,
+          "unsupported_rejected": 0,
+          "unsupported_retained": 24,
+          "unsupported_total": 24
+        },
+        "phenomenon_counts": {
+          "actor": 4,
+          "attribution": 4,
+          "causality": 4,
+          "condition": 4,
+          "negation": 4,
+          "time": 4
+        },
+        "scenario_count": 24,
+        "support_counts": {
+          "supported": 24,
+          "uncertain": 0,
+          "unsupported": 24
+        }
+      }
+    },
+    "scenario_count": 36,
+    "schema_version": 1,
+    "split_group_overlap": 0,
+    "uncertain_support_cases": 0
+  }
+}
