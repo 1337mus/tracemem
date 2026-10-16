@@ -5,12 +5,14 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sys
 import tempfile
 import unittest
 from dataclasses import asdict
 from pathlib import Path
 from unittest.mock import patch
 
+from experiments import private_eval
 from tracemem.adapters import AdapterStats, read_transcript
 
 WORKSPACE = Path(__file__).resolve().parents[1]
@@ -102,6 +104,21 @@ def _manifest_many(path: Path, sources: list[tuple[Path, str]]) -> None:
 
 
 class PrivateEvalTests(unittest.TestCase):
+    def setUp(self) -> None:
+        workspace_temp = tempfile.TemporaryDirectory()
+        self.addCleanup(workspace_temp.cleanup)
+        workspace = Path(workspace_temp.name).resolve()
+        local_root = workspace / ".local"
+        local_root.mkdir(mode=0o700)
+
+        for patcher in (
+            patch.object(sys.modules[__name__], "WORKSPACE", workspace),
+            patch.object(private_eval, "WORKSPACE_ROOT", workspace),
+            patch.object(private_eval, "LOCAL_ROOT", local_root),
+        ):
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
     def test_snapshot_preserves_complete_evidence_ids_anchors_and_unicode(self) -> None:
         with tempfile.TemporaryDirectory(dir=WORKSPACE / ".local") as temporary:
             base = Path(temporary)
@@ -465,8 +482,9 @@ class PrivateEvalTests(unittest.TestCase):
             _write_transcript(source, [("user", "containment-user", "Fictional text.")])
             manifest = base / "manifest.json"
             _manifest(manifest, source)
-            with tempfile.TemporaryDirectory(dir="/private/tmp") as outside_temp:
-                output = Path(outside_temp) / "prepared"
+            with tempfile.TemporaryDirectory() as outside_temp:
+                outside_base = Path(outside_temp).resolve()
+                output = outside_base / "prepared"
 
                 from experiments.private_eval import prepare_private_eval
 
@@ -498,9 +516,10 @@ class PrivateEvalTests(unittest.TestCase):
             _write_transcript(source, [("user", "symlink-user", "Fictional text.")])
             manifest = base / "manifest.json"
             _manifest(manifest, source)
-            with tempfile.TemporaryDirectory(dir="/private/tmp") as outside_temp:
+            with tempfile.TemporaryDirectory() as outside_temp:
+                outside_base = Path(outside_temp).resolve()
                 link = base / "output-link"
-                link.symlink_to(outside_temp, target_is_directory=True)
+                link.symlink_to(outside_base, target_is_directory=True)
                 output = link / "prepared"
 
                 from experiments.private_eval import prepare_private_eval
@@ -508,7 +527,7 @@ class PrivateEvalTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "output path must not contain symlinks"):
                     prepare_private_eval(manifest, output)
 
-                self.assertFalse((Path(outside_temp) / "prepared").exists())
+                self.assertFalse((outside_base / "prepared").exists())
 
     def test_source_symlink_is_rejected_before_writing(self) -> None:
         with tempfile.TemporaryDirectory(dir=WORKSPACE / ".local") as temporary:

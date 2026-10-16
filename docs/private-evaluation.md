@@ -55,3 +55,9 @@ authorship locally. To annotate, edit a copy of the template and keep its
 original frozen. Leave claim and QA labels pending until a reviewer checks the
 evidence; the current artifacts do not provide a completed annotation interface
 or completed review.
+
+For a smaller first pass, a separate local shortlist contains one window from
+each of four sessions, chosen in frozen snapshot order without reading their
+meaning. It lives in `.local/private-eval-20261016/review-shortlist-v1/` and
+has its own review page and pending annotation template. The full snapshot is
+unchanged. This shortlist is development material, not an independent test.

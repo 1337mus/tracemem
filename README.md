@@ -14,8 +14,9 @@ product use.** An inference-only transfer check of the unchanged Qwen3-4B
 adapter rejected 22/24 unsupported claims versus 10/24 for baseline and kept
 all 24 supported claims, but missed the frozen 23/24 rejection threshold. A
 separate check requiring both “supported” and “belongs in personal memory”
-would keep only 10 of 19 suitable, supported claims, versus 16 for baseline. The synthetic dev labels
-are agent-authored; there is no independent test or quality claim.
+would keep only 10 of 19 suitable, supported claims, versus 16 for baseline.
+The synthetic dev labels are agent-authored; there is no independent test or
+quality claim.
 See the [transfer results](docs/verifier-transfer-results.md) and frozen
 [protocol](docs/verifier-transfer-protocol.md).
 

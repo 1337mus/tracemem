@@ -44,7 +44,10 @@ private model inference, training or upload occurred. See
 The full source check before the narrow mount correction attempted 999 tests:
 998 passed, one skipped, Ruff/format and strict mypy passed. After the correction,
 all 41 focused tests, six-file lint/format and three-module type checks passed.
-Root replay matched the archived report. `.local/active-cycle.json` is the
+Root replay matched the archived report. Fresh-checkout CI exposed test fixtures
+that assumed an existing `.local` directory and macOS temporary paths; the
+fixtures now use isolated temporary workspaces and portable paths. The GPU
+runner, payload, data and model outputs are unchanged. `.local/active-cycle.json` is the
 source for exact signed delivery and hosted CI; this text does not assert them.
 Next: expand directional-condition and temporary-personal-context training
 examples, audit eligibility policy consistency, and freeze a fresh comparison
