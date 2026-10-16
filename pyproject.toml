@@ -32,6 +32,8 @@ files = [
     "src/tracemem", "training", "experiments/modal_sft.py", "experiments/sft_launch.py",
     "experiments/quote_verifier.py", "experiments/quote_verifier_payload.py",
     "experiments/modal_quote_verifier.py", "experiments/evaluate_quote_verifier.py",
+    "experiments/verifier_pairs.py", "experiments/modal_verifier_pairs.py",
+    "experiments/evaluate_verifier_pairs.py",
 ]
 mypy_path = "src"
 explicit_package_bases = true

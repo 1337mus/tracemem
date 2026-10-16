@@ -81,9 +81,11 @@ Paths in this index are relative to this `docs/` directory.
   independent human review is needed for human-validated or product-quality claims.
 - [Verifier paired-data seed](verifier-pairs-data-card.md): fictional same-citation
   claim pairs, strict two-axis schema, training-only export and CPU control audit.
-  [Next experiment](verifier-pairs-next-experiment.md) describes the remaining
-  scorer and frozen-run requirements before another GPU call. See the
-  [validation record](validation-verifier-pairs.json) for checks and artifact hashes.
+  The completed [paired-verifier protocol](verifier-pairs-model-protocol.md),
+  [results](verifier-pairs-model-results.md), [machine-scored report](verifier-pairs-model-results.json),
+  and [validation record](validation-verifier-pairs-model.json) document the
+  failed primary development criterion and limits. The [pre-run experiment
+  note](verifier-pairs-next-experiment.md) is retained as planning history.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.

@@ -1,0 +1,3204 @@
+{
+  "schema_version": 1,
+  "experiment": "paired-verifier-v1",
+  "split": "dev",
+  "annotation_status": "agent-authored, curator-visible, zero human reviewers",
+  "protocol": "docs/verifier-pairs-model-protocol.md",
+  "evaluation": {
+    "schema_version": 1,
+    "mode": "train",
+    "split": "dev",
+    "dataset_sha256": "9442f2703ccf98c602579009f1759a41377fd860f5648626c2b26da2f8ea0358",
+    "payload_sha256": "534139fb7e076e7511e85928c51dfe80b2a625138f3bebe50e36be3b77a24106",
+    "receipt_sha256": "af9388bd89f6b7fb0a2716c47a491d9e242272f15357818201572627291b2147",
+    "runner_sha256": "1a43e8185fcf0f1ed1002c1a9dfde812a48b6919d9a98d0e89cab134cbc9d9ea",
+    "model": {
+      "model_id": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "quantization": {
+        "load_in_4bit": true,
+        "type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "bfloat16"
+      }
+    },
+    "settings": {
+      "do_sample": false,
+      "enable_thinking": false,
+      "max_new_tokens": 128,
+      "max_input_tokens": 2048,
+      "attn_implementation": "eager",
+      "seed": 17,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0001,
+      "gradient_accumulation_steps": 4,
+      "epochs": 4,
+      "microsteps": 192,
+      "optimizer_steps": 48,
+      "gradient_checkpointing": true,
+      "completion_only_loss": true,
+      "completion_eos_loss": true,
+      "lora": {
+        "rank": 16,
+        "alpha": 32,
+        "dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "up_proj",
+          "down_proj",
+          "gate_proj"
+        ]
+      }
+    },
+    "arms": {
+      "baseline": {
+        "receipt_sha256": "af9388bd89f6b7fb0a2716c47a491d9e242272f15357818201572627291b2147",
+        "score": {
+          "split": "dev",
+          "candidate_results": [
+            {
+              "item_id": "case-005::candidate-009",
+              "case_id": "case-005",
+              "candidate_id": "candidate-009",
+              "phenomenon": "attribution",
+              "reference": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-005::candidate-010",
+              "case_id": "case-005",
+              "candidate_id": "candidate-010",
+              "phenomenon": "attribution",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-011::candidate-021",
+              "case_id": "case-011",
+              "candidate_id": "candidate-021",
+              "phenomenon": "condition",
+              "reference": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-011::candidate-022",
+              "case_id": "case-011",
+              "candidate_id": "candidate-022",
+              "phenomenon": "condition",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-017::candidate-033",
+              "case_id": "case-017",
+              "candidate_id": "candidate-033",
+              "phenomenon": "actor",
+              "reference": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-017::candidate-034",
+              "case_id": "case-017",
+              "candidate_id": "candidate-034",
+              "phenomenon": "actor",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-023::candidate-045",
+              "case_id": "case-023",
+              "candidate_id": "candidate-045",
+              "phenomenon": "negation",
+              "reference": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-023::candidate-046",
+              "case_id": "case-023",
+              "candidate_id": "candidate-046",
+              "phenomenon": "negation",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 19
+            },
+            {
+              "item_id": "case-029::candidate-057",
+              "case_id": "case-029",
+              "candidate_id": "candidate-057",
+              "phenomenon": "time",
+              "reference": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-029::candidate-058",
+              "case_id": "case-029",
+              "candidate_id": "candidate-058",
+              "phenomenon": "time",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-035::candidate-069",
+              "case_id": "case-035",
+              "candidate_id": "candidate-069",
+              "phenomenon": "causality",
+              "reference": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 18
+            },
+            {
+              "item_id": "case-035::candidate-070",
+              "case_id": "case-035",
+              "candidate_id": "candidate-070",
+              "phenomenon": "causality",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "uncertain",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 19
+            }
+          ],
+          "pair_results": [
+            {
+              "case_id": "case-005",
+              "phenomenon": "attribution",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": false
+            },
+            {
+              "case_id": "case-011",
+              "phenomenon": "condition",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": false
+            },
+            {
+              "case_id": "case-017",
+              "phenomenon": "actor",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-023",
+              "phenomenon": "negation",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-029",
+              "phenomenon": "time",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-035",
+              "phenomenon": "causality",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": false
+            }
+          ],
+          "aggregate": {
+            "candidate_count": 12,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 6,
+                  "retained": 5,
+                  "retention_rate": 0.8333333333333334
+                },
+                "unsupported": {
+                  "total": 6,
+                  "caught": 3,
+                  "catch_rate": 0.5
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 5,
+                  "unsupported": 1,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 2,
+                  "unsupported": 3,
+                  "uncertain": 1,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 8,
+              "decisive_total": 12,
+              "decisive_accuracy": 0.6666666666666666,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 4,
+                  "correct": 4,
+                  "accuracy": 1.0
+                },
+                "ineligible": {
+                  "total": 4,
+                  "correct": 0,
+                  "accuracy": 0.0
+                },
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 1,
+                  "prediction_counts": {
+                    "eligible": 3,
+                    "ineligible": 0,
+                    "uncertain": 1,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 4,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 4,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 3,
+                  "ineligible": 0,
+                  "uncertain": 1,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 4,
+              "decisive_total": 8,
+              "decisive_accuracy": 0.5,
+              "uncertain": {
+                "total": 4,
+                "exact_correct": 1,
+                "prediction_counts": {
+                  "eligible": 3,
+                  "ineligible": 0,
+                  "uncertain": 1,
+                  "invalid": 0
+                }
+              }
+            },
+            "support_pairs": {
+              "total": 6,
+              "decisive_total": 6,
+              "both_support_labels_correct": 3,
+              "exact_rate": 0.5,
+              "excluded_uncertain": 0
+            },
+            "telemetry": {
+              "output_tokens": 218,
+              "items_with_output_tokens": 12
+            },
+            "validity": {
+              "total": 12,
+              "valid": 12,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 12,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "per_phenomenon": {
+              "actor": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 2,
+                      "correct": 2,
+                      "accuracy": 1.0
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 36,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "attribution": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 0,
+                      "catch_rate": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 1,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.5,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 2,
+                      "correct": 0,
+                      "accuracy": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 0,
+                  "exact_rate": 0.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 36,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "causality": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 0,
+                      "retention_rate": 0.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 0,
+                      "catch_rate": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 1,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 2,
+                      "correct": 2,
+                      "accuracy": 1.0
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 0,
+                  "exact_rate": 0.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 37,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "condition": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 0,
+                      "catch_rate": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 1,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.5,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 2,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 2,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 0,
+                  "decisive_accuracy": null,
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 0,
+                  "exact_rate": 0.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 36,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "negation": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 2,
+                      "exact_correct": 1,
+                      "prediction_counts": {
+                        "eligible": 1,
+                        "ineligible": 0,
+                        "uncertain": 1,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 1,
+                      "ineligible": 0,
+                      "uncertain": 1,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 0,
+                  "decisive_accuracy": null,
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 1,
+                    "prediction_counts": {
+                      "eligible": 1,
+                      "ineligible": 0,
+                      "uncertain": 1,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 37,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "time": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 2,
+                      "correct": 0,
+                      "accuracy": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 36,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              }
+            },
+            "no_filter_control": {
+              "policy": "predict supported and eligible for every candidate; retain all candidates",
+              "retained_candidate_count": 12,
+              "retention_rate": 1.0,
+              "candidate_count": 12,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 6,
+                    "retained": 6,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 6,
+                    "caught": 0,
+                    "catch_rate": 0.0
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 6,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 6,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 6,
+                "decisive_total": 12,
+                "decisive_accuracy": 0.5,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 4,
+                    "correct": 4,
+                    "accuracy": 1.0
+                  },
+                  "ineligible": {
+                    "total": 4,
+                    "correct": 0,
+                    "accuracy": 0.0
+                  },
+                  "uncertain": {
+                    "total": 4,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 4,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 4,
+                "decisive_total": 8,
+                "decisive_accuracy": 0.5,
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 6,
+                "decisive_total": 6,
+                "both_support_labels_correct": 0,
+                "exact_rate": 0.0,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 0,
+                "items_with_output_tokens": 0
+              }
+            }
+          }
+        }
+      },
+      "tuned": {
+        "receipt_sha256": "af9388bd89f6b7fb0a2716c47a491d9e242272f15357818201572627291b2147",
+        "score": {
+          "split": "dev",
+          "candidate_results": [
+            {
+              "item_id": "case-005::candidate-009",
+              "case_id": "case-005",
+              "candidate_id": "candidate-009",
+              "phenomenon": "attribution",
+              "reference": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 13
+            },
+            {
+              "item_id": "case-005::candidate-010",
+              "case_id": "case-005",
+              "candidate_id": "candidate-010",
+              "phenomenon": "attribution",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 13
+            },
+            {
+              "item_id": "case-011::candidate-021",
+              "case_id": "case-011",
+              "candidate_id": "candidate-021",
+              "phenomenon": "condition",
+              "reference": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 12
+            },
+            {
+              "item_id": "case-011::candidate-022",
+              "case_id": "case-011",
+              "candidate_id": "candidate-022",
+              "phenomenon": "condition",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 12
+            },
+            {
+              "item_id": "case-017::candidate-033",
+              "case_id": "case-017",
+              "candidate_id": "candidate-033",
+              "phenomenon": "actor",
+              "reference": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 11
+            },
+            {
+              "item_id": "case-017::candidate-034",
+              "case_id": "case-017",
+              "candidate_id": "candidate-034",
+              "phenomenon": "actor",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 11
+            },
+            {
+              "item_id": "case-023::candidate-045",
+              "case_id": "case-023",
+              "candidate_id": "candidate-045",
+              "phenomenon": "negation",
+              "reference": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 12
+            },
+            {
+              "item_id": "case-023::candidate-046",
+              "case_id": "case-023",
+              "candidate_id": "candidate-046",
+              "phenomenon": "negation",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 12
+            },
+            {
+              "item_id": "case-029::candidate-057",
+              "case_id": "case-029",
+              "candidate_id": "candidate-057",
+              "phenomenon": "time",
+              "reference": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "ineligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 13
+            },
+            {
+              "item_id": "case-029::candidate-058",
+              "case_id": "case-029",
+              "candidate_id": "candidate-058",
+              "phenomenon": "time",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "ineligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "ineligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 13
+            },
+            {
+              "item_id": "case-035::candidate-069",
+              "case_id": "case-035",
+              "candidate_id": "candidate-069",
+              "phenomenon": "causality",
+              "reference": {
+                "support": "supported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "supported",
+                "eligibility": "uncertain"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 12
+            },
+            {
+              "item_id": "case-035::candidate-070",
+              "case_id": "case-035",
+              "candidate_id": "candidate-070",
+              "phenomenon": "causality",
+              "reference": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "verdict": {
+                "support": "unsupported",
+                "eligibility": "eligible"
+              },
+              "valid": true,
+              "malformed": false,
+              "finish_reason": "eos",
+              "output_tokens": 11
+            }
+          ],
+          "pair_results": [
+            {
+              "case_id": "case-005",
+              "phenomenon": "attribution",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": false
+            },
+            {
+              "case_id": "case-011",
+              "phenomenon": "condition",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": false
+            },
+            {
+              "case_id": "case-017",
+              "phenomenon": "actor",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-023",
+              "phenomenon": "negation",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-029",
+              "phenomenon": "time",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            },
+            {
+              "case_id": "case-035",
+              "phenomenon": "causality",
+              "candidate_count": 2,
+              "decisive": true,
+              "both_support_labels_correct": true
+            }
+          ],
+          "aggregate": {
+            "candidate_count": 12,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 6,
+                  "retained": 6,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 6,
+                  "caught": 4,
+                  "catch_rate": 0.6666666666666666
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 6,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 2,
+                  "unsupported": 4,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 10,
+              "decisive_total": 12,
+              "decisive_accuracy": 0.8333333333333334,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 4,
+                  "correct": 3,
+                  "accuracy": 0.75
+                },
+                "ineligible": {
+                  "total": 4,
+                  "correct": 4,
+                  "accuracy": 1.0
+                },
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 4,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 4,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 3,
+                  "ineligible": 0,
+                  "uncertain": 1,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 4,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 4,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 7,
+              "decisive_total": 8,
+              "decisive_accuracy": 0.875,
+              "uncertain": {
+                "total": 4,
+                "exact_correct": 4,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 4,
+                  "invalid": 0
+                }
+              }
+            },
+            "support_pairs": {
+              "total": 6,
+              "decisive_total": 6,
+              "both_support_labels_correct": 4,
+              "exact_rate": 0.6666666666666666,
+              "excluded_uncertain": 0
+            },
+            "telemetry": {
+              "output_tokens": 145,
+              "items_with_output_tokens": 12
+            },
+            "validity": {
+              "total": 12,
+              "valid": 12,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 12,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "per_phenomenon": {
+              "actor": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 2,
+                      "correct": 2,
+                      "accuracy": 1.0
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 22,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "attribution": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 0,
+                      "catch_rate": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 1,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.5,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 2,
+                      "correct": 2,
+                      "accuracy": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 2,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 0,
+                  "exact_rate": 0.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 26,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "causality": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 2,
+                      "correct": 1,
+                      "accuracy": 0.5
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 1,
+                      "ineligible": 0,
+                      "uncertain": 1,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 1,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.5,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 23,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "condition": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 0,
+                      "catch_rate": 0.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 1,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 0.5,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 2,
+                      "exact_correct": 2,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 2,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 0,
+                  "decisive_accuracy": null,
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 2,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 0,
+                  "exact_rate": 0.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 24,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "negation": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "uncertain": {
+                      "total": 2,
+                      "exact_correct": 2,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 2,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 0,
+                  "decisive_total": 0,
+                  "decisive_accuracy": null,
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 2,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 24,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              },
+              "time": {
+                "candidate_count": 2,
+                "support": {
+                  "by_reference": {
+                    "supported": {
+                      "total": 1,
+                      "retained": 1,
+                      "retention_rate": 1.0
+                    },
+                    "unsupported": {
+                      "total": 1,
+                      "caught": 1,
+                      "catch_rate": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "supported": 0,
+                        "unsupported": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "supported": {
+                      "supported": 1,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "unsupported": {
+                      "supported": 0,
+                      "unsupported": 1,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "eligibility": {
+                  "by_reference": {
+                    "eligible": {
+                      "total": 0,
+                      "correct": 0,
+                      "accuracy": null
+                    },
+                    "ineligible": {
+                      "total": 2,
+                      "correct": 2,
+                      "accuracy": 1.0
+                    },
+                    "uncertain": {
+                      "total": 0,
+                      "exact_correct": 0,
+                      "prediction_counts": {
+                        "eligible": 0,
+                        "ineligible": 0,
+                        "uncertain": 0,
+                        "invalid": 0
+                      }
+                    }
+                  },
+                  "confusion": {
+                    "eligible": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "ineligible": {
+                      "eligible": 0,
+                      "ineligible": 2,
+                      "uncertain": 0,
+                      "invalid": 0
+                    },
+                    "uncertain": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  },
+                  "decisive_exact_correct": 2,
+                  "decisive_total": 2,
+                  "decisive_accuracy": 1.0,
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "support_pairs": {
+                  "total": 1,
+                  "decisive_total": 1,
+                  "both_support_labels_correct": 1,
+                  "exact_rate": 1.0,
+                  "excluded_uncertain": 0
+                },
+                "telemetry": {
+                  "output_tokens": 26,
+                  "items_with_output_tokens": 2
+                },
+                "validity": {
+                  "total": 2,
+                  "valid": 2,
+                  "invalid": 0,
+                  "rate": 1.0,
+                  "malformed": 0,
+                  "truncated": 0,
+                  "finish_reasons": {
+                    "eos": 2,
+                    "length": 0,
+                    "unknown": 0,
+                    "empty": 0
+                  }
+                }
+              }
+            },
+            "no_filter_control": {
+              "policy": "predict supported and eligible for every candidate; retain all candidates",
+              "retained_candidate_count": 12,
+              "retention_rate": 1.0,
+              "candidate_count": 12,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 6,
+                    "retained": 6,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 6,
+                    "caught": 0,
+                    "catch_rate": 0.0
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 6,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 6,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 6,
+                "decisive_total": 12,
+                "decisive_accuracy": 0.5,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 4,
+                    "correct": 4,
+                    "accuracy": 1.0
+                  },
+                  "ineligible": {
+                    "total": 4,
+                    "correct": 0,
+                    "accuracy": 0.0
+                  },
+                  "uncertain": {
+                    "total": 4,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "eligible": 4,
+                      "ineligible": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 4,
+                "decisive_total": 8,
+                "decisive_accuracy": 0.5,
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 4,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 6,
+                "decisive_total": 6,
+                "both_support_labels_correct": 0,
+                "exact_rate": 0.0,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 0,
+                "items_with_output_tokens": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "decision": {
+    "counts": {
+      "baseline": {
+        "good_retained": 5,
+        "bad_caught": 3,
+        "scope_correct": 4,
+        "scope_uncertain_exact": 1,
+        "valid": 12,
+        "pairs_correct": 3
+      },
+      "tuned": {
+        "good_retained": 6,
+        "bad_caught": 4,
+        "scope_correct": 7,
+        "scope_uncertain_exact": 4,
+        "valid": 12,
+        "pairs_correct": 4
+      }
+    },
+    "primary_met": false,
+    "secondary_scope_met": true,
+    "test_release": false,
+    "training_receipt_sha256": "af9388bd89f6b7fb0a2716c47a491d9e242272f15357818201572627291b2147",
+    "model_selected_for_product": false,
+    "human_reviewers": 0
+  },
+  "raw_artifact_sha256": {
+    "examples/synthetic/verifier-pairs-baseline-payload-v1.json": "9584fdf4236f3aaf16b8d57b84364b106457ac4d0ddb73110decefb2de513f18",
+    "examples/synthetic/verifier-pairs-baseline-remote-v1.json": "2a5f5f4c74aa54836c74a88de2919c1839c98338e976ef8ea79e42b339eade54",
+    "examples/synthetic/verifier-pairs-train-payload-v1.json": "d278a897b06d20e8b9025b222cb053f3ffb49bcc7a67455d2a4e4a3ef2146adc",
+    "examples/synthetic/verifier-pairs-train-remote-v1.json": "af9388bd89f6b7fb0a2716c47a491d9e242272f15357818201572627291b2147"
+  },
+  "runtime": {
+    "timings": {
+      "baseline_seconds": 14.108227,
+      "model_load_seconds": 36.994244,
+      "total_seconds": 350.17554,
+      "training_seconds": 281.848014,
+      "tuned_seconds": 15.367943
+    },
+    "memory": {
+      "gpu_name": "NVIDIA A10",
+      "peak_allocated_bytes": 5014802944
+    },
+    "training": {
+      "adapter_artifact_sha256": {
+        "README.md": "d77e992df19e1408fa9a39cc6a0c8ab0d82f7fb0c86bfbe23f255cfe7ca7d017",
+        "adapter_config.json": "9c79cb0e2879e658f96bbad4cc41aa17c603fe03405f70100b3adc86b8692153",
+        "adapter_model.safetensors": "014a21986d0b2fb6fe884ab8346a1708012558632b5dbbe4325c701394e8f9b2"
+      },
+      "adapter_mutation": {
+        "changed": true,
+        "final_state_sha256": "41c9582dd859bc0102f39ffc486a9d363c9f0a1b0a6587c4f1f75d9e182a30bd",
+        "initial_state_sha256": "b6103395f55d067578993bfa50b9f8115a7cd9b6980df03e693fc023ac3b4510"
+      },
+      "adapter_path": "/mnt/tracemem-verifier-pairs-v1/runs/534139fb7e076e7511e85928c51dfe80b2a625138f3bebe50e36be3b77a24106/adapter",
+      "epochs": 4,
+      "microstep_losses": [
+        1.070509910583496,
+        2.3644907474517822,
+        1.6105291843414307,
+        1.0466862916946411,
+        0.0014969916082918644,
+        0.3676792085170746,
+        0.0005183760658837855,
+        0.33967047929763794,
+        0.16918180882930756,
+        0.8366947770118713,
+        0.2733555734157562,
+        0.9064152240753174,
+        0.17325271666049957,
+        0.02709932066500187,
+        0.5747045278549194,
+        0.28131788969039917,
+        0.12680809199810028,
+        1.1102286577224731,
+        0.038868498057127,
+        0.01751132681965828,
+        0.005478068720549345,
+        0.014856141060590744,
+        1.1416234970092773,
+        0.0114949531853199,
+        0.881253182888031,
+        0.8621516227722168,
+        0.0001200524129671976,
+        0.6654980182647705,
+        0.15045757591724396,
+        0.009003759361803532,
+        0.12044692784547806,
+        0.12078186869621277,
+        0.20560969412326813,
+        0.038710858672857285,
+        0.006418487057089806,
+        0.023354247212409973,
+        0.6507490277290344,
+        0.010449714958667755,
+        0.8393173813819885,
+        0.07208643108606339,
+        0.7404029965400696,
+        1.0293365716934204,
+        0.04304301366209984,
+        0.23186951875686646,
+        0.20315229892730713,
+        0.015731530264019966,
+        0.018170295283198357,
+        0.116472028195858,
+        0.04110503941774368,
+        0.0020390672143548727,
+        0.2877928912639618,
+        0.4062369167804718,
+        0.1764318197965622,
+        0.2880963683128357,
+        0.0117625268176198,
+        0.2259504646062851,
+        0.005217624828219414,
+        0.00694991322234273,
+        0.27384045720100403,
+        0.026656754314899445,
+        0.06458672881126404,
+        0.5247552394866943,
+        0.3576858937740326,
+        0.02108052559196949,
+        0.45020949840545654,
+        0.42843097448349,
+        0.029596485197544098,
+        0.08213399350643158,
+        0.18974356353282928,
+        0.12139886617660522,
+        0.037847213447093964,
+        0.0028948066756129265,
+        0.1599854677915573,
+        0.004631089512258768,
+        0.03182534873485565,
+        0.08137337118387222,
+        0.1082860454916954,
+        0.041630782186985016,
+        0.013842216692864895,
+        0.15266944468021393,
+        0.13834844529628754,
+        0.05127016082406044,
+        0.1618214100599289,
+        0.0023519587703049183,
+        0.059143565595149994,
+        0.12959153950214386,
+        0.20644338428974152,
+        0.14770057797431946,
+        0.05014080926775932,
+        0.10778839886188507,
+        0.06777562946081161,
+        0.0015940000303089619,
+        0.05847058817744255,
+        0.03121473640203476,
+        0.049235712736845016,
+        0.02592441998422146,
+        0.056777361780405045,
+        0.11450377106666565,
+        0.03330907225608826,
+        0.01116099487990141,
+        0.06723865121603012,
+        0.04827326163649559,
+        0.21707412600517273,
+        0.10616781562566757,
+        0.032611262053251266,
+        0.06697466224431992,
+        0.04183952137827873,
+        0.034647662192583084,
+        0.1451612114906311,
+        0.012956157326698303,
+        0.1260184943675995,
+        0.023139387369155884,
+        0.041347406804561615,
+        0.015312399715185165,
+        0.004756452981382608,
+        0.09144709259271622,
+        0.39863964915275574,
+        0.0025150340516120195,
+        0.04157576709985733,
+        0.03752285614609718,
+        0.0010802672477439046,
+        0.06556800752878189,
+        0.020725883543491364,
+        0.024767732247710228,
+        0.0244962889701128,
+        0.0024615772999823093,
+        0.0020095575600862503,
+        0.002904720138758421,
+        0.0021606823429465294,
+        0.00945097953081131,
+        0.05609649047255516,
+        0.007616987451910973,
+        0.006534389685839415,
+        0.0006023328751325607,
+        0.0028685887809842825,
+        0.03886556252837181,
+        0.17069925367832184,
+        0.024522285908460617,
+        0.031292714178562164,
+        0.008960866369307041,
+        0.07515036314725876,
+        0.01436575036495924,
+        0.04224908724427223,
+        0.02844586782157421,
+        0.07204091548919678,
+        0.009980189613997936,
+        0.009420694783329964,
+        0.0862371176481247,
+        0.0006131442496553063,
+        0.0005084059084765613,
+        0.08032335340976715,
+        0.008530155755579472,
+        0.0013699836563318968,
+        0.0071988580748438835,
+        0.19887293875217438,
+        0.0029294134583324194,
+        0.02591925859451294,
+        0.017278356477618217,
+        0.0005145425675436854,
+        0.027953512966632843,
+        0.00023678463185206056,
+        0.02174985781311989,
+        0.04669183865189552,
+        0.002665645442903042,
+        0.05969824269413948,
+        0.001239401986822486,
+        0.0004108150606043637,
+        0.003680340712890029,
+        0.023153645917773247,
+        0.02447953261435032,
+        0.0007236369419842958,
+        0.002306400565430522,
+        0.03768056258559227,
+        0.00019966618856415153,
+        0.03075975738465786,
+        0.000800476351287216,
+        0.0003604823723435402,
+        0.0006897134007886052,
+        0.0010809822706505656,
+        0.0018084230832755566,
+        0.00017246059724129736,
+        0.00888892263174057,
+        0.0011689227540045977,
+        0.00044788059312850237,
+        0.0009088063961826265,
+        0.14845676720142365,
+        0.005925789941102266,
+        0.0031291942577809095,
+        0.0020711414981633425,
+        0.0020114844664931297,
+        0.0060148159973323345,
+        0.0032938942313194275
+      ],
+      "microsteps": 192,
+      "optimizer_step_losses": [
+        1.5230540335178375,
+        0.17734126387222204,
+        0.5464118458330631,
+        0.264093613717705,
+        0.3233541436493397,
+        0.29336316499393433,
+        0.6022557190844964,
+        0.10017253295518458,
+        0.0685233217664063,
+        0.3931506387889385,
+        0.5111630251631141,
+        0.08838153816759586,
+        0.18429347866913304,
+        0.1755602948833257,
+        0.0781661873916164,
+        0.24202709691599011,
+        0.24759273789823055,
+        0.08797111245803535,
+        0.06945381930563599,
+        0.07910712226293981,
+        0.08844799373764545,
+        0.1357197668403387,
+        0.05682470940519124,
+        0.041211364325135946,
+        0.05393779999576509,
+        0.1096884636208415,
+        0.04401827696710825,
+        0.0768188126385212,
+        0.0382158380234614,
+        0.12006332661258057,
+        0.028035472641931847,
+        0.007968035992234945,
+        0.018831284949555993,
+        0.012217718467582017,
+        0.058868780033662915,
+        0.04005276714451611,
+        0.04441972938366234,
+        0.022493764830869623,
+        0.052592798485420644,
+        0.01791641765157692,
+        0.01783603163494263,
+        0.01625720011361409,
+        0.012665804009884596,
+        0.017360115627525374,
+        0.000984900281764567,
+        0.002669546644028742,
+        0.03960513944912236,
+        0.0033478340483270586
+      ],
+      "optimizer_steps": 48,
+      "row_count": 48,
+      "trainable_parameter_count": 33030144
+    },
+    "client_elapsed_seconds": 362.648002,
+    "modal_app_id": "ap-HJa7MR7PMNdBcj1ukI4GkO",
+    "modal_function_call_id": "fc-01M52XSNH2042KXFWS6VM2Y38J",
+    "versions": {
+      "accelerate": "1.6.0",
+      "bitsandbytes": "0.45.5",
+      "modal": "1.6.1",
+      "peft": "0.15.2",
+      "python": "3.12.10",
+      "safetensors": "0.5.3",
+      "tokenizers": "0.21.1",
+      "torch": "2.7.1",
+      "transformers": "4.51.3"
+    },
+    "tokenizer": {
+      "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "class": "Qwen2TokenizerFast",
+      "eos_token_id": 151645,
+      "is_fast": true
+    }
+  },
+  "interpretation": {
+    "unsupported_accepted_before": 2,
+    "unsupported_accepted_after": 2,
+    "strict_catch_gain": "One unsupported-reference output changed from uncertain to unsupported; source-unsupported acceptance did not fall.",
+    "supported_retention_gain": 1,
+    "decisive_scope_gain": 3,
+    "generalization_established": false,
+    "extraction_recall_measured": false,
+    "qa_improvement_measured": false,
+    "private_data_used": false,
+    "test_inference_run": false,
+    "product_model_selected": false,
+    "standalone_and_matched_base_outputs_identical": true
+  },
+  "remaining_errors": [
+    {
+      "item_id": "case-005::candidate-010",
+      "error": "Reporting source dropped; still predicted supported."
+    },
+    {
+      "item_id": "case-011::candidate-022",
+      "error": "Dry-by-noon condition dropped; still predicted supported."
+    },
+    {
+      "item_id": "case-035::candidate-069",
+      "error": "Source support now correct, scope incorrectly uncertain instead of eligible."
+    }
+  ]
+}

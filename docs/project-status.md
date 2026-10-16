@@ -10,11 +10,11 @@ has the project overview and architecture diagram.
 ## Phase and boundary
 
 Phase 0 inventory and Phase 1 infrastructure are complete.
-Phase 2 evaluation work continues on fictional data; Phase 3 diagnostic SFT is
-complete for the current four-run series. Four synthetic-only runs have trained
-Qwen3-4B adapters. No specialist has been validated or selected for product
-use. Gate A remains unmet because there is no independent human validation of
-the claims or evidence.
+Phase 2 evaluation continues on fictional data. Four extraction SFT runs and
+one paired-verifier QLoRA diagnostic are complete. The latest verifier run
+missed its primary development criterion; no model has been validated or
+selected for product use. Gate A remains unmet because claims and evidence
+have no independent human validation.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
@@ -34,16 +34,22 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## Current data work: paired verifier seed
+## Current paired-verifier result
 
-A new [36-scenario corpus](verifier-pairs-data-card.md) pairs faithful claims
-with small changes in meaning. Both candidates cite the same valid source span.
-The strict schema keeps source support and memory scope separate, including
-uncertain scope. CPU tooling audits all splits and exports only the 48 training
-rows. Labels and root review are agent-only; the test split is curator-visible.
-This prepares the next diagnostic, with no new model-quality result.
+The [36-scenario corpus](verifier-pairs-data-card.md) pairs supported claims
+with small changes in meaning and keeps source support separate from memory
+scope. A Qwen3-4B adapter trained on 48 fictional rows. On 12 curator-visible
+dev candidates, supported retention increased from 5/6 to 6/6 and unsupported
+catches from 3/6 to 4/6; the number of unsupported claims still labeled
+supported stayed at 2/6. The primary criterion failed. Decisive scope labels
+correct increased from 4/8 to 7/8, passing the separate secondary criterion.
+The test split remains unrun; labels have zero human reviewers. See the
+[results](verifier-pairs-model-results.md), [machine-scored report](verifier-pairs-model-results.json),
+[validation record](validation-verifier-pairs-model.json), and frozen
+[protocol](verifier-pairs-model-protocol.md). This small diagnostic does not
+establish QA benefit, extraction recall, or generalization.
 
-## Latest completed training experiment: quote-v4
+## Earlier extraction experiment: quote-v4
 
 V4 compared the pinned base, unchanged quote-v3 adapter, and a newly trained
 adapter on 12 dev and 24 frozen test cases. On test, the tuned arm completely
@@ -56,7 +62,7 @@ reviewers. See the [results report](sft-quote-v4-results.md) and the
 [protocol](sft-quote-v4-protocol.md). The test is spent; no tuning against it
 is planned. No model was selected and Gate A remains unmet.
 
-## Latest prompt baseline: quote-only Qwen3 comparison
+## Earlier prompt baseline: quote-only Qwen3 comparison
 
 The adaptive development comparison covered 12 fictional cases, with 4B and
 8B Qwen3 models each receiving both `quote-v2` and `quote-coverage-v1`. Paired
@@ -69,7 +75,7 @@ reviewers and root reviewed the outputs; there were zero human reviewers and
 the semantic labels remain provisional. See the [full baseline report](quote-baseline-results.md)
 and [protocol](quote-baseline-protocol.md).
 
-## Latest verifier check: development criterion failed
+## Earlier quote-v2 verifier check: development criterion failed
 
 Qwen3-8B judged 39 Qwen3-4B `quote-v2` candidates that passed the exact
 deterministic gate. It retained 35/36 provisionally good claims, but also kept
@@ -148,15 +154,12 @@ Check `.local/active-cycle.json` before any new remote run.
 
 ## Next gate
 
-The failed result is frozen. Two separate follow-ups remain: review the opt-in
-[quote-data v3 contract](quote-data-v3-contract.md), which changes the version
-and 12-message bound while preserving literal citation checks and adding length
-validation; and review the prospective v0.1 [verifier annotation
-contract](verifier-annotation-contract.md), which proposes separate labels
-for semantic support and eligibility. The annotation policy is not human-approved;
-unresolved eligibility stays uncertain in future diagnostics. Independent human
-review is needed for human-validated or product-quality claims; the policy
-ambiguity is not resolved. The sealed longer-conversation candidate remains unopened. No further GPU
-run was launched. Do not run a fifth extraction target-tweak SFT. No production
-model was selected; Gate A remains unmet. Verify `.local/active-cycle.json` and
-live state by 2026-10-23 and before any remote call.
+Keep the paired-verifier test split unrun. Broaden independent attribution and
+condition cases, then evaluate the frozen adapter on a larger, independent set
+before considering more verifier training. Independent human annotation is
+still required before a human-validated or product-quality claim; the sealed
+longer-conversation candidate remains unopened. The prospective v0.1
+[annotation contract](verifier-annotation-contract.md) is not human-approved;
+uncertain scope must remain separate. Do not run another extraction target-
+tweak SFT. No production model was selected and Gate A remains unmet. Check
+`.local/active-cycle.json` and live state before any remote call.

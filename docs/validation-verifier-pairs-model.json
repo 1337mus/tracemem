@@ -1,0 +1,79 @@
+{
+  "created_at_utc": "2026-10-16T18:10:15.189678+00:00",
+  "scope": "paired verifier scorer, bounded Modal baseline and QLoRA training, offline receipt replay",
+  "status": "local checks passed; private signed delivery and hosted CI pending",
+  "source_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "tool_session_id": 19255,
+    "attempted": 961,
+    "passed": 960,
+    "skipped": 1,
+    "test_seconds": 66.349,
+    "ruff_check": "passed",
+    "ruff_formatted_files": 198,
+    "configured_mypy_source_files": 58,
+    "log": ".local/verifier-model-20261016/root-full-check-v2.log",
+    "log_sha256": "41a7c69c8eb0b5eb3c4858c8a9d41e72375fa00fd4bd86e16e0149b06591db73"
+  },
+  "focused_tests": {
+    "scorer": 13,
+    "runner": 13,
+    "evaluator": 12
+  },
+  "prior_full_check": {
+    "log": ".local/verifier-model-20261016/root-full-check-v1.log",
+    "log_sha256": "727f099e9d8aceac07f6375faae4096d64a36b6520fcec717724d8c07cc861a3",
+    "result": "One test failed because the new launch-failure test acquired the real operational launch lock while training was running. The test now uses a temporary lock; focused test and full rerun passed."
+  },
+  "source_sha256": {
+    "experiments/verifier_pairs.py": "9d728c5376e0d649dfb06411b5c4ecd69b3036ae7e915e547368c745b9e95cae",
+    "experiments/modal_verifier_pairs.py": "1a43e8185fcf0f1ed1002c1a9dfde812a48b6919d9a98d0e89cab134cbc9d9ea",
+    "experiments/evaluate_verifier_pairs.py": "60d3f222dd44f7db8f2b6563267483428088f4209b54656d0c49449c8ae928a4",
+    "tests/test_verifier_pairs.py": "bab2f8097df648789940693da7249577ae0c343f9b13536a3819daeadb77f2b4",
+    "tests/test_modal_verifier_pairs.py": "3ceda1d1d65836156f17c3a27241cb65a67a74ea7d6d6345c56026bf117239b4",
+    "tests/test_evaluate_verifier_pairs.py": "8d0991aa26d0c8cea8ad0e0c015ca153219497a3a445af767c0eadc8b81d0458",
+    "training/verifier_data.py": "ada22823e053042d6d20e533f35410d852855607c8f6d51fd3cab93d8a4234c6",
+    "examples/synthetic/verifier-pairs-v1.json": "9442f2703ccf98c602579009f1759a41377fd860f5648626c2b26da2f8ea0358",
+    "pyproject.toml": "c6aca925108e1d3c1c29bb2b9a8f44cdb83a4379deabdcb766ff257f5cc5f24c"
+  },
+  "root_review": ".local/verifier-model-20261016/root-final-review-v1.json",
+  "replay": {
+    "record": ".local/verifier-model-20261016/root-final-replay-v1.json",
+    "receipt_copies_byte_identical": true,
+    "reports_equal_saved_evaluations": true,
+    "machine_report_equal_replay": true,
+    "payloads_equal_current_builders": true,
+    "standalone_matches_training_baseline_including_token_ids": true
+  },
+  "compute": {
+    "training_completed": true,
+    "training_rows": 48,
+    "microsteps": 192,
+    "optimizer_steps": 48,
+    "training_seconds": 281.848014,
+    "worker_seconds": 350.17554,
+    "client_seconds": 362.648002,
+    "reported_gpu": "NVIDIA A10",
+    "failed_pre_inference_baselines": 1,
+    "successful_baseline_calls": 1,
+    "successful_training_calls": 1,
+    "new_gpu_calls_during_closeout": 0,
+    "personal_workspace_verified": true,
+    "postrun_inventory": ".local/verifier-model-20261016/root-closeout-inventory-v1.json",
+    "active_tasks": 0,
+    "billing": "Not measured; timings are observed runtime, not billed cost."
+  },
+  "boundaries": {
+    "data": "reviewed authored fiction only",
+    "private_sources": "read-only and unused for this model experiment",
+    "weights": "private Modal volume; no local download",
+    "heuristic_privacy_scan": "zero indicators in the four new fictional payload/receipt files and results JSON; not proof of absence",
+    "test_inference": false,
+    "sealed_candidate": "unopened",
+    "automation": "paused",
+    "public_publication": false,
+    "product_model_selected": false,
+    "human_reviewers": 0
+  }
+}

@@ -9,38 +9,26 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today. Four fiction-only SFT runs have trained
-adapters, but none has been validated or selected for product use.**
+**The local search tool works today; no research model has been selected for
+product use.** We trained Qwen3-4B as a verifier on fictional examples. It kept
+all six supported development claims but still labeled two of six unsupported
+claims as supported, so it failed its primary criterion. The small dev set has
+provisional, agent-only labels. See the
+[paired-verifier results](docs/verifier-pairs-model-results.md) and frozen
+[protocol](docs/verifier-pairs-model-protocol.md). These results do not show
+QA benefit, extraction recall, or generalization.
 
-The fourth run tested seven reviewed training-family corrections on fresh
-fictional conversations. It retained fewer complete test cases than the prior
-adapter and had more adverse responses, so it failed its predeclared criteria.
-AI agents reviewed the results; no human review has happened. See the
-[quote-v4 results](docs/sft-quote-v4-results.md) for counts and limits, and the
-[protocol](docs/sft-quote-v4-protocol.md) for the frozen comparison rules.
-The earlier [quote-v2](docs/sft-quote-v2-results.md) and
-[pilot](docs/sft-pilot-results.md) results remain documented.
+Earlier extraction and verifier experiments remain documented in the
+[quote-v4 results](docs/sft-quote-v4-results.md), [quote verifier results](docs/quote-verifier-dev-results.md),
+[prompt baseline](docs/quote-baseline-results.md), [quote-v2 results](docs/sft-quote-v2-results.md),
+and [pilot results](docs/sft-pilot-results.md). The four extractor runs and
+their findings are unchanged by the verifier experiment.
 
-The prompt comparison found no selected-fact retention gain from Qwen3-8B or
-the broader prompt. A later Qwen3-8B verifier failed its development criterion:
-it retained all three provisionally bad claims and rejected one provisionally
-good claim. Separate fact coverage stayed at 17/20 (6/9 complete cases). These
-same-family agent labels are provisional; no product model was selected. See
-the [verifier results](docs/quote-verifier-dev-results.md) and
-[prompt baseline](docs/quote-baseline-results.md).
-
-The next experiment teaches a verifier to distinguish a faithful claim from a
-small change in meaning, even when both have valid citations. The new
-[paired-data seed](docs/verifier-pairs-data-card.md) separates source support
-from personal-memory scope. Its CPU audit and train-only exporter prepare a
-controlled comparison; this step does not establish a model-quality gain.
-
-All four adapters trained on newly written fictional conversations. We
-inspected a sample of the owner's real agent logs locally to check the transcript readers,
-but those logs were not training data and have not been evaluated with the
-trained extractors. The models have not learned the owner's personal history. Real
-conversations belong in the searchable evidence store; training is intended
-to teach the model how to read them accurately.
+This run used only newly authored fictional cases; no private conversation
+was included in its training or evaluation data or uploaded. Some owner agent
+logs were inspected locally for transcript-reader checks only; they were not
+model data. Real conversations remain local searchable evidence, and claims
+still need source review. See [data governance](docs/data-governance.md).
 
 ## What works
 

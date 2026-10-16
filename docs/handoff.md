@@ -1,4 +1,47 @@
-# Current checkpoint: verifier seed reviewed; matched model experiment next
+# Current checkpoint: paired verifier misses primary gate; no model selected
+
+Updated 2026-10-16 UTC. The completed synthetic [paired-verifier run](verifier-pairs-model-results.md)
+used 48 train rows, four epochs, 192 microsteps, and 48 optimizer steps. On
+12 curator-visible dev candidates, supported retention moved 5/6 to 6/6,
+unsupported catches 3/6 to 4/6, and decisive scope exactness 4/8 to 7/8.
+The primary criterion failed because two unsupported claims remain labeled
+supported; the secondary scope criterion passed. The test split is unrun and
+no product model was selected.
+
+The gain in unsupported catches changed one unsupported reference from
+`uncertain` to `unsupported`; it did not reduce source-unsupported false
+accepts. Remaining misses: `case-005::candidate-010` drops the handbill's
+reporting source and `case-011::candidate-022` drops the “dry by noon”
+condition. `case-035::candidate-069` retained support after tuning but scope
+became uncertain. The six-pair result is a tiny correlated, curator-visible
+diagnostic with provisional labels and zero human reviewers; it establishes
+no QA, recall, or generalization claim. Training loss fell from 1.523054 to
+0.003348, which is not quality evidence.
+
+Training used 33,030,144 trainable LoRA parameters on a reported NVIDIA A10.
+Training, worker, and client times were 281.848014s, 350.175540s, and
+362.648002s. The standalone baseline outputs match the training call's
+pre-training baseline outputs item by item. The first baseline attempt failed
+before model loading on missing Modal distribution metadata; the repaired
+runtime check changed no prompts or criteria. The adapter remains in the
+private Modal volume, no private conversations were uploaded or used as model
+data, and the sealed longer-conversation candidate remains unopened. The four
+original extractor runs are unchanged.
+
+Post-run inventory showed all Modal apps stopped and zero active tasks;
+automation remains paused. Verify the stopped-job snapshot by 2026-10-17 and
+before any future remote call. The frozen test must stay unrun. Next, broaden
+independent attribution and condition cases, then evaluate the frozen adapter
+on a larger independent set before considering another SFT. Replay artifacts
+and the evaluator command are in the [results report](verifier-pairs-model-results.md).
+Check `.local/active-cycle.json` for current delivery state; this checkpoint
+does not assert commit or CI status.
+
+Final local validation attempted 961 tests: 960 passed and one was skipped;
+Ruff checked 198 formatted files and mypy checked 58 source files. See the
+[validation record](validation-verifier-pairs-model.json).
+
+## Previous checkpoint: verifier seed reviewed; matched model experiment next
 
 Updated 2026-10-16 UTC. The new [paired-data seed](verifier-pairs-data-card.md)
 contains 36 fictional scenarios and 72 candidate claims. Each pair has one
