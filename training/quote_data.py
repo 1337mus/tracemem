@@ -33,12 +33,24 @@ _CONTENT_KINDS = {"conversation", "quoted_document", "tool_result"}
 
 def validate_dataset(payload: object, split: str) -> list[dict[str, Any]]:
     """Validate and return one authored-fiction quote-v2 split."""
+    return _validate_dataset(payload, split, required_version=2, max_messages=6)
+
+
+def validate_long_dataset(payload: object, split: str) -> list[dict[str, Any]]:
+    """Validate one authored-fiction quote-v3 split with up to twelve messages."""
+    return _validate_dataset(payload, split, required_version=3, max_messages=12)
+
+
+def _validate_dataset(
+    payload: object, split: str, *, required_version: int, max_messages: int
+) -> list[dict[str, Any]]:
+    """Validate a versioned authored-fiction quote split."""
     if split not in _SPLITS:
         raise ValueError("split must be train, dev, or test")
     if type(payload) is not dict or set(payload) != _ROOT_KEYS:
         raise ValueError("dataset root has missing or unexpected fields")
-    if type(payload["version"]) is not int or payload["version"] != 2:
-        raise ValueError("version must be integer 2")
+    if type(payload["version"]) is not int or payload["version"] != required_version:
+        raise ValueError(f"version must be integer {required_version}")
     if payload["license"] != "MIT":
         raise ValueError("license must be MIT")
     if payload["annotation_status"] != "agent_authored":
@@ -78,8 +90,9 @@ def validate_dataset(payload: object, split: str) -> list[dict[str, Any]]:
             entity_ids.add(entity_id)
         _require_string_list(case["tags"], "tags", allow_empty=False)
         messages = case["messages"]
-        if type(messages) is not list or not 1 <= len(messages) <= 6:
-            raise ValueError(f"case {case_id} must have one to six messages")
+        if type(messages) is not list or not 1 <= len(messages) <= max_messages:
+            message_limit = {6: "six", 12: "twelve"}.get(max_messages, str(max_messages))
+            raise ValueError(f"case {case_id} must have one to {message_limit} messages")
         conversation: list[tuple[str, str, str]] = []
         for message in messages:
             _require_mapping(message, _MESSAGE_KEYS, "message")

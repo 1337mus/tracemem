@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "validated_at_utc": "2026-10-16T09:16:52.716130+00:00",
+  "root_review": "Shared validator diff, all invented tests and versioned contract inspected; v2 version/message bound/error preserved; opt-in v3 only; no caller changes or unresolved substantive finding.",
+  "source_sha256": {
+    "training/quote_data.py": "a02a391254f3f35ef99ae1403618c5c082ed2ea56c1af0c7b9826bdba21c1ef8",
+    "tests/test_long_quote_data.py": "f867cc7ef47ddc51c09a980b3fde99e3012bda32eece4cde7df855145942552a",
+    "docs/quote-data-v3-contract.md": "c5c5d94fdbff456c37d2a2e6b2a6c02df69665d1e657fd3742d80d6491cb4f5c"
+  },
+  "full_local_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "attempted": 901,
+    "passed": 900,
+    "skipped": 1,
+    "ruff_formatted_files": 188,
+    "configured_mypy_source_files": 53,
+    "log_sha256": "88dc24a80b509db29cc92fe110e41f050f0d45d7b8fbdfe26b10445a3a3cdc5c"
+  },
+  "focused_old_and_new_tests": 23,
+  "extra_strict_mypy_changed_source_and_new_test": {
+    "exit_code": 0,
+    "files": 2
+  },
+  "optional_expanded_check": {
+    "scope": "Unchanged tests/test_quote_data.py, outside configured mypy scope",
+    "result": "five object-typing errors reported by optional expanded mypy; file left unchanged; configured source and new test strict checks pass"
+  },
+  "verifier_cpu_replay_after_refactor": "byte-identical",
+  "legacy_fixtures_and_receipts": "unchanged",
+  "sealed_candidate": "unopened, not used in tests or review",
+  "remote_compute": "none for this contract slice",
+  "delivery": "recorded after signing and push in local active-cycle; exact-head hosted CI for this follow-up not claimed by earlier verifier CI"
+}
