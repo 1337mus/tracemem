@@ -17,6 +17,9 @@ fictional test, but left out more important facts. It failed the experiment's
 success criteria. AI agents reviewed the results; no human review has happened.
 See the [results report](docs/sft-quote-v3-results.md) for the counts and
 limitations.
+We are preparing a fourth comparison with [reviewed training targets](docs/training-target-review.md)
+and fresh conversations. Its [protocol](docs/sft-quote-v4-protocol.md) sets the
+success criteria before the model produces any answers.
 The earlier [quote-v2](docs/sft-quote-v2-results.md) and
 [pilot](docs/sft-pilot-results.md) results remain documented.
 

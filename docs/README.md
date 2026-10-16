@@ -53,6 +53,11 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Training-target audit](training-target-review.md): seven source-preserving
+  corrections, literal review checks and a reproducible 768-row corpus.
+- [Fourth experiment protocol](sft-quote-v4-protocol.md): fresh evaluation,
+  matched base/prior/tuned arms and predeclared success criteria; preparation only.
+
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.
 

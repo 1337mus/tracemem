@@ -56,10 +56,12 @@ def _write_fake_prior_adapter(prior_path: Path) -> dict[str, object]:
     }
 
 
-def _run_quote_v3_training(
+def _run_quote_training(
     remote_run_dir: Path,
     metadata: dict[str, object],
     *,
+    profile_name: str = "quote-v3",
+    dev_max_new_tokens: int = 512,
     tracking: dict[str, object] | None = None,
     tamper_during_tuned_generation: bool = False,
     leave_prior_lora_after_unload: bool = False,
@@ -264,9 +266,9 @@ def _run_quote_v3_training(
     transformers_module.BitsAndBytesConfig = lambda **kwargs: kwargs
 
     profile = SimpleNamespace(
-        name="quote-v3",
+        name=profile_name,
         train_context_tokens=64,
-        dev_max_new_tokens=512,
+        dev_max_new_tokens=dev_max_new_tokens,
         train_steps=1,
     )
     tokenizer = FakeTokenizer()
@@ -279,6 +281,7 @@ def _run_quote_v3_training(
         _load_pinned_tokenizer=lambda: tokenizer,
         _tokenizer_provenance=lambda *_: {"revision": "pinned"},
         _QUOTE_V3_PRIOR_ADAPTER=metadata,
+        _QUOTE_V4_PRIOR_ADAPTER=metadata,
         preflight_train_rows=lambda *_args, **_kwargs: {"status": "ready"},
         encode_sft_example=lambda *_args, **_kwargs: {
             "input_ids": [1, 2],
@@ -296,7 +299,7 @@ def _run_quote_v3_training(
         MICROBATCH_SIZE=1,
     )
     request = {
-        "profile": "quote-v3",
+        "profile": profile_name,
         "train_rows": [{"case_id": "train-1"}],
         "dev_prompts": [{"case_id": "dev-1", "prompt": "prompt-1"}],
         "remote_run_dir": str(remote_run_dir),
@@ -325,7 +328,7 @@ class RemoteQuoteV3Tests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary_dir:
             prior_path = Path(temporary_dir) / "prior"
             metadata = _write_fake_prior_adapter(prior_path)
-            run = _run_quote_v3_training(Path(temporary_dir) / "run", metadata)
+            run = _run_quote_training(Path(temporary_dir) / "run", metadata)
 
         result = run["result"]
         events = run["events"]
@@ -384,7 +387,7 @@ class RemoteQuoteV3Tests(unittest.TestCase):
             tracking: dict[str, object] = {}
 
             with self.assertRaisesRegex(RuntimeError, "hash mismatch for adapter_config.json"):
-                _run_quote_v3_training(Path(temporary_dir) / "run", metadata, tracking=tracking)
+                _run_quote_training(Path(temporary_dir) / "run", metadata, tracking=tracking)
 
         self.assertEqual(tracking["generation_calls"], [])
         self.assertFalse(any(event[0] == "load-prior" for event in tracking["events"]))
@@ -395,7 +398,7 @@ class RemoteQuoteV3Tests(unittest.TestCase):
             tracking: dict[str, object] = {}
 
             with self.assertRaisesRegex(RuntimeError, "hash mismatch for adapter_config.json"):
-                _run_quote_v3_training(
+                _run_quote_training(
                     Path(temporary_dir) / "run",
                     metadata,
                     tracking=tracking,
@@ -413,7 +416,7 @@ class RemoteQuoteV3Tests(unittest.TestCase):
             tracking: dict[str, object] = {}
 
             with self.assertRaisesRegex(RuntimeError, "parameters remained after unload"):
-                _run_quote_v3_training(
+                _run_quote_training(
                     Path(temporary_dir) / "run",
                     metadata,
                     tracking=tracking,

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "PREPARATION",
+  "as_of": "2026-10-16",
+  "validation": {
+    "focused_sft_tests": {
+      "status": "PASS",
+      "count": 80,
+      "reported_by": "root agent"
+    },
+    "harness_and_remote_tests": {
+      "status": "PASS",
+      "count": 13,
+      "reported_by": "root agent"
+    },
+    "ruff_check_and_format": {
+      "status": "PASS",
+      "file_count": 174,
+      "reported_by": "root agent"
+    },
+    "mypy": {
+      "status": "PASS",
+      "source_file_count": 49,
+      "reported_by": "root agent"
+    },
+    "full_suite": {
+      "status": "PASS",
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "attempted": 810,
+      "passed": 809,
+      "skipped": 1,
+      "exit_code": 0,
+      "log": ".local/target-quality-20261015/root-review/make-check-v1.log"
+    }
+  },
+  "training": {
+    "status": "FROZEN_UNCHANGED",
+    "rows": 768,
+    "correlated_families": 72,
+    "empty_targets": 140,
+    "expected_claims": 696,
+    "revised_rows": 64,
+    "revised_families": 7,
+    "v4t_identifiers_change_token_strings": true
+  },
+  "evaluation": {
+    "status": "FROZEN",
+    "dev": {
+      "cases": 12,
+      "claims": 20,
+      "empty_targets": 3,
+      "messages": 48,
+      "sha256": "b9efbc113e24112786475333868f781baae3af58d43bee7bdc338f229f651cc0"
+    },
+    "test": {
+      "cases": 24,
+      "claims": 53,
+      "empty_targets": 6,
+      "messages": 104,
+      "message_distribution": {
+        "four_messages": 17,
+        "five_messages": 6,
+        "six_messages": 1
+      },
+      "sha256": "dbe107d63ea59f010feec101b25c55b4ffbf55b7d6600993cd5caac5fa8e095e"
+    },
+    "sessions_per_case": 2,
+    "final_edits": "E01-E09 replaced with varied scenarios; E10 remains claim-bearing and unchanged; E19-E24 are abstentions; final D03 claim-precision correction applied",
+    "review": "Independent first pass within the same model family, followed by root-agent review; zero human reviewers",
+    "selected_fact_coverage_is_exhaustive": false,
+    "source_and_training_freeze_unchanged": true,
+    "original_precorrection_bytes_preserved_locally": true
+  },
+  "literal_overlap_audit": {
+    "cases": 804,
+    "scenario_entity_template_id_overlap": false,
+    "exact_duplicate": false,
+    "cross_split_jaccard_at_least_0_8": false,
+    "semantic_proof": false,
+    "family_isolation_or_generalization_proven": false
+  },
+  "training_job": {
+    "status": "PREPARED_NOT_LAUNCHED",
+    "sha256": "9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a",
+    "job_path": ".local/sft-quote-v4-20261016/training-job-v1.json",
+    "summary_path": ".local/sft-quote-v4-20261016/training-summary-v1.json",
+    "fourth_gpu_call": "NOT_LAUNCHED"
+  },
+  "delivery": {
+    "target_commit": "9009c17",
+    "signature": "SIGNED_LOCAL",
+    "pushed": false,
+    "harness_delivery": "PENDING_SIGNED_DELIVERY"
+  },
+  "code_paths": [
+    "experiments/modal_sft.py",
+    "experiments/sft_launch.py",
+    "training/train_sft.py",
+    "training/remote_sft.py",
+    "training/build_reviewed_quote_train.py",
+    "training/review_quote_targets.py",
+    "training/evaluate_quote_v4.py",
+    "tests/test_quote_v4_launch.py",
+    "tests/test_remote_quote_v4.py",
+    "tests/test_build_reviewed_quote_train.py",
+    "tests/test_review_quote_targets.py",
+    "tests/test_evaluate_quote_v4.py"
+  ],
+  "related_docs": [
+    "sft-quote-v4-protocol.md",
+    "training-target-review.md",
+    "../datasets/sft-quote-v4/README.md"
+  ]
+}

@@ -71,7 +71,13 @@ def _strict_schema_claims(parsed: dict[str, Any]) -> list[dict[str, Any]]:
     return claims
 
 
-def _validated_outputs(raw: object, expected_ids: set[str], label: str) -> dict[str, JsonMap]:
+def _validated_outputs(
+    raw: object,
+    expected_ids: set[str],
+    label: str,
+    *,
+    max_new_tokens: int = 512,
+) -> dict[str, JsonMap]:
     if type(raw) is not list:
         raise ValueError(f"{label} outputs must be a list")
     outputs: dict[str, dict[str, Any]] = {}
@@ -88,17 +94,17 @@ def _validated_outputs(raw: object, expected_ids: set[str], label: str) -> dict[
             row.get("completion_token_ids"), f"{label} completion_token_ids"
         )
         generated = row.get("generated_tokens")
-        if type(generated) is not int or not 0 <= generated <= GENERATION["max_new_tokens"]:
+        if type(generated) is not int or not 0 <= generated <= max_new_tokens:
             raise ValueError(f"{label} generated_tokens is invalid")
         if len(completion_ids) != generated:
             raise ValueError(f"{label} completion token count does not match generated_tokens")
         if (
-            row.get("max_new_tokens") != GENERATION["max_new_tokens"]
+            row.get("max_new_tokens") != max_new_tokens
             or type(row.get("max_new_tokens")) is not int
         ):
             raise ValueError(f"{label} generation settings differ from the contract")
         truncated = row.get("reached_generation_limit")
-        if type(truncated) is not bool or (truncated and generated != GENERATION["max_new_tokens"]):
+        if type(truncated) is not bool or (truncated and generated != max_new_tokens):
             raise ValueError(f"{label} truncation metadata is inconsistent")
         if type(row.get("response_text")) is not str or type(row.get("raw_text")) is not str:
             raise ValueError(f"{label} raw response fields must be strings")

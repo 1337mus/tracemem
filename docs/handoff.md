@@ -1,4 +1,31 @@
-# Current checkpoint: quote-v3 results adjudicated
+# Current checkpoint: fourth experiment ready to launch
+
+Updated 2026-10-16 UTC. Verify live state in `.local/active-cycle.json`.
+The [protocol](sft-quote-v4-protocol.md), reviewed training corpus and new
+evaluation cases are frozen before generation. No fourth GPU call has started.
+
+Seven training-family corrections affect 64 of 768 rows; the corpus has 696
+claims and 140 empty rows across 72 correlated families. Root checked source
+preservation. The target-review code and fictional corpus are signed locally in
+`9009c17600dba9e4eedc04f0725e614793952850`; private push is pending.
+
+Root reviewed all 36 evaluation cases and 73 selected expected claims after a
+fresh-context author and same-model-family reviewer corrected clipped support
+and replaced nine parallel test scenarios. Dev has 12 cases (three empty);
+test has 24 (six empty). There are zero human reviewers. Literal split checks
+found no declared ID overlaps, exact duplicates or cross-split Jaccard matches
+at 0.8; semantic independence and generalization remain unproven.
+
+Full source validation passed: 809 tests passed, one skipped, Ruff/format across
+174 files and strict mypy across 49 source files. The prepared job is
+`9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a`,
+under `.local/sft-quote-v4-20261016/`. Personal Modal identity passed; fresh
+inventory contained zero apps. Recheck through the launch guard before calling.
+Only fiction enters the job; original conversations, Context Kit and local
+context remain read-only. No improvement or production selection is claimed.
+Automation stays paused.
+
+## Previous checkpoint: quote-v3 results adjudicated
 
 Updated 2026-10-16 UTC. V3 training, structural scoring, blind test review, and
 root adjudication are complete. The result is mixed: adverse test responses

@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,40 @@ _SHA256_LENGTH = 64
 JsonMap = dict[str, Any]
 
 
+@dataclass(frozen=True)
+class _EvaluatorContract:
+    profile: str
+    prior_adapter: JsonMap
+    prior_checkpoint_label: str
+    cohort_sizes: tuple[tuple[str, int], ...]
+    generation: dict[str, Any]
+    model_id: str
+    model_revision: str
+    report_type: str
+    train_row_count: int
+    training_counts: tuple[tuple[str, int], ...]
+    prompt_fixture_description: str
+
+
+_V3_CONTRACT = _EvaluatorContract(
+    profile="quote-v3",
+    prior_adapter=_QUOTE_V3_PRIOR_ADAPTER,
+    prior_checkpoint_label="quote-v2",
+    cohort_sizes=tuple(COHORT_SIZES.items()),
+    generation=GENERATION,
+    model_id=MODEL_ID,
+    model_revision=MODEL_REVISION,
+    report_type="provisional quote-v3 cohort development diagnostic",
+    train_row_count=768,
+    training_counts=(
+        ("max_steps", 192),
+        ("optimizer_steps", 192),
+        ("examples_consumed", 768),
+    ),
+    prompt_fixture_description="three evaluation fixtures",
+)
+
+
 def _is_sha256(value: object) -> bool:
     return (
         type(value) is str
@@ -44,6 +79,12 @@ def _load_fixture(path: Path, label: str, split: str, count: int) -> tuple[bytes
     if len(cases) != count:
         raise ValueError(f"{label} must contain exactly {count} cases")
     return raw, cases
+
+
+def _natural_join(items: tuple[str, ...]) -> str:
+    if len(items) == 2:
+        return f"{items[0]} and {items[1]}"
+    return f"{', '.join(items[:-1])}, and {items[-1]}"
 
 
 def _strip_outer_json_fence(text: str) -> tuple[str, bool]:
@@ -91,6 +132,28 @@ def evaluate_report(
     test_path: Path,
 ) -> dict[str, Any]:
     """Validate the frozen job and score regression, dev, and test independently."""
+    return _evaluate_report(
+        job_path,
+        receipt_path,
+        fixture_paths={
+            "regression": regression_path,
+            "dev": dev_path,
+            "test": test_path,
+        },
+        contract=_V3_CONTRACT,
+    )
+
+
+def _evaluate_report(
+    job_path: Path,
+    receipt_path: Path,
+    *,
+    fixture_paths: dict[str, Path],
+    contract: _EvaluatorContract,
+) -> dict[str, Any]:
+    """Run one closed profile contract over its ordered fixture cohorts."""
+    cohort_sizes = dict(contract.cohort_sizes)
+    generation_settings = contract.generation
     job_bytes, receipt_bytes = job_path.read_bytes(), receipt_path.read_bytes()
     job = _json_object(job_bytes, "job")
     receipt = _json_object(receipt_bytes, "receipt")
@@ -99,82 +162,94 @@ def evaluate_report(
     request = job.get("request")
     if type(request) is not dict or request.get("mode") != "train":
         raise ValueError("job must contain a train request")
-    if request.get("profile") != "quote-v3":
-        raise ValueError("job request profile must be quote-v3")
-    if request.get("prior_adapter") != _QUOTE_V3_PRIOR_ADAPTER:
-        raise ValueError("job prior adapter does not match the pinned quote-v2 checkpoint")
+    if request.get("profile") != contract.profile:
+        raise ValueError(f"job request profile must be {contract.profile}")
+    if request.get("prior_adapter") != contract.prior_adapter:
+        raise ValueError(
+            "job prior adapter does not match the pinned "
+            f"{contract.prior_checkpoint_label} checkpoint"
+        )
 
     train_rows = request.get("train_rows")
-    if type(train_rows) is not list or len(train_rows) != 768:
-        raise ValueError("quote-v3 job must contain exactly 768 training rows")
+    if type(train_rows) is not list or len(train_rows) != contract.train_row_count:
+        raise ValueError(
+            f"{contract.profile} job must contain exactly {contract.train_row_count} training rows"
+        )
     train_ids: set[str] = set()
     for row in train_rows:
         if type(row) is not dict or row.get("split") != "train":
-            raise ValueError("quote-v3 training rows must be train objects")
+            raise ValueError(f"{contract.profile} training rows must be train objects")
         case_id = row.get("case_id")
         if type(case_id) is not str or not case_id.strip() or case_id in train_ids:
-            raise ValueError("quote-v3 training row IDs must be unique non-empty strings")
+            raise ValueError(
+                f"{contract.profile} training row IDs must be unique non-empty strings"
+            )
         train_ids.add(case_id)
 
     prompts = request.get("dev_prompts")
-    if type(prompts) is not list or len(prompts) != 96:
-        raise ValueError("quote-v3 job must contain exactly 96 prompt-only evaluation prompts")
+    expected_prompts = sum(cohort_sizes.values())
+    if type(prompts) is not list or len(prompts) != expected_prompts:
+        raise ValueError(
+            f"{contract.profile} job must contain exactly {expected_prompts} "
+            "prompt-only evaluation prompts"
+        )
     prompt_by_id: dict[str, str] = {}
     for row in prompts:
         if type(row) is not dict or set(row) != {"case_id", "prompt"}:
-            raise ValueError("each quote-v3 prompt must contain only case_id and prompt")
+            raise ValueError(f"each {contract.profile} prompt must contain only case_id and prompt")
         case_id, prompt_text = row["case_id"], row["prompt"]
         if type(case_id) is not str or not case_id.strip() or case_id in prompt_by_id:
-            raise ValueError("quote-v3 prompt IDs must be unique non-empty strings")
+            raise ValueError(f"{contract.profile} prompt IDs must be unique non-empty strings")
         if type(prompt_text) is not str or not prompt_text.strip():
-            raise ValueError("quote-v3 prompts must be non-empty strings")
+            raise ValueError(f"{contract.profile} prompts must be non-empty strings")
         prompt_by_id[case_id] = prompt_text
 
     raw_fixtures: dict[str, bytes] = {}
     cases_by_cohort: dict[str, list[JsonMap]] = {}
-    for name, path, split in (
-        ("regression", regression_path, "dev"),
-        ("dev", dev_path, "dev"),
-        ("test", test_path, "test"),
-    ):
-        raw, cases = _load_fixture(path, f"{name} fixture", split, COHORT_SIZES[name])
+    for name, path in fixture_paths.items():
+        split = "test" if name == "test" else "dev"
+        raw, cases = _load_fixture(path, f"{name} fixture", split, cohort_sizes[name])
         raw_fixtures[name] = raw
         cases_by_cohort[name] = cases
 
-    all_cases = [case for name in COHORT_SIZES for case in cases_by_cohort[name]]
+    all_cases = [case for name in cohort_sizes for case in cases_by_cohort[name]]
     fixture_ids = [case["case_id"] for case in all_cases]
     if len(set(fixture_ids)) != len(fixture_ids):
-        raise ValueError("quote-v3 fixtures contain duplicate evaluation case IDs")
+        raise ValueError(f"{contract.profile} fixtures contain duplicate evaluation case IDs")
     if train_ids.intersection(fixture_ids):
-        raise ValueError("quote-v3 evaluation IDs must be disjoint from training rows")
+        raise ValueError(f"{contract.profile} evaluation IDs must be disjoint from training rows")
     case_by_id = {case["case_id"]: case for case in all_cases}
     if set(prompt_by_id) != set(case_by_id):
-        raise ValueError("job prompt IDs must match the three evaluation fixtures")
+        raise ValueError(f"job prompt IDs must match the {contract.prompt_fixture_description}")
     for case_id, prompt_text in prompt_by_id.items():
         if render_quote_prompt(case_by_id[case_id]) != prompt_text:
             raise ValueError(f"job prompt does not match rendered case {case_id}")
 
     cohorts = request.get("eval_cohorts")
-    if type(cohorts) is not dict or set(cohorts) != set(COHORT_SIZES):
-        raise ValueError("quote-v3 eval_cohorts must include regression, dev, and test")
+    if type(cohorts) is not dict or set(cohorts) != set(cohort_sizes):
+        expected_names = _natural_join(tuple(cohort_sizes))
+        raise ValueError(f"{contract.profile} eval_cohorts must include {expected_names}")
     cohort_ids: list[str] = []
-    for name, expected_count in COHORT_SIZES.items():
+    for name, expected_count in cohort_sizes.items():
         ids = cohorts[name]
         if type(ids) is not list or len(ids) != expected_count:
-            raise ValueError(f"quote-v3 {name} cohort must contain {expected_count} case IDs")
+            raise ValueError(
+                f"{contract.profile} {name} cohort must contain {expected_count} case IDs"
+            )
         if ids != [case["case_id"] for case in cases_by_cohort[name]]:
-            raise ValueError(f"quote-v3 {name} cohort IDs do not match its fixture order")
+            raise ValueError(f"{contract.profile} {name} cohort IDs do not match its fixture order")
         cohort_ids.extend(ids)
     if cohort_ids != [row["case_id"] for row in prompts]:
-        raise ValueError("quote-v3 prompts must follow the ordered cohort IDs exactly")
+        raise ValueError(f"{contract.profile} prompts must follow the ordered cohort IDs exactly")
 
     source_hashes = job.get("source_sha256")
-    if type(source_hashes) is not dict or set(source_hashes) != {"train", *COHORT_SIZES}:
-        raise ValueError("quote-v3 source hashes must include train, regression, dev, and test")
+    if type(source_hashes) is not dict or set(source_hashes) != {"train", *cohort_sizes}:
+        expected_names = _natural_join(("train", *cohort_sizes))
+        raise ValueError(f"{contract.profile} source hashes must include {expected_names}")
     for name, value in source_hashes.items():
         if not _is_sha256(value):
-            raise ValueError(f"quote-v3 {name} source hash is invalid")
-    fixture_hashes = {name: hashlib.sha256(raw_fixtures[name]).hexdigest() for name in COHORT_SIZES}
+            raise ValueError(f"{contract.profile} {name} source hash is invalid")
+    fixture_hashes = {name: hashlib.sha256(raw_fixtures[name]).hexdigest() for name in cohort_sizes}
     for name, digest in fixture_hashes.items():
         if source_hashes[name] != digest:
             raise ValueError(f"job {name} fixture hash does not match fixture bytes")
@@ -201,7 +276,10 @@ def evaluate_report(
         or result.get("status") != "completed"
     ):
         raise ValueError("receipt result is not a completed training run")
-    if result.get("model_id") != MODEL_ID or result.get("revision") != MODEL_REVISION:
+    if (
+        result.get("model_id") != contract.model_id
+        or result.get("revision") != contract.model_revision
+    ):
         raise ValueError("receipt model or revision does not match the pinned training model")
     comparison = result.get("comparison")
     comparison_checks = (
@@ -220,13 +298,9 @@ def evaluate_report(
     training = result.get("training")
     if type(training) is not dict or any(
         type(training.get(field)) is not int or training[field] != expected
-        for field, expected in (
-            ("max_steps", 192),
-            ("optimizer_steps", 192),
-            ("examples_consumed", 768),
-        )
+        for field, expected in contract.training_counts
     ):
-        raise ValueError("receipt training counts do not match the quote-v3 contract")
+        raise ValueError(f"receipt training counts do not match the {contract.profile} contract")
     generation = result.get("generation")
     if type(generation) is not dict:
         raise ValueError("receipt generation settings are missing")
@@ -235,14 +309,22 @@ def evaluate_report(
         raise ValueError("receipt output arms must be exactly base, prior, and tuned")
     if (
         type(generation.get("max_new_tokens")) is not int
-        or generation["max_new_tokens"] != GENERATION["max_new_tokens"]
-        or generation.get("do_sample") is not GENERATION["do_sample"]
+        or generation["max_new_tokens"] != generation_settings["max_new_tokens"]
+        or generation.get("do_sample") is not generation_settings["do_sample"]
     ):
-        raise ValueError("receipt generation settings do not match the quote-v3 contract")
+        raise ValueError(
+            f"receipt generation settings do not match the {contract.profile} contract"
+        )
 
     expected_ids = set(case_by_id)
     outputs = {
-        arm: _validated_outputs(generation.get(f"{arm}_outputs"), expected_ids, arm) for arm in ARMS
+        arm: _validated_outputs(
+            generation.get(f"{arm}_outputs"),
+            expected_ids,
+            arm,
+            max_new_tokens=generation_settings["max_new_tokens"],
+        )
+        for arm in ARMS
     }
     for case_id in expected_ids:
         prompt_ids = outputs["base"][case_id]["prompt_token_ids"]
@@ -266,7 +348,7 @@ def evaluate_report(
 
     return {
         "schema_version": 1,
-        "report_type": "provisional quote-v3 cohort development diagnostic",
+        "report_type": contract.report_type,
         "label": "agent-authored provisional; zero human reviewers",
         "label_provenance": "agent-authored provisional",
         "human_reviewers": 0,
@@ -275,8 +357,8 @@ def evaluate_report(
             "Reference-string matches are not accuracy or proof of semantic support; labels are "
             "provisional, selective, and non-exhaustive."
         ),
-        "generation": dict(GENERATION),
-        "model": {"model_id": MODEL_ID, "revision": MODEL_REVISION},
+        "generation": dict(generation_settings),
+        "model": {"model_id": contract.model_id, "revision": contract.model_revision},
         "comparison": {
             "arms": list(ARMS),
             "same_prompts_and_generation_settings": True,

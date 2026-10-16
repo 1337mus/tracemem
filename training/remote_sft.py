@@ -64,11 +64,19 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
         for case_id, prompt in support._validated_dev_prompts(dev_prompts, profile)
     ]
     prior_metadata: dict[str, Any] | None = None
-    if profile.name == "quote-v3":
-        if profile.dev_max_new_tokens != 512:
-            raise RuntimeError("quote-v3 prior comparison requires 512 greedy generation tokens")
-        prior_metadata = dict(support._QUOTE_V3_PRIOR_ADAPTER)
-        _verify_quote_v3_prior_adapter(prior_metadata)
+    prior_profile = profile.name in {"quote-v3", "quote-v4"}
+    if prior_profile:
+        expected_generation_limit = 512 if profile.name == "quote-v3" else 1024
+        if profile.dev_max_new_tokens != expected_generation_limit:
+            raise RuntimeError(
+                f"{profile.name} prior comparison requires "
+                f"{expected_generation_limit} greedy generation tokens"
+            )
+        prior_key = (
+            "_QUOTE_V3_PRIOR_ADAPTER" if profile.name == "quote-v3" else "_QUOTE_V4_PRIOR_ADAPTER"
+        )
+        prior_metadata = dict(getattr(support, prior_key))
+        _verify_prior_adapter(prior_metadata, profile.name)
     run_dir = _reserve_run_directory(Path(request["remote_run_dir"]))
     if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():
         raise RuntimeError("remote QLoRA requires a CUDA device with BF16 support")
@@ -113,7 +121,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     prior_seconds: float | None = None
     prior_comparison: dict[str, Any] | None = None
     if prior_metadata is not None:
-        _verify_quote_v3_prior_adapter(prior_metadata)
+        _verify_prior_adapter(prior_metadata, profile.name)
         cpu_rng_state = torch.get_rng_state()
         cuda_rng_states = torch.cuda.get_rng_state_all()
         from peft import PeftModel
@@ -128,7 +136,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
         model = prior_model.unload()
         no_prior_lora_parameters = not any("lora_" in name for name, _ in model.named_parameters())
         if not no_prior_lora_parameters:
-            raise RuntimeError("quote-v3 prior adapter parameters remained after unload")
+            raise RuntimeError(f"{profile.name} prior adapter parameters remained after unload")
         torch.set_rng_state(cpu_rng_state)
         torch.cuda.set_rng_state_all(cuda_rng_states)
         restored_cuda_rng_states = torch.cuda.get_rng_state_all()
@@ -138,7 +146,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
         )
         rng_restored = torch.equal(torch.get_rng_state(), cpu_rng_state) and cuda_rng_restored
         if not rng_restored:
-            raise RuntimeError("quote-v3 prior inference did not restore RNG state")
+            raise RuntimeError(f"{profile.name} prior inference did not restore RNG state")
         prior_comparison = {
             "prior_adapter": prior_metadata,
             "verified_before": True,
@@ -219,7 +227,7 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
     torch.cuda.synchronize()
     tuned_seconds = time.perf_counter() - tuned_started
     if prior_metadata is not None and prior_comparison is not None:
-        _verify_quote_v3_prior_adapter(prior_metadata)
+        _verify_prior_adapter(prior_metadata, profile.name)
         prior_comparison["verified_after"] = True
     total_seconds = time.perf_counter() - started
     memory = {
@@ -275,22 +283,26 @@ def run_training(request: Any, support: Any) -> dict[str, Any]:
 
 
 def _verify_quote_v3_prior_adapter(metadata: dict[str, Any]) -> None:
+    _verify_prior_adapter(metadata, "quote-v3")
+
+
+def _verify_prior_adapter(metadata: dict[str, Any], profile: str) -> None:
     adapter_dir = Path(metadata["path"])
     expected_hashes = metadata["sha256"]
     for filename in _QUOTE_V3_PRIOR_ADAPTER_FILES:
         expected = expected_hashes.get(filename)
         if not isinstance(expected, str):
             raise RuntimeError(
-                f"quote-v3 prior adapter is missing the expected hash for {filename}"
+                f"{profile} prior adapter is missing the expected hash for {filename}"
             )
         try:
             actual = hashlib.sha256((adapter_dir / filename).read_bytes()).hexdigest()
         except OSError as exc:
             raise RuntimeError(
-                f"quote-v3 prior adapter verification failed for {filename}"
+                f"{profile} prior adapter verification failed for {filename}"
             ) from exc
         if actual != expected:
-            raise RuntimeError(f"quote-v3 prior adapter hash mismatch for {filename}")
+            raise RuntimeError(f"{profile} prior adapter hash mismatch for {filename}")
 
 
 def _reserve_run_directory(path: Path) -> Path:
