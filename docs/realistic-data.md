@@ -114,6 +114,24 @@ context and no-memory windows. Following the two other candidate parent chains
 returned to the same original primary session; those chains do not provide
 independent training conversations.
 
+A bounded expansion screened four additional transcripts and 17 user-role
+records. Fifteen records were excluded as machine/control text or possible
+sensitive content. Two complete human messages from a second session passed
+source and privacy review. They now supply four provisional training judgments:
+two source-derived claims and two deliberately incorrect variants. Two agent
+annotation passes agreed on all four support and eligibility labels. There
+are still zero human reviewers. A draft that incorrectly identified an agent
+privacy reviewer as human was rejected and corrected before acceptance.
+
+The local corpus now has four training rows from one session, separate from
+14 development candidates from the original session. There is no private test
+cohort and no private training run. All current eligibility references are
+eligible, so this batch cannot teach or measure scope discrimination. Retention
+notes mark the new material as task-local; they do not turn an editing request
+into a permanent preference. Private text, labels and source receipts remain
+in ignored, restricted local files. The initial collection target below remains
+unmet.
+
 ## Bounded batches and a stopping rule
 
 These are prospective collection targets, not counts already available:

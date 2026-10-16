@@ -1,4 +1,46 @@
-# Current checkpoint: first private comparison completed
+# Current checkpoint: first separate private training rows prepared
+
+Updated 2026-10-16 UTC. A bounded four-transcript screen inspected 17 user-role
+records, excluded 15 as machine/control text or potentially sensitive content,
+and selected two complete human messages from a new session. Root independently
+verified original adapter fields, source hashes and unchanged source stat.
+The new session was assigned to train before candidate authoring; the earlier
+private pilot remains dev. Four provisional judgments now pass the private
+contract: two source-derived claims and two authored foils. An independent
+blind agent pass agreed on support and eligibility for all four. Zero human
+reviewers. A draft with an incorrectly human-tagged privacy reviewer was
+preserved as rejected and corrected before accepting the corpus.
+
+The combined private corpus contains one train session/two windows/four rows
+and one dev session/seven windows/14 candidates. No test cohort, private training
+run or new model comparison exists. All eligibility references remain eligible;
+this data does not establish scope discrimination or general effectiveness.
+New retention notes are task-local and stay outside model prompts. Keep all
+private source text, claims, annotations, exports and receipts out of GitHub.
+See [collection approach](realistic-data.md) and the ignored local closeout
+record named in `.local/active-cycle.json`.
+
+The broader Codex header census found no additional independently verified
+personal-repository session. Two sampled Claude primary-flagged files contained
+agent launch/continuation material rather than direct human dialogue. Primary
+metadata and user role are insufficient authorship checks. Do not keep repeating
+the same low-yield discovery scans. Next sample a bounded set of generic human
+preferences from other primary conversations locally, clearing complete messages
+individually for confidentiality, and investigate additional personal chat sources.
+Do not upload employer-confidential material. The target of 20 useful windows
+across at least five sessions remains unmet; four rows do not justify a GPU run.
+
+Existing signed code commit `665a085b51f00c2823f6616c5edeaca8b9a9cd54`
+passed [exact-head CI](https://github.com/1337mus/tracemem/actions/runs/38982762203),
+including source checks and installed-wheel tests. No source code changed during
+this expansion; its local checks are data-contract, export/split, source-integrity
+and privacy-review checks. Current documentation delivery and exact artifacts
+are recorded in `.local/active-cycle.json`. No new GPU job or active worker
+remains. Automation stays paused; original sources, Context Kit and
+`~/.llm-context` stay read-only. Verify live state before the next remote call
+and by 2026-10-17.
+
+# Previous checkpoint: first private comparison completed
 
 Updated 2026-10-16 UTC. One personal Modal A10G call compared the pinned
 Qwen3-4B base, prior verifier adapter and continued verifier adapter on 14
