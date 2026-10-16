@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-10-16T08:04:00.866887+00:00",
+  "root_review": "Full payload, runner, tests inspected; source-free request fiction-only/dev-only. Existing owner authorization applies. No GPU call yet. Full source validation pending.",
+  "models": [
+    {
+      "model": "qwen3-4b",
+      "payload_path": ".local/quote-baseline-run-20261016/qwen3-4b-prepared-v1.json",
+      "payload_sha256": "03a04f23fdda551b40c8dae65bb8cc1d3b6f3474967cb554c59db854d590e227",
+      "runner_sha256": "a70af50d99221f0c38ffc14c7e1986f1fc803bae2aa5d0b77f991f3f17cce2b9",
+      "prompt_source_sha256": "c00cdb2a56c2a1132bade2ad6dda4ad573ac5e49502fe537553195e50e0eb5ce",
+      "items_sha256": "01afce9f59ea1da9b233957648407be0f5f232226849ccc0ed4c23d2ecfc5b38",
+      "items": 24
+    },
+    {
+      "model": "qwen3-8b",
+      "payload_path": ".local/quote-baseline-run-20261016/qwen3-8b-prepared-v1.json",
+      "payload_sha256": "983059aa0e35fc9e4f5f56bb7ec7ceaf3980ff0dabdf63d18fbd9db14575258d",
+      "runner_sha256": "a70af50d99221f0c38ffc14c7e1986f1fc803bae2aa5d0b77f991f3f17cce2b9",
+      "prompt_source_sha256": "c00cdb2a56c2a1132bade2ad6dda4ad573ac5e49502fe537553195e50e0eb5ce",
+      "items_sha256": "01afce9f59ea1da9b233957648407be0f5f232226849ccc0ed4c23d2ecfc5b38",
+      "items": 24
+    }
+  ],
+  "protocol_sha256": "0dcbddc7a5a46ca48caccae5693776ffa49a03e1c20521842077df7bdd893996",
+  "private_conversations_in_payload": false,
+  "targets_sent": false,
+  "maximum_calls": 2,
+  "calls_sequential": true
+}

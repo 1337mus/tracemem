@@ -1,54 +1,60 @@
-# Current checkpoint: quote-v4 complete; criteria failed
+# Current checkpoint: quote-only baseline complete; no model selected
 
-Updated 2026-10-16 UTC. The [fourth experiment report](sft-quote-v4-results.md)
-records a negative result against its frozen success criteria. The test fixture
-is spent; the development fixture remains an adaptive diagnostic and cannot
-establish held-out quality. No fifth target-tweak SFT is planned. No production
-model was selected, and Gate A remains unmet.
+Updated 2026-10-16 UTC. The [baseline results](quote-baseline-results.md)
+report 12 adaptive fictional development cases across Qwen3-4B/8B and two
+prompts. The paired input token arrays matched for all 24 items. Both 4B
+variants retained 17/20 selected facts; both 8B variants retained 16/20.
+Complete selected-fact cases were 6/9, 7/9, 6/9, and 6/9. All four arms
+correctly abstained on 0/3 empty-target cases. The broader prompt and larger
+model did not improve selected-fact retention on this slice. These measures do
+not establish exhaustive recall, held-out quality, QA benefit, or competitive
+performance.
 
-The run trained 192 steps over 768 fictional rows from 72 correlated families
-(696 claims, 140 empty rows); seven reviewed family corrections affect 64 rows.
-Training took 1,147.795 seconds; worker and client elapsed times were 2,945.737
-and 2,963.787 seconds. The reported device was NVIDIA A10; the request was
-A10G. The adapter changed, was saved in the separate personal Modal volume,
-and was not downloaded to this Mac. The prior adapter hashes matched before
-and after comparison; it was unloaded without merge, RNG state was restored,
-and no prior LoRA parameters remained. The recorded post-run inventory had
-zero active tasks. Verify `.local/active-cycle.json` and live Modal state before
-any future call. Verify by: 2026-10-23.
+There were 48 responses, 47 reviewable responses, and 203 reviewed claims.
+Two fresh-context Luna reviewers completed blind first passes. Root recorded
+an independent first pass before viewing their labels, then adjudicated after
+reviewing them. All reviewers were from the same model family, with zero human
+reviewers, so semantic labels remain provisional.
+Parsing, citation integrity, semantic support, eligibility, and selected-fact
+coverage are reported separately. The 4B `quote-v2` arm is only a research
+generator reference for the next development-only candidate verification, not
+a production selection. Gate A remains unmet; no fifth target-tweak SFT is
+planned.
 
-One fresh-context Luna reviewer assessed 108 shuffled tasks covering 332 claims
-across all 12 development and 24 test cases and all three arms. Root completed
-an independent first pass and unblinded adjudication; the final counts use
-root's labels, with changes from the blind review kept separately. The reviewer
-and root are from the same model family; there were zero human reviewers. The
-labels are provisional. They do not establish independent truth, broad
-generalization, QA benefit, or model selection. Blind-review misses included
-treating a literal base-arm Lumen quote as an actor swap and missing an adapter
-quilt actor swap. The report preserves these limits and further examples.
+The 4B and 8B calls took 410.072s and 454.199s at the worker on NVIDIA A10
+hardware; A10G was requested. Billing was not measured. The post-8B inventory
+showed all apps stopped with zero tasks. No additional GPU call was launched.
+The historical SFT used 4-bit weights and this prompt comparison used BF16, so
+these runs are not a controlled cross-run SFT comparison.
 
-The job, receipt, structural report, semantic summary, coverage, adjudicated
-review, and adjudication files are linked from the results report. Only fiction
-entered training and inference. No personal conversation data or derived data
-was uploaded; Context Kit and original conversations remain read-only. Billing
-was not measured. The exact-tip source CI run tested
-`a0e82729fa165eef5b1a304dbf38a770ca6c0361`; it passed 809 source tests (one
-skipped) and 399 installed tests (two skipped). It predates these result-doc
-changes and does not verify the current documentation. This local update is
-not committed or pushed.
+Next, verify 4B `quote-v2` candidates on development data with the exact
+citation gate and separate support and eligibility checks. The verifier
+contract is implemented and locally tested, but no verifier-gated candidate
+inference or runtime integration has occurred and no model improvement has
+been shown.
+Keep the longer candidate unread and quarantined until the full development
+decision is frozen and a versioned 12-message contract is reviewed. Check
+`.local/active-cycle.json` and live state before any remote call. Verify by
+2026-10-23.
 
-The dev-only prompt baseline is implemented and reviewed. The Qwen3-4B call
-is running on personal Modal, app `ap-BEYr1cfiI5nDhnqxFCFQLi`, client session
-56291. Do not duplicate it. Qwen3-8B has not launched and must wait for this
-call to finish. Exact prepared payloads, runner hashes, client log and receipt
-paths are in `.local/quote-baseline-run-20261016/` and `.local/active-cycle.json`.
-The full source check passed 854 tests with one optional skip; lint and
-configured type checks passed. A subsequent typing-only helper fix passed its
-25 focused tests and preserved summary bytes; extra strict checking of all
-three new source modules passed. Signed delivery is pending. See the
-[baseline protocol](quote-baseline-protocol.md).
-Use fresh test cases and human review before another quality claim. Automation
-remains paused. Verify baseline and remote state by: 2026-10-23.
+The recorded exact-head CI run
+[38871651124](https://github.com/1337mus/tracemem/actions/runs/38871651124)
+passed on signed, pushed commit `9f068651ca503f12ede074e80a5890a4f2ab1045`:
+854/855 source tests passed (one skipped) and 399/401 installed-wheel tests
+passed (two skipped). It predates the current documentation and verifier
+changes. Those changes remain pending root validation and signed delivery; no
+new delivery is claimed here. Use the linked report for copied artifact paths
+and review details. Root's full local `make check` passed: 859 tests attempted,
+858 passed, one skipped, 181 files formatted, and configured mypy checked 49
+source files; strict mypy passed for the verifier and its test. See the
+[validation record](validation-quote-baseline.json).
+
+Only fictional data ran on Modal. Original conversations, Context Kit, and
+`~/.llm-context` remain read-only; no private data was uploaded and nothing was
+published publicly. Automation remains paused. Before any signed code,
+documentation, or fictional-data push, make a fresh check of
+`.local/active-cycle.json`, the private repository and branch state, and
+exact-head CI.
 
 ## Historical checkpoint: quote-v4 training in progress
 

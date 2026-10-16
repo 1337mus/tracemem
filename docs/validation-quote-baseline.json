@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-16T08:40:45.295110+00:00",
+  "scope": "Matched fictional dev prompt/capacity results and local verifier contract; no verifier inference or runtime integration.",
+  "local_validation": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "attempted": 859,
+    "passed": 858,
+    "skipped": 1,
+    "ruff_formatted_files": 181,
+    "configured_mypy_files": 49,
+    "raw_log": ".local/quote-baseline-run-20261016/root-full-check-verifier-v1.log",
+    "raw_log_sha256": "26857932ac1798cb576fa38ad85387b6149aa267f631626b3a0be09bdc64a35d",
+    "extra_strict_typecheck": {
+      "command": ".venv/bin/mypy --strict experiments/quote_verifier.py tests/test_quote_verifier.py",
+      "exit_code": 0,
+      "files": 2
+    },
+    "source_hashes": {
+      "experiments/quote_verifier.py": "69c754fea1ba097de98a36dd918c2598c49f5df617f9097ce735d9653743d82f",
+      "tests/test_quote_verifier.py": "bc2ae495eee94752fad9d46aa567e1aab556b1bb36fe5299d1ff4de44350ae65"
+    },
+    "tdd_log": ".local/quote-baseline-run-20261016/verifier-tdd-v1.log"
+  },
+  "artifact_copies": {
+    "verified_count": 19,
+    "all_byte_identical": true,
+    "files": [
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-4b-prepared-v1.json",
+        "copy": "examples/synthetic/quote-baseline-qwen3-4b-prepared-v1.json",
+        "sha256": "d41c85ed330f8b558dc4fe0bc9dda32d65c07389a0684931317e8e1815d460be",
+        "bytes": 68959
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-4b-remote-v1.json",
+        "copy": "examples/synthetic/quote-baseline-qwen3-4b-remote-v1.json",
+        "sha256": "d47debe18192dae62759ed097017d2a9bcef92c148692b2b9a1e41e3805b2ac3",
+        "bytes": 414514
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-4b-structural-v1.json",
+        "copy": "docs/quote-baseline-qwen3-4b-structural.json",
+        "sha256": "c8ef5939fb99f94e705613d2cb3afe7ed90301f9007d5cc3acfd22985a41439b",
+        "bytes": 526287
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-a/labels-v1.json",
+        "copy": "docs/quote-baseline-4b-blind-review.json",
+        "sha256": "071df55cf24cf3851a607e4765d842b368d1c4b83f37e0c7d504b7000e4d566f",
+        "bytes": 25775
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-a/root-adjudicated-v1.json",
+        "copy": "docs/quote-baseline-4b-adjudicated-review.json",
+        "sha256": "c85a884fd55f23e8bd5f26eb8cb83e550ca09f630beecbe198e1aa2364597822",
+        "bytes": 28018
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-a/root-adjudication-v1.json",
+        "copy": "docs/quote-baseline-4b-adjudication.json",
+        "sha256": "00ac101e1a6f7645bb6e0961afd1107ffd64715b4b9dfcea797dc6163cb03158",
+        "bytes": 2619
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-a/packet-v1.json",
+        "copy": "examples/synthetic/quote-baseline-4b-packet-v1.json",
+        "sha256": "205c78bac8580f9ba66905f19f954be763be75c97a0feacb914be028ba9d01fc",
+        "bytes": 141649
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-a/curator-map-v1.json",
+        "copy": "examples/synthetic/quote-baseline-4b-curator-map-v1.json",
+        "sha256": "6b69263b4023fd0b857dae9b0def583c489774341719abef5cb226d2ec56ec67",
+        "bytes": 9275
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-8b-prepared-v1.json",
+        "copy": "examples/synthetic/quote-baseline-qwen3-8b-prepared-v1.json",
+        "sha256": "a356885edb2606802542f1968f256bd98d1441138bf7d08620ce2a4fdf9d7cde",
+        "bytes": 68959
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-8b-remote-v1.json",
+        "copy": "examples/synthetic/quote-baseline-qwen3-8b-remote-v1.json",
+        "sha256": "8da6eed4ee111104a517f4f72c8acae5b6c7515e2a2dc1be576832765e425bc3",
+        "bytes": 375192
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/qwen3-8b-structural-v1.json",
+        "copy": "docs/quote-baseline-qwen3-8b-structural.json",
+        "sha256": "f141c359dd47c58fffe66ff0fe28b852bfb9666f56c62ffbf14d055be8d2521a",
+        "bytes": 446846
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-b/labels-v1.json",
+        "copy": "docs/quote-baseline-8b-blind-review.json",
+        "sha256": "58c65433135c2fe23f4e238e9519bfa4c9cf0be3364683db848371b2f0f608c7",
+        "bytes": 24173
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-b/root-adjudicated-v1.json",
+        "copy": "docs/quote-baseline-8b-adjudicated-review.json",
+        "sha256": "7129c1f37ff29d457f0be7269fad1623ba4367e9652733989a7212a97ba82f39",
+        "bytes": 26341
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-b/root-adjudication-v1.json",
+        "copy": "docs/quote-baseline-8b-adjudication.json",
+        "sha256": "9da4ab6f00e88599a60950d1c7090d523637e5961116089b525d5832b4c61167",
+        "bytes": 1586
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-b/packet-v1.json",
+        "copy": "examples/synthetic/quote-baseline-8b-packet-v1.json",
+        "sha256": "ed54f4911b5a6186aeab5e51aa564a7420583d32c6fc9f9d714dbfe5f010135d",
+        "bytes": 126314
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-review-b/curator-map-v1.json",
+        "copy": "examples/synthetic/quote-baseline-8b-curator-map-v1.json",
+        "sha256": "bc28891709bdbf8f8811f0c4c913b64cd047752444bdbf29eac3796d64c019c7",
+        "bytes": 9275
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/semantic-summary-v1.json",
+        "copy": "docs/quote-baseline-semantic-summary.json",
+        "sha256": "201f432600f04b531f12c5aa02fcd599032b4b92a69b8dfc23deacecc058337b",
+        "bytes": 6504
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/root-prelaunch-freeze-v1.json",
+        "copy": "examples/synthetic/quote-baseline-prelaunch-freeze-v1.json",
+        "sha256": "b865df06cb1c1a5ca82636deac96c91fc101e187049ce5d8d31ce1245ba601ff",
+        "bytes": 1497
+      },
+      {
+        "source": ".local/quote-baseline-run-20261016/paired-input-token-check-v1.json",
+        "copy": "docs/quote-baseline-paired-inputs.json",
+        "sha256": "b8f232ccc1074485a5bfdbfb98945333f0964ecebc4548233ac08f3c311fd565",
+        "bytes": 528
+      }
+    ]
+  },
+  "structural_replay": {
+    "schema_version": 1,
+    "four_model_prompt_rows_match": true,
+    "strict_and_outer_fence_counts_match": true,
+    "replay_log": ".local/quote-baseline-run-20261016/readme-structural-replay-v1.jsonl",
+    "snippet_sha256": "63f125f7180c3f74f972c7fdb213de97720318a17a8aa32ad23a1d7135d95e22",
+    "semantic_ground_truth_replayed": false
+  },
+  "semantic_review": {
+    "status": "PROVISIONAL_AGENT_ONLY",
+    "blind_reviewers": 2,
+    "human_reviewers": 0,
+    "reviewed_responses": 47,
+    "reviewed_claims": 203,
+    "root_first_pass_before_blind_labels": true,
+    "same_model_family": true,
+    "limitations": "Adaptive fictional dev cases; selected facts are a partial checklist. No held-out quality, exhaustive recall, QA benefit or production-model selection."
+  },
+  "gpu_completion": {
+    "4b_receipt_sha256": "d47debe18192dae62759ed097017d2a9bcef92c148692b2b9a1e41e3805b2ac3",
+    "8b_receipt_sha256": "8da6eed4ee111104a517f4f72c8acae5b6c7515e2a2dc1be576832765e425bc3",
+    "calls_completed": 2,
+    "client_exits": [
+      0,
+      0
+    ],
+    "worker_seconds": [
+      410.071833,
+      454.199309
+    ],
+    "post_inventory": ".local/quote-baseline-run-20261016/post-8b-inventory-v1.json",
+    "inventory_all_stopped_zero_tasks": true,
+    "billing_measured": false,
+    "private_data_uploaded": false
+  },
+  "prior_delivery": {
+    "commit": "9f068651ca503f12ede074e80a5890a4f2ab1045",
+    "ci_run_id": 38871651124,
+    "ci_conclusion": "success",
+    "source_passed": 854,
+    "source_attempted": 855,
+    "installed_passed": 399,
+    "installed_attempted": 401,
+    "meaning": "This CI predates the result documents and verifier contract."
+  },
+  "current_delivery": "Pending signed private delivery; consult .local/active-cycle.json for exact commit and hosted CI."
+}

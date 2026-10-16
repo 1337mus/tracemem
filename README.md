@@ -21,6 +21,13 @@ AI agents reviewed the results; no human review has happened. See the
 The earlier [quote-v2](docs/sft-quote-v2-results.md) and
 [pilot](docs/sft-pilot-results.md) results remain documented.
 
+A later development-only prompt comparison found no selected-fact retention
+gain from Qwen3-8B or the broader coverage prompt. Qwen3-4B `quote-v2` is only
+the research reference for the next dev-only verification step. Its verifier
+contract is implemented and locally tested, but has not been integrated into
+runtime or used for a verifier-gated candidate inference; see the
+[baseline results](docs/quote-baseline-results.md).
+
 All four adapters trained on newly written fictional conversations. We
 inspected a sample of the owner's real agent logs locally to check the transcript readers,
 but those logs were not training data and have not been evaluated with the

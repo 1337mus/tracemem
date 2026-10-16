@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "task_id": "dev-review-002",
+      "case_id": "V4D-11",
+      "prompt_version": "quote-coverage-v1",
+      "claim_index": 2,
+      "blind_label": "supported",
+      "root_label": "unsupported",
+      "rationale": "First two story assertions omit fictional/source boundary; imperative is not factual memory. Coverage final metadata supported but ineligible."
+    },
+    {
+      "task_id": "dev-review-006",
+      "case_id": "V4D-11",
+      "prompt_version": "quote-v2",
+      "claim_index": 2,
+      "blind_label": "supported",
+      "root_label": "unsupported",
+      "rationale": "First two story assertions omit fictional/source boundary; imperative is not factual memory. Coverage final metadata supported but ineligible."
+    },
+    {
+      "task_id": "dev-review-012",
+      "case_id": "V4D-07",
+      "prompt_version": "quote-v2",
+      "claim_index": 1,
+      "blind_label": "unsupported",
+      "root_label": "supported",
+      "rationale": "Both keep grant condition and lack of commitment. Conditional will ask vs would ask accepted here as same conditional plan, no claim of completion; tense/modality boundary disclosed."
+    },
+    {
+      "task_id": "dev-review-023",
+      "case_id": "V4D-02",
+      "prompt_version": "quote-coverage-v1",
+      "claim_index": 6,
+      "blind_label": "supported",
+      "root_label": "uncertain",
+      "rationale": "The source semicolon follows I am only passing along what they told me. It is unclear whether orchard entrances inherit that report scope; the bare claim removes the boundary. Same rule applies to 8B coverage claim3."
+    },
+    {
+      "task_id": "dev-review-024",
+      "case_id": "V4D-05",
+      "prompt_version": "quote-coverage-v1",
+      "claim_index": 6,
+      "blind_label": "supported",
+      "root_label": "unsupported",
+      "rationale": "Both refund-review timing claims omit nested booking-page source; user reports/states alone is insufficient under strict source boundary. Coverage version does preserve unknown refund status in compound claim; selected-fact retention can coexist with an adverse response."
+    }
+  ],
+  "notes": [
+    "All labels remain provisional. Root and blind reviewer are same model family.",
+    "Modal future will vs would conditional accepted as same plan; stricter sensitivity would add one unsupported claim/response to 4B quote-v2.",
+    "Commands copied as claims are unsupported factual memories even when verbatim.",
+    "Selected-fact retention is a partial checklist, may coexist with unsupported compound claims, and is not exhaustive recall."
+  ]
+}

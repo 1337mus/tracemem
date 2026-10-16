@@ -1,0 +1,887 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "205c78bac8580f9ba66905f19f954be763be75c97a0feacb914be028ba9d01fc",
+  "reviewer": "root adjudicated; initial first pass saved before blind labels; zero humans",
+  "tasks": [
+    {
+      "task_id": "dev-review-001",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the table report to someone at the pantry.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The same person asked whether the user could bring labels.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user explicitly says they are unsure which person was meant.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says both the manager and coordinator were present.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the table move to Marta\u2019s reply.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user identifies Marta as Saturday coordinator.",
+          "claim_index": 5
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the manager only asked about labels.",
+          "claim_index": 6
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they can bring blank tags on Friday.",
+          "claim_index": 7
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user explicitly says no printing promise was made.",
+          "claim_index": 8
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says nobody sent the final wording.",
+          "claim_index": 9
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "task_id": "dev-review-002",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "The source presents this only as fictional leaflet content; the claim drops that boundary.",
+          "claim_index": 0
+        },
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "The source presents this possibility only in a fictional leaflet; the claim omits that attribution.",
+          "claim_index": 1
+        },
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "First two story assertions omit fictional/source boundary; imperative is not factual memory. Coverage final metadata supported but ineligible.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user explicitly identifies the paragraph as fictional and unrelated to real plans.",
+          "claim_index": 3
+        }
+      ],
+      "note": "The two bare ferry propositions are treated as unqualified assertions; the source marks them as fictional leaflet content.",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-003",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the dish belongs to Tavi, was borrowed, and remains due back.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the chip predated the loan and states the repair-shop concern.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user preserves Tavi\u2019s temporary-storage statement and denies permanent acceptance.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports the supper went well and describes the napkin shortage.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-004",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the move report to Imani and says it was not personally checked.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they are helping with labels and relays Imani\u2019s request.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports calling the caretaker and accurately preserves the caretaker\u2019s confirmation and unverified path report.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they are passing along the report and states the orchard has two gates plus a delivery entrance.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-005",
+      "reviewable": false,
+      "claims": [],
+      "note": "claim_objects is null; raw_text ends mid-final claim. Per protocol, no claim labels.",
+      "selected_fact_indices_retained": null
+    },
+    {
+      "task_id": "dev-review-006",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "The source presents this only as fictional leaflet content; the claim drops that boundary.",
+          "claim_index": 0
+        },
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "The source presents this possibility only in a fictional leaflet; the claim omits that attribution.",
+          "claim_index": 1
+        },
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "First two story assertions omit fictional/source boundary; imperative is not factual memory. Coverage final metadata supported but ineligible.",
+          "claim_index": 2
+        }
+      ],
+      "note": "The two bare ferry propositions are treated as unqualified assertions; the source marks them as fictional leaflet content.",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-007",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the table move to Marta, identifies her role, and limits the manager\u2019s request to labels.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user states the Friday tag plan, no printing promise, and missing final wording.",
+          "claim_index": 1
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        1,
+        2
+      ]
+    },
+    {
+      "task_id": "dev-review-008",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user is considering the repair and explicitly says they have not committed.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user makes asking the glazier conditional on grant approval.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the repair will be left to volunteers if the grant is declined.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the current pane is taped at the corners.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the committee has not yet decided.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they can carry tools and separates that from repair responsibility.",
+          "claim_index": 5
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the cheaper acrylic suggestion to a neighbor and states uncertainty about suitability.",
+          "claim_index": 6
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The neighbor is said to have mentioned acrylic as a cheaper option.",
+          "claim_index": 7
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user explicitly does not know whether acrylic suits the frame.",
+          "claim_index": 8
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-009",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user explicitly describes this as comparison of fictional menus for writing.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user reports uncertainty about how the fictional broth relates to the pear idea.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user asks for a texture comparison and excludes a real-dinner recommendation.",
+          "claim_index": 2
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-010",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they had reserved two ferry seats for the lantern walk.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user links the sister\u2019s schedule change to their inability to attend that evening.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user states this cancellation intent and its reason.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the booking page accepted cancellation.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user makes another evening conditional on a more predictable rota.",
+          "claim_index": 4
+        },
+        {
+          "label": "unsupported",
+          "eligible": true,
+          "rationale": "The source says the page reports a review window; the claim drops that page attribution.",
+          "claim_index": 5
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0
+      ]
+    },
+    {
+      "task_id": "dev-review-011",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports drooping the morning after moving the seedlings.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they are upright again and the cause remains unknown.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user gives the draft-related reason and explicitly denies knowing it caused the droop.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user states the planter purpose and keeps bringing them conditional on health.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-012",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user is considering the repair and says they have not committed.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "Both keep grant condition and lack of commitment. Conditional will ask vs would ask accepted here as same conditional plan, no claim of completion; tense/modality boundary disclosed.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the repair will be left to volunteers if the grant is declined.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the current pane is taped at the corners.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the committee has not decided whether to approve the grant.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user offers to carry tools and separates this from repair responsibility.",
+          "claim_index": 5
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the cheaper option to a neighbor and states their own uncertainty about suitability.",
+          "claim_index": 6
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-013",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the former Thursday hours to last year\u2019s saved card.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports that the front desk has been directing people to a new intake desk.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The claim preserves the volunteer attribution and both reported schedule details.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says no visit has been scheduled yet.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user describes the postcard collection and the decision still to make.",
+          "claim_index": 4
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-014",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "At the cited earlier message, taking the bench was tentative and the space question remained open.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they signed up and explicitly distinguishes the plan from a completed repair.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports finding the tutorial, the comments\u2019 glue suggestion, and their wish to ask the leader first.",
+          "claim_index": 2
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-015",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the dish belongs to Tavi, was borrowed, and remains due back.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the chip predated the loan and states the repair-shop concern.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user preserves Tavi\u2019s temporary-storage statement and denies permanent acceptance.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports the supper went well and describes the napkin shortage.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-016",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the old Thursday schedule to a saved card from last year.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The claim preserves the schedule change and appointment-only arrangement as information from a volunteer.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the collection is mostly postcards and is deciding what to bring.",
+          "claim_index": 2
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-017",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user reports drooping the morning after the move and declines to assign a cause.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they look upright again while the cause remains unknown.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user gives the rattling draft as the reason for moving the tray and disclaims causal knowledge.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user states the planter purpose and conditional promise.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    },
+    {
+      "task_id": "dev-review-018",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says Bea left the quilt during radiator replacement.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user explicitly describes storage and denies purchase or gift.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the quilt is too wide and that they asked Bea about a specialist cleaner.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the collection timing and no-wash request to Bea.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the chest was not checked and describes the cotton cover.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says hallway repainting made moving the chest inconvenient.",
+          "claim_index": 5
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "task_id": "dev-review-019",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says Bea left the quilt during radiator replacement.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the collection timing and no-wash request to Bea.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the chest was not checked and describes the cotton cover.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says hallway repainting made moving the chest inconvenient.",
+          "claim_index": 3
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        2
+      ]
+    },
+    {
+      "task_id": "dev-review-020",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "unsupported",
+          "eligible": false,
+          "rationale": "The source frames the paper label as fictional; this claim omits the story boundary.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The claim identifies a fictional excerpt and accurately reports its quoted wording.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user explicitly says the passage is for interpretation, not a real-world report.",
+          "claim_index": 2
+        }
+      ],
+      "note": "The bare label proposition is treated as an unqualified real-world assertion; the source marks the story as fictional.",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-021",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user explicitly frames the menu comparison as fictional writing work.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The user describes a fictional menu and uncertainty about how its options relate.",
+          "claim_index": 1
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-022",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": false,
+          "rationale": "The claim attributes the words to the fictional tag excerpt, which contains them.",
+          "claim_index": 0
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": []
+    },
+    {
+      "task_id": "dev-review-023",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user attributes the location report to Imani and says it was not personally checked.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they are helping Imani label jars.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user directly says they called the caretaker.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The claim preserves the caretaker as source of the location confirmation.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The claim preserves the caretaker as source of the footpath description.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they are only relaying what the caretaker told them.",
+          "claim_index": 5
+        },
+        {
+          "label": "uncertain",
+          "eligible": true,
+          "rationale": "The source semicolon follows I am only passing along what they told me. It is unclear whether orchard entrances inherit that report scope; the bare claim removes the boundary. Same rule applies to 8B coverage claim3.",
+          "claim_index": 6
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0
+      ]
+    },
+    {
+      "task_id": "dev-review-024",
+      "reviewable": true,
+      "claims": [
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says they had reserved two ferry seats for the lantern walk.",
+          "claim_index": 0
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user links the sister\u2019s schedule change to not attending that evening.",
+          "claim_index": 1
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user states the cancellation intent and reason.",
+          "claim_index": 2
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user describes the walk\u2019s appeal and wind-related ferry anxiety.",
+          "claim_index": 3
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the booking page accepted cancellation.",
+          "claim_index": 4
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user says the seats are no longer held under their name.",
+          "claim_index": 5
+        },
+        {
+          "label": "unsupported",
+          "eligible": true,
+          "rationale": "Both refund-review timing claims omit nested booking-page source; user reports/states alone is insufficient under strict source boundary. Coverage version does preserve unknown refund status in compound claim; selected-fact retention can coexist with an adverse response.",
+          "claim_index": 6
+        },
+        {
+          "label": "supported",
+          "eligible": true,
+          "rationale": "The user makes another evening conditional on the sister\u2019s rota becoming more predictable.",
+          "claim_index": 7
+        }
+      ],
+      "note": "",
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ]
+    }
+  ],
+  "blind_review_sha256": "071df55cf24cf3851a607e4765d842b368d1c4b83f37e0c7d504b7000e4d566f",
+  "human_reviewers": 0
+}

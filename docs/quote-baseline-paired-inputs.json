@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "checked_items": 24,
+  "identical_model_input_token_arrays": true,
+  "tokenizer_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "source_receipt_sha256": {
+    "qwen3-4b": "d47debe18192dae62759ed097017d2a9bcef92c148692b2b9a1e41e3805b2ac3",
+    "qwen3-8b": "8da6eed4ee111104a517f4f72c8acae5b6c7515e2a2dc1be576832765e425bc3"
+  },
+  "method": "Paired items in exact receipt order; assert item_id equality and entire input_token_ids array equality for each pair."
+}

@@ -1,0 +1,209 @@
+{
+  "model": "qwen3-8b",
+  "packet_sha256": "ed54f4911b5a6186aeab5e51aa564a7420583d32c6fc9f9d714dbfe5f010135d",
+  "schema_version": 1,
+  "shuffle_seed": 17,
+  "source_sha256": {
+    "dev_fixture": "b9efbc113e24112786475333868f781baae3af58d43bee7bdc338f229f651cc0",
+    "prepared_payload": "a356885edb2606802542f1968f256bd98d1441138bf7d08620ce2a4fdf9d7cde",
+    "prompt_source": "c00cdb2a56c2a1132bade2ad6dda4ad573ac5e49502fe537553195e50e0eb5ce",
+    "raw_receipt": "8da6eed4ee111104a517f4f72c8acae5b6c7515e2a2dc1be576832765e425bc3",
+    "root_freeze": "b865df06cb1c1a5ca82636deac96c91fc101e187049ce5d8d31ce1245ba601ff",
+    "runner_source": "a70af50d99221f0c38ffc14c7e1986f1fc803bae2aa5d0b77f991f3f17cce2b9",
+    "structural_report": "f141c359dd47c58fffe66ff0fe28b852bfb9666f56c62ffbf14d055be8d2521a"
+  },
+  "task_map": {
+    "dev-review-001": {
+      "case_id": "V4D-08",
+      "item_id": "V4D-08::quote-coverage-v1",
+      "messages_sha256": "fb78129b7ca932303b17d3a8320293ec37389cae344dc80ec6b7a5c5f4b46b3c",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "2919f765c94fbb70a2e4f4b11b37a769aa314075c4909ffab05f49aa1b14aa0c"
+    },
+    "dev-review-002": {
+      "case_id": "V4D-11",
+      "item_id": "V4D-11::quote-coverage-v1",
+      "messages_sha256": "c53b0f8f0a51961398c66f86b7d9835a759fd22f1be833cdb243c01f66695940",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "8e99cc383bb2daa91966fd2332e92f32ea03286df373aeb89d6796bd99e175d1"
+    },
+    "dev-review-003": {
+      "case_id": "V4D-03",
+      "item_id": "V4D-03::quote-v2",
+      "messages_sha256": "482a52470cd827af183861aa5268150bc8cb013faaf6922bbd5971cbae623d2a",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "8a1b7a37eadcebb389ef1ee8594172ea0652f1160918e8d6d4b713ffee2ea0bd"
+    },
+    "dev-review-004": {
+      "case_id": "V4D-02",
+      "item_id": "V4D-02::quote-v2",
+      "messages_sha256": "72e0b40643af38a61123fcee35173dec00284351ae22743f2ad3ba61dd86fb19",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "892349253e55f1bf500275a177957014f36bfe7b601532026730f6517f458acb"
+    },
+    "dev-review-005": {
+      "case_id": "V4D-01",
+      "item_id": "V4D-01::quote-coverage-v1",
+      "messages_sha256": "29af8eddcf322cdc5fa6a9d02803d7388d4478c431cdec1be2e60aa10f8e3b7e",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "b0f4cf4568049c87918c8c076c0088a23d09962a4ae46a42c642c15d2945facf"
+    },
+    "dev-review-006": {
+      "case_id": "V4D-11",
+      "item_id": "V4D-11::quote-v2",
+      "messages_sha256": "c53b0f8f0a51961398c66f86b7d9835a759fd22f1be833cdb243c01f66695940",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "4f4868a902cff883e8b012db544e81d410056b28ac4c543b4387a95cec8da6b2"
+    },
+    "dev-review-007": {
+      "case_id": "V4D-08",
+      "item_id": "V4D-08::quote-v2",
+      "messages_sha256": "fb78129b7ca932303b17d3a8320293ec37389cae344dc80ec6b7a5c5f4b46b3c",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "48747d38981a9f4bc58f0248b87dc7ad1eabe8f68a7f879c7c58f6702e8e5b64"
+    },
+    "dev-review-008": {
+      "case_id": "V4D-07",
+      "item_id": "V4D-07::quote-coverage-v1",
+      "messages_sha256": "4324d5818a97e8caee370867126368bc80356cd84cd5ceda74a167cd6769be38",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "263adfd0441a920dfd8dcb49ea47bdd7800f942b3b892226ab7d7c0913dfe2ab"
+    },
+    "dev-review-009": {
+      "case_id": "V4D-12",
+      "item_id": "V4D-12::quote-coverage-v1",
+      "messages_sha256": "2ffcef658610c2740ca34b949b69acded81cca16a77826d4055e6dde24f6790d",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "e647f25c51bb2140693fdad104a880bafcce55a147b71e5c151300a5fdeeb1d7"
+    },
+    "dev-review-010": {
+      "case_id": "V4D-05",
+      "item_id": "V4D-05::quote-v2",
+      "messages_sha256": "548ece3a9752e88602330b9e3fe5f028797dccb64ce1fc3272ed53ac35b3c1db",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "5b368d07310184be96b87d35a87c4871d7b02f70003d1b99c839571b9792525d"
+    },
+    "dev-review-011": {
+      "case_id": "V4D-09",
+      "item_id": "V4D-09::quote-coverage-v1",
+      "messages_sha256": "6c5f8b1c94423f5a7ff5c436469976e1ac1e0649d600ea9b2b0e616dd3bbe14e",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "2f1503a56dc35dc80f78924e0be320d5d2ad7760450852ae240282ce43f448a1"
+    },
+    "dev-review-012": {
+      "case_id": "V4D-07",
+      "item_id": "V4D-07::quote-v2",
+      "messages_sha256": "4324d5818a97e8caee370867126368bc80356cd84cd5ceda74a167cd6769be38",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "3caed8fc6bc3f5dc2f7698cea0666b0b885179a5e4451d403e6487840905c5e0"
+    },
+    "dev-review-013": {
+      "case_id": "V4D-04",
+      "item_id": "V4D-04::quote-coverage-v1",
+      "messages_sha256": "57c5423234916c8b32551ee302121858c47ecdbd5e8c431871b426947bccdb2b",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "e8e9eae631a161e12434eea09f59ab815de40a1430bd815db6e6a8a02c5f3792"
+    },
+    "dev-review-014": {
+      "case_id": "V4D-01",
+      "item_id": "V4D-01::quote-v2",
+      "messages_sha256": "29af8eddcf322cdc5fa6a9d02803d7388d4478c431cdec1be2e60aa10f8e3b7e",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "0f1e830aaeb7153dc5adf2dde3b578a7df898ed1598efeac527f450d6e4af1d7"
+    },
+    "dev-review-015": {
+      "case_id": "V4D-03",
+      "item_id": "V4D-03::quote-coverage-v1",
+      "messages_sha256": "482a52470cd827af183861aa5268150bc8cb013faaf6922bbd5971cbae623d2a",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "2b795daeb9139b593ee6de198a207cee45d8a5f6423059286bb5e3da538a9335"
+    },
+    "dev-review-016": {
+      "case_id": "V4D-04",
+      "item_id": "V4D-04::quote-v2",
+      "messages_sha256": "57c5423234916c8b32551ee302121858c47ecdbd5e8c431871b426947bccdb2b",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "728cf9fc401baf80d8dfec0974829e9dbc8910f4e88fdca7f36f80b7342197d1"
+    },
+    "dev-review-017": {
+      "case_id": "V4D-09",
+      "item_id": "V4D-09::quote-v2",
+      "messages_sha256": "6c5f8b1c94423f5a7ff5c436469976e1ac1e0649d600ea9b2b0e616dd3bbe14e",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "13ca221bfe01e521f423b49d48f13c0f25a79ef4b36bbe17384b7c5ea208ff04"
+    },
+    "dev-review-018": {
+      "case_id": "V4D-06",
+      "item_id": "V4D-06::quote-coverage-v1",
+      "messages_sha256": "09b2a735bcfeb2830982a5707f724acc3d9c5f28cf647077c6ad1d4230d4f2a6",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "ad3838fa66a6d190bba2e4e5ab2bb5b96fee01db574d086b0736ed5ebf364bb3"
+    },
+    "dev-review-019": {
+      "case_id": "V4D-06",
+      "item_id": "V4D-06::quote-v2",
+      "messages_sha256": "09b2a735bcfeb2830982a5707f724acc3d9c5f28cf647077c6ad1d4230d4f2a6",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "ad3838fa66a6d190bba2e4e5ab2bb5b96fee01db574d086b0736ed5ebf364bb3"
+    },
+    "dev-review-020": {
+      "case_id": "V4D-10",
+      "item_id": "V4D-10::quote-coverage-v1",
+      "messages_sha256": "b98e6857eff8d37ed059af2bbdd5f9b40e728024886ac73433850f43c4f9e4f1",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "188e7cd147b180be44dcdbc664d4ce7c9bd5acf14a9f8472d01a8771e67fdb64"
+    },
+    "dev-review-021": {
+      "case_id": "V4D-12",
+      "item_id": "V4D-12::quote-v2",
+      "messages_sha256": "2ffcef658610c2740ca34b949b69acded81cca16a77826d4055e6dde24f6790d",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "bd7f8c6a7b143c2e8375f24982b09d714a4746563ef21db2cc06eed9947d22ec"
+    },
+    "dev-review-022": {
+      "case_id": "V4D-10",
+      "item_id": "V4D-10::quote-v2",
+      "messages_sha256": "b98e6857eff8d37ed059af2bbdd5f9b40e728024886ac73433850f43c4f9e4f1",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-v2",
+      "raw_text_sha256": "cdeae9b9307d1d1c622a9f1d2330a25a51bca787ea07bd034868f8afb1212645"
+    },
+    "dev-review-023": {
+      "case_id": "V4D-02",
+      "item_id": "V4D-02::quote-coverage-v1",
+      "messages_sha256": "72e0b40643af38a61123fcee35173dec00284351ae22743f2ad3ba61dd86fb19",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "0d5082cf4a7de9501db383250424ab4ef9367b195e0a1ba1c5a1f6eac96a733e"
+    },
+    "dev-review-024": {
+      "case_id": "V4D-05",
+      "item_id": "V4D-05::quote-coverage-v1",
+      "messages_sha256": "548ece3a9752e88602330b9e3fe5f028797dccb64ce1fc3272ed53ac35b3c1db",
+      "model": "qwen3-8b",
+      "prompt_version": "quote-coverage-v1",
+      "raw_text_sha256": "e06b2f9de184ea5dcfb913db0fba37b779470aec4f10c9b16295b393c11107d2"
+    }
+  }
+}

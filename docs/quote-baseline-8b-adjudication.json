@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "task_id": "dev-review-003",
+      "case_id": "V4D-03",
+      "prompt_version": "quote-v2",
+      "claim_index": 3,
+      "field": "eligible",
+      "blind": false,
+      "root": true,
+      "rationale": "Actual one-time user events are eligible episodic memories. Salience is not an eligibility criterion; this is not fictional-writing metadata."
+    },
+    {
+      "task_id": "dev-review-015",
+      "case_id": "V4D-03",
+      "prompt_version": "quote-coverage-v1",
+      "claim_index": 4,
+      "field": "eligible",
+      "blind": false,
+      "root": true,
+      "rationale": "Actual one-time user events are eligible episodic memories. Salience is not an eligibility criterion; this is not fictional-writing metadata."
+    },
+    {
+      "task_id": "dev-review-023",
+      "case_id": "V4D-02",
+      "prompt_version": "quote-coverage-v1",
+      "claim_index": 3,
+      "field": "label",
+      "blind": "supported",
+      "root": "uncertain",
+      "rationale": "Coverage drops explicit unwalked-path fact; last orchard-entrances assertion may inherit report scope from preceding semicolon; uncertain boundary pending adjudication."
+    }
+  ],
+  "notes": [
+    "Labels provisional, zero humans, same model-family reviewers.",
+    "Source-resolvable pronoun It says accepted because reporting operator remains; bare reported assertions lack that operator.",
+    "Orchard-layout report scope uncertain under same rule as 4B coverage.",
+    "Eligible user memory includes real one-time episodes; it is separate from salience."
+  ]
+}

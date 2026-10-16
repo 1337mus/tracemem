@@ -47,6 +47,19 @@ reviewers. See the [results report](sft-quote-v4-results.md) and the
 [protocol](sft-quote-v4-protocol.md). The test is spent; no tuning against it
 is planned. No model was selected and Gate A remains unmet.
 
+## Latest prompt baseline: quote-only Qwen3 comparison
+
+The adaptive development comparison covered 12 fictional cases, with 4B and
+8B Qwen3 models each receiving both `quote-v2` and `quote-coverage-v1`. Paired
+input token arrays matched across all 24 items. Both 4B prompts retained 17/20
+selected facts; both 8B prompts retained 16/20. Complete selected-fact cases
+were 6/9, 7/9, 6/9, and 6/9 respectively. All four arms correctly abstained on
+0/3 empty-target cases. These results do not establish exhaustive recall,
+held-out quality, QA benefit, or a production model selection. Two blind Luna
+reviewers and root reviewed the outputs; there were zero human reviewers and
+the semantic labels remain provisional. See the [full baseline report](quote-baseline-results.md)
+and [protocol](quote-baseline-protocol.md).
+
 ## Prior training experiment: quote-v3
 
 V3 compared base, quote-v2 prior, and quote-v3 tuned arms on a 24-case adaptive
@@ -112,11 +125,13 @@ Check `.local/active-cycle.json` before any new remote run.
 
 ## Next gate
 
-The next comparison is a dev-only prompt baseline across the 4B and 8B models,
-with two prompt variants. Its reviewed 4B call is running on personal Modal;
-8B will wait for completion. See the [protocol](quote-baseline-protocol.md)
-and `.local/active-cycle.json` for live job and exact payload state. Do not run
-a fifth target-tweak SFT. Write the stronger prompt from the original brief and
-development rules without using test outputs. A fresh test and human-reviewed
-evaluation are still needed before any Gate A or product claim. Verify remote
-state before any future call; the quote-v4 test is spent.
+The next step is controlled development-only verification of Qwen3-4B
+`quote-v2` candidates with the exact citation gate and separate support and
+eligibility checks. This is a research reference only, not a production model
+selection. The verifier contract is implemented and locally tested, but no
+verifier-gated candidate inference or runtime integration has occurred and no
+model improvement has been shown. Keep the longer candidate unread and quarantined
+until the full development decision is frozen and a versioned 12-message
+contract is reviewed. Do not run a fifth target-tweak SFT. Gate A remains
+unmet. Verify `.local/active-cycle.json` and live state before any remote call;
+verify this baseline by 2026-10-23.

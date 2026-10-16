@@ -62,8 +62,12 @@ Paths in this index are relative to this `docs/` directory.
   threshold; semantic labels, selected-fact coverage, adjudication, and paired
   case accounting remain separate. The report links the exact fictional job
   and receipt.
-- [Quote-only prompt baseline protocol](quote-baseline-protocol.md): planned
-  dev-only comparison of two prompt variants across pinned BF16 Qwen3-4B/8B.
+- [Quote-only prompt baseline protocol](quote-baseline-protocol.md): dev-only
+  comparison of two prompt variants across pinned BF16 Qwen3-4B/8B.
+- [Quote-only prompt baseline results](quote-baseline-results.md): adaptive
+  development results with separate parse, citation, semantic, eligibility,
+  and selected-fact evidence; no production selection or held-out claim. See
+  [validation record](validation-quote-baseline.json) for local checks.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.
