@@ -1,0 +1,1585 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "scope_policy": "personal-memory-research-v1",
+  "cases": [
+    {
+      "case_id": "blind-001",
+      "split": "test",
+      "scenario_group": "blind-scenario-001",
+      "template_group": "blind-template-001",
+      "entity_ids": [
+        "blind-entity-001"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-001",
+          "message_id": "blind-001-m01",
+          "role": "user",
+          "text": "I can reserve the university's anechoic chamber only if my RF-safety checkout is marked complete.",
+          "recorded_at": "2026-10-15T08:01:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-001",
+          "message_id": "blind-001-m02",
+          "role": "assistant",
+          "text": "Is the checkout still waiting on the supervisor?",
+          "recorded_at": "2026-10-15T08:01:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-001",
+          "message_id": "blind-001-m03",
+          "role": "user",
+          "text": "No—Lena signed the log at lunch, and the portal now shows it complete.",
+          "recorded_at": "2026-10-15T08:01:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-001-foil",
+          "claim": "A completed RF-safety checkout is enough for the user to reserve the anechoic chamber.",
+          "message_id": "blind-001-m01",
+          "quote": "I can reserve the university's anechoic chamber only if my RF-safety checkout is marked complete.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This reverses the necessary condition into a sufficient one, which the source does not establish.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-001-supported",
+          "claim": "The user's reservation of the anechoic chamber requires a completed RF-safety checkout.",
+          "message_id": "blind-001-m01",
+          "quote": "I can reserve the university's anechoic chamber only if my RF-safety checkout is marked complete.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source states the checkout is necessary with 'only if'; it does not say completion is sufficient.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-002",
+      "split": "test",
+      "scenario_group": "blind-scenario-002",
+      "template_group": "blind-template-002",
+      "entity_ids": [
+        "blind-entity-002"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-002",
+          "message_id": "blind-002-m01",
+          "role": "user",
+          "text": "The registrar signed the final credential form for my school auditorium access at 09:10; that was the last approval, so my access card is cleared for pickup.",
+          "recorded_at": "2026-10-15T08:02:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-002",
+          "message_id": "blind-002-m02",
+          "role": "assistant",
+          "text": "The pickup desk closes before the afternoon rehearsal.",
+          "recorded_at": "2026-10-15T08:02:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-002",
+          "message_id": "blind-002-m03",
+          "role": "user",
+          "text": "I'll leave between classes and collect it.",
+          "recorded_at": "2026-10-15T08:02:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-002",
+          "message_id": "blind-002-m04",
+          "role": "assistant",
+          "text": "That gives you a window before rehearsal.",
+          "recorded_at": "2026-10-15T08:02:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-002-supported",
+          "claim": "The registrar signed the last required approval, and the user’s auditorium access card is cleared for pickup.",
+          "message_id": "blind-002-m01",
+          "quote": "The registrar signed the final credential form for my school auditorium access at 09:10; that was the last approval, so my access card is cleared for pickup.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the last approval was signed and explicitly says the card is cleared for pickup.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-002-foil",
+          "claim": "The last required approval for the user’s access card has not been signed.",
+          "message_id": "blind-002-m01",
+          "quote": "The registrar signed the final credential form for my school auditorium access at 09:10; that was the last approval, so my access card is cleared for pickup.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This negates the signed approval and cleared status stated in the source.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-003",
+      "split": "test",
+      "scenario_group": "blind-scenario-003",
+      "template_group": "blind-template-003",
+      "entity_ids": [
+        "blind-entity-003"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-003",
+          "message_id": "blind-003-m01",
+          "role": "user",
+          "text": "Coach posted the two-venue plan in our team app: if Court 3 dries before warmups, our doubles practice stays outside; otherwise we move to the gym court.",
+          "recorded_at": "2026-10-15T08:03:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-003",
+          "message_id": "blind-003-m02",
+          "role": "assistant",
+          "text": "Has the grounds crew made the call yet?",
+          "recorded_at": "2026-10-15T08:03:02+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-003-supported",
+          "claim": "The team plan keeps doubles practice outside if Court 3 dries before warmups and moves it to the gym court otherwise.",
+          "message_id": "blind-003-m01",
+          "quote": "Coach posted the two-venue plan in our team app: if Court 3 dries before warmups, our doubles practice stays outside; otherwise we move to the gym court.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source assigns the outdoor and gym outcomes to those respective branches.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-003-foil",
+          "claim": "The team plan moves doubles practice to the gym court if Court 3 dries before warmups and keeps it outside otherwise.",
+          "message_id": "blind-003-m01",
+          "quote": "Coach posted the two-venue plan in our team app: if Court 3 dries before warmups, our doubles practice stays outside; otherwise we move to the gym court.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This swaps the outcomes attached to the two conditions.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-004",
+      "split": "test",
+      "scenario_group": "blind-scenario-004",
+      "template_group": "blind-template-004",
+      "entity_ids": [
+        "blind-entity-004"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-004",
+          "message_id": "blind-004-m01",
+          "role": "user",
+          "text": "In my airship opera, Veda keeps the navigation console locked except during the blackout cue, when Len holds the controls open.",
+          "recorded_at": "2026-10-15T08:04:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-004",
+          "message_id": "blind-004-m02",
+          "role": "assistant",
+          "text": "Does Len take over anywhere else?",
+          "recorded_at": "2026-10-15T08:04:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-004",
+          "message_id": "blind-004-m03",
+          "role": "user",
+          "text": "No, it's the one scripted exception.",
+          "recorded_at": "2026-10-15T08:04:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-004",
+          "message_id": "blind-004-m04",
+          "role": "assistant",
+          "text": "That exception gives the blackout a distinct stage action.",
+          "recorded_at": "2026-10-15T08:04:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-004-foil",
+          "claim": "In the opera, Veda keeps the navigation console locked during the blackout cue.",
+          "message_id": "blind-004-m01",
+          "quote": "In my airship opera, Veda keeps the navigation console locked except during the blackout cue, when Len holds the controls open.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This removes the stated exception and says Veda keeps it locked during that cue.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-004-supported",
+          "claim": "In the opera, Veda keeps the navigation console locked except during the blackout cue, when Len holds the controls open.",
+          "message_id": "blind-004-m01",
+          "quote": "In my airship opera, Veda keeps the navigation console locked except during the blackout cue, when Len holds the controls open.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source explicitly makes the blackout cue the exception to Veda keeping the console locked.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-005",
+      "split": "test",
+      "scenario_group": "blind-scenario-005",
+      "template_group": "blind-template-005",
+      "entity_ids": [
+        "blind-entity-005"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-005",
+          "message_id": "blind-005-m01",
+          "role": "user",
+          "text": "I'm slated to run Thursday's emissions check.",
+          "recorded_at": "2026-10-15T08:05:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-005",
+          "message_id": "blind-005-m02",
+          "role": "assistant",
+          "text": "Do you have the chamber sequence from the job card?",
+          "recorded_at": "2026-10-15T08:05:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-005",
+          "message_id": "blind-005-m03",
+          "role": "user",
+          "text": "For the test, I'll leave the inverter unpowered unless the chamber shows a stable seal; even then, I will wait for the technician's sweep log before starting.",
+          "recorded_at": "2026-10-15T08:05:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-005",
+          "message_id": "blind-005-m04",
+          "role": "assistant",
+          "text": "So the seal and the logged sweep are separate gates.",
+          "recorded_at": "2026-10-15T08:05:04+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-005",
+          "message_id": "blind-005-m05",
+          "role": "user",
+          "text": "Exactly; that's how I noted it.",
+          "recorded_at": "2026-10-15T08:05:05+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-005-supported",
+          "claim": "The user will leave the inverter unpowered unless the chamber has a stable seal and will still wait for the technician’s sweep log before starting.",
+          "message_id": "blind-005-m03",
+          "quote": "For the test, I'll leave the inverter unpowered unless the chamber shows a stable seal; even then, I will wait for the technician's sweep log before starting.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source includes both the unless condition and the additional wait for the technician’s sweep log.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-005-foil",
+          "claim": "The user can start the inverter as soon as the chamber has a stable seal, without waiting for the technician’s sweep log.",
+          "message_id": "blind-005-m03",
+          "quote": "For the test, I'll leave the inverter unpowered unless the chamber shows a stable seal; even then, I will wait for the technician's sweep log before starting.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source does not make a stable seal sufficient to start; it separately requires waiting for the sweep log.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-006",
+      "split": "test",
+      "scenario_group": "blind-scenario-006",
+      "template_group": "blind-template-006",
+      "entity_ids": [
+        "blind-entity-006"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-006",
+          "message_id": "blind-006-m01",
+          "role": "user",
+          "text": "In the ice-hockey screenplay, if the arena lights blink twice, Captain Oren calls a timeout; if they stay steady, he changes the goalie.",
+          "recorded_at": "2026-10-15T08:06:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-006",
+          "message_id": "blind-006-m02",
+          "role": "assistant",
+          "text": "Is that all in the same game scene?",
+          "recorded_at": "2026-10-15T08:06:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-006",
+          "message_id": "blind-006-m03",
+          "role": "user",
+          "text": "Yes, just before the final faceoff.",
+          "recorded_at": "2026-10-15T08:06:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-006-foil",
+          "claim": "In the screenplay, Oren changes the goalie if the arena lights blink twice and calls a timeout if they stay steady.",
+          "message_id": "blind-006-m01",
+          "quote": "In the ice-hockey screenplay, if the arena lights blink twice, Captain Oren calls a timeout; if they stay steady, he changes the goalie.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This swaps the two outcomes across the stated light conditions.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-006-supported",
+          "claim": "In the screenplay, Oren calls a timeout if the arena lights blink twice and changes the goalie if they stay steady.",
+          "message_id": "blind-006-m01",
+          "quote": "In the ice-hockey screenplay, if the arena lights blink twice, Captain Oren calls a timeout; if they stay steady, he changes the goalie.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source assigns a timeout to blinking lights and a goalie change to steady lights.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-007",
+      "split": "test",
+      "scenario_group": "blind-scenario-007",
+      "template_group": "blind-template-007",
+      "entity_ids": [
+        "blind-entity-007"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-007",
+          "message_id": "blind-007-m01",
+          "role": "user",
+          "text": "For the grant-review exercise in my staff handbook, the panel may release a travel stipend only if the registrar countersigns the itinerary; the sample file already shows that signature.",
+          "recorded_at": "2026-10-15T08:07:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-007",
+          "message_id": "blind-007-m02",
+          "role": "assistant",
+          "text": "Are you describing the handbook sample or a live request?",
+          "recorded_at": "2026-10-15T08:07:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-007",
+          "message_id": "blind-007-m03",
+          "role": "user",
+          "text": "Only the sample; the practice item is not a real grant.",
+          "recorded_at": "2026-10-15T08:07:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-007",
+          "message_id": "blind-007-m04",
+          "role": "assistant",
+          "text": "Got it—the exercise is using the countersignature as its gate.",
+          "recorded_at": "2026-10-15T08:07:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-007-foil",
+          "claim": "The handbook exercise makes the registrar’s countersignature sufficient by itself to release the travel stipend.",
+          "message_id": "blind-007-m01",
+          "quote": "For the grant-review exercise in my staff handbook, the panel may release a travel stipend only if the registrar countersigns the itinerary; the sample file already shows that signature.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source does not say the signature alone is enough to release the stipend.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-007-supported",
+          "claim": "The handbook exercise makes the registrar’s countersignature a necessary condition for releasing the travel stipend.",
+          "message_id": "blind-007-m01",
+          "quote": "For the grant-review exercise in my staff handbook, the panel may release a travel stipend only if the registrar countersigns the itinerary; the sample file already shows that signature.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source uses “only if,” which makes the countersignature necessary, not sufficient.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-008",
+      "split": "test",
+      "scenario_group": "blind-scenario-008",
+      "template_group": "blind-template-008",
+      "entity_ids": [
+        "blind-entity-008"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "blind-session-008",
+          "message_id": "blind-008-m01",
+          "role": "user",
+          "text": "Our fencing squad may enter the regional invitational only if every fencer uploads a consent form; the last form arrived this morning, and the entry now reads accepted.",
+          "recorded_at": "2026-10-15T08:08:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-008",
+          "message_id": "blind-008-m02",
+          "role": "assistant",
+          "text": "The portal status should be visible to the team captain.",
+          "recorded_at": "2026-10-15T08:08:02+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-008-supported",
+          "claim": "The last consent form arrived, and the squad’s entry is now marked accepted.",
+          "message_id": "blind-008-m01",
+          "quote": "Our fencing squad may enter the regional invitational only if every fencer uploads a consent form; the last form arrived this morning, and the entry now reads accepted.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source states that the last form arrived and that the entry reads accepted.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-008-foil",
+          "claim": "The last consent form has not arrived.",
+          "message_id": "blind-008-m01",
+          "quote": "Our fencing squad may enter the regional invitational only if every fencer uploads a consent form; the last form arrived this morning, and the entry now reads accepted.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This reverses both the completed prerequisite and the stated entry status.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-009",
+      "split": "test",
+      "scenario_group": "blind-scenario-009",
+      "template_group": "blind-template-009",
+      "entity_ids": [
+        "blind-entity-009"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "blind-session-009",
+          "message_id": "blind-009-m01",
+          "role": "user",
+          "text": "The materials technician told me the vacuum gauge may be drifting, but she has not opened the instrument to test it yet.",
+          "recorded_at": "2026-10-15T08:09:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-009",
+          "message_id": "blind-009-m02",
+          "role": "assistant",
+          "text": "So the reading is still unconfirmed?",
+          "recorded_at": "2026-10-15T08:09:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-009",
+          "message_id": "blind-009-m03",
+          "role": "user",
+          "text": "Right; I haven't changed the instrument log.",
+          "recorded_at": "2026-10-15T08:09:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-009-foil",
+          "claim": "The technician confirmed that the vacuum gauge is drifting.",
+          "message_id": "blind-009-m01",
+          "quote": "The materials technician told me the vacuum gauge may be drifting, but she has not opened the instrument to test it yet.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This turns the technician’s tentative report into a confirmed finding.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-009-supported",
+          "claim": "The user reports that the technician said the vacuum gauge may be drifting and has not tested the instrument yet.",
+          "message_id": "blind-009-m01",
+          "quote": "The materials technician told me the vacuum gauge may be drifting, but she has not opened the instrument to test it yet.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source attributes a possibility to the technician and says she has not tested the instrument.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-010",
+      "split": "test",
+      "scenario_group": "blind-scenario-010",
+      "template_group": "blind-template-010",
+      "entity_ids": [
+        "blind-entity-010"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "blind-session-010",
+          "message_id": "blind-010-m01",
+          "role": "user",
+          "text": "The district circular lists my son’s robotics match for 24 October; I copied that date into my calendar, but I have not asked his coach whether the schedule changed.",
+          "recorded_at": "2026-10-15T08:10:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-010",
+          "message_id": "blind-010-m02",
+          "role": "assistant",
+          "text": "Did you mark where the date came from?",
+          "recorded_at": "2026-10-15T08:10:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-010",
+          "message_id": "blind-010-m03",
+          "role": "user",
+          "text": "I wrote “from circular” beside it.",
+          "recorded_at": "2026-10-15T08:10:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-010",
+          "message_id": "blind-010-m04",
+          "role": "assistant",
+          "text": "That will help distinguish the notice from a later confirmation.",
+          "recorded_at": "2026-10-15T08:10:04+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-010",
+          "message_id": "blind-010-m05",
+          "role": "user",
+          "text": "Yes, I will check with the coach before we leave.",
+          "recorded_at": "2026-10-15T08:10:05+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-010-foil",
+          "claim": "The coach confirmed that the robotics match is definitely scheduled for 24 October.",
+          "message_id": "blind-010-m01",
+          "quote": "The district circular lists my son’s robotics match for 24 October; I copied that date into my calendar, but I have not asked his coach whether the schedule changed.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source contains no coach confirmation and leaves schedule changes unchecked.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-010-supported",
+          "claim": "The user copied 24 October from the district circular for the robotics match and has not checked with the coach for a schedule change.",
+          "message_id": "blind-010-m01",
+          "quote": "The district circular lists my son’s robotics match for 24 October; I copied that date into my calendar, but I have not asked his coach whether the schedule changed.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source identifies the circular as the date source and explicitly says the coach has not been asked.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-011",
+      "split": "test",
+      "scenario_group": "blind-scenario-011",
+      "template_group": "blind-template-011",
+      "entity_ids": [
+        "blind-entity-011"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "blind-session-011",
+          "message_id": "blind-011-m01",
+          "role": "user",
+          "text": "In my radio drama, dispatch says the tunnel sensor might have failed, and the engineer character has not tested it.",
+          "recorded_at": "2026-10-15T08:11:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-011",
+          "message_id": "blind-011-m02",
+          "role": "assistant",
+          "text": "Does the script include a definite diagnosis later?",
+          "recorded_at": "2026-10-15T08:11:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-011",
+          "message_id": "blind-011-m03",
+          "role": "user",
+          "text": "I haven't written that scene yet.",
+          "recorded_at": "2026-10-15T08:11:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-011",
+          "message_id": "blind-011-m04",
+          "role": "assistant",
+          "text": "The current line keeps the report tentative.",
+          "recorded_at": "2026-10-15T08:11:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-011-supported",
+          "claim": "In the drama, dispatch reports that the tunnel sensor might have failed, and the engineer has not tested it.",
+          "message_id": "blind-011-m01",
+          "quote": "In my radio drama, dispatch says the tunnel sensor might have failed, and the engineer character has not tested it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source attributes a possibility to dispatch and says the engineer has not tested the sensor.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-011-foil",
+          "claim": "In the drama, the engineer confirmed that the tunnel sensor failed.",
+          "message_id": "blind-011-m01",
+          "quote": "In my radio drama, dispatch says the tunnel sensor might have failed, and the engineer character has not tested it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This changes the reporting character and presents an untested possibility as an engineering confirmation.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-012",
+      "split": "test",
+      "scenario_group": "blind-scenario-012",
+      "template_group": "blind-template-012",
+      "entity_ids": [
+        "blind-entity-012"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "blind-session-012",
+          "message_id": "blind-012-m01",
+          "role": "user",
+          "text": "I’m revising production notes for a short film: Rina’s line says the star tracker passed its check, but I haven’t decided whether the notes use the observatory shift I volunteered on or a fictional version of it.",
+          "recorded_at": "2026-10-15T08:12:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-012",
+          "message_id": "blind-012-m02",
+          "role": "assistant",
+          "text": "Is the passed-check sentence still credited to Rina?",
+          "recorded_at": "2026-10-15T08:12:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-012",
+          "message_id": "blind-012-m03",
+          "role": "user",
+          "text": "Yes, that speaker credit is in the draft.",
+          "recorded_at": "2026-10-15T08:12:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-012-supported",
+          "claim": "The user’s film notes attribute the passed-check statement to Rina while leaving the setting undecided between a real volunteer shift and a fictional version.",
+          "message_id": "blind-012-m01",
+          "quote": "I’m revising production notes for a short film: Rina’s line says the star tracker passed its check, but I haven’t decided whether the notes use the observatory shift I volunteered on or a fictional version of it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source says the passed-check line belongs to Rina and leaves the setting unresolved.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-012-foil",
+          "claim": "The user’s film notes attribute the passed-check statement to the user while leaving the setting undecided between a real volunteer shift and a fictional version.",
+          "message_id": "blind-012-m01",
+          "quote": "I’m revising production notes for a short film: Rina’s line says the star tracker passed its check, but I haven’t decided whether the notes use the observatory shift I volunteered on or a fictional version of it.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "This changes who the notes attribute the statement to; the source assigns it to Rina.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-013",
+      "split": "test",
+      "scenario_group": "blind-scenario-013",
+      "template_group": "blind-template-013",
+      "entity_ids": [
+        "blind-entity-013"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "blind-session-013",
+          "message_id": "blind-013-m01",
+          "role": "user",
+          "text": "I aligned the Doppler spectrometer while Kian logged the exposure times; the orange calibration case belongs to the lab, not to either of us.",
+          "recorded_at": "2026-10-15T08:13:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-013",
+          "message_id": "blind-013-m02",
+          "role": "assistant",
+          "text": "Was the case checked out?",
+          "recorded_at": "2026-10-15T08:13:02+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-013-foil",
+          "claim": "Kian aligned the spectrometer, the user logged the exposure times, and the calibration case belongs to the lab.",
+          "message_id": "blind-013-m01",
+          "quote": "I aligned the Doppler spectrometer while Kian logged the exposure times; the orange calibration case belongs to the lab, not to either of us.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This swaps who performed the two recorded actions.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-013-supported",
+          "claim": "The user aligned the spectrometer, Kian logged the exposure times, and the calibration case belongs to the lab.",
+          "message_id": "blind-013-m01",
+          "quote": "I aligned the Doppler spectrometer while Kian logged the exposure times; the orange calibration case belongs to the lab, not to either of us.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source assigns the alignment to the user and the logging to Kian.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-014",
+      "split": "test",
+      "scenario_group": "blind-scenario-014",
+      "template_group": "blind-template-014",
+      "entity_ids": [
+        "blind-entity-014"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "blind-session-014",
+          "message_id": "blind-014-m01",
+          "role": "user",
+          "text": "Jo owns the red fencing mask and lent it to me for Sunday; my own mask is the white one with a split strap.",
+          "recorded_at": "2026-10-15T08:14:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-014",
+          "message_id": "blind-014-m02",
+          "role": "assistant",
+          "text": "Will you return Jo’s mask after the bout?",
+          "recorded_at": "2026-10-15T08:14:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-014",
+          "message_id": "blind-014-m03",
+          "role": "user",
+          "text": "Yes, hers goes back in the team locker.",
+          "recorded_at": "2026-10-15T08:14:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-014",
+          "message_id": "blind-014-m04",
+          "role": "assistant",
+          "text": "I’ll keep the two masks distinct in the note.",
+          "recorded_at": "2026-10-15T08:14:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-014-supported",
+          "claim": "Jo owns the red mask and lent it to the user; the user owns the white mask with the split strap.",
+          "message_id": "blind-014-m01",
+          "quote": "Jo owns the red fencing mask and lent it to me for Sunday; my own mask is the white one with a split strap.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source explicitly assigns the red mask to Jo and the white mask to the user.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-014-foil",
+          "claim": "The white mask with the split strap belongs to Jo.",
+          "message_id": "blind-014-m01",
+          "quote": "Jo owns the red fencing mask and lent it to me for Sunday; my own mask is the white one with a split strap.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This reverses the stated ownership and loan direction.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-015",
+      "split": "test",
+      "scenario_group": "blind-scenario-015",
+      "template_group": "blind-template-015",
+      "entity_ids": [
+        "blind-entity-015"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "blind-session-015",
+          "message_id": "blind-015-m01",
+          "role": "user",
+          "text": "In my serialized space drama, engineer Ulo routes the power cable while navigator Fenn signs for the rover, which belongs to the mission guild.",
+          "recorded_at": "2026-10-15T08:15:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-015",
+          "message_id": "blind-015-m02",
+          "role": "assistant",
+          "text": "Is the handoff in the landing chapter?",
+          "recorded_at": "2026-10-15T08:15:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-015",
+          "message_id": "blind-015-m03",
+          "role": "user",
+          "text": "Yes, just before the crew reaches the ridge.",
+          "recorded_at": "2026-10-15T08:15:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-015-foil",
+          "claim": "In the drama, Fenn routes the power cable, Ulo signs for the rover, and the mission guild owns the rover.",
+          "message_id": "blind-015-m01",
+          "quote": "In my serialized space drama, engineer Ulo routes the power cable while navigator Fenn signs for the rover, which belongs to the mission guild.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This swaps the characters’ two actions.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-015-supported",
+          "claim": "In the drama, Ulo routes the power cable, Fenn signs for the rover, and the mission guild owns the rover.",
+          "message_id": "blind-015-m01",
+          "quote": "In my serialized space drama, engineer Ulo routes the power cable while navigator Fenn signs for the rover, which belongs to the mission guild.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source assigns cable routing to Ulo and the rover sign-off to Fenn.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-016",
+      "split": "test",
+      "scenario_group": "blind-scenario-016",
+      "template_group": "blind-template-016",
+      "entity_ids": [
+        "blind-entity-016"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "blind-session-016",
+          "message_id": "blind-016-m01",
+          "role": "user",
+          "text": "I haven’t filed the school board’s auditorium appeal; the signed request is saved in the submission portal, but I stopped before pressing submit.",
+          "recorded_at": "2026-10-15T08:16:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-016",
+          "message_id": "blind-016-m02",
+          "role": "assistant",
+          "text": "The portal still lets you revise it then?",
+          "recorded_at": "2026-10-15T08:16:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-016",
+          "message_id": "blind-016-m03",
+          "role": "user",
+          "text": "Yes, the deadline has not passed.",
+          "recorded_at": "2026-10-15T08:16:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-016",
+          "message_id": "blind-016-m04",
+          "role": "assistant",
+          "text": "You can keep the draft without treating it as filed.",
+          "recorded_at": "2026-10-15T08:16:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-016-supported",
+          "claim": "The user has not filed the auditorium appeal; its signed request is saved but was not submitted.",
+          "message_id": "blind-016-m01",
+          "quote": "I haven’t filed the school board’s auditorium appeal; the signed request is saved in the submission portal, but I stopped before pressing submit.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the user stopped before submission and explicitly says the appeal has not been filed.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-016-foil",
+          "claim": "The user filed the auditorium appeal after saving the signed request.",
+          "message_id": "blind-016-m01",
+          "quote": "I haven’t filed the school board’s auditorium appeal; the signed request is saved in the submission portal, but I stopped before pressing submit.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This drops the explicit negation and states the appeal was filed.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-017",
+      "split": "test",
+      "scenario_group": "blind-scenario-017",
+      "template_group": "blind-template-017",
+      "entity_ids": [
+        "blind-entity-017"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "blind-session-017",
+          "message_id": "blind-017-m01",
+          "role": "user",
+          "text": "For the civics prompt I’m composing, the applicant does not waive the hearing; she asks for a continuance, and the answer key is still unwritten.",
+          "recorded_at": "2026-10-15T08:17:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-017",
+          "message_id": "blind-017-m02",
+          "role": "assistant",
+          "text": "Are you keeping that choice visible in the prompt?",
+          "recorded_at": "2026-10-15T08:17:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-017",
+          "message_id": "blind-017-m03",
+          "role": "user",
+          "text": "Yes, the student’s decision is the point of the exercise.",
+          "recorded_at": "2026-10-15T08:17:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-017",
+          "message_id": "blind-017-m04",
+          "role": "assistant",
+          "text": "That should make the distinction clear to readers.",
+          "recorded_at": "2026-10-15T08:17:04+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-017",
+          "message_id": "blind-017-m05",
+          "role": "user",
+          "text": "I still need to draft the key.",
+          "recorded_at": "2026-10-15T08:17:05+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-017-supported",
+          "claim": "The user’s civics exercise describes an applicant who does not waive the hearing and instead asks for a continuance.",
+          "message_id": "blind-017-m01",
+          "quote": "For the civics prompt I’m composing, the applicant does not waive the hearing; she asks for a continuance, and the answer key is still unwritten.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source says the exercise applicant does not waive the hearing and asks for a continuance.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-017-foil",
+          "claim": "The user’s civics exercise describes an applicant who waives the hearing instead of asking for a continuance.",
+          "message_id": "blind-017-m01",
+          "quote": "For the civics prompt I’m composing, the applicant does not waive the hearing; she asks for a continuance, and the answer key is still unwritten.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "This reverses the exercise detail negated in the source.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-018",
+      "split": "test",
+      "scenario_group": "blind-scenario-018",
+      "template_group": "blind-template-018",
+      "entity_ids": [
+        "blind-entity-018"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "blind-session-018",
+          "message_id": "blind-018-m01",
+          "role": "user",
+          "text": "In the graphic novel draft, goalkeeper Sola never wears the captain’s armband; Neri wears it in the final panel.",
+          "recorded_at": "2026-10-15T08:18:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-018",
+          "message_id": "blind-018-m02",
+          "role": "assistant",
+          "text": "Is that the scene after the championship?",
+          "recorded_at": "2026-10-15T08:18:02+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-018-foil",
+          "claim": "In the graphic novel, Sola wears the captain’s armband in the final panel.",
+          "message_id": "blind-018-m01",
+          "quote": "In the graphic novel draft, goalkeeper Sola never wears the captain’s armband; Neri wears it in the final panel.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This reverses the stated negative and the character wearing the armband.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-018-supported",
+          "claim": "In the graphic novel, Sola never wears the captain’s armband, and Neri wears it in the final panel.",
+          "message_id": "blind-018-m01",
+          "quote": "In the graphic novel draft, goalkeeper Sola never wears the captain’s armband; Neri wears it in the final panel.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source negates Sola wearing the armband and assigns it to Neri in the final panel.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-019",
+      "split": "test",
+      "scenario_group": "blind-scenario-019",
+      "template_group": "blind-template-019",
+      "entity_ids": [
+        "blind-entity-019"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "blind-session-019",
+          "message_id": "blind-019-m01",
+          "role": "user",
+          "text": "I finished the pulsar-timing session at 21:40 on 2026-02-12, then entered its raw counts in the log at 22:05 afterward.",
+          "recorded_at": "2026-10-15T08:19:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-019",
+          "message_id": "blind-019-m02",
+          "role": "assistant",
+          "text": "Do you keep the instrument readout with that entry?",
+          "recorded_at": "2026-10-15T08:19:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-019",
+          "message_id": "blind-019-m03",
+          "role": "user",
+          "text": "The printout is in the run folder.",
+          "recorded_at": "2026-10-15T08:19:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-019",
+          "message_id": "blind-019-m04",
+          "role": "assistant",
+          "text": "That should make the sequence easy to verify.",
+          "recorded_at": "2026-10-15T08:19:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-019-foil",
+          "claim": "The user entered the raw counts at 22:05 before finishing the pulsar-timing session at 21:40 on 2026-02-12.",
+          "message_id": "blind-019-m01",
+          "quote": "I finished the pulsar-timing session at 21:40 on 2026-02-12, then entered its raw counts in the log at 22:05 afterward.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "This reverses the explicit order of the session and the later log entry.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-019-supported",
+          "claim": "The user finished the pulsar-timing session at 21:40 on 2026-02-12 and entered its raw counts afterward at 22:05.",
+          "message_id": "blind-019-m01",
+          "quote": "I finished the pulsar-timing session at 21:40 on 2026-02-12, then entered its raw counts in the log at 22:05 afterward.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source states the session was finished first and the log entry was made afterward.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-020",
+      "split": "test",
+      "scenario_group": "blind-scenario-020",
+      "template_group": "blind-template-020",
+      "entity_ids": [
+        "blind-entity-020"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "blind-session-020",
+          "message_id": "blind-020-m01",
+          "role": "user",
+          "text": "In the mock athletics bulletin I’m editing, the 4×400 final is scheduled after the opening ceremony, but I haven’t assigned a year to that draft.",
+          "recorded_at": "2026-10-15T08:20:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-020",
+          "message_id": "blind-020-m02",
+          "role": "assistant",
+          "text": "Will it be a real meet?",
+          "recorded_at": "2026-10-15T08:20:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-020",
+          "message_id": "blind-020-m03",
+          "role": "user",
+          "text": "No, it is a layout exercise for the sports desk.",
+          "recorded_at": "2026-10-15T08:20:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-020-supported",
+          "claim": "The user’s mock bulletin schedules the 4×400 final after the opening ceremony and leaves the draft without a year.",
+          "message_id": "blind-020-m01",
+          "quote": "In the mock athletics bulletin I’m editing, the 4×400 final is scheduled after the opening ceremony, but I haven’t assigned a year to that draft.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source puts the final after the ceremony and says the draft has no assigned year.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-020-foil",
+          "claim": "The user’s mock bulletin schedules the 4×400 final before the opening ceremony and leaves the draft without a year.",
+          "message_id": "blind-020-m01",
+          "quote": "In the mock athletics bulletin I’m editing, the 4×400 final is scheduled after the opening ceremony, but I haven’t assigned a year to that draft.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "This reverses the stated order of the final and the opening ceremony.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-021",
+      "split": "test",
+      "scenario_group": "blind-scenario-021",
+      "template_group": "blind-template-021",
+      "entity_ids": [
+        "blind-entity-021"
+      ],
+      "phenomenon": "time",
+      "messages": [
+        {
+          "session_id": "blind-session-021",
+          "message_id": "blind-021-m01",
+          "role": "user",
+          "text": "In my courtroom radio play, clerk Ivo files the sealed exhibits after the verdict and before the press briefing.",
+          "recorded_at": "2026-10-15T08:21:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-021",
+          "message_id": "blind-021-m02",
+          "role": "assistant",
+          "text": "Does that cue the broadcast scene?",
+          "recorded_at": "2026-10-15T08:21:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-021",
+          "message_id": "blind-021-m03",
+          "role": "user",
+          "text": "It leads into the final transcript.",
+          "recorded_at": "2026-10-15T08:21:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-021",
+          "message_id": "blind-021-m04",
+          "role": "assistant",
+          "text": "The order keeps the exhibit handoff between those events.",
+          "recorded_at": "2026-10-15T08:21:04+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-021",
+          "message_id": "blind-021-m05",
+          "role": "user",
+          "text": "That is how the scene is blocked.",
+          "recorded_at": "2026-10-15T08:21:05+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-021-foil",
+          "claim": "In the radio play, Ivo files the exhibits before the verdict and before the press briefing.",
+          "message_id": "blind-021-m01",
+          "quote": "In my courtroom radio play, clerk Ivo files the sealed exhibits after the verdict and before the press briefing.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "This moves the filing to before the verdict, contrary to the source.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        },
+        {
+          "candidate_id": "blind-021-supported",
+          "claim": "In the radio play, Ivo files the exhibits after the verdict and before the press briefing.",
+          "message_id": "blind-021-m01",
+          "quote": "In my courtroom radio play, clerk Ivo files the sealed exhibits after the verdict and before the press briefing.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The source places the filing after the verdict and before the briefing.",
+          "eligibility_reason": "The candidate concerns fictional characters or events, which the declared scope excludes."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-022",
+      "split": "test",
+      "scenario_group": "blind-scenario-022",
+      "template_group": "blind-template-022",
+      "entity_ids": [
+        "blind-entity-022"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "blind-session-022",
+          "message_id": "blind-022-m01",
+          "role": "user",
+          "text": "I saw the scoreboard reboot just after the arena’s voltage dip, but the technician said a timer test was running too, so she could not tell whether the dip caused the reboot.",
+          "recorded_at": "2026-10-15T08:22:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-022",
+          "message_id": "blind-022-m02",
+          "role": "assistant",
+          "text": "So you recorded sequence without assigning a cause?",
+          "recorded_at": "2026-10-15T08:22:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-022",
+          "message_id": "blind-022-m03",
+          "role": "user",
+          "text": "That’s right; the incident note says “cause undetermined.”",
+          "recorded_at": "2026-10-15T08:22:03+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-022",
+          "message_id": "blind-022-m04",
+          "role": "assistant",
+          "text": "I’ll keep the uncertainty with the event.",
+          "recorded_at": "2026-10-15T08:22:04+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-022-supported",
+          "claim": "The user saw the scoreboard reboot after a voltage dip, while the technician could not determine whether the dip caused it because a timer test was also running.",
+          "message_id": "blind-022-m01",
+          "quote": "I saw the scoreboard reboot just after the arena’s voltage dip, but the technician said a timer test was running too, so she could not tell whether the dip caused the reboot.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source gives the event order and explicitly leaves the cause undetermined.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        },
+        {
+          "candidate_id": "blind-022-foil",
+          "claim": "The arena’s voltage dip caused the scoreboard to reboot.",
+          "message_id": "blind-022-m01",
+          "quote": "I saw the scoreboard reboot just after the arena’s voltage dip, but the technician said a timer test was running too, so she could not tell whether the dip caused the reboot.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the technician could not determine whether the voltage dip caused the reboot.",
+          "eligibility_reason": "The candidate concerns a user-stated or user-reported real-world personal fact or plan, so it is in personal-memory scope if supported."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-023",
+      "split": "test",
+      "scenario_group": "blind-scenario-023",
+      "template_group": "blind-template-023",
+      "entity_ids": [
+        "blind-entity-023"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "blind-session-023",
+          "message_id": "blind-023-m01",
+          "role": "user",
+          "text": "For the physics-lab vignette I’m writing, the sensor reads zero after coolant flow stops, but the draft leaves open whether the shutdown caused the reading.",
+          "recorded_at": "2026-10-15T08:23:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-023",
+          "message_id": "blind-023-m02",
+          "role": "assistant",
+          "text": "Is the causal explanation settled?",
+          "recorded_at": "2026-10-15T08:23:02+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-023",
+          "message_id": "blind-023-m03",
+          "role": "user",
+          "text": "Not yet; I want students to distinguish sequence from cause.",
+          "recorded_at": "2026-10-15T08:23:03+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-023-supported",
+          "claim": "The physics vignette the user is writing leaves open whether stopping coolant flow caused the zero reading.",
+          "message_id": "blind-023-m01",
+          "quote": "For the physics-lab vignette I’m writing, the sensor reads zero after coolant flow stops, but the draft leaves open whether the shutdown caused the reading.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source explicitly leaves the causal relation open.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-023-foil",
+          "claim": "The physics vignette the user is writing says that stopping coolant flow caused the zero reading.",
+          "message_id": "blind-023-m01",
+          "quote": "For the physics-lab vignette I’m writing, the sensor reads zero after coolant flow stops, but the draft leaves open whether the shutdown caused the reading.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "This turns the unresolved relation in the draft into an asserted cause.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "blind-024",
+      "split": "test",
+      "scenario_group": "blind-scenario-024",
+      "template_group": "blind-template-024",
+      "entity_ids": [
+        "blind-entity-024"
+      ],
+      "phenomenon": "causality",
+      "messages": [
+        {
+          "session_id": "blind-session-024",
+          "message_id": "blind-024-m01",
+          "role": "user",
+          "text": "In the emergency-management tabletop script I’m revising, the dispatch relay drops just after the generator alarm; the draft leaves open whether the alarm caused the drop or a radio timeout did.",
+          "recorded_at": "2026-10-15T08:24:01+00:00",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "blind-session-024",
+          "message_id": "blind-024-m02",
+          "role": "assistant",
+          "text": "Does the next scene identify the cause?",
+          "recorded_at": "2026-10-15T08:24:02+00:00",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "blind-024-foil",
+          "claim": "The generator alarm caused the dispatch relay to drop in the tabletop script.",
+          "message_id": "blind-024-m01",
+          "quote": "In the emergency-management tabletop script I’m revising, the dispatch relay drops just after the generator alarm; the draft leaves open whether the alarm caused the drop or a radio timeout did.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source leaves the alarm’s causal role unresolved and also names a timeout as an alternative.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        },
+        {
+          "candidate_id": "blind-024-supported",
+          "claim": "The tabletop script leaves open whether the generator alarm or a radio timeout caused the dispatch relay to drop.",
+          "message_id": "blind-024-m01",
+          "quote": "In the emergency-management tabletop script I’m revising, the dispatch relay drops just after the generator alarm; the draft leaves open whether the alarm caused the drop or a radio timeout did.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source names two possible causes without choosing between them.",
+          "eligibility_reason": "The candidate is about writing, a fictionalized exercise, or exercise metadata, which the declared scope marks uncertain."
+        }
+      ]
+    }
+  ]
+}

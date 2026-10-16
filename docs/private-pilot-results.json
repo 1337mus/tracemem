@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "payload_sha256": "bb9124b2690d81f60abad9353898ad78a06bb6825e2346e62c96932f41c38ef1",
+  "receipt_sha256": "f72a9bca84d9c703778214783615b72eeaf9988f7a377679cfc14e4e9bea549c",
+  "scope": {
+    "split": "dev",
+    "case_count": 7,
+    "candidate_count": 14,
+    "session_count": 1,
+    "held_out": false,
+    "label_basis": "agent-only provisional annotations",
+    "interpretation": "one-session dev challenge with agent-only provisional annotations; not held out."
+  },
+  "arms": {
+    "base": {
+      "summary": {
+        "candidate_count": 14,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 7,
+              "retained": 6,
+              "retention_rate": 0.8571428571428571
+            },
+            "unsupported": {
+              "total": 7,
+              "caught": 6,
+              "catch_rate": 0.8571428571428571
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 6,
+              "unsupported": 0,
+              "uncertain": 1,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 0,
+              "unsupported": 6,
+              "uncertain": 1,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 12,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.8571428571428571,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 4,
+              "accuracy": 0.2857142857142857
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 4,
+              "ineligible": 0,
+              "uncertain": 10,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 4,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.2857142857142857,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 264,
+          "items_with_output_tokens": 14
+        },
+        "validity": {
+          "total": 14,
+          "valid": 14,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 14,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 7
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 4,
+          "rate": 0.5714285714285714
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "prior": {
+      "summary": {
+        "candidate_count": 14,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 7,
+              "retained": 7,
+              "retention_rate": 1.0
+            },
+            "unsupported": {
+              "total": 7,
+              "caught": 7,
+              "catch_rate": 1.0
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 7,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 0,
+              "unsupported": 7,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 14,
+          "decisive_total": 14,
+          "decisive_accuracy": 1.0,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 14,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 0,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.0,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 168,
+          "items_with_output_tokens": 14
+        },
+        "validity": {
+          "total": 14,
+          "valid": 14,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 14,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 7
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "continued": {
+      "summary": {
+        "candidate_count": 14,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 7,
+              "retained": 6,
+              "retention_rate": 0.8571428571428571
+            },
+            "unsupported": {
+              "total": 7,
+              "caught": 7,
+              "catch_rate": 1.0
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 6,
+              "unsupported": 1,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 0,
+              "unsupported": 7,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 13,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.9285714285714286,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 7,
+              "accuracy": 0.5
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 7,
+              "ineligible": 0,
+              "uncertain": 7,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 7,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.5,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 161,
+          "items_with_output_tokens": 14
+        },
+        "validity": {
+          "total": 14,
+          "valid": 14,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 14,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 7
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 4,
+          "rate": 0.5714285714285714
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        }
+      }
+    }
+  }
+}

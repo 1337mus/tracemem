@@ -1,13 +1,20 @@
 # Data governance
 
-Durable evidence and retrieval run locally. Remote experiments use newly authored
-fictional fixtures. Three bounded synthetic QLoRA runs have completed; the
-[pilot](sft-pilot-results.md), [second run](sft-quote-v2-results.md), and
-[third run](sft-quote-v3-results.md) reports record their data, compute, and
-results. V3's final agent/root review was mixed and its required-fact coverage
-declined; it did not select a model or advance Gate A. Reviews have zero human
-reviewers. No private corpus was uploaded or used for training, no public release
-occurred, and no model weights were downloaded to this Mac. Check
+Durable evidence and retrieval run locally. Training experiments have
+used newly authored fictional fixtures. The owner has also authorized selected
+private conversations for training and evaluation on personal Modal; that
+authorization does not permit putting them or adapters trained on them in GitHub.
+Use restricted private experiment paths and explicit private provenance. See
+[realistic data](realistic-data.md) for the collection and review workflow.
+Four extractor training experiments and two verifier training experiments have
+completed on fiction. Their results are mixed; none selected a product model.
+The latest [verifier result](verifier-v2-results.md) includes separate development
+and frozen test reports. Reviews have zero human reviewers.
+The first [private inference pilot](private-pilot-results.md) evaluated seven
+real user messages and 14 candidate claims on personal Modal; no private
+training or private checkpoint creation has occurred. Raw inputs and receipts
+remain restricted and outside GitHub. No public release occurred, and no model
+weights were downloaded to this Mac. Check
 `.local/active-cycle.json` and live Modal state before any new call. Code
 licensing does not grant rights to private conversations.
 
@@ -28,7 +35,9 @@ adapter uses newly authored fictional conversations, with no benchmark data impo
   These contain no copied private conversation excerpts. They are diagnostic examples,
   not representative population samples or an audited training dataset.
 - **Private:** configured Context Kit transcripts and derived notes. Read-only inspection
-  and local evaluation are allowed. Treat all text, claims, vectors, checkpoints,
+  and local evaluation are allowed. Owner-authorized private training and evaluation
+  may also run on personal Modal after minimizing and reviewing the exact batch.
+  Treat all text, claims, vectors, checkpoints,
   source locators, identifiers and generated context as private. Keep them in `.local/`,
   which is ignored by git, with directory mode 0700 and file mode 0600.
 

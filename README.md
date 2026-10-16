@@ -9,16 +9,15 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today; no research model has been selected for
-product use.** An inference-only transfer check of the unchanged Qwen3-4B
-adapter rejected 22/24 unsupported claims versus 10/24 for baseline and kept
-all 24 supported claims, but missed the frozen 23/24 rejection threshold. A
-separate check requiring both “supported” and “belongs in personal memory”
-would keep only 10 of 19 suitable, supported claims, versus 16 for baseline.
-The synthetic dev labels are agent-authored; there is no independent test or
-quality claim.
-See the [transfer results](docs/verifier-transfer-results.md) and frozen
-[protocol](docs/verifier-transfer-protocol.md).
+**The local search tool works today; the trained model is still research.**
+The latest Qwen3-4B verifier catches more unsupported claims, but sometimes
+rejects good ones. On a frozen fictional test, continuation training improved
+unsupported rejection from 18/24 to 23/24 and useful-memory retention from 5/12
+to 10/12 compared with the previous adapter. It retained 22/24 supported claims,
+down from 24/24, and missed the overall criteria. Labels are provisional agent
+judgments, with no human reviewers; broad real-conversation quality remains unproven.
+See the [results](docs/verifier-v2-results.md), with separate development and
+test reports, and the [frozen protocol](docs/verifier-v2-protocol.md).
 
 Earlier extraction and verifier experiments remain documented in the
 [quote-v4 results](docs/sft-quote-v4-results.md), [quote verifier results](docs/quote-verifier-dev-results.md),
@@ -26,12 +25,18 @@ Earlier extraction and verifier experiments remain documented in the
 and [pilot results](docs/sft-pilot-results.md). The four extractor runs and
 their findings are unchanged by the verifier experiment.
 
-This run used only newly authored fictional cases; no private conversation
-was included in its training or evaluation data or uploaded. A separate local
-review bundle contains 36 windows from 22 Codex sources, with labels pending;
-none was model input. Real conversations remain local searchable evidence, and
-claims still need source review. See [private review](docs/private-evaluation.md)
-and [data governance](docs/data-governance.md).
+Training so far has used newly authored fiction. A first private comparison now
+tests 14 claims against seven real user messages from one conversation. The
+continued adapter accepted four of seven supported memories under the full
+support-and-eligibility rule, matching the base model. It rejected all seven
+unsupported contrast claims. This small, agent-labeled development test does not
+establish reliability or improved memory answers. See the
+[private pilot](docs/private-pilot-results.md).
+
+The owner permits private training and evaluation on personal Modal. Private
+conversations and any adapters trained on them stay out of GitHub. We are
+collecting a separate real-conversation training set; the pilot stays in
+development. See [getting better data](docs/realistic-data.md).
 
 ## What works
 

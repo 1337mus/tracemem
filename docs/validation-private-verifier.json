@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-16T23:33:23.467282+00:00",
+  "command": "make check PYTHON=.venv/bin/python",
+  "exit_code": 0,
+  "attempted": 1073,
+  "passed": 1072,
+  "skipped": 1,
+  "test_seconds": 65.132,
+  "ruff": "passed",
+  "formatted_files": 220,
+  "strict_mypy_source_files": 70,
+  "synthetic_dev_and_test_replay": "Both decoded reports exactly match the historical local scores.",
+  "new_private_contract_tests": 12,
+  "new_private_runner_tests": 9,
+  "new_private_evaluator_tests": 5,
+  "changed_paths_privacy_scan": {
+    "files": 36,
+    "exact_private_transcript_claim_and_source_identifier_hits": 0,
+    "note": "Narrow exact-string audit of current pilot against changed shareable paths; not a general privacy proof."
+  },
+  "full_check_log_sha256": "d023d5b469d4ecfc59dcb6a0410983588ae3e590024bc37c71af0aa270da6ee9"
+}

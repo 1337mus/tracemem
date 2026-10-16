@@ -1,4 +1,96 @@
-# Current checkpoint: broader verifier support gain; eligibility remains a blocker
+# Current checkpoint: first private comparison completed
+
+Updated 2026-10-16 UTC. One personal Modal A10G call compared the pinned
+Qwen3-4B base, prior verifier adapter and continued verifier adapter on 14
+candidates from seven complete real user messages in one primary personal
+conversation. Two blind-to-prediction agent annotation passes agreed on both
+axes for all 14 candidates; zero human reviewers. All references are eligible.
+This is a balanced development challenge, not a held-out or natural-prevalence
+evaluation. It measures supplied-candidate verification, not extraction or QA.
+
+Base/prior/continued retained 6/7, 7/7, 6/7 supported claims; rejected 6/7,
+7/7, 7/7 unsupported claims; and accepted 4/7, 0/7, 4/7 useful supported
+eligible memories. There is no overall useful-memory gain over base on this
+pilot. All 42 outputs were valid and complete, with identical input token IDs
+across arms. Root inspected all disagreements and left frozen labels unchanged.
+Scope uncertainty dominates; the continued adapter also rejects a faithful
+project question. See [private results](private-pilot-results.md) and
+[aggregate metrics](private-pilot-results.json).
+
+No private training or checkpoint creation occurred. The original sources,
+Context Kit and `~/.llm-context` remain read-only. Source anchors were verified
+against the original file with unchanged source stat. All raw private data,
+labels, prompts and receipts remain restricted under ignored `.local` paths.
+The first 22-source subagent selection remains preserved as a failed selection.
+Tracing its other candidate parent chains found the same primary conversation,
+not extra independent sessions. Do not count those children as new training data.
+
+The private annotation/export contract, inference runner and local evaluator
+passed root review. Full source validation: 1,073 attempted, 1,072 passed,
+one optional skip; Ruff/format on 220 files and strict mypy on 70 source files
+passed. Synthetic v2 dev/test scoring reproduced exactly from archived receipts.
+See [validation](validation-private-verifier.json). Signed delivery and any
+remaining live metadata worker state are recorded in `.local/active-cycle.json`;
+this checkpoint does not assert hosted CI or a pushed commit.
+
+The private call used 240.87 worker seconds (181.75 loading), 263.98 client
+seconds, zero retries and no training. Post-run inventory verified five stopped
+apps and zero tasks. Automation stays paused. Verify live state before another
+call and by 2026-10-17. Do not rerun the completed pilot or spend the v2 frozen
+test again. Next: finish the bounded ownership/primary-session metadata inventory,
+collect distinct primary sessions, preserve this pilot in development and build
+a separate real-dialogue training cohort. The local owner-policy review packet
+has seven messages without model predictions; human review is optional for
+provisional research but required before claiming human-validated labels.
+
+# Previous checkpoint: verifier v2 completed; private data selection corrected
+
+Updated 2026-10-16 UTC. Qwen3-4B continuation training completed on 192 fictional
+rows (two epochs, 96 optimizer steps). Historical transfer inference replay
+matched exactly before training. The sole final adapter then completed its
+predeclared single frozen test audit. Both dev and test criteria failed; no
+product model selected. Test unsupported rejection improved 18/24 prior to
+23/24 continued, and useful supported-memory retention improved 5/12 to10/12,
+but supported retention fell24/24 to22/24. Uncertain eligibility remained weak.
+See [results](verifier-v2-results.md), [separate dev](verifier-v2-dev-results.json)
+and [test](verifier-v2-test-results.json). These are provisional agent-authored
+fictional diagnostics, zero human reviewers, no private-data quality evidence.
+
+Training used one personal Modal A10 for1,155.82 worker seconds, including
+686.91 training seconds. The test audit used221.97 worker seconds. Both clients
+exited0 and raw fictional replay inputs/receipts are archived under
+`examples/synthetic/verifier-v2-*`. Previous failed launch receipts remain
+unchanged. No test retuning or relaxed criteria is authorized. The separate
+historical longer-conversation candidate remains unopened. The v2 test is spent.
+
+The owner explicitly clarified that private conversations may be used for
+training and evaluation on personal Modal, while staying out of GitHub. Do not
+ask for this permission again. Exact wording is saved in ignored
+`.local/private-real-model-20261016/owner-authorization-v1.json`. Keep private
+transcripts, claims, receipts and any resulting private-data adapters out of
+GitHub/public artifacts. Preserve Context Kit, original sources and
+`~/.llm-context` read-only. Automation remains paused.
+
+The first private shortlist review excluded all four windows: injected machine
+context/assistant intentions or tool-transcript deltas, with no unambiguous
+direct-human positive memories. Metadata shows all22 selected source files are
+subagent sessions. Do not count their36 prepared windows as usable training
+data. The original snapshot and pending template remain intact. Current work
+selects substantive user dialogue from primary personal-project sessions and
+implements private-provenance annotation/export plus a bounded private Modal
+evaluation runner. All labels remain provisional; no private remote call has
+run. See [realistic data](realistic-data.md) and [private review](private-evaluation.md).
+
+Implementation/review workers are active; new private modules have NOT yet
+passed root final review or a full source check. V2-only source validation
+passed1,046/1,047 tests (one optional skip), Ruff/format and strict mypy across67
+source files before this new private-data work. All new changes are uncommitted;
+latest signed pushed commit remains87cf59823eb78e3c97cb30b09b4c5cfa3b635914.
+Exact jobs, receipts, source hashes, validation and delivery:
+`.local/active-cycle.json`. Verify live worker/Modal inventory before any launch.
+Verify by: 2026-10-17.
+
+# Previous checkpoint: broader verifier support gain; eligibility remains a blocker
 
 Updated 2026-10-16 UTC. The unchanged trained Qwen3-4B verifier completed a
 matched comparison on 24 newly authored fictional dev scenarios (48 candidates).

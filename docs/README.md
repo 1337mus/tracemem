@@ -53,6 +53,18 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Verifier v2 results](verifier-v2-results.md) and [development aggregates](verifier-v2-dev-results.json):
+  continuation training improves eligibility but fails the frozen overall criteria.
+  See the [protocol](verifier-v2-protocol.md), [data card](verifier-v2-data-card.md),
+  and [criteria](verifier-v2-criteria.json).
+- [Getting realistic labeled data](realistic-data.md): private real-session pilot,
+  independent annotation, and shareable evaluation sources.
+- [First private comparison](private-pilot-results.md): real user messages,
+  reviewed contrast claims and a matched comparison of three frozen models.
+- [Private verifier contract](private-verifier-contract.md) and
+  [validation](validation-private-verifier.json): source-linked annotation/export
+  checks and the bounded private inference runner.
+
 - [Training-target audit](training-target-review.md): seven source-preserving
   corrections, literal review checks and a reproducible 768-row corpus.
 - [Fourth experiment protocol](sft-quote-v4-protocol.md): fresh evaluation,

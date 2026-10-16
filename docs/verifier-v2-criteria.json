@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-10-16T21:50:52.054419+00:00",
+  "objective": "Recover useful supported personal-memory retention while preserving support gains through broader synthetic continuation training.",
+  "prompt_policy": "unchanged training/verifier_data.py personal-memory-research-v1",
+  "arms": [
+    "base",
+    "prior",
+    "continued"
+  ],
+  "cohorts": {
+    "new_dev": {
+      "cases": 24,
+      "candidates": 48,
+      "supported_retained_min": 23,
+      "unsupported_rejected_min": 23,
+      "supported_eligible_retained_min": 11,
+      "supported_eligible_total": 12,
+      "unsupported_eligible_accepted_max": 1,
+      "decisive_eligibility_exact_min": 33,
+      "decisive_eligibility_total": 36,
+      "uncertain_eligibility_exact_min": 10,
+      "uncertain_eligibility_total": 12
+    },
+    "transfer_regression": {
+      "cases": 24,
+      "candidates": 48,
+      "supported_retained_min": 24,
+      "unsupported_rejected_min": 23,
+      "supported_eligible_retained_min": 17,
+      "supported_eligible_total": 19,
+      "decisive_eligibility_exact_min": 38,
+      "decisive_eligibility_total": 42,
+      "uncertain_eligibility_exact_min": 6,
+      "uncertain_eligibility_total": 6
+    },
+    "original_paired_dev": {
+      "cases": 6,
+      "candidates": 12,
+      "supported_retained_min": 6,
+      "unsupported_rejected_min": 4
+    }
+  },
+  "all_dev_gates": [
+    "all three arms valid and untruncated on all108 candidates",
+    "continued meets every per-cohort threshold",
+    "continued unsupported false accepts no greater than matched prior on each cohort",
+    "matched prior and base transfer raw outputs reproduce prior receipt item-by-item; mismatch invalidates protocol rather than rewriting history"
+  ],
+  "blind_test": {
+    "cases": 24,
+    "candidates": 48,
+    "policy": "Newly authored fiction by fresh-context author, separate scenario/template/entity groups. Seal before training. Freeze exact candidate artifact after dev once, evaluate once regardless of dev pass/fail as candidate audit; never tune on this test or select alternative checkpoint. If dev fails, test cannot rescue failed dev decision. Report separately.",
+    "thresholds_same_as": "new_dev",
+    "arms": [
+      "base",
+      "prior",
+      "continued"
+    ],
+    "all_valid_untruncated": true
+  },
+  "training": {
+    "rows": 192,
+    "epochs": 2,
+    "microsteps": 384,
+    "optimizer_steps": 96,
+    "learning_rate": 5e-05,
+    "gpu": "A10G",
+    "timeout_seconds": 1800,
+    "automatic_retries": 0,
+    "one_active_call": true
+  },
+  "limitations": [
+    "Provisional agent-authored labels; zero human reviewers.",
+    "No private data used; no downstream QA or product effectiveness claim.",
+    "Adaptive regressions are not held out. Training and test independence requires semantic review beyond distinct identifiers."
+  ],
+  "outputs_seen": false
+}
