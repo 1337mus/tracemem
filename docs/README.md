@@ -56,7 +56,14 @@ Paths in this index are relative to this `docs/` directory.
 - [Training-target audit](training-target-review.md): seven source-preserving
   corrections, literal review checks and a reproducible 768-row corpus.
 - [Fourth experiment protocol](sft-quote-v4-protocol.md): fresh evaluation,
-  matched base/prior/tuned arms and predeclared success criteria; preparation only.
+  matched base/prior/tuned arms and predeclared success criteria.
+- [Fourth SFT run: quote-v4](sft-quote-v4-results.md), [aggregate structural report](sft-quote-v4-results.json),
+  and [validation record](validation-sft-quote-v4.json): failed the frozen test
+  threshold; semantic labels, selected-fact coverage, adjudication, and paired
+  case accounting remain separate. The report links the exact fictional job
+  and receipt.
+- [Quote-only prompt baseline protocol](quote-baseline-protocol.md): planned
+  dev-only comparison of two prompt variants across pinned BF16 Qwen3-4B/8B.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.

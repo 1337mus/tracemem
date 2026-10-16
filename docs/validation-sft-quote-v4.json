@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "experiment": "sft-quote-v4",
+  "as_of": "2026-10-16",
+  "scope": "Saved synthetic experiment, exact copied artifacts, semantic-summary replay, and current local source checks; signed delivery/hosted CI for this slice pending.",
+  "evidence": {
+    "input_audit": ".local/sft-quote-v4-20261016/root-result-input-audit-v1.json",
+    "training_audit": ".local/sft-quote-v4-20261016/root-completed-training-audit-v1.json",
+    "independent_recount": ".local/sft-quote-v4-20261016/root-independent-recount-v1.json",
+    "source_delivery_verification": ".local/sft-quote-v4-20261016/observer/root-source-delivery-verification-v1.json",
+    "copy_manifests": [
+      ".local/sft-quote-v4-20261016/root-fiction-artifact-copies-v1.json",
+      ".local/sft-quote-v4-20261016/root-final-semantic-copies-v1.json"
+    ]
+  },
+  "input_integrity": {
+    "frozen_inputs_match": true,
+    "structural_replay_byte_identical": true,
+    "frozen_input_hash_match_checks": {
+      "datasets/sft-quote-v4/train.json": true,
+      "datasets/sft-quote-v4/dev.json": true,
+      "datasets/sft-quote-v4/test.json": true,
+      "docs/sft-quote-v4-protocol.md": true,
+      ".local/target-quality-20261015/v4-semantic-rubric-v1.md": true,
+      ".local/target-quality-20261015/v4-review-tools/build_blind_packet.py": true,
+      "training/evaluate_quote_sft.py": true,
+      "training/evaluate_quote_v3.py": true,
+      "training/evaluate_quote_v4.py": true
+    }
+  },
+  "training": {
+    "status": "completed",
+    "client_exit": 0,
+    "finite_loss_count": 192,
+    "job_sha256": "9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a",
+    "receipt_sha256": "d55ac088125fb639626efda1d5161b64757a1728f43720df88cedf868baa462a",
+    "all_frozen_inputs_match": true,
+    "inventory_zero_tasks": true,
+    "meaning": "Completion and control-integrity evidence; it does not establish semantic quality."
+  },
+  "semantic_review": {
+    "status": "PROVISIONAL_AGENT_ROOT_LABELS",
+    "human_reviewers": 0,
+    "qualification": "Root first-pass recount followed by unblinded adjudication; not human ground truth or independent human agreement.",
+    "summary_replay": {
+      "method": "experiments.quote_review_summary.summarize(packet, curator_map, adjudicated_review, coverage)",
+      "task_and_case_counts": {
+        "packet_tasks": 108,
+        "map_tasks": 108,
+        "review_tasks": 108,
+        "coverage_rows": 108,
+        "case_count": 36,
+        "fixture_fact_count": 219
+      },
+      "byte_identical_to": "docs/sft-quote-v4-semantic-summary.json",
+      "byte_identical": true
+    }
+  },
+  "predeclared_test_criterion": {
+    "required": "At least three additional complete nonempty test responses versus prior, with no increase in adverse test responses or invalid citation claims.",
+    "prior": {
+      "complete_nonempty_responses": 9,
+      "nonempty_responses": 18,
+      "adverse_responses": 3,
+      "invalid_citation_claims": 6,
+      "citation_claims_checked": 68
+    },
+    "tuned": {
+      "complete_nonempty_responses": 8,
+      "nonempty_responses": 18,
+      "adverse_responses": 6,
+      "invalid_citation_claims": 3,
+      "citation_claims_checked": 58
+    },
+    "delta_tuned_minus_prior": {
+      "complete_nonempty_responses": -1,
+      "adverse_responses": 3,
+      "invalid_citation_claims": -3
+    },
+    "passed": false,
+    "conclusion": "Failed: complete nonempty responses fell from 9/18 to 8/18 and adverse responses rose from 3/24 to 6/24. Invalid citation claims decreased from 6/68 to 3/58, but the coverage and adverse-response criteria were not met."
+  },
+  "artifact_copies": {
+    "verified_count": 10,
+    "all_manifest_source_target_sha256_and_size_match": true,
+    "files": [
+      {
+        "source": ".local/sft-quote-v4-20261016/training-job-v1.json",
+        "target": "examples/synthetic/sft-quote-v4-job-v1.json",
+        "sha256": "47f4335567b4e9fb4c322d084dc7d455674ac944c165ade28e03b134199336dd",
+        "bytes": 1505555
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/remote-training-v1.json",
+        "target": "examples/synthetic/sft-quote-v4-remote-v1.json",
+        "sha256": "d55ac088125fb639626efda1d5161b64757a1728f43720df88cedf868baa462a",
+        "bytes": 968232
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/blind-packet-v1.json",
+        "target": "examples/synthetic/sft-quote-v4-review-packet-v1.json",
+        "sha256": "ae22b5c748679d87c6b1e1ef9d62a32d3ea8afc6422114a45388d66cb6837a81",
+        "bytes": 531659
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/curator-map-v1.json",
+        "target": "examples/synthetic/sft-quote-v4-review-map-v1.json",
+        "sha256": "cf0ff4d1e6de3621964417edef293e5290298d95eb496a49f6d177b9f83c9558",
+        "bytes": 45691
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/evaluator/report-v1.json",
+        "target": "docs/sft-quote-v4-results.json",
+        "sha256": "d3b557b6961a1a64a80136597941550a7e1d9c59229d6a56d4afaf75f68900e4",
+        "bytes": 1733648
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/blind-review-v1.json",
+        "target": "docs/sft-quote-v4-blind-review.json",
+        "sha256": "bad4d8ca2fb047197e6a66c57b4b7d95cd27f8e9e5014815794ae534ece13cc6",
+        "bytes": 202307
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/package-v2/root-adjudicated-review-v1.json",
+        "target": "docs/sft-quote-v4-adjudicated-review.json",
+        "sha256": "0e64bd7f4258c040f4b958fa9a8fde3d18872f76286eed082d857084662434f6",
+        "bytes": 201360
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/package-v2/adjudication-changes-v1.json",
+        "target": "docs/sft-quote-v4-adjudication.json",
+        "sha256": "6f6632065c1e19613d1f986221073bdb4ec63a5af84041f23defefd86933bf0c",
+        "bytes": 30900
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/package-v2/root-coverage-v1.json",
+        "target": "docs/sft-quote-v4-coverage.json",
+        "sha256": "6e6583946749008996a058b6e227085e654c07022a4922a1c1a74ae0e2431f19",
+        "bytes": 249302
+      },
+      {
+        "source": ".local/sft-quote-v4-20261016/semantic-review-v1/package-v2/semantic-summary-v1.json",
+        "target": "docs/sft-quote-v4-semantic-summary.json",
+        "sha256": "94ead1ea0f3dcc42ef87d3e9000c238b881fe76f3eda007e1d970eee6614b71f",
+        "bytes": 3653
+      }
+    ]
+  },
+  "source_ci": {
+    "status": "completed",
+    "conclusion": "success",
+    "head": "a0e82729fa165eef5b1a304dbf38a770ca6c0361",
+    "run_id": 38862933699,
+    "url": "https://github.com/1337mus/tracemem/actions/runs/38862933699",
+    "github_signature_verified": true,
+    "all_jobs_and_steps_success": true,
+    "source": {
+      "attempted": 810,
+      "passed": 809,
+      "skipped": 1
+    },
+    "installed": {
+      "attempted": 401,
+      "passed": 399,
+      "skipped": 2
+    },
+    "scope_note": "Successful source CI is for the prior source head a0e82729fa165eef5b1a304dbf38a770ca6c0361; it does not validate current documentation changes or the current tip.",
+    "current_full_suite": {
+      "command": "make check PYTHON=.venv/bin/python",
+      "exit_code": 0,
+      "attempted": 855,
+      "passed": 854,
+      "skipped": 1,
+      "ruff_formatted_files": 179,
+      "mypy_configured_source_files": 49,
+      "raw_log": ".local/quote-baseline-next/root-full-check-v1.log",
+      "raw_log_sha256": "d47079cd520a6f2f41d6e2e2f74e6f284f64d72b10480516d627afc6a78a72e2",
+      "scope": "One full check; subsequent typing-only summary-helper correction verified by all 25 focused helper tests and byte-identical summary replay."
+    },
+    "current_delivery": "PENDING_ROOT"
+  },
+  "new_runtime_calls_in_this_validation": 0,
+  "extra_strict_typecheck": {
+    "command": ".venv/bin/mypy --strict experiments/quote_baseline_payload.py experiments/modal_quote_baseline.py experiments/quote_review_summary.py",
+    "exit_code": 0,
+    "source_files": 3,
+    "helper_typing_only_fix": true,
+    "summary_bytes_unchanged": true
+  }
+}

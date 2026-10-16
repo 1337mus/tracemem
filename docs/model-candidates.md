@@ -1,9 +1,12 @@
 # Model candidates and diagnostics
 
-Metadata checked through the public Hugging Face model API on 2026-10-13. The
-pinned NLI model card was reviewed on 2026-10-14. Bounded inference runs used
-remote containers and authored synthetic inputs only. No weights were
-downloaded to this Mac. No training ran, and no model is selected.
+This page records model metadata and historical inference diagnostics. Metadata
+was checked through the public Hugging Face model API on 2026-10-13; the pinned
+NLI model card was reviewed on 2026-10-14. The bounded candidate comparisons
+used remote containers and authored synthetic inputs only; those runs did not
+train models, and no weights were downloaded to this Mac. Separately, four
+synthetic SFT runs have completed. No model is selected for product use. See
+[current project status](project-status.md) and the [quote-v4 results](sft-quote-v4-results.md).
 
 | Candidate | Parameters | Model-card license | Role | Status |
 | --- | ---: | --- | --- | --- |
@@ -28,9 +31,11 @@ agreed with all 16. This shows discrimination on those controls only, not
 semantic calibration, independent truth or held-out performance. See the
 [control receipt](reviewer-controls.json).
 
-Both model runs are complete and their Modal apps stopped with zero tasks. No
-model has been selected. No training or private-text upload occurred. Frozen
-settings, payload details, results and limitations are in the
+The two inference runs in this historical comparison are complete and their
+Modal apps stopped with zero tasks. These statements apply to those comparison
+runs; quote-v4 training was a separate completed run. No model has been
+selected, and these runs did not upload private text. Frozen settings,
+payload details, results and limitations are in the
 [comparison report](experiments-scenarios.md), [data card](scenarios-data-card.md),
 and [reference-review receipt](scenarios-reference-review.json).
 
@@ -75,10 +80,14 @@ diagnostic, not held-out or calibrated evidence.
 The inspected machine reports Apple M5 Max, 64 GB unified memory and 18 CPU
 cores. The runnable baseline uses CPU-only Python and SQLite. Modal is the
 preferred remote backend. Keep weights and inference off this Mac by default.
-The current history contains four earlier synthetic-only Modal calls and two
-calls for the new comparison (six total; both scenario apps are stopped). See
-[compute notes](modal-compute.md). Training remains gated on data rights, an
-independently audited held-out dataset and owner approval for costly jobs.
+The recorded diagnostic inventory contains four earlier synthetic-only Modal
+calls and two calls for the scenario comparison (six total; both scenario apps
+were stopped at that time). It predates quote-v4 training; see [compute
+notes](modal-compute.md), [current project status](project-status.md), and the
+[quote-v4 results](sft-quote-v4-results.md). Selection claims still need
+applicable rights review and independent human evidence; private-source
+uploads, public release, or materially different costly scope require separate
+approval.
 
 ## Comparison boundary and next steps
 

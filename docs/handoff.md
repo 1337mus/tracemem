@@ -1,29 +1,69 @@
-# Current checkpoint: fourth experiment ready to launch
+# Current checkpoint: quote-v4 complete; criteria failed
 
-Updated 2026-10-16 UTC. Verify live state in `.local/active-cycle.json`.
-The [protocol](sft-quote-v4-protocol.md), reviewed training corpus and new
-evaluation cases are frozen before generation. No fourth GPU call has started.
+Updated 2026-10-16 UTC. The [fourth experiment report](sft-quote-v4-results.md)
+records a negative result against its frozen success criteria. The test fixture
+is spent; the development fixture remains an adaptive diagnostic and cannot
+establish held-out quality. No fifth target-tweak SFT is planned. No production
+model was selected, and Gate A remains unmet.
 
-Seven training-family corrections affect 64 of 768 rows; the corpus has 696
-claims and 140 empty rows across 72 correlated families. Root checked source
-preservation. The target-review code and fictional corpus are signed locally in
-`9009c17600dba9e4eedc04f0725e614793952850`; private push is pending.
+The run trained 192 steps over 768 fictional rows from 72 correlated families
+(696 claims, 140 empty rows); seven reviewed family corrections affect 64 rows.
+Training took 1,147.795 seconds; worker and client elapsed times were 2,945.737
+and 2,963.787 seconds. The reported device was NVIDIA A10; the request was
+A10G. The adapter changed, was saved in the separate personal Modal volume,
+and was not downloaded to this Mac. The prior adapter hashes matched before
+and after comparison; it was unloaded without merge, RNG state was restored,
+and no prior LoRA parameters remained. The recorded post-run inventory had
+zero active tasks. Verify `.local/active-cycle.json` and live Modal state before
+any future call. Verify by: 2026-10-23.
 
-Root reviewed all 36 evaluation cases and 73 selected expected claims after a
-fresh-context author and same-model-family reviewer corrected clipped support
-and replaced nine parallel test scenarios. Dev has 12 cases (three empty);
-test has 24 (six empty). There are zero human reviewers. Literal split checks
-found no declared ID overlaps, exact duplicates or cross-split Jaccard matches
-at 0.8; semantic independence and generalization remain unproven.
+One fresh-context Luna reviewer assessed 108 shuffled tasks covering 332 claims
+across all 12 development and 24 test cases and all three arms. Root completed
+an independent first pass and unblinded adjudication; the final counts use
+root's labels, with changes from the blind review kept separately. The reviewer
+and root are from the same model family; there were zero human reviewers. The
+labels are provisional. They do not establish independent truth, broad
+generalization, QA benefit, or model selection. Blind-review misses included
+treating a literal base-arm Lumen quote as an actor swap and missing an adapter
+quilt actor swap. The report preserves these limits and further examples.
 
-Full source validation passed: 809 tests passed, one skipped, Ruff/format across
-174 files and strict mypy across 49 source files. The prepared job is
-`9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a`,
-under `.local/sft-quote-v4-20261016/`. Personal Modal identity passed; fresh
-inventory contained zero apps. Recheck through the launch guard before calling.
-Only fiction enters the job; original conversations, Context Kit and local
-context remain read-only. No improvement or production selection is claimed.
-Automation stays paused.
+The job, receipt, structural report, semantic summary, coverage, adjudicated
+review, and adjudication files are linked from the results report. Only fiction
+entered training and inference. No personal conversation data or derived data
+was uploaded; Context Kit and original conversations remain read-only. Billing
+was not measured. The exact-tip source CI run tested
+`a0e82729fa165eef5b1a304dbf38a770ca6c0361`; it passed 809 source tests (one
+skipped) and 399 installed tests (two skipped). It predates these result-doc
+changes and does not verify the current documentation. This local update is
+not committed or pushed.
+
+The dev-only prompt baseline is implemented and reviewed. The Qwen3-4B call
+is running on personal Modal, app `ap-BEYr1cfiI5nDhnqxFCFQLi`, client session
+56291. Do not duplicate it. Qwen3-8B has not launched and must wait for this
+call to finish. Exact prepared payloads, runner hashes, client log and receipt
+paths are in `.local/quote-baseline-run-20261016/` and `.local/active-cycle.json`.
+The full source check passed 854 tests with one optional skip; lint and
+configured type checks passed. A subsequent typing-only helper fix passed its
+25 focused tests and preserved summary bytes; extra strict checking of all
+three new source modules passed. Signed delivery is pending. See the
+[baseline protocol](quote-baseline-protocol.md).
+Use fresh test cases and human review before another quality claim. Automation
+remains paused. Verify baseline and remote state by: 2026-10-23.
+
+## Historical checkpoint: quote-v4 training in progress
+
+This launch snapshot is retained for chronology; its running status is
+superseded by the completed-run record above. On 2026-10-16, one guarded call
+was running on personal Modal under app `ap-jOI0vmcXqoCG6Fpj9A5Gej`, run
+`quote-v4-20261016-01`, client session 50311. The corpus had seven corrected
+families affecting 64 of 768 rows, 696 claims, and 140 empty rows across 72
+families. The 36 evaluation cases had been frozen and reviewed: 12 dev and 24
+test, with zero human reviewers. The prepared job hash was
+`9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a`.
+The signed preparation commits were pushed to private main at
+`a0e82729fa165eef5b1a304dbf38a770ca6c0361`; the exact-tip CI result appears
+above. The launch note correctly said not to start a duplicate; the completion
+receipt now records that this call finished.
 
 ## Previous checkpoint: quote-v3 results adjudicated
 
@@ -53,7 +93,14 @@ a396d48da65b059bde55d0088e5996ec689cf300; it did not test the final
 documentation working-tree tip. The final doc tip still needs its hosted CI
 check after delivery.
 
-## Completed v2 checkpoint
+## Older checkpoints and history
+
+Everything below is historical context through 2026-10-15. Use the current
+quote-v4 checkpoint and links above for current status; the detailed older
+project snapshot is also preserved in the [2026-10-15 v2 handoff
+archive](handoff-history-2026-10-15-v2.md).
+
+### Historical checkpoint: quote-v2 completed
 
 
 Updated 2026-10-15 UTC. The second synthetic-only QLoRA run and its frozen
@@ -106,9 +153,9 @@ historical checkpoints below are retained for context; use the current status
 above and `.local/active-cycle.json` for live state. Original `.local` receipts
 remain unchanged.
 
-## Historical checkpoints and earlier work
+### Earlier historical records
 
-## Historical checkpoint: first trained adapter, negative quality result
+#### Historical checkpoint: first trained adapter, negative quality result
 
 Updated 2026-10-15 UTC. Verify live jobs before resuming.
 
@@ -170,9 +217,9 @@ reviewed code, documentation and fictional fixtures may be signed and pushed
 to `1337mus/tracemem` after a fresh PRIVATE check. Publication remains unauthorized.
 Continuation automation stays paused. Computer-use tools were unused.
 
-### Earlier project checkpoint and history
+#### Older project details
 
-#### TraceMem handoff (historical)
+##### TraceMem handoff (historical)
 
 Updated 2026-10-15 UTC. Verify by: 2026-10-15. The current diagnostic is the
 [cross-session MiniLM comparison](cross-session-minilm.md), its replay report
@@ -210,7 +257,7 @@ package files matched source, wheel, and installation. No GPU or inference ran.
 The prior [longitudinal v2 review](longitudinal-v2-review.md) remains provisional
 agent-only evidence. The full 26-task human review packet is still available.
 
-## Resume safely
+#### Historical resume notes (2026-10-15)
 
 Keep Context Kit, original conversations, historical receipts, and
 `~/.llm-context` read-only. Keep private conversation data, vectors, claims, and
@@ -227,14 +274,14 @@ hosted CI. Verify its SHA, signature, and CI result before treating work as
 delivered; read it alongside fresh git, process, worker, and remote-job state
 before resuming operational work.
 
-## Current phase and gate
+#### Historical project status (as of 2026-10-15)
 
 Phase 0 inventory and Phase 1 infrastructure are complete; Phase 2 remains
 synthetic diagnostics. No system model is selected or trained. Gate A remains unmet,
 with zero independently verified human labels. The project README architecture
 and plain-language explanation are complete.
 
-## Longitudinal v2 review slice
+#### Longitudinal v2 review slice
 
 The fresh fork-none Astra agent was shown only the probe blind JSON. Its labels
 were 6 supported, 3 unsupported, and 1 uncertain; agreement is 9/9 only on the
@@ -248,7 +295,7 @@ ground truth. The full 26-task blind page is available locally at
 step is human annotation of the full packet and a separate label/readiness
 review. Preserve the frozen fixture bytes.
 
-## Cross-session test slice
+#### Cross-session test slice
 
 The six fictional cases contain 72 turns across 24 sessions. Four answerable
 questions contribute eight provisional evidence-turn labels; two `UNKNOWN`
@@ -267,7 +314,7 @@ cells were audited and points to the raw receipts; the replay report contains
 the per-question cells. Local validation does not establish signed
 delivery or hosted CI; use `.local/active-cycle.json` for those states.
 
-## Cross-session MiniLM comparison
+#### Cross-session MiniLM comparison
 
 The new [comparison note](cross-session-minilm.md) records the remote MiniLM
 embedding receipt and compares its vectors with the existing BM25, hash-vector,
@@ -283,7 +330,7 @@ corrections. Signed/private delivery and exact-head hosted CI remain unverified;
 `.local/active-cycle.json` is authoritative. The raw receipt is
 [`minilm-cross-session-remote.json`](../examples/synthetic/minilm-cross-session-remote.json).
 
-## Longitudinal v2 dataset details
+#### Longitudinal v2 dataset details
 
 The v2 data revision and fixture history remain in the
 [longitudinal revision card](longitudinal-revision-v2.md). Its byte-identical
@@ -291,7 +338,7 @@ pre-compaction handoff is preserved in the
 [2026-10-15 v2 handoff archive](handoff-history-2026-10-15-v2.md); this
 checkpoint carries the current review status above.
 
-## Next useful work
+#### Historical next work (superseded)
 
 Proceed with human review of the full longitudinal v2 packet and the scoped
 defaults/exceptions packet, then review labels and dataset readiness separately.
@@ -304,7 +351,7 @@ remains documented in its [data card](cross-session-test-data-card.md),
 [validation record](validation-cross-session-test.json). Check the documentation
 index before repeating prior work.
 
-## History
+#### Archive links
 
 The [documentation index](README.md) links the detailed records and prior
 validation history.

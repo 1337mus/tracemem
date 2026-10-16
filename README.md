@@ -9,24 +9,22 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today. Three fiction-only SFT runs have trained
-adapters, but no model has been validated or selected for product use.**
+**The local search tool works today. Four fiction-only SFT runs have trained
+adapters, but none has been validated or selected for product use.**
 
-The latest model made fewer unsupported or ambiguous statements on our
-fictional test, but left out more important facts. It failed the experiment's
-success criteria. AI agents reviewed the results; no human review has happened.
-See the [results report](docs/sft-quote-v3-results.md) for the counts and
-limitations.
-We are preparing a fourth comparison with [reviewed training targets](docs/training-target-review.md)
-and fresh conversations. Its [protocol](docs/sft-quote-v4-protocol.md) sets the
-success criteria before the model produces any answers.
+The fourth run tested seven reviewed training-family corrections on fresh
+fictional conversations. It retained fewer complete test cases than the prior
+adapter and had more adverse responses, so it failed its predeclared criteria.
+AI agents reviewed the results; no human review has happened. See the
+[quote-v4 results](docs/sft-quote-v4-results.md) for counts and limits, and the
+[protocol](docs/sft-quote-v4-protocol.md) for the frozen comparison rules.
 The earlier [quote-v2](docs/sft-quote-v2-results.md) and
 [pilot](docs/sft-pilot-results.md) results remain documented.
 
-All three adapters trained on newly written fictional conversations. We
+All four adapters trained on newly written fictional conversations. We
 inspected a sample of the owner's real agent logs locally to check the transcript readers,
 but those logs were not training data and have not been evaluated with the
-trained extractor. The model has not learned the owner's personal history. Real
+trained extractors. The models have not learned the owner's personal history. Real
 conversations belong in the searchable evidence store; training is intended
 to teach the model how to read them accurately.
 

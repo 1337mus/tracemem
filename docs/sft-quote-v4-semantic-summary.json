@@ -1,0 +1,152 @@
+{
+  "cohorts": {
+    "dev": {
+      "arms": {
+        "base": {
+          "responses": 12,
+          "adverse_responses": 5,
+          "label_counts": {
+            "supported": 36,
+            "unsupported": 7,
+            "uncertain": 0
+          },
+          "complete_required_facts": 3,
+          "nonempty_coverage": {
+            "responses": 9,
+            "matched_facts": 12,
+            "expected_facts": 20
+          },
+          "abstentions": 0,
+          "unreadable": 0,
+          "truncated": 0
+        },
+        "prior": {
+          "responses": 12,
+          "adverse_responses": 5,
+          "label_counts": {
+            "supported": 27,
+            "unsupported": 4,
+            "uncertain": 1
+          },
+          "complete_required_facts": 6,
+          "nonempty_coverage": {
+            "responses": 9,
+            "matched_facts": 15,
+            "expected_facts": 20
+          },
+          "abstentions": 3,
+          "unreadable": 0,
+          "truncated": 0
+        },
+        "tuned": {
+          "responses": 12,
+          "adverse_responses": 3,
+          "label_counts": {
+            "supported": 14,
+            "unsupported": 3,
+            "uncertain": 0
+          },
+          "complete_required_facts": 2,
+          "nonempty_coverage": {
+            "responses": 9,
+            "matched_facts": 11,
+            "expected_facts": 20
+          },
+          "abstentions": 3,
+          "unreadable": 0,
+          "truncated": 0
+        }
+      }
+    },
+    "test": {
+      "arms": {
+        "base": {
+          "responses": 24,
+          "adverse_responses": 5,
+          "label_counts": {
+            "supported": 109,
+            "unsupported": 4,
+            "uncertain": 1
+          },
+          "complete_required_facts": 11,
+          "nonempty_coverage": {
+            "responses": 18,
+            "matched_facts": 45,
+            "expected_facts": 53
+          },
+          "abstentions": 0,
+          "unreadable": 0,
+          "truncated": 0
+        },
+        "prior": {
+          "responses": 24,
+          "adverse_responses": 3,
+          "label_counts": {
+            "supported": 64,
+            "unsupported": 3,
+            "uncertain": 1
+          },
+          "complete_required_facts": 9,
+          "nonempty_coverage": {
+            "responses": 18,
+            "matched_facts": 41,
+            "expected_facts": 53
+          },
+          "abstentions": 6,
+          "unreadable": 0,
+          "truncated": 0
+        },
+        "tuned": {
+          "responses": 24,
+          "adverse_responses": 6,
+          "label_counts": {
+            "supported": 52,
+            "unsupported": 6,
+            "uncertain": 0
+          },
+          "complete_required_facts": 8,
+          "nonempty_coverage": {
+            "responses": 18,
+            "matched_facts": 40,
+            "expected_facts": 53
+          },
+          "abstentions": 6,
+          "unreadable": 0,
+          "truncated": 0
+        }
+      }
+    }
+  },
+  "paired_coverage": {
+    "dev": {
+      "complete_case_outcomes": {
+        "pairs": 9,
+        "tuned_wins": 1,
+        "tuned_losses": 5,
+        "both_complete": 1,
+        "neither_complete": 2
+      },
+      "partial_fact_outcomes": {
+        "pairs": 2,
+        "tuned_wins": 1,
+        "prior_wins": 0,
+        "ties": 1
+      }
+    },
+    "test": {
+      "complete_case_outcomes": {
+        "pairs": 18,
+        "tuned_wins": 3,
+        "tuned_losses": 4,
+        "both_complete": 5,
+        "neither_complete": 6
+      },
+      "partial_fact_outcomes": {
+        "pairs": 6,
+        "tuned_wins": 0,
+        "prior_wins": 0,
+        "ties": 6
+      }
+    }
+  }
+}

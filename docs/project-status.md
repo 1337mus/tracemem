@@ -9,11 +9,12 @@ has the project overview and architecture diagram.
 
 ## Phase and boundary
 
-Phase 0 inventory and Phase 1 infrastructure are complete. The project is in
-Phase 2, using fictional data for diagnostics. Three technical SFT runs have
-trained Qwen3-4B adapters, but no specialist has been selected for product use.
-Gate A is unmet: there is no independent human validation of the claims or
-evidence.
+Phase 0 inventory and Phase 1 infrastructure are complete.
+Phase 2 evaluation work continues on fictional data; Phase 3 diagnostic SFT is
+complete for the current four-run series. Four synthetic-only runs have trained
+Qwen3-4B adapters. No specialist has been validated or selected for product
+use. Gate A remains unmet because there is no independent human validation of
+the claims or evidence.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
@@ -33,7 +34,20 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## Latest completed training experiment: quote-v3
+## Latest completed training experiment: quote-v4
+
+V4 compared the pinned base, unchanged quote-v3 adapter, and a newly trained
+adapter on 12 dev and 24 frozen test cases. On test, the tuned arm completely
+retained all selected facts in 8/18 nonempty responses versus 9/18 for the
+prior. Adverse responses rose from 3/24 to 6/24. It therefore failed the
+predeclared threshold of three additional complete nonempty test cases with no
+increase in adverse responses or invalid citations. These labels are
+provisional agent/root judgments from one model family, with zero human
+reviewers. See the [results report](sft-quote-v4-results.md) and the
+[protocol](sft-quote-v4-protocol.md). The test is spent; no tuning against it
+is planned. No model was selected and Gate A remains unmet.
+
+## Prior training experiment: quote-v3
 
 V3 compared base, quote-v2 prior, and quote-v3 tuned arms on a 24-case adaptive
 regression set, 24 development cases, and a separate 48-case test. In the
@@ -48,6 +62,25 @@ report](sft-quote-v3-results.json), and [validation record](validation-sft-quote
 keep structural, semantic, and coverage evidence separate. The
 [quote-v2 report](sft-quote-v2-results.md) and [first pilot](sft-pilot-results.md)
 remain historical.
+
+## Quote-v4 run record
+
+The run completed 192 optimizer steps on 768 fictional rows from 72 correlated
+families. The adapter changed from its verified initial state and was saved to
+the separate personal Modal volume; weights were not downloaded to this Mac.
+No personal conversations entered training or inference, and billing was not
+measured. The [results report](sft-quote-v4-results.md) links the job, receipt,
+structural output, final semantic review, and validation record.
+
+The latest completed source CI run tested `a0e82729fa165eef5b1a304dbf38a770ca6c0361`.
+GitHub reports its signature as valid; exact-head CI run
+[38862933699](https://github.com/1337mus/tracemem/actions/runs/38862933699)
+passed: 810 source tests attempted (809 passed, 1 skipped) and 401
+installed-wheel tests attempted (399 passed, 2 skipped). This run predates the
+current result-document changes and does not verify them. The prepared job hash
+is `9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a`.
+The recorded post-run inventory had zero active tasks; recheck live state before
+any future remote call. No model has been selected.
 
 ## Current evidence
 
@@ -79,8 +112,11 @@ Check `.local/active-cycle.json` before any new remote run.
 
 ## Next gate
 
-Strengthen annotations and make paired chronology and subject-attachment
-corrections with distinct scenario families and a separate frozen test. Seek
-human review before making any Gate A claim. Do not treat more optimizer steps,
-targeted agent probes, or retrieval diagnostics as evidence of specialist
-quality or readiness.
+The next comparison is a dev-only prompt baseline across the 4B and 8B models,
+with two prompt variants. Its reviewed 4B call is running on personal Modal;
+8B will wait for completion. See the [protocol](quote-baseline-protocol.md)
+and `.local/active-cycle.json` for live job and exact payload state. Do not run
+a fifth target-tweak SFT. Write the stronger prompt from the original brief and
+development rules without using test outputs. A fresh test and human-reviewed
+evaluation are still needed before any Gate A or product claim. Verify remote
+state before any future call; the quote-v4 test is spent.
