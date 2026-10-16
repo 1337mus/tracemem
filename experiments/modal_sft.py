@@ -8,13 +8,14 @@ import json
 import re
 import sys
 from collections import Counter
+from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
 from tracemem.challenge import _validate_case
 from tracemem.prompts import render_explicit_prompt
 from training.prepare_sft import _read_payload, _validate_metadata, _validate_root
-from training.train_sft import select_training_rows
+from training.train_sft import _QUOTE_V3_PRIOR_ADAPTER, select_training_rows
 
 _ROOT = Path(__file__).resolve().parents[1]
 _TRAIN_PATH = _ROOT / "datasets/sft-pilot/train.json"
@@ -23,6 +24,11 @@ _QUOTE_TRAIN_PATH = _ROOT / "datasets/sft-quote-v2/train.json"
 _QUOTE_DEV_PATH = _ROOT / "datasets/sft-quote-v2/dev.json"
 _REMOTE_VOLUME_PATH = "/mnt/tracemem-sft-pilot"
 _QUOTE_REMOTE_VOLUME_PATH = "/mnt/tracemem-sft-quote-v2"
+_QUOTE_V3_TRAIN_PATH = _ROOT / "datasets/sft-quote-v3/train.json"
+_QUOTE_V3_REGRESSION_PATH = _QUOTE_DEV_PATH
+_QUOTE_V3_DEV_PATH = _ROOT / "datasets/sft-quote-v3/dev.json"
+_QUOTE_V3_TEST_PATH = _ROOT / "datasets/sft-quote-v3/test.json"
+_QUOTE_V3_REMOTE_VOLUME_PATH = "/mnt/tracemem-sft-quote-v3"
 _RUN_ID = re.compile(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\Z")
 _FIRST_DEV_VARIANT = re.compile(r"-V01\Z")
 _COMMON_PACKAGES = (
@@ -49,6 +55,11 @@ _MODULE_PATHS = (
     "src/tracemem/prompts.py",
 )
 _QUOTE_MODULE_PATHS = ("training/quote_data.py", "training/build_quote_data.py")
+_QUOTE_V3_MODULE_PATHS = (
+    "training/quote_data.py",
+    "training/build_quote_data.py",
+    "training/build_quote_v3.py",
+)
 
 
 def _canonical_bytes(value: object) -> bytes:
@@ -108,8 +119,8 @@ def build_payload(
     """Build a fixed, validated request without importing Modal or ML packages."""
     if mode not in {"preflight", "train"}:
         raise ValueError("mode must be preflight or train")
-    if type(profile) is not str or profile not in {"pilot", "quote-v2"}:
-        raise ValueError("profile must be pilot or quote-v2")
+    if type(profile) is not str or profile not in {"pilot", "quote-v2", "quote-v3"}:
+        raise ValueError("profile must be pilot, quote-v2, or quote-v3")
     if profile == "quote-v2":
         if mode == "train":
             if type(run_id) is not str or _RUN_ID.fullmatch(run_id) is None:
@@ -120,6 +131,16 @@ def build_payload(
                 raise ValueError("run-id is only valid for train mode")
             remote_run_dir = None
         return _build_quote_v2_payload(mode, remote_run_dir)
+    if profile == "quote-v3":
+        if mode == "train":
+            if type(run_id) is not str or _RUN_ID.fullmatch(run_id) is None:
+                raise ValueError("train mode requires a unique lowercase run-id slug")
+            remote_run_dir = f"{_QUOTE_V3_REMOTE_VOLUME_PATH}/adapters/{run_id}"
+        else:
+            if run_id is not None:
+                raise ValueError("run-id is only valid for train mode")
+            remote_run_dir = None
+        return _build_quote_v3_payload(mode, remote_run_dir)
     if mode == "train":
         if type(run_id) is not str or _RUN_ID.fullmatch(run_id) is None:
             raise ValueError("train mode requires a unique lowercase run-id slug")
@@ -361,6 +382,141 @@ def _build_quote_v2_payload(mode: str, remote_run_dir: str | None) -> dict[str, 
     return job
 
 
+def _build_quote_v3_payload(mode: str, remote_run_dir: str | None) -> dict[str, Any]:
+    from training.quote_data import render_quote_prompt, validate_dataset
+
+    source_specs = (
+        ("train", _QUOTE_V3_TRAIN_PATH, "train"),
+        ("regression", _QUOTE_V3_REGRESSION_PATH, "dev"),
+        ("dev", _QUOTE_V3_DEV_PATH, "dev"),
+        ("test", _QUOTE_V3_TEST_PATH, "test"),
+    )
+    cases_by_source: dict[str, list[dict[str, Any]]] = {}
+    source_bytes: dict[str, bytes] = {}
+    case_ids: set[str] = set()
+    message_ids: set[str] = set()
+    conversation_contents: set[tuple[tuple[str, str, str], ...]] = set()
+    group_sources: dict[tuple[str, str], str] = {}
+
+    for source_name, path, split in source_specs:
+        payload, raw = _read_payload(path)
+        source_bytes[source_name] = raw
+        cases = validate_dataset(payload, split)
+        for case in cases:
+            case_id = case["case_id"]
+            if case_id in case_ids:
+                raise ValueError(f"duplicate case_id across quote-v3 sources: {case_id}")
+            case_ids.add(case_id)
+            for kind, values in (
+                ("scenario_group", [case["scenario_group"]]),
+                ("template_group", [case["template_group"]]),
+                ("entity_id", case["entity_ids"]),
+            ):
+                for value in values:
+                    key = (kind, value)
+                    prior = group_sources.setdefault(key, source_name)
+                    if prior != source_name:
+                        raise ValueError(
+                            f"{kind} {value} appears in both {prior} and {source_name}"
+                        )
+
+            ordered_content: list[tuple[str, str, str]] = []
+            for message in case["messages"]:
+                message_id = message["message_id"]
+                if message_id in message_ids:
+                    raise ValueError(f"duplicate global message identity: {message_id}")
+                message_ids.add(message_id)
+                normalized_text = " ".join(message["text"].split())
+                ordered_content.append((message["role"], message["content_kind"], normalized_text))
+            content_key = tuple(ordered_content)
+            if content_key in conversation_contents:
+                raise ValueError(f"duplicate conversation content: {case_id}")
+            conversation_contents.add(content_key)
+        cases_by_source[source_name] = cases
+
+    expected_counts = {"train": 768, "regression": 24, "dev": 24, "test": 48}
+    actual_counts = {name: len(cases) for name, cases in cases_by_source.items()}
+    if actual_counts != expected_counts:
+        raise ValueError(
+            "quote-v3 sources must contain 768 train, 24 regression, 24 dev, and 48 test cases"
+        )
+
+    family_kinds: dict[str, str] = {}
+    family_counts: dict[str, Counter[str]] = {"replay": Counter(), "new": Counter()}
+    for case in cases_by_source["train"]:
+        case_id, family = case["case_id"], case["scenario_group"]
+        if case_id.startswith("V3T-REPLAY-"):
+            kind = "replay"
+        elif case_id.startswith("V3T-TRAIN-"):
+            kind = "new"
+        else:
+            raise ValueError("quote-v3 train case IDs must use V3T-REPLAY or V3T-TRAIN prefixes")
+        prior_kind = family_kinds.setdefault(family, kind)
+        if prior_kind != kind:
+            raise ValueError(f"quote-v3 family {family} mixes replay and new training cases")
+        family_counts[kind][family] += 1
+    if len(family_counts["replay"]) != 48 or set(family_counts["replay"].values()) != {12}:
+        raise ValueError("quote-v3 train source must contain 48 replay families with 12 cases each")
+    if len(family_counts["new"]) != 24 or set(family_counts["new"].values()) != {8}:
+        raise ValueError("quote-v3 train source must contain 24 new families with eight cases each")
+
+    train_rows = [
+        {
+            "case_id": case["case_id"],
+            "split": "train",
+            "messages": [
+                {"role": "user", "content": render_quote_prompt(case)},
+                {
+                    "role": "assistant",
+                    "content": json.dumps(
+                        {"claims": case["expected"]},
+                        ensure_ascii=False,
+                        separators=(",", ":"),
+                        allow_nan=False,
+                    ),
+                },
+            ],
+        }
+        for case in cases_by_source["train"]
+    ]
+    selected_train_rows = select_training_rows(train_rows, max_rows=768, seed=17)
+    eval_cohorts = {
+        source_name: [case["case_id"] for case in cases_by_source[source_name]]
+        for source_name in ("regression", "dev", "test")
+    }
+    dev_prompts = [
+        {"case_id": case["case_id"], "prompt": render_quote_prompt(case)}
+        for source_name in ("regression", "dev", "test")
+        for case in cases_by_source[source_name]
+    ]
+    request = {
+        "mode": mode,
+        "profile": "quote-v3",
+        "train_rows": selected_train_rows,
+        "dev_prompts": dev_prompts,
+        "eval_cohorts": eval_cohorts,
+        "prior_adapter": deepcopy(_QUOTE_V3_PRIOR_ADAPTER),
+        "remote_run_dir": remote_run_dir,
+    }
+    module_paths = (*_MODULE_PATHS, *_QUOTE_V3_MODULE_PATHS)
+    job: dict[str, Any] = {
+        "schema_version": 1,
+        "request": request,
+        "source_sha256": {
+            name: hashlib.sha256(raw).hexdigest() for name, raw in source_bytes.items()
+        },
+        "module_sha256": {
+            relative: hashlib.sha256((_ROOT / relative).read_bytes()).hexdigest()
+            for relative in module_paths
+        },
+        "runner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "resource_options": modal_function_options(mode),
+        "dependency_pins": dependency_pins(mode),
+    }
+    job["job_sha256"] = hashlib.sha256(_canonical_bytes(job)).hexdigest()
+    return job
+
+
 def build_summary(job: dict[str, Any]) -> dict[str, Any]:
     """Return launch preparation evidence without exposing prompts or labels."""
     request = job["request"]
@@ -377,13 +533,18 @@ def build_summary(job: dict[str, Any]) -> dict[str, Any]:
     }
     if "profile" in request:
         summary["profile"] = request["profile"]
+    if request.get("profile") == "quote-v3":
+        summary["eval_cohort_counts"] = {
+            name: len(case_ids) for name, case_ids in request["eval_cohorts"].items()
+        }
+        summary["prior_adapter"] = request["prior_adapter"]
     return summary
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="modal-sft")
     parser.add_argument("--mode", choices=("preflight", "train"), default="preflight")
-    parser.add_argument("--profile", choices=("pilot", "quote-v2"), default="pilot")
+    parser.add_argument("--profile", choices=("pilot", "quote-v2", "quote-v3"), default="pilot")
     parser.add_argument("--run-id", help="unique lowercase run slug required for train mode")
     parser.add_argument("--launch", action="store_true", help="run one explicitly approved call")
     parser.add_argument("--approve-job-sha256", help="exact job hash from offline preparation")

@@ -14,6 +14,7 @@ from training.train_sft import (
     collate_examples,
     encode_sft_example,
     preflight_train_rows,
+    resolve_sft_profile,
     run_remote_request,
     select_training_rows,
 )
@@ -79,6 +80,21 @@ class LengthTokenizer(FakeTokenizer):
 
 
 class TrainSftTests(unittest.TestCase):
+    def test_quote_v3_profile_uses_fixed_training_and_eval_limits(self) -> None:
+        profile = resolve_sft_profile("quote-v3")
+
+        self.assertEqual(
+            (
+                profile.train_rows,
+                profile.train_steps,
+                profile.dev_prompts,
+                profile.dev_max_new_tokens,
+                profile.train_context_tokens,
+                profile.dev_context_tokens,
+            ),
+            (768, 192, 96, 512, 2048, 4096),
+        )
+
     def test_encode_masks_user_prefix_and_supervises_completion_eos(self) -> None:
         tokenizer = FakeTokenizer()
 
@@ -357,6 +373,49 @@ class TrainSftTests(unittest.TestCase):
         self.assertEqual(report["limits"]["max_train_rows"], 768)
         self.assertEqual(report["limits"]["max_train_steps"], 192)
         self.assertEqual(report["dev"]["prompt_count"], 24)
+
+    def test_remote_quote_v3_preflight_accepts_bound_eval_cohorts_and_prior_adapter(self) -> None:
+        cohorts = {
+            "dev": [f"dev-{index}" for index in range(24)],
+            "regression": [f"regression-{index}" for index in range(24)],
+            "test": [f"test-{index}" for index in range(48)],
+        }
+        request = {
+            "mode": "preflight",
+            "profile": "quote-v3",
+            "train_rows": [{**_row(), "case_id": f"case-{index}"} for index in range(768)],
+            "dev_prompts": [
+                {"case_id": case_id, "prompt": "source prompt"}
+                for case_id in (*cohorts["regression"], *cohorts["dev"], *cohorts["test"])
+            ],
+            "eval_cohorts": cohorts,
+            "prior_adapter": {
+                "path": "/mnt/tracemem-sft-quote-v2/adapters/quote-v2-20261015-01/adapter",
+                "sha256": {
+                    "adapter_model.safetensors": (
+                        "3b30cbf98a685792734d8c16ffd7f31e000707f8f2b72a74e5ca9bc364214093"
+                    ),
+                    "adapter_config.json": (
+                        "d6cb445350cae1da7b9508d1cf4cc9d20f9b638983e7c27a886127db0b28125a"
+                    ),
+                },
+            },
+            "remote_run_dir": None,
+        }
+
+        with (
+            patch.dict(os.environ, {"TRACEMEM_SFT_REMOTE": "1"}),
+            patch("training.train_sft._check_dependency_versions", return_value={}),
+            patch("training.train_sft._load_pinned_tokenizer", return_value=FakeTokenizer()),
+            patch("training.train_sft._tokenizer_provenance", return_value={}),
+        ):
+            report = run_remote_request(request)
+
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(report["limits"]["profile"], "quote-v3")
+        self.assertEqual(report["limits"]["max_train_rows"], 768)
+        self.assertEqual(report["limits"]["max_train_steps"], 192)
+        self.assertEqual(report["dev"]["prompt_count"], 96)
 
 
 if __name__ == "__main__":

@@ -49,6 +49,16 @@ _TRAIN_DEPENDENCIES = {
 }
 _DEV_MODEL_CONTEXT = 4096
 _DEV_MAX_NEW_TOKENS = 1024
+_QUOTE_V3_COHORT_SIZES = {"regression": 24, "dev": 24, "test": 48}
+_QUOTE_V3_PRIOR_ADAPTER = {
+    "path": "/mnt/tracemem-sft-quote-v2/adapters/quote-v2-20261015-01/adapter",
+    "sha256": {
+        "adapter_model.safetensors": (
+            "3b30cbf98a685792734d8c16ffd7f31e000707f8f2b72a74e5ca9bc364214093"
+        ),
+        "adapter_config.json": "d6cb445350cae1da7b9508d1cf4cc9d20f9b638983e7c27a886127db0b28125a",
+    },
+}
 
 
 @dataclass(frozen=True)
@@ -74,13 +84,14 @@ _SFT_PROFILES: Mapping[str, SFTProfile] = MappingProxyType(
             _DEV_MODEL_CONTEXT,
         ),
         "quote-v2": SFTProfile("quote-v2", 768, 192, 24, 512, 2048, 4096),
+        "quote-v3": SFTProfile("quote-v3", 768, 192, 96, 512, 2048, 4096),
     }
 )
 
 
 def resolve_sft_profile(name: str = "pilot") -> SFTProfile:
     if type(name) is not str or name not in _SFT_PROFILES:
-        raise ValueError("profile must be pilot or quote-v2")
+        raise ValueError("profile must be pilot, quote-v2, or quote-v3")
     return _SFT_PROFILES[name]
 
 
@@ -233,13 +244,13 @@ def preflight_train_rows(
         raise TypeError("max_context_tokens must be a positive integer")
     if max_context_tokens < 1:
         raise ValueError("max_context_tokens must be a positive integer")
-    if profile == "quote-v2" and max_context_tokens != config.train_context_tokens:
-        raise ValueError("quote-v2 training context limit is fixed")
-    if profile == "quote-v2" and seed != SEED:
-        raise ValueError("quote-v2 seed is fixed")
+    if config.name != "pilot" and max_context_tokens != config.train_context_tokens:
+        raise ValueError(f"{profile} training context limit is fixed")
+    if config.name != "pilot" and seed != SEED:
+        raise ValueError(f"{profile} seed is fixed")
     effective_max_rows = config.train_rows if max_rows is None else max_rows
-    if profile == "quote-v2" and effective_max_rows != config.train_rows:
-        raise ValueError("quote-v2 training row limit is fixed")
+    if config.name != "pilot" and effective_max_rows != config.train_rows:
+        raise ValueError(f"{profile} training row limit is fixed")
     clean_dev_prompts = _validated_dev_prompts(dev_prompts, config)
 
     train_report: list[dict[str, Any]] = []
@@ -329,7 +340,7 @@ def preflight_train_rows(
             "rows": dev_report,
         },
     }
-    if profile == "quote-v2":
+    if config.name != "pilot":
         limits["max_train_steps"] = config.train_steps
         limits["profile"] = config.name
     return result
@@ -346,9 +357,11 @@ def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
     request_keys = {"mode", "train_rows", "dev_prompts", "remote_run_dir"}
     profile_name = request.get("profile", "pilot")
     if "profile" in request:
-        if profile_name != "quote-v2":
-            raise ValueError("profile field is only valid for quote-v2")
+        if profile_name not in {"quote-v2", "quote-v3"}:
+            raise ValueError("profile field is only valid for quote-v2 or quote-v3")
         expected_keys = request_keys | {"profile"}
+        if profile_name == "quote-v3":
+            expected_keys |= {"eval_cohorts", "prior_adapter"}
     else:
         expected_keys = request_keys
     config = resolve_sft_profile(profile_name)
@@ -360,6 +373,8 @@ def run_remote_request(request: Mapping[str, Any]) -> dict[str, Any]:
         raise ValueError("train_rows must be a list of row objects")
     if type(dev_prompts) is not list:
         raise ValueError("dev_prompts must be a list of prompt objects")
+    if config.name == "quote-v3":
+        _validate_quote_v3_metadata(request, train_rows, dev_prompts)
     remote_run_dir = request["remote_run_dir"]
     if mode == "preflight" and remote_run_dir is not None:
         raise ValueError("remote_run_dir must be null for preflight")
@@ -412,6 +427,39 @@ def _validated_dev_prompts(
         seen.add(case_id)
         validated.append((case_id, prompt_text))
     return validated
+
+
+def _validate_quote_v3_metadata(
+    request: Mapping[str, Any],
+    train_rows: Sequence[Mapping[str, Any]],
+    dev_prompts: Sequence[Mapping[str, Any]],
+) -> None:
+    if request["prior_adapter"] != _QUOTE_V3_PRIOR_ADAPTER:
+        raise ValueError("quote-v3 prior_adapter must match the fixed quote-v2 checkpoint")
+    cohorts = request["eval_cohorts"]
+    if type(cohorts) is not dict or set(cohorts) != set(_QUOTE_V3_COHORT_SIZES):
+        raise ValueError("quote-v3 eval_cohorts must contain regression, dev, and test")
+    cohort_ids: list[str] = []
+    seen: set[str] = set()
+    for name, expected_count in _QUOTE_V3_COHORT_SIZES.items():
+        values = cohorts[name]
+        if type(values) is not list or len(values) != expected_count:
+            raise ValueError(f"quote-v3 {name} cohort must contain {expected_count} case IDs")
+        for case_id in values:
+            if type(case_id) is not str or not case_id.strip() or case_id in seen:
+                raise ValueError("quote-v3 cohort case IDs must be non-blank and globally unique")
+            seen.add(case_id)
+            cohort_ids.append(case_id)
+    if any(
+        type(prompt) is not dict or set(prompt) != {"case_id", "prompt"} for prompt in dev_prompts
+    ):
+        raise ValueError("each DEV prompt must contain only case_id and prompt")
+    prompt_ids = [prompt["case_id"] for prompt in dev_prompts]
+    if prompt_ids != cohort_ids:
+        raise ValueError("quote-v3 dev_prompts must follow eval_cohorts order exactly")
+    train_ids = {row.get("case_id") for row in train_rows if type(row.get("case_id")) is str}
+    if seen & train_ids:
+        raise ValueError("quote-v3 evaluation case IDs must be disjoint from training rows")
 
 
 def _check_dependency_versions(required: Mapping[str, str]) -> dict[str, str]:

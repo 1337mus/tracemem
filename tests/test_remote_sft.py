@@ -311,6 +311,9 @@ class RemoteSftTests(unittest.TestCase):
                 result = remote_sft.run_training(request, support)
 
         self.assertEqual(result["status"], "completed")
+        self.assertNotIn("comparison", result)
+        self.assertNotIn("prior_outputs", result["generation"])
+        self.assertNotIn("prior_seconds", result["generation"])
         self.assertLess(events.index(("prepare", "loaded")), events.index(("generate", "prepared")))
         self.assertLess(
             events.index(("generate", "prepared")), events.index(("attach_lora", "prepared"))

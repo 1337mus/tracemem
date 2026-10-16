@@ -28,6 +28,8 @@ _VOLUME_NAME = "tracemem-sft-pilot"
 _VOLUME_MOUNT = "/mnt/tracemem-sft-pilot"
 _QUOTE_VOLUME_NAME = "tracemem-sft-quote-v2"
 _QUOTE_VOLUME_MOUNT = "/mnt/tracemem-sft-quote-v2"
+_QUOTE_V3_VOLUME_NAME = "tracemem-sft-quote-v3"
+_QUOTE_V3_VOLUME_MOUNT = "/mnt/tracemem-sft-quote-v3"
 _REMOTE_TRAINING_DIR = Path("/root/training")
 _EXPECTED_JOB_METADATA: dict[str, Any] = {}
 _EXPECTED_JOB_SHA256 = ""
@@ -70,7 +72,7 @@ def _run_id_from_job(job: dict[str, Any]) -> str | None:
         raise ValueError("job request must be an object")
     mode = request.get("mode")
     profile = request.get("profile", "pilot")
-    if type(profile) is not str or profile not in {"pilot", "quote-v2"}:
+    if type(profile) is not str or profile not in {"pilot", "quote-v2", "quote-v3"}:
         raise ValueError("training job has an unsupported profile")
     if mode == "preflight":
         if request.get("remote_run_dir") is not None:
@@ -81,7 +83,11 @@ def _run_id_from_job(job: dict[str, Any]) -> str | None:
     remote_run_dir = request.get("remote_run_dir")
     if type(remote_run_dir) is not str:
         raise ValueError("training job must use the fixed remote run path")
-    volume_mount = _QUOTE_VOLUME_MOUNT if profile == "quote-v2" else _VOLUME_MOUNT
+    volume_mount = {
+        "pilot": _VOLUME_MOUNT,
+        "quote-v2": _QUOTE_VOLUME_MOUNT,
+        "quote-v3": _QUOTE_V3_VOLUME_MOUNT,
+    }[profile]
     prefix = f"{volume_mount}/adapters/"
     if not remote_run_dir.startswith(prefix):
         raise ValueError("training job must use the fixed remote run path")
@@ -306,6 +312,12 @@ def _build_modal_function(job: dict[str, Any]) -> tuple[Any, Any]:
             _QUOTE_VOLUME_MOUNT,
             "tracemem-sft-quote-v2",
         )
+    elif profile == "quote-v3":
+        volume_name, volume_mount, app_name = (
+            _QUOTE_V3_VOLUME_NAME,
+            _QUOTE_V3_VOLUME_MOUNT,
+            "tracemem-sft-quote-v3",
+        )
     elif profile == "pilot":
         volume_name, volume_mount, app_name = _VOLUME_NAME, _VOLUME_MOUNT, "tracemem-sft-pilot"
     else:
@@ -313,10 +325,17 @@ def _build_modal_function(job: dict[str, Any]) -> tuple[Any, Any]:
     volume = (
         modal.Volume.from_name(volume_name, create_if_missing=True) if mode == "train" else None
     )
+    prior_volume = None
+    if mode == "train" and profile == "quote-v3":
+        prior_volume = modal.Volume.from_name(
+            _QUOTE_VOLUME_NAME, create_if_missing=False
+        ).with_mount_options(read_only=True)
     options = dict(job["resource_options"])
     options["env"] = {"TRACEMEM_SFT_REMOTE": "1"}
     if volume is not None:
         options["volumes"] = {volume_mount: volume}
+        if prior_volume is not None:
+            options["volumes"][_QUOTE_VOLUME_MOUNT] = prior_volume
     app = modal.App(app_name)
     remote_entry = _make_remote_entry(job, volume=volume)
     function = app.function(image=image, **options)(remote_entry)
