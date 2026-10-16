@@ -60,6 +60,20 @@ reviewers and root reviewed the outputs; there were zero human reviewers and
 the semantic labels remain provisional. See the [full baseline report](quote-baseline-results.md)
 and [protocol](quote-baseline-protocol.md).
 
+## Latest verifier check: development criterion failed
+
+Qwen3-8B judged 39 Qwen3-4B `quote-v2` candidates that passed the exact
+deterministic gate. It retained 35/36 provisionally good claims, but also kept
+all three provisionally bad claims and rejected one good claim. All ten batches
+were valid and untruncated; the overall predeclared criterion failed. Two
+no-candidate cases were generator JSON and citation failures, not model
+abstentions. A separate root audit found selected-fact retention unchanged at
+17/20 (6/9 complete nonempty cases); candidate retention is a different
+measure. Labels are provisional same-family agent judgments with zero human
+reviewers. See the [results](quote-verifier-dev-results.md), [score](quote-verifier-dev-results.json),
+[fact audit](quote-verifier-selected-fact-audit.json), and
+[validation record](validation-quote-verifier.json).
+
 ## Prior training experiment: quote-v3
 
 V3 compared base, quote-v2 prior, and quote-v3 tuned arms on a 24-case adaptive
@@ -125,13 +139,15 @@ Check `.local/active-cycle.json` before any new remote run.
 
 ## Next gate
 
-The next step is controlled development-only verification of Qwen3-4B
-`quote-v2` candidates with the exact citation gate and separate support and
-eligibility checks. This is a research reference only, not a production model
-selection. The verifier contract is implemented and locally tested, but no
-verifier-gated candidate inference or runtime integration has occurred and no
-model improvement has been shown. Keep the longer candidate unread and quarantined
-until the full development decision is frozen and a versioned 12-message
-contract is reviewed. Do not run a fifth target-tweak SFT. Gate A remains
-unmet. Verify `.local/active-cycle.json` and live state before any remote call;
-verify this baseline by 2026-10-23.
+The failed result is frozen. Two separate follow-ups remain: review the opt-in
+[quote-data v3 contract](quote-data-v3-contract.md), which changes the version
+and 12-message bound while preserving literal citation checks and adding length
+validation; and review the prospective v0.1 [verifier annotation
+contract](verifier-annotation-contract.md), which proposes separate labels
+for semantic support and eligibility. The annotation policy is not human-approved;
+unresolved eligibility stays uncertain in future diagnostics. Independent human
+review is needed for human-validated or product-quality claims; the policy
+ambiguity is not resolved. The sealed longer-conversation candidate remains unopened. No further GPU
+run was launched. Do not run a fifth extraction target-tweak SFT. No production
+model was selected; Gate A remains unmet. Verify `.local/active-cycle.json` and
+live state by 2026-10-23 and before any remote call.

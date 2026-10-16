@@ -132,9 +132,10 @@ selected-fact coverage remain separate checks.
 
 Use 4B `quote-v2` only as the research generator reference for controlled,
 development-only verification of candidates. It is not a production model
-selection. The verifier contract is implemented and locally tested; it has
-not been integrated into runtime or used for a verifier-gated candidate
-inference, and it provides no evidence of model improvement. Keep the longer candidate
+selection. A later [verifier experiment](quote-verifier-dev-results.md) failed
+its predeclared criterion: it retained all three provisionally bad claims and
+rejected one good claim. The filter was not selected or integrated into runtime.
+Keep the longer candidate
 unread and quarantined until the full development decision is frozen and a
 versioned 12-message contract is reviewed. Do not run a fifth target-tweak
 SFT. Gate A remains unmet.
@@ -143,7 +144,8 @@ The historical SFT used 4-bit weights; this prompt comparison used BF16, so it
 does not provide a controlled cross-run SFT comparison. The 4B and 8B worker
 times were 410.072s and 454.199s on NVIDIA A10 hardware (A10G requested).
 Billing was not measured. The post-8B inventory showed all apps stopped with
-zero tasks, and no further GPU run was launched.
+zero tasks at the baseline checkpoint; the later verifier call is documented
+separately.
 
 ## Artifacts and validation
 

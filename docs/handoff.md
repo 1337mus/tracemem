@@ -1,53 +1,57 @@
-# Current checkpoint: quote-only baseline complete; no model selected
+# Current checkpoint: verifier criterion failed; no model selected
 
-Updated 2026-10-16 UTC. The [baseline results](quote-baseline-results.md)
-report 12 adaptive fictional development cases across Qwen3-4B/8B and two
-prompts. The paired input token arrays matched for all 24 items. Both 4B
-variants retained 17/20 selected facts; both 8B variants retained 16/20.
-Complete selected-fact cases were 6/9, 7/9, 6/9, and 6/9. All four arms
-correctly abstained on 0/3 empty-target cases. The broader prompt and larger
-model did not improve selected-fact retention on this slice. These measures do
-not establish exhaustive recall, held-out quality, QA benefit, or competitive
-performance.
+Updated 2026-10-16 UTC. The [Qwen3-8B verifier report](quote-verifier-dev-results.md)
+covers 39 Qwen3-4B `quote-v2` candidates from fictional development cases.
+The exact input gate left 39 candidates from 12 responses: one strict JSON
+failure and one citation rejection. Those two no-candidate cases were gate
+failures, not model abstentions.
 
-There were 48 responses, 47 reviewable responses, and 203 reviewed claims.
-Two fresh-context Luna reviewers completed blind first passes. Root recorded
-an independent first pass before viewing their labels, then adjudicated after
-reviewing them. All reviewers were from the same model family, with zero human
-reviewers, so semantic labels remain provisional.
-Parsing, citation integrity, semantic support, eligibility, and selected-fact
-coverage are reported separately. The 4B `quote-v2` arm is only a research
-generator reference for the next development-only candidate verification, not
-a production selection. Gate A remains unmet; no fifth target-tweak SFT is
-planned.
+The frozen labels classify 36 candidates as good and three as bad. The verifier
+retained 35/36 good claims, rejected one good claim, and retained all three bad
+claims. It produced valid, complete verdicts for all ten batches with no
+truncation, but failed the predeclared criterion because it rejected none of
+the bad claims. It also rejected one supported postcard statement by conflating
+support with eligibility, and retained two ineligible exercise claims plus a
+refund claim that dropped the reporting words “It says.”
 
-The 4B and 8B calls took 410.072s and 454.199s at the worker on NVIDIA A10
-hardware; A10G was requested. Billing was not measured. The post-8B inventory
-showed all apps stopped with zero tasks. No additional GPU call was launched.
-The historical SFT used 4-bit weights and this prompt comparison used BF16, so
-these runs are not a controlled cross-run SFT comparison.
+A separate root audit found selected-fact coverage unchanged from the generator:
+17/20 facts and 6/9 complete nonempty cases. The rejected postcard claim was not
+a selected target. Candidate retention and selected-fact retention are separate
+measures. Labels came from same-family AI agents, with zero human reviewers;
+this development result establishes no independent truth, generalization, QA
+benefit, or product suitability. No model was selected and Gate A remains
+unmet.
 
-Next, verify 4B `quote-v2` candidates on development data with the exact
-citation gate and separate support and eligibility checks. The verifier
-contract is implemented and locally tested, but no verifier-gated candidate
-inference or runtime integration has occurred and no model improvement has
-been shown.
-Keep the longer candidate unread and quarantined until the full development
-decision is frozen and a versioned 12-message contract is reviewed. Check
-`.local/active-cycle.json` and live state before any remote call. Verify by
-2026-10-23.
+The call used Qwen3-8B BF16 on reported NVIDIA A10 hardware (A10G requested).
+Worker time was 144.376159s, GPU time 85.564929s, client time 149.756547s,
+and output was 1,828 tokens. Billing was not measured. There was no retry, and post-run
+inventory showed the app stopped with zero tasks. No training occurred.
 
-The recorded exact-head CI run
-[38871651124](https://github.com/1337mus/tracemem/actions/runs/38871651124)
-passed on signed, pushed commit `9f068651ca503f12ede074e80a5890a4f2ab1045`:
-854/855 source tests passed (one skipped) and 399/401 installed-wheel tests
-passed (two skipped). It predates the current documentation and verifier
-changes. Those changes remain pending root validation and signed delivery; no
-new delivery is claimed here. Use the linked report for copied artifact paths
-and review details. Root's full local `make check` passed: 859 tests attempted,
-858 passed, one skipped, 181 files formatted, and configured mypy checked 49
-source files; strict mypy passed for the verifier and its test. See the
-[validation record](validation-quote-baseline.json).
+The failed decision is frozen. The opt-in v3 validator is implemented and
+root-reviewed, with 23 focused tests passing. The final local check passed
+900 tests with one skip, Ruff across 188 files and configured mypy across 53
+source files; verifier replay stayed byte-identical. See the
+[v3 validation](validation-quote-data-v3.json). Before further evaluation, use the
+opt-in [quote-data v3 contract](quote-data-v3-contract.md), which changes the
+version and 12-message bound while preserving literal citation checks and
+adding length validation; and review the prospective v0.1 [verifier annotation
+contract](verifier-annotation-contract.md), which proposes separate labels
+for semantic support and eligibility. The annotation policy is not human-approved;
+unresolved eligibility stays uncertain in future diagnostics. Independent human
+review is needed for human-validated or product-quality claims; the policy
+ambiguity is not resolved. The sealed longer-conversation candidate remains unopened. No further GPU
+call was launched. Do not run a fifth extraction target-tweak SFT. Verify by
+2026-10-23: check `.local/active-cycle.json` and live state before any new
+remote call.
+
+The source code is signed and pushed at
+`69c18e06d7877029cc9a8689169eccd62d8ddf82`; exact-head CI run
+[38877899360](https://github.com/1337mus/tracemem/actions/runs/38877899360)
+passed with 887/888 source tests (one skipped) and 399/401 installed tests
+(two skipped). That run predates the result documents and v3 validator;
+`.local/active-cycle.json` records their current delivery. See the
+[machine score](quote-verifier-dev-results.json), [selected-fact audit](quote-verifier-selected-fact-audit.json),
+and [validation record](validation-quote-verifier.json).
 
 Only fictional data ran on Modal. Original conversations, Context Kit, and
 `~/.llm-context` remain read-only; no private data was uploaded and nothing was

@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "reviewer": "root agent unblinded manual source/statement audit",
+  "annotation_status": "PROVISIONAL_AGENT_ONLY",
+  "human_reviewers": 0,
+  "time_utc": "2026-10-16T09:08:22.352699+00:00",
+  "method": "Read the retained statements against each selected target and reviewed sources for disagreements; frozen original indices preserved. This is a selected-fact check, not exhaustive recall.",
+  "receipt_sha256": "e1927688ee60a69b58a02feb351830646378c9b7b5f33c434e0c845585e8d0b7",
+  "scored_report_sha256": "821f3e04d654842f7915ce7b39cc9ec0e4ca95dfcc8161a8ec6fc34f69ed315a",
+  "cases": [
+    {
+      "case_id": "V4D-01",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "1": [
+          1
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-02",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "1": [
+          2
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-03",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "1": [
+          2
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-04",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "1": [
+          1
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-05",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ]
+      },
+      "selected_fact_indices_missing": [
+        1
+      ]
+    },
+    {
+      "case_id": "V4D-06",
+      "selected_fact_count": 3,
+      "selected_fact_indices_retained": [
+        0,
+        2
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "2": [
+          1
+        ]
+      },
+      "selected_fact_indices_missing": [
+        1
+      ]
+    },
+    {
+      "case_id": "V4D-07",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          4
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-08",
+      "selected_fact_count": 3,
+      "selected_fact_indices_retained": [
+        1,
+        2
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "1": [
+          0
+        ],
+        "2": [
+          1
+        ]
+      },
+      "selected_fact_indices_missing": [
+        0
+      ]
+    },
+    {
+      "case_id": "V4D-09",
+      "selected_fact_count": 2,
+      "selected_fact_indices_retained": [
+        0,
+        1
+      ],
+      "original_claim_indices_by_selected_fact": {
+        "0": [
+          0
+        ],
+        "1": [
+          1
+        ]
+      },
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-10",
+      "selected_fact_count": 0,
+      "selected_fact_indices_retained": [],
+      "original_claim_indices_by_selected_fact": {},
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-11",
+      "selected_fact_count": 0,
+      "selected_fact_indices_retained": [],
+      "original_claim_indices_by_selected_fact": {},
+      "selected_fact_indices_missing": []
+    },
+    {
+      "case_id": "V4D-12",
+      "selected_fact_count": 0,
+      "selected_fact_indices_retained": [],
+      "original_claim_indices_by_selected_fact": {},
+      "selected_fact_indices_missing": []
+    }
+  ],
+  "summary": {
+    "selected_facts_retained": 17,
+    "selected_facts_total": 20,
+    "complete_nonempty_cases": 6,
+    "nonempty_cases": 9,
+    "difference_from_generator_selected_fact_retention": 0
+  },
+  "disagreement_review": {
+    "V4D-04:2": "The exact user statement about sorting postcards and deciding what to bring is supported. The verifier conflated support with eligibility and rejected this frozen-good claim; neither selected target depends on it.",
+    "V4D-05:5": "The verifier accepted a claim omitting the booking page reporting operator It says, despite saying nothing was omitted. Frozen unsupported label retained.",
+    "V4D-12:0,1": "The two exercise-context claims remain supported but ineligible under the frozen task policy. The verifier accepted them. Eligibility is a task-policy judgment, not a truth judgment."
+  },
+  "no_candidate_accounting": "V4D-10 had no valid citations; V4D-11 failed strict JSON. Withholding these cases is not a correct model abstention. V4D-12 still contains ineligible claims."
+}

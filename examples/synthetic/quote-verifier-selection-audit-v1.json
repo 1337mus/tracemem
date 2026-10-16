@@ -1,0 +1,490 @@
+{
+  "candidate_sha256": "2e60e4c0b5eadff29b517814f6b1040d3e10e6b453ed796d6015fce5df8f3041",
+  "cases": [
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2
+      ],
+      "candidates": [
+        {
+          "claim": "The user might take the cedar bench to the neighborhood repair workshop next Saturday, though they still need to ask whether they have room for a long piece.",
+          "message_id": "V4D-01-M1",
+          "quote": "I might take the cedar bench to the neighborhood repair workshop next Saturday, though I still need to ask whether they have room for a long piece.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user has signed up for Saturday's neighborhood repair workshop, but that is still a plan rather than a repair already done.",
+          "message_id": "V4D-01-M3",
+          "quote": "I have signed up for Saturday's neighborhood repair workshop, but that is still a plan rather than a repair already done.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user found a short tutorial about tightening slats; the comments recommend glue, but the user wants the workshop leader to look at the joint before buying supplies.",
+          "message_id": "V4D-01-M3",
+          "quote": "I found a short tutorial about tightening slats; the comments recommend glue, but I want the workshop leader to look at the joint before I buy supplies.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-01",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-01::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "candidates": [
+        {
+          "claim": "Imani told me the Willowmere orchard caretaker moved the pickup box beside the north gate, but I have not checked it myself.",
+          "message_id": "V4D-02-M1",
+          "quote": "Imani told me the Willowmere orchard caretaker moved the pickup box beside the north gate, but I have not checked it myself.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I am helping her label jars for the spring table, and she asked me to find out whether the new location is accessible from the footpath.",
+          "message_id": "V4D-02-M1",
+          "quote": "I am helping her label jars for the spring table, and she asked me to find out whether the new location is accessible from the footpath.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I called the orchard caretaker. The caretaker confirmed the pickup box is beside the north gate and said the footpath is level, though I have not walked it.",
+          "message_id": "V4D-02-M3",
+          "quote": "I called the orchard caretaker. The caretaker confirmed the pickup box is beside the north gate and said the footpath is level, though I have not walked it.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I am only passing along what they told me; the orchard has two gates and a delivery entrance, which is why I wanted the location stated carefully.",
+          "message_id": "V4D-02-M3",
+          "quote": "I am only passing along what they told me; the orchard has two gates and a delivery entrance, which is why I wanted the location stated carefully.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-02",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-02::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "candidates": [
+        {
+          "claim": "The blue casserole dish is not mine; I borrowed it from my cousin Tavi for the block supper and still need to return it.",
+          "message_id": "V4D-03-M1",
+          "quote": "I should correct something from my note about the blue casserole dish. The blue casserole dish is not mine; I borrowed it from my cousin Tavi for the block supper and still need to return it.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The chip near the handle was already there when she lent it to me, so I do not want the repair shop to assume I caused it.",
+          "message_id": "V4D-03-M1",
+          "quote": "The chip near the handle was already there when she lent it to me, so I do not want the repair shop to assume I caused it.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "Tavi said the blue casserole dish can stay at my apartment until her kitchen shelves are installed, but I am still just keeping it for her. I have not agreed to take it permanently.",
+          "message_id": "V4D-03-M3",
+          "quote": "Tavi said the blue casserole dish can stay at my apartment until her kitchen shelves are installed, but I am still just keeping it for her. I have not agreed to take it permanently.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The supper went well, though we ran out of napkins and ended up using paper towels from the pantry.",
+          "message_id": "V4D-03-M3",
+          "quote": "The supper went well, though we ran out of napkins and ended up using paper towels from the pantry.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-03",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-03::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2
+      ],
+      "candidates": [
+        {
+          "claim": "The Harbor Museum archive used to accept walk-in donations every Thursday, according to the card I saved from last year.",
+          "message_id": "V4D-04-M1",
+          "quote": "The Harbor Museum archive used to accept walk-in donations every Thursday, according to the card I saved from last year.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "A volunteer told me that the archive stopped taking Thursday walk-ins in January and now accepts donations by appointment at the east annex.",
+          "message_id": "V4D-04-M3",
+          "quote": "A volunteer told me that the archive stopped taking Thursday walk-ins in January and now accepts donations by appointment at the east annex.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The collection I am sorting is mostly postcards, and I need to decide whether to bring everything or just the local views.",
+          "message_id": "V4D-04-M3",
+          "quote": "The collection I am sorting is mostly postcards, and I need to decide whether to bring everything or just the local views.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-04",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-04::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidates": [
+        {
+          "claim": "The user had reserved two seats on the Reedwater ferry for the lantern walk.",
+          "message_id": "V4D-05-M1",
+          "quote": "I had reserved two seats on the Reedwater ferry for the lantern walk, but my sister’s work schedule changed and we cannot go that evening.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user's sister’s work schedule changed, making it impossible for them to go that evening.",
+          "message_id": "V4D-05-M1",
+          "quote": "I had reserved two seats on the Reedwater ferry for the lantern walk, but my sister’s work schedule changed and we cannot go that evening.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user is trying to cancel the reservation before the deadline to avoid leaving the seats unused.",
+          "message_id": "V4D-05-M1",
+          "quote": "I am trying to cancel before the deadline rather than leave the seats unused.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The booking page accepted cancellation of the two Reedwater ferry seats for the lantern walk.",
+          "message_id": "V4D-05-M3",
+          "quote": "The booking page accepted cancellation of the two Reedwater ferry seats for the lantern walk, and the seats are no longer held under my name.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user will look for another evening only if their sister gets a more predictable rota.",
+          "message_id": "V4D-05-M3",
+          "quote": "I will look for another evening only if my sister gets a more predictable rota.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The refund for the cancelled seats will be reviewed within five business days.",
+          "message_id": "V4D-05-M3",
+          "quote": "It says the refund will be reviewed within five business days, so I do not know yet whether the money is coming back.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-05",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-05::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "candidates": [
+        {
+          "claim": "Bea left her indigo quilt with me while the upstairs radiator is being replaced.",
+          "message_id": "V4D-06-M1",
+          "quote": "Bea left her indigo quilt with me while the upstairs radiator is being replaced.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "Bea said she will collect her indigo quilt herself after the radiator work, probably in a couple of weeks, and asked me not to wash it.",
+          "message_id": "V4D-06-M3",
+          "quote": "Bea said she will collect her indigo quilt herself after the radiator work, probably in a couple of weeks, and asked me not to wash it.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I have not checked whether the chest is perfectly dust-free, so I put a cotton sheet over the lid.",
+          "message_id": "V4D-06-M3",
+          "quote": "I have not checked whether the chest is perfectly dust-free, so I put a cotton sheet over the lid.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "My landlord is also repainting the hallway, which made moving the chest inconvenient.",
+          "message_id": "V4D-06-M3",
+          "quote": "My landlord is also repainting the hallway, which made moving the chest inconvenient.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-06",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-06::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "candidates": [
+        {
+          "claim": "The user is considering replacing the cracked pane in the community glasshouse but has not committed to doing the work.",
+          "message_id": "V4D-07-M1",
+          "quote": "I am considering replacing the cracked pane in the community glasshouse, but I have not committed to doing the work.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user will ask a glazier to measure the cracked pane if the garden committee approves the small grant.",
+          "message_id": "V4D-07-M1",
+          "quote": "If the garden committee approves the small grant, I would ask a glazier to measure the cracked pane;",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user will leave the repair for the summer volunteers if the grant is declined.",
+          "message_id": "V4D-07-M1",
+          "quote": "if the grant is declined, I will leave the repair for the summer volunteers.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The current pane is taped at the corners.",
+          "message_id": "V4D-07-M1",
+          "quote": "The current pane is taped at the corners.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The garden committee has not decided whether to approve the glasshouse repair grant yet.",
+          "message_id": "V4D-07-M3",
+          "quote": "The garden committee has not decided whether to approve the glasshouse repair grant yet.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The user can help carry tools during the Saturday cleanup, but that is separate from taking responsibility for replacing the pane.",
+          "message_id": "V4D-07-M3",
+          "quote": "I can help carry tools during the Saturday cleanup, but that is separate from taking responsibility for replacing the pane.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "A neighbor mentioned acrylic as a cheaper option; the user does not know whether it is suitable for the glasshouse frame.",
+          "message_id": "V4D-07-M3",
+          "quote": "A neighbor mentioned acrylic as a cheaper option; I do not know whether it is suitable for the glasshouse frame.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-07",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-07::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1
+      ],
+      "candidates": [
+        {
+          "claim": "Marta replied that she moved the Elm Street food pantry folding tables into the side room, and she is the Saturday coordinator. The manager only asked about the labels.",
+          "message_id": "V4D-08-M3",
+          "quote": "Marta replied that she moved the Elm Street food pantry folding tables into the side room, and she is the Saturday coordinator. The manager only asked about the labels.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I can bring a roll of blank shelf tags to the Elm Street food pantry on Friday, but I have not promised to print the pantry's new category list because nobody sent the final wording.",
+          "message_id": "V4D-08-M3",
+          "quote": "I can bring a roll of blank shelf tags to the Elm Street food pantry on Friday, but I have not promised to print the pantry's new category list because nobody sent the final wording.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-08",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-08::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "candidates": [
+        {
+          "claim": "The marigold seedlings drooped the morning after I moved them from the kitchen sill to the porch.",
+          "message_id": "V4D-09-M1",
+          "quote": "The marigold seedlings drooped the morning after I moved them from the kitchen sill to the porch. I cannot tell whether the wind, the cooler night, or something else caused it, so please do not write down a definite cause.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The marigold seedlings look upright again this morning, though I still have no explanation.",
+          "message_id": "V4D-09-M3",
+          "quote": "The marigold seedlings look upright again this morning, though I still have no explanation.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "I moved the tray back from the porch door because it was rattling in the draft, not because I know that caused the droop.",
+          "message_id": "V4D-09-M3",
+          "quote": "I moved the tray back from the porch door because it was rattling in the draft, not because I know that caused the droop.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The seedlings are for the library's summer planter, and I promised only to bring them if they stay healthy.",
+          "message_id": "V4D-09-M3",
+          "quote": "The seedlings are for the library's summer planter, and I promised only to bring them if they stay healthy.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-09",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-09::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [],
+      "candidates": [],
+      "case_id": "V4D-10",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "deterministic-only",
+      "rejected": [
+        {
+          "reason": "claim source V4D-10-M3 must be a user conversation message",
+          "source_index": 0
+        }
+      ],
+      "source_item_id": "V4D-10::quote-v2",
+      "status": "no-valid-candidates",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [],
+      "candidates": [],
+      "case_id": "V4D-11",
+      "finish_reason": "eos",
+      "generator_error": "generator response is not valid UTF-8 JSON",
+      "pipeline": "deterministic-only",
+      "rejected": [],
+      "source_item_id": "V4D-11::quote-v2",
+      "status": "invalid-json",
+      "truncated": false
+    },
+    {
+      "candidate_indices": [
+        0,
+        1
+      ],
+      "candidates": [
+        {
+          "claim": "The user is comparing two fictional menus for a writing exercise; no ingredient list has been chosen and nobody has said they will cook either version.",
+          "message_id": "V4D-12-M1",
+          "quote": "I am comparing two fictional menus for a writing exercise; no ingredient list has been chosen and nobody has said they will cook either version.",
+          "valid_from": null,
+          "valid_to": null
+        },
+        {
+          "claim": "The draft menu also mentions a barley broth, but I do not know whether that belongs with the pear idea or is a separate option.",
+          "message_id": "V4D-12-M3",
+          "quote": "The draft menu also mentions a barley broth, but I do not know whether that belongs with the pear idea or is a separate option.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ],
+      "case_id": "V4D-12",
+      "finish_reason": "eos",
+      "generator_error": null,
+      "pipeline": "semantic-pipeline",
+      "rejected": [],
+      "source_item_id": "V4D-12::quote-v2",
+      "status": "semantic-ready",
+      "truncated": false
+    }
+  ],
+  "generator_receipt_sha256": "d47debe18192dae62759ed097017d2a9bcef92c148692b2b9a1e41e3805b2ac3",
+  "input_sha256": "b9efbc113e24112786475333868f781baae3af58d43bee7bdc338f229f651cc0",
+  "mode": "local-selection-audit",
+  "schema_version": 1
+}

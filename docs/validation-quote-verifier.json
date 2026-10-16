@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "validated_at_utc": "2026-10-16T09:09:54.345059+00:00",
+  "source_commit": "69c18e06d7877029cc9a8689169eccd62d8ddf82",
+  "source_review": "Root inspected runner, payload, evaluator, tests and exact fictional payload before launch; no unresolved substantive finding.",
+  "prelaunch_local_check": {
+    "full_attempted": 888,
+    "full_passed": 887,
+    "full_skipped": 1,
+    "focused_passed": 29,
+    "extra_strict_mypy_files": 6,
+    "formatted_files": 187,
+    "configured_mypy_files": 53
+  },
+  "source_log_sha256": {
+    "root-full-check-v1.log": "05b6376765e8b3a2a207bfd3fadd373023c7e4d070b1dcfb868c4d812a964001",
+    "root-focused-check-v1.log": "4404da8e9d56d8e6503c08e6adddabe481251f3634cb4306f56ba20ee84f93f8",
+    "root-extra-mypy-v2.log": "ab35ee42183d4d6d3ba483825ab037d18a5a15622d03be01d82220b1564851ff",
+    "runner-correction-final-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "runner-correction-final-format.log": "ef7d13d02214e98ca902b05257cdbe6a8e84f3b4714508efdc19766460b54209"
+  },
+  "source_sha256": {
+    "experiments/quote_verifier.py": "69c754fea1ba097de98a36dd918c2598c49f5df617f9097ce735d9653743d82f",
+    "experiments/quote_verifier_payload.py": "5dcf30b9aa5948c11942db383512008076abb3bb201ec7a1fa63ee105558cef2",
+    "experiments/modal_quote_verifier.py": "3f5d2431bc12dbec9f03fd6325506a823f8acc118108c3589c502c9f5a293be0",
+    "experiments/evaluate_quote_verifier.py": "da1ea602e759cb8c10de8f2b64f29d04a32ef1da609f1a29df6322168728f7a5",
+    "tests/test_quote_verifier_payload.py": "1d0bea165920d36ab6083710908314c949049d658459427c4e0f3bacd8a8338a",
+    "tests/test_modal_quote_verifier.py": "c4f692926ad4355255cd0d79777069b3a46d38ef6c623851e60a14087b2b12d1",
+    "tests/test_evaluate_quote_verifier.py": "3a8645eae0bfb1347964ebc50ff9b245608d73b8b4a3d521821c9397c3b8119f",
+    "pyproject.toml": "117c7e84fc5d2eabf3c30dac1cc1d8aa2d6dee7f7db3f5185a1b342805555a84",
+    "docs/quote-verifier-dev-protocol.md": "543e4a9d15c01de40e3963eb7eefda948c11c03543c4bffe0ac193641525b8cc"
+  },
+  "extra_typecheck": "Six verifier modules/test files strict mypy passed after narrow ModuleType typing correction",
+  "artifacts": {
+    "docs/quote-verifier-dev-protocol.md": "543e4a9d15c01de40e3963eb7eefda948c11c03543c4bffe0ac193641525b8cc",
+    "examples/synthetic/quote-verifier-prepared-v1.json": "7365120ed0918fc8f9859f8b8c4bf9b7f1dc7808aad7b274996fc6201194fe3d",
+    "examples/synthetic/quote-verifier-selection-audit-v1.json": "ac88eb7b98def93f062d786bdb0f7bf34461b7850bf9565f7d4ecd8783888290",
+    "examples/synthetic/quote-verifier-remote-v1.json": "e1927688ee60a69b58a02feb351830646378c9b7b5f33c434e0c845585e8d0b7",
+    "docs/quote-verifier-dev-results.json": "821f3e04d654842f7915ce7b39cc9ec0e4ca95dfcc8161a8ec6fc34f69ed315a",
+    "docs/quote-verifier-selected-fact-audit.json": "381546f93e25607b25b7dad99f61e4c6b4675999b17f4c27c71a8b4ff3030b2b"
+  },
+  "artifact_copy_check": "Five files copied byte-for-byte from preserved local receipts, preparation, audit and reports",
+  "cpu_replay": {
+    "command": "PYTHONPATH=src:. .venv/bin/python -m experiments.evaluate_quote_verifier --receipt examples/synthetic/quote-verifier-remote-v1.json --output NEW_REPORT.json",
+    "report_bytes_identical": true,
+    "remote_call_required": false
+  },
+  "compute": {
+    "workspace": "rajath-61258",
+    "profile": "reflex-personal",
+    "modal_app_id": "ap-oikMOxcjcHOKsMb0FLI04x",
+    "function_call_id": "fc-01M51Z8W3M1J5NSA8KJPPJYZTT",
+    "gpu_requested": "A10G",
+    "gpu_reported": "NVIDIA A10",
+    "remote_seconds": 144.376159,
+    "gpu_compute_seconds": 85.564929,
+    "client_seconds_including_startup": 149.756547,
+    "generated_tokens": 1828,
+    "billed_cost_usd": null,
+    "post_call_all_apps_stopped_zero_tasks": true
+  },
+  "annotation_status": "PROVISIONAL_AGENT_ONLY",
+  "human_reviewers": 0,
+  "criterion_met": false,
+  "production_model_selected": false,
+  "private_conversations_uploaded": false,
+  "public_publication": false,
+  "automation": "PAUSED",
+  "source_delivery": {
+    "signed": true,
+    "pushed": true,
+    "visibility": "PRIVATE",
+    "head": "69c18e06d7877029cc9a8689169eccd62d8ddf82",
+    "exact_head_ci": "success",
+    "ci_run_id": 38877899360,
+    "source_tests": {
+      "attempted": 888,
+      "passed": 887,
+      "skipped": 1
+    },
+    "installed_tests": {
+      "attempted": 401,
+      "passed": 399,
+      "skipped": 2
+    },
+    "github_signatures_verified": true
+  },
+  "documentation_delivery": "Pending root final review and signed delivery; this record does not claim exact-head hosted CI for future doc commits.",
+  "final_followup_local_check": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "attempted": 901,
+    "passed": 900,
+    "skipped": 1,
+    "ruff_formatted_files": 188,
+    "configured_mypy_source_files": 53,
+    "log_sha256": "88dc24a80b509db29cc92fe110e41f050f0d45d7b8fbdfe26b10445a3a3cdc5c"
+  },
+  "verifier_cpu_replay_after_v3_refactor": "byte-identical"
+}

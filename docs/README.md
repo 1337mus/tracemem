@@ -68,6 +68,17 @@ Paths in this index are relative to this `docs/` directory.
   development results with separate parse, citation, semantic, eligibility,
   and selected-fact evidence; no production selection or held-out claim. See
   [validation record](validation-quote-baseline.json) for local checks.
+- [Quote verifier development results](quote-verifier-dev-results.md): the
+  Qwen3-8B filter failed its predeclared development criterion on provisional
+  labels; selected-fact coverage remained unchanged. See the [score](quote-verifier-dev-results.json),
+  [fact audit](quote-verifier-selected-fact-audit.json), and
+  [validation record](validation-quote-verifier.json).
+- [Opt-in quote-data v3 contract](quote-data-v3-contract.md) and
+  [validation](validation-quote-data-v3.json): implemented twelve-message entry
+  point; v2 limits and literal citation checks remain intact.
+- [Verifier annotation contract](verifier-annotation-contract.md): prospective
+  v0.1 semantic-support and eligibility policy. Unresolved scope stays uncertain;
+  independent human review is needed for human-validated or product-quality claims.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.
