@@ -1,6 +1,6 @@
 # Project status and design
 
-Updated 2026-10-15 UTC.
+Updated 2026-10-16 UTC.
 
 TraceMem is a local research prototype for finding past conversation evidence
 with source citations. The current search tool works; interpreting changes in
@@ -10,7 +10,7 @@ has the project overview and architecture diagram.
 ## Phase and boundary
 
 Phase 0 inventory and Phase 1 infrastructure are complete. The project is in
-Phase 2, using fictional data for diagnostics. Two technical SFT runs have
+Phase 2, using fictional data for diagnostics. Three technical SFT runs have
 trained Qwen3-4B adapters, but no specialist has been selected for product use.
 Gate A is unmet: there is no independent human validation of the claims or
 evidence.
@@ -33,16 +33,21 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## Latest training experiment: quote-v2
+## Latest completed training experiment: quote-v3
 
-The quote-v2 tuned model returned valid JSON for all 24 fictional development
-examples. In a separate fence-only comparison, correct empty-source skips
-improved from 1/6 to 6/6; agent review still found one unsupported and one
-ambiguous tuned memory. The slice is small and adaptive, with zero human
-reviewers, so it does not establish recall or generalization. No production
-checkpoint was selected. The [results report](sft-quote-v2-results.md) records
-raw scoring and review methods; the [first pilot](sft-pilot-results.md) remains
-separate.
+V3 compared base, quote-v2 prior, and quote-v3 tuned arms on a 24-case adaptive
+regression set, 24 development cases, and a separate 48-case test. In the
+test's targeted chronology and subject group, responses with any unsupported
+or uncertain claim fell from 5/32 to 2/32; overall they fell from 7/48 to
+3/48. Required-fact coverage fell from 21/36 to 16/36 overall and from 13/24
+to 9/24 on the targeted group, so the run failed its predeclared promising
+criteria. The labels are provisional agent/root judgments with zero human
+reviewers. No specialist or production checkpoint was selected, and Gate A
+remains unmet. The [results report](sft-quote-v3-results.md), [evaluator
+report](sft-quote-v3-results.json), and [validation record](validation-sft-quote-v3.json)
+keep structural, semantic, and coverage evidence separate. The
+[quote-v2 report](sft-quote-v2-results.md) and [first pilot](sft-pilot-results.md)
+remain historical.
 
 ## Current evidence
 
@@ -65,11 +70,12 @@ Focused review verification covered 23 source tests and 23 installed tests.
 Reports were byte-identical, and the full exports and probe exports matched.
 These checks validate the artifact slice, not human agreement or truth.
 
-The verified hosted CI baseline at preparation time is for the delivered head
-`bb5eb2582e9fa35b7b175db643cb159a0dddce17` (run
-`38698341232`): source tests passed 602 with 1 skip; installed tests passed 349
-with 2 skips. Check `.local/active-cycle.json` for the latest exact-delivery
-and CI state.
+The successful hosted CI run for the v3 source changes tested commit
+a396d48da65b059bde55d0088e5996ec689cf300 (run 38828735844): 760/761 source
+tests and 399/401 installed tests passed, with one and two skips respectively.
+It did not include this later documentation working-tree tip. See
+[the validation record](validation-sft-quote-v3.json) for the exact checks.
+Check `.local/active-cycle.json` before any new remote run.
 
 ## Next gate
 

@@ -1,0 +1,1928 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-16T00:54:38.226205+00:00",
+  "label": "root unblinded adjudication after a fresh blinded strong agent review; provisional agent-only",
+  "human_reviewers": 0,
+  "reviewer_model": "gpt-6-astra",
+  "blinded_context": "fork_none; only source/response packet and frozen reviewer instructions",
+  "coverage_artifact": ".local/sft-quote-v3-20261015/root-review/required-fact-coverage-v1.json",
+  "input_sha256": {
+    ".local/sft-quote-v3-20261015/review-tools/blind-review-v1.json": "ee4a4ba1def63b795630b4a22e574cbb24229f7987d357228af5fe29c3e4d4ae",
+    ".local/sft-quote-v3-20261015/review-tools/blind-packet-v1.json": "185f5c23cb03f1e0f06abade62b4e0b58677aae4eb480bdc3066bcb3624c8fad",
+    ".local/sft-quote-v3-20261015/review-tools/curator-map-v1.json": "2b3498c7d0355c46c9c1f481a28d3e8e91eae401e7f368f44a34f0eb428aff5f",
+    ".local/sft-quote-v3-20261015/root-review/required-fact-coverage-v1.json": "edd1b3f649861a63ef7ab744332cbcfd67e536d472f46a81d6bf7d3a8adb6bbb"
+  },
+  "root_claim_label_changes": 1,
+  "root_claim_label_change": "V3TEST-C-048 prior: unsupported to uncertain; historical present versus continuing custody is ambiguous. Adverse-response counts unchanged.",
+  "summary": {
+    "prior": {
+      "chronology": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 2,
+        "bad_case_ids": [
+          "V3TEST-C-013",
+          "V3TEST-C-014"
+        ],
+        "claim_labels": {
+          "unsupported": 1,
+          "uncertain": 1,
+          "supported": 10
+        }
+      },
+      "subject_attachment": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 3,
+        "bad_case_ids": [
+          "V3TEST-C-048",
+          "V3TEST-C-030",
+          "V3TEST-C-023"
+        ],
+        "claim_labels": {
+          "supported": 9,
+          "uncertain": 1,
+          "unsupported": 2
+        }
+      },
+      "retention_general_control": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 2,
+        "bad_case_ids": [
+          "V3TEST-C-037",
+          "V3TEST-C-042"
+        ],
+        "claim_labels": {
+          "supported": 14,
+          "uncertain": 1,
+          "unsupported": 1
+        }
+      },
+      "targeted": {
+        "responses": 32,
+        "responses_with_unsupported_or_uncertain": 5,
+        "bad_case_ids": [
+          "V3TEST-C-013",
+          "V3TEST-C-014",
+          "V3TEST-C-048",
+          "V3TEST-C-030",
+          "V3TEST-C-023"
+        ],
+        "claim_labels": {
+          "unsupported": 3,
+          "uncertain": 2,
+          "supported": 19
+        }
+      },
+      "all": {
+        "responses": 48,
+        "responses_with_unsupported_or_uncertain": 7,
+        "bad_case_ids": [
+          "V3TEST-C-013",
+          "V3TEST-C-014",
+          "V3TEST-C-048",
+          "V3TEST-C-030",
+          "V3TEST-C-023",
+          "V3TEST-C-037",
+          "V3TEST-C-042"
+        ],
+        "claim_labels": {
+          "supported": 33,
+          "unsupported": 4,
+          "uncertain": 3
+        }
+      }
+    },
+    "tuned": {
+      "chronology": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 2,
+        "bad_case_ids": [
+          "V3TEST-C-007",
+          "V3TEST-C-013"
+        ],
+        "claim_labels": {
+          "supported": 10,
+          "uncertain": 1,
+          "unsupported": 1
+        }
+      },
+      "subject_attachment": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 0,
+        "bad_case_ids": [],
+        "claim_labels": {
+          "supported": 12
+        }
+      },
+      "retention_general_control": {
+        "responses": 16,
+        "responses_with_unsupported_or_uncertain": 1,
+        "bad_case_ids": [
+          "V3TEST-C-037"
+        ],
+        "claim_labels": {
+          "supported": 12,
+          "uncertain": 1
+        }
+      },
+      "targeted": {
+        "responses": 32,
+        "responses_with_unsupported_or_uncertain": 2,
+        "bad_case_ids": [
+          "V3TEST-C-007",
+          "V3TEST-C-013"
+        ],
+        "claim_labels": {
+          "supported": 22,
+          "uncertain": 1,
+          "unsupported": 1
+        }
+      },
+      "all": {
+        "responses": 48,
+        "responses_with_unsupported_or_uncertain": 3,
+        "bad_case_ids": [
+          "V3TEST-C-007",
+          "V3TEST-C-013",
+          "V3TEST-C-037"
+        ],
+        "claim_labels": {
+          "supported": 34,
+          "uncertain": 2,
+          "unsupported": 1
+        }
+      }
+    }
+  },
+  "predeclared_criteria": {
+    "targeted_fewer_bad_responses_no_subgroup_worse": true,
+    "required_fact_coverage_does_not_decrease": false,
+    "correct_empty_abstentions_do_not_decrease": true,
+    "strict_schema_compliance_does_not_decrease": true
+  },
+  "decision": "mixed; does not meet promising criteria because required-fact coverage fell",
+  "cases": [
+    {
+      "task_id": "review-001",
+      "case_id": "V3TEST-C-033",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-002",
+      "case_id": "V3TEST-C-047",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user has the only permission to close the reading-room calendar.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-047-02 explicitly makes the user the only person permitted to close this calendar; this does not assert ownership."
+        },
+        {
+          "claim_index": 1,
+          "claim": "The library board owns the calendar.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-047-02 expressly says the library board owns the calendar."
+        },
+        {
+          "claim_index": 2,
+          "claim": "The library board can restore access.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-047-02 expressly says the library board can restore access."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-003",
+      "case_id": "V3TEST-C-040",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user keeps Omar’s borrowed projector in their closet until he collects it on 2025-04-05.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-040-02 states temporary closet custody of Omar’s borrowed projector until his collection on 2025-04-05; the claim preserves that limitation and does not claim collection occurred."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-004",
+      "case_id": "V3TEST-C-031",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user can edit the seating chart; the producer owns the project folder and decides who gets access.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-031-02 directly distinguishes the user’s seating-chart edit permission from the producer’s folder ownership and access authority."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-005",
+      "case_id": "V3TEST-C-042",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user has not duplicated the harbor map; the original remains in the boathouse.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-042-02 explicitly denies duplication and says the original stays in the boathouse; the claim preserves both facts."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-006",
+      "case_id": "V3TEST-C-041",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user can revoke the visitor card’s access; Facilities owns the card and assigns the schedule.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-041-02 grants the user revocation ability while assigning card ownership and scheduling to Facilities, exactly as claimed."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-007",
+      "case_id": "V3TEST-C-013",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user requested a hold for the hall and later confirmed a reservation on 2025-10-12.",
+          "blind_label": "unsupported",
+          "root_label": "unsupported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-013-02 attributes confirmation on 2025-10-12 to the venue, whereas the claim’s shared subject makes the user the confirmer. The hold request and date are supported."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-008",
+      "case_id": "V3TEST-C-022",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user has the combination only to water the plants and does not own the pottery tools.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-022-02 answers no to the ownership question in V3TEST-M-022-01 and limits the combination’s purpose to watering plants."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-009",
+      "case_id": "V3TEST-C-002",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-010",
+      "case_id": "V3TEST-C-024",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user owns the tablet; the roommate borrows it for video calls on Tuesdays.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-024-02 explicitly states user ownership and the roommate’s Tuesday borrowing for video calls."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-011",
+      "case_id": "V3TEST-C-014",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that their sister put the library books in the return slot on 2025-11-05.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-014-02 contains the user’s report of the sister’s stated return-slot action on 2025-11-05; the claim remains framed as a report rather than verified account status."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-012",
+      "case_id": "V3TEST-C-043",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user handled the mailbox keys through 2025-06-30 and handed the ring to Ren on 2025-07-01.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-043-02 explicitly dates the user’s handling through 2025-06-30 and the handoff to Ren on 2025-07-01; no later possession is claimed."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-013",
+      "case_id": "V3TEST-C-014",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that their sister put the user's library books in the return slot on 2025-11-05 and has not checked the account.",
+          "blind_label": "uncertain",
+          "root_label": "uncertain",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-014-02 says the sister texted about the 2025-11-05 return and the user has not checked the account. In the claim, “and has not checked” can attach to the sister or to the user; only the latter is supported."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-014",
+      "case_id": "V3TEST-C-046",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user previously kept lantern batteries in a desk and handed the box to Mara on 2025-09-03, no longer storing them.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-046-02 states prior desk storage, the handoff to Mara on 2025-09-03, and that the user no longer stores the batteries; all are preserved."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-015",
+      "case_id": "V3TEST-C-034",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-016",
+      "case_id": "V3TEST-C-007",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user corrects the earlier booking: the user booked the 08:20 sailing on 2025-04-11, not the noon one.",
+          "blind_label": "uncertain",
+          "root_label": "uncertain",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-007-04 corrects the account using a booking email and states the 08:20 sailing on 2025-04-11, not noon. “Corrects the earlier booking” could instead imply an actual changed booking, which is not stated. valid_from=2025-04-11 also fixes an onset even though the source date can attach to the sailing rather than the act of booking or correction."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-017",
+      "case_id": "V3TEST-C-020",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-018",
+      "case_id": "V3TEST-C-021",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user borrowed Jo’s red handcart for Saturday’s market and returned it to her porch before lunch.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-021-02 states the borrowing of Jo’s red handcart for Saturday’s market and its return to her porch before lunch. The claim does not extend custody after return."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-019",
+      "case_id": "V3TEST-C-046",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user previously kept lantern batteries in a desk and handed the box to Mara on 2025-09-03.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-046-02 directly supports previous desk storage and the 2025-09-03 handoff to Mara; the claim does not assert current storage."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-020",
+      "case_id": "V3TEST-C-045",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user shredded their own sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-045-02 supports shredding the user’s own sheet on 2025-08-19 and not shredding the clinic-owned master roster."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-021",
+      "case_id": "V3TEST-C-048",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the community theater owns the handcart; the user kept it in the garage for them and returned it to the stage crew after rehearsal on 2025-11-21.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-048-02 assigns ownership to the community theater and describes past garage custody followed by return to the stage crew after rehearsal on 2025-11-21."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-022",
+      "case_id": "V3TEST-C-012",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user finished labeling the seed tins on 2025-09-09.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-012-02 explicitly says labeling the seed tins was finished on 2025-09-09; this corrects the earlier “started” description."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-023",
+      "case_id": "V3TEST-C-021",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user borrowed Jo’s red handcart for Saturday’s market and returned it to her porch before lunch.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-021-02 expressly states borrowing Jo’s red handcart for Saturday’s market and returning it to her porch before lunch."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-024",
+      "case_id": "V3TEST-C-035",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-025",
+      "case_id": "V3TEST-C-028",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the workshop files are Leila’s project records, owned by her, and the user can view the folder.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-028-02 states that the workshop records belong to Leila and that the user can view the folder; the claim does not turn viewing into ownership."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-026",
+      "case_id": "V3TEST-C-002",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-027",
+      "case_id": "V3TEST-C-029",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's neighbor has the green-tag dog, and the user is watching him overnight while the neighbor visits her sister.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-029-02 identifies the green-tag dog as the neighbor’s and the user as overnight caretaker while she visits her sister; “has” is an ordinary ownership paraphrase in this context."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-028",
+      "case_id": "V3TEST-C-048",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user keeps the handcart for the community theater and returns it to the stage crew after rehearsal on 2025-11-21.",
+          "blind_label": "unsupported",
+          "root_label": "uncertain",
+          "root_reason": "The explicit past return date permits a historical-present narration, so present-tense keeps/returns does not unambiguously assert current custody. It nevertheless fails to make the closed custody interval clear. Retain as uncertain rather than asserting a substantive contradiction. V3TEST-M-048-02."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-029",
+      "case_id": "V3TEST-C-016",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user posted the trail map on 2025-12-14 after the ranger checked the route.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-016-02 explicitly states posting on 2025-12-14 after the ranger checked the route; the claim preserves the date and sequence."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-030",
+      "case_id": "V3TEST-C-030",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user picked up a sealed lab envelope for Ivo at reception, which is addressed to his clinic and has not been read.",
+          "blind_label": "unsupported",
+          "root_label": "unsupported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-030-02 supports pickup for Ivo and the clinic addressee, but says only that the user has not read the contents. “Has not been read” removes the actor restriction and claims a broader unread status not established by a sealed envelope."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-031",
+      "case_id": "V3TEST-C-006",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user sent the return label on 2025-02-06 once the shop reopened.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-006-02 directly states the actual sending date 2025-02-06 after the shop reopened; the claim uses the corrected event date."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-032",
+      "case_id": "V3TEST-C-041",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user can revoke the visitor card’s access; Facilities owns the card and assigns the schedule.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-041-02 expressly supports revocation permission for the user and both ownership and scheduling authority for Facilities."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-033",
+      "case_id": "V3TEST-C-019",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-034",
+      "case_id": "V3TEST-C-039",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user did not save a local copy of the handbook.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-039-02 says the user never saved a local handbook copy; the cited excerpt supports this negative claim."
+        },
+        {
+          "claim_index": 1,
+          "claim": "The user can open the shared version only while the coordinator leaves the user access enabled.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-039-02 makes opening the shared version conditional on the coordinator leaving the user’s access enabled; the condition is preserved."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-035",
+      "case_id": "V3TEST-C-010",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the team bus left at 06:40 on 2025-07-02; the user was not on board and does not know when it departed.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-010-02 contains the user’s report of the 06:40 departure on 2025-07-02 and expressly states absence from the bus and lack of departure knowledge. The claim preserves report status and both limitations."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-036",
+      "case_id": "V3TEST-C-006",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user first reported the return label was sent on 2025-02-03, which was premature, and then sent it on 2025-02-06 once the shop reopened.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-006-02 explicitly describes the premature report naming 2025-02-03 and actual sending on 2025-02-06 once the shop reopened; both statuses and dates are preserved."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-037",
+      "case_id": "V3TEST-C-032",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-038",
+      "case_id": "V3TEST-C-025",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user brought the envelope inside to protect it from rain and has not opened it.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-025-02 states that the user brought the envelope inside to protect it from rain and has not opened it; the claim retains the user-specific scope."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-039",
+      "case_id": "V3TEST-C-010",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's coach reported the team bus left at 06:40 on 2025-07-02; the user was not on board and does not know when it departed.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-010-02 attributes the 06:40 departure on 2025-07-02 to the coach and explicitly says the user was absent and does not know the departure time; attribution and uncertainty are preserved."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-040",
+      "case_id": "V3TEST-C-003",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-041",
+      "case_id": "V3TEST-C-044",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user can invite or remove members from the shared folder.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-044-02 expressly gives the user the ability to invite or remove members from the shared folder."
+        },
+        {
+          "claim_index": 1,
+          "claim": "The council owns the records.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-044-02 explicitly assigns ownership of the records to the council, despite the assistant’s suggestion in V3TEST-M-044-01."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-042",
+      "case_id": "V3TEST-C-015",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user started the kiln on 2025-12-02, after waiting for the test tile to cool.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-015-02 explicitly orders cooling before kiln start and gives the start date 2025-12-02."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-043",
+      "case_id": "V3TEST-C-013",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user had only requested a hold for the hall and confirmed the reservation on 2025-10-12.",
+          "blind_label": "unsupported",
+          "root_label": "unsupported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-013-02 says the user requested only a hold and the venue confirmed on 2025-10-12. The claim’s subject makes the user perform the confirmation, changing the actor."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-044",
+      "case_id": "V3TEST-C-003",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-045",
+      "case_id": "V3TEST-C-035",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-046",
+      "case_id": "V3TEST-C-040",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user is keeping Omar’s borrowed projector in the user’s closet until he collects it on 2025-04-05.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-040-02 states the user’s temporary closet custody of Omar’s borrowed projector until collection on 2025-04-05, matching the claim."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-047",
+      "case_id": "V3TEST-C-017",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-048",
+      "case_id": "V3TEST-C-009",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user set the package beside the sink and installed the replacement on 2025-06-20.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-009-02 states that the user set the package beside the sink and then installed the replacement on 2025-06-20. The date naturally attaches to installation, as in the source."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-049",
+      "case_id": "V3TEST-C-005",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user mounted a bracket on 2025-01-16 and installed the sensor on 2025-01-18 after the frost cleared.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-005-02 distinguishes bracket mounting on 2025-01-16 from sensor installation on 2025-01-18 after the frost cleared, and the claim preserves these dates and actions."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-050",
+      "case_id": "V3TEST-C-026",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the new tenant has the greenhouse keys, and the user has not checked whether the tenant received them.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-026-02 contains the user’s report that the keys are with the new tenant and expressly says receipt has not been checked. The claim preserves the report qualifier and lack of verification."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-051",
+      "case_id": "V3TEST-C-005",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user mounted the bracket on 2025-01-16 and installed the sensor on 2025-01-18 after the frost cleared.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-005-02 explicitly supports bracket mounting on 2025-01-16 and sensor installation on 2025-01-18 after the frost cleared; both event times are correctly retained."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-052",
+      "case_id": "V3TEST-C-025",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user brought the envelope inside to protect it from rain and has not opened it.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-025-02 directly states bringing the envelope inside against rain and that the user has not opened it."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-053",
+      "case_id": "V3TEST-C-011",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user did not call the repair desk on 2025-08-01 and called on 2025-08-03 after the valve stopped dripping.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-011-02 explicitly denies a call on 2025-08-01 and states the call occurred on 2025-08-03 after dripping stopped; the claim retains negation, dates, and order."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-054",
+      "case_id": "V3TEST-C-032",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-055",
+      "case_id": "V3TEST-C-018",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-056",
+      "case_id": "V3TEST-C-038",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user removed a guest link from a photo folder on 2025-03-09 and did not delete the folder.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-038-02 states removal of the guest link on 2025-03-09 and denies deletion of the folder; the claim preserves the distinction."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-057",
+      "case_id": "V3TEST-C-016",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user posted the trail map on 2025-12-14 after the ranger checked the route.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-016-02 directly states posting the trail map on 2025-12-14 after the ranger’s route check, which the claim preserves."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-058",
+      "case_id": "V3TEST-C-001",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-059",
+      "case_id": "V3TEST-C-037",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's read access to the archive ended on 2025-02-15.",
+          "blind_label": "uncertain",
+          "root_label": "uncertain",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-037-02 directly supports access ending on 2025-02-15. valid_to=2025-02-15 matches the access period’s endpoint, but if it bounds the actual claim “access ended,” it incorrectly expires a historical termination statement that the user still affirms later. The bound’s attachment is unspecified."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-060",
+      "case_id": "V3TEST-C-022",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user does not own the pottery tools inside the lockbox.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-022-02 rejects user ownership in answer to V3TEST-M-022-01 and says the tools belong to Ada; the negative ownership claim follows directly."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-061",
+      "case_id": "V3TEST-C-008",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user intended to drop the forms at the town desk on 2025-05-08 but left them in a bag and did not deliver.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-008-02 expressly describes an intended 2025-05-08 town-desk drop-off, forms left in the user’s bag, and no actual drop-off. The claim preserves intent versus noncompletion."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-062",
+      "case_id": "V3TEST-C-020",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-063",
+      "case_id": "V3TEST-C-017",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-064",
+      "case_id": "V3TEST-C-039",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user did not save a local copy of the handbook.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-039-02 explicitly states the user never saved a local copy, matching this claim and its excerpt."
+        },
+        {
+          "claim_index": 1,
+          "claim": "The user can open the shared version only while the coordinator leaves access enabled.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-039-02 conditions the user’s shared-version access on the coordinator leaving the user’s access enabled. “Access” in this claim naturally refers to that same user access."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-065",
+      "case_id": "V3TEST-C-023",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's uncle owns the blue suitcase and left it with the user while repairing stairs in his building.",
+          "blind_label": "unsupported",
+          "root_label": "unsupported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-023-02 only reports the uncle’s ownership assertion and says stairs in his building are being repaired. The claim upgrades reported ownership to an unqualified fact and assigns the repair activity to the uncle, which the passive source does not do."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-066",
+      "case_id": "V3TEST-C-027",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user signed the checkout sheet for the violin; the instrument is borrowed from Mina and belongs to the music room.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-027-02 expressly distinguishes the user’s checkout signature, borrowing from Mina, and music-room ownership; the claim preserves all three roles."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-067",
+      "case_id": "V3TEST-C-028",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the workshop files are Leila’s project records; she owns them and is the only administrator.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-028-02 identifies Leila’s project records, her ownership, and her sole administrator status; the claim faithfully attributes these to the user’s statement."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-068",
+      "case_id": "V3TEST-C-008",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user left the forms in a bag and did not drop them off.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-008-02 explicitly says the forms were left in the user’s bag and not dropped off; the claim preserves noncompletion."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-069",
+      "case_id": "V3TEST-C-030",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user picked up the sealed lab envelope for Ivo at reception. It is addressed to his clinic, and the user has not read what is inside.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-030-02 states pickup of a sealed envelope for Ivo at reception, its address to his clinic, and that the user has not read the contents; the claim retains each attribution and scope."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-070",
+      "case_id": "V3TEST-C-026",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's father reports the greenhouse keys are with the new tenant; the user has not verified whether the tenant received them.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-026-02 attributes the keys’ location to the father’s report and says the user has not checked tenant receipt; the claim preserves both source and verification limit."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-071",
+      "case_id": "V3TEST-C-024",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user owns the tablet and allows the roommate to borrow it for video calls on Tuesdays.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-024-02 explicitly states user ownership and the roommate’s recurring Tuesday borrowing for calls. In this arrangement, “allows ... to borrow” is a faithful ordinary paraphrase of the stated borrowing."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-072",
+      "case_id": "V3TEST-C-045",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user shredded the personal sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster, which belongs to the clinic.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-045-02 directly states the personal-sheet shredding on 2025-08-19 and denies shredding the clinic-owned master roster; the claim preserves the scope and date."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-073",
+      "case_id": "V3TEST-C-037",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's read access to the archive ended on 2025-02-15.",
+          "blind_label": "uncertain",
+          "root_label": "uncertain",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-037-02 supports the asserted 2025-02-15 access termination. valid_to=2025-02-15 correctly dates the former permission’s endpoint, but not the expiry of the historical statement that permission ended. The response does not specify which proposition the bound limits."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-074",
+      "case_id": "V3TEST-C-023",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's uncle says the blue suitcase is his. He left it with the user while the stairs in his building are repaired.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-023-02 explicitly reports the uncle’s ownership assertion and his leaving the suitcase with the user during building-stair repairs; the claim preserves reported status and leaves the repairer unspecified."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-075",
+      "case_id": "V3TEST-C-031",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user can edit the seating chart and the producer owns the project folder and decides who gets access.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-031-02 directly supports seating-chart edit permission for the user and folder ownership/access decisions for the producer; the claim preserves the subjects."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-076",
+      "case_id": "V3TEST-C-001",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-077",
+      "case_id": "V3TEST-C-004",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-078",
+      "case_id": "V3TEST-C-011",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user did not call the repair desk on 2025-08-01.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-011-02 explicitly denies calling the repair desk on 2025-08-01, matching the claim’s negative event and date."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-079",
+      "case_id": "V3TEST-C-004",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-080",
+      "case_id": "V3TEST-C-018",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-081",
+      "case_id": "V3TEST-C-042",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user has not duplicated the original harbor map and keeps it in the boathouse.",
+          "blind_label": "unsupported",
+          "root_label": "unsupported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-042-02 supports nonduplication and says the original stays in the boathouse. It does not identify the user as the person who keeps or controls it there; the claim adds that custody role."
+        }
+      ],
+      "contains_unsupported_or_uncertain": true,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-082",
+      "case_id": "V3TEST-C-015",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user started the kiln on 2025-12-02 after the test tile cooled.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-015-02 explicitly states that the kiln was started on 2025-12-02 after the test tile cooled; the sequence and date are retained."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-083",
+      "case_id": "V3TEST-C-034",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-084",
+      "case_id": "V3TEST-C-038",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user removed the guest link from the photo folder on 2025-03-09 and did not delete the folder itself.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-038-02 directly supports guest-link removal on 2025-03-09 and the explicit denial of folder deletion."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-085",
+      "case_id": "V3TEST-C-007",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user booked the 08:20 sailing on 2025-04-11, not the noon one.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-007-04 explicitly corrects the account to the booked 08:20 sailing on 2025-04-11 rather than noon. The claim preserves the original date attachment without adding a nonnull validity bound or an actual change of booking."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-086",
+      "case_id": "V3TEST-C-012",
+      "arm": "prior",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user finished labeling seed tins on 2025-09-09, saying “started” in a voice note and completing all labels by dinner.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-012-02 states completion on 2025-09-09, the “started” voice-note wording, and all labels being on by dinner; the claim preserves those facts without claiming a changed plan."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-087",
+      "case_id": "V3TEST-C-029",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user's neighbor's green-tag dog is being watched overnight by the user while the neighbor visits her sister.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-029-02 identifies the neighbor’s dog and the user’s overnight caretaking while the neighbor visits her sister; the pronouns resolve unambiguously."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-088",
+      "case_id": "V3TEST-C-019",
+      "arm": "tuned",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-089",
+      "case_id": "V3TEST-C-036",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user keeps a spare gate fob in the kitchen drawer and attributes its ownership to the housing office.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-036-02 explicitly states kitchen-drawer custody and housing-office ownership, which the claim preserves as the user’s attribution."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-090",
+      "case_id": "V3TEST-C-027",
+      "arm": "prior",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user signed the checkout sheet for the violin, which is borrowed from Mina and belongs to the music room.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-027-02 directly supports the checkout signature, borrowing from Mina, and music-room ownership; the claim does not merge these roles."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-091",
+      "case_id": "V3TEST-C-044",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user reports that the volunteer group has not picked another admin, so the shared folder still sits in the user's account.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-044-02 explicitly says the group has not chosen another admin and that this is why the shared folder remains in the user’s account."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-092",
+      "case_id": "V3TEST-C-043",
+      "arm": "prior",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user handled the mailbox keys until 2025-06-30 and handed the ring to Ren on 2025-07-01.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-043-02 states handling through 2025-06-30 and a handoff to Ren on 2025-07-01. “Until” is a faithful ordinary paraphrase here, with the following-day handoff preserving the sequence."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-093",
+      "case_id": "V3TEST-C-033",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "claim_reviews": [],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-094",
+      "case_id": "V3TEST-C-036",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user keeps a spare gate fob in the kitchen drawer; the housing office issued it and still owns it.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-036-02 directly states the user’s kitchen-drawer custody, issuance by the housing office, and its continuing ownership; all are preserved."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-095",
+      "case_id": "V3TEST-C-047",
+      "arm": "tuned",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user has exclusive permission to close the reading-room calendar, and the library board owns it.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-047-02 makes the user the only person permitted to close the reading-room calendar and assigns ownership to the library board; “exclusive” faithfully describes that permission."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    },
+    {
+      "task_id": "review-096",
+      "case_id": "V3TEST-C-009",
+      "arm": "tuned",
+      "category": "chronology",
+      "expected_empty": false,
+      "claim_reviews": [
+        {
+          "claim_index": 0,
+          "claim": "The user set the package beside the sink and installed the replacement on 2025-06-20.",
+          "blind_label": "supported",
+          "root_label": "supported",
+          "root_reason": "Root read the original source, complete response and blinded reason; accepts the source-support judgment. V3TEST-M-009-02 expressly states package placement beside the sink followed by installation on 2025-06-20; the claim preserves the completed installation and its date."
+        }
+      ],
+      "contains_unsupported_or_uncertain": false,
+      "readable": true,
+      "truncated": false,
+      "root_reviewed_all_source_messages_and_claims": true
+    }
+  ]
+}

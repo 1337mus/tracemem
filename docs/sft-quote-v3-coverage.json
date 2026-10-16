@@ -1,0 +1,2264 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-16T00:53:31.821291+00:00",
+  "label": "root unblinded manual coverage, provisional agent-only; completed before blind-review artifact read",
+  "human_reviewers": 0,
+  "policy": "Judge generated claim fields against every frozen outcome-critical point. Quotes are evidence and do not fill omitted extracted facts. Faithful paraphrase/ordinary entailment allowed; every component of a bundled point is required. Negative no-invention constraints pass when not violated but cannot replace affirmative facts. Coverage and support are separate: a response may cover facts yet contain an additional unsupported assertion. Empty targets excluded from fact-coverage denominator and assessed separately.",
+  "input_sha256": {
+    ".local/sft-quote-v3-20261015/remote-training-v1.json": "def760b2bcdf905b40523916828a86a4d96eb02eb8a8e61cde30e48f8c974525",
+    "datasets/sft-quote-v3/test.json": "6104bdaf1a1e42b20fa0709038374ead3953516d766a8381b935eb86ce26d04d",
+    "datasets/sft-quote-v3/eval-rubric.json": "4d02e2e7de3103b7243ef2f5ef8be5e5b864179559f1db9574f7fc1d87cdb47d"
+  },
+  "summary": {
+    "prior": {
+      "chronology": {
+        "nonempty_responses": 12,
+        "all_required_covered": 6,
+        "full_case_ids": [
+          "V3TEST-C-005",
+          "V3TEST-C-006",
+          "V3TEST-C-008",
+          "V3TEST-C-010",
+          "V3TEST-C-011",
+          "V3TEST-C-012"
+        ]
+      },
+      "subject_attachment": {
+        "nonempty_responses": 12,
+        "all_required_covered": 7,
+        "full_case_ids": [
+          "V3TEST-C-021",
+          "V3TEST-C-024",
+          "V3TEST-C-026",
+          "V3TEST-C-027",
+          "V3TEST-C-029",
+          "V3TEST-C-030",
+          "V3TEST-C-031"
+        ]
+      },
+      "retention_general_control": {
+        "nonempty_responses": 12,
+        "all_required_covered": 8,
+        "full_case_ids": [
+          "V3TEST-C-038",
+          "V3TEST-C-039",
+          "V3TEST-C-040",
+          "V3TEST-C-041",
+          "V3TEST-C-043",
+          "V3TEST-C-045",
+          "V3TEST-C-046",
+          "V3TEST-C-047"
+        ]
+      },
+      "all": {
+        "nonempty_responses": 36,
+        "all_required_covered": 21,
+        "full_case_ids": [
+          "V3TEST-C-005",
+          "V3TEST-C-006",
+          "V3TEST-C-008",
+          "V3TEST-C-010",
+          "V3TEST-C-011",
+          "V3TEST-C-012",
+          "V3TEST-C-021",
+          "V3TEST-C-024",
+          "V3TEST-C-026",
+          "V3TEST-C-027",
+          "V3TEST-C-029",
+          "V3TEST-C-030",
+          "V3TEST-C-031",
+          "V3TEST-C-038",
+          "V3TEST-C-039",
+          "V3TEST-C-040",
+          "V3TEST-C-041",
+          "V3TEST-C-043",
+          "V3TEST-C-045",
+          "V3TEST-C-046",
+          "V3TEST-C-047"
+        ]
+      }
+    },
+    "tuned": {
+      "chronology": {
+        "nonempty_responses": 12,
+        "all_required_covered": 1,
+        "full_case_ids": [
+          "V3TEST-C-005"
+        ]
+      },
+      "subject_attachment": {
+        "nonempty_responses": 12,
+        "all_required_covered": 8,
+        "full_case_ids": [
+          "V3TEST-C-021",
+          "V3TEST-C-023",
+          "V3TEST-C-024",
+          "V3TEST-C-027",
+          "V3TEST-C-029",
+          "V3TEST-C-030",
+          "V3TEST-C-031",
+          "V3TEST-C-048"
+        ]
+      },
+      "retention_general_control": {
+        "nonempty_responses": 12,
+        "all_required_covered": 7,
+        "full_case_ids": [
+          "V3TEST-C-036",
+          "V3TEST-C-038",
+          "V3TEST-C-039",
+          "V3TEST-C-040",
+          "V3TEST-C-041",
+          "V3TEST-C-043",
+          "V3TEST-C-045"
+        ]
+      },
+      "all": {
+        "nonempty_responses": 36,
+        "all_required_covered": 16,
+        "full_case_ids": [
+          "V3TEST-C-005",
+          "V3TEST-C-021",
+          "V3TEST-C-023",
+          "V3TEST-C-024",
+          "V3TEST-C-027",
+          "V3TEST-C-029",
+          "V3TEST-C-030",
+          "V3TEST-C-031",
+          "V3TEST-C-036",
+          "V3TEST-C-038",
+          "V3TEST-C-039",
+          "V3TEST-C-040",
+          "V3TEST-C-041",
+          "V3TEST-C-043",
+          "V3TEST-C-045",
+          "V3TEST-C-048"
+        ]
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "V3TEST-C-001",
+      "category": "chronology",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-001-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-002",
+      "category": "chronology",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-002-01",
+        "V3TEST-M-002-02"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-003",
+      "category": "chronology",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-003-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-004",
+      "category": "chronology",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-004-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-005",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-005-01",
+        "V3TEST-M-005-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user mounted a bracket on 2025-01-16 and installed the sensor on 2025-01-18 after the frost cleared."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Bracket was mounted on 2025-01-16.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Sensor itself was installed on 2025-01-18 after the frost cleared.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user mounted the bracket on 2025-01-16 and installed the sensor on 2025-01-18 after the frost cleared."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Bracket was mounted on 2025-01-16.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Sensor itself was installed on 2025-01-18 after the frost cleared.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-006",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-006-01",
+        "V3TEST-M-006-02",
+        "V3TEST-M-006-03"
+      ],
+      "root_note": "New omits the withdrawn premature date.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user first reported the return label was sent on 2025-02-03, which was premature, and then sent it on 2025-02-06 once the shop reopened."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Earlier 2025-02-03 sending date is withdrawn as premature.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User sent the label on 2025-02-06 after the shop reopened.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user sent the return label on 2025-02-06 once the shop reopened."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Earlier 2025-02-03 sending date is withdrawn as premature.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User sent the label on 2025-02-06 after the shop reopened.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-007",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-007-01",
+        "V3TEST-M-007-02",
+        "V3TEST-M-007-03",
+        "V3TEST-M-007-04"
+      ],
+      "root_note": "Both omit that earlier deliberation was not a booking; new also introduces an earlier booking (support reviewed separately).",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user booked the 08:20 sailing on 2025-04-11, not the noon one."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User booked the 08:20 ferry sailing on 2025-04-11.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Earlier consideration was not a purchase or booking.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user corrects the earlier booking: the user booked the 08:20 sailing on 2025-04-11, not the noon one."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User booked the 08:20 ferry sailing on 2025-04-11.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Earlier consideration was not a purchase or booking.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-008",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-008-01",
+        "V3TEST-M-008-02"
+      ],
+      "root_note": "New omits the intended drop-off date and plan.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user intended to drop the forms at the town desk on 2025-05-08 but left them in a bag and did not deliver."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The intended town-desk drop-off was planned for 2025-05-08.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "The forms remained in the user’s bag and were not dropped off; 2025-05-08 is not a valid_from boundary.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user left the forms in a bag and did not drop them off."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The intended town-desk drop-off was planned for 2025-05-08.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "The forms remained in the user’s bag and were not dropped off; 2025-05-08 is not a valid_from boundary.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-009",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-009-01",
+        "V3TEST-M-009-02"
+      ],
+      "root_note": "Both retain placement/date but omit the premature group-chat report, a component of critical fact 1.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user set the package beside the sink and installed the replacement on 2025-06-20."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User initially only set the package beside the sink.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Replacement was installed on 2025-06-20; earlier group-chat wording was premature.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user set the package beside the sink and installed the replacement on 2025-06-20."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User initially only set the package beside the sink.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Replacement was installed on 2025-06-20; earlier group-chat wording was premature.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-010",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-010-01",
+        "V3TEST-M-010-02"
+      ],
+      "root_note": "New omits the coach as report source.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user's coach reported the team bus left at 06:40 on 2025-07-02; the user was not on board and does not know when it departed."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "06:40 departure on 2025-07-02 is attributed to the coach’s report.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User was not aboard and lacks firsthand knowledge of the departure.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that the team bus left at 06:40 on 2025-07-02; the user was not on board and does not know when it departed."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "06:40 departure on 2025-07-02 is attributed to the coach’s report.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User was not aboard and lacks firsthand knowledge of the departure.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-011",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-011-01",
+        "V3TEST-M-011-02"
+      ],
+      "root_note": "New omits actual call date and order.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user did not call the repair desk on 2025-08-01 and called on 2025-08-03 after the valve stopped dripping."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User did not call on 2025-08-01.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User called on 2025-08-03 after the valve stopped dripping.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user did not call the repair desk on 2025-08-01."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User did not call on 2025-08-01.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User called on 2025-08-03 after the valve stopped dripping.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-012",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-012-01",
+        "V3TEST-M-012-02"
+      ],
+      "root_note": "New omits by-dinner completion and prior voice-note wording.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user finished labeling seed tins on 2025-09-09, saying “started” in a voice note and completing all labels by dinner."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Labeling the seed tins was complete by dinner on 2025-09-09.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Earlier voice-note wording said “started,” not that the work was complete.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user finished labeling the seed tins on 2025-09-09."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Labeling the seed tins was complete by dinner on 2025-09-09.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "Earlier voice-note wording said “started,” not that the work was complete.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-013",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-013-01",
+        "V3TEST-M-013-02"
+      ],
+      "root_note": "Both attach confirmation to user rather than venue; confirmation fact not covered faithfully.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user requested a hold for the hall and later confirmed a reservation on 2025-10-12."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User had only requested a hall hold at first.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Venue confirmed the reservation on 2025-10-12.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user had only requested a hold for the hall and confirmed the reservation on 2025-10-12."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User had only requested a hall hold at first.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Venue confirmed the reservation on 2025-10-12.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-014",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-014-01",
+        "V3TEST-M-014-02"
+      ],
+      "root_note": "Neither preserves sister as the source of the texted report; only prior retains the unchecked account.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user reports that their sister put the user's library books in the return slot on 2025-11-05 and has not checked the account."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Sister texted that she put the books in the return slot on 2025-11-05.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User has not checked the library account, so the report is unverified.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that their sister put the library books in the return slot on 2025-11-05."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Sister texted that she put the books in the return slot on 2025-11-05.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User has not checked the library account, so the report is unverified.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-015",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-015-01",
+        "V3TEST-M-015-02"
+      ],
+      "root_note": "Both omit the earlier plan-only status, a component of critical fact 1.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user started the kiln on 2025-12-02, after waiting for the test tile to cool."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User waited until the test tile was cool.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Kiln was started on 2025-12-02; firing before cooling was only a plan.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user started the kiln on 2025-12-02 after the test tile cooled."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User waited until the test tile was cool.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Kiln was started on 2025-12-02; firing before cooling was only a plan.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-016",
+      "category": "chronology",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-016-01",
+        "V3TEST-M-016-02",
+        "V3TEST-M-016-03"
+      ],
+      "root_note": "Both omit previous drafts state.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user posted the trail map on 2025-12-14 after the ranger checked the route."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Trail map remained in drafts before posting.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User posted it on 2025-12-14 after the ranger checked the route.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user posted the trail map on 2025-12-14 after the ranger checked the route."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Trail map remained in drafts before posting.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User posted it on 2025-12-14 after the ranger checked the route.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-017",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-017-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-018",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-018-01",
+        "V3TEST-M-018-02"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-019",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-019-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-020",
+      "category": "subject_attachment",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-020-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-021",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-021-01",
+        "V3TEST-M-021-02",
+        "V3TEST-M-021-03"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user borrowed Jo’s red handcart for Saturday’s market and returned it to her porch before lunch."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User borrowed Jo’s red handcart for the market.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Cart belongs to Jo and user returned it to her porch.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user borrowed Jo’s red handcart for Saturday’s market and returned it to her porch before lunch."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User borrowed Jo’s red handcart for the market.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Cart belongs to Jo and user returned it to her porch.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-022",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-022-01",
+        "V3TEST-M-022-02"
+      ],
+      "root_note": "Neither identifies Ada as owner; new retains limited-purpose combination access.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user does not own the pottery tools inside the lockbox."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Ada owns the pottery tools.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User has the combination only to water the plants, not as an owner.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user has the combination only to water the plants and does not own the pottery tools."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Ada owns the pottery tools.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User has the combination only to water the plants, not as an owner.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-023",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-023-01",
+        "V3TEST-M-023-02"
+      ],
+      "root_note": "Prior loses reported ownership qualification and adds uncle as repairer; the custody/stairs content still covers fact 1, independently of the support error.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user's uncle owns the blue suitcase and left it with the user while repairing stairs in his building."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Uncle says the blue suitcase is his.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "Uncle left it with the user temporarily while stairs are repaired.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user's uncle says the blue suitcase is his. He left it with the user while the stairs in his building are repaired."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Uncle says the blue suitcase is his.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Uncle left it with the user temporarily while stairs are repaired.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-024",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-024-01",
+        "V3TEST-M-024-02",
+        "V3TEST-M-024-03"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user owns the tablet and allows the roommate to borrow it for video calls on Tuesdays."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User owns the tablet.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Roommate borrows it for Tuesday video calls.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user owns the tablet; the roommate borrows it for video calls on Tuesdays."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User owns the tablet.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Roommate borrows it for Tuesday video calls.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-025",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-025-01",
+        "V3TEST-M-025-02"
+      ],
+      "root_note": "Neither retains cafe addressee; absence of ongoing-custody/ownership assertions satisfies the negative constraint.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user brought the envelope inside to protect it from rain and has not opened it."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The envelope is addressed to Nia’s café.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "The user brought it inside to protect it from rain and has not opened it.",
+              "covered": true
+            },
+            {
+              "index": 2,
+              "fact": "Ongoing custody and ownership are not stated.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user brought the envelope inside to protect it from rain and has not opened it."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The envelope is addressed to Nia’s café.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "The user brought it inside to protect it from rain and has not opened it.",
+              "covered": true
+            },
+            {
+              "index": 2,
+              "fact": "Ongoing custody and ownership are not stated.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-026",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-026-01",
+        "V3TEST-M-026-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user's father reports the greenhouse keys are with the new tenant; the user has not verified whether the tenant received them."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Father says the greenhouse keys are with the new tenant.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User has not verified whether the tenant received them.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that the new tenant has the greenhouse keys, and the user has not checked whether the tenant received them."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Father says the greenhouse keys are with the new tenant.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User has not verified whether the tenant received them.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-027",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-027-01",
+        "V3TEST-M-027-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user signed the checkout sheet for the violin, which is borrowed from Mina and belongs to the music room."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Violin was borrowed from Mina.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Music room owns it; user’s checkout signature does not establish ownership.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user signed the checkout sheet for the violin; the instrument is borrowed from Mina and belongs to the music room."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Violin was borrowed from Mina.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Music room owns it; user’s checkout signature does not establish ownership.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-028",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-028-01",
+        "V3TEST-M-028-02"
+      ],
+      "root_note": "Prior omits sole administrator; new omits user view access. Viewer/ownership negative constraints do not require invented negative facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user reports that the workshop files are Leila’s project records, owned by her, and the user can view the folder."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Leila owns the workshop files and is their only administrator.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User can view the folder but is not its owner or administrator.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that the workshop files are Leila’s project records; she owns them and is the only administrator."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Leila owns the workshop files and is their only administrator.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User can view the folder but is not its owner or administrator.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-029",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-029-01",
+        "V3TEST-M-029-02"
+      ],
+      "root_note": "Ordinary possessive reading of neighbor has the dog retains ownership here; no exclusive-custody inference is credited.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user's neighbor's green-tag dog is being watched overnight by the user while the neighbor visits her sister."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Green-tag dog belongs to the neighbor.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User is watching the dog overnight while the neighbor is away.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user's neighbor has the green-tag dog, and the user is watching him overnight while the neighbor visits her sister."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Green-tag dog belongs to the neighbor.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User is watching the dog overnight while the neighbor is away.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-030",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-030-01",
+        "V3TEST-M-030-02",
+        "V3TEST-M-030-03"
+      ],
+      "root_note": "Prior broader unread claim entails user has not read, but its unsupported scope is reviewed separately. No continuing possession asserted.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user picked up a sealed lab envelope for Ivo at reception, which is addressed to his clinic and has not been read."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user picked up a sealed lab envelope for Ivo at reception.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "It is addressed to Ivo’s clinic and the user has not read its contents.",
+              "covered": true
+            },
+            {
+              "index": 2,
+              "fact": "The text does not establish that the user still holds it.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user picked up the sealed lab envelope for Ivo at reception. It is addressed to his clinic, and the user has not read what is inside."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user picked up a sealed lab envelope for Ivo at reception.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "It is addressed to Ivo’s clinic and the user has not read its contents.",
+              "covered": true
+            },
+            {
+              "index": 2,
+              "fact": "The text does not establish that the user still holds it.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-031",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-031-01",
+        "V3TEST-M-031-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user can edit the seating chart and the producer owns the project folder and decides who gets access."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User can edit the seating chart.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Producer owns the project folder and decides who gets access.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user can edit the seating chart; the producer owns the project folder and decides who gets access."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User can edit the seating chart.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Producer owns the project folder and decides who gets access.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-032",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-032-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-033",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-033-01",
+        "V3TEST-M-033-02"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-034",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-034-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-035",
+      "category": "retention_general_control",
+      "expected_empty": true,
+      "source_message_ids": [
+        "V3TEST-M-035-01"
+      ],
+      "root_note": "Both correctly abstain.",
+      "arms": {
+        "prior": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        },
+        "tuned": {
+          "claim_texts": [],
+          "critical_facts": [],
+          "all_required_facts_covered": null,
+          "correct_empty": true
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-036",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-036-01",
+        "V3TEST-M-036-02"
+      ],
+      "root_note": "Prior omits housing office issuance.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user keeps a spare gate fob in the kitchen drawer and attributes its ownership to the housing office."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User keeps the spare gate fob in the kitchen drawer.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Housing office issued and owns the fob.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user keeps a spare gate fob in the kitchen drawer; the housing office issued it and still owns it."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User keeps the spare gate fob in the kitchen drawer.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Housing office issued and owns the fob.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-037",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-037-01",
+        "V3TEST-M-037-02"
+      ],
+      "root_note": "Neither explicitly retains current inability to open; a past access end alone permits a later change.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user's read access to the archive ended on 2025-02-15."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User’s read access ended on 2025-02-15.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User cannot open the archive now; this does not mean the archive was deleted.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user's read access to the archive ended on 2025-02-15."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User’s read access ended on 2025-02-15.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User cannot open the archive now; this does not mean the archive was deleted.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-038",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-038-01",
+        "V3TEST-M-038-02",
+        "V3TEST-M-038-03"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user removed a guest link from a photo folder on 2025-03-09 and did not delete the folder."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User removed the guest link from the photo folder on 2025-03-09.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User did not delete the folder.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user removed the guest link from the photo folder on 2025-03-09 and did not delete the folder itself."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User removed the guest link from the photo folder on 2025-03-09.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User did not delete the folder.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-039",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-039-01",
+        "V3TEST-M-039-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user did not save a local copy of the handbook.",
+            "The user can open the shared version only while the coordinator leaves access enabled."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User never saved a local handbook copy.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Access to the shared version depends on the coordinator leaving permission enabled.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user did not save a local copy of the handbook.",
+            "The user can open the shared version only while the coordinator leaves the user access enabled."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User never saved a local handbook copy.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Access to the shared version depends on the coordinator leaving permission enabled.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-040",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-040-01",
+        "V3TEST-M-040-02"
+      ],
+      "root_note": "Both preserve borrowed ambiguity and expected future pickup; neither names an owner.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user keeps Omar’s borrowed projector in their closet until he collects it on 2025-04-05."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user is keeping a projector described as “Omar’s borrowed projector.”",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Omar is expected to collect it on 2025-04-05; the text does not identify its owner.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user is keeping Omar’s borrowed projector in the user’s closet until he collects it on 2025-04-05."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user is keeping a projector described as “Omar’s borrowed projector.”",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Omar is expected to collect it on 2025-04-05; the text does not identify its owner.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-041",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-041-01",
+        "V3TEST-M-041-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user can revoke the visitor card’s access; Facilities owns the card and assigns the schedule."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User can revoke visitor-card access.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Facilities owns the card and assigns the schedule.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user can revoke the visitor card’s access; Facilities owns the card and assigns the schedule."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User can revoke visitor-card access.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Facilities owns the card and assigns the schedule.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-042",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-042-01",
+        "V3TEST-M-042-02"
+      ],
+      "root_note": "Both omit the discussion of a second copy; prior keeper attribution is assessed separately.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user has not duplicated the original harbor map and keeps it in the boathouse."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user and others discussed a second harbor-map copy.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "The user has not made a duplicate and the original remains in the boathouse.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user has not duplicated the harbor map; the original remains in the boathouse."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "The user and others discussed a second harbor-map copy.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "The user has not made a duplicate and the original remains in the boathouse.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-043",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-043-01",
+        "V3TEST-M-043-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user handled the mailbox keys until 2025-06-30 and handed the ring to Ren on 2025-07-01."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User handled mailbox keys through 2025-06-30.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User handed the ring to Ren on 2025-07-01.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user handled the mailbox keys through 2025-06-30 and handed the ring to Ren on 2025-07-01."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User handled mailbox keys through 2025-06-30.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User handed the ring to Ren on 2025-07-01.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-044",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-044-01",
+        "V3TEST-M-044-02"
+      ],
+      "root_note": "Prior omits folder remaining in user account; new omits access management and council ownership.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user can invite or remove members from the shared folder.",
+            "The council owns the records."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Shared folder remains in the user’s account.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User can invite or remove members.",
+              "covered": true
+            },
+            {
+              "index": 2,
+              "fact": "Council owns the records.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that the volunteer group has not picked another admin, so the shared folder still sits in the user's account."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Shared folder remains in the user’s account.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User can invite or remove members.",
+              "covered": false
+            },
+            {
+              "index": 2,
+              "fact": "Council owns the records.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-045",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-045-01",
+        "V3TEST-M-045-02"
+      ],
+      "root_note": "Both retain all frozen critical facts.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user shredded their own sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User shredded their own sign-in sheet on 2025-08-19.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Clinic owns the master roster and user did not shred it.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user shredded the personal sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster, which belongs to the clinic."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User shredded their own sign-in sheet on 2025-08-19.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Clinic owns the master roster and user did not shred it.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-046",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-046-01",
+        "V3TEST-M-046-02"
+      ],
+      "root_note": "New omits explicit current no-longer-storing status.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user previously kept lantern batteries in a desk and handed the box to Mara on 2025-09-03, no longer storing them."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User formerly kept the lantern batteries in their desk.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User handed the box to Mara on 2025-09-03 and no longer stores it.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user previously kept lantern batteries in a desk and handed the box to Mara on 2025-09-03."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User formerly kept the lantern batteries in their desk.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User handed the box to Mara on 2025-09-03 and no longer stores it.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-047",
+      "category": "retention_general_control",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-047-01",
+        "V3TEST-M-047-02"
+      ],
+      "root_note": "New omits board ability to restore access.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user has the only permission to close the reading-room calendar.",
+            "The library board owns the calendar.",
+            "The library board can restore access."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User alone has permission to close the reading-room calendar.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Library board owns the calendar and can restore access.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user has exclusive permission to close the reading-room calendar, and the library board owns it."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "User alone has permission to close the reading-room calendar.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "Library board owns the calendar and can restore access.",
+              "covered": false
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        }
+      }
+    },
+    {
+      "case_id": "V3TEST-C-048",
+      "category": "subject_attachment",
+      "expected_empty": false,
+      "source_message_ids": [
+        "V3TEST-M-048-01",
+        "V3TEST-M-048-02"
+      ],
+      "root_note": "Prior does not identify theater as owner; new retains ownership and completed custody/return.",
+      "arms": {
+        "prior": {
+          "claim_texts": [
+            "The user keeps the handcart for the community theater and returns it to the stage crew after rehearsal on 2025-11-21."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Community theater owns the handcart.",
+              "covered": false
+            },
+            {
+              "index": 1,
+              "fact": "User kept it temporarily and returned it to the stage crew after rehearsal on 2025-11-21.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": false,
+          "correct_empty": null
+        },
+        "tuned": {
+          "claim_texts": [
+            "The user reports that the community theater owns the handcart; the user kept it in the garage for them and returned it to the stage crew after rehearsal on 2025-11-21."
+          ],
+          "critical_facts": [
+            {
+              "index": 0,
+              "fact": "Community theater owns the handcart.",
+              "covered": true
+            },
+            {
+              "index": 1,
+              "fact": "User kept it temporarily and returned it to the stage crew after rehearsal on 2025-11-21.",
+              "covered": true
+            }
+          ],
+          "all_required_facts_covered": true,
+          "correct_empty": null
+        }
+      }
+    }
+  ]
+}

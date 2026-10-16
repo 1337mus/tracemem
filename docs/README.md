@@ -53,6 +53,13 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
+  chronology and subject corrections, three matched arms and a separate frozen test.
+
+- [Third SFT run: quote-v3](sft-quote-v3-results.md), [aggregate evaluator report](sft-quote-v3-results.json),
+  and [validation record](validation-sft-quote-v3.json): mixed provisional agent/root
+  review, required-fact coverage decline, paired accounting, and exact synthetic
+  job, receipt, and review artifacts.
 - [Second SFT run: quote-v2](sft-quote-v2-results.md), [aggregate results](sft-quote-v2-results.json),
   and [validation record](validation-sft-quote-v2.json): strict raw scoring,
   separate fence-only analysis, agent-only semantic review, and exact fictional

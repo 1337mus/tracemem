@@ -1,0 +1,102 @@
+{
+  "label": "paired case accounting from provisional root judgments",
+  "human_reviewers": 0,
+  "support": {
+    "targeted": {
+      "responses": 32,
+      "improved_bad_to_clean": [
+        "V3TEST-C-014",
+        "V3TEST-C-023",
+        "V3TEST-C-030",
+        "V3TEST-C-048"
+      ],
+      "regressed_clean_to_bad": [
+        "V3TEST-C-007"
+      ],
+      "both_bad": [
+        "V3TEST-C-013"
+      ],
+      "both_clean": 26
+    },
+    "all": {
+      "responses": 48,
+      "improved_bad_to_clean": [
+        "V3TEST-C-014",
+        "V3TEST-C-023",
+        "V3TEST-C-030",
+        "V3TEST-C-042",
+        "V3TEST-C-048"
+      ],
+      "regressed_clean_to_bad": [
+        "V3TEST-C-007"
+      ],
+      "both_bad": [
+        "V3TEST-C-013",
+        "V3TEST-C-037"
+      ],
+      "both_clean": 40
+    },
+    "retention_general_control": {
+      "responses": 16,
+      "improved_bad_to_clean": [
+        "V3TEST-C-042"
+      ],
+      "regressed_clean_to_bad": [],
+      "both_bad": [
+        "V3TEST-C-037"
+      ],
+      "both_clean": 14
+    }
+  },
+  "coverage": {
+    "targeted": {
+      "nonempty_responses": 24,
+      "gained_full": [
+        "V3TEST-C-023",
+        "V3TEST-C-048"
+      ],
+      "lost_full": [
+        "V3TEST-C-006",
+        "V3TEST-C-008",
+        "V3TEST-C-010",
+        "V3TEST-C-011",
+        "V3TEST-C-012",
+        "V3TEST-C-026"
+      ],
+      "both_full": 7,
+      "both_incomplete": 9
+    },
+    "all": {
+      "nonempty_responses": 36,
+      "gained_full": [
+        "V3TEST-C-023",
+        "V3TEST-C-036",
+        "V3TEST-C-048"
+      ],
+      "lost_full": [
+        "V3TEST-C-006",
+        "V3TEST-C-008",
+        "V3TEST-C-010",
+        "V3TEST-C-011",
+        "V3TEST-C-012",
+        "V3TEST-C-026",
+        "V3TEST-C-046",
+        "V3TEST-C-047"
+      ],
+      "both_full": 13,
+      "both_incomplete": 12
+    },
+    "controls": {
+      "nonempty_responses": 12,
+      "gained_full": [
+        "V3TEST-C-036"
+      ],
+      "lost_full": [
+        "V3TEST-C-046",
+        "V3TEST-C-047"
+      ],
+      "both_full": 6,
+      "both_incomplete": 3
+    }
+  }
+}

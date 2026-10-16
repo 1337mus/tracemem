@@ -1,4 +1,33 @@
-# Current checkpoint: quote-v2 training completed
+# Current checkpoint: quote-v3 results adjudicated
+
+Updated 2026-10-16 UTC. V3 training, structural scoring, blind test review, and
+root adjudication are complete. The result is mixed: adverse test responses
+declined, but required-fact coverage also fell and the predeclared promising
+criteria were not met. There are zero human reviewers, no product selection,
+and no Gate A progress. See the [results report](sft-quote-v3-results.md) and
+[validation record](validation-sft-quote-v3.json).
+
+The semantic review covered prior and tuned outputs on 48 frozen test cases
+(96 tasks, 77 claims). There was no full semantic review of the base arm, dev
+cohort, or adaptive regression cohort. Root's two-case spot-check found the
+original v2 D14 chronology error and D21 subject ambiguity remain; it was not
+a full regression review. The test also contains structural similarities and
+ambiguous cases described in the report. Frozen synthetic data and receipts
+remain unchanged.
+
+Next research should target omitted required facts and explicit actor/report
+attribution, with stronger annotations and longer independent conversations.
+This frozen test is spent and must not be retuned against.
+
+The recorded post-run inventory shows the v3 app stopped with zero tasks.
+Before any future remote call, verify `.local/active-cycle.json` and live
+Modal state. Successful hosted CI run 38828735844 tested source commit
+a396d48da65b059bde55d0088e5996ec689cf300; it did not test the final
+documentation working-tree tip. The final doc tip still needs its hosted CI
+check after delivery.
+
+## Completed v2 checkpoint
+
 
 Updated 2026-10-15 UTC. The second synthetic-only QLoRA run and its frozen
 development scoring, blind agent review, and root adjudication are complete.

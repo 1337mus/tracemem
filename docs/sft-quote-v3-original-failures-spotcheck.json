@@ -1,0 +1,45 @@
+{
+  "label": "root unblinded adaptive spot-check of two previously targeted failures; not full regression semantic review",
+  "human_reviewers": 0,
+  "reviewed_at_utc": "2026-10-16T00:55:42.260517+00:00",
+  "cases": [
+    {
+      "case_id": "DEV-CASE-D14-correction-from-maybe-to-choice-V01",
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0014-01",
+          "message_id": "DEV-MSG-00015",
+          "role": "user",
+          "text": "I first said I might use FjordMemo; correction, I chose it for the event calendar.",
+          "recorded_at": "2026-01-01T00:15:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "root_label_for_both": "unsupported",
+      "root_reason": "Correcting an earlier report is turned into a sequence of earlier consideration and later choice; the source does not establish that decision history.",
+      "outputs": {
+        "prior": "{\"claims\":[{\"claim\":\"The user first considered using FjordMemo for an event calendar and later chose it.\",\"message_id\":\"DEV-MSG-00015\",\"quote\":\"I first said I might use FjordMemo; correction, I chose it for the event calendar.\",\"valid_from\":null,\"valid_to\":null}]}",
+        "tuned": "{\"claims\":[{\"claim\":\"The user first considered using FjordMemo and later chose it for the event calendar.\",\"message_id\":\"DEV-MSG-00015\",\"quote\":\"I first said I might use FjordMemo; correction, I chose it for the event calendar.\",\"valid_from\":null,\"valid_to\":null}]}"
+      }
+    },
+    {
+      "case_id": "DEV-CASE-D21-storing-someone-elses-item-V01",
+      "messages": [
+        {
+          "session_id": "DEV-SESSION-0021-01",
+          "message_id": "DEV-MSG-00023",
+          "role": "user",
+          "text": "Amara owns the yellow thermos; I am only keeping it at room Amber while they move.",
+          "recorded_at": "2026-01-01T00:23:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "root_label_for_both": "uncertain",
+      "root_reason": "The keeper clause can attach to Amara rather than the user; adding only does not resolve the subject.",
+      "outputs": {
+        "prior": "{\"claims\":[{\"claim\":\"The user reports that Amara owns the yellow thermos and is keeping it at room Amber while they move.\",\"message_id\":\"DEV-MSG-00023\",\"quote\":\"Amara owns the yellow thermos; I am only keeping it at room Amber while they move.\",\"valid_from\":null,\"valid_to\":null}]}",
+        "tuned": "{\"claims\":[{\"claim\":\"The user reports that Amara owns the yellow thermos and is only keeping it at room Amber while they move.\",\"message_id\":\"DEV-MSG-00023\",\"quote\":\"Amara owns the yellow thermos; I am only keeping it at room Amber while they move.\",\"valid_from\":null,\"valid_to\":null}]}"
+      }
+    }
+  ]
+}

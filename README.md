@@ -9,16 +9,23 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today. Two fiction-only SFT runs have trained
+**The local search tool works today. Three fiction-only SFT runs have trained
 adapters, but no model has been validated or selected for product use.**
 
-The latest quote-v2 run returned valid JSON for all 24 tuned fictional
-examples. In a separate fence-only comparison, correct empty-source skips
-improved from 1/6 to 6/6; agent review still found one unsupported and one
-ambiguous tuned memory. This was a small development slice with zero human
-reviewers. The [results report](docs/sft-quote-v2-results.md) keeps raw scoring
-and review methods separate. The earlier [SFT pilot report](docs/sft-pilot-results.md)
-records the first run; neither run selected a production model.
+The latest model made fewer unsupported or ambiguous statements on our
+fictional test, but left out more important facts. It failed the experiment's
+success criteria. AI agents reviewed the results; no human review has happened.
+See the [results report](docs/sft-quote-v3-results.md) for the counts and
+limitations.
+The earlier [quote-v2](docs/sft-quote-v2-results.md) and
+[pilot](docs/sft-pilot-results.md) results remain documented.
+
+All three adapters trained on newly written fictional conversations. We
+inspected a sample of the owner's real agent logs locally to check the transcript readers,
+but those logs were not training data and have not been evaluated with the
+trained extractor. The model has not learned the owner's personal history. Real
+conversations belong in the searchable evidence store; training is intended
+to teach the model how to read them accurately.
 
 ## What works
 

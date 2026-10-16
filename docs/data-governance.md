@@ -1,11 +1,21 @@
 # Data governance
 
-Durable evidence and retrieval run locally. Six bounded Modal inference calls used only
-authored synthetic fixtures; all six apps were verified stopped with zero active tasks.
-No private corpus was uploaded, no training or release occurred, and no model weights
-were downloaded to this Mac. The historical NLI support diagnostic and the newer
-extraction comparison use agent-authored judgments, not independent human ground truth.
-Code licensing does not grant rights to private conversations.
+Durable evidence and retrieval run locally. Remote experiments use newly authored
+fictional fixtures. Three bounded synthetic QLoRA runs have completed; the
+[pilot](sft-pilot-results.md), [second run](sft-quote-v2-results.md), and
+[third run](sft-quote-v3-results.md) reports record their data, compute, and
+results. V3's final agent/root review was mixed and its required-fact coverage
+declined; it did not select a model or advance Gate A. Reviews have zero human
+reviewers. No private corpus was uploaded or used for training, no public release
+occurred, and no model weights were downloaded to this Mac. Check
+`.local/active-cycle.json` and live Modal state before any new call. Code
+licensing does not grant rights to private conversations.
+
+Context Kit inspection included a bounded local parse of original Claude/Codex
+logs for format, role, timestamp and privacy-indicator checks. It did not run
+the trained extractor over those conversations or add them to training.
+No actual ChatGPT export was read. The adapters and retrieval implementation
+have synthetic tests; those tests do not establish quality on the private corpus.
 
 The [LongMemEval dataset metadata audit](longmemeval-rights.md) pins the official
 cleaned dataset's public card and tree. The card declares MIT; constituent provenance

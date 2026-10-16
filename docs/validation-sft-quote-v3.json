@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-16",
+  "experiment": "sft-quote-v3",
+  "status": "completed_mixed_result_not_promising",
+  "decision": {
+    "summary": "Targeted adverse-response counts declined, but required-fact coverage declined and the predeclared promising criteria were not met.",
+    "product_checkpoint_selected": false,
+    "gate_a_progress": false,
+    "human_reviewers": 0
+  },
+  "training_provenance": {
+    "canonical_job_sha256": "3d7440a69cb9502be7a45b5cb0a804c25c8f6e1404d90b93ca3d23a9d31a888c",
+    "job_file_sha256": "1c2c9e4352349e9e450e0ed80afe36eca74cf826dfae478ffd808e5746fda2d7",
+    "receipt_sha256": "def760b2bcdf905b40523916828a86a4d96eb02eb8a8e61cde30e48f8c974525",
+    "root_payload_freeze_path": ".local/sft-quote-v3-20261015/root-payload-freeze-v1.json",
+    "root_payload_freeze_file_sha256": "03f7bf559094920955c272fd7a561d348e89e957088363e566526766582977c4",
+    "freeze_job_sha256_matches": true,
+    "freeze_job_file_sha256_matches": true,
+    "private_conversations_in_payload": false,
+    "eval_labels_in_remote_request": false,
+    "train_rows": 768,
+    "training_families": 72,
+    "new_families": 24,
+    "optimizer_steps": 192,
+    "examples_consumed": 768,
+    "training_seconds": 811.068,
+    "remote_total_seconds": 2817.255,
+    "device": "NVIDIA A10G",
+    "peak_allocated_bytes": 5974192640,
+    "peak_reserved_bytes": 8518631424,
+    "model_id": "Qwen/Qwen3-4B",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "final_adapter_model_sha256": "d7d9e25c2c60e2348b646db92188f5aed5911f126a9eaf891e1e09fad55021fb",
+    "adapter_volume_path": "/mnt/tracemem-sft-quote-v3/adapters/quote-v3-20261015-01/adapter",
+    "initial_adapter_parameter_hash_matches_v2": true,
+    "prior_adapter_controls": {
+      "verified_before_and_after": true,
+      "unloaded_without_merge": true,
+      "rng_restored": true,
+      "no_prior_lora_parameters": true
+    },
+    "client_elapsed_seconds": 2845.301,
+    "model_weights_downloaded_to_mac": false,
+    "recorded_post_run_app_state": "stopped",
+    "recorded_post_run_tasks": 0
+  },
+  "evaluation": {
+    "evaluator_report_path": "docs/sft-quote-v3-results.json",
+    "evaluator_report_sha256": "d354d7f77f9cd80f655552752c38df24f4a1228789ff2543ded77e2c3f47e130",
+    "evaluator_report_semantic_support_field": "not yet evaluated",
+    "semantic_results_are_separate_artifacts": true,
+    "arms": [
+      "base",
+      "prior",
+      "tuned"
+    ],
+    "same_prompts_and_generation_settings": true,
+    "generation": {
+      "max_new_tokens": 512,
+      "do_sample": false
+    },
+    "cohort_counts": {
+      "regression": 24,
+      "dev": 24,
+      "test": 48
+    },
+    "schema_failures_zero_among_parseable_responses": true,
+    "citation_check_scope": "exact source, quote, and explicit-date integrity only; not semantic support",
+    "reference_match_scope": "wording matches only; not accuracy or exhaustive recall",
+    "semantic_review": {
+      "tasks": 96,
+      "claims": 77,
+      "test_cases": 48,
+      "human_reviewers": 0,
+      "prior_adverse_responses": "7/48",
+      "tuned_adverse_responses": "3/48",
+      "targeted_prior_adverse_responses": "5/32",
+      "targeted_tuned_adverse_responses": "2/32",
+      "all_fact_coverage_prior": "21/36",
+      "all_fact_coverage_tuned": "16/36",
+      "targeted_fact_coverage_prior": "13/24",
+      "targeted_fact_coverage_tuned": "9/24",
+      "predeclared_promising_criteria_met": false,
+      "scope_limit": "No full semantic review of the base arm, development cohort, or adaptive regression cohort; a separate two-case original-failure spot-check was performed."
+    },
+    "arm_generation_seconds": {
+      "base": 690.133,
+      "prior": 627.905,
+      "tuned": 598.617
+    }
+  },
+  "exact_artifact_copies": [
+    {
+      "path": "examples/synthetic/sft-quote-v3-job-v1.json",
+      "source_path": ".local/sft-quote-v3-20261015/training-job-v1.json",
+      "sha256": "1c2c9e4352349e9e450e0ed80afe36eca74cf826dfae478ffd808e5746fda2d7",
+      "bytes": 1510204,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "examples/synthetic/sft-quote-v3-remote-v1.json",
+      "source_path": ".local/sft-quote-v3-20261015/remote-training-v1.json",
+      "sha256": "def760b2bcdf905b40523916828a86a4d96eb02eb8a8e61cde30e48f8c974525",
+      "bytes": 1001053,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-results.json",
+      "source_path": ".local/sft-quote-v3-20261015/evaluator/quote-v3-report.json",
+      "sha256": "d354d7f77f9cd80f655552752c38df24f4a1228789ff2543ded77e2c3f47e130",
+      "bytes": 1724928,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-blind-review.json",
+      "source_path": ".local/sft-quote-v3-20261015/review-tools/blind-review-v1.json",
+      "sha256": "ee4a4ba1def63b795630b4a22e574cbb24229f7987d357228af5fe29c3e4d4ae",
+      "bytes": 76320,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-coverage.json",
+      "source_path": ".local/sft-quote-v3-20261015/root-review/required-fact-coverage-v1.json",
+      "sha256": "edd1b3f649861a63ef7ab744332cbcfd67e536d472f46a81d6bf7d3a8adb6bbb",
+      "bytes": 70422,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-adjudication.json",
+      "source_path": ".local/sft-quote-v3-20261015/root-review/semantic-adjudication-v1.json",
+      "sha256": "3a6b5e9a6e725c37764c7382ee29ae00897e8a34aef52a3acae640c10071dc23",
+      "bytes": 80949,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-original-failures-spotcheck.json",
+      "source_path": ".local/sft-quote-v3-20261015/root-review/adaptive-original-failures-spotcheck-v1.json",
+      "sha256": "2176e5fca2ea17ba5c0dbbfebde1eb94587fdb2496d21f523598c3e812796d7b",
+      "bytes": 2787,
+      "byte_identical_to_source": true
+    },
+    {
+      "path": "docs/sft-quote-v3-paired-case-accounting.json",
+      "source_path": ".local/sft-quote-v3-20261015/root-review/paired-case-accounting-v1.json",
+      "sha256": "41d03859c6baa022425621b25f095a184c95c0dabd01b283799825d952f5d152",
+      "bytes": 2094,
+      "byte_identical_to_source": true
+    }
+  ],
+  "independent_evidence": {
+    "root_payload_and_blind_packet_audit": {
+      "path": ".local/sft-quote-v3-20261015/root-review/receipt-and-blind-packet-independent-audit-v1.json",
+      "file_sha256": "c3a7dfe6637153312db5b6133a0d90e8830fa00218fbf41af5739a803771897e",
+      "receipt_sha256": "def760b2bcdf905b40523916828a86a4d96eb02eb8a8e61cde30e48f8c974525",
+      "source_freeze_unchanged": true,
+      "initial_adapter_parameter_hash_matches_v2": true,
+      "prior_checkpoint_controls_passed": true,
+      "blind_tasks": 96,
+      "human_reviewers": 0
+    },
+    "independent_replay_and_counts": {
+      "path": ".local/sft-quote-v3-20261015/root-review/independent-replay-and-counts-verification-v1.json",
+      "file_sha256": "83147fb3540a28dac1f2b9dbdc1c2eaa84a91be6cbe6f31534aef06b3a42c607",
+      "all_pairs_byte_equal": true,
+      "replay_byte_equal": true,
+      "semantic_tasks": 96,
+      "semantic_claims": 77,
+      "coverage_cases": 48,
+      "support_and_coverage_recounted": true,
+      "human_reviewers": 0,
+      "bound_copy_hashes": {
+        "examples/synthetic/sft-quote-v3-job-v1.json": "1c2c9e4352349e9e450e0ed80afe36eca74cf826dfae478ffd808e5746fda2d7",
+        "examples/synthetic/sft-quote-v3-remote-v1.json": "def760b2bcdf905b40523916828a86a4d96eb02eb8a8e61cde30e48f8c974525",
+        "docs/sft-quote-v3-results.json": "d354d7f77f9cd80f655552752c38df24f4a1228789ff2543ded77e2c3f47e130"
+      }
+    },
+    "prior_arm_generation_reproduction": {
+      "path": ".local/sft-quote-v3-20261015/root-review/prior-generation-reproduction-independent-v1.json",
+      "file_sha256": "590b035f24ba8e74f3751099ef2694d64665c58559176725d7f5e78653ff8567",
+      "method": "Independent comparison of historical v2 tuned outputs to v3 loaded-prior outputs; no generation or GPU work",
+      "cases": 24,
+      "matched_response_text": 24,
+      "matched_prompt_token_ids": 24,
+      "matched_completion_token_ids": 24,
+      "differing_cases": 0
+    },
+    "source_ci": {
+      "path": ".local/sft-quote-v3-20261015/root-review/source-ci-independent-verification-v1.json",
+      "file_sha256": "9ef4ba61fca81c6f1ea19c99d86a81dc7d20d5ae22f658d1c4dc431ffe23a3d0",
+      "commit": "a396d48da65b059bde55d0088e5996ec689cf300",
+      "run_id": 38828735844,
+      "status": "completed",
+      "conclusion": "success",
+      "source_tests": {
+        "attempted": 761,
+        "passed": 760,
+        "skipped": 1
+      },
+      "installed_tests": {
+        "attempted": 401,
+        "passed": 399,
+        "skipped": 2
+      },
+      "ruff_format_files": 166,
+      "mypy_source_files": 46,
+      "github_signatures_valid": true,
+      "raw_log_sha256": "c42487dce3dd4b345e435df78b547eb2cf9f4e0927006a03b797b28469cbab28"
+    }
+  },
+  "delivery_and_local_checks": {
+    "workspace_branch": "main",
+    "source_ci_commit_is_docs_tip": false,
+    "final_documentation_tip_hosted_ci": "pending after delivery; source CI run above did not include these documentation changes",
+    "documentation_closeout_tests": "JSON parsing, exact-copy SHA-256 checks, and git diff --check; no source test suite rerun for this documentation-only closeout",
+    "commit_or_push_performed": false,
+    "workspace_head": "a396d48da65b059bde55d0088e5996ec689cf300",
+    "exact_artifact_copy_count": 8,
+    "exact_artifact_copies_match_sources": true,
+    "artifact_json_syntax_checked": true,
+    "markdown_relative_links_resolve": true,
+    "git_diff_check": true,
+    "source_test_suite_rerun": false
+  }
+}
