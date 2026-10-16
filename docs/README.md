@@ -86,6 +86,12 @@ Paths in this index are relative to this `docs/` directory.
   and [validation record](validation-verifier-pairs-model.json) document the
   failed primary development criterion and limits. The [pre-run experiment
   note](verifier-pairs-next-experiment.md) is retained as planning history.
+- [Verifier transfer data card](verifier-transfer-data-card.md), [frozen
+  protocol](verifier-transfer-protocol.md), [results](verifier-transfer-results.md),
+  [machine-scored report](verifier-transfer-results.json), and
+  [validation record](validation-verifier-transfer.json): the unchanged adapter
+  rejected 22/24 unsupported claims but missed the frozen threshold and showed
+  a posthoc eligible-support decline on synthetic, agent-only dev data.
 
 - [Third extraction experiment protocol](sft-quote-v3-protocol.md): fixed-budget
   chronology and subject corrections, three matched arms and a separate frozen test.
@@ -196,6 +202,8 @@ Paths in this index are relative to this `docs/` directory.
 
 - [Data governance](data-governance.md): private-source handling, synthetic data,
   rights evidence, and release gates.
+- [Local private development review](private-evaluation.md): bounded preparation,
+  privacy limits, and the pending human-review workflow.
 - [LongMemEval rights metadata](longmemeval-rights.json): pinned metadata audit record.
 - [Current review validation](validation-qa-controls-review-results.json),
   [answer contract validation](validation-qa-controls-answer-contract.json), and

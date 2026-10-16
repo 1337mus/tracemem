@@ -34,6 +34,8 @@ files = [
     "experiments/modal_quote_verifier.py", "experiments/evaluate_quote_verifier.py",
     "experiments/verifier_pairs.py", "experiments/modal_verifier_pairs.py",
     "experiments/evaluate_verifier_pairs.py",
+    "experiments/modal_verifier_transfer.py", "experiments/evaluate_verifier_transfer.py",
+    "experiments/private_eval.py",
 ]
 mypy_path = "src"
 explicit_package_bases = true

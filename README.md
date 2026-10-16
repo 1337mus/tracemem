@@ -10,13 +10,14 @@ system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
 **The local search tool works today; no research model has been selected for
-product use.** We trained Qwen3-4B as a verifier on fictional examples. It kept
-all six supported development claims but still labeled two of six unsupported
-claims as supported, so it failed its primary criterion. The small dev set has
-provisional, agent-only labels. See the
-[paired-verifier results](docs/verifier-pairs-model-results.md) and frozen
-[protocol](docs/verifier-pairs-model-protocol.md). These results do not show
-QA benefit, extraction recall, or generalization.
+product use.** An inference-only transfer check of the unchanged Qwen3-4B
+adapter rejected 22/24 unsupported claims versus 10/24 for baseline and kept
+all 24 supported claims, but missed the frozen 23/24 rejection threshold. A
+separate check requiring both “supported” and “belongs in personal memory”
+would keep only 10 of 19 suitable, supported claims, versus 16 for baseline. The synthetic dev labels
+are agent-authored; there is no independent test or quality claim.
+See the [transfer results](docs/verifier-transfer-results.md) and frozen
+[protocol](docs/verifier-transfer-protocol.md).
 
 Earlier extraction and verifier experiments remain documented in the
 [quote-v4 results](docs/sft-quote-v4-results.md), [quote verifier results](docs/quote-verifier-dev-results.md),
@@ -25,10 +26,11 @@ and [pilot results](docs/sft-pilot-results.md). The four extractor runs and
 their findings are unchanged by the verifier experiment.
 
 This run used only newly authored fictional cases; no private conversation
-was included in its training or evaluation data or uploaded. Some owner agent
-logs were inspected locally for transcript-reader checks only; they were not
-model data. Real conversations remain local searchable evidence, and claims
-still need source review. See [data governance](docs/data-governance.md).
+was included in its training or evaluation data or uploaded. A separate local
+review bundle contains 36 windows from 22 Codex sources, with labels pending;
+none was model input. Real conversations remain local searchable evidence, and
+claims still need source review. See [private review](docs/private-evaluation.md)
+and [data governance](docs/data-governance.md).
 
 ## What works
 

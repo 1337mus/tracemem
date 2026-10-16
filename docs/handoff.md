@@ -1,4 +1,58 @@
-# Current checkpoint: paired verifier misses primary gate; no model selected
+# Current checkpoint: broader verifier support gain; eligibility remains a blocker
+
+Updated 2026-10-16 UTC. The unchanged trained Qwen3-4B verifier completed a
+matched comparison on 24 newly authored fictional dev scenarios (48 candidates).
+Unsupported catches rose from 10/24 base to 22/24 tuned; both retained 24/24
+supported claims. False accepts fell from eight to two and uncertainty on bad
+claims from six to zero. Both arms produced 48 valid, untruncated outputs.
+The frozen primary criterion **failed** because it required at least 23/24
+unsupported catches. Attribution catches rose 5/12 to 12/12; conditions 5/12 to
+10/12. The remaining misses confuse if/only-if (case_transfer_20) and reverse
+a keep/cancel branch (case_transfer_24); root checked both labels against the
+complete fictional dialogue and upheld them.
+
+Eligibility regressed: decisive exactness 27/42 to 25/42; uncertain-reference
+exactness improved 4/6 to 6/6. A descriptive posthoc conjunction of support and
+eligibility retains only 10/19 supported eligible claims versus 16/19 base,
+while accepted unsupported eligible claims fall four to one. Do not equate the
+support gain with a better complete memory pipeline. No product model selected;
+zero human reviewers; all cases adaptive, provisional agent-authored dev.
+The earlier failed criterion remains failed, its test remains unrun, and the
+sealed longer-conversation candidate remains unopened.
+
+The successful inference-only call used one personal Modal A10, worker time
+166.310941s, client time 180.272934s, no training. The initial launch failed
+before ML imports on Modal's normal symlink volume mount; a narrowly tested
+canonical-mount correction preserved data, prompts, model, criteria and artifact
+hashes. Both historical receipts remain intact. Post-run inventory showed all
+apps stopped and zero tasks; verify again before any remote use and by
+2026-10-17. Automation remains paused. See [results](verifier-transfer-results.md),
+[machine report](verifier-transfer-results.json),
+[protocol](verifier-transfer-protocol.md), and
+[validation](validation-verifier-transfer.json). Archived fictional payload and
+receipt replay through `experiments.evaluate_verifier_transfer` without a GPU.
+
+Local private review preparation also works: 22 closed Codex sources from one
+verified personal project yielded 36 dev windows and 183 record appearances.
+No held-out project cohort was available; all authorship, semantic and privacy
+labels remain pending. Nineteen oversized candidate windows were skipped;
+two email indicators need local review. Original sources were rehashed and
+preserved. Review artifacts remain restricted under ignored `.local`; no
+private model inference, training or upload occurred. See
+[private evaluation](private-evaluation.md).
+
+The full source check before the narrow mount correction attempted 999 tests:
+998 passed, one skipped, Ruff/format and strict mypy passed. After the correction,
+all 41 focused tests, six-file lint/format and three-module type checks passed.
+Root replay matched the archived report. `.local/active-cycle.json` is the
+source for exact signed delivery and hosted CI; this text does not assert them.
+Next: expand directional-condition and temporary-personal-context training
+examples, audit eligibility policy consistency, and freeze a fresh comparison
+before further training. Human labels and approval for a concrete private
+remote slice are still required for private-model evaluation. Preserve Context
+Kit, original conversations and `~/.llm-context` as read-only.
+
+## Previous checkpoint: paired verifier misses primary gate; no model selected
 
 Updated 2026-10-16 UTC. The completed synthetic [paired-verifier run](verifier-pairs-model-results.md)
 used 48 train rows, four epochs, 192 microsteps, and 48 optimizer steps. On

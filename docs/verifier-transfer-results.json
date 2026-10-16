@@ -1,0 +1,3310 @@
+{
+  "schema_version": 1,
+  "mode": "transfer",
+  "split": "dev",
+  "dataset_sha256": "6696c78b35499933310eeabdf626d683d5af122524fb5e50640d85043e7d20e9",
+  "payload_sha256": "5a75d57a9177d09ba36f92356758be4fe04d3cc512823d17263f1065adbf9904",
+  "receipt_sha256": "070ad8665bfd34fc7192c67943b0e27141c9cf714dfff83abb42a1de7ed4766f",
+  "runner_sha256": "e1d910b0d1d6db41ddbfa16621e6f8bbdc7d6eded7c3ce581f2a2caea99ef8af",
+  "model": {
+    "model_id": "Qwen/Qwen3-4B",
+    "quantization": {
+      "compute_dtype": "bfloat16",
+      "double_quant": true,
+      "load_in_4bit": true,
+      "type": "nf4"
+    },
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "settings": {
+    "attn_implementation": "eager",
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 128,
+    "seed": 17
+  },
+  "adapter": {
+    "config_sha256": "9c79cb0e2879e658f96bbad4cc41aa17c603fe03405f70100b3adc86b8692153",
+    "relative_path": "runs/534139fb7e076e7511e85928c51dfe80b2a625138f3bebe50e36be3b77a24106/adapter",
+    "safetensors_sha256": "014a21986d0b2fb6fe884ab8346a1708012558632b5dbbe4325c701394e8f9b2",
+    "volume_mount": "/mnt/tracemem-verifier-pairs-v1",
+    "volume_name": "tracemem-verifier-pairs-v1"
+  },
+  "runtime": {
+    "versions": {
+      "accelerate": "1.6.0",
+      "bitsandbytes": "0.45.5",
+      "modal": "1.6.1",
+      "peft": "0.15.2",
+      "python": "3.12.10",
+      "safetensors": "0.5.3",
+      "tokenizers": "0.21.1",
+      "torch": "2.7.1",
+      "transformers": "4.51.3"
+    },
+    "tokenizer": {
+      "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "class": "Qwen2TokenizerFast",
+      "eos_token_id": 151645,
+      "is_fast": true,
+      "pad_token_id": 151643
+    },
+    "timings": {
+      "baseline_seconds": 64.76817,
+      "model_load_seconds": 32.6627,
+      "total_seconds": 166.310941,
+      "tuned_seconds": 68.779223
+    },
+    "memory": {
+      "gpu_name": "NVIDIA A10",
+      "peak_allocated_bytes": 4412407808
+    }
+  },
+  "arms": {
+    "baseline": {
+      "receipt_sha256": "070ad8665bfd34fc7192c67943b0e27141c9cf714dfff83abb42a1de7ed4766f",
+      "score": {
+        "split": "dev",
+        "candidate_results": [
+          {
+            "item_id": "case_transfer_01::candidate_transfer_01_supported",
+            "case_id": "case_transfer_01",
+            "candidate_id": "candidate_transfer_01_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_01::candidate_transfer_01_unsupported",
+            "case_id": "case_transfer_01",
+            "candidate_id": "candidate_transfer_01_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 20
+          },
+          {
+            "item_id": "case_transfer_02::candidate_transfer_02_unsupported",
+            "case_id": "case_transfer_02",
+            "candidate_id": "candidate_transfer_02_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_02::candidate_transfer_02_supported",
+            "case_id": "case_transfer_02",
+            "candidate_id": "candidate_transfer_02_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_03::candidate_transfer_03_supported",
+            "case_id": "case_transfer_03",
+            "candidate_id": "candidate_transfer_03_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_03::candidate_transfer_03_unsupported",
+            "case_id": "case_transfer_03",
+            "candidate_id": "candidate_transfer_03_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_04::candidate_transfer_04_unsupported",
+            "case_id": "case_transfer_04",
+            "candidate_id": "candidate_transfer_04_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 20
+          },
+          {
+            "item_id": "case_transfer_04::candidate_transfer_04_supported",
+            "case_id": "case_transfer_04",
+            "candidate_id": "candidate_transfer_04_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_05::candidate_transfer_05_supported",
+            "case_id": "case_transfer_05",
+            "candidate_id": "candidate_transfer_05_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_05::candidate_transfer_05_unsupported",
+            "case_id": "case_transfer_05",
+            "candidate_id": "candidate_transfer_05_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_06::candidate_transfer_06_unsupported",
+            "case_id": "case_transfer_06",
+            "candidate_id": "candidate_transfer_06_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_06::candidate_transfer_06_supported",
+            "case_id": "case_transfer_06",
+            "candidate_id": "candidate_transfer_06_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_07::candidate_transfer_07_supported",
+            "case_id": "case_transfer_07",
+            "candidate_id": "candidate_transfer_07_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_07::candidate_transfer_07_unsupported",
+            "case_id": "case_transfer_07",
+            "candidate_id": "candidate_transfer_07_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_08::candidate_transfer_08_unsupported",
+            "case_id": "case_transfer_08",
+            "candidate_id": "candidate_transfer_08_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_08::candidate_transfer_08_supported",
+            "case_id": "case_transfer_08",
+            "candidate_id": "candidate_transfer_08_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_09::candidate_transfer_09_supported",
+            "case_id": "case_transfer_09",
+            "candidate_id": "candidate_transfer_09_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_09::candidate_transfer_09_unsupported",
+            "case_id": "case_transfer_09",
+            "candidate_id": "candidate_transfer_09_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_10::candidate_transfer_10_unsupported",
+            "case_id": "case_transfer_10",
+            "candidate_id": "candidate_transfer_10_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 21
+          },
+          {
+            "item_id": "case_transfer_10::candidate_transfer_10_supported",
+            "case_id": "case_transfer_10",
+            "candidate_id": "candidate_transfer_10_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_11::candidate_transfer_11_supported",
+            "case_id": "case_transfer_11",
+            "candidate_id": "candidate_transfer_11_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_11::candidate_transfer_11_unsupported",
+            "case_id": "case_transfer_11",
+            "candidate_id": "candidate_transfer_11_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 20
+          },
+          {
+            "item_id": "case_transfer_12::candidate_transfer_12_unsupported",
+            "case_id": "case_transfer_12",
+            "candidate_id": "candidate_transfer_12_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 20
+          },
+          {
+            "item_id": "case_transfer_12::candidate_transfer_12_supported",
+            "case_id": "case_transfer_12",
+            "candidate_id": "candidate_transfer_12_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_13::candidate_transfer_13_supported",
+            "case_id": "case_transfer_13",
+            "candidate_id": "candidate_transfer_13_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_13::candidate_transfer_13_unsupported",
+            "case_id": "case_transfer_13",
+            "candidate_id": "candidate_transfer_13_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_14::candidate_transfer_14_unsupported",
+            "case_id": "case_transfer_14",
+            "candidate_id": "candidate_transfer_14_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_14::candidate_transfer_14_supported",
+            "case_id": "case_transfer_14",
+            "candidate_id": "candidate_transfer_14_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_15::candidate_transfer_15_supported",
+            "case_id": "case_transfer_15",
+            "candidate_id": "candidate_transfer_15_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_15::candidate_transfer_15_unsupported",
+            "case_id": "case_transfer_15",
+            "candidate_id": "candidate_transfer_15_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_16::candidate_transfer_16_unsupported",
+            "case_id": "case_transfer_16",
+            "candidate_id": "candidate_transfer_16_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_16::candidate_transfer_16_supported",
+            "case_id": "case_transfer_16",
+            "candidate_id": "candidate_transfer_16_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_17::candidate_transfer_17_supported",
+            "case_id": "case_transfer_17",
+            "candidate_id": "candidate_transfer_17_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_17::candidate_transfer_17_unsupported",
+            "case_id": "case_transfer_17",
+            "candidate_id": "candidate_transfer_17_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_18::candidate_transfer_18_unsupported",
+            "case_id": "case_transfer_18",
+            "candidate_id": "candidate_transfer_18_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_18::candidate_transfer_18_supported",
+            "case_id": "case_transfer_18",
+            "candidate_id": "candidate_transfer_18_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_19::candidate_transfer_19_supported",
+            "case_id": "case_transfer_19",
+            "candidate_id": "candidate_transfer_19_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_19::candidate_transfer_19_unsupported",
+            "case_id": "case_transfer_19",
+            "candidate_id": "candidate_transfer_19_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_20::candidate_transfer_20_unsupported",
+            "case_id": "case_transfer_20",
+            "candidate_id": "candidate_transfer_20_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_20::candidate_transfer_20_supported",
+            "case_id": "case_transfer_20",
+            "candidate_id": "candidate_transfer_20_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_21::candidate_transfer_21_supported",
+            "case_id": "case_transfer_21",
+            "candidate_id": "candidate_transfer_21_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_21::candidate_transfer_21_unsupported",
+            "case_id": "case_transfer_21",
+            "candidate_id": "candidate_transfer_21_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_22::candidate_transfer_22_unsupported",
+            "case_id": "case_transfer_22",
+            "candidate_id": "candidate_transfer_22_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "uncertain",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 20
+          },
+          {
+            "item_id": "case_transfer_22::candidate_transfer_22_supported",
+            "case_id": "case_transfer_22",
+            "candidate_id": "candidate_transfer_22_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_23::candidate_transfer_23_supported",
+            "case_id": "case_transfer_23",
+            "candidate_id": "candidate_transfer_23_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 18
+          },
+          {
+            "item_id": "case_transfer_23::candidate_transfer_23_unsupported",
+            "case_id": "case_transfer_23",
+            "candidate_id": "candidate_transfer_23_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_24::candidate_transfer_24_unsupported",
+            "case_id": "case_transfer_24",
+            "candidate_id": "candidate_transfer_24_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          },
+          {
+            "item_id": "case_transfer_24::candidate_transfer_24_supported",
+            "case_id": "case_transfer_24",
+            "candidate_id": "candidate_transfer_24_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 19
+          }
+        ],
+        "pair_results": [
+          {
+            "case_id": "case_transfer_01",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_02",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_03",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_04",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_05",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_06",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_07",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_08",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_09",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_10",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_11",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_12",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_13",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_14",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_15",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_16",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_17",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_18",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_19",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_20",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_21",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_22",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_23",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_24",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          }
+        ],
+        "aggregate": {
+          "candidate_count": 48,
+          "support": {
+            "by_reference": {
+              "supported": {
+                "total": 24,
+                "retained": 24,
+                "retention_rate": 1.0
+              },
+              "unsupported": {
+                "total": 24,
+                "caught": 10,
+                "catch_rate": 0.4166666666666667
+              },
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "confusion": {
+              "supported": {
+                "supported": 24,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              },
+              "unsupported": {
+                "supported": 8,
+                "unsupported": 10,
+                "uncertain": 6,
+                "invalid": 0
+              },
+              "uncertain": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            },
+            "decisive_exact_correct": 34,
+            "decisive_total": 48,
+            "decisive_accuracy": 0.7083333333333334,
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "eligibility": {
+            "by_reference": {
+              "eligible": {
+                "total": 38,
+                "correct": 26,
+                "accuracy": 0.6842105263157895
+              },
+              "ineligible": {
+                "total": 4,
+                "correct": 1,
+                "accuracy": 0.25
+              },
+              "uncertain": {
+                "total": 6,
+                "exact_correct": 4,
+                "prediction_counts": {
+                  "eligible": 2,
+                  "ineligible": 0,
+                  "uncertain": 4,
+                  "invalid": 0
+                }
+              }
+            },
+            "confusion": {
+              "eligible": {
+                "eligible": 26,
+                "ineligible": 0,
+                "uncertain": 12,
+                "invalid": 0
+              },
+              "ineligible": {
+                "eligible": 3,
+                "ineligible": 1,
+                "uncertain": 0,
+                "invalid": 0
+              },
+              "uncertain": {
+                "eligible": 2,
+                "ineligible": 0,
+                "uncertain": 4,
+                "invalid": 0
+              }
+            },
+            "decisive_exact_correct": 27,
+            "decisive_total": 42,
+            "decisive_accuracy": 0.6428571428571429,
+            "uncertain": {
+              "total": 6,
+              "exact_correct": 4,
+              "prediction_counts": {
+                "eligible": 2,
+                "ineligible": 0,
+                "uncertain": 4,
+                "invalid": 0
+              }
+            }
+          },
+          "support_pairs": {
+            "total": 24,
+            "decisive_total": 24,
+            "both_support_labels_correct": 10,
+            "exact_rate": 0.4166666666666667,
+            "excluded_uncertain": 0
+          },
+          "telemetry": {
+            "output_tokens": 888,
+            "items_with_output_tokens": 48
+          },
+          "validity": {
+            "total": 48,
+            "valid": 48,
+            "invalid": 0,
+            "rate": 1.0,
+            "malformed": 0,
+            "truncated": 0,
+            "finish_reasons": {
+              "eos": 48,
+              "length": 0,
+              "unknown": 0,
+              "empty": 0
+            }
+          },
+          "per_phenomenon": {
+            "attribution": {
+              "candidate_count": 24,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 12,
+                    "retained": 12,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 12,
+                    "caught": 5,
+                    "catch_rate": 0.4166666666666667
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 12,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 2,
+                    "unsupported": 5,
+                    "uncertain": 5,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 17,
+                "decisive_total": 24,
+                "decisive_accuracy": 0.7083333333333334,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 18,
+                    "correct": 13,
+                    "accuracy": 0.7222222222222222
+                  },
+                  "ineligible": {
+                    "total": 2,
+                    "correct": 1,
+                    "accuracy": 0.5
+                  },
+                  "uncertain": {
+                    "total": 4,
+                    "exact_correct": 2,
+                    "prediction_counts": {
+                      "eligible": 2,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 13,
+                    "ineligible": 0,
+                    "uncertain": 5,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 1,
+                    "ineligible": 1,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 2,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 14,
+                "decisive_total": 20,
+                "decisive_accuracy": 0.7,
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 2,
+                  "prediction_counts": {
+                    "eligible": 2,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 12,
+                "decisive_total": 12,
+                "both_support_labels_correct": 5,
+                "exact_rate": 0.4166666666666667,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 446,
+                "items_with_output_tokens": 24
+              },
+              "validity": {
+                "total": 24,
+                "valid": 24,
+                "invalid": 0,
+                "rate": 1.0,
+                "malformed": 0,
+                "truncated": 0,
+                "finish_reasons": {
+                  "eos": 24,
+                  "length": 0,
+                  "unknown": 0,
+                  "empty": 0
+                }
+              }
+            },
+            "condition": {
+              "candidate_count": 24,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 12,
+                    "retained": 12,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 12,
+                    "caught": 5,
+                    "catch_rate": 0.4166666666666667
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 12,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 6,
+                    "unsupported": 5,
+                    "uncertain": 1,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 17,
+                "decisive_total": 24,
+                "decisive_accuracy": 0.7083333333333334,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 20,
+                    "correct": 13,
+                    "accuracy": 0.65
+                  },
+                  "ineligible": {
+                    "total": 2,
+                    "correct": 0,
+                    "accuracy": 0.0
+                  },
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 2,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 13,
+                    "ineligible": 0,
+                    "uncertain": 7,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 2,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 13,
+                "decisive_total": 22,
+                "decisive_accuracy": 0.5909090909090909,
+                "uncertain": {
+                  "total": 2,
+                  "exact_correct": 2,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 12,
+                "decisive_total": 12,
+                "both_support_labels_correct": 5,
+                "exact_rate": 0.4166666666666667,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 442,
+                "items_with_output_tokens": 24
+              },
+              "validity": {
+                "total": 24,
+                "valid": 24,
+                "invalid": 0,
+                "rate": 1.0,
+                "malformed": 0,
+                "truncated": 0,
+                "finish_reasons": {
+                  "eos": 24,
+                  "length": 0,
+                  "unknown": 0,
+                  "empty": 0
+                }
+              }
+            }
+          },
+          "no_filter_control": {
+            "policy": "predict supported and eligible for every candidate; retain all candidates",
+            "retained_candidate_count": 48,
+            "retention_rate": 1.0,
+            "candidate_count": 48,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 24,
+                  "retained": 24,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 24,
+                  "caught": 0,
+                  "catch_rate": 0.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 24,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 24,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 24,
+              "decisive_total": 48,
+              "decisive_accuracy": 0.5,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 38,
+                  "correct": 38,
+                  "accuracy": 1.0
+                },
+                "ineligible": {
+                  "total": 4,
+                  "correct": 0,
+                  "accuracy": 0.0
+                },
+                "uncertain": {
+                  "total": 6,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 6,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 38,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 4,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 6,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 38,
+              "decisive_total": 42,
+              "decisive_accuracy": 0.9047619047619048,
+              "uncertain": {
+                "total": 6,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 6,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "support_pairs": {
+              "total": 24,
+              "decisive_total": 24,
+              "both_support_labels_correct": 0,
+              "exact_rate": 0.0,
+              "excluded_uncertain": 0
+            },
+            "telemetry": {
+              "output_tokens": 0,
+              "items_with_output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    "tuned": {
+      "receipt_sha256": "070ad8665bfd34fc7192c67943b0e27141c9cf714dfff83abb42a1de7ed4766f",
+      "score": {
+        "split": "dev",
+        "candidate_results": [
+          {
+            "item_id": "case_transfer_01::candidate_transfer_01_supported",
+            "case_id": "case_transfer_01",
+            "candidate_id": "candidate_transfer_01_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_01::candidate_transfer_01_unsupported",
+            "case_id": "case_transfer_01",
+            "candidate_id": "candidate_transfer_01_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_02::candidate_transfer_02_unsupported",
+            "case_id": "case_transfer_02",
+            "candidate_id": "candidate_transfer_02_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_02::candidate_transfer_02_supported",
+            "case_id": "case_transfer_02",
+            "candidate_id": "candidate_transfer_02_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_03::candidate_transfer_03_supported",
+            "case_id": "case_transfer_03",
+            "candidate_id": "candidate_transfer_03_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_03::candidate_transfer_03_unsupported",
+            "case_id": "case_transfer_03",
+            "candidate_id": "candidate_transfer_03_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_04::candidate_transfer_04_unsupported",
+            "case_id": "case_transfer_04",
+            "candidate_id": "candidate_transfer_04_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_04::candidate_transfer_04_supported",
+            "case_id": "case_transfer_04",
+            "candidate_id": "candidate_transfer_04_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_05::candidate_transfer_05_supported",
+            "case_id": "case_transfer_05",
+            "candidate_id": "candidate_transfer_05_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_05::candidate_transfer_05_unsupported",
+            "case_id": "case_transfer_05",
+            "candidate_id": "candidate_transfer_05_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_06::candidate_transfer_06_unsupported",
+            "case_id": "case_transfer_06",
+            "candidate_id": "candidate_transfer_06_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_06::candidate_transfer_06_supported",
+            "case_id": "case_transfer_06",
+            "candidate_id": "candidate_transfer_06_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_07::candidate_transfer_07_supported",
+            "case_id": "case_transfer_07",
+            "candidate_id": "candidate_transfer_07_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_07::candidate_transfer_07_unsupported",
+            "case_id": "case_transfer_07",
+            "candidate_id": "candidate_transfer_07_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_08::candidate_transfer_08_unsupported",
+            "case_id": "case_transfer_08",
+            "candidate_id": "candidate_transfer_08_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_08::candidate_transfer_08_supported",
+            "case_id": "case_transfer_08",
+            "candidate_id": "candidate_transfer_08_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_09::candidate_transfer_09_supported",
+            "case_id": "case_transfer_09",
+            "candidate_id": "candidate_transfer_09_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_09::candidate_transfer_09_unsupported",
+            "case_id": "case_transfer_09",
+            "candidate_id": "candidate_transfer_09_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_10::candidate_transfer_10_unsupported",
+            "case_id": "case_transfer_10",
+            "candidate_id": "candidate_transfer_10_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_10::candidate_transfer_10_supported",
+            "case_id": "case_transfer_10",
+            "candidate_id": "candidate_transfer_10_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_11::candidate_transfer_11_supported",
+            "case_id": "case_transfer_11",
+            "candidate_id": "candidate_transfer_11_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_11::candidate_transfer_11_unsupported",
+            "case_id": "case_transfer_11",
+            "candidate_id": "candidate_transfer_11_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_12::candidate_transfer_12_unsupported",
+            "case_id": "case_transfer_12",
+            "candidate_id": "candidate_transfer_12_unsupported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_12::candidate_transfer_12_supported",
+            "case_id": "case_transfer_12",
+            "candidate_id": "candidate_transfer_12_supported",
+            "phenomenon": "attribution",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_13::candidate_transfer_13_supported",
+            "case_id": "case_transfer_13",
+            "candidate_id": "candidate_transfer_13_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_13::candidate_transfer_13_unsupported",
+            "case_id": "case_transfer_13",
+            "candidate_id": "candidate_transfer_13_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_14::candidate_transfer_14_unsupported",
+            "case_id": "case_transfer_14",
+            "candidate_id": "candidate_transfer_14_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_14::candidate_transfer_14_supported",
+            "case_id": "case_transfer_14",
+            "candidate_id": "candidate_transfer_14_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_15::candidate_transfer_15_supported",
+            "case_id": "case_transfer_15",
+            "candidate_id": "candidate_transfer_15_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_15::candidate_transfer_15_unsupported",
+            "case_id": "case_transfer_15",
+            "candidate_id": "candidate_transfer_15_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_16::candidate_transfer_16_unsupported",
+            "case_id": "case_transfer_16",
+            "candidate_id": "candidate_transfer_16_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_16::candidate_transfer_16_supported",
+            "case_id": "case_transfer_16",
+            "candidate_id": "candidate_transfer_16_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_17::candidate_transfer_17_supported",
+            "case_id": "case_transfer_17",
+            "candidate_id": "candidate_transfer_17_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_17::candidate_transfer_17_unsupported",
+            "case_id": "case_transfer_17",
+            "candidate_id": "candidate_transfer_17_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_18::candidate_transfer_18_unsupported",
+            "case_id": "case_transfer_18",
+            "candidate_id": "candidate_transfer_18_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_18::candidate_transfer_18_supported",
+            "case_id": "case_transfer_18",
+            "candidate_id": "candidate_transfer_18_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_19::candidate_transfer_19_supported",
+            "case_id": "case_transfer_19",
+            "candidate_id": "candidate_transfer_19_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_19::candidate_transfer_19_unsupported",
+            "case_id": "case_transfer_19",
+            "candidate_id": "candidate_transfer_19_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_20::candidate_transfer_20_unsupported",
+            "case_id": "case_transfer_20",
+            "candidate_id": "candidate_transfer_20_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_20::candidate_transfer_20_supported",
+            "case_id": "case_transfer_20",
+            "candidate_id": "candidate_transfer_20_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "ineligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 13
+          },
+          {
+            "item_id": "case_transfer_21::candidate_transfer_21_supported",
+            "case_id": "case_transfer_21",
+            "candidate_id": "candidate_transfer_21_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_21::candidate_transfer_21_unsupported",
+            "case_id": "case_transfer_21",
+            "candidate_id": "candidate_transfer_21_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_22::candidate_transfer_22_unsupported",
+            "case_id": "case_transfer_22",
+            "candidate_id": "candidate_transfer_22_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_22::candidate_transfer_22_supported",
+            "case_id": "case_transfer_22",
+            "candidate_id": "candidate_transfer_22_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_23::candidate_transfer_23_supported",
+            "case_id": "case_transfer_23",
+            "candidate_id": "candidate_transfer_23_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_23::candidate_transfer_23_unsupported",
+            "case_id": "case_transfer_23",
+            "candidate_id": "candidate_transfer_23_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "unsupported",
+              "eligibility": "uncertain"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 12
+          },
+          {
+            "item_id": "case_transfer_24::candidate_transfer_24_unsupported",
+            "case_id": "case_transfer_24",
+            "candidate_id": "candidate_transfer_24_unsupported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "unsupported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          },
+          {
+            "item_id": "case_transfer_24::candidate_transfer_24_supported",
+            "case_id": "case_transfer_24",
+            "candidate_id": "candidate_transfer_24_supported",
+            "phenomenon": "condition",
+            "reference": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "verdict": {
+              "support": "supported",
+              "eligibility": "eligible"
+            },
+            "valid": true,
+            "malformed": false,
+            "finish_reason": "eos",
+            "output_tokens": 11
+          }
+        ],
+        "pair_results": [
+          {
+            "case_id": "case_transfer_01",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_02",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_03",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_04",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_05",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_06",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_07",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_08",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_09",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_10",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_11",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_12",
+            "phenomenon": "attribution",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_13",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_14",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_15",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_16",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_17",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_18",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_19",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_20",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          },
+          {
+            "case_id": "case_transfer_21",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_22",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_23",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": true
+          },
+          {
+            "case_id": "case_transfer_24",
+            "phenomenon": "condition",
+            "candidate_count": 2,
+            "decisive": true,
+            "both_support_labels_correct": false
+          }
+        ],
+        "aggregate": {
+          "candidate_count": 48,
+          "support": {
+            "by_reference": {
+              "supported": {
+                "total": 24,
+                "retained": 24,
+                "retention_rate": 1.0
+              },
+              "unsupported": {
+                "total": 24,
+                "caught": 22,
+                "catch_rate": 0.9166666666666666
+              },
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "confusion": {
+              "supported": {
+                "supported": 24,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              },
+              "unsupported": {
+                "supported": 2,
+                "unsupported": 22,
+                "uncertain": 0,
+                "invalid": 0
+              },
+              "uncertain": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            },
+            "decisive_exact_correct": 46,
+            "decisive_total": 48,
+            "decisive_accuracy": 0.9583333333333334,
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "eligibility": {
+            "by_reference": {
+              "eligible": {
+                "total": 38,
+                "correct": 21,
+                "accuracy": 0.5526315789473685
+              },
+              "ineligible": {
+                "total": 4,
+                "correct": 4,
+                "accuracy": 1.0
+              },
+              "uncertain": {
+                "total": 6,
+                "exact_correct": 6,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 6,
+                  "invalid": 0
+                }
+              }
+            },
+            "confusion": {
+              "eligible": {
+                "eligible": 21,
+                "ineligible": 2,
+                "uncertain": 15,
+                "invalid": 0
+              },
+              "ineligible": {
+                "eligible": 0,
+                "ineligible": 4,
+                "uncertain": 0,
+                "invalid": 0
+              },
+              "uncertain": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 6,
+                "invalid": 0
+              }
+            },
+            "decisive_exact_correct": 25,
+            "decisive_total": 42,
+            "decisive_accuracy": 0.5952380952380952,
+            "uncertain": {
+              "total": 6,
+              "exact_correct": 6,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 6,
+                "invalid": 0
+              }
+            }
+          },
+          "support_pairs": {
+            "total": 24,
+            "decisive_total": 24,
+            "both_support_labels_correct": 22,
+            "exact_rate": 0.9166666666666666,
+            "excluded_uncertain": 0
+          },
+          "telemetry": {
+            "output_tokens": 561,
+            "items_with_output_tokens": 48
+          },
+          "validity": {
+            "total": 48,
+            "valid": 48,
+            "invalid": 0,
+            "rate": 1.0,
+            "malformed": 0,
+            "truncated": 0,
+            "finish_reasons": {
+              "eos": 48,
+              "length": 0,
+              "unknown": 0,
+              "empty": 0
+            }
+          },
+          "per_phenomenon": {
+            "attribution": {
+              "candidate_count": 24,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 12,
+                    "retained": 12,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 12,
+                    "caught": 12,
+                    "catch_rate": 1.0
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 12,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 0,
+                    "unsupported": 12,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 24,
+                "decisive_total": 24,
+                "decisive_accuracy": 1.0,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 18,
+                    "correct": 9,
+                    "accuracy": 0.5
+                  },
+                  "ineligible": {
+                    "total": 2,
+                    "correct": 2,
+                    "accuracy": 1.0
+                  },
+                  "uncertain": {
+                    "total": 4,
+                    "exact_correct": 4,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 4,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 9,
+                    "ineligible": 2,
+                    "uncertain": 7,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 0,
+                    "ineligible": 2,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 4,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 11,
+                "decisive_total": 20,
+                "decisive_accuracy": 0.55,
+                "uncertain": {
+                  "total": 4,
+                  "exact_correct": 4,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 4,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 12,
+                "decisive_total": 12,
+                "both_support_labels_correct": 12,
+                "exact_rate": 1.0,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 283,
+                "items_with_output_tokens": 24
+              },
+              "validity": {
+                "total": 24,
+                "valid": 24,
+                "invalid": 0,
+                "rate": 1.0,
+                "malformed": 0,
+                "truncated": 0,
+                "finish_reasons": {
+                  "eos": 24,
+                  "length": 0,
+                  "unknown": 0,
+                  "empty": 0
+                }
+              }
+            },
+            "condition": {
+              "candidate_count": 24,
+              "support": {
+                "by_reference": {
+                  "supported": {
+                    "total": 12,
+                    "retained": 12,
+                    "retention_rate": 1.0
+                  },
+                  "unsupported": {
+                    "total": 12,
+                    "caught": 10,
+                    "catch_rate": 0.8333333333333334
+                  },
+                  "uncertain": {
+                    "total": 0,
+                    "exact_correct": 0,
+                    "prediction_counts": {
+                      "supported": 0,
+                      "unsupported": 0,
+                      "uncertain": 0,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "supported": {
+                    "supported": 12,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "unsupported": {
+                    "supported": 2,
+                    "unsupported": 10,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 22,
+                "decisive_total": 24,
+                "decisive_accuracy": 0.9166666666666666,
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "eligibility": {
+                "by_reference": {
+                  "eligible": {
+                    "total": 20,
+                    "correct": 12,
+                    "accuracy": 0.6
+                  },
+                  "ineligible": {
+                    "total": 2,
+                    "correct": 2,
+                    "accuracy": 1.0
+                  },
+                  "uncertain": {
+                    "total": 2,
+                    "exact_correct": 2,
+                    "prediction_counts": {
+                      "eligible": 0,
+                      "ineligible": 0,
+                      "uncertain": 2,
+                      "invalid": 0
+                    }
+                  }
+                },
+                "confusion": {
+                  "eligible": {
+                    "eligible": 12,
+                    "ineligible": 0,
+                    "uncertain": 8,
+                    "invalid": 0
+                  },
+                  "ineligible": {
+                    "eligible": 0,
+                    "ineligible": 2,
+                    "uncertain": 0,
+                    "invalid": 0
+                  },
+                  "uncertain": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                },
+                "decisive_exact_correct": 14,
+                "decisive_total": 22,
+                "decisive_accuracy": 0.6363636363636364,
+                "uncertain": {
+                  "total": 2,
+                  "exact_correct": 2,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                }
+              },
+              "support_pairs": {
+                "total": 12,
+                "decisive_total": 12,
+                "both_support_labels_correct": 10,
+                "exact_rate": 0.8333333333333334,
+                "excluded_uncertain": 0
+              },
+              "telemetry": {
+                "output_tokens": 278,
+                "items_with_output_tokens": 24
+              },
+              "validity": {
+                "total": 24,
+                "valid": 24,
+                "invalid": 0,
+                "rate": 1.0,
+                "malformed": 0,
+                "truncated": 0,
+                "finish_reasons": {
+                  "eos": 24,
+                  "length": 0,
+                  "unknown": 0,
+                  "empty": 0
+                }
+              }
+            }
+          },
+          "no_filter_control": {
+            "policy": "predict supported and eligible for every candidate; retain all candidates",
+            "retained_candidate_count": 48,
+            "retention_rate": 1.0,
+            "candidate_count": 48,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 24,
+                  "retained": 24,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 24,
+                  "caught": 0,
+                  "catch_rate": 0.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 24,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 24,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 24,
+              "decisive_total": 48,
+              "decisive_accuracy": 0.5,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 38,
+                  "correct": 38,
+                  "accuracy": 1.0
+                },
+                "ineligible": {
+                  "total": 4,
+                  "correct": 0,
+                  "accuracy": 0.0
+                },
+                "uncertain": {
+                  "total": 6,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 6,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 38,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 4,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 6,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 38,
+              "decisive_total": 42,
+              "decisive_accuracy": 0.9047619047619048,
+              "uncertain": {
+                "total": 6,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 6,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "support_pairs": {
+              "total": 24,
+              "decisive_total": 24,
+              "both_support_labels_correct": 0,
+              "exact_rate": 0.0,
+              "excluded_uncertain": 0
+            },
+            "telemetry": {
+              "output_tokens": 0,
+              "items_with_output_tokens": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "criterion": {
+    "passed": false,
+    "thresholds": {
+      "supported_retained_min": 22,
+      "unsupported_rejected_min": 23,
+      "all48_valid_untruncated": true,
+      "strictly_fewer_unsupported_accepted_than_matched_base": true,
+      "no_fewer_supported_retained_than_matched_base": true
+    },
+    "checks": {
+      "supported_retention": true,
+      "unsupported_rejection": false,
+      "all48_valid_untruncated": true,
+      "fewer_unsupported_accepted": true,
+      "no_worse_supported_retention": true
+    },
+    "observed": {
+      "baseline": {
+        "supported_retained": 24,
+        "supported_total": 24,
+        "unsupported_rejected": 10,
+        "unsupported_total": 24,
+        "unsupported_accepted": 8,
+        "unsupported_uncertain": 6,
+        "valid_untruncated": true,
+        "valid_count": 48,
+        "truncated_count": 0
+      },
+      "tuned": {
+        "supported_retained": 24,
+        "supported_total": 24,
+        "unsupported_rejected": 22,
+        "unsupported_total": 24,
+        "unsupported_accepted": 2,
+        "unsupported_uncertain": 0,
+        "valid_untruncated": true,
+        "valid_count": 48,
+        "truncated_count": 0
+      }
+    },
+    "scope": "Support counts use supported and unsupported references only; uncertain references remain separate in each full score."
+  }
+}

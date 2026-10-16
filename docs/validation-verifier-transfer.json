@@ -1,0 +1,114 @@
+{
+  "created_at_utc": "2026-10-16T20:40:10.798294+00:00",
+  "scope": "Local private review preparation and frozen-adapter fiction-only transfer inference; no training in this slice",
+  "status": "Local checks and receipt replay passed; signed private delivery pending",
+  "full_source_check_before_narrow_mount_fix": {
+    "command": "make check PYTHON=.venv/bin/python",
+    "exit_code": 0,
+    "attempted": 999,
+    "passed": 998,
+    "skipped": 1,
+    "seconds": 69.438,
+    "ruff": "pass",
+    "formatted_files": 204,
+    "strict_mypy_files": 61,
+    "log": ".local/private-eval-20261016/root-full-check-v1.log",
+    "sha256": "f470706c3bf779a86474cee6f49d391c969cb20e81658dbeb28a0f4d816ef371",
+    "coverage_note": "before narrow Modal canonical mount alias correction; focused regression+lint/typecheck will verify correction"
+  },
+  "focused_check_after_narrow_mount_fix": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_modal_verifier_transfer tests.test_evaluate_verifier_transfer tests.test_private_eval -q",
+    "exit_code": 0,
+    "passed": 41,
+    "runner": 13,
+    "evaluator": 10,
+    "private_preparation": 18,
+    "log": ".local/private-eval-20261016/root-focused-check-v2.log",
+    "log_sha256": "4feddee87eb486285426fa8224694c0fbbd2c37441dd0639e883bcdaeed05fae",
+    "ruff": "passed",
+    "format": "6 files passed",
+    "mypy": "3 modules passed"
+  },
+  "source_sha256": {
+    "examples/synthetic/verifier-transfer-v1.json": "6696c78b35499933310eeabdf626d683d5af122524fb5e50640d85043e7d20e9",
+    "experiments/evaluate_verifier_pairs.py": "60d3f222dd44f7db8f2b6563267483428088f4209b54656d0c49449c8ae928a4",
+    "experiments/evaluate_verifier_transfer.py": "805bb1279fcdb6f2d64b7ff31fefb4518e90dea43d0197c5e8ec47e23a66ae32",
+    "experiments/modal_verifier_pairs.py": "1a43e8185fcf0f1ed1002c1a9dfde812a48b6919d9a98d0e89cab134cbc9d9ea",
+    "experiments/modal_verifier_transfer.py": "e1d910b0d1d6db41ddbfa16621e6f8bbdc7d6eded7c3ce581f2a2caea99ef8af",
+    "experiments/scenario_payload.py": "14dc66ff020b04b483a9166707972393570ab09c120638f2027055f171a90252",
+    "experiments/sft_launch.py": "8d81c94f583421deceea9ff569bb6237ef18706a1756ae883a35ab8a69b4c21b",
+    "experiments/verifier_pairs.py": "9d728c5376e0d649dfb06411b5c4ecd69b3036ae7e915e547368c745b9e95cae",
+    "training/verifier_data.py": "ada22823e053042d6d20e533f35410d852855607c8f6d51fd3cab93d8a4234c6",
+    "experiments/private_eval.py": "82b57cc5f62849ce1209d81367e0d64fad8935585b3b42972838fcb40e513364",
+    "tests/test_private_eval.py": "d09bf3d0e9a802e6770a74f3b792f15eec2286e32e0287a25096cb1eb31928ec",
+    "tests/test_modal_verifier_transfer.py": "af4ab21185c6cdca65e2b99f0665ea77f21bfa290d503e499e7d7e11a22d2000",
+    "tests/test_evaluate_verifier_transfer.py": "1912281cf8b80a380a22c8c5d3d5e59808b346eca19369dda0c6045b95ae9694",
+    "pyproject.toml": "3efb3a4b2c74f72531d4a1424edfa3ca2a2cf1fa4f6057be9975a7ba7f5147b7"
+  },
+  "replay": {
+    "archived_payload_and_receipt_byte_identical": true,
+    "archived_report_equal_replay": true,
+    "receipt_sha256": "070ad8665bfd34fc7192c67943b0e27141c9cf714dfff83abb42a1de7ed4766f",
+    "payload_sha256": "5a75d57a9177d09ba36f92356758be4fe04d3cc512823d17263f1065adbf9904"
+  },
+  "result": {
+    "criterion_passed": false,
+    "observed": {
+      "baseline": {
+        "supported_retained": 24,
+        "supported_total": 24,
+        "unsupported_rejected": 10,
+        "unsupported_total": 24,
+        "unsupported_accepted": 8,
+        "unsupported_uncertain": 6,
+        "valid_untruncated": true,
+        "valid_count": 48,
+        "truncated_count": 0
+      },
+      "tuned": {
+        "supported_retained": 24,
+        "supported_total": 24,
+        "unsupported_rejected": 22,
+        "unsupported_total": 24,
+        "unsupported_accepted": 2,
+        "unsupported_uncertain": 0,
+        "valid_untruncated": true,
+        "valid_count": 48,
+        "truncated_count": 0
+      }
+    },
+    "root_decision": ".local/private-eval-20261016/root-transfer-decision-v1.json"
+  },
+  "compute": {
+    "failed_before_model_imports": 1,
+    "successful_inference_calls": 1,
+    "training_calls": 0,
+    "worker_seconds": 166.310941,
+    "client_seconds": 180.272934,
+    "gpu": "NVIDIA A10",
+    "personal_workspace_verified": true,
+    "postrun_inventory": ".local/private-eval-20261016/post-transfer-inventory-v1.json",
+    "active_tasks": 0,
+    "billing": "Not measured; timings are observed runtime, not billed cost."
+  },
+  "boundaries": {
+    "private_model_data": false,
+    "private_sources": "read-only; local review snapshot only; labels pending",
+    "private_preparation": {
+      "sources": 22,
+      "windows": 36,
+      "record_appearances": 183,
+      "split": "dev only; no held-out cohort",
+      "human_reviewers": 0
+    },
+    "weights": "Modal only; no download to Mac",
+    "historical_test_run": false,
+    "sealed_candidate_opened": false,
+    "product_model_selected": false,
+    "public_publication": false,
+    "automation": "paused",
+    "human_reviewers": 0
+  },
+  "test_invocation_correction": "Initial root commands used unavailable pytest and omitted source PYTHONPATH; reran with repository unittest/source configuration. No test or implementation changes were needed.",
+  "root_review": ".local/private-eval-20261016/root-final-review-v1.json"
+}
