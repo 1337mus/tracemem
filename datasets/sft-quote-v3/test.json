@@ -1,0 +1,1831 @@
+{
+  "version": 2,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "cases": [
+    {
+      "case_id": "V3TEST-C-001",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-001",
+      "template_group": "V3TEST-TP-001",
+      "entity_ids": [
+        "V3TEST-E-001"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-001-01",
+          "message_id": "V3TEST-M-001-01",
+          "role": "user",
+          "text": "If I had loaded the kiln before the glaze dried, would the test tile have cracked?",
+          "recorded_at": "2026-01-01T00:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-002",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-002",
+      "template_group": "V3TEST-TP-002",
+      "entity_ids": [
+        "V3TEST-E-002"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-002-01",
+          "message_id": "V3TEST-M-002-01",
+          "role": "assistant",
+          "text": "The schedule lists two candidate pickup days.",
+          "recorded_at": "2026-01-01T00:09:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-002-01",
+          "message_id": "V3TEST-M-002-02",
+          "role": "user",
+          "text": "Can I compare two pickup windows next week before I decide when to collect the frame?",
+          "recorded_at": "2026-01-01T00:10:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-003",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-003",
+      "template_group": "V3TEST-TP-003",
+      "entity_ids": [
+        "V3TEST-E-003"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-003-01",
+          "message_id": "V3TEST-M-003-01",
+          "role": "user",
+          "text": "Imagine I had sent the invitation before I spoke with Niko. Would that count as confirming the room?",
+          "recorded_at": "2026-01-01T00:17:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-004",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-004",
+      "template_group": "V3TEST-TP-004",
+      "entity_ids": [
+        "V3TEST-E-004"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-004-01",
+          "message_id": "V3TEST-M-004-01",
+          "role": "user",
+          "text": "The note on the desk says, “I finished the repair yesterday.” Can you tell whether that note refers to the lamp or the clock?",
+          "recorded_at": "2026-01-01T00:25:00Z",
+          "content_kind": "quoted_document"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-005",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-005",
+      "template_group": "V3TEST-TP-005",
+      "entity_ids": [
+        "V3TEST-E-005"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-005-01",
+          "message_id": "V3TEST-M-005-01",
+          "role": "assistant",
+          "text": "Your notebook says you installed the greenhouse sensor on 2025-01-16. I need to know whether the sensor itself was fitted that day or whether only its mounting point was prepared.",
+          "recorded_at": "2026-01-01T00:33:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-005-01",
+          "message_id": "V3TEST-M-005-02",
+          "role": "user",
+          "text": "Please fix the timeline: on 2025-01-16 I only mounted the bracket; I installed the sensor on 2025-01-18 after the frost cleared.",
+          "recorded_at": "2026-01-01T00:34:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User installed the greenhouse sensor after the frost cleared.",
+          "message_id": "V3TEST-M-005-02",
+          "quote": "Please fix the timeline: on 2025-01-16 I only mounted the bracket; I installed the sensor on 2025-01-18 after the frost cleared.",
+          "valid_from": "2025-01-18",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-006",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-006",
+      "template_group": "V3TEST-TP-006",
+      "entity_ids": [
+        "V3TEST-E-006"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-006-01",
+          "message_id": "V3TEST-M-006-01",
+          "role": "assistant",
+          "text": "The return note has two dates, and I cannot tell which one marks when the label actually went out. What happened after the shop reopened?",
+          "recorded_at": "2026-01-01T00:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-006-01",
+          "message_id": "V3TEST-M-006-02",
+          "role": "user",
+          "text": "I told you the return label was sent on 2025-02-03, but that was premature. I sent the label on 2025-02-06 once the shop reopened.",
+          "recorded_at": "2026-01-01T00:42:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-006-01",
+          "message_id": "V3TEST-M-006-03",
+          "role": "assistant",
+          "text": "Understood; I will update the return record with the date you gave me.",
+          "recorded_at": "2026-01-01T00:43:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User sent the return label once the shop reopened.",
+          "message_id": "V3TEST-M-006-02",
+          "quote": "I told you the return label was sent on 2025-02-03, but that was premature. I sent the label on 2025-02-06 once the shop reopened.",
+          "valid_from": "2025-02-06",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-007",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-007",
+      "template_group": "V3TEST-TP-007",
+      "entity_ids": [
+        "V3TEST-E-007"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-007-01",
+          "message_id": "V3TEST-M-007-01",
+          "role": "user",
+          "text": "I was considering the early ferry but had not bought a ticket.",
+          "recorded_at": "2026-01-01T00:49:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-007-01",
+          "message_id": "V3TEST-M-007-02",
+          "role": "assistant",
+          "text": "Do you want me to note the possible sailing?",
+          "recorded_at": "2026-01-01T00:50:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-007-02",
+          "message_id": "V3TEST-M-007-03",
+          "role": "assistant",
+          "text": "You were choosing between the morning and noon crossings.",
+          "recorded_at": "2026-01-01T00:51:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-007-02",
+          "message_id": "V3TEST-M-007-04",
+          "role": "user",
+          "text": "Correction from my booking email: I booked the 08:20 sailing on 2025-04-11, not the noon one.",
+          "recorded_at": "2026-01-01T00:52:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User booked the 08:20 ferry sailing.",
+          "message_id": "V3TEST-M-007-04",
+          "quote": "Correction from my booking email: I booked the 08:20 sailing on 2025-04-11, not the noon one.",
+          "valid_from": "2025-04-11",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-008",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-008",
+      "template_group": "V3TEST-TP-008",
+      "entity_ids": [
+        "V3TEST-E-008"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-008-01",
+          "message_id": "V3TEST-M-008-01",
+          "role": "assistant",
+          "text": "Great, the town desk has your forms. Was that based on a completed drop-off, or only on the plan in your calendar?",
+          "recorded_at": "2026-01-01T00:57:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-008-01",
+          "message_id": "V3TEST-M-008-02",
+          "role": "user",
+          "text": "That was only my plan: I meant to drop the forms at the town desk on 2025-05-08, but left them in my bag and did not drop them off.",
+          "recorded_at": "2026-01-01T00:58:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user planned to drop off the forms at the town desk on 2025-05-08, but left them in their bag and did not drop them off.",
+          "message_id": "V3TEST-M-008-02",
+          "quote": "That was only my plan: I meant to drop the forms at the town desk on 2025-05-08, but left them in my bag and did not drop them off.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-009",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-009",
+      "template_group": "V3TEST-TP-009",
+      "entity_ids": [
+        "V3TEST-E-009"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-009-01",
+          "message_id": "V3TEST-M-009-01",
+          "role": "assistant",
+          "text": "The project thread contains an earlier status saying the package was ready. Before I change the timeline, can you tell me which step was actually completed and when?",
+          "recorded_at": "2026-01-01T01:05:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-009-01",
+          "message_id": "V3TEST-M-009-02",
+          "role": "user",
+          "text": "I posted “the replacement was installed” in the group chat too early; I set the package beside the sink, then installed the replacement on 2025-06-20.",
+          "recorded_at": "2026-01-01T01:06:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User installed the replacement on 2025-06-20.",
+          "message_id": "V3TEST-M-009-02",
+          "quote": "I posted “the replacement was installed” in the group chat too early; I set the package beside the sink, then installed the replacement on 2025-06-20.",
+          "valid_from": "2025-06-20",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-010",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-010",
+      "template_group": "V3TEST-TP-010",
+      "entity_ids": [
+        "V3TEST-E-010"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-010-01",
+          "message_id": "V3TEST-M-010-01",
+          "role": "assistant",
+          "text": "Was your team on the 6:40 bus? I am trying to reconcile the coach’s departure message with the passenger list; what did you hear, and were you aboard?",
+          "recorded_at": "2026-01-01T01:13:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-010-01",
+          "message_id": "V3TEST-M-010-02",
+          "role": "user",
+          "text": "My coach told me the team bus left at 06:40 on 2025-07-02; I was not on board and do not know when it departed.",
+          "recorded_at": "2026-01-01T01:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that their coach said the team bus left at 06:40 on 2025-07-02.",
+          "message_id": "V3TEST-M-010-02",
+          "quote": "My coach told me the team bus left at 06:40 on 2025-07-02; I was not on board and do not know when it departed.",
+          "valid_from": "2025-07-02",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-011",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-011",
+      "template_group": "V3TEST-TP-011",
+      "entity_ids": [
+        "V3TEST-E-011"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-011-01",
+          "message_id": "V3TEST-M-011-01",
+          "role": "assistant",
+          "text": "I have a maintenance note with two dates attached to this valve issue. Which date is the actual call, and what happened before you made it?",
+          "recorded_at": "2026-01-01T01:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-011-01",
+          "message_id": "V3TEST-M-011-02",
+          "role": "user",
+          "text": "I did not call the repair desk on 2025-08-01; I called on 2025-08-03 after the valve stopped dripping.",
+          "recorded_at": "2026-01-01T01:22:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User called the repair desk after the valve stopped dripping.",
+          "message_id": "V3TEST-M-011-02",
+          "quote": "I did not call the repair desk on 2025-08-01; I called on 2025-08-03 after the valve stopped dripping.",
+          "valid_from": "2025-08-03",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-012",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-012",
+      "template_group": "V3TEST-TP-012",
+      "entity_ids": [
+        "V3TEST-E-012"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-012-01",
+          "message_id": "V3TEST-M-012-01",
+          "role": "assistant",
+          "text": "I heard “started labeling the tins.” Did the work continue after the voice note, and what time had you reached when the labels were done?",
+          "recorded_at": "2026-01-01T01:29:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-012-01",
+          "message_id": "V3TEST-M-012-02",
+          "role": "user",
+          "text": "For the record, I finished labeling the seed tins on 2025-09-09. I said “started” in the voice note, but the labels were all on by dinner.",
+          "recorded_at": "2026-01-01T01:30:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User finished labeling the seed tins by dinner on 2025-09-09.",
+          "message_id": "V3TEST-M-012-02",
+          "quote": "For the record, I finished labeling the seed tins on 2025-09-09. I said “started” in the voice note, but the labels were all on by dinner.",
+          "valid_from": "2025-09-09",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-013",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-013",
+      "template_group": "V3TEST-TP-013",
+      "entity_ids": [
+        "V3TEST-E-013"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-013-01",
+          "message_id": "V3TEST-M-013-01",
+          "role": "assistant",
+          "text": "The venue log uses separate fields for a requested hold and a confirmed reservation. Which status did the hall reach, and what date did the venue confirm?",
+          "recorded_at": "2026-01-01T01:37:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-013-01",
+          "message_id": "V3TEST-M-013-02",
+          "role": "user",
+          "text": "I said I had reserved the hall, but I had only requested a hold; the venue confirmed the reservation on 2025-10-12.",
+          "recorded_at": "2026-01-01T01:38:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The venue confirmed the hall reservation on 2025-10-12.",
+          "message_id": "V3TEST-M-013-02",
+          "quote": "I said I had reserved the hall, but I had only requested a hold; the venue confirmed the reservation on 2025-10-12.",
+          "valid_from": "2025-10-12",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-014",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-014",
+      "template_group": "V3TEST-TP-014",
+      "entity_ids": [
+        "V3TEST-E-014"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-014-01",
+          "message_id": "V3TEST-M-014-01",
+          "role": "assistant",
+          "text": "I can record a family member’s message without treating it as a verified account update. What exactly did your sister say about the books?",
+          "recorded_at": "2026-01-01T01:45:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-014-01",
+          "message_id": "V3TEST-M-014-02",
+          "role": "user",
+          "text": "My sister texted that she put my library books in the return slot on 2025-11-05; I have not checked the account yet.",
+          "recorded_at": "2026-01-01T01:46:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that their sister put the library books in the return slot on 2025-11-05.",
+          "message_id": "V3TEST-M-014-02",
+          "quote": "My sister texted that she put my library books in the return slot on 2025-11-05; I have not checked the account yet.",
+          "valid_from": "2025-11-05",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-015",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-015",
+      "template_group": "V3TEST-TP-015",
+      "entity_ids": [
+        "V3TEST-E-015"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-015-01",
+          "message_id": "V3TEST-M-015-01",
+          "role": "assistant",
+          "text": "Did the kiln run before the test tile cooled? The firing log and studio note use different times; what sequence did you follow?",
+          "recorded_at": "2026-01-01T01:53:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-015-01",
+          "message_id": "V3TEST-M-015-02",
+          "role": "user",
+          "text": "I waited until the test tile was cool, then started the kiln on 2025-12-02; before that I was only planning the firing.",
+          "recorded_at": "2026-01-01T01:54:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User started the kiln after the test tile was cool.",
+          "message_id": "V3TEST-M-015-02",
+          "quote": "I waited until the test tile was cool, then started the kiln on 2025-12-02; before that I was only planning the firing.",
+          "valid_from": "2025-12-02",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-016",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-016",
+      "template_group": "V3TEST-TP-016",
+      "entity_ids": [
+        "V3TEST-E-016"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-016-02",
+          "message_id": "V3TEST-M-016-01",
+          "role": "assistant",
+          "text": "The activity log still says the trail map was in drafts. Did you later post it, and was that before or after the ranger checked the route?",
+          "recorded_at": "2026-01-01T02:01:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-016-02",
+          "message_id": "V3TEST-M-016-02",
+          "role": "user",
+          "text": "Last week I described the trail map as posted, but it stayed in drafts. I posted the map on 2025-12-14 after the ranger checked the route.",
+          "recorded_at": "2026-01-01T02:02:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-016-02",
+          "message_id": "V3TEST-M-016-03",
+          "role": "assistant",
+          "text": "I will update the activity log.",
+          "recorded_at": "2026-01-01T02:03:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User posted the trail map after the ranger checked the route.",
+          "message_id": "V3TEST-M-016-02",
+          "quote": "Last week I described the trail map as posted, but it stayed in drafts. I posted the map on 2025-12-14 after the ranger checked the route.",
+          "valid_from": "2025-12-14",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-017",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-017",
+      "template_group": "V3TEST-TP-017",
+      "entity_ids": [
+        "V3TEST-E-017"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-017-01",
+          "message_id": "V3TEST-M-017-01",
+          "role": "user",
+          "text": "If a neighbor carries a carton through my kitchen, does that make it my property?",
+          "recorded_at": "2026-01-01T02:09:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-018",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-018",
+      "template_group": "V3TEST-TP-018",
+      "entity_ids": [
+        "V3TEST-E-018"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-018-01",
+          "message_id": "V3TEST-M-018-01",
+          "role": "assistant",
+          "text": "The draft has a line for “owner” and one for “current holder.”",
+          "recorded_at": "2026-01-01T02:17:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-018-01",
+          "message_id": "V3TEST-M-018-02",
+          "role": "user",
+          "text": "Could the same person be listed in both places, or do those labels mean different things?",
+          "recorded_at": "2026-01-01T02:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-019",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-019",
+      "template_group": "V3TEST-TP-019",
+      "entity_ids": [
+        "V3TEST-E-019"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-019-01",
+          "message_id": "V3TEST-M-019-01",
+          "role": "user",
+          "text": "Suppose I used a borrowed drill to hang a shelf; would that make the drill mine?",
+          "recorded_at": "2026-01-01T02:25:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-020",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-020",
+      "template_group": "V3TEST-TP-020",
+      "entity_ids": [
+        "V3TEST-E-020"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-020-01",
+          "message_id": "V3TEST-M-020-01",
+          "role": "user",
+          "text": "The printed note says, “This violin is mine.” Can you help me identify whose handwriting is on the note?",
+          "recorded_at": "2026-01-01T02:33:00Z",
+          "content_kind": "quoted_document"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-021",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-021",
+      "template_group": "V3TEST-TP-021",
+      "entity_ids": [
+        "V3TEST-E-021"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-021-01",
+          "message_id": "V3TEST-M-021-01",
+          "role": "assistant",
+          "text": "The market equipment sheet has a borrower line and a return field. What arrangement did you have for the handcart?",
+          "recorded_at": "2026-01-01T02:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-021-01",
+          "message_id": "V3TEST-M-021-02",
+          "role": "user",
+          "text": "I borrowed Jo’s red handcart for Saturday’s market. The cart is hers; I returned it to her porch before lunch.",
+          "recorded_at": "2026-01-01T02:42:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-021-01",
+          "message_id": "V3TEST-M-021-03",
+          "role": "assistant",
+          "text": "Thanks, I will update the market equipment sheet with the borrower and return details.",
+          "recorded_at": "2026-01-01T02:43:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User borrowed Jo’s red handcart for the market and returned it to Jo.",
+          "message_id": "V3TEST-M-021-02",
+          "quote": "I borrowed Jo’s red handcart for Saturday’s market. The cart is hers; I returned it to her porch before lunch.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-022",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-022",
+      "template_group": "V3TEST-TP-022",
+      "entity_ids": [
+        "V3TEST-E-022"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-022-01",
+          "message_id": "V3TEST-M-022-01",
+          "role": "assistant",
+          "text": "Since you can open the studio lockbox, should I mark you as owner of the tools? The inventory is unclear about both the access code and the items inside.",
+          "recorded_at": "2026-01-01T02:49:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-022-01",
+          "message_id": "V3TEST-M-022-02",
+          "role": "user",
+          "text": "No. The pottery tools inside belong to Ada; I have the combination only so I can water the plants.",
+          "recorded_at": "2026-01-01T02:50:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that the pottery tools belong to Ada and that the user has the lockbox combination for plant watering.",
+          "message_id": "V3TEST-M-022-02",
+          "quote": "No. The pottery tools inside belong to Ada; I have the combination only so I can water the plants.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-023",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-023",
+      "template_group": "V3TEST-TP-023",
+      "entity_ids": [
+        "V3TEST-E-023"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-023-01",
+          "message_id": "V3TEST-M-023-01",
+          "role": "assistant",
+          "text": "The storage inventory has fields for owner and temporary holder. What did your uncle say about the suitcase, and why is it at your place?",
+          "recorded_at": "2026-01-01T02:57:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-023-01",
+          "message_id": "V3TEST-M-023-02",
+          "role": "user",
+          "text": "My uncle says the blue suitcase is his. He left it with me while the stairs in his building are repaired.",
+          "recorded_at": "2026-01-01T02:58:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that their uncle says the blue suitcase is his and that he left it with the user temporarily.",
+          "message_id": "V3TEST-M-023-02",
+          "quote": "My uncle says the blue suitcase is his. He left it with me while the stairs in his building are repaired.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-024",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-024",
+      "template_group": "V3TEST-TP-024",
+      "entity_ids": [
+        "V3TEST-E-024"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-024-01",
+          "message_id": "V3TEST-M-024-01",
+          "role": "assistant",
+          "text": "The tablet appears on a recurring video-call schedule. Who owns the device, and when does your roommate use it?",
+          "recorded_at": "2026-01-01T03:05:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-024-01",
+          "message_id": "V3TEST-M-024-02",
+          "role": "user",
+          "text": "I own the tablet, and my roommate borrows it for video calls on Tuesdays.",
+          "recorded_at": "2026-01-01T03:06:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-024-01",
+          "message_id": "V3TEST-M-024-03",
+          "role": "assistant",
+          "text": "Thanks, I will update the device schedule with the recurring-use note.",
+          "recorded_at": "2026-01-01T03:07:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User owns the tablet, which their roommate borrows for Tuesday video calls.",
+          "message_id": "V3TEST-M-024-02",
+          "quote": "I own the tablet, and my roommate borrows it for video calls on Tuesdays.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-025",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-025",
+      "template_group": "V3TEST-TP-025",
+      "entity_ids": [
+        "V3TEST-E-025"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-025-01",
+          "message_id": "V3TEST-M-025-01",
+          "role": "assistant",
+          "text": "The envelope is on your desk, so I wondered whether it was yours. Is there a delivery label or any context about how it got there?",
+          "recorded_at": "2026-01-01T03:13:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-025-01",
+          "message_id": "V3TEST-M-025-02",
+          "role": "user",
+          "text": "The envelope is addressed to Nia’s café. I brought it inside so rain would not reach it, and I have not opened it.",
+          "recorded_at": "2026-01-01T03:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user brought an envelope addressed to Nia’s café inside to keep it out of the rain and has not opened it.",
+          "message_id": "V3TEST-M-025-02",
+          "quote": "The envelope is addressed to Nia’s café. I brought it inside so rain would not reach it, and I have not opened it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-026",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-026",
+      "template_group": "V3TEST-TP-026",
+      "entity_ids": [
+        "V3TEST-E-026"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-026-01",
+          "message_id": "V3TEST-M-026-01",
+          "role": "assistant",
+          "text": "The garden handover notes mention a tenant but do not say who checked the key ring. What did your father report, and what have you verified yourself?",
+          "recorded_at": "2026-01-01T03:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-026-01",
+          "message_id": "V3TEST-M-026-02",
+          "role": "user",
+          "text": "My dad says the greenhouse keys are with the new tenant, though I have not checked whether the tenant received them.",
+          "recorded_at": "2026-01-01T03:22:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that their father says the greenhouse keys are with the new tenant.",
+          "message_id": "V3TEST-M-026-02",
+          "quote": "My dad says the greenhouse keys are with the new tenant, though I have not checked whether the tenant received them.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-027",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-027",
+      "template_group": "V3TEST-TP-027",
+      "entity_ids": [
+        "V3TEST-E-027"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-027-01",
+          "message_id": "V3TEST-M-027-01",
+          "role": "assistant",
+          "text": "A checkout signature shows who signed the sheet, but not who owns an instrument. What does the checkout arrangement say about this violin?",
+          "recorded_at": "2026-01-01T03:29:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-027-01",
+          "message_id": "V3TEST-M-027-02",
+          "role": "user",
+          "text": "I signed the checkout sheet for the violin, but it is borrowed from Mina and belongs to the music room.",
+          "recorded_at": "2026-01-01T03:30:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that the violin belongs to the music room and is borrowed from Mina.",
+          "message_id": "V3TEST-M-027-02",
+          "quote": "I signed the checkout sheet for the violin, but it is borrowed from Mina and belongs to the music room.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-028",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-028",
+      "template_group": "V3TEST-TP-028",
+      "entity_ids": [
+        "V3TEST-E-028"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-028-01",
+          "message_id": "V3TEST-M-028-01",
+          "role": "assistant",
+          "text": "You appear to own the workshop files because they are in your drive. I may be jumping to conclusions from their location; what does the project record say about ownership and administration?",
+          "recorded_at": "2026-01-01T03:37:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-028-01",
+          "message_id": "V3TEST-M-028-02",
+          "role": "user",
+          "text": "The workshop files are Leila’s project records. She owns them and is the only administrator; I can view the folder.",
+          "recorded_at": "2026-01-01T03:38:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that Leila owns and administers the workshop files; user can view them.",
+          "message_id": "V3TEST-M-028-02",
+          "quote": "The workshop files are Leila’s project records. She owns them and is the only administrator; I can view the folder.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-029",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-029",
+      "template_group": "V3TEST-TP-029",
+      "entity_ids": [
+        "V3TEST-E-029"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-029-01",
+          "message_id": "V3TEST-M-029-01",
+          "role": "assistant",
+          "text": "The neighborhood roster distinguishes pet owner from overnight caretaker. Who does the green-tag dog belong to, and what are you doing for its owner?",
+          "recorded_at": "2026-01-01T03:45:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-029-01",
+          "message_id": "V3TEST-M-029-02",
+          "role": "user",
+          "text": "The dog with the green tag is my neighbor’s, and I am watching him overnight while she visits her sister.",
+          "recorded_at": "2026-01-01T03:46:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User is watching a neighbor’s dog overnight.",
+          "message_id": "V3TEST-M-029-02",
+          "quote": "The dog with the green tag is my neighbor’s, and I am watching him overnight while she visits her sister.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-030",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-030",
+      "template_group": "V3TEST-TP-030",
+      "entity_ids": [
+        "V3TEST-E-030"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-030-01",
+          "message_id": "V3TEST-M-030-01",
+          "role": "assistant",
+          "text": "Reception holds envelopes for several clinics. Before I assign this pickup, who was it for, and did you handle or read its contents?",
+          "recorded_at": "2026-01-01T03:53:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-030-01",
+          "message_id": "V3TEST-M-030-02",
+          "role": "user",
+          "text": "I picked up the sealed lab envelope for Ivo at reception. It is addressed to his clinic, and I have not read what is inside.",
+          "recorded_at": "2026-01-01T03:54:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-030-01",
+          "message_id": "V3TEST-M-030-03",
+          "role": "assistant",
+          "text": "Thanks, I will update the reception log.",
+          "recorded_at": "2026-01-01T03:55:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user picked up the sealed lab envelope for Ivo at reception; it is addressed to his clinic, and the user has not read its contents.",
+          "message_id": "V3TEST-M-030-02",
+          "quote": "I picked up the sealed lab envelope for Ivo at reception. It is addressed to his clinic, and I have not read what is inside.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-031",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-031",
+      "template_group": "V3TEST-TP-031",
+      "entity_ids": [
+        "V3TEST-E-031"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-031-01",
+          "message_id": "V3TEST-M-031-01",
+          "role": "assistant",
+          "text": "The project inventory distinguishes edit permission from ownership of the records and folder. Which part can you edit, and who makes access decisions?",
+          "recorded_at": "2026-01-01T04:01:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-031-01",
+          "message_id": "V3TEST-M-031-02",
+          "role": "user",
+          "text": "I can edit the seating chart, but the producer owns the project folder and decides who gets access.",
+          "recorded_at": "2026-01-01T04:02:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User can edit the seating chart; the producer owns the project folder and controls access.",
+          "message_id": "V3TEST-M-031-02",
+          "quote": "I can edit the seating chart, but the producer owns the project folder and decides who gets access.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-032",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-032",
+      "template_group": "V3TEST-TP-032",
+      "entity_ids": [
+        "V3TEST-E-032"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-032-01",
+          "message_id": "V3TEST-M-032-01",
+          "role": "user",
+          "text": "Would storing a borrowed ladder overnight mean I control the whole shed?",
+          "recorded_at": "2026-01-01T04:09:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-033",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-033",
+      "template_group": "V3TEST-TP-033",
+      "entity_ids": [
+        "V3TEST-E-033"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-033-01",
+          "message_id": "V3TEST-M-033-01",
+          "role": "assistant",
+          "text": "There are several possible ways to keep an archive.",
+          "recorded_at": "2026-01-01T04:17:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-033-01",
+          "message_id": "V3TEST-M-033-02",
+          "role": "user",
+          "text": "Which option would let a volunteer see the index without retaining a copy?",
+          "recorded_at": "2026-01-01T04:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-034",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-034",
+      "template_group": "V3TEST-TP-034",
+      "entity_ids": [
+        "V3TEST-E-034"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-034-01",
+          "message_id": "V3TEST-M-034-01",
+          "role": "user",
+          "text": "If I removed a guest link but left a folder in place, would the folder still exist?",
+          "recorded_at": "2026-01-01T04:25:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-035",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-035",
+      "template_group": "V3TEST-TP-035",
+      "entity_ids": [
+        "V3TEST-E-035"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-035-01",
+          "message_id": "V3TEST-M-035-01",
+          "role": "user",
+          "text": "Could a coordinator keep the master key while a volunteer controls the sign-in sheet?",
+          "recorded_at": "2026-01-01T04:33:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3TEST-C-036",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-036",
+      "template_group": "V3TEST-TP-036",
+      "entity_ids": [
+        "V3TEST-E-036"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-036-01",
+          "message_id": "V3TEST-M-036-01",
+          "role": "assistant",
+          "text": "The building inventory tracks who keeps each fob separately from the issuing office and its owner. Where do you keep this one, and who issued it?",
+          "recorded_at": "2026-01-01T04:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-036-01",
+          "message_id": "V3TEST-M-036-02",
+          "role": "user",
+          "text": "I keep a spare gate fob in the kitchen drawer; the housing office issued it and still owns it.",
+          "recorded_at": "2026-01-01T04:42:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User keeps a spare gate fob in the kitchen drawer; the housing office owns it.",
+          "message_id": "V3TEST-M-036-02",
+          "quote": "I keep a spare gate fob in the kitchen drawer; the housing office issued it and still owns it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-037",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-037",
+      "template_group": "V3TEST-TP-037",
+      "entity_ids": [
+        "V3TEST-E-037"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-037-01",
+          "message_id": "V3TEST-M-037-01",
+          "role": "assistant",
+          "text": "The access dashboard still has a green indicator. Does that match your current permission, or has the account changed? The indicator may lag behind a recent permission change.",
+          "recorded_at": "2026-01-01T04:49:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-037-01",
+          "message_id": "V3TEST-M-037-02",
+          "role": "user",
+          "text": "My read access to the archive ended on 2025-02-15; I cannot open it now.",
+          "recorded_at": "2026-01-01T04:50:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User’s read access to the archive ended on 2025-02-15.",
+          "message_id": "V3TEST-M-037-02",
+          "quote": "My read access to the archive ended on 2025-02-15; I cannot open it now.",
+          "valid_from": null,
+          "valid_to": "2025-02-15"
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-038",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-038",
+      "template_group": "V3TEST-TP-038",
+      "entity_ids": [
+        "V3TEST-E-038"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-038-01",
+          "message_id": "V3TEST-M-038-01",
+          "role": "assistant",
+          "text": "The folder still appears in the photo index, but I cannot tell whether its guest link changed or the folder itself was removed. What happened?",
+          "recorded_at": "2026-01-01T04:57:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-038-01",
+          "message_id": "V3TEST-M-038-02",
+          "role": "user",
+          "text": "I removed the guest link from my photo folder on 2025-03-09; I did not delete the folder itself.",
+          "recorded_at": "2026-01-01T04:58:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-038-01",
+          "message_id": "V3TEST-M-038-03",
+          "role": "assistant",
+          "text": "Thanks, I will update the folder record from your note.",
+          "recorded_at": "2026-01-01T04:59:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User removed a guest link from the photo folder on 2025-03-09 but did not delete the folder.",
+          "message_id": "V3TEST-M-038-02",
+          "quote": "I removed the guest link from my photo folder on 2025-03-09; I did not delete the folder itself.",
+          "valid_from": "2025-03-09",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-039",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-039",
+      "template_group": "V3TEST-TP-039",
+      "entity_ids": [
+        "V3TEST-E-039"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-039-01",
+          "message_id": "V3TEST-M-039-01",
+          "role": "assistant",
+          "text": "The handbook has a shared online version and may or may not have local copies. How do you access it, and have you saved one for yourself?",
+          "recorded_at": "2026-01-01T05:05:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-039-01",
+          "message_id": "V3TEST-M-039-02",
+          "role": "user",
+          "text": "I never saved a local copy of the handbook. I can open the shared version only while the coordinator leaves my access enabled.",
+          "recorded_at": "2026-01-01T05:06:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User has no local handbook copy and can access the shared version only while the coordinator enables access.",
+          "message_id": "V3TEST-M-039-02",
+          "quote": "I never saved a local copy of the handbook. I can open the shared version only while the coordinator leaves my access enabled.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-040",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-040",
+      "template_group": "V3TEST-TP-040",
+      "entity_ids": [
+        "V3TEST-E-040"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-040-01",
+          "message_id": "V3TEST-M-040-01",
+          "role": "assistant",
+          "text": "The equipment register asks who owns each projector, where it is stored, and whether storage is permanent or just until a pickup. What is the arrangement?",
+          "recorded_at": "2026-01-01T05:13:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-040-01",
+          "message_id": "V3TEST-M-040-02",
+          "role": "user",
+          "text": "I am keeping Omar’s borrowed projector in my closet until he collects it on 2025-04-05.",
+          "recorded_at": "2026-01-01T05:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user is keeping a projector described as Omar’s borrowed projector in their closet until Omar collects it on 2025-04-05; the owner is not stated.",
+          "message_id": "V3TEST-M-040-02",
+          "quote": "I am keeping Omar’s borrowed projector in my closet until he collects it on 2025-04-05.",
+          "valid_from": null,
+          "valid_to": "2025-04-05"
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-041",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-041",
+      "template_group": "V3TEST-TP-041",
+      "entity_ids": [
+        "V3TEST-E-041"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-041-01",
+          "message_id": "V3TEST-M-041-01",
+          "role": "assistant",
+          "text": "You can manage the access card, so I was about to mark you as its owner. Does your role include ownership, or only access changes? Who assigns the schedule?",
+          "recorded_at": "2026-01-01T05:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-041-01",
+          "message_id": "V3TEST-M-041-02",
+          "role": "user",
+          "text": "I can revoke the visitor card’s access, but Facilities owns the card and assigns the schedule.",
+          "recorded_at": "2026-01-01T05:22:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User can revoke visitor-card access; Facilities owns the card and assigns its schedule.",
+          "message_id": "V3TEST-M-041-02",
+          "quote": "I can revoke the visitor card’s access, but Facilities owns the card and assigns the schedule.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-042",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-042",
+      "template_group": "V3TEST-TP-042",
+      "entity_ids": [
+        "V3TEST-E-042"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-042-01",
+          "message_id": "V3TEST-M-042-01",
+          "role": "assistant",
+          "text": "The harbor committee mentioned possible duplication in its meeting notes. Before updating the copy log, can you say whether the second map exists?",
+          "recorded_at": "2026-01-01T05:29:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-042-01",
+          "message_id": "V3TEST-M-042-02",
+          "role": "user",
+          "text": "We discussed making a second copy of the harbor map, but I have not duplicated it; the original stays in the boathouse.",
+          "recorded_at": "2026-01-01T05:30:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user and others discussed a second harbor-map copy; the user has not made a duplicate, and the original remains in the boathouse.",
+          "message_id": "V3TEST-M-042-02",
+          "quote": "We discussed making a second copy of the harbor map, but I have not duplicated it; the original stays in the boathouse.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-043",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-043",
+      "template_group": "V3TEST-TP-043",
+      "entity_ids": [
+        "V3TEST-E-043"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-043-01",
+          "message_id": "V3TEST-M-043-01",
+          "role": "assistant",
+          "text": "The key ledger has separate fields for the person responsible before a handoff and the person who received the keys. Who handled them and when?",
+          "recorded_at": "2026-01-01T05:37:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-043-01",
+          "message_id": "V3TEST-M-043-02",
+          "role": "user",
+          "text": "I handled the mailbox keys through 2025-06-30, then handed the ring to Ren on 2025-07-01.",
+          "recorded_at": "2026-01-01T05:38:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User handled the mailbox keys through 2025-06-30.",
+          "message_id": "V3TEST-M-043-02",
+          "quote": "I handled the mailbox keys through 2025-06-30, then handed the ring to Ren on 2025-07-01.",
+          "valid_from": null,
+          "valid_to": "2025-06-30"
+        },
+        {
+          "claim": "User handed the mailbox key ring to Ren on 2025-07-01.",
+          "message_id": "V3TEST-M-043-02",
+          "quote": "I handled the mailbox keys through 2025-06-30, then handed the ring to Ren on 2025-07-01.",
+          "valid_from": "2025-07-01",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-044",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-044",
+      "template_group": "V3TEST-TP-044",
+      "entity_ids": [
+        "V3TEST-E-044"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-044-01",
+          "message_id": "V3TEST-M-044-01",
+          "role": "assistant",
+          "text": "Since the group folder sits in your account, I will list you as owner.",
+          "recorded_at": "2026-01-01T05:45:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-044-01",
+          "message_id": "V3TEST-M-044-02",
+          "role": "user",
+          "text": "The volunteer group has not picked another admin, so the shared folder still sits in my account. I can invite or remove members, but the council owns the records.",
+          "recorded_at": "2026-01-01T05:46:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The shared folder remains in the user’s account and the user can invite or remove members; the council owns the records.",
+          "message_id": "V3TEST-M-044-02",
+          "quote": "The volunteer group has not picked another admin, so the shared folder still sits in my account. I can invite or remove members, but the council owns the records.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-045",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-045",
+      "template_group": "V3TEST-TP-045",
+      "entity_ids": [
+        "V3TEST-E-045"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-045-01",
+          "message_id": "V3TEST-M-045-01",
+          "role": "assistant",
+          "text": "Clinic records distinguish the personal sign-in sheet from the clinic’s master roster. Which paper did you dispose of, and what happened to the other one?",
+          "recorded_at": "2026-01-01T05:53:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-045-01",
+          "message_id": "V3TEST-M-045-02",
+          "role": "user",
+          "text": "I shredded my own sign-in sheet on 2025-08-19; I did not shred the master roster, which belongs to the clinic.",
+          "recorded_at": "2026-01-01T05:54:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User shredded their own sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster.",
+          "message_id": "V3TEST-M-045-02",
+          "quote": "I shredded my own sign-in sheet on 2025-08-19; I did not shred the master roster, which belongs to the clinic.",
+          "valid_from": "2025-08-19",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-046",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-046",
+      "template_group": "V3TEST-TP-046",
+      "entity_ids": [
+        "V3TEST-E-046"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-046-01",
+          "message_id": "V3TEST-M-046-01",
+          "role": "assistant",
+          "text": "The supply cabinet log tracks who stores batteries and whether a box changes hands. What was your role with the lantern batteries?",
+          "recorded_at": "2026-01-01T06:01:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-046-01",
+          "message_id": "V3TEST-M-046-02",
+          "role": "user",
+          "text": "I used to keep the lantern batteries in my desk, but I handed the box to Mara on 2025-09-03 and no longer store them.",
+          "recorded_at": "2026-01-01T06:02:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User handed the lantern-battery box to Mara on 2025-09-03 and no longer stores it.",
+          "message_id": "V3TEST-M-046-02",
+          "quote": "I used to keep the lantern batteries in my desk, but I handed the box to Mara on 2025-09-03 and no longer store them.",
+          "valid_from": "2025-09-03",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-047",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-047",
+      "template_group": "V3TEST-TP-047",
+      "entity_ids": [
+        "V3TEST-E-047"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-047-01",
+          "message_id": "V3TEST-M-047-01",
+          "role": "assistant",
+          "text": "Calendar permissions can allow someone to close a schedule without making them its owner. What permission do you have, and who owns the calendar?",
+          "recorded_at": "2026-01-01T06:09:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-047-01",
+          "message_id": "V3TEST-M-047-02",
+          "role": "user",
+          "text": "I am the only person with permission to close the reading-room calendar, but the library board owns it and can restore access.",
+          "recorded_at": "2026-01-01T06:10:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User alone has permission to close the reading-room calendar; the library board owns it and can restore access.",
+          "message_id": "V3TEST-M-047-02",
+          "quote": "I am the only person with permission to close the reading-room calendar, but the library board owns it and can restore access.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-048",
+      "split": "test",
+      "scenario_group": "V3TEST-SC-048",
+      "template_group": "V3TEST-TP-048",
+      "entity_ids": [
+        "V3TEST-E-048"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3TEST-S-048-01",
+          "message_id": "V3TEST-M-048-01",
+          "role": "assistant",
+          "text": "I can see the handcart in your garage; should I list it as yours?",
+          "recorded_at": "2026-01-01T06:17:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3TEST-S-048-01",
+          "message_id": "V3TEST-M-048-02",
+          "role": "user",
+          "text": "No, the community theater owns the handcart. I kept it in my garage for them, then returned it to the stage crew after rehearsal on 2025-11-21.",
+          "recorded_at": "2026-01-01T06:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User temporarily kept the community theater’s handcart and returned it to the stage crew after rehearsal.",
+          "message_id": "V3TEST-M-048-02",
+          "quote": "No, the community theater owns the handcart. I kept it in my garage for them, then returned it to the stage crew after rehearsal on 2025-11-21.",
+          "valid_from": "2025-11-21",
+          "valid_to": null
+        }
+      ]
+    }
+  ]
+}

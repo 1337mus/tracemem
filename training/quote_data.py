@@ -26,7 +26,7 @@ _MESSAGE_KEYS = {
     "content_kind",
 }
 _CLAIM_KEYS = {"claim", "message_id", "quote", "valid_from", "valid_to"}
-_SPLITS = {"train", "dev"}
+_SPLITS = {"train", "dev", "test"}
 _ROLES = {"user", "assistant", "tool"}
 _CONTENT_KINDS = {"conversation", "quoted_document", "tool_result"}
 
@@ -34,7 +34,7 @@ _CONTENT_KINDS = {"conversation", "quoted_document", "tool_result"}
 def validate_dataset(payload: object, split: str) -> list[dict[str, Any]]:
     """Validate and return one authored-fiction quote-v2 split."""
     if split not in _SPLITS:
-        raise ValueError("split must be train or dev")
+        raise ValueError("split must be train, dev, or test")
     if type(payload) is not dict or set(payload) != _ROOT_KEYS:
         raise ValueError("dataset root has missing or unexpected fields")
     if type(payload["version"]) is not int or payload["version"] != 2:

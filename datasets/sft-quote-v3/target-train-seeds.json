@@ -1,0 +1,1249 @@
+{
+  "seed": 23,
+  "split": "train",
+  "variants": 8,
+  "value_banks": {
+    "person": [
+      "Nia Sol",
+      "Omar Vale",
+      "Priya Das",
+      "Lena Ortiz",
+      "Theo Park",
+      "Mira Chen",
+      "Jules Reed",
+      "Amara Fox"
+    ],
+    "product": [
+      "MapleNote",
+      "Fieldnote",
+      "LedgerLoop",
+      "CloudVault",
+      "FormNest",
+      "Northstar",
+      "Caseboard",
+      "TallyOak"
+    ],
+    "object": [
+      "camera kit",
+      "archive box",
+      "loaner tablet",
+      "instrument case",
+      "map portfolio",
+      "sealed parcel",
+      "field recorder",
+      "repair case"
+    ],
+    "place": [
+      "Cedar studio",
+      "North depot",
+      "Harbor archive",
+      "Maple lab",
+      "West garage",
+      "Loft 3",
+      "Market office",
+      "Hill studio"
+    ],
+    "date_from": [
+      "2024-04-10",
+      "2024-06-12",
+      "2024-08-14",
+      "2024-10-16",
+      "2025-01-18",
+      "2025-03-20",
+      "2025-05-22",
+      "2025-07-24"
+    ],
+    "date_to": [
+      "2024-04-11",
+      "2024-06-13",
+      "2024-08-15",
+      "2024-10-17",
+      "2025-01-19",
+      "2025-03-21",
+      "2025-05-23",
+      "2025-07-25"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "V3T01-wording-leaning-not-choice",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I might choose {product}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Do you want me to add it to the comparison?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction: the word might in my earlier message was inaccurate; I had already chosen {product} on {date_from}."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I save the selection confirmation?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Save it with the setup fee estimate."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The confirmation is saved with the estimate."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user corrects earlier wording: the user had already chosen {product} on {date_from}.",
+          "message_ref": "u2",
+          "quote": "Correction: the word might in my earlier message was inaccurate; I had already chosen {product} on {date_from}.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T02-corrected-approval-report",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I sent {person} an update about {product}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Do you want me to open the update?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction to my earlier update: I had not approved the {product} plan; I had only asked for its price."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I attach the estimate to the budget draft?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, attach it to the current draft."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The estimate is attached."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user corrects the earlier update: the user had only asked for the {product} price and had not approved the plan.",
+          "message_ref": "u2",
+          "quote": "Correction to my earlier update: I had not approved the {product} plan; I had only asked for its price.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T03-paused-not-rejected",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The note from yesterday was about the {product} trial."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Do you want me to reopen the note?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction to that note: I did not reject {product}; I paused the trial while comparing its renewal price."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I leave the reminder active?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, leave the reminder for Friday."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The reminder is active."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user corrects the note: the user paused the {product} trial while comparing its renewal price and did not reject it.",
+          "message_ref": "u2",
+          "quote": "Correction to that note: I did not reject {product}; I paused the trial while comparing its renewal price.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T04-favorite-not-final-pick",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I wrote that I was considering {product}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like the note changed?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction: I had already chosen {product} on {date_from}; the earlier phrase about considering it was inaccurate."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I attach the selection confirmation?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, put it with the comparison."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The confirmation is attached."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user corrects earlier wording: the user had already chosen {product} on {date_from}.",
+          "message_ref": "u2",
+          "quote": "Correction: I had already chosen {product} on {date_from}; the earlier phrase about considering it was inaccurate.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T05-review-finished-not-subscription-ended",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I told {person} I was done with {product}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Do you mean the review or the subscription?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "To clarify my earlier wording, I had finished reviewing {product}'s terms; I did not mean that I had ended the subscription."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like the renewal notice forwarded?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, send it to the shared inbox."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The notice was forwarded."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user clarifies that the earlier phrase done referred to finishing review of {product}'s terms, not to ending the subscription.",
+          "message_ref": "u2",
+          "quote": "To clarify my earlier wording, I had finished reviewing {product}'s terms; I did not mean that I had ended the subscription.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T06-corrected-switch-report",
+      "tags": [
+        "chronology",
+        "correction",
+        "decision-state"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The meeting summary mentions {product} billing."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I open the summary?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Correction to the summary: I had not switched to annual billing; I had only requested the annual price quote for {product}."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I request the monthly quote too?"
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, ask for both billing options."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The request is sent."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user corrects the summary: the user had only requested {product}'s annual price quote and had not switched to annual billing.",
+          "message_ref": "u2",
+          "quote": "Correction to the summary: I had not switched to annual billing; I had only requested the annual price quote for {product}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T07-explicit-choice-change-monthly-to-annual",
+      "tags": [
+        "chronology",
+        "decision-change",
+        "completed"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I chose monthly billing for {product} on {date_from}, then changed that decision and chose its annual plan on {date_to}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I save the updated confirmation?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, archive the annual confirmation."
+        },
+        {
+          "ref": "t1",
+          "role": "tool",
+          "session": 1,
+          "content_kind": "tool_result",
+          "text": "Archive status: saved."
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Keep the earlier confirmation next to it."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Both confirmations are saved together."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user chose monthly billing for {product} on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I chose monthly billing for {product} on {date_from}, then changed that decision and chose its annual plan on {date_to}.",
+          "valid_from": "{date_from}",
+          "valid_to": "{date_to}"
+        },
+        {
+          "claim": "The user changed that decision and chose the annual plan for {product} on {date_to}.",
+          "message_ref": "u1",
+          "quote": "changed that decision and chose its annual plan on {date_to}",
+          "valid_from": "{date_to}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T08-explicit-choice-change-annual-to-monthly",
+      "tags": [
+        "chronology",
+        "decision-change",
+        "completed"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I committed to the annual {product} plan on {date_from}; on {date_to}, I reversed that decision and switched to monthly billing instead."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like the old invoice copied to the renewal folder?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, keep both invoices together."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The folder now contains both invoices."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user committed to the annual {product} plan on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I committed to the annual {product} plan on {date_from}; on {date_to}, I reversed that decision and switched to monthly billing instead.",
+          "valid_from": "{date_from}",
+          "valid_to": "{date_to}"
+        },
+        {
+          "claim": "The user reversed that decision and switched to monthly billing on {date_to}.",
+          "message_ref": "u1",
+          "quote": "on {date_to}, I reversed that decision and switched to monthly billing instead.",
+          "valid_from": "{date_to}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T09-failed-upload-not-completed",
+      "tags": [
+        "chronology",
+        "failed",
+        "not-completed"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I tried to upload the {object} scan to {product} on {date_from}, but the transfer failed before the file arrived."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would a new upload link help?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, send it to the same address."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user's attempt to upload a scan of the {object} to {product} failed before the file arrived on {date_from}.",
+          "message_ref": "u1",
+          "quote": "I tried to upload the {object} scan to {product} on {date_from}, but the transfer failed before the file arrived.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T10-tentative-renewal-not-decided",
+      "tags": [
+        "chronology",
+        "tentative",
+        "not-completed"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I am considering renewing {product} on {date_from}, but I have not chosen a plan or submitted payment."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The renewal page has monthly and annual options. Should I compare the prices?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Show me the monthly rate first."
+        },
+        {
+          "ref": "t1",
+          "role": "tool",
+          "session": 1,
+          "content_kind": "tool_result",
+          "text": "Preview panel opened for monthly pricing."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user is considering renewing {product} on {date_from}, but has not chosen a plan or submitted payment.",
+          "message_ref": "u1",
+          "quote": "I am considering renewing {product} on {date_from}, but I have not chosen a plan or submitted payment.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T11-decision-question",
+      "tags": [
+        "chronology",
+        "question",
+        "empty-target"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Did I choose {product} on {date_from}, or was I still comparing options?"
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I can search the decision log if you want."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "V3T12-decision-hypothetical",
+      "tags": [
+        "chronology",
+        "hypothetical",
+        "empty-target"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "If I had chosen {product} on {date_from}, would the order have processed?"
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like an explanation of the checkout flow?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Please explain the steps."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "V3T13-reported-role-not-accepted",
+      "tags": [
+        "attribution",
+        "role",
+        "not-accepted"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The meeting notes say {person} nominated me to coordinate the {object}; I have not accepted the role."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I add a tentative entry to the agenda?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Leave the agenda unchanged until the minutes are approved."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I left the draft as it is."
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Add a reminder to revisit the nomination after the next meeting."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I added the reminder to the agenda draft."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that the meeting notes say {person} nominated the user to coordinate the {object}; the user has not accepted the role.",
+          "message_ref": "u1",
+          "quote": "The meeting notes say {person} nominated me to coordinate the {object}; I have not accepted the role.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T14-owner-and-repair-custody",
+      "tags": [
+        "ownership",
+        "custody",
+        "separate-roles"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I own the {object}; {person} is repairing it and has the item until {date_to}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Do you need a reminder near the pickup date?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, put one on my calendar."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The reminder is set for the return date."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user owns the {object}; {person} is repairing it and has the item until {date_to}.",
+          "message_ref": "u1",
+          "quote": "I own the {object}; {person} is repairing it and has the item until {date_to}",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T15-invoice-owner-vs-team-payer",
+      "tags": [
+        "attribution",
+        "ownership",
+        "payment"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The invoice lists {person} as owner of the {object}; I paid the invoice on behalf of our team."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I attach the receipt to the team folder?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, file it under shared equipment."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that the invoice lists {person} as owner of the {object}; the user paid the invoice for the team.",
+          "message_ref": "u1",
+          "quote": "The invoice lists {person} as owner of the {object}; I paid the invoice on behalf of our team.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T16-title-document-and-current-custody",
+      "tags": [
+        "attribution",
+        "ownership",
+        "custody"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "My signed registration lists me as owner of the {object} from {date_from}; {person} keeps the item at {place}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I include the storage location in the inventory?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, put it beside the registration date."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The inventory entry is updated."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user's signed registration lists the user as owner of the {object} from {date_from}; {person} keeps the item at {place}.",
+          "message_ref": "u1",
+          "quote": "My signed registration lists me as owner of the {object} from {date_from}; {person} keeps the item at {place}.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T17-roster-reviewer-vs-approver",
+      "tags": [
+        "attribution",
+        "role",
+        "authority"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The roster names me as reviewer for {product} and {person} as approver; I can comment, but I cannot approve."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I send the review link to both of you?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Send it to {person} and copy me."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The link is ready."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that the roster names the user as reviewer for {product} and {person} as approver; the user can comment but cannot approve.",
+          "message_ref": "u1",
+          "quote": "The roster names me as reviewer for {product} and {person} as approver; I can comment, but I cannot approve.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T18-owner-and-storage-for-user",
+      "tags": [
+        "ownership",
+        "custody",
+        "separate-roles"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I own the {object}; {person} is storing it for me at {place}."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like the storage receipt attached to the inventory?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, attach the receipt."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The receipt is attached."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user owns the {object}; {person} stores the item for the user at {place}.",
+          "message_ref": "u1",
+          "quote": "I own the {object}; {person} is storing it for me at {place}.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T19-admin-role-vs-account-owner",
+      "tags": [
+        "role",
+        "authority",
+        "ownership"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I administer {product} for the committee, but the committee owns the account and I cannot transfer it."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like the billing history opened?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Open billing history only."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Billing history is open."
+        },
+        {
+          "ref": "u3",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Export the last three invoices to the folder."
+        },
+        {
+          "ref": "a3",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The export is ready in the folder."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user administers {product} for the committee; the committee owns the account, and the user cannot transfer it.",
+          "message_ref": "u1",
+          "quote": "I administer {product} for the committee, but the committee owns the account and I cannot transfer it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T20-loan-owner-and-current-holder",
+      "tags": [
+        "ownership",
+        "custody",
+        "loan"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I lent my {object} to {person} on {date_from}; {person} has the item now, but it is still mine."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I add a return reminder?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Not yet; add the loan date to the inventory."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I updated the inventory."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user lent the {object} to {person} on {date_from}; {person} currently has the item, and the user says the item remains the user's property.",
+          "message_ref": "u1",
+          "quote": "I lent my {object} to {person} on {date_from}; {person} has the item now, but it is still mine.",
+          "valid_from": "{date_from}",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T21-committee-decision-attribution",
+      "tags": [
+        "attribution",
+        "group-decision",
+        "role"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The committee voted to retain {product}; I recorded the vote, but I did not decide alone."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Should I file the minutes with the project documents?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, file them under governance."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The minutes are filed."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user reports that the committee voted to retain {product}; the user recorded the vote and did not decide alone.",
+          "message_ref": "u1",
+          "quote": "The committee voted to retain {product}; I recorded the vote, but I did not decide alone.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T22-custody-of-another-persons-property",
+      "tags": [
+        "ownership",
+        "custody",
+        "attribution"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I am storing {person}'s {object} at {place}; {person} owns it, and I am responsible only for keeping it safe."
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would an inventory label help?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Yes, put it on the outside of the case."
+        },
+        {
+          "ref": "a2",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "The label is ready."
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user has custody of the {object} at {place}; {person} owns it, and the user is responsible only for keeping it safe.",
+          "message_ref": "u1",
+          "quote": "I am storing {person}'s {object} at {place}; {person} owns it, and I am responsible only for keeping it safe.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "family_id": "V3T23-ownership-question",
+      "tags": [
+        "ownership",
+        "question",
+        "empty-target"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Is {person} the owner of the {object}, or only the custodian?"
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "I can check the inventory record if you want."
+        }
+      ],
+      "expected": []
+    },
+    {
+      "family_id": "V3T24-ownership-hypothetical",
+      "tags": [
+        "ownership",
+        "hypothetical",
+        "empty-target"
+      ],
+      "messages": [
+        {
+          "ref": "u1",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "If I stored the {object} for {person}, would I become its owner?"
+        },
+        {
+          "ref": "a1",
+          "role": "assistant",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Would you like a general explanation of custody?"
+        },
+        {
+          "ref": "u2",
+          "role": "user",
+          "session": 1,
+          "content_kind": "conversation",
+          "text": "Please explain the general rule."
+        }
+      ],
+      "expected": []
+    }
+  ]
+}

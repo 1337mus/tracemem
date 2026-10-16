@@ -1,0 +1,839 @@
+{
+  "version": 2,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "cases": [
+    {
+      "case_id": "V3DEV-C-001",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-001",
+      "template_group": "V3DEV-TP-001",
+      "entity_ids": [
+        "V3DEV-E-001"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-001-01",
+          "message_id": "V3DEV-M-001-01",
+          "role": "user",
+          "text": "If I had mailed the sample before the inspection, would the courier still have accepted it?",
+          "recorded_at": "2026-01-01T00:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-002",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-002",
+      "template_group": "V3DEV-TP-002",
+      "entity_ids": [
+        "V3DEV-E-002"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-002-01",
+          "message_id": "V3DEV-M-002-01",
+          "role": "assistant",
+          "text": "Your planner has two possible dates penciled in.",
+          "recorded_at": "2026-01-01T00:09:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-002-01",
+          "message_id": "V3DEV-M-002-02",
+          "role": "user",
+          "text": "Can you help me compare next Monday with the following Friday before I choose one?",
+          "recorded_at": "2026-01-01T00:10:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-003",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-003",
+      "template_group": "V3DEV-TP-003",
+      "entity_ids": [
+        "V3DEV-E-003"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-003-01",
+          "message_id": "V3DEV-M-003-01",
+          "role": "assistant",
+          "text": "So you filed the intake form on 2025-03-10, and it has been waiting since then.",
+          "recorded_at": "2026-01-01T00:17:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-003-01",
+          "message_id": "V3DEV-M-003-02",
+          "role": "user",
+          "text": "I need to correct that summary: I did not file it on 2025-03-10. I submitted the intake form on 2025-03-12 from the library kiosk.",
+          "recorded_at": "2026-01-01T00:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User submitted the intake form from the library kiosk.",
+          "message_id": "V3DEV-M-003-02",
+          "quote": "I need to correct that summary: I did not file it on 2025-03-10. I submitted the intake form on 2025-03-12 from the library kiosk.",
+          "valid_from": "2025-03-12",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-004",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-004",
+      "template_group": "V3DEV-TP-004",
+      "entity_ids": [
+        "V3DEV-E-004"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-004-01",
+          "message_id": "V3DEV-M-004-01",
+          "role": "user",
+          "text": "I was still deciding whether to reserve the north room; I had not placed anything on hold.",
+          "recorded_at": "2026-01-01T00:25:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-004-01",
+          "message_id": "V3DEV-M-004-02",
+          "role": "assistant",
+          "text": "I will keep the room and hold separate in my notes.",
+          "recorded_at": "2026-01-01T00:26:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-004-02",
+          "message_id": "V3DEV-M-004-03",
+          "role": "assistant",
+          "text": "Earlier you mentioned the north room. Was there a confirmed booking?",
+          "recorded_at": "2026-01-01T00:27:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-004-02",
+          "message_id": "V3DEV-M-004-04",
+          "role": "user",
+          "text": "Correction to my calendar note: I placed the hold on 2025-06-05, after the site visit.",
+          "recorded_at": "2026-01-01T00:28:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User placed a hold on the north room after the site visit.",
+          "message_id": "V3DEV-M-004-04",
+          "quote": "Correction to my calendar note: I placed the hold on 2025-06-05, after the site visit.",
+          "valid_from": "2025-06-05",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-005",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-005",
+      "template_group": "V3DEV-TP-005",
+      "entity_ids": [
+        "V3DEV-E-005"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-005-01",
+          "message_id": "V3DEV-M-005-01",
+          "role": "user",
+          "text": "When I said the mural kit had shipped, that was an overstatement; I only printed the label on 2025-07-19, and the box stayed on my shelf.",
+          "recorded_at": "2026-01-01T00:33:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User printed a shipping label for the mural kit on 2025-07-19, but had not shipped the box.",
+          "message_id": "V3DEV-M-005-01",
+          "quote": "When I said the mural kit had shipped, that was an overstatement; I only printed the label on 2025-07-19, and the box stayed on my shelf.",
+          "valid_from": "2025-07-19",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-006",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-006",
+      "template_group": "V3DEV-TP-006",
+      "entity_ids": [
+        "V3DEV-E-006"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-006-01",
+          "message_id": "V3DEV-M-006-01",
+          "role": "assistant",
+          "text": "You said the draft went out on Monday.",
+          "recorded_at": "2026-01-01T00:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-006-01",
+          "message_id": "V3DEV-M-006-02",
+          "role": "user",
+          "text": "I meant that I planned to upload it then; I did not upload the draft until 2025-08-21.",
+          "recorded_at": "2026-01-01T00:42:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User uploaded the draft on 2025-08-21.",
+          "message_id": "V3DEV-M-006-02",
+          "quote": "I meant that I planned to upload it then; I did not upload the draft until 2025-08-21.",
+          "valid_from": "2025-08-21",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-007",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-007",
+      "template_group": "V3DEV-TP-007",
+      "entity_ids": [
+        "V3DEV-E-007"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-007-01",
+          "message_id": "V3DEV-M-007-01",
+          "role": "user",
+          "text": "Please revise my earlier sentence: I did not hand over the camera at rehearsal. I left it in my locker and will return it tomorrow.",
+          "recorded_at": "2026-01-01T00:49:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User did not hand over the camera at rehearsal and left it in a locker.",
+          "message_id": "V3DEV-M-007-01",
+          "quote": "Please revise my earlier sentence: I did not hand over the camera at rehearsal. I left it in my locker and will return it tomorrow.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-008",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-008",
+      "template_group": "V3DEV-TP-008",
+      "entity_ids": [
+        "V3DEV-E-008"
+      ],
+      "tags": [
+        "chronology",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-008-01",
+          "message_id": "V3DEV-M-008-01",
+          "role": "assistant",
+          "text": "Did the recipe cards arrive before the holiday?",
+          "recorded_at": "2026-01-01T00:57:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-008-01",
+          "message_id": "V3DEV-M-008-02",
+          "role": "user",
+          "text": "I should correct the date I repeated from Aunt Sal: she says she mailed the recipe cards on 2025-09-02, but I have not seen a delivery notice.",
+          "recorded_at": "2026-01-01T00:58:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that Aunt Sal says she mailed the recipe cards on 2025-09-02.",
+          "message_id": "V3DEV-M-008-02",
+          "quote": "I should correct the date I repeated from Aunt Sal: she says she mailed the recipe cards on 2025-09-02, but I have not seen a delivery notice.",
+          "valid_from": "2025-09-02",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-009",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-009",
+      "template_group": "V3DEV-TP-009",
+      "entity_ids": [
+        "V3DEV-E-009"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-009-01",
+          "message_id": "V3DEV-M-009-01",
+          "role": "user",
+          "text": "If someone left a box of tiles in my studio, would that make the tiles mine?",
+          "recorded_at": "2026-01-01T01:05:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-010",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-010",
+      "template_group": "V3DEV-TP-010",
+      "entity_ids": [
+        "V3DEV-E-010"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-010-01",
+          "message_id": "V3DEV-M-010-01",
+          "role": "assistant",
+          "text": "The inventory has two unlabeled instrument cases.",
+          "recorded_at": "2026-01-01T01:13:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-010-01",
+          "message_id": "V3DEV-M-010-02",
+          "role": "user",
+          "text": "Which case belongs to the choir, and which one is only being stored there?",
+          "recorded_at": "2026-01-01T01:14:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-011",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-011",
+      "template_group": "V3DEV-TP-011",
+      "entity_ids": [
+        "V3DEV-E-011"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-011-01",
+          "message_id": "V3DEV-M-011-01",
+          "role": "user",
+          "text": "Mina left her camera with me overnight between two shoots. I put it on the studio's guest-equipment shelf and gave it back at breakfast; the asset tag is still hers.",
+          "recorded_at": "2026-01-01T01:21:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "Mina temporarily left her camera with the user, who returned it at breakfast; the asset tag remains hers.",
+          "message_id": "V3DEV-M-011-01",
+          "quote": "Mina left her camera with me overnight between two shoots. I put it on the studio's guest-equipment shelf and gave it back at breakfast; the asset tag is still hers.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-012",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-012",
+      "template_group": "V3DEV-TP-012",
+      "entity_ids": [
+        "V3DEV-E-012"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-012-01",
+          "message_id": "V3DEV-M-012-01",
+          "role": "assistant",
+          "text": "Should I put the blue tote under Jo’s name because she is carrying it?",
+          "recorded_at": "2026-01-01T01:29:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-012-01",
+          "message_id": "V3DEV-M-012-02",
+          "role": "user",
+          "text": "The blue tote is mine; Jo is carrying it to the hall for me.",
+          "recorded_at": "2026-01-01T01:30:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User owns the blue tote, which Jo is carrying for the user.",
+          "message_id": "V3DEV-M-012-02",
+          "quote": "The blue tote is mine; Jo is carrying it to the hall for me.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-013",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-013",
+      "template_group": "V3DEV-TP-013",
+      "entity_ids": [
+        "V3DEV-E-013"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-013-01",
+          "message_id": "V3DEV-M-013-01",
+          "role": "user",
+          "text": "My brother says he has the spare badge in his car. I have not seen it myself, so that is only what he told me.",
+          "recorded_at": "2026-01-01T01:37:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that their brother says he has the spare badge in his car.",
+          "message_id": "V3DEV-M-013-01",
+          "quote": "My brother says he has the spare badge in his car. I have not seen it myself, so that is only what he told me.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-014",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-014",
+      "template_group": "V3DEV-TP-014",
+      "entity_ids": [
+        "V3DEV-E-014"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-014-01",
+          "message_id": "V3DEV-M-014-01",
+          "role": "assistant",
+          "text": "I can list you as owner of the calendar workspace.",
+          "recorded_at": "2026-01-01T01:45:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-014-01",
+          "message_id": "V3DEV-M-014-02",
+          "role": "user",
+          "text": "Please list me only as its administrator; my colleague Priya owns the workspace and handles the subscription.",
+          "recorded_at": "2026-01-01T01:46:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User is an administrator of the calendar workspace, which Priya owns.",
+          "message_id": "V3DEV-M-014-02",
+          "quote": "Please list me only as its administrator; my colleague Priya owns the workspace and handles the subscription.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-015",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-015",
+      "template_group": "V3DEV-TP-015",
+      "entity_ids": [
+        "V3DEV-E-015"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-015-01",
+          "message_id": "V3DEV-M-015-01",
+          "role": "user",
+          "text": "The brass lamp belongs to my aunt. She asked me to keep it in my office through the winter while her floors are refinished.",
+          "recorded_at": "2026-01-01T01:53:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user’s aunt asked them to keep her brass lamp in their office through winter.",
+          "message_id": "V3DEV-M-015-01",
+          "quote": "The brass lamp belongs to my aunt. She asked me to keep it in my office through the winter while her floors are refinished.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-016",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-016",
+      "template_group": "V3DEV-TP-016",
+      "entity_ids": [
+        "V3DEV-E-016"
+      ],
+      "tags": [
+        "subject_attachment",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-016-01",
+          "message_id": "V3DEV-M-016-01",
+          "role": "user",
+          "text": "The utility statement comes to my email, but the account holder is the ceramics club and the club pays the bill.",
+          "recorded_at": "2026-01-01T02:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User receives the utility statement by email; the ceramics club is the account holder and pays the bill.",
+          "message_id": "V3DEV-M-016-01",
+          "quote": "The utility statement comes to my email, but the account holder is the ceramics club and the club pays the bill.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-017",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-017",
+      "template_group": "V3DEV-TP-017",
+      "entity_ids": [
+        "V3DEV-E-017"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-017-01",
+          "message_id": "V3DEV-M-017-01",
+          "role": "user",
+          "text": "Would keeping a spare key for one afternoon make someone responsible for the whole building?",
+          "recorded_at": "2026-01-01T02:09:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-018",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-018",
+      "template_group": "V3DEV-TP-018",
+      "entity_ids": [
+        "V3DEV-E-018"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-018-01",
+          "message_id": "V3DEV-M-018-01",
+          "role": "assistant",
+          "text": "There is a shared folder and a local copy in the diagram.",
+          "recorded_at": "2026-01-01T02:17:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-018-01",
+          "message_id": "V3DEV-M-018-02",
+          "role": "user",
+          "text": "Could you explain the difference between having access to that folder and keeping a copy?",
+          "recorded_at": "2026-01-01T02:18:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": []
+    },
+    {
+      "case_id": "V3DEV-C-019",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-019",
+      "template_group": "V3DEV-TP-019",
+      "entity_ids": [
+        "V3DEV-E-019"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-019-01",
+          "message_id": "V3DEV-M-019-01",
+          "role": "user",
+          "text": "I keep the spare entry badge in my desk, but Facilities issued it and still owns it.",
+          "recorded_at": "2026-01-01T02:25:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User keeps the spare entry badge in their desk; Facilities owns it.",
+          "message_id": "V3DEV-M-019-01",
+          "quote": "I keep the spare entry badge in my desk, but Facilities issued it and still owns it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-020",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-020",
+      "template_group": "V3DEV-TP-020",
+      "entity_ids": [
+        "V3DEV-E-020"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-020-01",
+          "message_id": "V3DEV-M-020-01",
+          "role": "user",
+          "text": "I gave Lee a temporary link to the photo folder on 2025-03-14, and I can revoke that link from the sharing panel.",
+          "recorded_at": "2026-01-01T02:33:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User gave Lee temporary access to the photo folder on 2025-03-14 and can revoke it.",
+          "message_id": "V3DEV-M-020-01",
+          "quote": "I gave Lee a temporary link to the photo folder on 2025-03-14, and I can revoke that link from the sharing panel.",
+          "valid_from": "2025-03-14",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-021",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-021",
+      "template_group": "V3DEV-TP-021",
+      "entity_ids": [
+        "V3DEV-E-021"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-021-01",
+          "message_id": "V3DEV-M-021-01",
+          "role": "assistant",
+          "text": "I will mark the archive as duplicated.",
+          "recorded_at": "2026-01-01T02:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-021-01",
+          "message_id": "V3DEV-M-021-02",
+          "role": "user",
+          "text": "We discussed making a second copy of the handbook, but I have not created one.",
+          "recorded_at": "2026-01-01T02:42:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "The user and others discussed making a second handbook copy; the user has not created one.",
+          "message_id": "V3DEV-M-021-02",
+          "quote": "We discussed making a second copy of the handbook, but I have not created one.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-022",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-022",
+      "template_group": "V3DEV-TP-022",
+      "entity_ids": [
+        "V3DEV-E-022"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-022-01",
+          "message_id": "V3DEV-M-022-01",
+          "role": "user",
+          "text": "I was the contact for the garden shed through 2025-03-30; Priya took over on 2025-04-01.",
+          "recorded_at": "2026-01-01T02:49:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User was the contact for the garden shed through 2025-03-30.",
+          "message_id": "V3DEV-M-022-01",
+          "quote": "I was the contact for the garden shed through 2025-03-30; Priya took over on 2025-04-01.",
+          "valid_from": null,
+          "valid_to": "2025-03-30"
+        },
+        {
+          "claim": "Priya took over as the garden shed contact on 2025-04-01.",
+          "message_id": "V3DEV-M-022-01",
+          "quote": "I was the contact for the garden shed through 2025-03-30; Priya took over on 2025-04-01.",
+          "valid_from": "2025-04-01",
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-023",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-023",
+      "template_group": "V3DEV-TP-023",
+      "entity_ids": [
+        "V3DEV-E-023"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-023-01",
+          "message_id": "V3DEV-M-023-01",
+          "role": "assistant",
+          "text": "The key is probably in your basement.",
+          "recorded_at": "2026-01-01T02:57:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "V3DEV-S-023-01",
+          "message_id": "V3DEV-M-023-02",
+          "role": "user",
+          "text": "My landlord keeps the basement key, and I do not have a copy.",
+          "recorded_at": "2026-01-01T02:58:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User reports that the landlord keeps the basement key and the user has no copy.",
+          "message_id": "V3DEV-M-023-02",
+          "quote": "My landlord keeps the basement key, and I do not have a copy.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-024",
+      "split": "dev",
+      "scenario_group": "V3DEV-SC-024",
+      "template_group": "V3DEV-TP-024",
+      "entity_ids": [
+        "V3DEV-E-024"
+      ],
+      "tags": [
+        "retention_general_control",
+        "fictional_eval"
+      ],
+      "messages": [
+        {
+          "session_id": "V3DEV-S-024-01",
+          "message_id": "V3DEV-M-024-01",
+          "role": "user",
+          "text": "I can remove guests from the workshop calendar, but the arts council owns the account and pays for it.",
+          "recorded_at": "2026-01-01T03:05:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "expected": [
+        {
+          "claim": "User can remove guests from the workshop calendar; the arts council owns the account.",
+          "message_id": "V3DEV-M-024-01",
+          "quote": "I can remove guests from the workshop calendar, but the arts council owns the account and pays for it.",
+          "valid_from": null,
+          "valid_to": null
+        }
+      ]
+    }
+  ]
+}

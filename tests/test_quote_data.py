@@ -45,6 +45,14 @@ def minimal_dataset() -> dict[str, object]:
 
 
 class QuoteDatasetValidationTests(unittest.TestCase):
+    def test_validate_dataset_accepts_native_test_split(self) -> None:
+        payload = minimal_dataset()
+        payload["cases"][0]["split"] = "test"
+
+        cases = validate_dataset(payload, "test")
+
+        self.assertEqual(cases, payload["cases"])
+
     def test_validate_dataset_accepts_the_authored_v2_case_contract(self) -> None:
         payload = minimal_dataset()
         cases = validate_dataset(payload, "train")

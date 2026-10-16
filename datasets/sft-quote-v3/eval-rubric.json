@@ -1,0 +1,1003 @@
+{
+  "version": 1,
+  "status": "provisional_agent_authored_nonexhaustive_rubric",
+  "scope": "Fictional authored dev/test evaluation. This rubric records intended distinctions and acceptable paraphrase boundaries; it is not an automatic semantic oracle.",
+  "cases": [
+    {
+      "case_id": "V3DEV-C-001",
+      "category": "chronology",
+      "crucial_semantic_distinction": "A conditional question supplies no actual mailing event or date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-002",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The user asks about candidate dates and has not chosen or acted.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-003",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The correction explicitly rejects the earlier date and states the actual submission date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User submitted the intake form from the library kiosk."
+      ],
+      "outcome_critical_coverage": [
+        "Form submitted from library kiosk on 2025-03-12.",
+        "Earlier 2025-03-10 submission is explicitly negated."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-004",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The later message records an actual hold; earlier deliberation is not a completed reservation.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User placed a hold on the north room after the site visit."
+      ],
+      "outcome_critical_coverage": [
+        "North-room hold was placed on 2025-06-05 after the site visit.",
+        "Earlier statement described consideration only, not an existing hold."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-005",
+      "category": "chronology",
+      "crucial_semantic_distinction": "Printing a label is the completed event; the package remaining on the shelf rules out shipment.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User printed a shipping label for the mural kit on 2025-07-19, but had not shipped the box."
+      ],
+      "outcome_critical_coverage": [
+        "Only the shipping label was printed on 2025-07-19.",
+        "Box remained on the shelf and was not shipped."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-006",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The user distinguishes a prior plan from the later completed upload.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User uploaded the draft on 2025-08-21."
+      ],
+      "outcome_critical_coverage": [
+        "Draft was uploaded on 2025-08-21.",
+        "Earlier Monday wording described a plan, not a completed upload."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-007",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The correction negates a handoff and states where the camera remained; the future return is only planned.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User did not hand over the camera at rehearsal and left it in a locker."
+      ],
+      "outcome_critical_coverage": [
+        "Camera was not handed over at rehearsal.",
+        "Camera remained in the user’s locker; tomorrow’s return is only planned."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-008",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The date belongs to a reported mailing by Aunt Sal, not a verified delivery or an action by the user.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that Aunt Sal says she mailed the recipe cards on 2025-09-02."
+      ],
+      "outcome_critical_coverage": [
+        "User attributes the 2025-09-02 mailing to Aunt Sal.",
+        "User has not verified delivery."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-009",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The user poses a general hypothetical and does not assert ownership or custody.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-010",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The user asks for ownership information without stating who owns or holds either case.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-011",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Mina leaves her camera with the user temporarily; the user returns it, and the asset tag still identifies Mina.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "Mina temporarily left her camera with the user, who returned it at breakfast; the asset tag remains hers."
+      ],
+      "outcome_critical_coverage": [
+        "Mina left her camera with the user temporarily.",
+        "User returned it at breakfast.",
+        "Asset tag still identifies Mina."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-012",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Ownership belongs to the user while physical custody belongs to Jo.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User owns the blue tote, which Jo is carrying for the user."
+      ],
+      "outcome_critical_coverage": [
+        "Blue tote belongs to the user.",
+        "Jo is carrying it to the hall for the user."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-013",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The brother’s reported possession is attributed to him, not asserted as the user’s observation.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that their brother says he has the spare badge in his car."
+      ],
+      "outcome_critical_coverage": [
+        "Brother said he had the spare badge in his car.",
+        "User has not seen the badge and attributes the location to the brother."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-014",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Administrative access is distinct from ownership; Priya is the stated owner.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User is an administrator of the calendar workspace, which Priya owns."
+      ],
+      "outcome_critical_coverage": [
+        "User is an administrator, not the workspace owner.",
+        "Priya owns the workspace and handles the subscription."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-015",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The user reports that their aunt asked them to keep the aunt’s brass lamp in the office through winter; the request does not establish acceptance or present custody.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The aunt asked the user to keep the brass lamp in the user’s office through winter."
+      ],
+      "outcome_critical_coverage": [
+        "The brass lamp belongs to the user’s aunt.",
+        "The aunt asked the user to keep it in the office through winter; whether the user accepted or has custody is not stated."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-016",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The utility statement reaches the user by email, but the ceramics club is the account holder and pays the bill.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User receives the utility statement by email; the ceramics club is the account holder and pays the bill."
+      ],
+      "outcome_critical_coverage": [
+        "Utility statement comes to the user’s email.",
+        "Ceramics club is the account holder and pays the bill."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-017",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The question is hypothetical and asserts no retention or control fact.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-018",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user asks about a distinction without claiming access or possession.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3DEV-C-019",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Keeping the badge is custody, while stated ownership remains with Facilities.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User keeps the spare entry badge in their desk; Facilities owns it."
+      ],
+      "outcome_critical_coverage": [
+        "User keeps the spare entry badge in their desk.",
+        "Facilities issued and owns the badge."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-020",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The statement supports temporary access and the user’s ability to revoke that link, not ownership of the photos.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User gave Lee temporary access to the photo folder on 2025-03-14 and can revoke it."
+      ],
+      "outcome_critical_coverage": [
+        "User gave Lee a temporary photo-folder link on 2025-03-14.",
+        "User can revoke that link."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-021",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Discussion of a possible copy is not completion; the user explicitly says no copy was created.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user and others discussed making a second handbook copy; the user has not created one."
+      ],
+      "outcome_critical_coverage": [
+        "A second handbook copy was discussed by the user and others.",
+        "The user has not created a duplicate."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-022",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user’s contact role ends before Priya’s dated takeover; contact status is not ownership.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User was the contact for the garden shed through 2025-03-30.",
+        "Priya took over as the garden shed contact on 2025-04-01."
+      ],
+      "outcome_critical_coverage": [
+        "User was garden-shed contact through 2025-03-30.",
+        "Priya took over on 2025-04-01."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-023",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The landlord retains the key; the user explicitly lacks a copy.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that the landlord keeps the basement key and the user has no copy."
+      ],
+      "outcome_critical_coverage": [
+        "Landlord keeps the basement key.",
+        "User has no copy."
+      ]
+    },
+    {
+      "case_id": "V3DEV-C-024",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "User has a limited administrative control while the arts council owns the account.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User can remove guests from the workshop calendar; the arts council owns the account."
+      ],
+      "outcome_critical_coverage": [
+        "User can remove workshop-calendar guests.",
+        "Arts council owns the account and pays for it."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-001",
+      "category": "chronology",
+      "crucial_semantic_distinction": "A question about a counterfactual supplies no actual kiln event.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-002",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The user is choosing between possible dates and does not state a pickup.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-003",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The conditional scenario does not establish that an invitation was sent or the room confirmed.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-004",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The only purported event appears in quoted-document content and the user asks what it refers to.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-005",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The bracket was mounted earlier, but the sensor installation happened on the later date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User installed the greenhouse sensor after the frost cleared."
+      ],
+      "outcome_critical_coverage": [
+        "Bracket was mounted on 2025-01-16.",
+        "Sensor itself was installed on 2025-01-18 after the frost cleared."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-006",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The completed sending occurred on February 6; the earlier date is explicitly withdrawn.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User sent the return label once the shop reopened."
+      ],
+      "outcome_critical_coverage": [
+        "Earlier 2025-02-03 sending date is withdrawn as premature.",
+        "User sent the label on 2025-02-06 after the shop reopened."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-007",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The cross-session correction gives the completed booking and date; earlier consideration was not a booking.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User booked the 08:20 ferry sailing."
+      ],
+      "outcome_critical_coverage": [
+        "User booked the 08:20 ferry sailing on 2025-04-11.",
+        "Earlier consideration was not a purchase or booking."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-008",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The user states a planned drop-off date and explicitly denies completion; the planned date does not establish an event date or valid_from.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user planned to drop off the forms on 2025-05-08 but did not complete the drop-off."
+      ],
+      "outcome_critical_coverage": [
+        "The intended town-desk drop-off was planned for 2025-05-08.",
+        "The forms remained in the user’s bag and were not dropped off; 2025-05-08 is not a valid_from boundary."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-009",
+      "category": "chronology",
+      "crucial_semantic_distinction": "Setting down the package was not installation; the user dates the later completed installation.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User installed the replacement on 2025-06-20."
+      ],
+      "outcome_critical_coverage": [
+        "User initially only set the package beside the sink.",
+        "Replacement was installed on 2025-06-20; earlier group-chat wording was premature."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-010",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The departure time is a coach’s report, and the user explicitly lacks firsthand knowledge.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that their coach said the team bus left at 06:40 on 2025-07-02."
+      ],
+      "outcome_critical_coverage": [
+        "06:40 departure on 2025-07-02 is attributed to the coach’s report.",
+        "User was not aboard and lacks firsthand knowledge of the departure."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-011",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The user negates the earlier date and supplies the actual later call date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User called the repair desk after the valve stopped dripping."
+      ],
+      "outcome_critical_coverage": [
+        "User did not call on 2025-08-01.",
+        "User called on 2025-08-03 after the valve stopped dripping."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-012",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The correction changes an in-progress description to a completed event on the literal date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User finished labeling the seed tins by dinner on 2025-09-09."
+      ],
+      "outcome_critical_coverage": [
+        "Labeling the seed tins was complete by dinner on 2025-09-09.",
+        "Earlier voice-note wording said “started,” not that the work was complete."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-013",
+      "category": "chronology",
+      "crucial_semantic_distinction": "Requesting a hold is not confirmation; the user identifies the later confirmation date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The venue confirmed the hall reservation on 2025-10-12."
+      ],
+      "outcome_critical_coverage": [
+        "User had only requested a hall hold at first.",
+        "Venue confirmed the reservation on 2025-10-12."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-014",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The return is attributed to the sister and is reported rather than verified by the user.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that their sister put the library books in the return slot on 2025-11-05."
+      ],
+      "outcome_critical_coverage": [
+        "Sister texted that she put the books in the return slot on 2025-11-05.",
+        "User has not checked the library account, so the report is unverified."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-015",
+      "category": "chronology",
+      "crucial_semantic_distinction": "Planning the firing preceded the dated start; do not turn the plan into an earlier action.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User started the kiln after the test tile was cool."
+      ],
+      "outcome_critical_coverage": [
+        "User waited until the test tile was cool.",
+        "Kiln was started on 2025-12-02; firing before cooling was only a plan."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-016",
+      "category": "chronology",
+      "crucial_semantic_distinction": "The correction disavows the earlier posting and gives the actual publication date.",
+      "acceptable_paraphrase_constraints": "Keep event order, the corrected actual date, and the distinction between planning, attempt, completion, and a report. Never turn a disavowed earlier wording into a second event.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User posted the trail map after the ranger checked the route."
+      ],
+      "outcome_critical_coverage": [
+        "Trail map remained in drafts before posting.",
+        "User posted it on 2025-12-14 after the ranger checked the route."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-017",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "A general ownership question does not assert ownership or custody.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-018",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The user asks about labels rather than describing a specific asset relationship.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-019",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The scenario is explicitly hypothetical and does not establish that the user borrowed or owns a drill.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-020",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The ownership sentence is in a quoted document and the user asks about handwriting, not ownership.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-021",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Borrowing and return do not transfer ownership to the user.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User borrowed Jo’s red handcart for the market and returned it to Jo."
+      ],
+      "outcome_critical_coverage": [
+        "User borrowed Jo’s red handcart for the market.",
+        "Cart belongs to Jo and user returned it to her porch."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-022",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Access to a lockbox is limited and does not imply ownership of its contents.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that the pottery tools belong to Ada and that the user has the lockbox combination for plant watering."
+      ],
+      "outcome_critical_coverage": [
+        "Ada owns the pottery tools.",
+        "User has the combination only to water the plants, not as an owner."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-023",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The suitcase is attributed to the uncle while the user has temporary custody.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that their uncle says the blue suitcase is his and that he left it with the user temporarily."
+      ],
+      "outcome_critical_coverage": [
+        "Uncle says the blue suitcase is his.",
+        "Uncle left it with the user temporarily while stairs are repaired."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-024",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The user is owner and the roommate is borrower; use is not ownership.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User owns the tablet, which their roommate borrows for Tuesday video calls."
+      ],
+      "outcome_critical_coverage": [
+        "User owns the tablet.",
+        "Roommate borrows it for Tuesday video calls."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-025",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Bringing the envelope inside to protect it from rain does not establish ongoing custody or ownership.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user brought an envelope addressed to Nia’s café inside to protect it from rain and has not opened it."
+      ],
+      "outcome_critical_coverage": [
+        "The envelope is addressed to Nia’s café.",
+        "The user brought it inside to protect it from rain and has not opened it.",
+        "Ongoing custody and ownership are not stated."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-026",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The key location is attributed to the father and remains unverified by the user.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that their father says the greenhouse keys are with the new tenant."
+      ],
+      "outcome_critical_coverage": [
+        "Father says the greenhouse keys are with the new tenant.",
+        "User has not verified whether the tenant received them."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-027",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Signing a checkout sheet does not establish ownership; the user names Mina as lender and the music room as owner.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that the violin belongs to the music room and is borrowed from Mina."
+      ],
+      "outcome_critical_coverage": [
+        "Violin was borrowed from Mina.",
+        "Music room owns it; user’s checkout signature does not establish ownership."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-028",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Folder visibility is read access, while ownership and administration belong to Leila.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User reports that Leila owns and administers the workshop files; user can view them."
+      ],
+      "outcome_critical_coverage": [
+        "Leila owns the workshop files and is their only administrator.",
+        "User can view the folder but is not its owner or administrator."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-029",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The neighbor owns the dog; the user is a temporary caretaker.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User is watching a neighbor’s dog overnight."
+      ],
+      "outcome_critical_coverage": [
+        "Green-tag dog belongs to the neighbor.",
+        "User is watching the dog overnight while the neighbor is away."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-030",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Pickup establishes a handling event, not ongoing custody; keep the clinic addressee and unread status attached.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user picked up a sealed lab envelope for Ivo at reception; it is addressed to his clinic, and the user has not read its contents."
+      ],
+      "outcome_critical_coverage": [
+        "The user picked up a sealed lab envelope for Ivo at reception.",
+        "It is addressed to Ivo’s clinic and the user has not read its contents.",
+        "The text does not establish that the user still holds it."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-031",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "Editing one artifact does not convey ownership or broad control over the project folder.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User can edit the seating chart; the producer owns the project folder and controls access."
+      ],
+      "outcome_critical_coverage": [
+        "User can edit the seating chart.",
+        "Producer owns the project folder and decides who gets access."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-032",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "This hypothetical asks about an implication without asserting storage or control.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-033",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user asks a general question and makes no claim about their own access or retention.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-034",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The question is conditional and asserts neither removal nor deletion.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-035",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "A possibility is posed without a claim that either person currently holds or controls anything.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": true,
+      "expected_fact_coverage": [],
+      "outcome_critical_coverage": []
+    },
+    {
+      "case_id": "V3TEST-C-036",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user retains the fob, while issuance and ownership stay with the housing office.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User keeps a spare gate fob in the kitchen drawer; the housing office owns it."
+      ],
+      "outcome_critical_coverage": [
+        "User keeps the spare gate fob in the kitchen drawer.",
+        "Housing office issued and owns the fob."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-037",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user states access ended; do not infer that the archive itself was deleted.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User’s read access to the archive ended on 2025-02-15."
+      ],
+      "outcome_critical_coverage": [
+        "User’s read access ended on 2025-02-15.",
+        "User cannot open the archive now; this does not mean the archive was deleted."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-038",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Link revocation and folder deletion are separate actions, and the latter is explicitly negated.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User removed a guest link from the photo folder on 2025-03-09 but did not delete the folder."
+      ],
+      "outcome_critical_coverage": [
+        "User removed the guest link from the photo folder on 2025-03-09.",
+        "User did not delete the folder."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-039",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user denies retaining a copy and describes access as conditional on another person.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User has no local handbook copy and can access the shared version only while the coordinator enables access."
+      ],
+      "outcome_critical_coverage": [
+        "User never saved a local handbook copy.",
+        "Access to the shared version depends on the coordinator leaving permission enabled."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-040",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user temporarily keeps a projector described as “Omar’s borrowed projector” until the stated pickup date; the text does not identify the owner.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user is keeping a projector described as “Omar’s borrowed projector” until Omar collects it."
+      ],
+      "outcome_critical_coverage": [
+        "The user is keeping a projector described as “Omar’s borrowed projector.”",
+        "Omar is expected to collect it on 2025-04-05; the text does not identify its owner."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-041",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Revoking access is a limited control; it does not make the user the card owner or schedule authority.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User can revoke visitor-card access; Facilities owns the card and assigns its schedule."
+      ],
+      "outcome_critical_coverage": [
+        "User can revoke visitor-card access.",
+        "Facilities owns the card and assigns the schedule."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-042",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "A proposal is not a completed copy, and the original’s stated location is the boathouse.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The user and others discussed a second harbor-map copy; the user has not made a duplicate, and the original remains in the boathouse."
+      ],
+      "outcome_critical_coverage": [
+        "The user and others discussed a second harbor-map copy.",
+        "The user has not made a duplicate and the original remains in the boathouse."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-043",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The user’s control ended with a dated handoff; do not extend it beyond that point.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User handled the mailbox keys through 2025-06-30.",
+        "User handed the mailbox key ring to Ren on 2025-07-01."
+      ],
+      "outcome_critical_coverage": [
+        "User handled mailbox keys through 2025-06-30.",
+        "User handed the ring to Ren on 2025-07-01."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-044",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Account location and membership controls do not change the council’s stated ownership of records.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "The shared folder remains in the user’s account and the user can invite or remove members; the council owns the records."
+      ],
+      "outcome_critical_coverage": [
+        "Shared folder remains in the user’s account.",
+        "User can invite or remove members.",
+        "Council owns the records."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-045",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "The dated deletion applies to the user’s sheet only; the clinic-owned master roster remains.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User shredded their own sign-in sheet on 2025-08-19 and did not shred the clinic’s master roster."
+      ],
+      "outcome_critical_coverage": [
+        "User shredded their own sign-in sheet on 2025-08-19.",
+        "Clinic owns the master roster and user did not shred it."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-046",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Past storage has ended; the user states a dated handoff and current non-retention.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User handed the lantern-battery box to Mara on 2025-09-03 and no longer stores it."
+      ],
+      "outcome_critical_coverage": [
+        "User formerly kept the lantern batteries in their desk.",
+        "User handed the box to Mara on 2025-09-03 and no longer stores it."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-047",
+      "category": "retention_general_control",
+      "crucial_semantic_distinction": "Operational permission is narrow and revocable by the board; it is not ownership.",
+      "acceptable_paraphrase_constraints": "Keep possession or retention separate from ownership, deletion, access, and narrow operational control. Preserve end dates and stated limits.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User alone has permission to close the reading-room calendar; the library board owns it and can restore access."
+      ],
+      "outcome_critical_coverage": [
+        "User alone has permission to close the reading-room calendar.",
+        "Library board owns the calendar and can restore access."
+      ]
+    },
+    {
+      "case_id": "V3TEST-C-048",
+      "category": "subject_attachment",
+      "crucial_semantic_distinction": "The community theater owns the handcart; the user is its temporary custodian and later returns it to the stage crew.",
+      "acceptable_paraphrase_constraints": "Keep owner, borrower, recipient, physical custodian, administrator, and reporter attached to the correct person or organization. Preserve explicit uncertainty and attribution.",
+      "forbidden_inference": "Do not promote a question, hypothetical, assistant/tool text, quoted document, disavowed wording, uncertainty, or another person’s report into an unqualified user fact. Do not infer an unstated date or broader relation.",
+      "expected_empty": false,
+      "expected_fact_coverage": [
+        "User temporarily kept the community theater’s handcart and returned it to the stage crew after rehearsal."
+      ],
+      "outcome_critical_coverage": [
+        "Community theater owns the handcart.",
+        "User kept it temporarily and returned it to the stage crew after rehearsal on 2025-11-21."
+      ]
+    }
+  ]
+}
