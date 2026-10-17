@@ -40,6 +40,8 @@ files = [
     "experiments/evaluate_verifier_v2.py", "experiments/modal_verifier_v2_test.py",
     "experiments/verifier_v2_test_remote.py", "experiments/evaluate_verifier_v2_test.py",
     "experiments/modal_private_verifier.py", "experiments/evaluate_private_verifier.py",
+    "experiments/private_sft.py", "experiments/modal_private_sft.py",
+    "experiments/private_sft_remote.py", "experiments/evaluate_private_sft.py",
 ]
 mypy_path = "src"
 explicit_package_bases = true

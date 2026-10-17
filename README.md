@@ -10,14 +10,18 @@ system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
 **The local search tool works today; the trained model is still research.**
-The latest Qwen3-4B verifier catches more unsupported claims, but sometimes
-rejects good ones. On a frozen fictional test, continuation training improved
-unsupported rejection from 18/24 to 23/24 and useful-memory retention from 5/12
-to 10/12 compared with the previous adapter. It retained 22/24 supported claims,
-down from 24/24, and missed the overall criteria. Labels are provisional agent
-judgments, with no human reviewers; broad real-conversation quality remains unproven.
-See the [results](docs/verifier-v2-results.md), with separate development and
-test reports, and the [frozen protocol](docs/verifier-v2-protocol.md).
+The first private SFT continuation raised useful acceptance from 4/7 for both
+base and prior to 5/7, but rejected 7/8 unsupported claims versus 8/8 for the
+prior adapter and missed its frozen development gate. Labels are provisional
+agent judgments with zero human reviewers; no model was selected. The strict
+report records a terminal-EOS parsing issue and the separate offline diagnostic.
+See the [private SFT results](docs/private-sft-results.md).
+
+An earlier Qwen3-4B verifier continuation on fictional data also missed its
+overall criteria: unsupported rejection improved from 18/24 to 23/24 and
+useful-memory retention from 5/12 to 10/12 compared with the previous adapter,
+but supported retention fell from 24/24 to 22/24. See its [results](docs/verifier-v2-results.md),
+separate development and test reports, and [frozen protocol](docs/verifier-v2-protocol.md).
 
 Earlier extraction and verifier experiments remain documented in the
 [quote-v4 results](docs/sft-quote-v4-results.md), [quote verifier results](docs/quote-verifier-dev-results.md),
@@ -25,18 +29,15 @@ Earlier extraction and verifier experiments remain documented in the
 and [pilot results](docs/sft-pilot-results.md). The four extractor runs and
 their findings are unchanged by the verifier experiment.
 
-Training so far has used newly authored fiction. A first private comparison now
-tests 14 claims against seven real user messages from one conversation. The
-continued adapter accepted four of seven supported memories under the full
-support-and-eligibility rule, matching the base model. It rejected all seven
-unsupported contrast claims. This small, agent-labeled development test does not
-establish reliability or improved memory answers. See the
-[private pilot](docs/private-pilot-results.md).
+The earlier private inference pilot tested 14 claims against seven real user
+messages from one conversation. The continued adapter accepted four of seven
+supported memories under the full support-and-eligibility rule, matching the
+base model. See the [pilot results](docs/private-pilot-results.md).
 
 The owner permits private training and evaluation on personal Modal. Private
-conversations and any adapters trained on them stay out of GitHub. We are
-collecting a separate real-conversation training set; the pilot stays in
-development. See [getting better data](docs/realistic-data.md).
+conversations and any adapters trained on them stay out of GitHub. The new
+comparison remains a small development diagnostic; it does not establish
+extraction, test, or QA quality. See [getting better data](docs/realistic-data.md).
 
 ## What works
 
@@ -60,9 +61,16 @@ flowchart TD
   P --> O[Optional answering model]
   E -.-> X[Small model proposes memories]
   X -.-> C[Check format, source quotes, and roles]
-  C -.-> L[Save proposed memories and their history]
+  C -.-> V[Verifier judges support and memory scope]
+  V -.-> L[Save proposed memories and their history]
   L -.-> R[Review their meaning]
 ```
+
+Conversation facts live in the local evidence store. Training teaches the model
+how to judge a claim against the original messages. The current verifier takes
+a supplied claim and its evidence, then reports whether it is supported and
+whether its subject belongs in personal memory. Extraction and answering are
+separate experiments.
 
 The solid arrows show local search; the dotted arrows show model experiments.
 Context Kit helps locate sources and stays unchanged. Citations let someone

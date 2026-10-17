@@ -1,6 +1,6 @@
 # Project status and design
 
-Updated 2026-10-16 UTC.
+Updated 2026-10-17 UTC.
 
 TraceMem is a local research prototype for finding past conversation evidence
 with source citations. The current search tool works; interpreting changes in
@@ -10,16 +10,18 @@ has the project overview and architecture diagram.
 ## Phase and boundary
 
 Phase 0 inventory and Phase 1 infrastructure are complete.
-Phase 2 evaluation continues on fictional data. Four extraction SFT runs and
-one paired-verifier QLoRA diagnostic are complete. The latest verifier run
-missed its primary development criterion; no model has been validated or
-selected for product use. Gate A remains unmet because claims and evidence
-have no independent human validation.
+Phase 2 evaluation continues on fictional and bounded private development data.
+Extraction SFT runs, synthetic verifier experiments, and the first private
+SFT continuation are complete. The latest private comparison missed its frozen
+development gate; no model has been validated or selected for product use.
+Gate A remains unmet because claims and evidence have no independent human
+validation.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
-discovery and configuration stay unchanged. Private conversation data and its
-derived evidence stay local.
+discovery and configuration stay unchanged. Private conversation data and
+derived evidence remain restricted to the authorized local and private training
+workflow; only reviewed aggregates are documented here.
 
 ## Design
 
@@ -34,7 +36,19 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## Current paired-verifier result
+## Latest private SFT result
+
+The [private continuation comparison](private-sft-results.md) used 30 private
+training rows plus 48 fictional replay rows and scored 16 development
+candidates. The strict-literal report records 0/16 valid outputs per arm because
+terminal EOS appears in decoded text. A separate offline content-only
+diagnostic reports all 16 outputs valid, but the trained arm accepted only 5/7
+useful claims (one above the prior), rejected 7/8 unsupported claims (down from
+the prior's 8/8), and retained 8/8 supported claims. It failed the frozen gate.
+All labels are provisional agent judgments with zero human reviewers; this does
+not establish extraction, held-out test, or QA quality.
+
+## Earlier synthetic paired-verifier result
 
 The [36-scenario corpus](verifier-pairs-data-card.md) pairs supported claims
 with small changes in meaning and keeps source support separate from memory

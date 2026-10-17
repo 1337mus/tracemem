@@ -1,0 +1,1512 @@
+{
+  "schema_version": 1,
+  "payload_sha256": "9daab46e516e1361f4de26aa92df0de90303062c38bcb93ac400a1abfde46c59",
+  "receipt_sha256": "5ef3e5d6014b063bd2e668ade7750c6e4918aea06ae216333e028ec369f523f0",
+  "runner_sha256": "79846f9df60ece4fb4b9068088ce2a089314debb7566b035bae31ff9adb7ef47",
+  "scoring_convention": "content_after_verified_terminal_eos_removal",
+  "normalization": {
+    "terminal_eos_markers_removed": 48,
+    "by_arm": {
+      "base": 16,
+      "prior": 16,
+      "trained": 16
+    }
+  },
+  "raw_validity": {
+    "base": {
+      "total": 16,
+      "valid": 0,
+      "invalid": 16,
+      "rate": 0.0,
+      "malformed": 16,
+      "truncated": 0,
+      "finish_reasons": {
+        "eos": 16,
+        "length": 0,
+        "unknown": 0,
+        "empty": 0
+      }
+    },
+    "prior": {
+      "total": 16,
+      "valid": 0,
+      "invalid": 16,
+      "rate": 0.0,
+      "malformed": 16,
+      "truncated": 0,
+      "finish_reasons": {
+        "eos": 16,
+        "length": 0,
+        "unknown": 0,
+        "empty": 0
+      }
+    },
+    "trained": {
+      "total": 16,
+      "valid": 0,
+      "invalid": 16,
+      "rate": 0.0,
+      "malformed": 16,
+      "truncated": 0,
+      "finish_reasons": {
+        "eos": 16,
+        "length": 0,
+        "unknown": 0,
+        "empty": 0
+      }
+    }
+  },
+  "scope": {
+    "split": "dev",
+    "case_count": 8,
+    "candidate_count": 16,
+    "session_count": 2
+  },
+  "training": {
+    "row_count": 78,
+    "microsteps": 78,
+    "optimizer_steps": 20,
+    "input_tokens": 39538,
+    "supervised_tokens": 894,
+    "mean_loss": 0.06655616854554981,
+    "trainable_parameters": 33030144,
+    "adapter_changed": true,
+    "seconds": 98.017123
+  },
+  "arms": {
+    "base": {
+      "summary": {
+        "candidate_count": 16,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 8,
+              "retained": 7,
+              "retention_rate": 0.875
+            },
+            "unsupported": {
+              "total": 8,
+              "caught": 7,
+              "catch_rate": 0.875
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 7,
+              "unsupported": 0,
+              "uncertain": 1,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 0,
+              "unsupported": 7,
+              "uncertain": 1,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 14,
+          "decisive_total": 16,
+          "decisive_accuracy": 0.875,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 4,
+              "accuracy": 0.2857142857142857
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 2,
+              "exact_correct": 2,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 2,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 4,
+              "ineligible": 0,
+              "uncertain": 10,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 2,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 4,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.2857142857142857,
+          "uncertain": {
+            "total": 2,
+            "exact_correct": 2,
+            "prediction_counts": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 2,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 302,
+          "items_with_output_tokens": 16
+        },
+        "validity": {
+          "total": 16,
+          "valid": 16,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 16,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 8
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 4,
+          "rate": 0.5714285714285714
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "prior": {
+      "summary": {
+        "candidate_count": 16,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 8,
+              "retained": 7,
+              "retention_rate": 0.875
+            },
+            "unsupported": {
+              "total": 8,
+              "caught": 8,
+              "catch_rate": 1.0
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 7,
+              "unsupported": 1,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 0,
+              "unsupported": 8,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 15,
+          "decisive_total": 16,
+          "decisive_accuracy": 0.9375,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 7,
+              "accuracy": 0.5
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 2,
+              "exact_correct": 2,
+              "prediction_counts": {
+                "eligible": 0,
+                "ineligible": 0,
+                "uncertain": 2,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 7,
+              "ineligible": 0,
+              "uncertain": 7,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 2,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 7,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.5,
+          "uncertain": {
+            "total": 2,
+            "exact_correct": 2,
+            "prediction_counts": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 2,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 185,
+          "items_with_output_tokens": 16
+        },
+        "validity": {
+          "total": 16,
+          "valid": 16,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 16,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 8
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 4,
+          "rate": 0.5714285714285714
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "trained": {
+      "summary": {
+        "candidate_count": 16,
+        "support": {
+          "by_reference": {
+            "supported": {
+              "total": 8,
+              "retained": 8,
+              "retention_rate": 1.0
+            },
+            "unsupported": {
+              "total": 8,
+              "caught": 7,
+              "catch_rate": 0.875
+            },
+            "uncertain": {
+              "total": 0,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "supported": 0,
+                "unsupported": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "supported": {
+              "supported": 8,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "unsupported": {
+              "supported": 1,
+              "unsupported": 7,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 15,
+          "decisive_total": 16,
+          "decisive_accuracy": 0.9375,
+          "uncertain": {
+            "total": 0,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "supported": 0,
+              "unsupported": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "eligibility": {
+          "by_reference": {
+            "eligible": {
+              "total": 14,
+              "correct": 12,
+              "accuracy": 0.8571428571428571
+            },
+            "ineligible": {
+              "total": 0,
+              "correct": 0,
+              "accuracy": null
+            },
+            "uncertain": {
+              "total": 2,
+              "exact_correct": 0,
+              "prediction_counts": {
+                "eligible": 2,
+                "ineligible": 0,
+                "uncertain": 0,
+                "invalid": 0
+              }
+            }
+          },
+          "confusion": {
+            "eligible": {
+              "eligible": 12,
+              "ineligible": 0,
+              "uncertain": 2,
+              "invalid": 0
+            },
+            "ineligible": {
+              "eligible": 0,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            },
+            "uncertain": {
+              "eligible": 2,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          },
+          "decisive_exact_correct": 12,
+          "decisive_total": 14,
+          "decisive_accuracy": 0.8571428571428571,
+          "uncertain": {
+            "total": 2,
+            "exact_correct": 0,
+            "prediction_counts": {
+              "eligible": 2,
+              "ineligible": 0,
+              "uncertain": 0,
+              "invalid": 0
+            }
+          }
+        },
+        "telemetry": {
+          "output_tokens": 178,
+          "items_with_output_tokens": 16
+        },
+        "validity": {
+          "total": 16,
+          "valid": 16,
+          "invalid": 0,
+          "rate": 1.0,
+          "malformed": 0,
+          "truncated": 0,
+          "finish_reasons": {
+            "eos": 16,
+            "length": 0,
+            "unknown": 0,
+            "empty": 0
+          }
+        },
+        "case_count": 8
+      },
+      "joint_acceptance": {
+        "useful_supported_eligible": {
+          "total": 7,
+          "accepted": 5,
+          "rate": 0.7142857142857143
+        },
+        "unsupported_eligible_false_accepts": {
+          "total": 7,
+          "accepted": 1,
+          "rate": 0.14285714285714285
+        }
+      }
+    }
+  },
+  "prospective_decision": {
+    "criteria": {
+      "all16_valid_and_eos_each_arm": true,
+      "trained_at_least6of7_useful": false,
+      "useful_gain_at_least2_over_prior": false,
+      "supported_retention_not_below_prior": true,
+      "unsupported_rejection_not_below_prior": false,
+      "trained_rejects8of8_unsupported": false
+    },
+    "passed": false,
+    "metrics": {
+      "base": {
+        "valid": 16,
+        "eos": 16,
+        "supported_retained": 7,
+        "supported_total": 8,
+        "unsupported_rejected": 7,
+        "unsupported_total": 8,
+        "useful_accepted": 4,
+        "useful_total": 7
+      },
+      "prior": {
+        "valid": 16,
+        "eos": 16,
+        "supported_retained": 7,
+        "supported_total": 8,
+        "unsupported_rejected": 8,
+        "unsupported_total": 8,
+        "useful_accepted": 4,
+        "useful_total": 7
+      },
+      "trained": {
+        "valid": 16,
+        "eos": 16,
+        "supported_retained": 8,
+        "supported_total": 8,
+        "unsupported_rejected": 7,
+        "unsupported_total": 8,
+        "useful_accepted": 5,
+        "useful_total": 7
+      }
+    },
+    "interpretation": "Content-only diagnostic after token-verified transport correction; no criterion or reference label was changed."
+  },
+  "original_literal_decision": {
+    "passed": false,
+    "valid_per_arm": {
+      "base": 0,
+      "prior": 0,
+      "trained": 0
+    },
+    "cause": "Runner included terminal EOS text in raw_output; original strict report and raw receipts preserved.",
+    "gpu_rerun": false
+  },
+  "per_session": [
+    {
+      "cohort": 1,
+      "arms": {
+        "base": {
+          "summary": {
+            "candidate_count": 14,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 7,
+                  "retained": 6,
+                  "retention_rate": 0.8571428571428571
+                },
+                "unsupported": {
+                  "total": 7,
+                  "caught": 6,
+                  "catch_rate": 0.8571428571428571
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 6,
+                  "unsupported": 0,
+                  "uncertain": 1,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 0,
+                  "unsupported": 6,
+                  "uncertain": 1,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 12,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.8571428571428571,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 14,
+                  "correct": 4,
+                  "accuracy": 0.2857142857142857
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 4,
+                  "ineligible": 0,
+                  "uncertain": 10,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 4,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.2857142857142857,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 264,
+              "items_with_output_tokens": 14
+            },
+            "validity": {
+              "total": 14,
+              "valid": 14,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 14,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 7
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 7,
+              "accepted": 4,
+              "rate": 0.5714285714285714
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 7,
+              "accepted": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "prior": {
+          "summary": {
+            "candidate_count": 14,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 7,
+                  "retained": 6,
+                  "retention_rate": 0.8571428571428571
+                },
+                "unsupported": {
+                  "total": 7,
+                  "caught": 7,
+                  "catch_rate": 1.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 6,
+                  "unsupported": 1,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 0,
+                  "unsupported": 7,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 13,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.9285714285714286,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 14,
+                  "correct": 7,
+                  "accuracy": 0.5
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 7,
+                  "ineligible": 0,
+                  "uncertain": 7,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 7,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.5,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 161,
+              "items_with_output_tokens": 14
+            },
+            "validity": {
+              "total": 14,
+              "valid": 14,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 14,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 7
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 7,
+              "accepted": 4,
+              "rate": 0.5714285714285714
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 7,
+              "accepted": 0,
+              "rate": 0.0
+            }
+          }
+        },
+        "trained": {
+          "summary": {
+            "candidate_count": 14,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 7,
+                  "retained": 7,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 7,
+                  "caught": 6,
+                  "catch_rate": 0.8571428571428571
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 7,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 1,
+                  "unsupported": 6,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 13,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.9285714285714286,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 14,
+                  "correct": 12,
+                  "accuracy": 0.8571428571428571
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 12,
+                  "ineligible": 0,
+                  "uncertain": 2,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 12,
+              "decisive_total": 14,
+              "decisive_accuracy": 0.8571428571428571,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 156,
+              "items_with_output_tokens": 14
+            },
+            "validity": {
+              "total": 14,
+              "valid": 14,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 14,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 7
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 7,
+              "accepted": 5,
+              "rate": 0.7142857142857143
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 7,
+              "accepted": 1,
+              "rate": 0.14285714285714285
+            }
+          }
+        }
+      }
+    },
+    {
+      "cohort": 2,
+      "arms": {
+        "base": {
+          "summary": {
+            "candidate_count": 2,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 1,
+                  "retained": 1,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 1,
+                  "caught": 1,
+                  "catch_rate": 1.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 1,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 0,
+                  "unsupported": 1,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 2,
+              "decisive_total": 2,
+              "decisive_accuracy": 1.0,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 2,
+                  "exact_correct": 2,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 2,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 0,
+              "decisive_total": 0,
+              "decisive_accuracy": null,
+              "uncertain": {
+                "total": 2,
+                "exact_correct": 2,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 2,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 38,
+              "items_with_output_tokens": 2
+            },
+            "validity": {
+              "total": 2,
+              "valid": 2,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 2,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 1
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            }
+          }
+        },
+        "prior": {
+          "summary": {
+            "candidate_count": 2,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 1,
+                  "retained": 1,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 1,
+                  "caught": 1,
+                  "catch_rate": 1.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 1,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 0,
+                  "unsupported": 1,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 2,
+              "decisive_total": 2,
+              "decisive_accuracy": 1.0,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 2,
+                  "exact_correct": 2,
+                  "prediction_counts": {
+                    "eligible": 0,
+                    "ineligible": 0,
+                    "uncertain": 2,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 2,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 0,
+              "decisive_total": 0,
+              "decisive_accuracy": null,
+              "uncertain": {
+                "total": 2,
+                "exact_correct": 2,
+                "prediction_counts": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 2,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 24,
+              "items_with_output_tokens": 2
+            },
+            "validity": {
+              "total": 2,
+              "valid": 2,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 2,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 1
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            }
+          }
+        },
+        "trained": {
+          "summary": {
+            "candidate_count": 2,
+            "support": {
+              "by_reference": {
+                "supported": {
+                  "total": 1,
+                  "retained": 1,
+                  "retention_rate": 1.0
+                },
+                "unsupported": {
+                  "total": 1,
+                  "caught": 1,
+                  "catch_rate": 1.0
+                },
+                "uncertain": {
+                  "total": 0,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "supported": 0,
+                    "unsupported": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "supported": {
+                  "supported": 1,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "unsupported": {
+                  "supported": 0,
+                  "unsupported": 1,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 2,
+              "decisive_total": 2,
+              "decisive_accuracy": 1.0,
+              "uncertain": {
+                "total": 0,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "supported": 0,
+                  "unsupported": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "eligibility": {
+              "by_reference": {
+                "eligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "ineligible": {
+                  "total": 0,
+                  "correct": 0,
+                  "accuracy": null
+                },
+                "uncertain": {
+                  "total": 2,
+                  "exact_correct": 0,
+                  "prediction_counts": {
+                    "eligible": 2,
+                    "ineligible": 0,
+                    "uncertain": 0,
+                    "invalid": 0
+                  }
+                }
+              },
+              "confusion": {
+                "eligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "ineligible": {
+                  "eligible": 0,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                },
+                "uncertain": {
+                  "eligible": 2,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              },
+              "decisive_exact_correct": 0,
+              "decisive_total": 0,
+              "decisive_accuracy": null,
+              "uncertain": {
+                "total": 2,
+                "exact_correct": 0,
+                "prediction_counts": {
+                  "eligible": 2,
+                  "ineligible": 0,
+                  "uncertain": 0,
+                  "invalid": 0
+                }
+              }
+            },
+            "telemetry": {
+              "output_tokens": 22,
+              "items_with_output_tokens": 2
+            },
+            "validity": {
+              "total": 2,
+              "valid": 2,
+              "invalid": 0,
+              "rate": 1.0,
+              "malformed": 0,
+              "truncated": 0,
+              "finish_reasons": {
+                "eos": 2,
+                "length": 0,
+                "unknown": 0,
+                "empty": 0
+              }
+            },
+            "case_count": 1
+          },
+          "joint_acceptance": {
+            "useful_supported_eligible": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            },
+            "unsupported_eligible_false_accepts": {
+              "total": 0,
+              "accepted": 0,
+              "rate": null
+            }
+          }
+        }
+      }
+    }
+  ],
+  "paired_prior_to_trained": {
+    "supported/eligible -> supported/eligible": 4,
+    "supported/uncertain -> supported/eligible": 2,
+    "supported/uncertain -> supported/uncertain": 1,
+    "unsupported/eligible -> supported/eligible": 1,
+    "unsupported/eligible -> unsupported/eligible": 2,
+    "unsupported/uncertain -> supported/uncertain": 1,
+    "unsupported/uncertain -> unsupported/eligible": 5
+  },
+  "limits": {
+    "split": "development",
+    "human_reviewers": 0,
+    "labels": "agent_provisional",
+    "supported_useful_reference_sessions": 1,
+    "supports_extraction_recall_claim": false,
+    "supports_downstream_qa_claim": false,
+    "test_used": false
+  }
+}

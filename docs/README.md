@@ -59,6 +59,9 @@ Paths in this index are relative to this `docs/` directory.
   and [criteria](verifier-v2-criteria.json).
 - [Getting realistic labeled data](realistic-data.md): private real-session pilot,
   independent annotation, and shareable evaluation sources.
+- [Private SFT development results](private-sft-results.md): completed three-arm
+  comparison, strict-literal validity failure, and separate offline content-only
+  diagnostic with provisional labels.
 - [First private comparison](private-pilot-results.md): real user messages,
   reviewed contrast claims and a matched comparison of three frozen models.
 - [Private verifier contract](private-verifier-contract.md) and

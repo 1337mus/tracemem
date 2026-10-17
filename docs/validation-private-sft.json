@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-17T05:15:16.460208+00:00",
+  "command": "make check PYTHON=.venv/bin/python",
+  "exit_code": 0,
+  "attempted": 1104,
+  "passed": 1103,
+  "skipped": 1,
+  "test_seconds": 60.605,
+  "ruff": "passed",
+  "formatted_files": 227,
+  "strict_mypy_source_files": 74,
+  "new_private_sft_tests": 31,
+  "full_check_log_sha256": "f317bcbae2ed6b57f5476a9ded96d0ee4641279b0c7306022c5b831296f46b8c",
+  "privacy_audit": {
+    "scope": "All 16 shareable source, fictional test, configuration and aggregate documentation files",
+    "private_source_records": 25,
+    "private_annotation_cases": 25,
+    "exact_strings_checked": 334,
+    "normalized_80_character_fragments_checked": 302,
+    "secret_patterns_checked": 4,
+    "hits": 0,
+    "root_review": "Only reviewed implementation, fictional fixtures and aggregate results selected; all private sources, labels, prompts, receipts and checkpoints excluded",
+    "limitations": "Exact/whitespace-normalized strings and selected secret formats are limited checks, not a privacy proof."
+  },
+  "full_suite_boundary": "Before narrow post-run terminal-EOS decoder and scorer corrections; not rerun after these focused fixes.",
+  "post_correction_validation": {
+    "focused_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_private_sft tests.test_modal_private_sft tests.test_evaluate_private_sft -q",
+    "focused_tests_passed": 35,
+    "exit_code": 0,
+    "ruff": "passed",
+    "formatted_files": 227,
+    "strict_mypy_source_files": 74,
+    "raw_receipt_canonical_hash_matches_original": true,
+    "test_split_used": false
+  }
+}

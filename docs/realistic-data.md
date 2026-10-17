@@ -1,165 +1,116 @@
 # Getting better training data
 
-The current model has learned from short fictional dialogues. Real conversations
-are messier: people change plans, quote documents, speak about someone else,
-and leave decisions unfinished. More variations of the same fictional template
-will not tell us whether the model handles those situations.
+We now have 25 annotated conversation windows from five real sessions: 50
+candidate judgments. One additional session has a source window reserved for
+later testing; it has no labels and is excluded from training and development.
+All annotations are provisional agent judgments. No human has reviewed them.
 
-We need three complementary sources of evidence.
+For the completed private SFT run, we used:
 
-## 1. A private pilot from real sessions
+| Use | Sessions | Windows | Candidate judgments |
+| --- | ---: | ---: | ---: |
+| Training | 2 | 15 | 30 |
+| Development | 2 | 8 | 16 |
+| Excluded older writing examples | 1 | 2 | 4 |
 
-Use selected personal conversations through the existing read-only adapters.
-Keep original messages and evidence hashes intact. Create a separate, restricted
-working copy containing only the context needed to judge each claim. Exclude
-secrets, employer-confidential material and identifying details about other
-people. Redactions need an explicit mapping to the original local evidence;
-a paraphrase is not an exact quote from the original.
+Training also includes 48 fictional training examples through the existing
+synthetic exporter. Synthetic development and test examples are excluded. The
+one-epoch private continuation completed; its aggregate run and development
+results are in the [private SFT report](private-sft-results.md).
 
-A review of the first four-window shortlist found no unambiguous direct
-human-authored memory statements. Three windows contain injected environment
-context and assistant plans; the fourth contains tool-transcript material.
-Metadata checks found that all 22 selected sources are subagent sessions.
-Their 36 prepared windows are not yet a useful personal-memory training set.
-Preserve that snapshot as a failed selection and choose primary conversations
-with substantive user dialogue. A provider's `user` role can include machine
-instructions; role alone does not establish human authorship.
+## What the real examples add
 
-The next collection step follows the verified personal-project parent session,
-then selects complete, bounded messages with original line/hash anchors. Keep
-system metadata and tool transcripts available for local audit, rather than
-mistaking them for the user's preferences or decisions. One project can support
-an internal pilot; broad claims need more projects, people and providers.
+People give permission without saying an action happened, correct earlier
+requests, relay someone else's feedback, and describe preferences for one
+project rather than for their whole life. The new training examples cover
+those distinctions using complete original source blocks and exact citations.
+They are a balanced challenge of source-derived claims and deliberately wrong
+variants. They do not estimate how often mistakes occur in ordinary use.
 
-Before model evaluation, assign complete sessions to train, development and
-test groups. Keep overlapping sessions, copied documents and conversation
-continuations together. Reserve a later time period or another personal
-project when available. If the existing development snapshot is repartitioned,
-disclose that curators have already seen it: it is an internal evaluation,
-not a blind benchmark. Do not split claims randomly across these groups.
+Automatic browser context and file wrappers are preserved for source integrity
+but distinguished from human requests. Citations select the explicit human
+span. Source IDs, revisions, quotes, offsets and text hashes are checked against
+the original read-only adapter records. A saved summary can help find a source;
+it cannot replace the original words as evidence.
 
-The owner permits private training and evaluation on personal Modal. Private
-transcripts, claims, prompts, raw receipts and adapters trained on them stay out
-of GitHub and public releases. Use a separate private experiment path; the
-fiction-only launchers intentionally reject this provenance.
+The first discovery attempt selected subagent launch material rather than
+human dialogue. Those receipts remain as a failed selection. Later screening
+also rejected complete personal messages too broadly because they contained
+file context. Individual source and privacy review recovered useful examples.
+A provider's `user` role alone does not establish human authorship.
 
-## 2. Labels with evidence and independent checks
+## How labels are checked
 
-For each candidate, record two answers:
+Each candidate has two separate labels:
 
-- **Supported?** Does the conversation actually say this, with the same actor,
-  reporting source, conditions, time and certainty?
-- **Useful personal memory?** Does the claim fit the stated memory policy?
-  A faithful statement about a fictional exercise can still be out of scope.
+- **Support:** does the source entail the claim with the same actor, reporting
+  source, conditions, time and certainty?
+- **Eligibility:** assuming it were supported, does the subject belong in the
+  stated personal-memory policy?
 
-Keep `uncertain` available for both. Save the exact evidence quote and offsets,
-the rationale, annotator identity and whether the annotator was an agent or a
-human. Exact offsets prove where the words came from, not that the claim means
-the same thing.
+Both axes allow uncertainty. Temporary project context and permanent retention
+are separate decisions. The frozen prompt treats real user-stated or reported
+facts as eligible, fictional-character facts as ineligible, and writing or
+exercise metadata as uncertain.
 
-An initial annotator proposes claims. A second annotator sees the source and
-claims without the first labels or model predictions. Compare their labels,
-then adjudicate disagreements against the evidence. Report agreement before
-adjudication, per label axis. Two agents are two annotation passes; they are
-not a human gold standard or proof of independent model judgment.
+For the newest 20 candidates, an independent pass agreed with initial support
+labels on 20/20 and eligibility on 16/20. Root review nevertheless caught a
+segment-versus-duration inference and qualifiers absent from standalone source
+windows. Five claims were corrected and independently checked again. Agreement
+between agents is useful evidence, but it did not catch every error.
 
-Use owner review where it helps most: ambiguous personal-memory scope,
-conflicting context, and a random sample of agreed labels. Keep agent-only
-and human-reviewed results separate. Owner review can improve this personal
-pilot; a broader benchmark needs more reviewers and more source diversity.
-Human review is not a prerequisite for a disclosed provisional experiment.
+Seven initial eligibility labels changed during adjudication. Three final scope
+labels are root-only decisions that disagree with the blind pass; the originals
+and disagreements remain in separate local receipts. None is human gold.
 
-For training, include faithful positives, genuine model mistakes, correctly
-empty windows, and minimally altered negative claims. Examples should cover
-assistant suggestions mistaken for user decisions, dropped conditions,
-reversed negation, changed preferences, reported facts and uncertain actors.
-Do not force equal numbers of good and bad claims in a naturalistic evaluation.
-Use a separate balanced challenge set to measure specific failure modes.
+A later blind review and root adjudication revisited four older writing-task
+examples for a separate candidate. Their support labels stayed at two supported
+and two unsupported; eligibility is uncertain for all four under the existing
+prompt. These examples were not in the completed run, and its records remain
+unchanged. The separate unrun candidate has 34 private rows from three sessions
+plus the same 48 fictional replay rows, 82 total. Its development cases, labels,
+and prompts are byte-identical to those in the completed comparison. It has not
+been trained, and no additional GPU call was made.
 
-## 3. A shareable benchmark with different sources
+## What the experiment can establish
 
-Inspect current licenses and terms before acquiring public conversations.
-LongMemEval and LoCoMo are candidate evaluation sources, not automatically
-approved training data. Pin each source version and retain its required
-attribution. Keep benchmark evaluation conversations out of training, and
-report possible contamination of the base model.
+The first private inference pilot accepted 4/7 useful supported memories with
+the continued adapter, matching the base model. It established no overall gain.
+See the [private pilot results](private-pilot-results.md).
 
-Author new shareable fiction from general failure patterns rather than
-redacting and publishing real transcripts. Renaming a person does not make a
-private conversation public training data. Separate authors/scenarios across
-splits and include longer conversations and unrelated distractors.
+The completed run compared the same pinned base model, the existing synthetic
+adapter and one private continuation on identical development prompts. Its
+frozen criterion requires at least six of seven useful memories accepted, at
+least two more than the same-call prior adapter, all eight unsupported claims
+rejected, and no loss in supported retention. The trained arm reached 5/7 useful
+acceptances (one more than prior), 7/8 unsupported rejections (one fewer than
+prior), and 8/8 supported retention. It failed the criterion. The strict-literal
+report counted 0/16 valid outputs per arm because decoded text included terminal
+EOS. The offline diagnostic removed exactly one verified trailing EOS token from
+a copy before content validation; the original receipt and strict report remain
+unchanged. See the results report for the full table and limits.
 
-## How we will decide whether the data helps
+This is a small development experiment on supplied candidates, with previously
+inspected examples and correlated conversation windows. It cannot establish
+extraction recall, natural error prevalence, durable memory quality or better
+answers. Development remains development. The reserved test source and sealed
+synthetic candidate stay untouched.
 
-Freeze the same base model, existing adapter and one private-data candidate.
-Score them on the same reserved sessions before choosing another training run.
-Measure unsupported claims accepted, useful supported claims retained,
-attribution and temporal errors, and uncertainty. Include confidence intervals
-clustered by conversation; tiny pilots will have wide intervals.
+The next data target is roughly 100 useful windows from distinct sessions,
+including no-memory examples and naturally occurring model mistakes. Review
+policy disagreements and a random sample with the owner, then compare increasing
+training subsets on fixed development data. A final candidate needs a separately
+labeled test cohort and a downstream QA comparison against transcript retrieval.
 
-Then test the complete memory pipeline: can it answer questions correctly
-with the same answering model and evidence budget as ordinary transcript
-retrieval? Better verifier scores alone do not establish a better assistant.
+## Privacy and release
 
-The first [private pilot](private-pilot-results.md) is complete: seven real user
-messages, 14 reviewed contrast candidates, and a frozen three-model comparison.
-The continued adapter accepted 4/7 supported eligible memories, matching the
-base model. The source-linked private contract and train/evaluation exporters
-work, but no private training rows have been used. The pilot stays in development.
+The owner authorizes private training and evaluation on personal Modal. Original
+conversations, Context Kit and the local context archive remain read-only.
+Exclude secrets, employer-confidential information and identifying details about
+other people from remote inputs. Keep private transcripts, labels, prompts,
+receipts, vectors and private-trained adapters out of GitHub and public releases.
 
-The comparison exposes scope uncertainty on real project dialogue, along with
-one false rejection of a supported question. Next collect distinct primary
-sessions with actual adapter metadata, reusable preferences, temporary task
-context and no-memory windows. Following the two other candidate parent chains
-returned to the same original primary session; those chains do not provide
-independent training conversations.
-
-A bounded expansion screened four additional transcripts and 17 user-role
-records. Fifteen records were excluded as machine/control text or possible
-sensitive content. Two complete human messages from a second session passed
-source and privacy review. They now supply four provisional training judgments:
-two source-derived claims and two deliberately incorrect variants. Two agent
-annotation passes agreed on all four support and eligibility labels. There
-are still zero human reviewers. A draft that incorrectly identified an agent
-privacy reviewer as human was rejected and corrected before acceptance.
-
-The local corpus now has four training rows from one session, separate from
-14 development candidates from the original session. There is no private test
-cohort and no private training run. All current eligibility references are
-eligible, so this batch cannot teach or measure scope discrimination. Retention
-notes mark the new material as task-local; they do not turn an editing request
-into a permanent preference. Private text, labels and source receipts remain
-in ignored, restricted local files. The initial collection target below remains
-unmet.
-
-## Bounded batches and a stopping rule
-
-These are prospective collection targets, not counts already available:
-
-1. **Pilot:** 20 substantive windows from at least five primary sessions, with
-   roughly 60–100 candidate judgments. Review all citations and privacy
-   exclusions. Evaluate the existing adapters first; do not train on this
-   development pilot and then call it held out.
-2. **First training batch:** expand toward 100 useful windows across distinct
-   primary sessions. Preserve natural positives and add targeted negative
-   variants only in the training/challenge lane. Have the owner review policy
-   disagreements plus a random sample of agreed labels. Keep the remaining
-   agent-only labels explicitly provisional.
-3. **Learning curve:** if the first private comparison exposes relevant errors,
-   compare increasing training subsets against the same development cohort.
-   A larger batch earns another run only if support errors fall without losing
-   useful memories. Reserve a separately labeled test cohort for the final
-   candidate and a matched downstream QA comparison.
-
-Track collection yield (usable windows / inspected windows), pre-adjudication
-label agreement, time per reviewed example, duplicate exclusions and residual
-uncertainty. A failed selection is recorded rather than padded into the dataset.
-There is no guarantee that more examples improve a 4B model; compare a stronger
-prompt-only model on the same evidence to distinguish data gaps from capacity.
-
-A 23/24 diagnostic catch rate cannot substantiate a 99% reliability claim.
-Even zero errors among 100 independent accepted claims would be insufficient:
-a one-sided exact 95% lower bound exceeds 99% only after at least 299 independent
-error-free accepted claims. Correlated examples or repeated templates provide
-less evidence. Report the observed denominators and uncertainty instead of
-rounding a tiny diagnostic into production accuracy.
+Public benchmarks such as LongMemEval and LoCoMo require a separate license and
+version review before acquisition. Evaluation conversations must stay out of
+training. New shareable fiction should come from general error patterns, not
+renamed private conversations.
