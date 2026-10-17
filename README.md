@@ -9,36 +9,23 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**The local search tool works today; the trained model is still research.**
-The latest private run accepted 6/7 useful claims, versus 4/7 for the previous
-synthetic adapter and 5/7 in the first private run. It retained 8/8 supported claims,
-rejected 7/8 unsupported claims, and correctly marked 0/2 uncertain-scope cases.
-Outputs were valid, but the development gate failed and no product model was
-selected. Labels are provisional agent judgments with zero human reviewers. See
-the [latest scope results](docs/private-sft-scope-results.md) and the [first
-private SFT results](docs/private-sft-results.md).
+**Local search works today; trained memory models remain research.** The
+latest private-training comparison used a tiny, adaptive development set of 16
+candidates from two sessions; all seven useful references came from one
+session. The new candidate accepted 7/7 useful references, versus 6/7 for the
+previous private adapter, but still accepted one unsupported claim and got 0/2
+policy-sensitive uncertain-scope labels right. Labels are provisional agent
+judgments with zero human reviewers, and the frozen gate failed. This did not
+measure extraction or downstream QA, and no model was selected. Private
+training and evaluation on personal Modal are authorized. See the
+[latest results](docs/private-sft-contrast-results.md), [experiment index](docs/README.md),
+and [data notes](docs/realistic-data.md).
 
-An earlier Qwen3-4B verifier continuation on fictional data also missed its
-overall criteria: unsupported rejection improved from 18/24 to 23/24 and
-useful-memory retention from 5/12 to 10/12 compared with the previous adapter,
-but supported retention fell from 24/24 to 22/24. See its [results](docs/verifier-v2-results.md),
-separate development and test reports, and [frozen protocol](docs/verifier-v2-protocol.md).
-
-Earlier extraction and verifier experiments remain documented in the
-[quote-v4 results](docs/sft-quote-v4-results.md), [quote verifier results](docs/quote-verifier-dev-results.md),
-[prompt baseline](docs/quote-baseline-results.md), [quote-v2 results](docs/sft-quote-v2-results.md),
-and [pilot results](docs/sft-pilot-results.md). The four extractor runs and
-their findings are unchanged by the verifier experiment.
-
-The earlier private inference pilot tested 14 claims against seven real user
-messages from one conversation. The continued adapter accepted four of seven
-supported memories under the full support-and-eligibility rule, matching the
-base model. See the [pilot results](docs/private-pilot-results.md).
-
-The owner permits private training and evaluation on personal Modal. Private
-conversations and any adapters trained on them stay out of GitHub. The new
-comparison remains a small development diagnostic; it does not establish
-extraction, test, or QA quality. See [getting better data](docs/realistic-data.md).
+A separate inference-only challenge on 16 fictional candidates across eight
+scripted scenarios passed its narrow dev gate, but both adapters got 0/2
+uncertain-support cases right. Labels remain provisional; this is not product
+evidence and does not change the failed private-training gate. See the
+[naturalistic dev results](docs/naturalistic-dev-results.md).
 
 ## What works
 

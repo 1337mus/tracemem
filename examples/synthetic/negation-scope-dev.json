@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "scope_policy": "personal-memory-research-v1",
+  "cases": [
+    {
+      "case_id": "nscdiag-20261017-01",
+      "split": "dev",
+      "scenario_group": "nscdiag-scenario-01",
+      "template_group": "nscdiag-template-01",
+      "entity_ids": [
+        "nscdiag-entity-01"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nscdiag-20261017-session-01",
+          "message_id": "nscdiag-20261017-01-msg-1",
+          "role": "user",
+          "text": "For my own greenhouse bench, please arrange delivery of the cedar seed table as soon as possible.",
+          "recorded_at": "2026-10-17T14:11:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-01",
+          "message_id": "nscdiag-20261017-01-msg-2",
+          "role": "assistant",
+          "text": "Should I reserve the delivery slot now?",
+          "recorded_at": "2026-10-17T14:12:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-01",
+          "message_id": "nscdiag-20261017-01-msg-3",
+          "role": "user",
+          "text": "Put that delivery request on hold until I confirm the bench footprint; do not reserve a slot before I send that confirmation.",
+          "recorded_at": "2026-10-17T14:13:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nscdiag-20261017-01-candidate-1",
+          "claim": "The user tells the assistant to hold the cedar seed table delivery request until the user confirms the bench footprint.",
+          "message_id": "nscdiag-20261017-01-msg-3",
+          "quote": "Put that delivery request on hold until I confirm the bench footprint; do not reserve a slot before I send that confirmation.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The later user message explicitly puts the earlier delivery request on hold until the user confirms the bench footprint.",
+          "eligibility_reason": "The request concerns delivery for the user’s own greenhouse bench, a real project instruction that belongs in personal memory."
+        },
+        {
+          "candidate_id": "nscdiag-20261017-01-candidate-2",
+          "claim": "The user tells the assistant to reserve the cedar seed table delivery slot before receiving bench-footprint confirmation.",
+          "message_id": "nscdiag-20261017-01-msg-3",
+          "quote": "Put that delivery request on hold until I confirm the bench footprint; do not reserve a slot before I send that confirmation.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The user explicitly says not to reserve a slot before confirmation, directly contradicting the proposed early reservation.",
+          "eligibility_reason": "Even though its timing is false, the candidate is about the user’s own real greenhouse project and remains eligible subject matter."
+        }
+      ]
+    },
+    {
+      "case_id": "nscdiag-20261017-02",
+      "split": "dev",
+      "scenario_group": "nscdiag-scenario-02",
+      "template_group": "nscdiag-template-02",
+      "entity_ids": [
+        "nscdiag-entity-02"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nscdiag-20261017-session-02",
+          "message_id": "nscdiag-20261017-02-msg-1",
+          "role": "user",
+          "text": "I am making a dialogue-writing exercise around an observatory that has a locked map cabinet.",
+          "recorded_at": "2026-10-17T14:21:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-02",
+          "message_id": "nscdiag-20261017-02-msg-2",
+          "role": "assistant",
+          "text": "Which detail are you giving the keeper in the draft?",
+          "recorded_at": "2026-10-17T14:22:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-02",
+          "message_id": "nscdiag-20261017-02-msg-3",
+          "role": "user",
+          "text": "For the dialogue-writing exercise I am drafting, Evi the clockmaker hides the folded tide chart beneath a loose stageboard.",
+          "recorded_at": "2026-10-17T14:23:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nscdiag-20261017-02-candidate-1",
+          "claim": "The user is drafting a dialogue-writing exercise in which Evi the clockmaker hides the folded tide chart beneath a loose stageboard.",
+          "message_id": "nscdiag-20261017-02-msg-3",
+          "quote": "For the dialogue-writing exercise I am drafting, Evi the clockmaker hides the folded tide chart beneath a loose stageboard.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The user explicitly identifies the activity as drafting a dialogue-writing exercise and gives the detail assigned to Evi.",
+          "eligibility_reason": "The claim is about the user’s act of composing an exercise; the frozen policy leaves writing and exercise metadata uncertain."
+        },
+        {
+          "candidate_id": "nscdiag-20261017-02-candidate-2",
+          "claim": "The user is drafting a dialogue-writing exercise in which Evi the clockmaker hides the folded tide chart inside a coat pocket.",
+          "message_id": "nscdiag-20261017-02-msg-3",
+          "quote": "For the dialogue-writing exercise I am drafting, Evi the clockmaker hides the folded tide chart beneath a loose stageboard.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The cited sentence places the chart beneath a loose stageboard, not inside a coat pocket.",
+          "eligibility_reason": "The changed hiding place remains part of a claim about the user composing an exercise, so its eligibility is still uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "nscdiag-20261017-03",
+      "split": "dev",
+      "scenario_group": "nscdiag-scenario-03",
+      "template_group": "nscdiag-template-03",
+      "entity_ids": [
+        "nscdiag-entity-03"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nscdiag-20261017-session-03",
+          "message_id": "nscdiag-20261017-03-msg-1",
+          "role": "user",
+          "text": "I am preparing a short vocabulary worksheet with examples about instruments and labels.",
+          "recorded_at": "2026-10-17T14:31:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-03",
+          "message_id": "nscdiag-20261017-03-msg-2",
+          "role": "assistant",
+          "text": "What example did you write for the sample inventor?",
+          "recorded_at": "2026-10-17T14:32:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-03",
+          "message_id": "nscdiag-20261017-03-msg-3",
+          "role": "user",
+          "text": "In the vocabulary worksheet I am authoring, the sample inventor labels a brass compass as “borrowed” on the display card.",
+          "recorded_at": "2026-10-17T14:33:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nscdiag-20261017-03-candidate-1",
+          "claim": "The user is authoring a vocabulary worksheet in which the sample inventor labels a brass compass as borrowed.",
+          "message_id": "nscdiag-20261017-03-msg-3",
+          "quote": "In the vocabulary worksheet I am authoring, the sample inventor labels a brass compass as “borrowed” on the display card.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The user states that they are authoring the worksheet and that its sample inventor uses the label “borrowed” for the compass.",
+          "eligibility_reason": "This records the user’s exercise-authoring activity, which the unchanged personal-memory policy treats as uncertain metadata."
+        },
+        {
+          "candidate_id": "nscdiag-20261017-03-candidate-2",
+          "claim": "The user is authoring a vocabulary worksheet in which the sample inventor labels a brass compass as donated.",
+          "message_id": "nscdiag-20261017-03-msg-3",
+          "quote": "In the vocabulary worksheet I am authoring, the sample inventor labels a brass compass as “borrowed” on the display card.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source specifies the label “borrowed”; it does not say that the sample inventor marks the compass as donated.",
+          "eligibility_reason": "The unsupported alternative still describes the user’s worksheet-writing activity, so eligibility remains uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "nscdiag-20261017-04",
+      "split": "dev",
+      "scenario_group": "nscdiag-scenario-04",
+      "template_group": "nscdiag-template-04",
+      "entity_ids": [
+        "nscdiag-entity-04"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nscdiag-20261017-session-04",
+          "message_id": "nscdiag-20261017-04-msg-1",
+          "role": "user",
+          "text": "In my puppet opera, Oru has sworn to ring the moon bell at the winter fair.",
+          "recorded_at": "2026-10-17T14:41:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-04",
+          "message_id": "nscdiag-20261017-04-msg-2",
+          "role": "assistant",
+          "text": "Is the oath still his next action?",
+          "recorded_at": "2026-10-17T14:42:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nscdiag-20261017-session-04",
+          "message_id": "nscdiag-20261017-04-msg-3",
+          "role": "user",
+          "text": "Oru retracts that promise for now; he will ring the moon bell only if Tessa finds the buried tuning key before the curtain rises.",
+          "recorded_at": "2026-10-17T14:43:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nscdiag-20261017-04-candidate-1",
+          "claim": "In the puppet opera, Oru retracts his promise for now and will ring the moon bell only if Tessa finds the buried tuning key before the curtain rises.",
+          "message_id": "nscdiag-20261017-04-msg-3",
+          "quote": "Oru retracts that promise for now; he will ring the moon bell only if Tessa finds the buried tuning key before the curtain rises.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The sentence states Oru’s retraction and preserves the condition and deadline for his possible later action.",
+          "eligibility_reason": "Oru, Tessa, and the moon-bell plot are explicitly part of the user’s puppet opera, so this is fictional-character content."
+        },
+        {
+          "candidate_id": "nscdiag-20261017-04-candidate-2",
+          "claim": "In the puppet opera, Oru keeps his promise to ring the moon bell even if Tessa has not found the tuning key before the curtain rises.",
+          "message_id": "nscdiag-20261017-04-msg-3",
+          "quote": "Oru retracts that promise for now; he will ring the moon bell only if Tessa finds the buried tuning key before the curtain rises.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source says Oru retracts the promise and makes ringing conditional on Tessa finding the key before the curtain rises.",
+          "eligibility_reason": "The contradicted action still concerns only a fictional character and fictional event, which the frozen policy excludes."
+        }
+      ]
+    }
+  ]
+}

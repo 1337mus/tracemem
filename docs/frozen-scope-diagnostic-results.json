@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "complete_inference_only",
+  "training_performed": false,
+  "fictional_diagnostic": {
+    "candidates": 8,
+    "scenarios": 4,
+    "independently_authored": true,
+    "labels_status": "agent_provisional",
+    "human_reviewers": 0,
+    "arms": {
+      "base": {"support": {"correct": 8, "total": 8}, "eligibility": {"correct": 2, "total": 8}},
+      "synthetic_v2_adapter": {"support": {"correct": 8, "total": 8}, "eligibility": {"correct": 8, "total": 8}},
+      "latest_private_adapter": {"support": {"correct": 8, "total": 8}, "eligibility": {"correct": 8, "total": 8}}
+    },
+    "gate": {"passed": true, "scope": "diagnostic_only"}
+  },
+  "existing_private_controls": {
+    "candidates": 16,
+    "latest_private_adapter_errors": {"uncertain_scope_correct": 0, "uncertain_scope_total": 2, "unsupported_autoaccepts": 1},
+    "token_parity_by_arm": {
+      "base": {"input_exact": 16, "output_exact": 16},
+      "synthetic_v2_adapter": {"input_exact": 16, "output_exact": 16},
+      "latest_private_adapter": {"input_exact": 16, "output_exact": 16}
+    }
+  },
+  "responses": {"valid_json_and_eos": 72, "total": 72},
+  "source_collection": {"bounded_scans": 10, "new_real_source_admissions": 0},
+  "next_candidate": {"training_rows": 14, "status": "being_prepared_not_launched"},
+  "timing_seconds": {"base": 29.642, "synthetic_v2_adapter": 31.254, "latest_private_adapter": 30.255, "model_load": 84.637, "total": 176.013}
+}

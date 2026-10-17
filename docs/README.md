@@ -59,9 +59,20 @@ Paths in this index are relative to this `docs/` directory.
   and [criteria](verifier-v2-criteria.json).
 - [Getting realistic labeled data](realistic-data.md): private real-session pilot,
   independent annotation, and shareable evaluation sources.
+- [Latest private SFT contrast](private-sft-contrast-results.md) and
+  [aggregate](private-sft-contrast-results.json): a 256-row comparison from
+  synthetic-v2 that improved useful acceptance but failed the frozen gate. See
+  the [fictional challenge data card](negation-scope-data-card.md).
+- [Naturalistic fictional dev results](naturalistic-dev-results.md) and
+  [aggregate](naturalistic-dev-results.json): a 16-candidate, eight-scenario
+  inference-only challenge passed its narrow dev gate; labels are provisional
+  and no product claim is supported.
 - [Private SFT development results](private-sft-results.md): completed three-arm
   comparison, strict-literal validity failure, and separate offline content-only
   diagnostic with provisional labels.
+- [Frozen-scope inference diagnostic](frozen-scope-diagnostic-results.md) and
+  [aggregate](frozen-scope-diagnostic-results.json): an inference-only fictional
+  comparison; its narrow provisional gate passed, without selecting a model.
 - [First private comparison](private-pilot-results.md): real user messages,
   reviewed contrast claims and a matched comparison of three frozen models.
 - [Private verifier contract](private-verifier-contract.md) and

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "complete_development_comparison",
+  "training_performed": true,
+  "training": {
+    "row_count": 256,
+    "earlier_rows_reused": 242,
+    "new_fictional_rows": 14,
+    "microsteps": 256,
+    "optimizer_steps": 64,
+    "seconds": 335.533268,
+    "started_from": "synthetic_v2_adapter",
+    "continued_from_previous_private_adapter": false,
+    "row_order_changed": true
+  },
+  "earlier_private_comparison": {
+    "row_count": 242,
+    "microsteps": 242,
+    "optimizer_steps": 61,
+    "seconds": 316.333
+  },
+  "development": {
+    "candidate_count": 16,
+    "case_count": 8,
+    "session_count": 2,
+    "useful_references": 7,
+    "useful_reference_sessions": 1,
+    "labels_status": "agent_provisional",
+    "human_reviewers": 0,
+    "policy_sensitive_uncertain_scope_labels": 2,
+    "arms": {
+      "base_model": {
+        "useful_accepted": 4, "useful_total": 7,
+        "supported_retained": 7, "supported_total": 8,
+        "unsupported_rejected": 7, "unsupported_total": 8,
+        "uncertain_scope_correct": 2, "uncertain_scope_total": 2
+      },
+      "synthetic_v2_adapter": {
+        "useful_accepted": 4, "useful_total": 7,
+        "supported_retained": 7, "supported_total": 8,
+        "unsupported_rejected": 8, "unsupported_total": 8,
+        "uncertain_scope_correct": 2, "uncertain_scope_total": 2
+      },
+      "previous_private_adapter": {
+        "useful_accepted": 6, "useful_total": 7,
+        "supported_retained": 8, "supported_total": 8,
+        "unsupported_rejected": 7, "unsupported_total": 8,
+        "uncertain_scope_correct": 0, "uncertain_scope_total": 2
+      },
+      "new_candidate": {
+        "useful_accepted": 7, "useful_total": 7,
+        "supported_retained": 8, "supported_total": 8,
+        "unsupported_rejected": 7, "unsupported_total": 8,
+        "uncertain_scope_correct": 0, "uncertain_scope_total": 2
+      }
+    },
+    "same_call_outputs_valid_json_and_eos_per_arm": {"valid": 16, "total": 16},
+    "base_synthetic_v2_token_parity": {"candidates": 16, "input_exact": 16, "output_exact": 16, "matched_against": "each_arm_earlier_receipt"}
+  },
+  "gate": {
+    "passed": false,
+    "useful_acceptance": {"actual": 7, "total": 7, "required": 6, "passed": true},
+    "supported_retention": {"actual": 8, "total": 8, "required": 8, "passed": true},
+    "unsupported_rejection": {"actual": 7, "total": 8, "required": 8, "passed": false},
+    "uncertain_scope": {"actual": 0, "total": 2, "required": 2, "passed": false}
+  },
+  "limits": {
+    "adaptive_development_iteration": true,
+    "test_used": false,
+    "extraction_measured": false,
+    "downstream_qa_measured": false,
+    "model_selected": false
+  }
+}

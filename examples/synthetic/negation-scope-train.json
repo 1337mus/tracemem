@@ -1,0 +1,753 @@
+{
+  "version": 1,
+  "license": "MIT",
+  "annotation_status": "agent_authored",
+  "provenance": "newly_authored_fiction",
+  "scope_policy": "personal-memory-research-v1",
+  "cases": [
+    {
+      "case_id": "nsc-20261017-01",
+      "split": "train",
+      "scenario_group": "nsc-scenario-01",
+      "template_group": "nsc-template-01",
+      "entity_ids": [
+        "nsc-entity-01"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-01",
+          "message_id": "nsc-20261017-01-user-1",
+          "role": "user",
+          "text": "I am keeping the tile-mural supply list separate from the installation checklist.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-01",
+          "message_id": "nsc-20261017-01-assistant-2",
+          "role": "assistant",
+          "text": "Which step is still waiting on a test result?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-01",
+          "message_id": "nsc-20261017-01-user-3",
+          "role": "user",
+          "text": "I have not ordered the ochre grout; I will buy it only after the test tile dries without a powdery edge.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-01-candidate-1",
+          "claim": "The user has not ordered the ochre grout and plans to buy it only after the test tile dries without a powdery edge.",
+          "message_id": "nsc-20261017-01-user-3",
+          "quote": "I have not ordered the ochre grout; I will buy it only after the test tile dries without a powdery edge.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The source directly says no order has been placed and makes the planned purchase depend on the test tile drying without a powdery edge.",
+          "eligibility_reason": "This records the user’s own real project plan for selecting and buying a material, which falls within personal project memory."
+        },
+        {
+          "candidate_id": "nsc-20261017-01-candidate-2",
+          "claim": "The user has already ordered the ochre grout before checking whether the test tile dries with a powdery edge.",
+          "message_id": "nsc-20261017-01-user-3",
+          "quote": "I have not ordered the ochre grout; I will buy it only after the test tile dries without a powdery edge.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The candidate reverses the explicit unplaced-order state and removes the drying test that must precede the planned purchase.",
+          "eligibility_reason": "Even though the order claim is false, it concerns a real material choice in the user’s own mural project and is eligible subject matter."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-02",
+      "split": "train",
+      "scenario_group": "nsc-scenario-02",
+      "template_group": "nsc-template-02",
+      "entity_ids": [
+        "nsc-entity-02"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-02",
+          "message_id": "nsc-20261017-02-user-1",
+          "role": "user",
+          "text": "I am revising the finish plan for a small balcony project before buying supplies.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-02",
+          "message_id": "nsc-20261017-02-assistant-2",
+          "role": "assistant",
+          "text": "Has the earlier weekend plan survived the new approval requirement?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-02",
+          "message_id": "nsc-20261017-02-user-3",
+          "role": "user",
+          "text": "I am taking back my plan to stain the balcony rail this Saturday; I will pick a finish after the landlord confirms which sealant is permitted.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-02-candidate-1",
+          "claim": "The user has withdrawn the plan to stain the balcony rail this Saturday and will choose a finish after the landlord confirms the permitted sealant.",
+          "message_id": "nsc-20261017-02-user-3",
+          "quote": "I am taking back my plan to stain the balcony rail this Saturday; I will pick a finish after the landlord confirms which sealant is permitted.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The statement explicitly retracts the Saturday staining plan and places the later finish choice after the landlord’s sealant confirmation.",
+          "eligibility_reason": "The claim concerns the user’s stated decision and next step for their actual balcony work, so its subject is personal project information."
+        },
+        {
+          "candidate_id": "nsc-20261017-02-candidate-2",
+          "claim": "The user still intends to stain the balcony rail this Saturday regardless of the landlord’s sealant decision.",
+          "message_id": "nsc-20261017-02-user-3",
+          "quote": "I am taking back my plan to stain the balcony rail this Saturday; I will pick a finish after the landlord confirms which sealant is permitted.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The source says the user is taking back that Saturday plan, while the candidate incorrectly preserves it and discards the approval dependency.",
+          "eligibility_reason": "The mistaken claim still targets the user’s own real-world project intention, so eligibility does not depend on whether the intention is accurately reported."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-03",
+      "split": "train",
+      "scenario_group": "nsc-scenario-03",
+      "template_group": "nsc-template-03",
+      "entity_ids": [
+        "nsc-entity-03"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-03",
+          "message_id": "nsc-20261017-03-user-1",
+          "role": "user",
+          "text": "I am tracking the rain-barrel permit paperwork alongside the overflow sketch.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-03",
+          "message_id": "nsc-20261017-03-assistant-2",
+          "role": "assistant",
+          "text": "What has to be confirmed before the form goes out?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-03",
+          "message_id": "nsc-20261017-03-user-3",
+          "role": "user",
+          "text": "I have not submitted the rain-barrel permit; I will send the form once the council confirms the overflow diagram is acceptable.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-03-candidate-1",
+          "claim": "The user has not submitted the rain-barrel permit and plans to send it after the council accepts the overflow diagram.",
+          "message_id": "nsc-20261017-03-user-3",
+          "quote": "I have not submitted the rain-barrel permit; I will send the form once the council confirms the overflow diagram is acceptable.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user states that submission has not happened and that sending the form awaits the council’s confirmation about the diagram.",
+          "eligibility_reason": "This is a first-person report of the user’s own permit status and intended project step, which is useful personal memory."
+        },
+        {
+          "candidate_id": "nsc-20261017-03-candidate-2",
+          "claim": "The user has already submitted the rain-barrel permit before receiving the council’s view of the overflow diagram.",
+          "message_id": "nsc-20261017-03-user-3",
+          "quote": "I have not submitted the rain-barrel permit; I will send the form once the council confirms the overflow diagram is acceptable.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The candidate turns an explicitly unsubmitted form into a completed submission and contradicts the stated prerequisite for sending it.",
+          "eligibility_reason": "Submission status for the user’s own rain-barrel installation remains eligible subject matter even when the candidate gets that status wrong."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-04",
+      "split": "train",
+      "scenario_group": "nsc-scenario-04",
+      "template_group": "nsc-template-04",
+      "entity_ids": [
+        "nsc-entity-04"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-04",
+          "message_id": "nsc-20261017-04-user-1",
+          "role": "user",
+          "text": "I am deciding what to do with a marked-up orchard sketch before sharing it.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-04",
+          "message_id": "nsc-20261017-04-assistant-2",
+          "role": "assistant",
+          "text": "Is there permission to forward the current version?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-04",
+          "message_id": "nsc-20261017-04-user-3",
+          "role": "user",
+          "text": "Please do not forward my orchard sketch yet; you may share it with Nia only after I remove the marked well locations.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-04-candidate-1",
+          "claim": "The user currently asks that the orchard sketch not be forwarded and permits sharing with Nia only after removing the marked well locations.",
+          "message_id": "nsc-20261017-04-user-3",
+          "quote": "Please do not forward my orchard sketch yet; you may share it with Nia only after I remove the marked well locations.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The quoted instruction withholds current forwarding and grants a narrowly conditioned future permission after the well markers are removed.",
+          "eligibility_reason": "This records the user’s own sharing preference and conditional permission about their project sketch, which belongs in personal memory."
+        },
+        {
+          "candidate_id": "nsc-20261017-04-candidate-2",
+          "claim": "The user has already permitted forwarding the orchard sketch to Nia with the marked well locations still present.",
+          "message_id": "nsc-20261017-04-user-3",
+          "quote": "Please do not forward my orchard sketch yet; you may share it with Nia only after I remove the marked well locations.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "eligible",
+          "support_reason": "The candidate ignores both the current request not to forward and the condition that the marked well locations be removed first.",
+          "eligibility_reason": "The candidate concerns the user’s real preference about their own sketch, so it remains eligible despite misstating the permission."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-05",
+      "split": "train",
+      "scenario_group": "nsc-scenario-05",
+      "template_group": "nsc-template-05",
+      "entity_ids": [
+        "nsc-entity-05"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-05",
+          "message_id": "nsc-20261017-05-user-1",
+          "role": "user",
+          "text": "I am checking that the key event in my lighthouse novella stays in the right order.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-05",
+          "message_id": "nsc-20261017-05-assistant-2",
+          "role": "assistant",
+          "text": "What has Edda not done yet, and what would change that?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-05",
+          "message_id": "nsc-20261017-05-user-3",
+          "role": "user",
+          "text": "In my story, Edda has not opened the salt chest; she will touch its latch only if the blackbird returns with the brass ring.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-05-candidate-1",
+          "claim": "In the story, Edda has not opened the salt chest and will touch its latch only if the blackbird returns with the brass ring.",
+          "message_id": "nsc-20261017-05-user-3",
+          "quote": "In my story, Edda has not opened the salt chest; she will touch its latch only if the blackbird returns with the brass ring.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The narrative sentence states the unopened chest and the blackbird-and-ring condition on Edda touching its latch.",
+          "eligibility_reason": "Edda, the chest, and the conditional plot event are explicitly confined to the user’s story, so they concern fictional character content."
+        },
+        {
+          "candidate_id": "nsc-20261017-05-candidate-2",
+          "claim": "In the story, Edda has opened the salt chest before the blackbird returns with the brass ring.",
+          "message_id": "nsc-20261017-05-user-3",
+          "quote": "In my story, Edda has not opened the salt chest; she will touch its latch only if the blackbird returns with the brass ring.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The candidate flips the explicit negation and invents a completed opening that the sentence says has not occurred.",
+          "eligibility_reason": "The claim remains about Edda’s invented plot even though its event and timing are contradicted; fictional-character content is ineligible."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-06",
+      "split": "train",
+      "scenario_group": "nsc-scenario-06",
+      "template_group": "nsc-template-06",
+      "entity_ids": [
+        "nsc-entity-06"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-06",
+          "message_id": "nsc-20261017-06-user-1",
+          "role": "user",
+          "text": "I am outlining a crossing scene for a puppet play with a reed bridge and a watchman.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-06",
+          "message_id": "nsc-20261017-06-assistant-2",
+          "role": "assistant",
+          "text": "Has the crew been allowed across, and what might change the answer?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-06",
+          "message_id": "nsc-20261017-06-user-3",
+          "role": "user",
+          "text": "For my puppet play, Toma withdraws permission for the crew to cross the reed bridge; he may restore it if the watchman reports that the current has eased.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-06-candidate-1",
+          "claim": "In the puppet play, Toma withdraws the crew’s permission to cross the reed bridge and may restore it if the watchman reports that the current has eased.",
+          "message_id": "nsc-20261017-06-user-3",
+          "quote": "For my puppet play, Toma withdraws permission for the crew to cross the reed bridge; he may restore it if the watchman reports that the current has eased.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "ineligible",
+          "support_reason": "The sentence explicitly records the withdrawal and preserves the possible restoration’s condition and reporting source.",
+          "eligibility_reason": "Toma, the crew, and the bridge permission are elements of a puppet play, making this fictional character and plot information ineligible."
+        },
+        {
+          "candidate_id": "nsc-20261017-06-candidate-2",
+          "claim": "In the puppet play, Toma keeps the crew’s permission to cross the reed bridge active even if the watchman says the current has not eased.",
+          "message_id": "nsc-20261017-06-user-3",
+          "quote": "For my puppet play, Toma withdraws permission for the crew to cross the reed bridge; he may restore it if the watchman reports that the current has eased.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source says permission is withdrawn now and makes any restoration depend on a report that the current has eased.",
+          "eligibility_reason": "The unsupported alternative still describes only invented roles and events in the play, so its subject remains outside personal-memory scope."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-07",
+      "split": "train",
+      "scenario_group": "nsc-scenario-07",
+      "template_group": "nsc-template-07",
+      "entity_ids": [
+        "nsc-entity-07"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-07",
+          "message_id": "nsc-20261017-07-user-1",
+          "role": "user",
+          "text": "I am keeping an inventory of tools in my repair shed and a separate fable draft.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-07",
+          "message_id": "nsc-20261017-07-assistant-2",
+          "role": "assistant",
+          "text": "Which detail is about an object the user owns, and which belongs to the fable?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-07",
+          "message_id": "nsc-20261017-07-user-3",
+          "role": "user",
+          "text": "I own a cast-iron vise in my real repair shed; in the fable I am writing, Miro carries a silver fox past the mill.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-07-candidate-1",
+          "claim": "The user owns a cast-iron vise in their real repair shed.",
+          "message_id": "nsc-20261017-07-user-3",
+          "quote": "I own a cast-iron vise in my real repair shed; in the fable I am writing, Miro carries a silver fox past the mill.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user directly states ownership of the cast-iron vise and locates it in their real repair shed.",
+          "eligibility_reason": "This is a clear first-person ownership fact about the user’s actual tool, so it is eligible personal information."
+        },
+        {
+          "candidate_id": "nsc-20261017-07-candidate-2",
+          "claim": "In the fable the user is writing, Miro carries a copper fox past the mill.",
+          "message_id": "nsc-20261017-07-user-3",
+          "quote": "I own a cast-iron vise in my real repair shed; in the fable I am writing, Miro carries a silver fox past the mill.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The quoted fable says the fox is silver, not copper; the candidate preserves the character and action but changes the object detail.",
+          "eligibility_reason": "The claim is explicitly about Miro and an animal in a fable, so it describes fictional content rather than a real user fact."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-08",
+      "split": "train",
+      "scenario_group": "nsc-scenario-08",
+      "template_group": "nsc-template-08",
+      "entity_ids": [
+        "nsc-entity-08"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-08",
+          "message_id": "nsc-20261017-08-user-1",
+          "role": "user",
+          "text": "I am comparing an everyday kitchen inventory with the props in a separate story draft.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-08",
+          "message_id": "nsc-20261017-08-assistant-2",
+          "role": "assistant",
+          "text": "Which possession belongs to the user, and what happens in the invented scene?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-08",
+          "message_id": "nsc-20261017-08-user-3",
+          "role": "user",
+          "text": "My actual kitchen has a blue enamel kettle that I own; in the story draft I am composing, Nell leaves a paper compass beneath the footbridge.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-08-candidate-1",
+          "claim": "The user owns a blue enamel kettle in their actual kitchen.",
+          "message_id": "nsc-20261017-08-user-3",
+          "quote": "My actual kitchen has a blue enamel kettle that I own; in the story draft I am composing, Nell leaves a paper compass beneath the footbridge.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "eligible",
+          "support_reason": "The user explicitly identifies the kettle as an owned possession in their actual kitchen.",
+          "eligibility_reason": "A directly stated fact about the user’s real household possession is clearly within personal-memory scope."
+        },
+        {
+          "candidate_id": "nsc-20261017-08-candidate-2",
+          "claim": "In the story draft, Nell leaves the paper compass on top of the footbridge.",
+          "message_id": "nsc-20261017-08-user-3",
+          "quote": "My actual kitchen has a blue enamel kettle that I own; in the story draft I am composing, Nell leaves a paper compass beneath the footbridge.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "ineligible",
+          "support_reason": "The source places Nell’s paper compass beneath the footbridge, so the candidate changes the stated location to on top.",
+          "eligibility_reason": "Nell and the compass placement belong to the user’s story draft, which makes this a claim about fictional character content."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-09",
+      "split": "train",
+      "scenario_group": "nsc-scenario-09",
+      "template_group": "nsc-template-09",
+      "entity_ids": [
+        "nsc-entity-09"
+      ],
+      "phenomenon": "attribution",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-09",
+          "message_id": "nsc-20261017-09-user-1",
+          "role": "user",
+          "text": "I am sorting real furniture notes from the details I am trying out in a short story.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-09",
+          "message_id": "nsc-20261017-09-assistant-2",
+          "role": "assistant",
+          "text": "What is an owned table, and what belongs to the writing exercise?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-09",
+          "message_id": "nsc-20261017-09-user-3",
+          "role": "user",
+          "text": "I own a maple sewing table at home; for a short-story exercise I am drafting, the narrator keeps a brass ruler beside the window.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-09-candidate-1",
+          "claim": "The user is drafting a short-story exercise in which the narrator keeps a brass ruler beside the window.",
+          "message_id": "nsc-20261017-09-user-3",
+          "quote": "I own a maple sewing table at home; for a short-story exercise I am drafting, the narrator keeps a brass ruler beside the window.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The sentence explicitly says the user is drafting the exercise and assigns the ruler detail to its narrator.",
+          "eligibility_reason": "The supported fact is that the user is composing an exercise; the policy leaves writing-activity metadata uncertain."
+        },
+        {
+          "candidate_id": "nsc-20261017-09-candidate-2",
+          "claim": "The user is drafting a short-story exercise in which the narrator keeps a brass ruler under the window.",
+          "message_id": "nsc-20261017-09-user-3",
+          "quote": "I own a maple sewing table at home; for a short-story exercise I am drafting, the narrator keeps a brass ruler beside the window.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source puts the ruler beside the window, not under it; the changed placement is not entailed by the citation.",
+          "eligibility_reason": "Although the placement is wrong, the claim still concerns the user’s short-story exercise and remains uncertain writing metadata."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-10",
+      "split": "train",
+      "scenario_group": "nsc-scenario-10",
+      "template_group": "nsc-template-10",
+      "entity_ids": [
+        "nsc-entity-10"
+      ],
+      "phenomenon": "actor",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-10",
+          "message_id": "nsc-20261017-10-user-1",
+          "role": "user",
+          "text": "I am keeping an actual field notebook while composing a sentence exercise for a workshop.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-10",
+          "message_id": "nsc-20261017-10-assistant-2",
+          "role": "assistant",
+          "text": "Which statement describes the exercise the user is making?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-10",
+          "message_id": "nsc-20261017-10-user-3",
+          "role": "user",
+          "text": "I own a hand lens for my actual field notebook; in a grammar exercise I am composing, the baker refuses a second scoop of flour.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-10-candidate-1",
+          "claim": "The user is composing a grammar exercise in which the baker refuses a second scoop of flour.",
+          "message_id": "nsc-20261017-10-user-3",
+          "quote": "I own a hand lens for my actual field notebook; in a grammar exercise I am composing, the baker refuses a second scoop of flour.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The source identifies the user as composing a grammar exercise and states that its baker refuses the second scoop.",
+          "eligibility_reason": "This is supported information about the user’s writing activity, a metadata category the stated scope policy marks uncertain."
+        },
+        {
+          "candidate_id": "nsc-20261017-10-candidate-2",
+          "claim": "The user is composing a grammar exercise in which the baker requests a second scoop of flour.",
+          "message_id": "nsc-20261017-10-user-3",
+          "quote": "I own a hand lens for my actual field notebook; in a grammar exercise I am composing, the baker refuses a second scoop of flour.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The candidate reverses the baker’s stated refusal into a request, so the cited exercise does not support it.",
+          "eligibility_reason": "The false action remains inside the description of the user’s composed exercise, leaving its eligibility uncertain."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-11",
+      "split": "train",
+      "scenario_group": "nsc-scenario-11",
+      "template_group": "nsc-template-11",
+      "entity_ids": [
+        "nsc-entity-11"
+      ],
+      "phenomenon": "condition",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-11",
+          "message_id": "nsc-20261017-11-user-1",
+          "role": "user",
+          "text": "I use my canoe on lake trips and am also practicing dialogue writing with a made-up courier.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-11",
+          "message_id": "nsc-20261017-11-assistant-2",
+          "role": "assistant",
+          "text": "What action has the courier been given in the writing drill?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-11",
+          "message_id": "nsc-20261017-11-user-3",
+          "role": "user",
+          "text": "I own a real green canoe that I take on lake trips; for a dialogue-writing drill, I have a courier decline the ferry crossing until the fog lifts.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-11-candidate-1",
+          "claim": "The user is creating a dialogue-writing drill in which a courier declines the ferry crossing until the fog lifts.",
+          "message_id": "nsc-20261017-11-user-3",
+          "quote": "I own a real green canoe that I take on lake trips; for a dialogue-writing drill, I have a courier decline the ferry crossing until the fog lifts.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The user says the drill has a courier decline the crossing and retains the fog-lifting condition in the same sentence.",
+          "eligibility_reason": "The claim reports the user’s writing drill rather than a real trip or event; writing and exercise metadata is uncertain under policy."
+        },
+        {
+          "candidate_id": "nsc-20261017-11-candidate-2",
+          "claim": "The user is creating a dialogue-writing drill in which a courier accepts the ferry crossing before the fog lifts.",
+          "message_id": "nsc-20261017-11-user-3",
+          "quote": "I own a real green canoe that I take on lake trips; for a dialogue-writing drill, I have a courier decline the ferry crossing until the fog lifts.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The source assigns the courier a refusal until the fog lifts; the candidate changes both the decision and its timing.",
+          "eligibility_reason": "The unsupported content is still only metadata about the user composing a drill, so the policy’s uncertain label remains appropriate."
+        }
+      ]
+    },
+    {
+      "case_id": "nsc-20261017-12",
+      "split": "train",
+      "scenario_group": "nsc-scenario-12",
+      "template_group": "nsc-template-12",
+      "entity_ids": [
+        "nsc-entity-12"
+      ],
+      "phenomenon": "negation",
+      "messages": [
+        {
+          "session_id": "nsc-20261017-session-12",
+          "message_id": "nsc-20261017-12-user-1",
+          "role": "user",
+          "text": "I practice music on an instrument at home and am writing a scene for a tabletop prompt.",
+          "recorded_at": "2026-10-17T09:00:00Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-12",
+          "message_id": "nsc-20261017-12-assistant-2",
+          "role": "assistant",
+          "text": "What refusal is part of the scene the user is composing?",
+          "recorded_at": "2026-10-17T09:00:30Z",
+          "content_kind": "conversation"
+        },
+        {
+          "session_id": "nsc-20261017-session-12",
+          "message_id": "nsc-20261017-12-user-3",
+          "role": "user",
+          "text": "I own a hand-built accordion at home, a real instrument I practice on; for a tabletop-writing prompt, I am composing a scene where a botanist refuses to harvest the last blue orchid.",
+          "recorded_at": "2026-10-17T09:01:00Z",
+          "content_kind": "conversation"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "nsc-20261017-12-candidate-1",
+          "claim": "The user is composing a tabletop-writing scene where a botanist refuses to harvest the last blue orchid.",
+          "message_id": "nsc-20261017-12-user-3",
+          "quote": "I own a hand-built accordion at home, a real instrument I practice on; for a tabletop-writing prompt, I am composing a scene where a botanist refuses to harvest the last blue orchid.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "supported",
+          "eligibility": "uncertain",
+          "support_reason": "The sentence states that the user is composing the prompt scene and explicitly gives the botanist’s refusal and its object.",
+          "eligibility_reason": "This describes the user’s act of composing a fictional scene, which is writing-activity metadata and therefore uncertain."
+        },
+        {
+          "candidate_id": "nsc-20261017-12-candidate-2",
+          "claim": "The user is composing a tabletop-writing scene where a botanist agrees to harvest the last blue orchid.",
+          "message_id": "nsc-20261017-12-user-3",
+          "quote": "I own a hand-built accordion at home, a real instrument I practice on; for a tabletop-writing prompt, I am composing a scene where a botanist refuses to harvest the last blue orchid.",
+          "valid_from": null,
+          "valid_to": null,
+          "support": "unsupported",
+          "eligibility": "uncertain",
+          "support_reason": "The candidate changes the botanist’s explicit refusal into agreement, a polarity reversal that the source does not support.",
+          "eligibility_reason": "The altered action is still attributed to the scene the user is composing, so its metadata status stays uncertain."
+        }
+      ]
+    }
+  ]
+}

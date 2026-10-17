@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import stat
+import sys
 import tempfile
 import unittest
 from contextlib import nullcontext
@@ -40,6 +41,18 @@ def _candidate_manifest() -> dict[str, object]:
     }
 
 
+def _private_sft_candidate_manifest() -> dict[str, object]:
+    return {
+        "training_payload_sha256": "a" * 64,
+        "training_receipt_sha256": "b" * 64,
+        "adapter_relative_path": f"runs/{'a' * 64}/adapter",
+        "adapter_artifact_sha256": {
+            "adapter_config.json": "c" * 64,
+            "adapter_model.safetensors": "d" * 64,
+        },
+    }
+
+
 def _one_item() -> list[dict[str, str]]:
     return [{"item_id": "opaque-candidate-01", "prompt": "A minimized private prompt."}]
 
@@ -69,7 +82,8 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         sentinel = "PRIVATE_SERIALIZATION_SENTINEL"
         payload = modal_private_verifier.build_payload(
             [{"item_id": "opaque-private-01", "prompt": sentinel + "x" * 11_000}],
-            _candidate_manifest(),
+            _private_sft_candidate_manifest(),
+            private_sft=True,
         )
         remote = modal_private_verifier._make_remote_function(payload)
         serialized = FunctionSourceInfo(remote, serialized=True).serialized_function()
@@ -77,6 +91,65 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         cloudpickle.loads(serialized)
         self.assertNotIn(sentinel.encode(), serialized)
         self.assertLess(len(serialized), 64 * 1024)
+
+    def test_remote_function_freezes_validated_private_adapter_descriptors(self) -> None:
+        candidate_manifest = _private_sft_candidate_manifest()
+        payload = modal_private_verifier.build_payload(
+            _one_item(), candidate_manifest, private_sft=True
+        )
+
+        remote = modal_private_verifier._make_remote_function(payload)
+        compute = remote.__globals__["_REMOTE_COMPUTE"]
+
+        self.assertEqual(compute.__globals__["_EXPECTED_CANDIDATE_MANIFEST"], candidate_manifest)
+        self.assertEqual(compute.__globals__["_EXPECTED_PRIOR_ADAPTER"], payload["prior_adapter"])
+        self.assertEqual(
+            compute.__globals__["_EXPECTED_CONTINUED_ADAPTER"], payload["continued_adapter"]
+        )
+
+    def test_modal_function_mounts_approved_volumes_read_only_without_creation(self) -> None:
+        payload = modal_private_verifier.build_payload(
+            _one_item(), _private_sft_candidate_manifest(), private_sft=True
+        )
+        calls: list[tuple[str, bool]] = []
+        registration: dict[str, object] = {}
+
+        class FakeImage:
+            def pip_install(self, *_packages: str) -> FakeImage:
+                return self
+
+        class FakeApp:
+            def function(self, *, image: object, **options: object) -> object:
+                registration["options"] = options
+                return lambda remote: remote
+
+        class FakeVolume:
+            @classmethod
+            def from_name(cls, name: str, *, create_if_missing: bool) -> object:
+                calls.append((name, create_if_missing))
+                return SimpleNamespace(
+                    name=name,
+                    with_mount_options=lambda *, read_only: SimpleNamespace(
+                        name=name, read_only=read_only
+                    ),
+                )
+
+        fake_modal = SimpleNamespace(
+            Image=SimpleNamespace(debian_slim=lambda **_options: FakeImage()),
+            App=lambda _name: FakeApp(),
+            Volume=FakeVolume,
+        )
+        with patch.dict(sys.modules, {"modal": fake_modal}):
+            _app, remote = modal_private_verifier._build_modal_function(payload)
+
+        self.assertTrue(callable(remote))
+        self.assertEqual(
+            calls,
+            [("tracemem-verifier-v2", False), ("tracemem-private-sft", False)],
+        )
+        volumes = registration["options"]["volumes"]
+        self.assertEqual(set(volumes), {"/mnt/tracemem-verifier-v2", "/mnt/tracemem-private-sft"})
+        self.assertTrue(all(volume.read_only for volume in volumes.values()))
 
     def test_build_payload_keeps_only_minimized_prompts_and_exact_private_provenance(self) -> None:
         items = _one_item()
@@ -96,6 +169,113 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         self.assertEqual(set(payload["items"][0]), {"item_id", "prompt"})
         self.assertLessEqual(
             len(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode()), 180_000
+        )
+
+    def test_private_sft_payload_compares_base_synthetic_v2_and_private_candidate(self) -> None:
+        candidate_manifest = _private_sft_candidate_manifest()
+
+        payload = modal_private_verifier.build_payload(
+            _one_item(), candidate_manifest, private_sft=True
+        )
+
+        self.assertEqual(payload["candidate_manifest"], candidate_manifest)
+        self.assertEqual(payload["prior_adapter"]["volume_name"], "tracemem-verifier-v2")
+        self.assertEqual(payload["prior_adapter"]["volume_mount"], "/mnt/tracemem-verifier-v2")
+        self.assertEqual(
+            payload["prior_adapter"]["relative_path"],
+            modal_private_verifier._EXPECTED_CANDIDATE_MANIFEST["adapter_relative_path"],
+        )
+        self.assertEqual(
+            payload["prior_adapter"]["config_sha256"],
+            modal_private_verifier._EXPECTED_CANDIDATE_MANIFEST["adapter_artifact_sha256"][
+                "adapter_config.json"
+            ],
+        )
+        self.assertEqual(
+            payload["prior_adapter"]["safetensors_sha256"],
+            modal_private_verifier._EXPECTED_CANDIDATE_MANIFEST["adapter_artifact_sha256"][
+                "adapter_model.safetensors"
+            ],
+        )
+        self.assertEqual(payload["continued_adapter"]["volume_name"], "tracemem-private-sft")
+        self.assertEqual(payload["continued_adapter"]["volume_mount"], "/mnt/tracemem-private-sft")
+        self.assertEqual(
+            payload["continued_adapter"]["relative_path"],
+            candidate_manifest["adapter_relative_path"],
+        )
+        self.assertEqual(
+            payload["continued_adapter"]["artifact_sha256"],
+            candidate_manifest["adapter_artifact_sha256"],
+        )
+        self.assertEqual(payload["mode"], "private_inference_only")
+        self.assertFalse(payload["training_performed"])
+        self.assertEqual(
+            set(payload),
+            {
+                "schema_version",
+                "mode",
+                "provenance",
+                "runner_sha256",
+                "model",
+                "settings",
+                "candidate_manifest",
+                "prior_adapter",
+                "continued_adapter",
+                "items",
+                "training_performed",
+            },
+        )
+
+    def test_private_sft_manifest_rejects_paths_hashes_and_unapproved_fields(self) -> None:
+        invalid_manifests: list[tuple[dict[str, object], str]] = []
+
+        path_manifest = _private_sft_candidate_manifest()
+        path_manifest["adapter_relative_path"] = "runs/../outside/adapter"
+        invalid_manifests.append((path_manifest, "hashes or adapter path are invalid"))
+
+        payload_hash_manifest = _private_sft_candidate_manifest()
+        payload_hash_manifest["training_payload_sha256"] = "A" * 64
+        invalid_manifests.append((payload_hash_manifest, "hashes or adapter path are invalid"))
+
+        artifact_hash_manifest = _private_sft_candidate_manifest()
+        artifact_hash_manifest["adapter_artifact_sha256"]["adapter_model.safetensors"] = "bad"
+        invalid_manifests.append((artifact_hash_manifest, "hashes or adapter path are invalid"))
+
+        extra_manifest = _private_sft_candidate_manifest()
+        extra_manifest["source_transcript_path"] = "private/transcript.json"
+        invalid_manifests.append((extra_manifest, "fields are not allowlisted"))
+
+        extra_artifact_manifest = _private_sft_candidate_manifest()
+        extra_artifact_manifest["adapter_artifact_sha256"]["weights.bin"] = "e" * 64
+        invalid_manifests.append((extra_artifact_manifest, "hashes or adapter path are invalid"))
+
+        for manifest, message in invalid_manifests:
+            with self.subTest(manifest=manifest), self.assertRaisesRegex(ValueError, message):
+                modal_private_verifier.build_payload(_one_item(), manifest, private_sft=True)
+
+    def test_private_sft_mode_requires_bool_and_default_call_stays_identical(self) -> None:
+        legacy = modal_private_verifier.build_payload(_one_item(), _candidate_manifest())
+        explicit_legacy = modal_private_verifier.build_payload(
+            _one_item(), _candidate_manifest(), private_sft=False
+        )
+        self.assertEqual(explicit_legacy, legacy)
+        self.assertEqual(legacy["provenance"]["data_origin"], "user_provided_private_conversations")
+        with self.assertRaisesRegex(ValueError, "private_sft must be an explicit boolean"):
+            modal_private_verifier.build_payload(_one_item(), _candidate_manifest(), private_sft=1)
+
+    def test_private_sft_provenance_covers_authorized_evaluation_prompts(self) -> None:
+        private = modal_private_verifier.build_payload(
+            _one_item(), _private_sft_candidate_manifest(), private_sft=True
+        )
+        legacy = modal_private_verifier.build_payload(_one_item(), _candidate_manifest())
+
+        self.assertEqual(
+            private["provenance"]["data_origin"],
+            "authorized_private_checkpoint_evaluation_prompts",
+        )
+        self.assertEqual(
+            {key: value for key, value in private["provenance"].items() if key != "data_origin"},
+            {key: value for key, value in legacy["provenance"].items() if key != "data_origin"},
         )
 
     def test_run_once_rejects_changed_payload_before_launch(self) -> None:
@@ -121,6 +301,41 @@ class ModalPrivateVerifierTests(unittest.TestCase):
                         output_path=output_path,
                     )
             self.assertFalse(output_path.exists())
+
+    def test_approved_payload_reconstructs_private_sft_mode_from_fixed_volume(self) -> None:
+        payload = modal_private_verifier.build_payload(
+            _one_item(), _private_sft_candidate_manifest(), private_sft=True
+        )
+
+        expected, digest, runner_hash = modal_private_verifier._validate_approved_payload(
+            payload,
+            modal_private_verifier.payload_sha256(payload),
+            payload["runner_sha256"],
+        )
+
+        self.assertEqual(digest, modal_private_verifier.payload_sha256(payload))
+        self.assertEqual(runner_hash, payload["runner_sha256"])
+        self.assertEqual(expected, payload)
+
+    def test_run_once_rejects_mutated_private_sft_envelope_before_launch(self) -> None:
+        payload = modal_private_verifier.build_payload(
+            _one_item(), _private_sft_candidate_manifest(), private_sft=True
+        )
+        payload["continued_adapter"]["volume_mount"] = "/tmp/unapproved-adapter"
+        approved_digest = modal_private_verifier.payload_sha256(payload)
+
+        with patch.object(
+            modal_private_verifier,
+            "_build_modal_function",
+            side_effect=AssertionError("mutated envelope reached Modal construction"),
+        ):
+            with self.assertRaisesRegex(ValueError, "fixed envelope"):
+                modal_private_verifier.run_once(
+                    payload,
+                    approved_payload_sha256=approved_digest,
+                    approved_runner_sha256=payload["runner_sha256"],
+                    output_path=Path("/tmp/not-used.json"),
+                )
 
     def test_run_once_rejects_output_path_outside_local_private_directory(self) -> None:
         payload = modal_private_verifier.build_payload(_one_item(), _candidate_manifest())
@@ -177,6 +392,35 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         self.assertEqual(
             result["error"], {"type": "ValueError", "message": "private verifier failed"}
         )
+
+    def test_remote_rejects_mutated_private_metadata_before_model_imports(self) -> None:
+        payload = modal_private_verifier.build_payload(
+            _one_item(), _private_sft_candidate_manifest(), private_sft=True
+        )
+        remote = modal_private_verifier._make_remote_function(payload)
+        compute = remote.__globals__["_REMOTE_COMPUTE"]
+        changed = deepcopy(payload)
+        changed["candidate_manifest"]["adapter_artifact_sha256"]["adapter_model.safetensors"] = (
+            "e" * 64
+        )
+        changed["continued_adapter"]["artifact_sha256"]["adapter_model.safetensors"] = "e" * 64
+        changed_digest = modal_private_verifier.payload_sha256(changed)
+        compute.__globals__["_EXPECTED_PAYLOAD_SHA256"] = changed_digest
+        request = {
+            "payload": changed,
+            "payload_sha256": changed_digest,
+            "runner_sha256": payload["runner_sha256"],
+        }
+        original_import = builtins.__import__
+
+        def reject_model_imports(name: str, *args: object, **kwargs: object) -> object:
+            if name.split(".", maxsplit=1)[0] in {"modal", "torch", "peft", "transformers"}:
+                raise AssertionError("model runtime imported before metadata guard")
+            return original_import(name, *args, **kwargs)
+
+        with patch("builtins.__import__", side_effect=reject_model_imports):
+            with self.assertRaisesRegex(ValueError, "metadata is not allowlisted"):
+                compute(request)
 
     def test_run_once_preserves_sanitized_remote_failure_and_approved_hashes(self) -> None:
         payload = modal_private_verifier.build_payload(_one_item(), _candidate_manifest())

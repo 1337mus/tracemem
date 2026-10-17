@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "cohort": "fictional_development",
+    "candidate_count": 16,
+    "scenario_count": 8,
+    "private_control_count_in_run": 16,
+    "training_performed": false,
+    "train_use": "permanently_excluded",
+    "human_reviewers": 0,
+    "labels": "agent_provisional",
+    "uncertain_eligibility_references": 0
+  },
+  "reference_counts": {
+    "support": {
+      "supported": 8,
+      "unsupported": 6,
+      "uncertain": 2
+    },
+    "eligibility_total": 16
+  },
+  "results": {
+    "base": {
+      "useful_accepted": {"accepted": 5, "total": 7},
+      "supported_retained": {"retained": 8, "total": 8},
+      "unsupported_rejected": {"rejected": 5, "total": 6},
+      "uncertain_support_correct": {"correct": 1, "total": 2},
+      "eligibility_exact": {"correct": 8, "total": 16},
+      "unsupported_eligible_autoaccepts": {"accepted": 0, "total": 5},
+      "valid_outputs": {"valid": 16, "total": 16}
+    },
+    "synthetic_v2_adapter": {
+      "useful_accepted": {"accepted": 6, "total": 7},
+      "supported_retained": {"retained": 7, "total": 8},
+      "unsupported_rejected": {"rejected": 6, "total": 6},
+      "uncertain_support_correct": {"correct": 0, "total": 2},
+      "eligibility_exact": {"correct": 14, "total": 16},
+      "unsupported_eligible_autoaccepts": {"accepted": 0, "total": 5},
+      "valid_outputs": {"valid": 16, "total": 16}
+    },
+    "new_256_row_adapter": {
+      "useful_accepted": {"accepted": 6, "total": 7},
+      "supported_retained": {"retained": 7, "total": 8},
+      "unsupported_rejected": {"rejected": 6, "total": 6},
+      "uncertain_support_correct": {"correct": 0, "total": 2},
+      "eligibility_exact": {"correct": 15, "total": 16},
+      "unsupported_eligible_autoaccepts": {"accepted": 0, "total": 5},
+      "valid_outputs": {"valid": 16, "total": 16}
+    }
+  },
+  "prospective_fictional_dev_gate": {
+    "passed": true,
+    "comparator": "synthetic_v2_adapter",
+    "supported_retention_at_least_comparator": true,
+    "unsupported_rejection_at_least_comparator": true,
+    "eligibility_exact_at_least_comparator": true,
+    "eligibility_denominator_includes_uncertain": 16,
+    "zero_unsupported_eligible_autoaccepts": true
+  },
+  "separate_private_training_gate": {
+    "passed": false,
+    "changed_by_this_dev_result": false
+  },
+  "limitations": [
+    "scripted_nonrepresentative_scenarios",
+    "mostly_final_turn_evidence",
+    "development_only_not_final_test",
+    "agent_provisional_labels_zero_human_reviewers",
+    "no_product_claim",
+    "does_not_measure_extraction_efficacy_or_downstream_answer_quality"
+  ]
+}

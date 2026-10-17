@@ -87,12 +87,22 @@ See the [private pilot results](private-pilot-results.md).
 The first private run compared the pinned base model, the existing synthetic
 adapter and one private continuation on identical development prompts. It
 accepted 5/7 useful memories, rejected 7/8 unsupported claims and retained 8/8
-supported claims. The latest continuation accepted 6/7 useful memories, versus
-4/7 for the same-call prior adapter and 5/7 in the first private run. It retained
-8/8 supported claims, rejected 7/8 unsupported claims and got 0/2 uncertain
-scope cases correct. Every response was valid JSON and ended at EOS, but the development
-gate failed. See the [latest scope report](private-sft-scope-results.md) and
-[first private run report](private-sft-results.md) for details.
+supported claims. The later 242-row comparison accepted 6/7 useful memories,
+retained 8/8 supported claims, rejected 7/8 unsupported claims and got 0/2
+uncertain-scope cases correct. See the [242-row results](private-sft-scope-results.md)
+and [first private run report](private-sft-results.md).
+
+The newest comparison used 256 rows: the prior 242-row mix plus 14 new fictional
+rows, starting from synthetic-v2. It accepted 7/7 useful candidates and retained
+8/8 supported claims, while rejecting 7/8 unsupported claims and getting 0/2
+uncertain-scope labels right. The frozen gate failed. Data order and optimizer
+steps changed too, so the result does not isolate the 14 new rows. See the
+[contrast report](private-sft-contrast-results.md).
+
+A separate inference-only comparison used 16 fictional candidates across eight
+scripted scenarios. Its narrow dev gate passed, but it does not change the
+failed private-training gate or establish product quality. See the
+[naturalistic dev results](naturalistic-dev-results.md).
 
 This is a small development experiment on supplied candidates, with previously
 inspected examples and correlated conversation windows. It cannot establish
@@ -100,10 +110,13 @@ extraction recall, natural error prevalence, durable memory quality or better
 answers. Development remains development. The reserved test source and sealed
 synthetic candidate stay untouched.
 
-Before another training run, target source-backed negation and deferral examples,
-clearer scope labels, and owner calibration. Then use a broader separate
-evaluation, with a distinct test cohort and a downstream QA comparison against
-transcript retrieval. No additional training run is scheduled automatically.
+Ten bounded source scans yielded no new real-source admissions; this local zero
+yield does not establish that a larger archive is unusable. Keep the reserved
+test source untouched. Before further training, target source-backed negation
+and deferral examples, clarify scope labels with the owner, and plan a broader
+separate evaluation with a distinct test cohort and downstream QA comparison
+against transcript retrieval. See the [contrast results](private-sft-contrast-results.md)
+for the latest development gate and its limits.
 
 ## Privacy and release
 

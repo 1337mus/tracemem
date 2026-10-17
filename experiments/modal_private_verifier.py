@@ -44,6 +44,8 @@ _SETTINGS = {
 _PRIOR_ADAPTER = deepcopy(modal_verifier_v2._PRIOR_ADAPTER)
 _CONTINUED_VOLUME_NAME = "tracemem-verifier-v2"
 _CONTINUED_VOLUME_MOUNT = "/mnt/tracemem-verifier-v2"
+_PRIVATE_SFT_VOLUME_NAME = "tracemem-private-sft"
+_PRIVATE_SFT_VOLUME_MOUNT = "/mnt/tracemem-private-sft"
 _EXPECTED_CANDIDATE_MANIFEST: dict[str, Any] = {
     "training_payload_sha256": "384f9a02c6db633c90421d436db877898c02f0d9389f902fd6f881efff754861",
     "training_receipt_sha256": "c5847c80375506c5cd143608141eec39d030052c3fa6ed39a6bf2c5244048832",
@@ -79,11 +81,50 @@ def payload_sha256(payload: dict[str, Any]) -> str:
 
 
 def build_payload(
-    items: list[dict[str, str]], candidate_manifest: dict[str, Any]
+    items: list[dict[str, str]],
+    candidate_manifest: dict[str, Any],
+    *,
+    private_sft: bool = False,
 ) -> dict[str, Any]:
     """Build the approved private inference payload."""
-    if type(candidate_manifest) is not dict or candidate_manifest != _EXPECTED_CANDIDATE_MANIFEST:
-        raise ValueError("candidate manifest is not the reviewed private adapter")
+    if type(private_sft) is not bool:
+        raise ValueError("private_sft must be an explicit boolean")
+    if private_sft:
+        manifest_keys = {
+            "training_payload_sha256",
+            "training_receipt_sha256",
+            "adapter_relative_path",
+            "adapter_artifact_sha256",
+        }
+        artifact_keys = {"adapter_config.json", "adapter_model.safetensors"}
+        if type(candidate_manifest) is not dict or set(candidate_manifest) != manifest_keys:
+            raise ValueError("candidate manifest fields are not allowlisted")
+        payload_hash = candidate_manifest["training_payload_sha256"]
+        receipt_hash = candidate_manifest["training_receipt_sha256"]
+        artifacts = candidate_manifest["adapter_artifact_sha256"]
+        if (
+            type(payload_hash) is not str
+            or re.fullmatch(r"[0-9a-f]{64}", payload_hash) is None
+            or type(receipt_hash) is not str
+            or re.fullmatch(r"[0-9a-f]{64}", receipt_hash) is None
+            or candidate_manifest["adapter_relative_path"] != f"runs/{payload_hash}/adapter"
+            or type(artifacts) is not dict
+            or set(artifacts) != artifact_keys
+            or any(
+                type(artifacts[name]) is not str
+                or re.fullmatch(r"[0-9a-f]{64}", artifacts[name]) is None
+                for name in artifact_keys
+            )
+        ):
+            raise ValueError("candidate manifest hashes or adapter path are invalid")
+        manifest = deepcopy(candidate_manifest)
+    else:
+        if (
+            type(candidate_manifest) is not dict
+            or candidate_manifest != _EXPECTED_CANDIDATE_MANIFEST
+        ):
+            raise ValueError("candidate manifest is not the reviewed private adapter")
+        manifest = deepcopy(_EXPECTED_CANDIDATE_MANIFEST)
     if type(items) is not list or not 1 <= len(items) <= _MAX_ITEMS:
         raise ValueError("private verifier requires 1 to 32 prompts")
     seen: set[str] = set()
@@ -108,22 +149,41 @@ def build_payload(
         seen.add(item_id)
         normalized_items.append({"item_id": item_id, "prompt": prompt})
 
-    manifest = deepcopy(_EXPECTED_CANDIDATE_MANIFEST)
+    if private_sft:
+        frozen_manifest = _EXPECTED_CANDIDATE_MANIFEST
+        prior_adapter = {
+            "volume_name": _CONTINUED_VOLUME_NAME,
+            "volume_mount": _CONTINUED_VOLUME_MOUNT,
+            "relative_path": frozen_manifest["adapter_relative_path"],
+            "safetensors_sha256": frozen_manifest["adapter_artifact_sha256"][
+                "adapter_model.safetensors"
+            ],
+            "config_sha256": frozen_manifest["adapter_artifact_sha256"]["adapter_config.json"],
+        }
+        continued_volume_name = _PRIVATE_SFT_VOLUME_NAME
+        continued_volume_mount = _PRIVATE_SFT_VOLUME_MOUNT
+    else:
+        prior_adapter = deepcopy(_PRIOR_ADAPTER)
+        continued_volume_name = _CONTINUED_VOLUME_NAME
+        continued_volume_mount = _CONTINUED_VOLUME_MOUNT
+    provenance = deepcopy(_PROVENANCE)
+    if private_sft:
+        provenance["data_origin"] = "authorized_private_checkpoint_evaluation_prompts"
     continued_adapter = {
-        "volume_name": _CONTINUED_VOLUME_NAME,
-        "volume_mount": _CONTINUED_VOLUME_MOUNT,
+        "volume_name": continued_volume_name,
+        "volume_mount": continued_volume_mount,
         "relative_path": manifest["adapter_relative_path"],
         "artifact_sha256": deepcopy(manifest["adapter_artifact_sha256"]),
     }
     payload = {
         "schema_version": 1,
         "mode": "private_inference_only",
-        "provenance": deepcopy(_PROVENANCE),
+        "provenance": provenance,
         "runner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "model": deepcopy(_MODEL),
         "settings": deepcopy(_SETTINGS),
         "candidate_manifest": manifest,
-        "prior_adapter": deepcopy(_PRIOR_ADAPTER),
+        "prior_adapter": prior_adapter,
         "continued_adapter": continued_adapter,
         "items": normalized_items,
         "training_performed": False,
@@ -154,7 +214,13 @@ def _validate_approved_payload(
     ):
         raise ValueError("exact current private verifier runner SHA-256 approval is required")
     try:
-        expected = build_payload(payload["items"], payload["candidate_manifest"])
+        continued = payload.get("continued_adapter")
+        private_sft = (
+            type(continued) is dict and continued.get("volume_name") == _PRIVATE_SFT_VOLUME_NAME
+        )
+        expected = build_payload(
+            payload["items"], payload["candidate_manifest"], private_sft=private_sft
+        )
     except (KeyError, TypeError, ValueError):
         raise ValueError("private verifier payload differs from its fixed envelope") from None
     if _canonical_bytes(payload) != _canonical_bytes(expected):
@@ -517,28 +583,26 @@ def _remote_safe_entry(request: dict[str, Any]) -> dict[str, Any]:
 def _make_remote_function(payload: dict[str, Any]) -> FunctionType:
     from experiments.verifier_v2_test_remote import _verify_adapter_mount
 
+    approved, digest, runner_hash = _validate_approved_payload(
+        payload, payload_sha256(payload), payload["runner_sha256"]
+    )
     verify_adapter = FunctionType(
         _verify_adapter_mount.__code__,
         {"__name__": "__main__"},
         name="verify_private_adapter_mount",
     )
-    continued_adapter = {
-        "volume_name": _CONTINUED_VOLUME_NAME,
-        "volume_mount": _CONTINUED_VOLUME_MOUNT,
-        "relative_path": payload["candidate_manifest"]["adapter_relative_path"],
-        "artifact_sha256": deepcopy(payload["candidate_manifest"]["adapter_artifact_sha256"]),
-    }
+    continued_adapter = deepcopy(approved["continued_adapter"])
     compute = FunctionType(
         _remote_compute.__code__,
         {
             "__name__": "__main__",
-            "_EXPECTED_PAYLOAD_SHA256": payload_sha256(payload),
-            "_EXPECTED_RUNNER_SHA256": payload["runner_sha256"],
-            "_EXPECTED_PROVENANCE": deepcopy(_PROVENANCE),
+            "_EXPECTED_PAYLOAD_SHA256": digest,
+            "_EXPECTED_RUNNER_SHA256": runner_hash,
+            "_EXPECTED_PROVENANCE": deepcopy(approved["provenance"]),
             "_EXPECTED_MODEL": deepcopy(_MODEL),
             "_EXPECTED_SETTINGS": deepcopy(_SETTINGS),
-            "_EXPECTED_CANDIDATE_MANIFEST": deepcopy(_EXPECTED_CANDIDATE_MANIFEST),
-            "_EXPECTED_PRIOR_ADAPTER": deepcopy(_PRIOR_ADAPTER),
+            "_EXPECTED_CANDIDATE_MANIFEST": deepcopy(approved["candidate_manifest"]),
+            "_EXPECTED_PRIOR_ADAPTER": deepcopy(approved["prior_adapter"]),
             "_EXPECTED_CONTINUED_ADAPTER": continued_adapter,
             "_verify_adapter_mount": verify_adapter,
         },
@@ -549,8 +613,8 @@ def _make_remote_function(payload: dict[str, Any]) -> FunctionType:
         {
             "__name__": "__main__",
             "_REMOTE_COMPUTE": compute,
-            "_APPROVED_PAYLOAD_SHA256": payload_sha256(payload),
-            "_APPROVED_RUNNER_SHA256": payload["runner_sha256"],
+            "_APPROVED_PAYLOAD_SHA256": digest,
+            "_APPROVED_RUNNER_SHA256": runner_hash,
         },
         name="remote_private_verifier",
     )
@@ -560,24 +624,24 @@ def _make_remote_function(payload: dict[str, Any]) -> FunctionType:
 
 def _build_modal_function(payload: dict[str, Any]) -> tuple[Any, Any]:
     """Build a direct-request, source-free app with read-only adapter mounts."""
+    approved, _, _ = _validate_approved_payload(
+        payload, payload_sha256(payload), payload["runner_sha256"]
+    )
     import modal
 
     from experiments.modal_verifier_pairs import _IMAGE_PACKAGES
 
     image = modal.Image.debian_slim(python_version="3.12").pip_install(*_IMAGE_PACKAGES)
     app = modal.App("tracemem-private-verifier")
-    prior = modal.Volume.from_name(
-        _PRIOR_ADAPTER["volume_name"], create_if_missing=False
-    ).with_mount_options(read_only=True)
-    continued = modal.Volume.from_name(
-        _CONTINUED_VOLUME_NAME, create_if_missing=False
-    ).with_mount_options(read_only=True)
     options = modal_function_options()
-    options["volumes"] = {
-        _PRIOR_ADAPTER["volume_mount"]: prior,
-        _CONTINUED_VOLUME_MOUNT: continued,
-    }
-    function = app.function(image=image, **options)(_make_remote_function(payload))
+    volumes: dict[str, Any] = {}
+    for adapter in (approved["prior_adapter"], approved["continued_adapter"]):
+        volume = modal.Volume.from_name(
+            adapter["volume_name"], create_if_missing=False
+        ).with_mount_options(read_only=True)
+        volumes[adapter["volume_mount"]] = volume
+    options["volumes"] = volumes
+    function = app.function(image=image, **options)(_make_remote_function(approved))
     return app, function
 
 
