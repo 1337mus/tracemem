@@ -1,22 +1,28 @@
 # Getting better training data
 
-We now have 25 annotated conversation windows from five real sessions: 50
-candidate judgments. One additional session has a source window reserved for
-later testing; it has no labels and is excluded from training and development.
-All annotations are provisional agent judgments. No human has reviewed them.
+The current collection has 33 annotated conversation windows and 66 candidate
+judgments across six real sessions. Training uses 25 windows and 50 rows from
+four sessions; development uses eight windows and 16 rows from two sessions.
+The separately reserved source remains unlabeled and unused. All annotations
+are provisional agent judgments. No human has reviewed them.
 
 For the completed private SFT run, we used:
 
 | Use | Sessions | Windows | Candidate judgments |
 | --- | ---: | ---: | ---: |
-| Training | 2 | 15 | 30 |
+| Training | 4 | 25 | 50 |
 | Development | 2 | 8 | 16 |
-| Excluded older writing examples | 1 | 2 | 4 |
 
-Training also includes 48 fictional training examples through the existing
-synthetic exporter. Synthetic development and test examples are excluded. The
-one-epoch private continuation completed; its aggregate run and development
-results are in the [private SFT report](private-sft-results.md).
+The 25 training windows include 15 earlier windows from two sessions, two
+older writing-task windows, and eight newly labeled windows from one session
+in the same editing-task family. All 16 eligibility labels on the new windows
+are eligible.
+The older four writing-task judgments retain their adjudicated labels: two
+supported, two unsupported, with eligibility uncertain on all four.
+
+Training also includes 192 fictional replay rows. Synthetic development and
+test examples are excluded. The completed 242-row private continuation and its
+development results are in the [latest scope report](private-sft-scope-results.md).
 
 ## What the real examples add
 
@@ -53,7 +59,7 @@ are separate decisions. The frozen prompt treats real user-stated or reported
 facts as eligible, fictional-character facts as ineligible, and writing or
 exercise metadata as uncertain.
 
-For the newest 20 candidates, an independent pass agreed with initial support
+For an earlier set of 20 candidates, an independent pass agreed with initial support
 labels on 20/20 and eligibility on 16/20. Root review nevertheless caught a
 segment-versus-duration inference and qualifiers absent from standalone source
 windows. Five claims were corrected and independently checked again. Agreement
@@ -64,13 +70,13 @@ labels are root-only decisions that disagree with the blind pass; the originals
 and disagreements remain in separate local receipts. None is human gold.
 
 A later blind review and root adjudication revisited four older writing-task
-examples for a separate candidate. Their support labels stayed at two supported
-and two unsupported; eligibility is uncertain for all four under the existing
-prompt. These examples were not in the completed run, and its records remain
-unchanged. The separate unrun candidate has 34 private rows from three sessions
-plus the same 48 fictional replay rows, 82 total. Its development cases, labels,
-and prompts are byte-identical to those in the completed comparison. It has not
-been trained, and no additional GPU call was made.
+examples. Their support labels stayed at two supported and two unsupported;
+eligibility is uncertain for all four under the existing prompt. These labels
+remain provisional agent judgments, not human gold. A separate 82-row candidate
+was proposed from those reviews but was not run; it was superseded by the
+completed 242-row continuation. The completed run used the current 50 private
+training rows and 192 fictional replay rows, with the same development prompts
+and labels as before.
 
 ## What the experiment can establish
 
@@ -78,17 +84,15 @@ The first private inference pilot accepted 4/7 useful supported memories with
 the continued adapter, matching the base model. It established no overall gain.
 See the [private pilot results](private-pilot-results.md).
 
-The completed run compared the same pinned base model, the existing synthetic
-adapter and one private continuation on identical development prompts. Its
-frozen criterion requires at least six of seven useful memories accepted, at
-least two more than the same-call prior adapter, all eight unsupported claims
-rejected, and no loss in supported retention. The trained arm reached 5/7 useful
-acceptances (one more than prior), 7/8 unsupported rejections (one fewer than
-prior), and 8/8 supported retention. It failed the criterion. The strict-literal
-report counted 0/16 valid outputs per arm because decoded text included terminal
-EOS. The offline diagnostic removed exactly one verified trailing EOS token from
-a copy before content validation; the original receipt and strict report remain
-unchanged. See the results report for the full table and limits.
+The first private run compared the pinned base model, the existing synthetic
+adapter and one private continuation on identical development prompts. It
+accepted 5/7 useful memories, rejected 7/8 unsupported claims and retained 8/8
+supported claims. The latest continuation accepted 6/7 useful memories, versus
+4/7 for the same-call prior adapter and 5/7 in the first private run. It retained
+8/8 supported claims, rejected 7/8 unsupported claims and got 0/2 uncertain
+scope cases correct. Every response was valid JSON and ended at EOS, but the development
+gate failed. See the [latest scope report](private-sft-scope-results.md) and
+[first private run report](private-sft-results.md) for details.
 
 This is a small development experiment on supplied candidates, with previously
 inspected examples and correlated conversation windows. It cannot establish
@@ -96,11 +100,10 @@ extraction recall, natural error prevalence, durable memory quality or better
 answers. Development remains development. The reserved test source and sealed
 synthetic candidate stay untouched.
 
-The next data target is roughly 100 useful windows from distinct sessions,
-including no-memory examples and naturally occurring model mistakes. Review
-policy disagreements and a random sample with the owner, then compare increasing
-training subsets on fixed development data. A final candidate needs a separately
-labeled test cohort and a downstream QA comparison against transcript retrieval.
+Before another training run, target source-backed negation and deferral examples,
+clearer scope labels, and owner calibration. Then use a broader separate
+evaluation, with a distinct test cohort and a downstream QA comparison against
+transcript retrieval. No additional training run is scheduled automatically.
 
 ## Privacy and release
 

@@ -10,12 +10,13 @@ system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
 **The local search tool works today; the trained model is still research.**
-The first private SFT continuation raised useful acceptance from 4/7 for both
-base and prior to 5/7, but rejected 7/8 unsupported claims versus 8/8 for the
-prior adapter and missed its frozen development gate. Labels are provisional
-agent judgments with zero human reviewers; no model was selected. The strict
-report records a terminal-EOS parsing issue and the separate offline diagnostic.
-See the [private SFT results](docs/private-sft-results.md).
+The latest private run accepted 6/7 useful claims, versus 4/7 for the previous
+synthetic adapter and 5/7 in the first private run. It retained 8/8 supported claims,
+rejected 7/8 unsupported claims, and correctly marked 0/2 uncertain-scope cases.
+Outputs were valid, but the development gate failed and no product model was
+selected. Labels are provisional agent judgments with zero human reviewers. See
+the [latest scope results](docs/private-sft-scope-results.md) and the [first
+private SFT results](docs/private-sft-results.md).
 
 An earlier Qwen3-4B verifier continuation on fictional data also missed its
 overall criteria: unsupported rejection improved from 18/24 to 23/24 and

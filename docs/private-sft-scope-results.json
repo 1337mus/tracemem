@@ -1,0 +1,320 @@
+{
+  "arms": {
+    "base": {
+      "eos": 16,
+      "supported_retained": 7,
+      "supported_total": 8,
+      "total": 16,
+      "uncertain_eligibility_exact_correct": 2,
+      "uncertain_eligibility_total": 2,
+      "unsupported_caught": 7,
+      "unsupported_total": 8,
+      "useful_accepted": 4,
+      "useful_total": 7,
+      "valid": 16
+    },
+    "prior": {
+      "eos": 16,
+      "supported_retained": 7,
+      "supported_total": 8,
+      "total": 16,
+      "uncertain_eligibility_exact_correct": 2,
+      "uncertain_eligibility_total": 2,
+      "unsupported_caught": 8,
+      "unsupported_total": 8,
+      "useful_accepted": 4,
+      "useful_total": 7,
+      "valid": 16
+    },
+    "trained": {
+      "eos": 16,
+      "supported_retained": 8,
+      "supported_total": 8,
+      "total": 16,
+      "uncertain_eligibility_exact_correct": 0,
+      "uncertain_eligibility_total": 2,
+      "unsupported_caught": 7,
+      "unsupported_total": 8,
+      "useful_accepted": 6,
+      "useful_total": 7,
+      "valid": 16
+    }
+  },
+  "experiment": "private-scope-broader-replay-v1",
+  "gates": {
+    "all_outputs_valid_and_eos_16_each_arm": true,
+    "trained_supported_retention_not_below_prior": true,
+    "trained_uncertain_eligibility_at_least_2_of_2": false,
+    "trained_unsupported_rejection_at_least_8_of_8": false,
+    "trained_unsupported_rejection_not_below_prior": false,
+    "trained_useful_at_least_6_of_7": true,
+    "trained_useful_gain_at_least_2_over_prior": true
+  },
+  "limitations": {
+    "all_7_useful_references_from_1_session": true,
+    "dev_only": true,
+    "not_extraction_or_downstream_qa": true,
+    "test_unused": true
+  },
+  "overall_pass": false,
+  "per_session": {
+    "session_001": {
+      "arms": {
+        "base": {
+          "eos": 2,
+          "supported_retained": 1,
+          "supported_total": 1,
+          "total": 2,
+          "uncertain_eligibility_exact_correct": 2,
+          "uncertain_eligibility_total": 2,
+          "unsupported_caught": 1,
+          "unsupported_total": 1,
+          "useful_accepted": 0,
+          "useful_total": 0,
+          "valid": 2
+        },
+        "prior": {
+          "eos": 2,
+          "supported_retained": 1,
+          "supported_total": 1,
+          "total": 2,
+          "uncertain_eligibility_exact_correct": 2,
+          "uncertain_eligibility_total": 2,
+          "unsupported_caught": 1,
+          "unsupported_total": 1,
+          "useful_accepted": 0,
+          "useful_total": 0,
+          "valid": 2
+        },
+        "trained": {
+          "eos": 2,
+          "supported_retained": 1,
+          "supported_total": 1,
+          "total": 2,
+          "uncertain_eligibility_exact_correct": 0,
+          "uncertain_eligibility_total": 2,
+          "unsupported_caught": 1,
+          "unsupported_total": 1,
+          "useful_accepted": 0,
+          "useful_total": 0,
+          "valid": 2
+        }
+      },
+      "candidate_count": 2,
+      "paired_prior_to_trained_verdict_transitions": [
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "supported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "unsupported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "unsupported"
+          }
+        }
+      ]
+    },
+    "session_002": {
+      "arms": {
+        "base": {
+          "eos": 14,
+          "supported_retained": 6,
+          "supported_total": 7,
+          "total": 14,
+          "uncertain_eligibility_exact_correct": 0,
+          "uncertain_eligibility_total": 0,
+          "unsupported_caught": 6,
+          "unsupported_total": 7,
+          "useful_accepted": 4,
+          "useful_total": 7,
+          "valid": 14
+        },
+        "prior": {
+          "eos": 14,
+          "supported_retained": 6,
+          "supported_total": 7,
+          "total": 14,
+          "uncertain_eligibility_exact_correct": 0,
+          "uncertain_eligibility_total": 0,
+          "unsupported_caught": 7,
+          "unsupported_total": 7,
+          "useful_accepted": 4,
+          "useful_total": 7,
+          "valid": 14
+        },
+        "trained": {
+          "eos": 14,
+          "supported_retained": 7,
+          "supported_total": 7,
+          "total": 14,
+          "uncertain_eligibility_exact_correct": 0,
+          "uncertain_eligibility_total": 0,
+          "unsupported_caught": 6,
+          "unsupported_total": 7,
+          "useful_accepted": 6,
+          "useful_total": 7,
+          "valid": 14
+        }
+      },
+      "candidate_count": 14,
+      "paired_prior_to_trained_verdict_transitions": [
+        {
+          "count": 4,
+          "prior": {
+            "eligibility": "eligible",
+            "support": "supported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "supported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "supported"
+          },
+          "trained": {
+            "eligibility": "uncertain",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "eligible",
+            "support": "unsupported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 2,
+          "prior": {
+            "eligibility": "eligible",
+            "support": "unsupported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "unsupported"
+          }
+        },
+        {
+          "count": 1,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "unsupported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "supported"
+          }
+        },
+        {
+          "count": 4,
+          "prior": {
+            "eligibility": "uncertain",
+            "support": "unsupported"
+          },
+          "trained": {
+            "eligibility": "eligible",
+            "support": "unsupported"
+          }
+        }
+      ]
+    }
+  },
+  "receipt_canonical_sha256": "aca5a7cfd87277847aa42799a217a4ff8164dd8273127c25e2fb7fa2e8ca9899",
+  "schema_version": 1,
+  "scope": {
+    "candidate_count": 16,
+    "case_count": 8,
+    "human_reviewers": 0,
+    "labels": "agent_provisional",
+    "session_count": 2,
+    "split": "dev"
+  },
+  "training": {
+    "adapter_changed": true,
+    "input_tokens": 128620,
+    "mean_loss": 0.02305372075988247,
+    "microsteps": 242,
+    "optimizer_steps": 61,
+    "row_count": 242,
+    "seconds": 316.333417,
+    "supervised_tokens": 2810,
+    "trainable_parameters": 33030144
+  },
+  "payload_sha256": "4f2ef2ebbdcf93dede4719b998827e3184678909a7174273292c9c243cfae23f",
+  "runner_sha256": "5a7017773ec54247b1eb671c605b46e0fd9c7c09eb8a77f8b441caf0c3bcb496",
+  "normalization": {
+    "by_arm": {
+      "base": 0,
+      "prior": 0,
+      "trained": 0
+    },
+    "terminal_eos_markers_removed": 0
+  },
+  "baseline_repeatability_vs_first_private_run": {
+    "base": {
+      "identical_input_token_ids": 16,
+      "identical_output_token_ids": 16
+    },
+    "prior": {
+      "identical_input_token_ids": 16,
+      "identical_output_token_ids": 16
+    }
+  },
+  "data": {
+    "private_train_rows": 50,
+    "private_train_sessions": 4,
+    "private_train_windows": 25,
+    "private_train_eligible_rows": 46,
+    "private_train_uncertain_rows": 4,
+    "synthetic_train_only_replay_rows": 192,
+    "total_rows": 242,
+    "synthetic_dev_and_test_in_train": false,
+    "private_dev_prompts_and_labels_unchanged": true,
+    "new_train_windows_share_existing_task_family": true
+  },
+  "comparison_to_first_private_run": {
+    "useful_accepted_before": 5,
+    "useful_accepted_after": 6,
+    "unsupported_caught_before": 7,
+    "unsupported_caught_after": 7,
+    "uncertain_correct_before": 0,
+    "uncertain_correct_after": 0
+  },
+  "decision": {
+    "prospective_gate_passed": false,
+    "model_selected_for_product": false,
+    "release_ready": false,
+    "additional_gpu_calls_automatic": false
+  }
+}

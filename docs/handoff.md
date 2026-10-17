@@ -6,6 +6,31 @@ records and experiment receipts remain unchanged.
 
 ## Latest model result
 
+The second private comparison completed with 50 private rows from four training
+sessions and 192 fictional train-only replay rows. One epoch ran 242 microsteps
+and 61 optimizer steps in 316.333 seconds of training on personal Modal.
+
+| Development measure | Base | Prior adapter | Latest private-trained |
+| --- | ---: | ---: | ---: |
+| Useful memories accepted | 4/7 | 4/7 | 6/7 |
+| Supported claims retained | 7/8 | 7/8 | 8/8 |
+| Unsupported claims rejected | 7/8 | 8/8 | 7/8 |
+| Uncertain scope correct | 2/2 | 2/2 | 0/2 |
+
+The prospective gate failed. Useful acceptance improved by one over the first
+private run, but false acceptance and uncertain scope remain unresolved. No
+product model is selected. All 48 outputs were valid JSON and ended at EOS,
+without offline correction. Base/prior input and output token IDs each matched
+the first run on all 16 prompts. See the [latest results](private-sft-scope-results.md).
+
+Development prompts and labels are unchanged: 16 supplied candidates from two
+sessions, all seven useful references from one. Labels remain agent-provisional
+with zero human reviewers. This does not measure extraction or downstream QA.
+Both private data and replay coverage changed, so the gain cannot be attributed
+to either one alone. The reserved real test source and synthetic test stay unused.
+
+## First private comparison, preserved
+
 The first private continuation completed on personal Modal: 30 reviewed private
 training rows from two sessions plus 48 fictional replay rows, one epoch,
 78 microsteps and 20 optimizer steps. Training took 98 seconds. All three arms
@@ -34,20 +59,29 @@ cover both the correction and false-marker rejection. No GPU rerun occurred.
 
 ## Data and next action
 
-The local corpus contains 25 windows / 50 candidates across five sessions.
-One additional unlabeled test source from a sixth session remains reserved.
-The completed run excluded four older writing examples. A later blind review
-and root adjudication changed only their scope labels to uncertain, preserving
-historical annotations and review disagreements separately. The next unrun
-candidate has 34 private rows from three training sessions plus 48 fictional
-replay rows. Its development cases, labels and prompts are unchanged.
+The local corpus now contains 33 windows / 66 candidates across six sessions:
+25 training windows / 50 rows from four sessions, plus eight development
+windows / 16 candidates from two sessions. An additional unlabeled test source
+remains reserved. The new eight train windows share an existing personal-editing
+task family; their independent review agreed on all 16 support and scope labels.
+All are eligible scope. The combined training set has four uncertain-scope rows.
 
-Next: broaden realistic uncertain-scope, attribution and conditional examples
-across distinct sessions before another frozen comparison. Do not launch the
-82-row candidate merely because it exists. Roughly 100 useful source windows,
-owner review of ambiguous policy labels, a separately labeled final test cohort
-and matched downstream QA remain necessary research work. Preserve the sealed
-synthetic candidate and reserved real test source.
+The old 82-row candidate was never launched. It was superseded by the completed
+242-row comparison. Historical datasets and receipts remain unchanged.
+
+Next: obtain distinct source-backed negation/deferral and writing-scope examples,
+calibrate disputed scope labels with the owner, and broaden independent
+evaluation before another training run. Do not repeat this job or promote its
+adapter. Roughly 100 useful windows, human calibration, a separately labeled
+final test cohort and matched downstream QA remain necessary research work.
+
+The first comparison's data selection is retained here for history:
+That run excluded four older writing examples. A later blind review
+and root adjudication changed only their scope labels to uncertain, preserving
+historical annotations and review disagreements separately. An unrun candidate
+then had 34 private rows from three training sessions plus 48 fictional replay
+rows. It was superseded by the second comparison without changing development
+cases, labels or prompts.
 
 ## Boundaries
 
@@ -71,6 +105,13 @@ Before the narrow EOS correction, `make check PYTHON=.venv/bin/python` passed:
 correction, 35 affected tests, repository Ruff/format and strict mypy across
 74 source files passed. The full suite was not repeated for that focused fix.
 See [validation](validation-private-sft.json).
+
+For the second comparison, all 35 focused private SFT/runner/scorer tests passed.
+No production code changed. Existing exporters validated the new annotations,
+split separation, exact citations and byte-identical development prompts. The
+exact runner and payload were reviewed and archived before the single call.
+Raw receipt and token hashes were verified after scoring. Personal Modal reported
+the app stopped with zero tasks. Recheck live state before any further call.
 
 Read `.local/active-cycle.json` for the current signed/pushed commit and CI
 state at delivery; do not treat older successful CI as validation of new code.
