@@ -42,6 +42,7 @@ files = [
     "experiments/modal_private_verifier.py", "experiments/evaluate_private_verifier.py",
     "experiments/private_sft.py", "experiments/modal_private_sft.py",
     "experiments/private_sft_remote.py", "experiments/evaluate_private_sft.py",
+    "experiments/calendar_evidence.py",
 ]
 mypy_path = "src"
 explicit_package_bases = true

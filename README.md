@@ -26,6 +26,8 @@ grounded-correct answers from 5/24 to 13/24 with hybrid retrieval and 6/24 to
 from 1 to 7, so both answer-condition gates failed and nothing was promoted.
 This changed only system instructions on base Qwen3-4B; it is not trained-memory
 efficacy evidence. See the [downstream QA comparison](docs/downstream-qa-baseline.md).
+A separate calendar-evidence verifier comparison also missed its fixed checks;
+see the [temporal-grounding diagnostic](docs/temporal-grounding-diagnostic.md).
 
 ## What works
 

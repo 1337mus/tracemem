@@ -6,9 +6,60 @@ before any remote launch. Historical experiment records are immutable.
 
 ## Latest verified results
 
-### Current downstream QA comparison
+### Current calendar-evidence augmentation
 
-A root-adjudicated, inference-only prompt comparison on the same 24 adaptive public questions scored 13/24 grounded-correct with hybrid retrieval, 10/24 with oracle evidence, and 0/24 with empty context, versus baseline results of 5/24, 6/24, and 0/24. Unsupported additions rose from 1 to 4 for hybrid and 1 to 7 for oracle, so both answer-condition gates failed and nothing was promoted. Only the base Qwen3-4B system instructions changed; this is not trained-memory efficacy evidence. The [aggregate downstream QA report](downstream-qa-baseline.md) records the full24 and 22/2 subset counts, paired changes, runtime, and limits. Immediate next step: run the original fictional temporal/modality verifier diagnostic before any training. Broader independent conversations with human-reviewed labels and matched baseline/candidate conditions remain necessary before an efficacy claim or promotion.
+A calendar-day evidence addition was tested on the same 32 fictional references
+with the same three frozen systems. Support-label matches were 28/32 for base,
+29/32 for the historical adapter, and 28/32 for the latest adapter, versus
+27/32 for each without the addition. The latest elapsed-time score rose from
+4/8 to 5/8, below the fixed 6/8 minimum; it rejected only 1/4 unsupported
+elapsed-time claims, below the required three. The historical adapter reached
+6/8 but retained only 2/4 supported elapsed-time claims. The 3/4 retention
+requirement applied only to the latest adapter, which retained 4/4; its other
+elapsed-time checks failed. Base eligibility fell from 32/32 to 29/32,
+including two new errors outside elapsed time. The latest
+retained 15/16 supported claims versus 14/16 before, but its unsupported
+rejections remained 13/16; false accepts fell from 3/16 to 1/16. Other fixed
+checks also failed, so no model was promoted.
+
+The helper adds Gregorian calendar-day intervals from cited source-date pairs
+with record revisions; it does not establish clock-hour duration or event
+identity. Root verified that an independent tally matched aggregate and
+family-level counts on both scoring axes. The run had zero human reviewers, no
+held-out set, no new training and no model selection. All outputs were valid;
+the application is stopped with no active tasks. Input grew from 13,034 to
+30,726 tokens per arm. Remote/client elapsed time was 201.1/216.8
+seconds; billed cost is unknown. Full `make check` exited 0 (1,157 passed, one
+optional skip); Ruff covered 233 files and mypy 76. No unchanged rerun is
+justified. Next, improve variation in date-event and
+precision examples, then evaluate independent real sessions with human review
+and calibration. See the [aggregate diagnostic](temporal-grounding-diagnostic.md).
+
+### Original temporal-grounding comparison without calendar evidence
+
+On 32 new fictional train-only claims in 16 paired scenarios across four
+families, the base, historical adapter and latest matched adapter all matched
+27/32 support labels. The latest adapter rejected 13/16 unsupported claims
+(versus 11/16 for base and 15/16 for the historical adapter) and retained
+14/16 supported claims (versus 16/16 and 12/16); this showed a trade-off, not
+an overall gain. There were zero human reviewers. The author created the claims
+and supplied support labels; the second agent labeled them without seeing those
+labels, and root independently labeled them before scoring against the frozen
+references. The examples were templated. Eligibility was disclosed in the
+protocol and every example was personal, so this was not a blind scope-calibration
+test. No model was trained or selected. The [original aggregate diagnostic](temporal-grounding-diagnostic.md)
+records the family results and limits.
+
+### Earlier downstream QA comparison
+
+Changing only the answering instructions on the same 24 adaptive public
+questions scored 13/24 grounded-correct with hybrid retrieval, 10/24 with
+oracle evidence, and 0/24 with empty context, versus baseline results of 5/24,
+6/24 and 0/24. Unsupported additions rose from 1 to 4 for hybrid and 1 to 7
+for oracle, so both answer-condition gates failed and nothing was promoted.
+This remains a prompt-only base-model diagnostic, not trained-memory efficacy.
+The [aggregate downstream QA report](downstream-qa-baseline.md) records the
+subsets, paired changes, runtime and limits.
 
 The latest controlled matched-exposure run used 256 exposures, 64 optimizer
 steps and 212 unique consumed rows, including all 52 reviewed fictional claims
@@ -105,15 +156,11 @@ is not authorized. Keep historical receipts and adapter volumes immutable.
 
 ## Verification and delivery
 
-The last full `make check` ran 1,143 tests: 1,142 passed and one optional test
-was skipped. It ran before the narrow scorer receipt-parser fix. After that
-fix, 61 focused tests passed; Ruff and format checks and configured mypy over
-74 files also passed. The canonical aggregate score receipt succeeded and
-agrees with the independent counts. The frozen runner remained pinned to
-`181fe0ad6c68e529351e48048e5770da76031aecf7257cb49cb4e84232069ba4`. The full
-workspace suite was not rerun after the fix.
+The current full `make check` exited successfully: 1,158 tests ran, 1,157
+passed and one optional test was skipped. Ruff covered 233 files and mypy 76.
+The GPU runner remains pinned to
+`11181e73e0f99e9c4ec0e973d00396acf38985b551d68f16ec6043069e7fa586`.
 
-CI passed for code head `9e5b151d627a09ba5d52bcf6d12dcbda278d95d4` in
-[run 39089212082](https://github.com/1337mus/tracemem/actions/runs/39089212082),
-including full checks and the installed-wheel smoke test. Check
-`.local/active-cycle.json` for current documentation delivery and CI status.
+The previous delivered head `ae0e489` passed [CI run
+39096053992](https://github.com/1337mus/tracemem/actions/runs/39096053992).
+Check `.local/active-cycle.json` for current delivery and CI status.

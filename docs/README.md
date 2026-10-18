@@ -53,9 +53,13 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
-- [Downstream QA baseline](downstream-qa-baseline.md): 5/24 correct answers with
-  supporting retrieved evidence, versus 6/24 with answer-marked evidence;
-  unnecessary abstention is the next diagnostic target.
+- [Downstream QA comparison](downstream-qa-baseline.md): changing only the
+  answering instructions raised grounded-correct answers to 13/24 with hybrid
+  retrieval and 10/24 with answer-marked evidence, while unsupported additions
+  increased; this is not trained-memory efficacy evidence.
+- [Temporal-grounding verifier diagnostic](temporal-grounding-diagnostic.md):
+  three systems tied in the original no-calendar comparison; a later
+  calendar-evidence addition improved some counts but failed its fixed checks.
 - [Matched-exposure training results](matched-exposure-results.md): a controlled
   256-exposure run exactly reproduced recovery on 32 development predictions;
   the private uncertainty target failed and no model was selected.

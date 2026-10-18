@@ -1,6 +1,6 @@
 # Downstream QA comparison
 
-Changing only the answering instructions, we tested base Qwen3-4B on the same 24 adaptive public questions, with the same three context conditions and user evidence. Only the system instructions changed. This remains a descriptive QA diagnostic: it is not trained-memory efficacy, a held-out or official benchmark, a full-history retrieval evaluation, or a privacy review.
+Changing only the answering instructions, we tested base Qwen3-4B on the same 24 adaptive public questions with the same three context conditions and user evidence. This remains a descriptive QA diagnostic: it is not trained-memory efficacy, a held-out or official benchmark, a full-history retrieval evaluation, or a privacy review.
 
 | Condition | Source-answer correct | Prompt-grounded | Grounded and correct | Abstentions | Unsupported additions |
 | --- | ---: | ---: | ---: | ---: | ---: |
