@@ -9,18 +9,16 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**Local search works today; trained memory models remain research.** A
-balanced-support recovery run completed, but both predeclared development gates
-failed on small, adaptive sets with provisional agent labels and no human review.
-The first launch had failed during runtime setup; a later recovery produced
-scored results. No model was selected. See the [recovery results](docs/balanced-support-results.md),
-[experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
+**Local search works today; trained memory models remain research.** The latest
+training run fixed both ambiguous memory-scope labels in a small private
+development set, but accepted fewer useful claims: 5/7, down from 6/7. It also
+lost one correct uncertain-support label in the fictional set. The overall gate
+failed, so no model was selected.
 
-A separate inference-only challenge on 16 fictional candidates across eight
-scripted scenarios passed its narrow dev gate, but both adapters got 0/2
-uncertain-support cases right. Labels remain provisional; this is not product
-evidence and does not change the failed private-training gate. See the
-[naturalistic dev results](docs/naturalistic-dev-results.md).
+These are 32 development claims with provisional agent labels and no human
+review. They do not establish everyday memory accuracy. See the
+[latest training results](docs/eligibility-transfer-results.md),
+[experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
 ## What works
 
