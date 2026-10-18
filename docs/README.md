@@ -57,6 +57,9 @@ Paths in this index are relative to this `docs/` directory.
   ambiguous-scope labels improved, but useful acceptance and support uncertainty
   regressed; the overall gate failed. The earlier
   [inference-only diagnostic](eligibility-transfer-diagnostic.md) is separate.
+- [Public-dialogue verifier results](public-dialogue-verifier-results.md): a
+  fresh 24-claim development comparison retained recovery-level support scores
+  but lost useful acceptance and eligibility exactness; no model was promoted.
 - [Balanced-support recovery results](balanced-support-results.md) and
   [aggregate](balanced-support-results.json): 256-row recovery comparison with
   both predeclared gates failed; no model was selected. The earlier

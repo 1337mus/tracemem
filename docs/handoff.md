@@ -67,16 +67,17 @@ replacements. All 50 private source rows and all 32 dev prompts and references
 remained unchanged. Four builder tests and eleven scorer tests passed; no full
 workspace suite was rerun for this experiment.
 
-The next evaluation batch has 24 claims from 12 metadata-selected public
-benchmark dialogue excerpts. Four source/citation problems were corrected in
-a preserved v2; root verified all 14 whole turns against the original source.
-Blind agent labels and author labels agree on all 24 claims, and root froze
-provisional references before inference: 12 supported and 12 unsupported,
-all eligible. These examples add source variety but have no uncertainty-class
-coverage and are not independent owner sessions. A local label-free serializer
-is in progress; no GPU comparison is approved yet. Independent real-session
-evaluation, downstream QA and human calibration remain necessary. Keep the
-reserved verifier test sealed.
+The 24-claim comparison on 12 public benchmark dialogue excerpts is complete.
+The continued candidate matched recovery on supported retention (11/12) and
+unsupported rejection (11/12), but had lower useful acceptance (9/12 versus
+10/12) and eligibility exactness (20/24 versus 22/24). The frozen gate failed,
+so no model was selected or promoted. See the [aggregate-only public-dialogue
+results](public-dialogue-verifier-results.md); labels remain provisional, the
+sample has no uncertainty or ineligible references, and it is not a held-out or
+official benchmark evaluation. Broader real-session evaluation, human
+calibration, and downstream QA remain necessary. The immediate next step is a
+matched private-exposure audit before any further training. Keep the reserved
+verifier test sealed.
 
 ## Operational boundaries
 
@@ -89,11 +90,15 @@ is not authorized. Keep historical receipts and adapter volumes immutable.
 
 ## Verification and delivery
 
-The latest full check ran 1,138 tests: 1,137 passed and one optional test was
-skipped. Ruff checked 229 files and configured mypy passed 74 files. Fifty-one
-focused tests and nine scorer-regression tests passed. Hosted CI passed for the
-delivered code commit `b837638917762a48b92d1deca091eb709d8c97d5` in
-[run 39082188255](https://github.com/1337mus/tracemem/actions/runs/39082188255).
-The eligibility-transfer builder and scorer suites passed four and eleven
-focused tests, respectively. This experiment and the documentation updates
-are outside that CI run; the full workspace suite was not repeated.
+The last full workspace check ran 1,138 tests: 1,137 passed and one optional
+test was skipped. Ruff checked 229 files and configured mypy passed 74 files;
+51 focused tests and 9 scorer-regression tests passed in that earlier cycle.
+The latest successful CI passed for code head `a303ebbb` in
+[run 39087892066](https://github.com/1337mus/tracemem/actions/runs/39087892066),
+including full checks and the installed-wheel smoke test.
+
+For this comparison, 11 builder/Modal SDK tests and 9 scorer tests passed; the
+serializer's 12 tests passed in its earlier cycle, and root independently
+replayed the score aggregates. The full workspace suite was not rerun. These
+local experimental code and receipts remain outside GitHub. Check
+`.local/active-cycle.json` for current documentation delivery and CI status.

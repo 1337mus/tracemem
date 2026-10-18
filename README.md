@@ -20,6 +20,12 @@ review. They do not establish everyday memory accuracy. See the
 [latest training results](docs/eligibility-transfer-results.md),
 [experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
+A broader check on 24 claims from public dialogues found the new adapter
+rejected unsupported claims as well as the previous adapter, but missed one
+additional useful claim. It failed the comparison gate; see the [aggregate
+results](docs/public-dialogue-verifier-results.md). This was a provisional
+development check, not an official benchmark score.
+
 ## What works
 
 - Read-only Claude Code and Codex transcript adapters, plus an explicit

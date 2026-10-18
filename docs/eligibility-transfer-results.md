@@ -44,8 +44,10 @@ The dev set is adaptive, and its uncertain-eligibility pair contains two
 claims from one source. These results do not measure held-out performance or
 downstream QA efficacy.
 
-The next batch now has 24 source-checked claims from 12 metadata-selected public
-benchmark dialogue excerpts. Author and blind agent labels agree after source
-corrections, and root froze provisional references before inference. It has no
-uncertainty-class coverage and no approved GPU comparison yet. Independent
-real-session evaluation, downstream QA and human calibration remain necessary.
+The subsequent 24-claim public-dialogue comparison is complete. The continued
+candidate matched recovery on supported retention and unsupported rejection,
+and kept unsafe autoaccepts at zero, but useful acceptance fell from 10/12 to
+9/12 and eligibility exactness fell from 22/24 to 20/24. The frozen gate failed
+and no model was selected or promoted. See the [aggregate-only comparison
+results](public-dialogue-verifier-results.md) for its scope and limitations;
+real-session evaluation, human calibration and downstream QA remain necessary.
