@@ -183,14 +183,14 @@ def _training_metrics(
     examples: object,
     row_indices: object,
 ) -> dict[str, Any]:
-    """Count token work and, for a balanced run, summarize the consumed schedule."""
+    """Count token work and summarize the consumed sampling schedule."""
     import hashlib
     import json
 
     labels = ("supported", "unsupported", "uncertain")
     if (
         type(train_rows) is not list
-        or len(train_rows) != 256
+        or not 1 <= len(train_rows) <= 256
         or type(examples) is not list
         or len(examples) != len(train_rows)
         or type(row_indices) is not list
@@ -374,7 +374,13 @@ def _validate_payload_shape(
                 )
             ):
                 raise ValueError
-            if sampling_plan != _BUILD_SAMPLING_PLAN(train_rows, sampling_plan["seed"]):
+            if sampling_plan["strategy"] == "support-balanced-v1":
+                if sampling_plan != _BUILD_SAMPLING_PLAN(train_rows, sampling_plan["seed"]):
+                    raise ValueError
+            elif sampling_plan["strategy"] == "explicit-exposures-v1":
+                if len(sampling_plan["row_indices"]) != 256:
+                    raise ValueError
+            else:
                 raise ValueError
         for prompt in dev_prompts:
             if (

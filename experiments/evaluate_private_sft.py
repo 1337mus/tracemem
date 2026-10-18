@@ -77,9 +77,9 @@ def _expected_sampling_metrics(train_rows: object, sampling_plan: object) -> dic
     labels = ("supported", "unsupported", "uncertain")
     if (
         type(train_rows) is not list
+        or not 1 <= len(train_rows) <= 256
         or type(sampling_plan) is not dict
         or set(sampling_plan) != {"strategy", "seed", "row_indices"}
-        or sampling_plan.get("strategy") != "support-balanced-v1"
         or type(sampling_plan.get("seed")) is not int
         or type(sampling_plan.get("row_indices")) is not list
         or len(sampling_plan["row_indices"]) != 256
@@ -89,12 +89,29 @@ def _expected_sampling_metrics(train_rows: object, sampling_plan: object) -> dic
         )
     ):
         raise ValueError("payload sampling plan is invalid")
-    try:
-        expected_plan = _build_sampling_plan(train_rows, sampling_plan["seed"])
-    except (TypeError, ValueError):
-        raise ValueError("payload sampling plan is invalid") from None
-    if sampling_plan != expected_plan:
-        raise ValueError("payload sampling plan differs from the deterministic schedule")
+    strategy = sampling_plan["strategy"]
+    if strategy == "support-balanced-v1":
+        if len(train_rows) != 256:
+            raise ValueError("payload sampling plan is invalid")
+        try:
+            expected_plan = _build_sampling_plan(train_rows, sampling_plan["seed"])
+        except (TypeError, ValueError):
+            raise ValueError("payload sampling plan is invalid") from None
+        if sampling_plan != expected_plan:
+            raise ValueError("payload sampling plan differs from the deterministic schedule")
+    elif strategy == "explicit-exposures-v1":
+        if sampling_plan["seed"] != private_sft._SETTINGS["seed"]:
+            raise ValueError("payload sampling plan is invalid")
+        seen_prompts: set[str] = set()
+        for row in train_rows:
+            if type(row) is not dict or set(row) != {"prompt", "completion"}:
+                raise ValueError("payload sampling rows are invalid")
+            prompt = row["prompt"]
+            if type(prompt) is not str or not prompt.strip() or prompt in seen_prompts:
+                raise ValueError("payload sampling rows must have unique prompts")
+            seen_prompts.add(prompt)
+    else:
+        raise ValueError("payload sampling plan is invalid")
 
     exposure_counts = {label: 0 for label in labels}
     unique_sources: dict[str, set[int]] = {label: set() for label in labels}
@@ -126,6 +143,17 @@ def _validate_training(
     sampling_plan: object = None,
     train_rows: object = None,
 ) -> dict[str, Any]:
+    expected_sampling = None
+    expected_microsteps = row_count
+    if sampling_plan is not None:
+        expected_sampling = _expected_sampling_metrics(train_rows, sampling_plan)
+        if (
+            type(train_rows) is not list
+            or type(row_count) is not int
+            or row_count != len(train_rows)
+        ):
+            raise ValueError("receipt training row_count does not match payload")
+        expected_microsteps = 256
     expected_fields = _TRAINING_FIELDS | ({"sampling"} if sampling_plan is not None else set())
     if type(value) is not dict or set(value) != expected_fields:
         raise ValueError("receipt training statistics have an invalid shape")
@@ -133,8 +161,8 @@ def _validate_training(
     if type(training["row_count"]) is not int or training["row_count"] != row_count:
         raise ValueError("receipt training row_count does not match payload")
     if (
-        training["microsteps"] != row_count
-        or training["optimizer_steps"] != (row_count + accumulation - 1) // accumulation
+        training["microsteps"] != expected_microsteps
+        or training["optimizer_steps"] != (expected_microsteps + accumulation - 1) // accumulation
     ):
         raise ValueError("receipt training steps do not match one-epoch settings")
     for field in (
@@ -179,8 +207,7 @@ def _validate_training(
         raise ValueError("receipt adapter_changed disagrees with adapter hashes")
     if not training["adapter_changed"]:
         raise ValueError("receipt adapter did not change during training")
-    if sampling_plan is not None:
-        expected_sampling = _expected_sampling_metrics(train_rows, sampling_plan)
+    if expected_sampling is not None:
         sampling = training["sampling"]
         if type(sampling) is not dict or set(sampling) != _SAMPLING_FIELDS:
             raise ValueError("receipt training sampling statistics have an invalid shape")

@@ -9,20 +9,20 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**Local search works today; trained memory models remain research.** The latest
-training run fixed both ambiguous memory-scope labels in a small private
-development set, but accepted fewer useful claims: 5/7, down from 6/7. It also
-lost one correct uncertain-support label in the fictional set. The overall gate
-failed, so no model was selected.
+**Local search works today; trained memory models remain research.** A recent
+matched-exposure training run reproduced the recovery output on all 32
+development prompts, with no measured efficacy gain; the private uncertain-
+eligibility target still failed. No model was selected.
 
-These are 32 development claims with provisional agent labels and no human
-review. They do not establish everyday memory accuracy. See the
-[latest training results](docs/eligibility-transfer-results.md),
+The comparison uses 32 development claims with provisional agent labels and no
+human review; it does not establish everyday memory accuracy. See the
+[latest matched-exposure results](docs/matched-exposure-results.md),
+[earlier eligibility-transfer results](docs/eligibility-transfer-results.md),
 [experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
-A broader check on 24 claims from public dialogues found the new adapter
-rejected unsupported claims as well as the previous adapter, but missed one
-additional useful claim. It failed the comparison gate; see the [aggregate
+An earlier public-dialogue check of the eligibility-transfer adapter on 24
+claims found it rejected unsupported claims as well as recovery, but missed
+one additional useful claim. It failed the comparison gate; see the [aggregate
 results](docs/public-dialogue-verifier-results.md). This was a provisional
 development check, not an official benchmark score.
 

@@ -66,6 +66,28 @@ class ModalPrivateSftTests(unittest.TestCase):
         payload["sampling_plan"] = private_sft.build_sampling_plan(rows, seed=17)
         return payload
 
+    @classmethod
+    def _explicit_exposure_payload(cls) -> dict[str, object]:
+        payload = cls._minimal_payload()
+        labels = ("supported", "unsupported", "uncertain")
+        rows = [
+            {
+                "prompt": f"fictional compact-pool prompt {index}",
+                "completion": json.dumps(
+                    {"support": label, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, label in enumerate(labels)
+        ]
+        indices = [index % len(rows) for index in range(256)]
+        payload["train_rows"] = rows
+        payload["sampling_plan"] = {
+            "strategy": "explicit-exposures-v1",
+            "seed": 17,
+            "row_indices": indices,
+        }
+        return payload
+
     @staticmethod
     def _validate_source_free_payload(payload: dict[str, object]) -> dict[str, object]:
         entry = modal_private_sft._make_remote_function(payload, "0" * 64)
@@ -440,6 +462,51 @@ class ModalPrivateSftTests(unittest.TestCase):
 
         self.assertEqual(validated, payload)
 
+    def test_source_free_validator_accepts_compact_explicit_exposure_schedule(self) -> None:
+        payload = self._explicit_exposure_payload()
+
+        validated = self._validate_source_free_payload(payload)
+
+        self.assertEqual(
+            validated["sampling_plan"]["row_indices"],
+            payload["sampling_plan"]["row_indices"],
+        )
+        self.assertEqual(len(validated["sampling_plan"]["row_indices"]), 256)
+
+    def test_source_free_validator_rejects_malformed_explicit_exposure_schedules(self) -> None:
+        mutations = (
+            ("short_indices", lambda plan: plan["row_indices"].pop()),
+            ("long_indices", lambda plan: plan["row_indices"].append(0)),
+            ("negative_index", lambda plan: plan["row_indices"].__setitem__(0, -1)),
+            ("out_of_range_index", lambda plan: plan["row_indices"].__setitem__(0, 3)),
+            ("boolean_index", lambda plan: plan["row_indices"].__setitem__(0, True)),
+            ("string_index", lambda plan: plan["row_indices"].__setitem__(0, "0")),
+            ("wrong_seed", lambda plan: plan.__setitem__("seed", 18)),
+            ("float_seed", lambda plan: plan.__setitem__("seed", 17.0)),
+            ("unknown_strategy", lambda plan: plan.__setitem__("strategy", "explicit-v2")),
+            ("extra_plan_key", lambda plan: plan.__setitem__("note", "unexpected")),
+        )
+        for name, mutate in mutations:
+            with self.subTest(name=name):
+                payload = self._explicit_exposure_payload()
+                mutate(payload["sampling_plan"])
+                with self.assertRaisesRegex(ValueError, "payload is invalid"):
+                    self._validate_source_free_payload(payload)
+
+    def test_source_free_validator_keeps_explicit_train_prompts_unique(self) -> None:
+        payload = self._explicit_exposure_payload()
+        payload["train_rows"][1]["prompt"] = payload["train_rows"][0]["prompt"]
+
+        with self.assertRaisesRegex(ValueError, "payload is invalid"):
+            self._validate_source_free_payload(payload)
+
+    def test_source_free_validator_keeps_explicit_train_and_dev_prompts_disjoint(self) -> None:
+        payload = self._explicit_exposure_payload()
+        payload["dev_prompts"][0] = payload["train_rows"][0]["prompt"]
+
+        with self.assertRaisesRegex(ValueError, "payload is invalid"):
+            self._validate_source_free_payload(payload)
+
     def test_source_free_validator_accepts_and_rejects_execution_ids(self) -> None:
         payload = self._minimal_payload()
         payload["execution_id"] = "retry-2"
@@ -515,6 +582,31 @@ class ModalPrivateSftTests(unittest.TestCase):
                 for position in range(len(indices))
             ],
             [4] * 256,
+        )
+
+    def test_training_metrics_count_compact_explicit_exposures(self) -> None:
+        payload = self._explicit_exposure_payload()
+        rows = payload["train_rows"]
+        indices = payload["sampling_plan"]["row_indices"]
+        examples = [
+            (list(range(index + 2)), [-100] * index + [101, 2]) for index in range(len(rows))
+        ]
+
+        metrics = private_sft_remote._training_metrics(rows, examples, indices)
+
+        self.assertEqual(metrics["input_tokens"], 767)
+        self.assertEqual(metrics["supervised_tokens"], 512)
+        self.assertEqual(
+            metrics["sampling"]["exposure_counts"],
+            {"supported": 86, "unsupported": 85, "uncertain": 85},
+        )
+        self.assertEqual(
+            metrics["sampling"]["unique_source_counts"],
+            {"supported": 1, "unsupported": 1, "uncertain": 1},
+        )
+        self.assertEqual(
+            metrics["sampling"]["row_index_sha256"],
+            hashlib.sha256(json.dumps(indices, separators=(",", ":")).encode("ascii")).hexdigest(),
         )
 
     @staticmethod

@@ -53,6 +53,9 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Matched-exposure training results](matched-exposure-results.md): a controlled
+  256-exposure run exactly reproduced recovery on 32 development predictions;
+  the private uncertainty target failed and no model was selected.
 - [Eligibility-transfer training results](eligibility-transfer-results.md):
   ambiguous-scope labels improved, but useful acceptance and support uncertainty
   regressed; the overall gate failed. The earlier

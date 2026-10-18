@@ -96,6 +96,48 @@ def _fixture(
 
 class EvaluatePrivateSftTests(unittest.TestCase):
     @staticmethod
+    def _explicit_schedule_fixture() -> tuple[
+        list[dict[str, str]], dict[str, object], dict[str, object]
+    ]:
+        supports = ("supported", "unsupported", "uncertain")
+        rows = [
+            {
+                "prompt": f"fictional explicit schedule prompt {index}",
+                "completion": json.dumps(
+                    {"support": support, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, support in enumerate(supports)
+        ]
+        indices = [0] * 128 + [1] * 64 + [2] * 64
+        plan: dict[str, object] = {
+            "strategy": "explicit-exposures-v1",
+            "seed": 17,
+            "row_indices": indices,
+        }
+        sampling = {
+            "row_index_sha256": _canonical_sha(indices),
+            "exposure_counts": {"supported": 128, "unsupported": 64, "uncertain": 64},
+            "unique_source_counts": {"supported": 1, "unsupported": 1, "uncertain": 1},
+        }
+        training: dict[str, object] = {
+            "row_count": len(rows),
+            "microsteps": len(indices),
+            "optimizer_steps": 64,
+            "input_tokens": 767,
+            "supervised_tokens": 512,
+            "mean_loss": 0.3,
+            "optimizer_step_losses": [0.3] * 64,
+            "trainable_parameters": 12,
+            "adapter_hash_before_training": "b" * 64,
+            "adapter_hash_after_training": "c" * 64,
+            "adapter_changed": True,
+            "seconds": 3.5,
+            "sampling": sampling,
+        }
+        return rows, plan, training
+
+    @staticmethod
     def _balanced_fixture() -> tuple[
         dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any], str
     ]:
@@ -127,6 +169,134 @@ class EvaluatePrivateSftTests(unittest.TestCase):
             ),
         )
         return dataset, source_records, payload, receipt, runner_sha
+
+    def test_explicit_schedule_metrics_and_training_use_256_exposures(self) -> None:
+        rows, plan, training = self._explicit_schedule_fixture()
+
+        expected = evaluate_private_sft._expected_sampling_metrics(rows, plan)
+        validated = evaluate_private_sft._validate_training(
+            training, len(rows), 4, sampling_plan=plan, train_rows=rows
+        )
+
+        self.assertEqual(expected, training["sampling"])
+        self.assertEqual(validated["row_count"], 3)
+        self.assertEqual(validated["microsteps"], 256)
+        self.assertEqual(validated["optimizer_steps"], 64)
+
+    def test_scheduled_training_row_count_must_match_source_pool(self) -> None:
+        rows, plan, training = self._explicit_schedule_fixture()
+        training["row_count"] = 10
+
+        with self.assertRaisesRegex(ValueError, "row_count"):
+            evaluate_private_sft._validate_training(
+                training, 10, 4, sampling_plan=plan, train_rows=rows
+            )
+
+    def test_explicit_schedule_accepts_one_to_256_unique_sources(self) -> None:
+        for pool_size in (1, 256):
+            with self.subTest(pool_size=pool_size):
+                supports = ("supported", "unsupported", "uncertain")
+                rows = [
+                    {
+                        "prompt": f"fictional bounded-pool prompt {index}",
+                        "completion": json.dumps(
+                            {
+                                "support": supports[index % len(supports)],
+                                "eligibility": "eligible",
+                            },
+                            separators=(",", ":"),
+                        ),
+                    }
+                    for index in range(pool_size)
+                ]
+                indices = [index % pool_size for index in range(256)]
+                plan = {
+                    "strategy": "explicit-exposures-v1",
+                    "seed": 17,
+                    "row_indices": indices,
+                }
+
+                metrics = evaluate_private_sft._expected_sampling_metrics(rows, plan)
+
+                self.assertEqual(sum(metrics["exposure_counts"].values()), 256)
+                self.assertEqual(sum(metrics["unique_source_counts"].values()), pool_size)
+
+    def test_explicit_schedule_rejects_malformed_plan_before_training_steps(self) -> None:
+        mutations = (
+            ("short_indices", lambda plan: plan["row_indices"].pop()),
+            ("long_indices", lambda plan: plan["row_indices"].append(0)),
+            ("negative_index", lambda plan: plan["row_indices"].__setitem__(0, -1)),
+            ("out_of_range_index", lambda plan: plan["row_indices"].__setitem__(0, 3)),
+            ("boolean_index", lambda plan: plan["row_indices"].__setitem__(0, True)),
+            ("string_index", lambda plan: plan["row_indices"].__setitem__(0, "0")),
+            ("wrong_seed", lambda plan: plan.__setitem__("seed", 18)),
+            ("float_seed", lambda plan: plan.__setitem__("seed", 17.0)),
+            ("unknown_strategy", lambda plan: plan.__setitem__("strategy", "explicit-v2")),
+            ("extra_plan_key", lambda plan: plan.__setitem__("unexpected", True)),
+        )
+        for name, mutate in mutations:
+            with self.subTest(name=name):
+                rows, plan, training = self._explicit_schedule_fixture()
+                training["microsteps"] = 255
+                mutate(plan)
+
+                with self.assertRaisesRegex(ValueError, "payload sampling"):
+                    evaluate_private_sft._validate_training(
+                        training, len(rows), 4, sampling_plan=plan, train_rows=rows
+                    )
+
+        rows, plan, training = self._explicit_schedule_fixture()
+        rows[1]["prompt"] = rows[0]["prompt"]
+        training["microsteps"] = 255
+        with self.assertRaisesRegex(ValueError, "payload sampling rows"):
+            evaluate_private_sft._validate_training(
+                training, len(rows), 4, sampling_plan=plan, train_rows=rows
+            )
+
+    def test_explicit_schedule_rejects_tampered_receipt_schedule_metrics_and_steps(self) -> None:
+        mutations = (
+            (
+                "schedule_index",
+                lambda plan, training: plan["row_indices"].__setitem__(0, 2),
+                "row-index hash",
+            ),
+            ("microsteps", lambda plan, training: training.__setitem__("microsteps", 255), "steps"),
+            (
+                "optimizer_steps",
+                lambda plan, training: training.__setitem__("optimizer_steps", 63),
+                "steps",
+            ),
+            (
+                "hash",
+                lambda plan, training: training["sampling"].__setitem__(
+                    "row_index_sha256", "0" * 64
+                ),
+                "row-index hash",
+            ),
+            (
+                "exposure_counts",
+                lambda plan, training: training["sampling"]["exposure_counts"].update(
+                    supported=127
+                ),
+                "exposure_counts",
+            ),
+            (
+                "unique_source_counts",
+                lambda plan, training: training["sampling"]["unique_source_counts"].update(
+                    supported=2
+                ),
+                "unique_source_counts",
+            ),
+        )
+        for name, mutate, message in mutations:
+            with self.subTest(name=name):
+                rows, plan, training = self._explicit_schedule_fixture()
+                mutate(plan, training)
+
+                with self.assertRaisesRegex(ValueError, message):
+                    evaluate_private_sft._validate_training(
+                        training, len(rows), 4, sampling_plan=plan, train_rows=rows
+                    )
 
     def test_scores_three_arms_with_aggregate_only_axis_metrics(self) -> None:
         dataset, source_records, payload, receipt, runner_sha = _fixture()

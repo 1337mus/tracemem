@@ -6,6 +6,15 @@ before any remote launch. Historical experiment records are immutable.
 
 ## Latest verified results
 
+The latest controlled matched-exposure run used 256 exposures, 64 optimizer
+steps and 212 unique consumed rows, including all 52 reviewed fictional claims
+once. It matched recovery's private exposure identities and positions, and the
+frozen 32-prompt dev set remained unchanged. The candidate reproduced recovery
+on all 32 predictions; its private uncertain-eligibility target still failed,
+so there was no measured efficacy gain and no model was selected. See the
+[aggregate-only matched-exposure report](matched-exposure-results.md) for
+cohort scores, run accounting, limits and the next evaluation direction.
+
 The first approved balanced-support launch failed with an `OSError` during
 runtime setup, before training. Its planned schedule was not consumed and
 produced no score; the original cause remains unestablished. A separate
@@ -75,9 +84,11 @@ so no model was selected or promoted. See the [aggregate-only public-dialogue
 results](public-dialogue-verifier-results.md); labels remain provisional, the
 sample has no uncertainty or ineligible references, and it is not a held-out or
 official benchmark evaluation. Broader real-session evaluation, human
-calibration, and downstream QA remain necessary. The immediate next step is a
-matched private-exposure audit before any further training. Keep the reserved
-verifier test sealed.
+calibration, and downstream QA remain necessary. The matched private-exposure
+audit is now complete. Next, evaluate on genuinely independent conversations
+with separately reviewed labels and downstream QA, and resolve the disputed
+memory-scope policy before changing the data or hypothesis for any further
+training. Keep the reserved verifier test sealed.
 
 ## Operational boundaries
 
@@ -90,15 +101,15 @@ is not authorized. Keep historical receipts and adapter volumes immutable.
 
 ## Verification and delivery
 
-The last full workspace check ran 1,138 tests: 1,137 passed and one optional
-test was skipped. Ruff checked 229 files and configured mypy passed 74 files;
-51 focused tests and 9 scorer-regression tests passed in that earlier cycle.
-The latest successful CI passed for code head `a303ebbb` in
-[run 39087892066](https://github.com/1337mus/tracemem/actions/runs/39087892066),
-including full checks and the installed-wheel smoke test.
+The last full `make check` ran 1,143 tests: 1,142 passed and one optional test
+was skipped. It ran before the narrow scorer receipt-parser fix. After that
+fix, 61 focused tests passed; Ruff and format checks and configured mypy over
+74 files also passed. The canonical aggregate score receipt succeeded and
+agrees with the independent counts. The frozen runner remained pinned to
+`181fe0ad6c68e529351e48048e5770da76031aecf7257cb49cb4e84232069ba4`. The full
+workspace suite was not rerun after the fix.
 
-For this comparison, 11 builder/Modal SDK tests and 9 scorer tests passed; the
-serializer's 12 tests passed in its earlier cycle, and root independently
-replayed the score aggregates. The full workspace suite was not rerun. These
-local experimental code and receipts remain outside GitHub. Check
+CI passed for code head `9e5b151d627a09ba5d52bcf6d12dcbda278d95d4` in
+[run 39089212082](https://github.com/1337mus/tracemem/actions/runs/39089212082),
+including full checks and the installed-wheel smoke test. Check
 `.local/active-cycle.json` for current documentation delivery and CI status.
