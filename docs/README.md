@@ -53,6 +53,9 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Downstream QA baseline](downstream-qa-baseline.md): 5/24 correct answers with
+  supporting retrieved evidence, versus 6/24 with answer-marked evidence;
+  unnecessary abstention is the next diagnostic target.
 - [Matched-exposure training results](matched-exposure-results.md): a controlled
   256-exposure run exactly reproduced recovery on 32 development predictions;
   the private uncertainty target failed and no model was selected.

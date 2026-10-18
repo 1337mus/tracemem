@@ -20,11 +20,11 @@ human review; it does not establish everyday memory accuracy. See the
 [earlier eligibility-transfer results](docs/eligibility-transfer-results.md),
 [experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
-An earlier public-dialogue check of the eligibility-transfer adapter on 24
-claims found it rejected unsupported claims as well as recovery, but missed
-one additional useful claim. It failed the comparison gate; see the [aggregate
-results](docs/public-dialogue-verifier-results.md). This was a provisional
-development check, not an official benchmark score.
+A separate answering baseline got 5 of 24 questions correct with supporting
+retrieved evidence, and 6 of 24 with answer-marked evidence. It often answered
+`UNKNOWN` despite having enough information. This test used the base answering
+model; it did not evaluate the trained memory pipeline. See the
+[downstream QA report](docs/downstream-qa-baseline.md).
 
 ## What works
 

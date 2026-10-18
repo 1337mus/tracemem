@@ -6,6 +6,10 @@ before any remote launch. Historical experiment records are immutable.
 
 ## Latest verified results
 
+### Current downstream QA baseline
+
+An inference-only baseline with base Qwen3-4B and raw retrieval/oracle history scored 5/24 grounded-correct on hybrid retrieval, 6/24 on oracle evidence, and 0/24 on empty context. It is an adaptive public-question sample, not a trained-memory efficacy result, held-out or official benchmark, full-history retrieval evaluation, privacy review, or training-admission decision. The [aggregate downstream QA report](downstream-qa-baseline.md) records condition and subset counts, runtime, and limits. Next, evaluate the same prompts and user evidence with stronger task-system instructions before further training; no gain is claimed.
+
 The latest controlled matched-exposure run used 256 exposures, 64 optimizer
 steps and 212 unique consumed rows, including all 52 reviewed fictional claims
 once. It matched recovery's private exposure identities and positions, and the
