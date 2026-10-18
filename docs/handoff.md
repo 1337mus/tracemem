@@ -6,9 +6,9 @@ before any remote launch. Historical experiment records are immutable.
 
 ## Latest verified results
 
-### Current downstream QA baseline
+### Current downstream QA comparison
 
-An inference-only baseline with base Qwen3-4B and raw retrieval/oracle history scored 5/24 grounded-correct on hybrid retrieval, 6/24 on oracle evidence, and 0/24 on empty context. It is an adaptive public-question sample, not a trained-memory efficacy result, held-out or official benchmark, full-history retrieval evaluation, privacy review, or training-admission decision. The [aggregate downstream QA report](downstream-qa-baseline.md) records condition and subset counts, runtime, and limits. Next, evaluate the same prompts and user evidence with stronger task-system instructions before further training; no gain is claimed.
+A root-adjudicated, inference-only prompt comparison on the same 24 adaptive public questions scored 13/24 grounded-correct with hybrid retrieval, 10/24 with oracle evidence, and 0/24 with empty context, versus baseline results of 5/24, 6/24, and 0/24. Unsupported additions rose from 1 to 4 for hybrid and 1 to 7 for oracle, so both answer-condition gates failed and nothing was promoted. Only the base Qwen3-4B system instructions changed; this is not trained-memory efficacy evidence. The [aggregate downstream QA report](downstream-qa-baseline.md) records the full24 and 22/2 subset counts, paired changes, runtime, and limits. Immediate next step: run the original fictional temporal/modality verifier diagnostic before any training. Broader independent conversations with human-reviewed labels and matched baseline/candidate conditions remain necessary before an efficacy claim or promotion.
 
 The latest controlled matched-exposure run used 256 exposures, 64 optimizer
 steps and 212 unique consumed rows, including all 52 reviewed fictional claims

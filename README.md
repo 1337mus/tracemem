@@ -20,11 +20,12 @@ human review; it does not establish everyday memory accuracy. See the
 [earlier eligibility-transfer results](docs/eligibility-transfer-results.md),
 [experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
-A separate answering baseline got 5 of 24 questions correct with supporting
-retrieved evidence, and 6 of 24 with answer-marked evidence. It often answered
-`UNKNOWN` despite having enough information. This test used the base answering
-model; it did not evaluate the trained memory pipeline. See the
-[downstream QA report](docs/downstream-qa-baseline.md).
+Changing only the answering instructions on the same 24 public questions raised
+grounded-correct answers from 5/24 to 13/24 with hybrid retrieval and 6/24 to
+10/24 with answer-marked evidence. Unsupported additions rose from 1 to 4 and
+from 1 to 7, so both answer-condition gates failed and nothing was promoted.
+This changed only system instructions on base Qwen3-4B; it is not trained-memory
+efficacy evidence. See the [downstream QA comparison](docs/downstream-qa-baseline.md).
 
 ## What works
 
