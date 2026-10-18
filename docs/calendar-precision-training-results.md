@@ -78,6 +78,23 @@ no data was sent. No further GPU run is planned this cycle. Investigate the
 support/scope trade-off and freeze a broader, independently labeled source
 evaluation before proposing further training.
 
+## Follow-up scope audit
+
+A follow-up audit reviewed four selected diagnostic items. Both changed
+private predictions retained support but changed eligibility from eligible to
+uncertain. One lost a useful reference; the other corrected an uncertain-scope
+error. Root and the independent reviewer disagreed on scope for two of the four
+items. Original adjacent context supports a formatting-task interpretation for
+one item, but the frozen model saw only the short user turn. Of 256 training
+exposures, 37 used private examples: 33 eligible and four uncertain. This does
+not prove a causal data imbalance.
+Scope eligibility and durable usefulness are different outcomes. This selected
+diagnostic is not representative or held out, and had zero human reviewers. The
+original gates remain unchanged: the temporal target passed and the private
+control failed. No new GPU job ran during this audit; no model was selected.
+Resolve pending scope-policy calibration and freeze an independent evaluation
+before further training.
+
 The reserved verifier dataset was not intentionally opened. An incidental
 historical-report exposure included a test-split marker, encoded token arrays,
 and two output records; whether those records overlap the reserved dataset is

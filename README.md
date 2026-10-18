@@ -9,14 +9,13 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**Local search works today; trained memory models remain research.** A recent
-matched-exposure training run reproduced the recovery output on all 32
-development prompts, with no measured efficacy gain; the private uncertain-
-eligibility target still failed. No model was selected.
-
-The comparison uses 32 development claims with provisional agent labels and no
-human review; it does not establish everyday memory accuracy. See the
-[latest matched-exposure results](docs/matched-exposure-results.md),
+**Local search works today; trained memory models remain research.** The latest
+256-exposure matched comparison improved temporal support from 27/32 to 29/32,
+but private useful acceptance fell from 6/7 to 5/7, failing the private control
+gate. No model was selected. The small adaptive development sets have
+provisional agent-only labels, zero human reviewers, and no held-out evaluation.
+See the [latest calendar-precision results](docs/calendar-precision-training-results.md),
+[prior matched-exposure results](docs/matched-exposure-results.md),
 [earlier eligibility-transfer results](docs/eligibility-transfer-results.md),
 [experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 

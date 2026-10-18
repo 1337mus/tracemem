@@ -24,6 +24,14 @@ raw tally matched the target counts. No full-suite rerun is claimed. No further
 GPU run is planned this cycle. See the [aggregate results and
 limits](calendar-precision-training-results.md).
 
+Scope audit: root and independent reviewers disagreed on two of four selected
+items. Both changed private predictions retained support but shifted eligibility
+to uncertain; one lost a useful reference, one fixed uncertain scope. Of 256
+training exposures, 37 used private examples: 33 eligible and four uncertain;
+these counts do not prove imbalance. Selected, non-held-out; zero human
+reviewers. Target passed; private control failed. No new GPU job ran during this
+audit; no model was selected. Next: owner calibration and independent evaluation.
+
 The reserved verifier dataset was not intentionally opened, but an incidental
 historical-report exposure included a test-split marker, encoded token arrays,
 and two output records. Its overlap with the reserved dataset remains

@@ -8,13 +8,15 @@ Use restricted private experiment paths and explicit private provenance. See
 [realistic data](realistic-data.md) for the collection and review workflow.
 Four extractor training experiments and two verifier training experiments have
 completed on fiction. Their results are mixed; none selected a product model.
-The latest [verifier result](verifier-v2-results.md) includes separate development
-and frozen test reports. Reviews have zero human reviewers.
+The historical [verifier v2 result](verifier-v2-results.md) includes separate
+development and frozen test reports. Reviews had zero human reviewers.
 The first [private inference pilot](private-pilot-results.md) evaluated seven
-real user messages and 14 candidate claims on personal Modal; no private
-training or private checkpoint creation has occurred. Raw inputs and receipts
-remain restricted and outside GitHub. No public release occurred, and no model
-weights were downloaded to this Mac. Check
+real user messages and 14 candidate claims on personal Modal. Since that
+inference-only pilot, owner-authorized private training and evaluation have also
+run on personal Modal. Private-trained checkpoints remain restricted to that
+remote environment and are not publishable. Raw inputs, receipts and checkpoints
+remain outside GitHub; no model weights have been downloaded to this Mac, and no
+public release has occurred. Check
 `.local/active-cycle.json` and live Modal state before any new call. Code
 licensing does not grant rights to private conversations.
 

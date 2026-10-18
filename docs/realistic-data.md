@@ -1,12 +1,20 @@
 # Getting better training data
 
-The current collection has 33 annotated conversation windows and 66 candidate
-judgments across six real sessions. Training uses 25 windows and 50 rows from
-four sessions; development uses eight windows and 16 rows from two sessions.
-The separately reserved source remains unlabeled and unused. All annotations
-are provisional agent judgments. No human has reviewed them.
+The latest calendar-precision comparison used 256 matched exposures. Temporal
+support improved from 27/32 to 29/32, but private useful acceptance fell from
+6/7 to 5/7, so the private control failed and no model was selected. This was a
+small adaptive development evaluation with provisional agent-only labels and
+zero human reviewers. See the [calendar-precision training results](calendar-precision-training-results.md).
 
-For the completed private SFT run, we used:
+The current collection has 33 annotated conversation windows and 66 candidate
+judgments across six real sessions. The available training partition has 25
+windows and 50 rows from four sessions; the development partition has eight
+windows and 16 rows from two sessions. These are annotated source-row counts,
+not actual consumed exposure counts. The separately reserved source remains
+unlabeled and unused. All annotations are provisional agent judgments. No human
+has reviewed them.
+
+The available private source partitions are:
 
 | Use | Sessions | Windows | Candidate judgments |
 | --- | ---: | ---: | ---: |
@@ -20,9 +28,10 @@ are eligible.
 The older four writing-task judgments retain their adjudicated labels: two
 supported, two unsupported, with eligibility uncertain on all four.
 
-Training also includes 192 fictional replay rows. Synthetic development and
-test examples are excluded. The completed 242-row private continuation and its
-development results are in the [latest scope report](private-sft-scope-results.md).
+The historical 242-row private continuation had a source pool comprising the
+then-current private training partition and 192 fictional replay rows; synthetic
+development and test examples were excluded for that run. Its development results are in the
+[242-row scope report](private-sft-scope-results.md).
 
 ## What the real examples add
 
@@ -92,7 +101,7 @@ retained 8/8 supported claims, rejected 7/8 unsupported claims and got 0/2
 uncertain-scope cases correct. See the [242-row results](private-sft-scope-results.md)
 and [first private run report](private-sft-results.md).
 
-The newest comparison used 256 rows: the prior 242-row mix plus 14 new fictional
+The historical 256-row contrast used the prior 242-row mix plus 14 new fictional
 rows, starting from synthetic-v2. It accepted 7/7 useful candidates and retained
 8/8 supported claims, while rejecting 7/8 unsupported claims and getting 0/2
 uncertain-scope labels right. The frozen gate failed. Data order and optimizer
@@ -107,16 +116,20 @@ failed private-training gate or establish product quality. See the
 This is a small development experiment on supplied candidates, with previously
 inspected examples and correlated conversation windows. It cannot establish
 extraction recall, natural error prevalence, durable memory quality or better
-answers. Development remains development. The reserved test source and sealed
-synthetic candidate stay untouched.
+answers. Development remains development. The separately reserved private
+source remains unlabeled and unused. The reserved verifier dataset was not
+intentionally opened, but an incidental historical-report exposure included a
+test-split marker, encoded token arrays and two output records; whether those
+records overlap the reserved dataset is unresolved. Do not claim the reserved
+verifier set was untouched or that evaluation remained blind.
 
 Ten bounded source scans yielded no new real-source admissions; this local zero
-yield does not establish that a larger archive is unusable. Keep the reserved
-test source untouched. Before further training, target source-backed negation
-and deferral examples, clarify scope labels with the owner, and plan a broader
-separate evaluation with a distinct test cohort and downstream QA comparison
-against transcript retrieval. See the [contrast results](private-sft-contrast-results.md)
-for the latest development gate and its limits.
+yield does not establish that a larger archive is unusable. Keep the separate
+reserved private source unlabeled and unused, and quarantine verifier-test data
+while the historical-report overlap remains unresolved. Before further
+training, investigate the support/scope regression and calibrate the memory
+scope policy with the owner. See the [contrast results](private-sft-contrast-results.md)
+for the historical contrast gate and its limits.
 
 ## Privacy and release
 
