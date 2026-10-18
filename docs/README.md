@@ -60,6 +60,8 @@ Paths in this index are relative to this `docs/` directory.
 - [Temporal-grounding verifier diagnostic](temporal-grounding-diagnostic.md):
   three systems tied in the original no-calendar comparison; a later
   calendar-evidence addition improved some counts but failed its fixed checks.
+- [Calendar-precision training comparison](calendar-precision-training-results.md):
+  temporal target improved; private useful acceptance regressed; no model was selected.
 - [Matched-exposure training results](matched-exposure-results.md): a controlled
   256-exposure run exactly reproduced recovery on 32 development predictions;
   the private uncertainty target failed and no model was selected.

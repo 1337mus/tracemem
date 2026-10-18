@@ -6,7 +6,30 @@ before any remote launch. Historical experiment records are immutable.
 
 ## Latest verified results
 
-### Current calendar-evidence augmentation
+### Calendar-precision training comparison
+
+The candidate used 256 exposures and 64 optimizer steps, consuming 196 unique
+rows from a 228-row pool; the matched baseline consumed 212. It preserved all
+37 private exposure positions and 177 protected fictional positions while
+replacing 32 matched fictional slots with 16 new claims exposed twice. On the
+original 32 temporal prompts without calendar JSON, support exactness rose from
+27/32 to 29/32 and elapsed-time exactness from 4/8 to 6/8; the frozen target
+gate passed. The private control gate failed because useful acceptance fell
+from 6/7 to 5/7. No model was selected. There were zero human reviewers; the
+target was adaptive fictional data, while the controls included private and
+fictional examples. Neither set was held out. The 28-item public
+transfer remains blocked pending exact owner-egress approval; no data was sent.
+Nine development-scorer and three payload-builder tests passed; an independent
+raw tally matched the target counts. No full-suite rerun is claimed. No further
+GPU run is planned this cycle. See the [aggregate results and
+limits](calendar-precision-training-results.md).
+
+The reserved verifier dataset was not intentionally opened, but an incidental
+historical-report exposure included a test-split marker, encoded token arrays,
+and two output records. Its overlap with the reserved dataset remains
+unresolved, so do not claim the reserved set was untouched.
+
+### Earlier calendar-evidence augmentation
 
 A calendar-day evidence addition was tested on the same 32 fictional references
 with the same three frozen systems. Support-label matches were 28/32 for base,
@@ -48,7 +71,8 @@ labels, and root independently labeled them before scoring against the frozen
 references. The examples were templated. Eligibility was disclosed in the
 protocol and every example was personal, so this was not a blind scope-calibration
 test. No model was trained or selected. The [original aggregate diagnostic](temporal-grounding-diagnostic.md)
-records the family results and limits.
+records the family results and limits. See the latest result above for the
+unresolved test-data boundary.
 
 ### Earlier downstream QA comparison
 
@@ -107,7 +131,8 @@ aggregate results, timing and limitations.
 
 Labels remain provisional agent judgments with zero human reviewers. These are
 small adaptive development sets, not held-out evaluation; they do not support
-causal or downstream QA claims. The reserved verifier test remains unused.
+causal or downstream QA claims. The reserved verifier dataset was not
+intentionally opened; incidental report exposure leaves overlap unresolved.
 
 ## Next experiment
 
@@ -143,7 +168,8 @@ calibration, and downstream QA remain necessary. The matched private-exposure
 audit is now complete. Next, evaluate on genuinely independent conversations
 with separately reviewed labels and downstream QA, and resolve the disputed
 memory-scope policy before changing the data or hypothesis for any further
-training. Keep the reserved verifier test sealed.
+training. Keep verifier-test data quarantined while the historical-report
+overlap remains unresolved.
 
 ## Operational boundaries
 
