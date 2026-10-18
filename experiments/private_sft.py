@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from copy import deepcopy
 from typing import Any
 
 from experiments import modal_private_verifier
 from experiments.modal_verifier_v2 import _MODEL
+from experiments.private_sft_remote import _build_sampling_plan as build_sampling_plan
 
 _PRIOR_VOLUME_NAME = "tracemem-verifier-v2"
 _PRIOR_VOLUME_MOUNT = "/mnt/tracemem-verifier-v2"
@@ -120,8 +122,18 @@ def build_payload(
     private_dataset: object,
     source_records: object,
     synthetic_replay_dataset: object | None = None,
+    sampling_strategy: str | None = None,
+    execution_id: str | None = None,
 ) -> dict[str, Any]:
     """Build a deterministic payload from the existing validated exporters only."""
+    if sampling_strategy is not None and (
+        type(sampling_strategy) is not str or sampling_strategy != "support-balanced-v1"
+    ):
+        raise ValueError("private SFT sampling strategy is unsupported")
+    if execution_id is not None and (
+        type(execution_id) is not str or re.fullmatch(r"[a-z][a-z0-9-]{0,63}", execution_id) is None
+    ):
+        raise ValueError("private SFT execution ID is invalid")
     from training.private_verifier_data import (
         render_private_eval_prompts,
         render_private_training_rows,
@@ -195,6 +207,10 @@ def build_payload(
         "train_rows": train_rows,
         "dev_prompts": dev_prompts,
     }
+    if execution_id is not None:
+        payload["execution_id"] = execution_id
+    if sampling_strategy is not None:
+        payload["sampling_plan"] = build_sampling_plan(train_rows, _SETTINGS["seed"])
     if len(_canonical_bytes(payload)) > _MAX_PAYLOAD_BYTES:
         raise ValueError("private SFT payload exceeds its byte limit")
     return payload

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import unittest
+from copy import deepcopy
 from typing import Any
 
 from experiments import private_sft
@@ -213,7 +214,150 @@ def _synthetic_replay_fixture() -> dict[str, Any]:
     }
 
 
+def _support_balanced_replay_fixture() -> dict[str, Any]:
+    dataset = _synthetic_replay_fixture()
+    template = deepcopy(dataset["cases"][0])
+    labels = ["supported"] * 115 + ["unsupported"] * 116 + ["uncertain"] * 21
+    train_cases: list[dict[str, Any]] = []
+    for case_index in range(126):
+        case = deepcopy(template)
+        case_id = f"balanced-train-{case_index}"
+        message_id = f"balanced-message-{case_index}"
+        text = f"Fictional balanced source {case_index} mentions a paper moon."
+        case["case_id"] = case_id
+        case["scenario_group"] = f"balanced-scenario-{case_index}"
+        case["template_group"] = f"balanced-template-{case_index}"
+        case["entity_ids"] = [f"balanced-entity-{case_index}"]
+        message = case["messages"][0]
+        message["session_id"] = f"balanced-session-{case_index}"
+        message["message_id"] = message_id
+        message["text"] = text
+        for candidate_index, candidate in enumerate(case["candidates"]):
+            candidate["candidate_id"] = f"balanced-candidate-{case_index}-{candidate_index}"
+            candidate["claim"] = f"Fictional balanced claim {case_index}-{candidate_index}."
+            candidate["message_id"] = message_id
+            candidate["quote"] = text
+            candidate["support"] = labels[case_index * 2 + candidate_index]
+            candidate["eligibility"] = "eligible"
+        train_cases.append(case)
+    dataset["cases"] = [*dataset["cases"][1:], *train_cases]
+    return dataset
+
+
 class PrivateSftPayloadTests(unittest.TestCase):
+    def test_default_payload_keeps_its_original_canonical_hash(self) -> None:
+        dataset, sources = _private_fixture()
+
+        payload = private_sft.build_payload(dataset, sources)
+        explicit_none = private_sft.build_payload(dataset, sources, sampling_strategy=None)
+
+        self.assertEqual(payload, explicit_none)
+        self.assertNotIn("sampling_plan", payload)
+        self.assertEqual(
+            _canonical_sha256(payload),
+            "608bce605996636969d48ca20773538ca0e162118baaed42c73d8cd1f2342dee",
+        )
+
+    def test_explicit_execution_id_changes_only_payload_metadata(self) -> None:
+        dataset, sources = _private_fixture()
+        original = private_sft.build_payload(dataset, sources)
+
+        payload = private_sft.build_payload(dataset, sources, execution_id="retry-2")
+
+        self.assertEqual(payload["execution_id"], "retry-2")
+        payload_without_id = dict(payload)
+        del payload_without_id["execution_id"]
+        self.assertEqual(payload_without_id, original)
+        self.assertNotEqual(_canonical_sha256(payload), _canonical_sha256(original))
+
+    def test_execution_id_rejects_values_outside_safe_format(self) -> None:
+        dataset, sources = _private_fixture()
+
+        for invalid_id in (True, "", "Upper", "-retry", "retry_id", "a" * 65):
+            with self.subTest(execution_id=invalid_id):
+                with self.assertRaisesRegex(ValueError, "execution ID is invalid"):
+                    private_sft.build_payload(dataset, sources, execution_id=invalid_id)
+
+    def test_payload_includes_only_the_requested_balanced_sampling_plan(self) -> None:
+        private_dataset, sources = _private_fixture()
+        replay = _support_balanced_replay_fixture()
+
+        payload = private_sft.build_payload(
+            private_dataset,
+            sources,
+            replay,
+            sampling_strategy="support-balanced-v1",
+        )
+
+        self.assertEqual(len(payload["train_rows"]), 256)
+        self.assertEqual(len({row["prompt"] for row in payload["train_rows"]}), 256)
+        self.assertEqual(
+            payload["sampling_plan"],
+            private_sft.build_sampling_plan(payload["train_rows"], seed=17),
+        )
+        self.assertEqual(set(payload["sampling_plan"]), {"strategy", "seed", "row_indices"})
+
+    def test_support_balanced_plan_uses_exact_exposures_without_duplicate_rows(self) -> None:
+        labels = ["supported"] * 117 + ["unsupported"] * 116 + ["uncertain"] * 23
+        rows = [
+            {
+                "prompt": f"fictional prompt {index}",
+                "completion": json.dumps(
+                    {"support": label, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, label in enumerate(labels)
+        ]
+
+        plan = private_sft.build_sampling_plan(rows, seed=17)
+
+        self.assertEqual(set(plan), {"strategy", "seed", "row_indices"})
+        self.assertEqual(plan["strategy"], "support-balanced-v1")
+        self.assertEqual(plan["seed"], 17)
+        indices = plan["row_indices"]
+        self.assertEqual(len(indices), 256)
+        self.assertEqual(
+            {label: sum(labels[index] == label for index in indices) for label in set(labels)},
+            {"supported": 85, "unsupported": 85, "uncertain": 86},
+        )
+        self.assertEqual(len({row["prompt"] for row in rows}), 256)
+        self.assertEqual(len(set(indices)), 193)
+        self.assertEqual(plan, private_sft.build_sampling_plan(rows, seed=17))
+
+    def test_support_balanced_plan_rejects_missing_classes_wrong_size_and_boolean_seed(
+        self,
+    ) -> None:
+        labels = ["supported"] * 117 + ["unsupported"] * 116 + ["uncertain"] * 23
+        rows = [
+            {
+                "prompt": f"fictional prompt {index}",
+                "completion": json.dumps(
+                    {"support": label, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, label in enumerate(labels)
+        ]
+
+        with self.assertRaisesRegex(ValueError, "inputs are invalid"):
+            private_sft.build_sampling_plan(rows[:-1], seed=17)
+        with self.assertRaisesRegex(ValueError, "inputs are invalid"):
+            private_sft.build_sampling_plan(rows, seed=True)
+
+        missing_class_rows = [
+            {
+                **row,
+                "completion": json.dumps(
+                    {"support": "supported", "eligibility": "eligible"},
+                    separators=(",", ":"),
+                ),
+            }
+            if json.loads(row["completion"])["support"] == "uncertain"
+            else row
+            for row in rows
+        ]
+        with self.assertRaisesRegex(ValueError, "requires all support classes"):
+            private_sft.build_sampling_plan(missing_class_rows, seed=17)
+
     def test_synthetic_replay_appends_only_validated_train_rows(self) -> None:
         dataset, sources = _private_fixture()
         replay = _synthetic_replay_fixture()

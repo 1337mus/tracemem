@@ -53,6 +53,12 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Experiments and model research
 
+- [Balanced-support recovery results](balanced-support-results.md) and
+  [aggregate](balanced-support-results.json): 256-row recovery comparison with
+  both predeclared gates failed; no model was selected. The earlier
+  [uncertainty-training comparison](uncertainty-training-results.md) remains
+  historical. Labels are provisional, evaluation is adaptive, and the reserved
+  verifier test remains unused.
 - [Verifier v2 results](verifier-v2-results.md) and [development aggregates](verifier-v2-dev-results.json):
   continuation training improves eligibility but fails the frozen overall criteria.
   See the [protocol](verifier-v2-protocol.md), [data card](verifier-v2-data-card.md),

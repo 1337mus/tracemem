@@ -1,0 +1,270 @@
+{
+  "updated": "2026-10-17",
+  "experiment": "uncertainty-training continuation",
+  "candidate_status": "rejected",
+  "model_selected_or_promoted": false,
+  "training": {
+    "model_family": "Qwen3-4B verifier",
+    "initialization": "synthetic-v2 continuation",
+    "rows": 256,
+    "row_composition": {
+      "unchanged_private": 50,
+      "new_fictional_ambiguity_replacing_legacy": 24,
+      "other_fictional": 182
+    },
+    "epochs": 1,
+    "microsteps": 256,
+    "optimizer_steps": 64,
+    "duration_seconds": 459.941064,
+    "support_label_mix": {
+      "supported": 125,
+      "unsupported": 124,
+      "uncertain": 7
+    },
+    "previous_support_label_mix": {
+      "supported": 128,
+      "unsupported": 128,
+      "uncertain": 0
+    },
+    "scope_label_mix": {
+      "eligible": 146,
+      "ineligible": 50,
+      "uncertain": 60
+    }
+  },
+  "structure_and_parity": {
+    "valid_exact_two_key_json_and_eos": {
+      "passed": 96,
+      "total": 96
+    },
+    "base_input_frozen_inference_parity": {
+      "passed": 32,
+      "total": 32
+    },
+    "base_output_frozen_inference_parity": {
+      "passed": 32,
+      "total": 32
+    },
+    "prior_input_frozen_inference_parity": {
+      "passed": 32,
+      "total": 32
+    },
+    "prior_output_frozen_inference_parity": {
+      "passed": 32,
+      "total": 32
+    },
+    "candidate_input_frozen_inference_parity": {
+      "passed": 32,
+      "total": 32
+    }
+  },
+  "development": {
+    "private": {
+      "candidate_count": 16,
+      "session_count": 2,
+      "useful_references_from_one_session": 7,
+      "previous_256_row_adapter": {
+        "supported_retained": {
+          "passed": 8,
+          "total": 8
+        },
+        "unsupported_rejected": {
+          "passed": 7,
+          "total": 8
+        },
+        "useful_references_accepted": {
+          "passed": 7,
+          "total": 7
+        },
+        "eligibility_exact": {
+          "passed": 14,
+          "total": 16
+        },
+        "uncertain_eligibility_labeled_uncertain": {
+          "passed": 0,
+          "total": 2
+        },
+        "unsupported_eligible_automatically_accepted": {
+          "count": 1,
+          "total": 7
+        }
+      },
+      "uncertainty_candidate": {
+        "supported_retained": {
+          "passed": 8,
+          "total": 8
+        },
+        "unsupported_rejected": {
+          "passed": 7,
+          "total": 8
+        },
+        "useful_references_accepted": {
+          "passed": 6,
+          "total": 7
+        },
+        "eligibility_exact": {
+          "passed": 13,
+          "total": 16
+        },
+        "uncertain_eligibility_labeled_uncertain": {
+          "passed": 0,
+          "total": 2
+        },
+        "unsupported_eligible_automatically_accepted": {
+          "count": 1,
+          "total": 7
+        }
+      }
+    },
+    "fictional": {
+      "candidate_count": 16,
+      "scripted_scenario_count": 8,
+      "previous_256_row_adapter": {
+        "supported_retained": {
+          "passed": 7,
+          "total": 8
+        },
+        "unsupported_rejected": {
+          "passed": 6,
+          "total": 6
+        },
+        "useful_references_accepted": {
+          "passed": 6,
+          "total": 7
+        },
+        "eligibility_exact": {
+          "passed": 15,
+          "total": 16
+        },
+        "uncertain_support_labeled_uncertain": {
+          "passed": 0,
+          "total": 2
+        },
+        "unsupported_eligible_automatically_accepted": {
+          "count": 0,
+          "total": 5
+        }
+      },
+      "uncertainty_candidate": {
+        "supported_retained": {
+          "passed": 7,
+          "total": 8
+        },
+        "unsupported_rejected": {
+          "passed": 6,
+          "total": 6
+        },
+        "useful_references_accepted": {
+          "passed": 6,
+          "total": 7
+        },
+        "eligibility_exact": {
+          "passed": 14,
+          "total": 16
+        },
+        "uncertain_support_labeled_uncertain": {
+          "passed": 0,
+          "total": 2
+        },
+        "unsupported_eligible_automatically_accepted": {
+          "count": 0,
+          "total": 5
+        }
+      }
+    },
+    "predeclared_gates": {
+      "passed": 0,
+      "total": 2
+    }
+  },
+  "limitations": {
+    "labels": "provisional agent labels; zero human reviewers",
+    "evaluation": "adaptive development sets; no held-out evaluation",
+    "candidate_author_prior_development_exposure": "cannot be ruled out",
+    "reserved_verifier_test_used": false,
+    "efficacy_or_product_benefit_claim_supported": false,
+    "causal_claim_supported": false,
+    "held_out_quality_claim_supported": false,
+    "next_step": "At the time of this comparison, a balanced-support sampler and 48 fictional training rows were being prepared. The first launch failed during runtime setup; a later recovery is reported separately in balanced-support-results.json.",
+    "further_training_selected": false
+  },
+  "subsequent_attempt": {
+    "status": "first_approved_launch_failed_during_runtime_setup",
+    "error_type": "OSError",
+    "training_performed": null,
+    "evaluation_performed": false,
+    "metrics_available": false,
+    "model_quality_score_available": false,
+    "execution_not_measured": true,
+    "planned_schedule_consumed": false,
+    "planned_row_exposures": 256,
+    "planned_unique_source_rows": 193,
+    "planned_private_rows": 37,
+    "private_rows_available": 50,
+    "planned_support_exposures": {
+      "supported": 85,
+      "unsupported": 85,
+      "uncertain": 86,
+      "includes_repeats": true
+    },
+    "reserved_test_used": false,
+    "post_failure_inventory": "no active apps or containers; recheck live state before another remote launch",
+    "later_recovery": "completed_scored; see balanced-support-results.json"
+  },
+  "training_fit_diagnostic": {
+    "examples": 24,
+    "uncertain_support_examples": 7,
+    "scorer_frozen_before_predictions": true,
+    "counts_independently_recomputed_with_production_parser": true,
+    "outputs_valid_json_and_eos": {
+      "count": 72,
+      "total": 72
+    },
+    "arms": {
+      "base": {
+        "support_labels_exact": {
+          "passed": 17,
+          "total": 24
+        },
+        "uncertain_support_labeled_uncertain": {
+          "passed": 3,
+          "total": 7
+        },
+        "eligibility_labels_exact": {
+          "passed": 19,
+          "total": 24
+        }
+      },
+      "synthetic_v2": {
+        "support_labels_exact": {
+          "passed": 15,
+          "total": 24
+        },
+        "uncertain_support_labeled_uncertain": {
+          "passed": 0,
+          "total": 7
+        },
+        "eligibility_labels_exact": {
+          "passed": 22,
+          "total": 24
+        }
+      },
+      "rejected_uncertainty_candidate": {
+        "support_labels_exact": {
+          "passed": 15,
+          "total": 24
+        },
+        "uncertain_support_labeled_uncertain": {
+          "passed": 0,
+          "total": 7
+        },
+        "eligibility_labels_exact": {
+          "passed": 24,
+          "total": 24
+        }
+      }
+    },
+    "interpretation": "The candidate did not fit the rare uncertain-support class in this diagnostic; insufficient exposure is a hypothesis, not causal evidence.",
+    "changes_candidate_status": false
+  }
+}

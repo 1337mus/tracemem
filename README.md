@@ -9,17 +9,12 @@ Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A
 system must preserve that difference and point back to both messages. The
 current tool finds the source; interpreting the change remains experimental.
 
-**Local search works today; trained memory models remain research.** The
-latest private-training comparison used a tiny, adaptive development set of 16
-candidates from two sessions; all seven useful references came from one
-session. The new candidate accepted 7/7 useful references, versus 6/7 for the
-previous private adapter, but still accepted one unsupported claim and got 0/2
-policy-sensitive uncertain-scope labels right. Labels are provisional agent
-judgments with zero human reviewers, and the frozen gate failed. This did not
-measure extraction or downstream QA, and no model was selected. Private
-training and evaluation on personal Modal are authorized. See the
-[latest results](docs/private-sft-contrast-results.md), [experiment index](docs/README.md),
-and [data notes](docs/realistic-data.md).
+**Local search works today; trained memory models remain research.** A
+balanced-support recovery run completed, but both predeclared development gates
+failed on small, adaptive sets with provisional agent labels and no human review.
+The first launch had failed during runtime setup; a later recovery produced
+scored results. No model was selected. See the [recovery results](docs/balanced-support-results.md),
+[experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
 
 A separate inference-only challenge on 16 fictional candidates across eight
 scripted scenarios passed its narrow dev gate, but both adapters got 0/2

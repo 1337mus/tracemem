@@ -17,10 +17,13 @@ from experiments import private_sft
 from experiments.private_sft import payload_sha256
 from experiments.private_sft_remote import (
     _accumulation_window_size,
+    _build_sampling_plan,
     _completion_labels,
     _remote_compute,
     _remote_safe_entry,
+    _safe_error_diagnostics,
     _token_ids_sha256,
+    _training_metrics,
     _validate_payload_shape,
     _write_private_json_exclusive,
 )
@@ -161,9 +164,19 @@ def _make_remote_function(payload: dict[str, Any], runner_hash: str) -> Function
         "mount": private_sft._OUTPUT_VOLUME_MOUNT,
     }
     payload_hash = payload_sha256(payload)
+    safe_error_diagnostics = FunctionType(
+        _safe_error_diagnostics.__code__,
+        {"__name__": "__main__"},
+        name="private_sft_safe_error_diagnostics",
+    )
+    build_sampling_plan = FunctionType(
+        _build_sampling_plan.__code__,
+        {"__name__": "__main__"},
+        name="private_sft_build_sampling_plan",
+    )
     validate_shape = FunctionType(
         _validate_payload_shape.__code__,
-        {"__name__": "__main__"},
+        {"__name__": "__main__", "_BUILD_SAMPLING_PLAN": build_sampling_plan},
         name="validate_private_sft_payload",
     )
     completion_labels = FunctionType(
@@ -175,6 +188,11 @@ def _make_remote_function(payload: dict[str, Any], runner_hash: str) -> Function
         _accumulation_window_size.__code__,
         {"__name__": "__main__"},
         name="private_sft_accumulation_window_size",
+    )
+    training_metrics = FunctionType(
+        _training_metrics.__code__,
+        {"__name__": "__main__"},
+        name="private_sft_training_metrics",
     )
     token_hash = FunctionType(
         _token_ids_sha256.__code__,
@@ -203,9 +221,11 @@ def _make_remote_function(payload: dict[str, Any], runner_hash: str) -> Function
             "_EXPECTED_SETTINGS": expected_settings,
             "_EXPECTED_PRIOR_ADAPTER": expected_prior,
             "_EXPECTED_OUTPUT_VOLUME": expected_output,
+            "_SAFE_ERROR_DIAGNOSTICS": safe_error_diagnostics,
             "_VALIDATE_PAYLOAD_SHAPE": validate_shape,
             "_COMPLETION_LABELS": completion_labels,
             "_ACCUMULATION_WINDOW_SIZE": accumulation_window,
+            "_TRAINING_METRICS": training_metrics,
             "_TOKEN_IDS_SHA256": token_hash,
             "_VERIFY_ADAPTER_MOUNT": verify_adapter_mount,
             "_WRITE_PRIVATE_JSON": write_private_json,
@@ -220,6 +240,7 @@ def _make_remote_function(payload: dict[str, Any], runner_hash: str) -> Function
             "_REMOTE_COMPUTE": compute,
             "_APPROVED_PAYLOAD_SHA256": payload_hash,
             "_APPROVED_RUNNER_SHA256": runner_hash,
+            "_SAFE_ERROR_DIAGNOSTICS": safe_error_diagnostics,
         },
         name="private_sft_entry",
     )
@@ -233,8 +254,22 @@ def _build_modal_function(payload: dict[str, Any], runner_hash: str) -> tuple[An
 
     from experiments.modal_verifier_pairs import _IMAGE_PACKAGES
 
-    image = modal.Image.debian_slim(python_version="3.12").pip_install(*_IMAGE_PACKAGES)
+    image = (
+        modal.Image.debian_slim(python_version="3.12")
+        .pip_install(*_IMAGE_PACKAGES)
+        .env(
+            {
+                "HF_HUB_CACHE": "/mnt/tracemem-public-model-cache/hub",
+                "HF_HUB_OFFLINE": "1",
+                "TRANSFORMERS_OFFLINE": "1",
+                "HF_HUB_DISABLE_TELEMETRY": "1",
+            }
+        )
+    )
     app = modal.App("tracemem-private-sft")
+    cache_volume = modal.Volume.from_name(
+        "tracemem-public-model-cache-v1", create_if_missing=False
+    ).with_mount_options(read_only=True)
     prior_volume = modal.Volume.from_name(
         private_sft._PRIOR_VOLUME_NAME, create_if_missing=False
     ).with_mount_options(read_only=True)
@@ -243,6 +278,7 @@ def _build_modal_function(payload: dict[str, Any], runner_hash: str) -> tuple[An
     options["volumes"] = {
         private_sft._PRIOR_VOLUME_MOUNT: prior_volume,
         private_sft._OUTPUT_VOLUME_MOUNT: output_volume,
+        "/mnt/tracemem-public-model-cache": cache_volume,
     }
     global _REMOTE_OUTPUT_VOLUME
     _REMOTE_OUTPUT_VOLUME = output_volume

@@ -1,0 +1,101 @@
+{
+  "updated": "2026-10-17",
+  "experiment": "balanced-support recovery comparison",
+  "status": "completed_scored_root_verified",
+  "model_selected_or_promoted": false,
+  "training": {
+    "rows": 256,
+    "row_exposures": 256,
+    "unique_source_rows_consumed": 193,
+    "private_rows_consumed": 37,
+    "private_rows_available": 50,
+    "support_exposures": {
+      "supported": 85,
+      "unsupported": 85,
+      "uncertain": 86,
+      "includes_repeats": true
+    },
+    "optimizer_steps": 64,
+    "duration_seconds": 334.441137
+  },
+  "comparison": {
+    "private_dev_controls": {
+      "candidate_count": 16,
+      "historical_256_row_adapter": {
+        "supported_retention": {"correct": 8, "total": 8},
+        "unsupported_rejection": {"correct": 7, "total": 8},
+        "useful_acceptance": {"correct": 7, "total": 7},
+        "eligibility_exact": {"correct": 14, "total": 16},
+        "uncertain_eligibility_exact": {"correct": 0, "total": 2},
+        "unsupported_eligible_autoaccepts": {"count": 1, "total": 7}
+      },
+      "balanced_support_recovery": {
+        "supported_retention": {"correct": 8, "total": 8},
+        "unsupported_rejection": {"correct": 8, "total": 8},
+        "useful_acceptance": {"correct": 6, "total": 7},
+        "eligibility_exact": {"correct": 13, "total": 16},
+        "uncertain_eligibility_exact": {"correct": 0, "total": 2},
+        "unsupported_eligible_autoaccepts": {"count": 0, "total": 7}
+      }
+    },
+    "fictional_dev": {
+      "candidate_count": 16,
+      "historical_256_row_adapter": {
+        "supported_retention": {"correct": 7, "total": 8},
+        "unsupported_rejection": {"correct": 6, "total": 6},
+        "useful_acceptance": {"correct": 6, "total": 7},
+        "eligibility_exact": {"correct": 15, "total": 16},
+        "uncertain_support_exact": {"correct": 0, "total": 2},
+        "unsupported_eligible_autoaccepts": {"count": 0, "total": 5}
+      },
+      "balanced_support_recovery": {
+        "supported_retention": {"correct": 7, "total": 8},
+        "unsupported_rejection": {"correct": 6, "total": 6},
+        "useful_acceptance": {"correct": 6, "total": 7},
+        "eligibility_exact": {"correct": 16, "total": 16},
+        "uncertain_support_exact": {"correct": 2, "total": 2},
+        "unsupported_eligible_autoaccepts": {"count": 0, "total": 5}
+      }
+    }
+  },
+  "structural_checks": {
+    "valid_json_and_eos": {"passed": 96, "total": 96},
+    "base_input_token_parity": {"passed": 32, "total": 32},
+    "base_output_token_parity": {"passed": 32, "total": 32},
+    "prior_input_token_parity": {"passed": 32, "total": 32},
+    "prior_output_token_parity": {"passed": 32, "total": 32},
+    "recovery_input_token_parity": {"passed": 32, "total": 32}
+  },
+  "gates": {
+    "private_promotion_gate_passed": false,
+    "primary_comparison_gate_passed": false
+  },
+  "independent_verification": {
+    "aggregate_assertions_passed": 168,
+    "all_arms_and_cohorts_recomputed": true,
+    "historical_arms_recomputed": true,
+    "raw_receipts_modified": false,
+    "reserved_test_used": false
+  },
+  "limitations": {
+    "labels": "provisional agent judgments; zero human reviewers",
+    "evaluation": "small adaptive development sets; not held out",
+    "causal_or_general_efficacy_claim_supported": false,
+    "product_quality_or_downstream_qa_claim_supported": false,
+    "no_model_selected_or_promoted": true,
+    "first_launch_failure_cause": "unestablished",
+    "uncertain_eligibility_exposures_found": 67,
+    "fictional_training_data_in_authoring": {
+      "planned_candidates": 54,
+      "planned_scenarios": 27,
+      "label_balance": "joint 3x3 support and eligibility classes",
+      "blind_label_pass_required_before_training": true
+    },
+    "claude_metadata_verification": {
+      "older_leads_reviewed": 5,
+      "already_represented_in_development": 3,
+      "unverified": 2,
+      "new_private_rows_admitted": 0
+    }
+  }
+}

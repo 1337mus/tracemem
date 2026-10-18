@@ -9,13 +9,13 @@ has the project overview and architecture diagram.
 
 ## Phase and boundary
 
-Phase 0 inventory and Phase 1 infrastructure are complete.
-Phase 2 evaluation continues on fictional and bounded private development data.
-Extraction SFT runs, synthetic verifier experiments, and the first private
-SFT continuation are complete. The latest private comparison missed its frozen
-development gate; no model has been validated or selected for product use.
-Gate A remains unmet because claims and evidence have no independent human
-validation.
+Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 research
+continues on fictional and bounded private development data. A balanced-support
+recovery produced a scored comparison, but both predeclared development gates
+failed. No model has been selected or promoted, and Gate A remains unmet because
+the labels have no independent human validation. See the
+[recovery results](balanced-support-results.md) and the earlier
+[uncertainty-training comparison](uncertainty-training-results.md).
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit
@@ -36,17 +36,37 @@ ledger stores those proposals and their history. Validators check structure,
 quoted source text, speaker roles, and revision references. Proposals do not
 feed the search index. No trained model has been selected for this step.
 
-## Latest private SFT result
+## Latest balanced-support comparison
 
-The [private continuation comparison](private-sft-results.md) used 30 private
-training rows plus 48 fictional replay rows and scored 16 development
-candidates. The strict-literal report records 0/16 valid outputs per arm because
-terminal EOS appears in decoded text. A separate offline content-only
-diagnostic reports all 16 outputs valid, but the trained arm accepted only 5/7
-useful claims (one above the prior), rejected 7/8 unsupported claims (down from
-the prior's 8/8), and retained 8/8 supported claims. It failed the frozen gate.
-All labels are provisional agent judgments with zero human reviewers; this does
-not establish extraction, held-out test, or QA quality.
+The reviewed recovery trained on 256 row exposures: 85 supported, 85
+unsupported, and 86 uncertain, including repeats. These exposures came from
+193 unique source rows, including 37 private rows out of 50 available. The run
+used 64 optimizer steps and took 334.441137 seconds. On 32 dev prompts, all 96
+outputs were valid JSON and ended with EOS; base and prior input/output token
+arrays matched on 32/32 cases, and candidate inputs matched on 32/32 cases.
+
+Compared with the historical 256-row adapter, support retention was unchanged
+in both cohorts. The recovery rejected one more unsupported private claim, but
+accepted one fewer useful private reference and had one fewer exact private
+eligibility label. Fictional eligibility improved to 16/16 and uncertain
+support to 2/2. Both frozen gates failed; no model was selected or promoted.
+See the [full comparison](balanced-support-results.md) for all counts.
+
+The first approved launch remains a separate historical failure: it stopped
+during runtime setup before training, consumed no schedule rows, and produced no
+score. A public-only CPU checkpoint cache and offline loader later succeeded
+(ten public files, about 8.06 GB, remote-only); the cause of the first failure
+remains unestablished. Labels in both scored cohorts are provisional agent
+judgments with zero human reviewers. Evaluation is adaptive and not held out;
+these results do not support causal or downstream QA claims. The reserved
+verifier test remains unused.
+
+## Earlier uncertainty comparison
+
+The [historical uncertainty-training report](uncertainty-training-results.md)
+documents the preceding synthetic-v2 continuation, which failed both gates, and
+its separate training-fit diagnostic. Its results remain unchanged by the later
+recovery.
 
 ## Earlier synthetic paired-verifier result
 
@@ -128,17 +148,12 @@ No personal conversations entered training or inference, and billing was not
 measured. The [results report](sft-quote-v4-results.md) links the job, receipt,
 structural output, final semantic review, and validation record.
 
-The latest completed source CI run tested `a0e82729fa165eef5b1a304dbf38a770ca6c0361`.
-GitHub reports its signature as valid; exact-head CI run
-[38862933699](https://github.com/1337mus/tracemem/actions/runs/38862933699)
-passed: 810 source tests attempted (809 passed, 1 skipped) and 401
-installed-wheel tests attempted (399 passed, 2 skipped). This run predates the
-current result-document changes and does not verify them. The prepared job hash
-is `9bb99c82d119ae356d53b5576d0345ec43d1b5950823954f7e33f566b61ab59a`.
-The recorded post-run inventory had zero active tasks; recheck live state before
-any future remote call. No model has been selected.
-
 ## Current evidence
+
+The current full check ran 1,138 tests: 1,137 passed and one optional test was
+skipped. Ruff checked 229 files and configured mypy passed 74 files. Fifty-one
+focused tests and nine scorer-regression tests passed. Hosted CI covers the
+previously published head only; CI for the current changes is pending.
 
 The current longitudinal review packet contains 26 tasks and is available at
 `.local/longitudinal-v2-review-ready/reviewer/review.html`.
@@ -159,20 +174,22 @@ Focused review verification covered 23 source tests and 23 installed tests.
 Reports were byte-identical, and the full exports and probe exports matched.
 These checks validate the artifact slice, not human agreement or truth.
 
-The successful hosted CI run for the v3 source changes tested commit
-a396d48da65b059bde55d0088e5996ec689cf300 (run 38828735844): 760/761 source
-tests and 399/401 installed tests passed, with one and two skips respectively.
-It did not include this later documentation working-tree tip. See
-[the validation record](validation-sft-quote-v3.json) for the exact checks.
-Check `.local/active-cycle.json` before any new remote run.
+The earlier v3 hosted CI result is historical and predates this working-tree
+tip. See [the validation record](validation-sft-quote-v3.json) for that run's
+exact checks. Check current local state and live inventory before any remote run.
 
 ## Next gate
 
-Keep the paired-verifier test split unrun. Broaden independent attribution and
-condition cases, then evaluate the frozen adapter on a larger, independent set
-before considering more verifier training. Independent human annotation is
-still required before a human-validated or product-quality claim; the sealed
-longer-conversation candidate remains unopened. The prospective v0.1
+An eligibility-focused audit found 67 uncertain-eligibility exposures. A
+54-candidate, 27-scenario fictional training set with joint 3×3 balance is being
+authored; blind labels are required before training. Claude metadata verification
+is complete: five older leads included three already represented in development
+and two unverified; no new private rows were admitted. Keep the paired-verifier
+test split sealed. Broaden independent attribution and condition cases, then
+evaluate on a larger, independent set before considering more verifier training.
+Independent human annotation is still required before a human-validated or
+product-quality claim; the sealed longer-conversation candidate remains
+unopened. The prospective v0.1
 [annotation contract](verifier-annotation-contract.md) is not human-approved;
 uncertain scope must remain separate. Do not run another extraction target-
 tweak SFT. No production model was selected and Gate A remains unmet. Check

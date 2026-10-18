@@ -7,6 +7,7 @@ import hashlib
 import json
 import unittest
 from typing import Any
+from unittest.mock import patch
 
 from experiments import evaluate_private_sft, private_sft
 from tests.test_private_sft import _private_fixture, _synthetic_replay_fixture
@@ -94,6 +95,39 @@ def _fixture(
 
 
 class EvaluatePrivateSftTests(unittest.TestCase):
+    @staticmethod
+    def _balanced_fixture() -> tuple[
+        dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any], str
+    ]:
+        dataset, source_records, payload, receipt, runner_sha = _fixture()
+        supports = ["supported"] * 117 + ["unsupported"] * 116 + ["uncertain"] * 23
+        rows = [
+            {
+                "prompt": f"fictional balanced prompt {index}",
+                "completion": json.dumps(
+                    {"support": support, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, support in enumerate(supports)
+        ]
+        payload["train_rows"] = rows
+        payload["sampling_plan"] = private_sft.build_sampling_plan(rows, seed=17)
+        payload_sha = _canonical_sha(payload)
+        receipt["payload_sha256"] = payload_sha
+        receipt["artifact_manifest"]["relative_path"] = f"runs/{payload_sha}/adapter"
+        receipt["training"].update(
+            row_count=256,
+            microsteps=256,
+            optimizer_steps=64,
+            optimizer_step_losses=[0.3] * 64,
+            input_tokens=1200,
+            supervised_tokens=600,
+            sampling=evaluate_private_sft._expected_sampling_metrics(
+                rows, payload["sampling_plan"]
+            ),
+        )
+        return dataset, source_records, payload, receipt, runner_sha
+
     def test_scores_three_arms_with_aggregate_only_axis_metrics(self) -> None:
         dataset, source_records, payload, receipt, runner_sha = _fixture()
 
@@ -124,6 +158,76 @@ class EvaluatePrivateSftTests(unittest.TestCase):
             "train-a",
         ):
             self.assertNotIn(forbidden, serialized)
+
+    def test_rebuilds_payload_with_explicit_execution_id(self) -> None:
+        dataset, source_records, payload, receipt, runner_sha = _fixture()
+        payload["execution_id"] = "retry-2"
+        payload_sha = _canonical_sha(payload)
+        receipt["payload_sha256"] = payload_sha
+        receipt["artifact_manifest"]["relative_path"] = f"runs/{payload_sha}/adapter"
+
+        report = evaluate_private_sft.evaluate_report(
+            dataset, source_records, payload, receipt, approved_runner_sha256=runner_sha
+        )
+
+        self.assertEqual(report["payload_sha256"], payload_sha)
+
+    def test_accepts_balanced_schedule_metrics_and_returns_them_in_report(self) -> None:
+        dataset, source_records, payload, receipt, runner_sha = self._balanced_fixture()
+
+        with patch.object(private_sft, "build_payload", return_value=payload) as build_payload:
+            report = evaluate_private_sft.evaluate_report(
+                dataset, source_records, payload, receipt, approved_runner_sha256=runner_sha
+            )
+
+        build_payload.assert_called_once_with(
+            dataset,
+            source_records,
+            None,
+            sampling_strategy="support-balanced-v1",
+        )
+        self.assertEqual(report["training"]["sampling"], receipt["training"]["sampling"])
+
+    def test_rejects_tampered_balanced_plan_and_receipt_sampling_metrics(self) -> None:
+        dataset, source_records, payload, receipt, runner_sha = self._balanced_fixture()
+        valid_payload = copy.deepcopy(payload)
+        tampered_payload = copy.deepcopy(payload)
+        tampered_payload["sampling_plan"]["row_indices"][0] = (
+            tampered_payload["sampling_plan"]["row_indices"][0] + 1
+        ) % 256
+        with patch.object(private_sft, "build_payload", return_value=valid_payload):
+            with self.assertRaisesRegex(ValueError, "exact exporter output"):
+                evaluate_private_sft.evaluate_report(
+                    dataset,
+                    source_records,
+                    tampered_payload,
+                    receipt,
+                    approved_runner_sha256=runner_sha,
+                )
+
+        for mutate, message in (
+            (lambda sampling: sampling.update(row_index_sha256="0" * 64), "row-index hash"),
+            (
+                lambda sampling: sampling["exposure_counts"].update(supported=84),
+                "exposure_counts",
+            ),
+            (
+                lambda sampling: sampling["unique_source_counts"].update(uncertain=True),
+                "unique_source_counts",
+            ),
+        ):
+            with self.subTest(message=message):
+                bad_receipt = copy.deepcopy(receipt)
+                mutate(bad_receipt["training"]["sampling"])
+                with patch.object(private_sft, "build_payload", return_value=payload):
+                    with self.assertRaisesRegex(ValueError, message):
+                        evaluate_private_sft.evaluate_report(
+                            dataset,
+                            source_records,
+                            payload,
+                            bad_receipt,
+                            approved_runner_sha256=runner_sha,
+                        )
 
     def test_normalizes_only_verified_terminal_eos_and_preserves_raw_validity(self) -> None:
         dataset, source_records, payload, receipt, runner_sha = _fixture()

@@ -2,15 +2,18 @@
 
 from __future__ import annotations
 
+import ast
 import builtins
 import hashlib
 import json
+import sys
 import unittest
 from contextlib import nullcontext
 from copy import deepcopy
 from pathlib import Path
 from stat import S_IMODE
 from tempfile import TemporaryDirectory
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from experiments import modal_private_sft, private_sft, private_sft_remote, sft_launch
@@ -46,6 +49,41 @@ class ModalPrivateSftTests(unittest.TestCase):
             "dev_prompts": ["fictional dev prompt"],
         }
 
+    @classmethod
+    def _balanced_payload(cls) -> dict[str, object]:
+        payload = cls._minimal_payload()
+        labels = ["supported"] * 117 + ["unsupported"] * 116 + ["uncertain"] * 23
+        rows = [
+            {
+                "prompt": f"fictional prompt {index}",
+                "completion": json.dumps(
+                    {"support": label, "eligibility": "eligible"}, separators=(",", ":")
+                ),
+            }
+            for index, label in enumerate(labels)
+        ]
+        payload["train_rows"] = rows
+        payload["sampling_plan"] = private_sft.build_sampling_plan(rows, seed=17)
+        return payload
+
+    @staticmethod
+    def _validate_source_free_payload(payload: dict[str, object]) -> dict[str, object]:
+        entry = modal_private_sft._make_remote_function(payload, "0" * 64)
+        compute = entry.__globals__["_REMOTE_COMPUTE"]
+        validator = compute.__globals__["_VALIDATE_PAYLOAD_SHAPE"]
+        output_volume = {
+            "name": private_sft._OUTPUT_VOLUME_NAME,
+            "mount": private_sft._OUTPUT_VOLUME_MOUNT,
+        }
+        return validator(
+            payload,
+            private_sft._PROVENANCE,
+            private_sft._MODEL,
+            private_sft._SETTINGS,
+            private_sft._prior_adapter(),
+            output_volume,
+        )
+
     def test_modal_function_options_are_one_source_free_a10g_call(self) -> None:
         options = modal_private_sft.modal_function_options()
 
@@ -55,9 +93,90 @@ class ModalPrivateSftTests(unittest.TestCase):
         self.assertLessEqual(options["timeout"], 1800)
         self.assertFalse(options["include_source"])
 
+    def test_modal_builder_mounts_public_cache_read_only_and_offline(self) -> None:
+        class FakeVolume:
+            def __init__(self, name: str) -> None:
+                self.name = name
+                self.read_only = False
+
+            def with_mount_options(self, *, read_only: bool) -> FakeVolume:
+                self.read_only = read_only
+                return self
+
+        class FakeImage:
+            def __init__(self) -> None:
+                self.environment: dict[str, str] = {}
+
+            def pip_install(self, *_packages: str) -> FakeImage:
+                return self
+
+            def env(self, environment: dict[str, str]) -> FakeImage:
+                self.environment.update(environment)
+                return self
+
+        class FakeApp:
+            def __init__(self, _name: str) -> None:
+                self.options: dict[str, object] = {}
+
+            def function(self, **options: object) -> object:
+                self.options = options
+                return lambda function: function
+
+        calls: list[tuple[str, dict[str, object]]] = []
+        volumes: dict[str, FakeVolume] = {}
+        image = FakeImage()
+
+        def from_name(name: str, **options: object) -> FakeVolume:
+            calls.append((name, options))
+            volume = FakeVolume(name)
+            volumes[name] = volume
+            return volume
+
+        modal_module = SimpleNamespace(
+            Image=SimpleNamespace(debian_slim=lambda **_options: image),
+            App=FakeApp,
+            Volume=SimpleNamespace(from_name=from_name),
+        )
+        with (
+            patch.object(modal_private_sft, "_REMOTE_OUTPUT_VOLUME", None),
+            patch.dict(sys.modules, {"modal": modal_module}),
+        ):
+            built_app, _function = modal_private_sft._build_modal_function({}, "0" * 64)
+
+        cache_name = "tracemem-public-model-cache-v1"
+        cache_mount = "/mnt/tracemem-public-model-cache"
+        self.assertEqual(
+            dict(calls),
+            {
+                cache_name: {"create_if_missing": False},
+                private_sft._PRIOR_VOLUME_NAME: {"create_if_missing": False},
+                private_sft._OUTPUT_VOLUME_NAME: {"create_if_missing": True},
+            },
+        )
+        self.assertTrue(volumes[cache_name].read_only)
+        self.assertEqual(
+            image.environment,
+            {
+                "HF_HUB_CACHE": f"{cache_mount}/hub",
+                "HF_HUB_OFFLINE": "1",
+                "TRANSFORMERS_OFFLINE": "1",
+                "HF_HUB_DISABLE_TELEMETRY": "1",
+            },
+        )
+        mounted_volumes = built_app.options["volumes"]
+        self.assertEqual(
+            mounted_volumes,
+            {
+                private_sft._PRIOR_VOLUME_MOUNT: volumes[private_sft._PRIOR_VOLUME_NAME],
+                private_sft._OUTPUT_VOLUME_MOUNT: volumes[private_sft._OUTPUT_VOLUME_NAME],
+                cache_mount: volumes[cache_name],
+            },
+        )
+        self.assertTrue(volumes[private_sft._PRIOR_VOLUME_NAME].read_only)
+        self.assertFalse(volumes[private_sft._OUTPUT_VOLUME_NAME].read_only)
+
     def test_remote_rejects_changed_payload_before_model_imports(self) -> None:
         payload = {"private_marker": "FICTIONAL_PRIVATE_SENTINEL"}
-        remote = modal_private_sft._make_remote_function(payload, "0" * 64)
         changed = deepcopy(payload)
         changed["private_marker"] = "CHANGED_SENTINEL"
         request = {
@@ -72,12 +191,91 @@ class ModalPrivateSftTests(unittest.TestCase):
                 raise AssertionError("model runtime imported before approval validation")
             return original_import(name, *args, **kwargs)
 
-        with patch("builtins.__import__", side_effect=block_model_import):
-            result = remote(request)
+        with patch.object(
+            modal_private_sft,
+            "_REMOTE_OUTPUT_VOLUME",
+            SimpleNamespace(commit=lambda: None),
+        ):
+            remote = modal_private_sft._make_remote_function(payload, "0" * 64)
+            with patch("builtins.__import__", side_effect=block_model_import):
+                result = remote(request)
 
         self.assertEqual(result["status"], "remote_failed")
+        self.assertEqual(result["error"]["exception_chain"], ["ValueError"])
         self.assertNotIn("CHANGED_SENTINEL", str(result))
         self.assertNotIn("FICTIONAL_PRIVATE_SENTINEL", str(result))
+
+    def test_remote_error_diagnostics_keep_only_bounded_safe_metadata(self) -> None:
+        cause = PermissionError(13, "PRIVATE_SENTINEL https://private.invalid/path")
+        error = RuntimeError("PRIVATE_PROMPT_SENTINEL")
+        error.__cause__ = cause
+        error.response = SimpleNamespace(status_code=503)
+
+        diagnostics = private_sft_remote._safe_error_diagnostics(error)
+
+        self.assertEqual(diagnostics["exception_chain"], ["RuntimeError", "PermissionError"])
+        self.assertEqual(diagnostics["errno"], 13)
+        self.assertEqual(diagnostics["http_status"], 503)
+        serialized = json.dumps(diagnostics)
+        for forbidden in ("PRIVATE_SENTINEL", "PRIVATE_PROMPT_SENTINEL", "https://"):
+            self.assertNotIn(forbidden, serialized)
+
+        deepest: BaseException = ValueError("PRIVATE_CHAIN_SENTINEL")
+        for _ in range(8):
+            wrapped = RuntimeError("PRIVATE_CHAIN_SENTINEL")
+            wrapped.__cause__ = deepest
+            deepest = wrapped
+        self.assertEqual(
+            len(private_sft_remote._safe_error_diagnostics(deepest)["exception_chain"]), 4
+        )
+
+        strict_types = RuntimeError("PRIVATE_TYPE_SENTINEL")
+        strict_types.errno = True
+        strict_types.status_code = True
+        strict_types.response = SimpleNamespace(status_code="503")
+        strict_diagnostics = private_sft_remote._safe_error_diagnostics(strict_types)
+        self.assertNotIn("errno", strict_diagnostics)
+        self.assertNotIn("http_status", strict_diagnostics)
+
+    def test_remote_model_loading_uses_precise_failure_stages(self) -> None:
+        source = Path(private_sft_remote.__file__).read_text(encoding="utf-8")
+        remote_function = next(
+            node
+            for node in ast.parse(source).body
+            if isinstance(node, ast.FunctionDef) and node.name == "_remote_compute"
+        )
+        stage_lines = {
+            node.value.value: node.lineno
+            for node in ast.walk(remote_function)
+            if isinstance(node, ast.Assign)
+            and isinstance(node.value, ast.Constant)
+            and node.value.value in {"tokenizer_load", "base_model_load"}
+            and any(
+                isinstance(target, ast.Name) and target.id == "stage" for target in node.targets
+            )
+        }
+        loading_lines = {
+            "tokenizer_load": min(
+                node.lineno
+                for node in ast.walk(remote_function)
+                if isinstance(node, ast.Call)
+                and isinstance(node.func, ast.Attribute)
+                and node.func.attr == "from_pretrained"
+                and isinstance(node.func.value, ast.Name)
+                and node.func.value.id == "AutoTokenizer"
+            ),
+            "base_model_load": min(
+                node.lineno
+                for node in ast.walk(remote_function)
+                if isinstance(node, ast.Call)
+                and isinstance(node.func, ast.Attribute)
+                and node.func.attr == "from_pretrained"
+                and isinstance(node.func.value, ast.Name)
+                and node.func.value.id == "AutoModelForCausalLM"
+            ),
+        }
+        self.assertLess(stage_lines["tokenizer_load"], loading_lines["tokenizer_load"])
+        self.assertLess(stage_lines["base_model_load"], loading_lines["base_model_load"])
 
     def test_completion_loss_masks_prompt_and_includes_eos(self) -> None:
         labels = private_sft_remote._completion_labels([10, 11], [20, 21], 2)
@@ -230,6 +428,94 @@ class ModalPrivateSftTests(unittest.TestCase):
                 private_sft._prior_adapter(),
                 {"name": "tracemem-private-sft", "mount": "/mnt/tracemem-private-sft"},
             )
+
+    def test_remote_payload_validator_accepts_exact_balanced_plan(self) -> None:
+        payload = self._balanced_payload()
+        entry = modal_private_sft._make_remote_function(payload, "0" * 64)
+        compute = entry.__globals__["_REMOTE_COMPUTE"]
+        validator = compute.__globals__["_VALIDATE_PAYLOAD_SHAPE"]
+
+        self.assertTrue(callable(validator.__globals__["_BUILD_SAMPLING_PLAN"]))
+        validated = self._validate_source_free_payload(payload)
+
+        self.assertEqual(validated, payload)
+
+    def test_source_free_validator_accepts_and_rejects_execution_ids(self) -> None:
+        payload = self._minimal_payload()
+        payload["execution_id"] = "retry-2"
+
+        validated = self._validate_source_free_payload(payload)
+
+        self.assertEqual(validated["execution_id"], "retry-2")
+        balanced_payload = self._balanced_payload()
+        balanced_payload["execution_id"] = "retry-2"
+        self.assertEqual(self._validate_source_free_payload(balanced_payload), balanced_payload)
+        for invalid_id in (True, "", "Upper", "-retry", "retry_id", "a" * 65):
+            with self.subTest(execution_id=invalid_id):
+                invalid_payload = self._minimal_payload()
+                invalid_payload["execution_id"] = invalid_id
+                with self.assertRaisesRegex(ValueError, "payload is invalid"):
+                    self._validate_source_free_payload(invalid_payload)
+
+    def test_source_free_validator_rejects_tampered_balanced_plans(self) -> None:
+        mutations = (
+            ("boolean_index", lambda plan: plan["row_indices"].__setitem__(0, True)),
+            ("out_of_range", lambda plan: plan["row_indices"].__setitem__(0, 256)),
+            ("swapped_schedule", lambda plan: plan["row_indices"].reverse()),
+            ("wrong_seed", lambda plan: plan.__setitem__("seed", 18)),
+            ("wrong_strategy", lambda plan: plan.__setitem__("strategy", "support-balanced-v2")),
+            ("null_plan", lambda payload: payload.__setitem__("sampling_plan", None)),
+        )
+        for name, mutate in mutations:
+            with self.subTest(name=name):
+                payload = self._balanced_payload()
+                mutate(payload if name == "null_plan" else payload["sampling_plan"])
+                with self.assertRaisesRegex(ValueError, "payload is invalid"):
+                    self._validate_source_free_payload(payload)
+
+    def test_balanced_training_metrics_count_schedule_exposures(self) -> None:
+        payload = self._balanced_payload()
+        rows = payload["train_rows"]
+        plan = payload["sampling_plan"]
+        indices = plan["row_indices"]
+        examples = [
+            (
+                list(range(1 + index % 3)),
+                [-100] * (1 + index % 3) + [101, 2],
+            )
+            for index in range(len(rows))
+        ]
+
+        metrics = private_sft_remote._training_metrics(rows, examples, indices)
+
+        self.assertEqual(metrics["input_tokens"], sum(len(examples[index][0]) for index in indices))
+        self.assertEqual(
+            metrics["supervised_tokens"],
+            sum(sum(label != -100 for label in examples[index][1]) for index in indices),
+        )
+        self.assertEqual(
+            metrics["sampling"]["exposure_counts"],
+            {
+                "supported": 85,
+                "unsupported": 85,
+                "uncertain": 86,
+            },
+        )
+        self.assertEqual(
+            metrics["sampling"]["unique_source_counts"],
+            {"supported": 85, "unsupported": 85, "uncertain": 23},
+        )
+        self.assertEqual(
+            metrics["sampling"]["row_index_sha256"],
+            hashlib.sha256(json.dumps(indices, separators=(",", ":")).encode("ascii")).hexdigest(),
+        )
+        self.assertEqual(
+            [
+                private_sft_remote._accumulation_window_size(position, len(indices), 4)
+                for position in range(len(indices))
+            ],
+            [4] * 256,
+        )
 
     @staticmethod
     def _run_fake_launcher(
@@ -424,6 +710,7 @@ class ModalPrivateSftTests(unittest.TestCase):
             if name.startswith("_") and not name.startswith("__")
         }
         self.assertLessEqual(required_globals, set(compute.__globals__))
+        self.assertTrue(callable(entry.__globals__["_SAFE_ERROR_DIAGNOSTICS"]))
         try:
             from modal._serialization import serialize
         except ImportError:

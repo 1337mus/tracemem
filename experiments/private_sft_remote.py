@@ -14,7 +14,10 @@ _EXPECTED_MODEL: dict[str, Any] = {}
 _EXPECTED_SETTINGS: dict[str, Any] = {}
 _EXPECTED_PRIOR_ADAPTER: dict[str, Any] = {}
 _EXPECTED_OUTPUT_VOLUME: dict[str, str] = {}
+_SAFE_ERROR_DIAGNOSTICS: Callable[[BaseException], dict[str, Any]]
 _VALIDATE_PAYLOAD_SHAPE: Callable[..., dict[str, Any]]
+_BUILD_SAMPLING_PLAN: Callable[[object, object], dict[str, object]]
+_TRAINING_METRICS: Callable[..., dict[str, Any]]
 _COMPLETION_LABELS: Callable[..., list[int]]
 _ACCUMULATION_WINDOW_SIZE: Callable[..., int]
 _TOKEN_IDS_SHA256: Callable[..., str]
@@ -62,6 +65,177 @@ def _token_ids_sha256(token_ids: list[int]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def _safe_error_diagnostics(error: BaseException) -> dict[str, Any]:
+    """Return bounded exception class and numeric transport details without exception text."""
+    chain: list[str] = []
+    seen: set[int] = set()
+    current: BaseException | None = error
+    error_number: int | None = None
+    http_status: int | None = None
+    while current is not None and len(chain) < 4 and id(current) not in seen:
+        seen.add(id(current))
+        class_name = type(current).__name__
+        if type(class_name) is not str:
+            class_name = "Exception"
+        safe_name = "".join(
+            character
+            for character in class_name
+            if character.isascii() and (character.isalnum() or character in "._")
+        )[:64]
+        chain.append(safe_name or "Exception")
+
+        if error_number is None:
+            try:
+                candidate_errno = object.__getattribute__(current, "errno")
+            except Exception:
+                candidate_errno = None
+            if type(candidate_errno) is int and candidate_errno >= 0:
+                error_number = candidate_errno
+
+        if http_status is None:
+            candidates: list[object] = []
+            for attribute in ("status_code", "code"):
+                try:
+                    candidates.append(object.__getattribute__(current, attribute))
+                except Exception:
+                    pass
+            try:
+                response = object.__getattribute__(current, "response")
+                candidates.append(object.__getattribute__(response, "status_code"))
+            except Exception:
+                pass
+            for candidate_status in candidates:
+                if type(candidate_status) is int and 100 <= candidate_status <= 599:
+                    http_status = candidate_status
+                    break
+
+        cause = current.__cause__
+        current = cause if isinstance(cause, BaseException) else current.__context__
+        if current is not None and not isinstance(current, BaseException):
+            current = None
+
+    diagnostics: dict[str, Any] = {"exception_chain": chain}
+    if error_number is not None:
+        diagnostics["errno"] = error_number
+    if http_status is not None:
+        diagnostics["http_status"] = http_status
+    return diagnostics
+
+
+def _build_sampling_plan(train_rows: object, seed: object) -> dict[str, object]:
+    """Build the approved support-balanced schedule using only standard-library data."""
+    import json
+    import random
+
+    labels = ("supported", "unsupported", "uncertain")
+    quotas = {"supported": 85, "unsupported": 85, "uncertain": 86}
+    if type(seed) is not int or seed < 0 or type(train_rows) is not list or len(train_rows) != 256:
+        raise ValueError("private SFT balanced sampling inputs are invalid")
+    grouped: dict[str, list[int]] = {label: [] for label in labels}
+    seen_prompts: set[str] = set()
+    for index, row in enumerate(train_rows):
+        if type(row) is not dict or set(row) != {"prompt", "completion"}:
+            raise ValueError("private SFT balanced sampling row is invalid")
+        prompt, completion = row["prompt"], row["completion"]
+        if (
+            type(prompt) is not str
+            or not prompt.strip()
+            or prompt in seen_prompts
+            or type(completion) is not str
+        ):
+            raise ValueError("private SFT balanced sampling rows must be unique")
+        try:
+            target = json.loads(completion)
+        except (TypeError, ValueError, UnicodeError):
+            raise ValueError("private SFT balanced sampling verdict is invalid") from None
+        if (
+            type(target) is not dict
+            or set(target) != {"support", "eligibility"}
+            or type(target["support"]) is not str
+            or target["support"] not in labels
+            or type(target["eligibility"]) is not str
+            or target["eligibility"] not in {"eligible", "ineligible", "uncertain"}
+            or json.dumps(target, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+            != completion
+        ):
+            raise ValueError("private SFT balanced sampling verdict is invalid")
+        seen_prompts.add(prompt)
+        grouped[target["support"]].append(index)
+    if any(not grouped[label] for label in labels):
+        raise ValueError("private SFT balanced sampling requires all support classes")
+
+    rng = random.Random(seed)
+    schedule: list[int] = []
+    for label in labels:
+        members = grouped[label]
+        rng.shuffle(members)
+        schedule.extend(members[position % len(members)] for position in range(quotas[label]))
+    # Shuffle the complete schedule so gradient accumulation windows do not see class blocks.
+    rng.shuffle(schedule)
+    return {"strategy": "support-balanced-v1", "seed": seed, "row_indices": schedule}
+
+
+_BUILD_SAMPLING_PLAN = _build_sampling_plan
+
+
+def _training_metrics(
+    train_rows: object,
+    examples: object,
+    row_indices: object,
+) -> dict[str, Any]:
+    """Count token work and, for a balanced run, summarize the consumed schedule."""
+    import hashlib
+    import json
+
+    labels = ("supported", "unsupported", "uncertain")
+    if (
+        type(train_rows) is not list
+        or len(train_rows) != 256
+        or type(examples) is not list
+        or len(examples) != len(train_rows)
+        or type(row_indices) is not list
+        or len(row_indices) != 256
+        or any(type(index) is not int or not 0 <= index < len(train_rows) for index in row_indices)
+    ):
+        raise ValueError("private SFT training metrics inputs are invalid")
+
+    exposure_counts = {label: 0 for label in labels}
+    unique_sources: dict[str, set[int]] = {label: set() for label in labels}
+    input_tokens = 0
+    supervised_tokens = 0
+    for index in row_indices:
+        row = train_rows[index]
+        if type(row) is not dict or type(row.get("completion")) is not str:
+            raise ValueError("private SFT training metrics row is invalid")
+        try:
+            verdict = json.loads(row["completion"])
+        except (TypeError, ValueError, UnicodeError):
+            raise ValueError("private SFT training metrics verdict is invalid") from None
+        if type(verdict) is not dict or verdict.get("support") not in labels:
+            raise ValueError("private SFT training metrics verdict is invalid")
+        sequence, target_labels = examples[index]
+        if type(sequence) is not list or type(target_labels) is not list:
+            raise ValueError("private SFT training metrics token sequence is invalid")
+        support = verdict["support"]
+        exposure_counts[support] += 1
+        unique_sources[support].add(index)
+        input_tokens += len(sequence)
+        supervised_tokens += sum(value != -100 for value in target_labels)
+
+    canonical_indices = json.dumps(row_indices, separators=(",", ":"), allow_nan=False).encode(
+        "ascii"
+    )
+    return {
+        "input_tokens": input_tokens,
+        "supervised_tokens": supervised_tokens,
+        "sampling": {
+            "row_index_sha256": hashlib.sha256(canonical_indices).hexdigest(),
+            "exposure_counts": exposure_counts,
+            "unique_source_counts": {label: len(unique_sources[label]) for label in labels},
+        },
+    }
+
+
 def _write_private_json_exclusive(path: Any, value: dict[str, Any]) -> None:
     """Write a canonical private JSON artifact once, with mode 0600."""
     import json
@@ -95,7 +269,7 @@ def _validate_payload_shape(
     import re
 
     try:
-        if type(payload) is not dict or set(payload) != {
+        required_keys = {
             "schema_version",
             "mode",
             "provenance",
@@ -106,8 +280,16 @@ def _validate_payload_shape(
             "output_volume",
             "train_rows",
             "dev_prompts",
-        }:
+        }
+        if type(payload) is not dict:
             raise ValueError
+        payload_keys = set(payload)
+        if not required_keys <= payload_keys or payload_keys - (
+            required_keys | {"sampling_plan", "execution_id"}
+        ):
+            raise ValueError
+        has_sampling_plan = "sampling_plan" in payload
+        has_execution_id = "execution_id" in payload
         if (
             type(payload["schema_version"]) is not int
             or payload["schema_version"] != 1
@@ -117,6 +299,11 @@ def _validate_payload_shape(
             or payload["settings"] != expected_settings
             or payload["prior_adapter"] != expected_prior_adapter
             or payload["output_volume"] != expected_output_volume
+        ):
+            raise ValueError
+        if has_execution_id and (
+            type(payload["execution_id"]) is not str
+            or re.fullmatch(r"[a-z][a-z0-9-]{0,63}", payload["execution_id"]) is None
         ):
             raise ValueError
         source_hashes = payload["source_sha256"]
@@ -173,6 +360,22 @@ def _validate_payload_shape(
             ):
                 raise ValueError
             seen_prompts.add(prompt)
+        if has_sampling_plan:
+            sampling_plan = payload["sampling_plan"]
+            if (
+                type(sampling_plan) is not dict
+                or set(sampling_plan) != {"strategy", "seed", "row_indices"}
+                or type(sampling_plan["seed"]) is not int
+                or sampling_plan["seed"] != expected_settings.get("seed")
+                or type(sampling_plan["row_indices"]) is not list
+                or any(
+                    type(index) is not int or not 0 <= index < len(train_rows)
+                    for index in sampling_plan["row_indices"]
+                )
+            ):
+                raise ValueError
+            if sampling_plan != _BUILD_SAMPLING_PLAN(train_rows, sampling_plan["seed"]):
+                raise ValueError
         for prompt in dev_prompts:
             if (
                 type(prompt) is not str
@@ -341,21 +544,25 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
         gpu_name = torch.cuda.get_device_name(device)
         torch.cuda.reset_peak_memory_stats(device)
         model_started = time.perf_counter()
+        stage = "tokenizer_load"
         tokenizer = AutoTokenizer.from_pretrained(
             model_spec["model_id"],
             revision=model_spec["revision"],
             trust_remote_code=False,
+            local_files_only=True,
         )
         template, eos_id = tokenizer.chat_template, tokenizer.eos_token_id
         if type(template) is not str or not template or type(eos_id) is not int or eos_id < 0:
             raise ValueError("private SFT tokenizer metadata is invalid")
         pad_id = tokenizer.pad_token_id if type(tokenizer.pad_token_id) is int else eos_id
+        stage = "runtime_setup"
         quantization = BitsAndBytesConfig(
             load_in_4bit=model_spec["quantization"]["load_in_4bit"],
             bnb_4bit_quant_type=model_spec["quantization"]["type"],
             bnb_4bit_use_double_quant=model_spec["quantization"]["double_quant"],
             bnb_4bit_compute_dtype=torch.bfloat16,
         )
+        stage = "base_model_load"
         base_model = AutoModelForCausalLM.from_pretrained(
             model_spec["model_id"],
             revision=model_spec["revision"],
@@ -365,7 +572,7 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
             attn_implementation=settings["attn_implementation"],
             quantization_config=quantization,
             device_map="cuda",
-            local_files_only=False,
+            local_files_only=True,
         )
         base_model = prepare_model_for_kbit_training(
             base_model,
@@ -503,6 +710,16 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
                 raise ValueError("private SFT training sequence exceeds 2048 tokens")
             train_examples.append((sequence, labels))
 
+        balanced_metrics = None
+        if "sampling_plan" in payload:
+            indices = list(payload["sampling_plan"]["row_indices"])
+            balanced_metrics = _TRAINING_METRICS(  # noqa: F821
+                payload["train_rows"], train_examples, indices
+            )
+        else:
+            indices = list(range(len(train_examples)))
+            random.Random(settings["seed"]).shuffle(indices)
+
         def adapter_state_sha256(active_model: Any) -> str:
             state = hashlib.sha256()
             for name, parameter in sorted(active_model.named_parameters()):
@@ -522,8 +739,6 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
         optimizer_step_losses: list[float] = []
         training_started = time.perf_counter()
         tuned_model.train()
-        indices = list(range(len(train_examples)))
-        random.Random(settings["seed"]).shuffle(indices)
         pending_losses: list[float] = []
         for position, index in enumerate(indices):
             sequence, labels = train_examples[index]
@@ -586,9 +801,15 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
             "row_count": len(train_examples),
             "microsteps": len(microstep_losses),
             "optimizer_steps": len(optimizer_step_losses),
-            "input_tokens": sum(len(sequence) for sequence, _ in train_examples),
-            "supervised_tokens": sum(
-                sum(label != -100 for label in labels) for _, labels in train_examples
+            "input_tokens": (
+                balanced_metrics["input_tokens"]
+                if balanced_metrics is not None
+                else sum(len(sequence) for sequence, _ in train_examples)
+            ),
+            "supervised_tokens": (
+                balanced_metrics["supervised_tokens"]
+                if balanced_metrics is not None
+                else sum(sum(label != -100 for label in labels) for _, labels in train_examples)
             ),
             "mean_loss": sum(microstep_losses) / len(microstep_losses),
             "optimizer_step_losses": optimizer_step_losses,
@@ -598,10 +819,13 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
             "adapter_changed": True,
             "seconds": round(training_seconds, 6),
         }
+        if balanced_metrics is not None:
+            training["sampling"] = balanced_metrics["sampling"]
 
         del optimizer, trainable, train_examples, tuned_model, base_model
         gc.collect()
         torch.cuda.empty_cache()
+        stage = "trained_model_load"
         trained_base = AutoModelForCausalLM.from_pretrained(
             model_spec["model_id"],
             revision=model_spec["revision"],
@@ -611,7 +835,7 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
             attn_implementation=settings["attn_implementation"],
             quantization_config=quantization,
             device_map="cuda",
-            local_files_only=False,
+            local_files_only=True,
         )
         trained_base = prepare_model_for_kbit_training(
             trained_base,
@@ -675,6 +899,7 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
         _REMOTE_OUTPUT_VOLUME.commit()  # noqa: F821
         return receipt
     except Exception as error:
+        error_diagnostics = _SAFE_ERROR_DIAGNOSTICS(error)  # noqa: F821
         failure = {
             "schema_version": 1,
             "status": "remote_failed",
@@ -683,7 +908,11 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
             "payload_sha256": _EXPECTED_PAYLOAD_SHA256,
             "runner_sha256": _APPROVED_RUNNER_SHA256,
             "stage": stage,
-            "error": {"type": type(error).__name__, "message": "private SFT failed"},
+            "error": {
+                "type": error_diagnostics["exception_chain"][0],
+                "message": "private SFT failed",
+                **error_diagnostics,
+            },
             "base_outputs": base_outputs,
             "prior_outputs": prior_outputs,
             "trained_outputs": trained_outputs,
@@ -700,6 +929,7 @@ def _remote_safe_entry(request: dict[str, Any]) -> dict[str, Any]:
     try:
         return _REMOTE_COMPUTE(request)  # noqa: F821
     except Exception as error:
+        error_diagnostics = _SAFE_ERROR_DIAGNOSTICS(error)  # noqa: F821
         return {
             "schema_version": 1,
             "status": "remote_failed",
@@ -713,5 +943,9 @@ def _remote_safe_entry(request: dict[str, Any]) -> dict[str, Any]:
             "base_outputs": None,
             "prior_outputs": None,
             "trained_outputs": None,
-            "error": {"type": type(error).__name__, "message": "private SFT failed"},
+            "error": {
+                "type": error_diagnostics["exception_chain"][0],
+                "message": "private SFT failed",
+                **error_diagnostics,
+            },
         }

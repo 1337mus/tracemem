@@ -10,6 +10,7 @@ from typing import Any
 
 from experiments import private_sft
 from experiments.evaluate_private_verifier import _candidate_refs, _outputs_by_id, _score_arm
+from experiments.private_sft_remote import _build_sampling_plan
 from training.private_verifier_data import validate_private_verifier_dataset
 
 _SHA256 = re.compile(r"[0-9a-f]{64}")
@@ -38,6 +39,7 @@ _TRAINING_FIELDS = {
     "adapter_changed",
     "seconds",
 }
+_SAMPLING_FIELDS = {"row_index_sha256", "exposure_counts", "unique_source_counts"}
 _RECEIPT_FIELDS = {
     "schema_version",
     "status",
@@ -71,8 +73,61 @@ def _canonical_sha(value: object, name: str) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
-def _validate_training(value: object, row_count: int, accumulation: int) -> dict[str, Any]:
-    if type(value) is not dict or set(value) != _TRAINING_FIELDS:
+def _expected_sampling_metrics(train_rows: object, sampling_plan: object) -> dict[str, Any]:
+    labels = ("supported", "unsupported", "uncertain")
+    if (
+        type(train_rows) is not list
+        or type(sampling_plan) is not dict
+        or set(sampling_plan) != {"strategy", "seed", "row_indices"}
+        or sampling_plan.get("strategy") != "support-balanced-v1"
+        or type(sampling_plan.get("seed")) is not int
+        or type(sampling_plan.get("row_indices")) is not list
+        or len(sampling_plan["row_indices"]) != 256
+        or any(
+            type(index) is not int or not 0 <= index < len(train_rows)
+            for index in sampling_plan["row_indices"]
+        )
+    ):
+        raise ValueError("payload sampling plan is invalid")
+    try:
+        expected_plan = _build_sampling_plan(train_rows, sampling_plan["seed"])
+    except (TypeError, ValueError):
+        raise ValueError("payload sampling plan is invalid") from None
+    if sampling_plan != expected_plan:
+        raise ValueError("payload sampling plan differs from the deterministic schedule")
+
+    exposure_counts = {label: 0 for label in labels}
+    unique_sources: dict[str, set[int]] = {label: set() for label in labels}
+    for index in sampling_plan["row_indices"]:
+        try:
+            verdict = json.loads(train_rows[index]["completion"])
+        except (KeyError, TypeError, ValueError, UnicodeError):
+            raise ValueError("payload sampling rows are invalid") from None
+        if type(verdict) is not dict or verdict.get("support") not in labels:
+            raise ValueError("payload sampling rows are invalid")
+        support = verdict["support"]
+        exposure_counts[support] += 1
+        unique_sources[support].add(index)
+    row_indices = json.dumps(
+        sampling_plan["row_indices"], separators=(",", ":"), allow_nan=False
+    ).encode("ascii")
+    return {
+        "row_index_sha256": hashlib.sha256(row_indices).hexdigest(),
+        "exposure_counts": exposure_counts,
+        "unique_source_counts": {label: len(unique_sources[label]) for label in labels},
+    }
+
+
+def _validate_training(
+    value: object,
+    row_count: int,
+    accumulation: int,
+    *,
+    sampling_plan: object = None,
+    train_rows: object = None,
+) -> dict[str, Any]:
+    expected_fields = _TRAINING_FIELDS | ({"sampling"} if sampling_plan is not None else set())
+    if type(value) is not dict or set(value) != expected_fields:
         raise ValueError("receipt training statistics have an invalid shape")
     training: dict[str, Any] = value
     if type(training["row_count"]) is not int or training["row_count"] != row_count:
@@ -124,6 +179,26 @@ def _validate_training(value: object, row_count: int, accumulation: int) -> dict
         raise ValueError("receipt adapter_changed disagrees with adapter hashes")
     if not training["adapter_changed"]:
         raise ValueError("receipt adapter did not change during training")
+    if sampling_plan is not None:
+        expected_sampling = _expected_sampling_metrics(train_rows, sampling_plan)
+        sampling = training["sampling"]
+        if type(sampling) is not dict or set(sampling) != _SAMPLING_FIELDS:
+            raise ValueError("receipt training sampling statistics have an invalid shape")
+        if (
+            type(sampling["row_index_sha256"]) is not str
+            or _SHA256.fullmatch(sampling["row_index_sha256"]) is None
+            or sampling["row_index_sha256"] != expected_sampling["row_index_sha256"]
+        ):
+            raise ValueError("receipt training sampling row-index hash is invalid")
+        for field in ("exposure_counts", "unique_source_counts"):
+            counts = sampling[field]
+            if (
+                type(counts) is not dict
+                or set(counts) != set(expected_sampling[field])
+                or any(type(count) is not int or count < 0 for count in counts.values())
+                or counts != expected_sampling[field]
+            ):
+                raise ValueError(f"receipt training sampling {field} are invalid")
     return training
 
 
@@ -234,8 +309,25 @@ def evaluate_report(
     """Validate a frozen training receipt and return aggregate dev-set metrics only."""
     if type(approved_runner_sha256) is not str or _SHA256.fullmatch(approved_runner_sha256) is None:
         raise ValueError("approved_runner_sha256 must be 64 lowercase hex characters")
+    sampling_strategy = (
+        "support-balanced-v1" if type(payload) is dict and "sampling_plan" in payload else None
+    )
     try:
-        expected = private_sft.build_payload(dataset, source_records, synthetic_replay_dataset)
+        if type(payload) is dict and "execution_id" in payload:
+            expected = private_sft.build_payload(
+                dataset,
+                source_records,
+                synthetic_replay_dataset,
+                sampling_strategy=sampling_strategy,
+                execution_id=payload["execution_id"],
+            )
+        else:
+            expected = private_sft.build_payload(
+                dataset,
+                source_records,
+                synthetic_replay_dataset,
+                sampling_strategy=sampling_strategy,
+            )
     except (TypeError, ValueError, UnicodeError):
         raise ValueError("dataset and source records failed private exporter validation") from None
     if type(payload) is not dict:
@@ -268,7 +360,11 @@ def evaluate_report(
     if type(accumulation) is not int or accumulation < 1:
         raise ValueError("payload gradient_accumulation_steps is invalid")
     training = _validate_training(
-        receipt_obj["training"], len(payload_obj["train_rows"]), accumulation
+        receipt_obj["training"],
+        len(payload_obj["train_rows"]),
+        accumulation,
+        sampling_plan=payload_obj.get("sampling_plan"),
+        train_rows=payload_obj["train_rows"] if "sampling_plan" in payload_obj else None,
     )
     _validate_manifest(receipt_obj["artifact_manifest"], payload_obj["output_volume"], payload_sha)
 
@@ -289,6 +385,22 @@ def evaluate_report(
         mapped, receipt_obj.get("tokenizer")
     )
     arms = {arm: _score_arm(refs, item_ids, content_outputs[arm]) for arm in _ARMS}
+    training_report = {
+        field: training[field]
+        for field in (
+            "row_count",
+            "microsteps",
+            "optimizer_steps",
+            "input_tokens",
+            "supervised_tokens",
+            "mean_loss",
+            "trainable_parameters",
+            "adapter_changed",
+            "seconds",
+        )
+    }
+    if "sampling" in training:
+        training_report["sampling"] = training["sampling"]
     return {
         "schema_version": 1,
         "payload_sha256": payload_sha,
@@ -306,19 +418,6 @@ def evaluate_report(
             "candidate_count": len(refs),
             "session_count": len({case["session_id"] for case, _ in refs}),
         },
-        "training": {
-            field: training[field]
-            for field in (
-                "row_count",
-                "microsteps",
-                "optimizer_steps",
-                "input_tokens",
-                "supervised_tokens",
-                "mean_loss",
-                "trainable_parameters",
-                "adapter_changed",
-                "seconds",
-            )
-        },
+        "training": training_report,
         "arms": arms,
     }
