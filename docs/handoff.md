@@ -4,6 +4,21 @@ Updated 2026-10-18 UTC. Start with `.local/active-cycle.json` for current
 operational state, approvals and delivery. Verify the live inventory is idle
 before any remote launch. Historical experiment records are immutable.
 
+## Current bounded validation milestone
+
+**In progress; no new model-efficacy result or decision.** Deadline: 2026-10-20
+21:56 UTC. Zero new GPU/training calls or source uploads. Personal-source
+admissions remain zero. Of 24 screened benchmark sessions, 20 minimized
+excerpts across 20 source families were admitted locally; four were withheld for
+privacy, and root hash/span validation is complete. Final evidence minimums are
+not yet validated, and human-reviewed labels remain zero. Rights and egress
+clearance are pending. The memory-scope policy is provisional. The pilot allows
+at most four A10G calls (30 minutes each, zero retries), including at most one
+optional 256-exposure/64-step training call. The comparison bridge is root-
+reviewed, as is the opt-in verifier batch runner (31 focused tests passed). The
+new QA runner is being built locally. See
+the [milestone protocol and decision gates](bounded-validation-milestone.md).
+
 ## Latest verified results
 
 ### Calendar-precision training comparison
@@ -190,11 +205,12 @@ is not authorized. Keep historical receipts and adapter volumes immutable.
 
 ## Verification and delivery
 
-The current full `make check` exited successfully: 1,158 tests ran, 1,157
+The current full `make check` exited successfully: 1,166 tests ran, 1,165
 passed and one optional test was skipped. Ruff covered 233 files and mypy 76.
-The GPU runner remains pinned to
-`11181e73e0f99e9c4ec0e973d00396acf38985b551d68f16ec6043069e7fa586`.
+The reviewed opt-in verifier batch runner is pinned to
+`d0123eee1b15b662e38353c31189438b84ecee1ef6aabd82556357dfe2ad0d9d`.
+This software validation is not model-efficacy evidence.
 
-The previous delivered head `ae0e489` passed [CI run
-39096053992](https://github.com/1337mus/tracemem/actions/runs/39096053992).
+The previous delivered head `23da5ef` passed [CI run
+39102829716](https://github.com/1337mus/tracemem/actions/runs/39102829716).
 Check `.local/active-cycle.json` for current delivery and CI status.

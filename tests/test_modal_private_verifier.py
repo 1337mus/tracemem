@@ -57,6 +57,10 @@ def _one_item() -> list[dict[str, str]]:
     return [{"item_id": "opaque-candidate-01", "prompt": "A minimized private prompt."}]
 
 
+def _batch_items(count: int, prompt: str = "Fictional validation prompt.") -> list[dict[str, str]]:
+    return [{"item_id": f"item-{index:03d}", "prompt": prompt} for index in range(count)]
+
+
 class ModalPrivateVerifierTests(unittest.TestCase):
     def test_modal_envelope_is_bounded_source_free_single_container_inference(self) -> None:
         options = modal_private_verifier.modal_function_options()
@@ -92,6 +96,156 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         self.assertNotIn(sentinel.encode(), serialized)
         self.assertLess(len(serialized), 64 * 1024)
 
+    def test_validation_batch_remote_function_stays_source_free_under_64_kib(self) -> None:
+        try:
+            from modal._utils.function_utils import FunctionSourceInfo
+            from modal._vendor import cloudpickle
+        except ImportError as error:
+            self.skipTest(f"Modal serialization dependencies unavailable: {error}")
+
+        sentinel = "PRIVATE_BATCH_SERIALIZATION_SENTINEL"
+        payload = modal_private_verifier.build_payload(
+            _batch_items(128, sentinel + "x" * 50),
+            _private_sft_candidate_manifest(),
+            private_sft=True,
+            validation_batch=True,
+        )
+        remote = modal_private_verifier._make_remote_function(payload)
+        serialized = FunctionSourceInfo(remote, serialized=True).serialized_function()
+
+        cloudpickle.loads(serialized)
+        self.assertNotIn(sentinel.encode(), serialized)
+        self.assertLess(len(serialized), 64 * 1024)
+
+    def test_default_item_cap_stays_32_and_validation_batch_flag_requires_bool(self) -> None:
+        with self.assertRaisesRegex(ValueError, "1 to 32"):
+            modal_private_verifier.build_payload(_batch_items(33), _candidate_manifest())
+        with self.assertRaisesRegex(ValueError, "validation_batch must be an explicit boolean"):
+            modal_private_verifier.build_payload(
+                _one_item(), _candidate_manifest(), validation_batch=1
+            )
+
+    def test_validation_batch_accepts_100_and_128_items_but_rejects_129(self) -> None:
+        for count in (100, 128):
+            with self.subTest(count=count):
+                payload = modal_private_verifier.build_payload(
+                    _batch_items(count), _candidate_manifest(), validation_batch=True
+                )
+                self.assertEqual(len(payload["items"]), count)
+                self.assertEqual(
+                    payload["provenance"]["validation_batch"],
+                    modal_private_verifier._VALIDATION_BATCH_PROVENANCE_TAG,
+                )
+                self.assertEqual(payload["prior_adapter"], modal_private_verifier._PRIOR_ADAPTER)
+                self.assertEqual(
+                    payload["continued_adapter"]["relative_path"],
+                    payload["candidate_manifest"]["adapter_relative_path"],
+                )
+        with self.assertRaisesRegex(ValueError, "1 to 128"):
+            modal_private_verifier.build_payload(
+                _batch_items(129), _candidate_manifest(), validation_batch=True
+            )
+
+    def test_default_and_validation_batch_payload_byte_caps_are_independent(self) -> None:
+        large_prompt = "x" * 6_000
+        with self.assertRaisesRegex(ValueError, "byte limit"):
+            modal_private_verifier.build_payload(
+                _batch_items(32, large_prompt), _candidate_manifest()
+            )
+        with self.assertRaisesRegex(ValueError, "byte limit"):
+            modal_private_verifier.build_payload(
+                _batch_items(128, large_prompt), _candidate_manifest(), validation_batch=True
+            )
+
+    def test_validation_batch_exact_envelope_reconstructs_only_fixed_marker(self) -> None:
+        payload = modal_private_verifier.build_payload(
+            _batch_items(100), _candidate_manifest(), validation_batch=True
+        )
+        expected, _, _ = modal_private_verifier._validate_approved_payload(
+            payload, modal_private_verifier.payload_sha256(payload), payload["runner_sha256"]
+        )
+        self.assertEqual(expected, payload)
+
+        for mutation in ("marker", "extra provenance"):
+            with self.subTest(mutation=mutation):
+                changed = deepcopy(payload)
+                if mutation == "marker":
+                    changed["provenance"]["validation_batch"] = "unapproved_batch"
+                else:
+                    changed["provenance"]["extra"] = "not-allowlisted"
+                with self.assertRaisesRegex(ValueError, "fixed envelope"):
+                    modal_private_verifier._validate_approved_payload(
+                        changed,
+                        modal_private_verifier.payload_sha256(changed),
+                        changed["runner_sha256"],
+                    )
+
+    def test_remote_enforces_approved_item_limits_before_model_imports(self) -> None:
+        cases = (
+            (False, 33),
+            (True, 129),
+        )
+        original_import = builtins.__import__
+
+        def reject_model_imports(name: str, *args: object, **kwargs: object) -> object:
+            if name.split(".", maxsplit=1)[0] in {"modal", "torch", "peft", "transformers"}:
+                raise AssertionError("model runtime imported before prompt limit guard")
+            return original_import(name, *args, **kwargs)
+
+        for validation_batch, count in cases:
+            with self.subTest(validation_batch=validation_batch, count=count):
+                accepted_count = count - 1
+                payload = modal_private_verifier.build_payload(
+                    _batch_items(accepted_count),
+                    _candidate_manifest(),
+                    validation_batch=validation_batch,
+                )
+                remote = modal_private_verifier._make_remote_function(payload)
+                compute = remote.__globals__["_REMOTE_COMPUTE"]
+                payload["items"] = _batch_items(count)
+                digest = modal_private_verifier.payload_sha256(payload)
+                compute.__globals__["_EXPECTED_PAYLOAD_SHA256"] = digest
+                request = {
+                    "payload": payload,
+                    "payload_sha256": digest,
+                    "runner_sha256": payload["runner_sha256"],
+                }
+                with patch("builtins.__import__", side_effect=reject_model_imports):
+                    with self.assertRaisesRegex(
+                        ValueError, "private verifier prompt count is invalid"
+                    ):
+                        compute(request)
+
+    def test_remote_enforces_approved_byte_limits_before_model_imports(self) -> None:
+        original_import = builtins.__import__
+
+        def reject_model_imports(name: str, *args: object, **kwargs: object) -> object:
+            if name.split(".", maxsplit=1)[0] in {"modal", "torch", "peft", "transformers"}:
+                raise AssertionError("model runtime imported before payload byte-limit guard")
+            return original_import(name, *args, **kwargs)
+
+        for validation_batch, count in ((False, 32), (True, 128)):
+            with self.subTest(validation_batch=validation_batch, count=count):
+                payload = modal_private_verifier.build_payload(
+                    _batch_items(count), _candidate_manifest(), validation_batch=validation_batch
+                )
+                remote = modal_private_verifier._make_remote_function(payload)
+                compute = remote.__globals__["_REMOTE_COMPUTE"]
+                for item in payload["items"]:
+                    item["prompt"] = "x" * 6_000
+                digest = modal_private_verifier.payload_sha256(payload)
+                compute.__globals__["_EXPECTED_PAYLOAD_SHA256"] = digest
+                request = {
+                    "payload": payload,
+                    "payload_sha256": digest,
+                    "runner_sha256": payload["runner_sha256"],
+                }
+                with patch("builtins.__import__", side_effect=reject_model_imports):
+                    with self.assertRaisesRegex(
+                        ValueError, "private verifier payload exceeds its byte limit"
+                    ):
+                        compute(request)
+
     def test_remote_function_freezes_validated_private_adapter_descriptors(self) -> None:
         candidate_manifest = _private_sft_candidate_manifest()
         payload = modal_private_verifier.build_payload(
@@ -106,6 +260,22 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         self.assertEqual(
             compute.__globals__["_EXPECTED_CONTINUED_ADAPTER"], payload["continued_adapter"]
         )
+
+    def test_remote_function_injects_only_the_validated_batch_limits(self) -> None:
+        for validation_batch, expected_items, expected_bytes in (
+            (False, 32, 180_000),
+            (True, 128, 720_000),
+        ):
+            with self.subTest(validation_batch=validation_batch):
+                payload = modal_private_verifier.build_payload(
+                    _one_item(), _candidate_manifest(), validation_batch=validation_batch
+                )
+                remote = modal_private_verifier._make_remote_function(payload)
+                compute = remote.__globals__["_REMOTE_COMPUTE"]
+                self.assertEqual(compute.__globals__["_APPROVED_MAX_ITEMS"], expected_items)
+                self.assertEqual(compute.__globals__["_APPROVED_MAX_PAYLOAD_BYTES"], expected_bytes)
+                self.assertNotIn("payload", compute.__globals__)
+                self.assertNotIn(payload["items"][0]["prompt"], repr(compute.__globals__))
 
     def test_modal_function_mounts_approved_volumes_read_only_without_creation(self) -> None:
         payload = modal_private_verifier.build_payload(
@@ -161,6 +331,7 @@ class ModalPrivateVerifierTests(unittest.TestCase):
         self.assertEqual(payload["candidate_manifest"], candidate_manifest)
         self.assertEqual(payload["mode"], "private_inference_only")
         self.assertFalse(payload["training_performed"])
+        self.assertNotIn("validation_batch", payload["provenance"])
         self.assertEqual(
             payload["provenance"]["permitted_use"],
             "explicit_user_authorized_private_evaluation_only",

@@ -27,6 +27,8 @@ _EXPECTED_PROVENANCE: dict[str, Any]
 _EXPECTED_RUNNER_SHA256: str
 _EXPECTED_SETTINGS: dict[str, Any]
 _REMOTE_COMPUTE: Callable[[dict[str, Any]], dict[str, Any]]
+_APPROVED_MAX_ITEMS: int
+_APPROVED_MAX_PAYLOAD_BYTES: int
 _verify_adapter_mount: Callable[[str, str, dict[str, str]], dict[str, str]]
 
 _ROOT = Path(__file__).resolve().parents[1]
@@ -68,6 +70,15 @@ _PROVENANCE = {
 _MAX_ITEMS = 32
 _MAX_PROMPT_CHARS = 12_000
 _MAX_PAYLOAD_BYTES = 180_000
+_VALIDATION_BATCH_PROVENANCE_TAG = "matched_private_adapter_qa_batch_v1"
+_VALIDATION_BATCH_MAX_ITEMS = 128
+_VALIDATION_BATCH_MAX_PAYLOAD_BYTES = 720_000
+
+
+def _payload_limits(validation_batch: bool) -> tuple[int, int]:
+    if validation_batch:
+        return _VALIDATION_BATCH_MAX_ITEMS, _VALIDATION_BATCH_MAX_PAYLOAD_BYTES
+    return _MAX_ITEMS, _MAX_PAYLOAD_BYTES
 
 
 def _canonical_bytes(value: object) -> bytes:
@@ -85,10 +96,14 @@ def build_payload(
     candidate_manifest: dict[str, Any],
     *,
     private_sft: bool = False,
+    validation_batch: bool = False,
 ) -> dict[str, Any]:
     """Build the approved private inference payload."""
     if type(private_sft) is not bool:
         raise ValueError("private_sft must be an explicit boolean")
+    if type(validation_batch) is not bool:
+        raise ValueError("validation_batch must be an explicit boolean")
+    max_items, max_payload_bytes = _payload_limits(validation_batch)
     if private_sft:
         manifest_keys = {
             "training_payload_sha256",
@@ -125,8 +140,8 @@ def build_payload(
         ):
             raise ValueError("candidate manifest is not the reviewed private adapter")
         manifest = deepcopy(_EXPECTED_CANDIDATE_MANIFEST)
-    if type(items) is not list or not 1 <= len(items) <= _MAX_ITEMS:
-        raise ValueError("private verifier requires 1 to 32 prompts")
+    if type(items) is not list or not 1 <= len(items) <= max_items:
+        raise ValueError(f"private verifier requires 1 to {max_items} prompts")
     seen: set[str] = set()
     normalized_items: list[dict[str, str]] = []
     for item in items:
@@ -169,6 +184,8 @@ def build_payload(
     provenance = deepcopy(_PROVENANCE)
     if private_sft:
         provenance["data_origin"] = "authorized_private_checkpoint_evaluation_prompts"
+    if validation_batch:
+        provenance["validation_batch"] = _VALIDATION_BATCH_PROVENANCE_TAG
     continued_adapter = {
         "volume_name": continued_volume_name,
         "volume_mount": continued_volume_mount,
@@ -188,7 +205,7 @@ def build_payload(
         "items": normalized_items,
         "training_performed": False,
     }
-    if len(_canonical_bytes(payload)) > _MAX_PAYLOAD_BYTES:
+    if len(_canonical_bytes(payload)) > max_payload_bytes:
         raise ValueError("private verifier payload exceeds its byte limit")
     return payload
 
@@ -218,8 +235,16 @@ def _validate_approved_payload(
         private_sft = (
             type(continued) is dict and continued.get("volume_name") == _PRIVATE_SFT_VOLUME_NAME
         )
+        provenance = payload.get("provenance")
+        validation_batch = (
+            type(provenance) is dict
+            and provenance.get("validation_batch") == _VALIDATION_BATCH_PROVENANCE_TAG
+        )
         expected = build_payload(
-            payload["items"], payload["candidate_manifest"], private_sft=private_sft
+            payload["items"],
+            payload["candidate_manifest"],
+            private_sft=private_sft,
+            validation_batch=validation_batch,
         )
     except (KeyError, TypeError, ValueError):
         raise ValueError("private verifier payload differs from its fixed envelope") from None
@@ -296,7 +321,7 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
         ).encode("utf-8")
     except (TypeError, ValueError, UnicodeError):
         raise ValueError("private verifier payload is not canonical JSON") from None
-    if len(payload_bytes) > 180_000:
+    if len(payload_bytes) > _APPROVED_MAX_PAYLOAD_BYTES:  # noqa: F821
         raise ValueError("private verifier payload exceeds its byte limit")
     digest = remote_hashlib.sha256(payload_bytes).hexdigest()
     if digest != approved_payload or digest != _EXPECTED_PAYLOAD_SHA256:  # noqa: F821
@@ -333,7 +358,7 @@ def _remote_compute(request: dict[str, Any]) -> dict[str, Any]:
     ):
         raise ValueError("private verifier payload metadata is not allowlisted")
     items = payload["items"]
-    if type(items) is not list or not 1 <= len(items) <= 32:
+    if type(items) is not list or not 1 <= len(items) <= _APPROVED_MAX_ITEMS:  # noqa: F821
         raise ValueError("private verifier prompt count is invalid")
     seen: set[str] = set()
     for item in items:
@@ -586,6 +611,10 @@ def _make_remote_function(payload: dict[str, Any]) -> FunctionType:
     approved, digest, runner_hash = _validate_approved_payload(
         payload, payload_sha256(payload), payload["runner_sha256"]
     )
+    validation_batch = (
+        approved["provenance"].get("validation_batch") == _VALIDATION_BATCH_PROVENANCE_TAG
+    )
+    max_items, max_payload_bytes = _payload_limits(validation_batch)
     verify_adapter = FunctionType(
         _verify_adapter_mount.__code__,
         {"__name__": "__main__"},
@@ -604,6 +633,8 @@ def _make_remote_function(payload: dict[str, Any]) -> FunctionType:
             "_EXPECTED_CANDIDATE_MANIFEST": deepcopy(approved["candidate_manifest"]),
             "_EXPECTED_PRIOR_ADAPTER": deepcopy(approved["prior_adapter"]),
             "_EXPECTED_CONTINUED_ADAPTER": continued_adapter,
+            "_APPROVED_MAX_ITEMS": max_items,
+            "_APPROVED_MAX_PAYLOAD_BYTES": max_payload_bytes,
             "_verify_adapter_mount": verify_adapter,
         },
         name="private_verifier_compute",
