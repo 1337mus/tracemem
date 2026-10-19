@@ -1,25 +1,77 @@
 # TraceMem handoff
 
-Updated 2026-10-18 UTC. Start with `.local/active-cycle.json` for current
+Updated 2026-10-19 UTC. Start with `.local/active-cycle.json` for current
 operational state, approvals and delivery. Verify the live inventory is idle
 before any remote launch. Historical experiment records are immutable.
 
 ## Current bounded validation milestone
 
-**In progress; no new model-efficacy result or decision.** Deadline: 2026-10-20
-21:56 UTC. Zero new GPU/training calls or source uploads. Personal-source
-admissions remain zero. Of 24 screened benchmark sessions, 20 minimized
-excerpts across 20 source families were admitted locally; four were withheld for
-privacy, and root hash/span validation is complete. Final evidence minimums are
-not yet validated, and human-reviewed labels remain zero. Rights and egress
-clearance are pending. The memory-scope policy is provisional. The pilot allows
-at most four A10G calls (30 minutes each, zero retries), including at most one
-optional 256-exposure/64-step training call. The comparison bridge is root-
-reviewed, as is the opt-in verifier batch runner (31 focused tests passed). The
-new QA runner is being built locally. See
-the [milestone protocol and decision gates](bounded-validation-milestone.md).
+**COMPLETED — NO_GO_INSUFFICIENT_EVIDENCE (2026-10-19).** No model was
+selected. The automation is PAUSED. All four authorized GPU calls were used:
+verifier diagnostic, failed matched QA, optional training, and successful
+changed-runner QA. No GPU work is active; no further cycle will proceed without
+a new owner request. The original deadline and finite limits remain unchanged:
+2026-10-20 21:56 UTC, at most four A10G calls capped at 30 minutes each, zero
+retries, and at most one training call capped at 256 exposures and 64 optimizer
+steps.
+
+The frozen claim diagnostic reached 96.0% support precision versus 87.1% for
+base, but useful retention fell from 32/33 to 28/33 (-12.1 percentage points;
+95% family-cluster interval [-27.6, 0.0]). Optional training used 256 exposures,
+64 steps, and 192 unique rows versus 212 for the matched baseline; 32 fictional
+claims replaced 52 treatment exposures. Four of ten control checks failed.
+Private-control useful acceptance fell from 6/7 to 5/7 and eligibility
+exactness from 13/16 to 12/16; fictional uncertain-support exactness fell from
+2/2 to 1/2. Training took 483.001 seconds; remote/client elapsed time was
+622.884/662.839 seconds; cost is unknown.
+
+Final 30-question QA observed a 13.3-point trained matched-memory gain over
+raw-hybrid retrieval (18/30 versus 14/30; 2/30 versus 4/30 unsupported), with a
+95% family-bootstrap interval of [-7.1, 37.9]; it did not beat base-gated memory
+(20/30, 2/30). The numerical QA gain and no-extra-unsupported checks passed,
+but useful-retention gain and positive-confidence-bound requirements failed.
+QA evaluated the frozen matched adapter, not the failed new treatment.
+Unsupported additions include false assertions of missing evidence; bare
+abstentions alone do not count as unsupported facts.
+The final run returned 120/120 EOS-terminated answers without truncation;
+remote/client elapsed time was 339.189/346.601 seconds and cost is unknown. The
+earlier QA failure's cause remains unknown; the successful changed-runner call
+after an A10 alias-compatibility fix does not establish that cause. Five QA
+ratings were disputed and agent-judged with arm names hidden, though context can
+reveal condition; root review corrected two initial bare-abstention rating
+errors. Human-reviewed labels remain zero against the formal minimum of 20.
+Whole-source independence, natural human authorship, and constituent rights
+remain unknown. The CPU-only preflight passed package and tokenizer checks only
+(8.098 seconds remote, 16.190 seconds client). A restricted-network prelaunch
+check took 56.805 client seconds before GPU activity; it was not a GPU call or
+retry. This decision means insufficient validated benefit for further
+specialist-model investment under this setup, not general model inferiority. See
+the [completed milestone and decision gates](bounded-validation-milestone.md).
 
 ## Latest verified results
+
+### Frozen 100-claim diagnostic
+
+This source-backed benchmark diagnostic used 20 families; it was not a new
+independent personal-session evaluation. The bounded personal-source routes
+admitted zero new sources. References comprised 56 supported, 40 unsupported,
+and four uncertain claims, including 33 supported-and-eligible candidates.
+
+The preselected matched-exposure adapter increased support precision among
+automatically accepted candidates from 54/62 (87.1%) for base to 48/50 (96.0%),
+and reduced unsupported autoaccepts from four to one. Useful candidate retention
+fell from 32/33 to 28/33. Both matched 91/100 support labels overall and zero of
+four uncertain-support references. Eligibility exactness was 42/100 for base and
+72/100 for the adapter; the prompt uses the older broader scope instruction,
+so the newer reference policy is an interpretation limitation. These are frozen
+agent references, with zero human reviews and unestablished source independence.
+The family-cluster bootstrap interval for useful-retention gain was -27.6 to
+0.0 percentage points. This is a filtering trade-off, not an overall gain or
+model-selection result. All 300 outputs were strict JSON with EOS and identical
+inputs across arms. Remote/client elapsed time was 437.809/453.799 seconds;
+actual billed cost is unavailable. The separate topic-crossing training
+treatment is complete and summarized in the current milestone above; this
+evaluation cohort remains excluded from training and tuning.
 
 ### Calendar-precision training comparison
 
@@ -157,7 +209,10 @@ small adaptive development sets, not held-out evaluation; they do not support
 causal or downstream QA claims. The reserved verifier dataset was not
 intentionally opened; incidental report exposure leaves overlap unresolved.
 
-## Next experiment
+## Historical next experiment (inactive)
+
+This section records prior work only. It does not authorize another cycle;
+future work requires a new owner request.
 
 An eligibility-focused audit found 67 uncertain-eligibility exposures. A
 54-candidate, 27-scenario fictional set completed a label-hidden annotation
@@ -191,7 +246,9 @@ calibration, and downstream QA remain necessary. The matched private-exposure
 audit is now complete. Next, evaluate on genuinely independent conversations
 with separately reviewed labels and downstream QA, and resolve the disputed
 memory-scope policy before changing the data or hypothesis for any further
-training. Keep verifier-test data quarantined while the historical-report
+training. These proposed next steps are superseded by the completed
+NO_GO_INSUFFICIENT_EVIDENCE decision. No further cycle is planned without a new
+owner request. Keep verifier-test data quarantined while the historical-report
 overlap remains unresolved.
 
 ## Operational boundaries
