@@ -1,6 +1,6 @@
 # Project status and design
 
-Updated 2026-10-17 UTC.
+Updated 2026-10-25 UTC.
 
 TraceMem is a local research prototype for finding past conversation evidence
 with source citations. The current search tool works; interpreting changes in
@@ -9,13 +9,12 @@ has the project overview and architecture diagram.
 
 ## Phase and boundary
 
-Phase 0 inventory and Phase 1 infrastructure are complete. Phase 2 research
-continues on fictional and bounded private development data. A balanced-support
-recovery produced a scored comparison, but both predeclared development gates
-failed. No model has been selected or promoted, and Gate A remains unmet because
-the labels have no independent human validation. See the
-[recovery results](balanced-support-results.md) and the earlier
-[uncertainty-training comparison](uncertainty-training-results.md).
+Phase 0 inventory and Phase 1 infrastructure are complete. The bounded model
+research concluded on October 23, 2026, and recurring work is paused. The
+working local search tool, source adapters, citation store, review tools and
+experiment history are preserved here. See the [benchmark snapshot](benchmark-snapshot.md)
+for the latest claim-checking highlights and the [README](../README.md) for
+the setup and design goal. The model comparisons below are historical records.
 
 Claude Code and Codex adapters read local transcripts without changing them;
 ChatGPT data enters only through an explicit JSON export reader. Context Kit

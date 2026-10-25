@@ -1,108 +1,60 @@
 # TraceMem
 
-TraceMem searches past conversations and returns the original messages, with
-citations. The research goal is to train a small model to extract useful facts
-and decisions without losing who said them, when they applied, or how certain
-the speaker was.
+*Find the passage. Keep the source.*
 
-Someone might say, “I might try SQLite,” then later, “I chose SQLite.” A memory
-system must preserve that difference and point back to both messages. The
-current tool finds the source; interpreting the change remains experimental.
+TraceMem helps you find what you said and decided in past conversations. Each result includes the original message, who said it, and when.
 
-**Local search works today; trained memory models remain research.** The latest
-256-exposure matched comparison improved temporal support from 27/32 to 29/32,
-but private useful acceptance fell from 6/7 to 5/7, failing the private control
-gate. No model was selected. The small adaptive development sets have
-provisional agent-only labels, zero human reviewers, and no held-out evaluation.
-See the [latest calendar-precision results](docs/calendar-precision-training-results.md),
-[prior matched-exposure results](docs/matched-exposure-results.md),
-[earlier eligibility-transfer results](docs/eligibility-transfer-results.md),
-[experiment index](docs/README.md), and [data notes](docs/realistic-data.md).
+[Current architecture](#current-architecture) · [Highlights](#highlights) · [Benchmark snapshot](#benchmark-snapshot) · [Quick start](#quick-start) · [The goal](#the-goal) · [Documentation](#documentation)
 
-Changing only the answering instructions on the same 24 public questions raised
-grounded-correct answers from 5/24 to 13/24 with hybrid retrieval and 6/24 to
-10/24 with answer-marked evidence. Unsupported additions rose from 1 to 4 and
-from 1 to 7, so both answer-condition gates failed and nothing was promoted.
-This changed only system instructions on base Qwen3-4B; it is not trained-memory
-efficacy evidence. See the [downstream QA comparison](docs/downstream-qa-baseline.md).
-A separate calendar-evidence verifier comparison also missed its fixed checks;
-see the [temporal-grounding diagnostic](docs/temporal-grounding-diagnostic.md).
+## Current architecture
 
-## What works
+Today, TraceMem is a local search tool. It collects conversation records in SQLite, finds passages by words, vectors, or both, and returns each passage with a citation to its source.
 
-- Read-only Claude Code and Codex transcript adapters, plus an explicit
-  ChatGPT JSON export reader.
-- SQLite keeps speaker roles, text versions, and source locations.
-- Keyword search (BM25), vector search, or a combination. Default vectors are
-  deterministic and need no model download.
-- Complete passages keep their citations when packed for a consumer.
+![Current architecture: conversation sources flow into SQLite, search, and cited passages fitted to a chosen size limit.](docs/assets/architecture.svg)
 
-## Evidence flow
+## Highlights
 
-```mermaid
-flowchart TD
-  CK[Context Kit discovery and configuration] --> A[Read-only source adapters]
-  T[Claude Code and Codex transcripts] --> A
-  G[Explicit ChatGPT exports] --> A
-  A --> E[Saved messages in SQLite]
-  E --> S[Search original messages]
-  S --> P[Budgeted passages with citations]
-  P --> O[Optional answering model]
-  E -.-> X[Small model proposes memories]
-  X -.-> C[Check format, source quotes, and roles]
-  C -.-> V[Verifier judges support and memory scope]
-  V -.-> L[Save proposed memories and their history]
-  L -.-> R[Review their meaning]
-```
+- Read-only imports from Claude Code and Codex, plus explicit ChatGPT JSON exports.
+- SQLite keeps messages, dates, and their history.
+- Search by keywords, vectors, or both.
+- Whole passages with citations fit a size limit you choose.
 
-Conversation facts live in the local evidence store. Training teaches the model
-how to judge a claim against the original messages. The current verifier takes
-a supplied claim and its evidence, then reports whether it is supported and
-whether its subject belongs in personal memory. Extraction and answering are
-separate experiments.
+A fictional demo asks, “Where is the quarterly planning meeting?” TraceMem returns, “The quarterly planning session is in room Juniper, on the fourth floor,” with a citation to the source passage.
 
-The solid arrows show local search; the dotted arrows show model experiments.
-Context Kit helps locate sources and stays unchanged. Citations let someone
-check the original words; a claim may still be wrong. Proposed memories are
-kept for review and do not feed search yet.
+## Benchmark snapshot
 
-## Run the synthetic demo
+The October 23, 2026 claim-checking test uses selected public benchmark evidence: 120 claims across 30 conversation families and 40 sessions. Labels were agent-reviewed under the owner's policy: remember durable facts and preferences.
 
-Python 3.11+ and SQLite with FTS5 are enough. The demo and benchmark use
-fictional data and run without an API key or model download.
+| Measure | Result |
+| --- | ---: |
+| Source support among 61 accepted claims | 58/61 (95.1%) |
+| Useful claims retained | 28/28 |
 
-The demo asks “Where is the quarterly planning meeting?” and retrieves “The
-quarterly planning session is in room Juniper, on the fourth floor.” with its
-source citation.
+A separate training set contains 256 fictional claims. See the [benchmark snapshot](docs/benchmark-snapshot.md) for the measurement details.
+
+## Quick start
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once. It sets up Python 3.12 for you.
 
 ```sh
-make demo
-make benchmark
+git clone https://github.com/1337mus/tracemem.git
+cd tracemem
+uv run --python 3.12 tracemem demo
+uv run --python 3.12 tracemem benchmark
 ```
 
-To ingest a local transcript and search its evidence, use a private database
-path such as `.local/evidence.sqlite3`:
+The demo uses fictional messages and Python's built-in SQLite. No API key or model download is needed.
 
-```sh
-mkdir -p .local
-PYTHONPATH=src python3 -m tracemem ingest \
-  --provider codex --input /path/to/session.jsonl --db .local/evidence.sqlite3
-PYTHONPATH=src python3 -m tracemem search \
-  --db .local/evidence.sqlite3 --query "What did we decide?" --mode hybrid
-```
+For local transcript ingestion and search, see [the source adapter and ingestion notes](docs/README.md#source-adapters-and-ingestion) and [data governance](docs/data-governance.md).
 
-Keep private source data and derived evidence local. See [data governance](docs/data-governance.md)
-for handling rules.
+## The goal
 
-## Read more
+The design goal is to suggest facts and preferences worth keeping from conversation history. Each fact is checked against its source, saved with its history, and used in answers that point back to the original passages.
 
-- [Project status and design](docs/project-status.md) describes the working
-  boundary and research gates.
-- [Latest QA review results](docs/qa-controls-review-results.md) reports the
-  current fictional review and its limits.
-- [Data governance](docs/data-governance.md) covers private-source handling
-  and release gates.
-- [Documentation index](docs/README.md) groups implementation notes,
-  experiments, and validation records.
+![The goal: conversations become proposed facts, checked against their source and whether they are worth keeping, preserved as versioned facts, and used for source-backed answers.](docs/assets/goal.svg)
 
-Code and authored synthetic examples use the [MIT License](LICENSE).
+## Documentation
+
+- [Documentation index](docs/README.md) for implementation notes, experiments, and historical reports.
+- [Data governance](docs/data-governance.md) for local source handling.
+- [MIT License](LICENSE).

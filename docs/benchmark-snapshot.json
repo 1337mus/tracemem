@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-23",
+  "task": "Check whether a proposed memory claim is supported by its source messages",
+  "scope": "Custom claim-verification comparison using selected LongMemEval oracle evidence",
+  "review": "Agent-reviewed references with root adjudication",
+  "memory_policy": "Remember only durable facts and preferences",
+  "cohort": {
+    "claims": 120,
+    "source_families": 30,
+    "source_sessions": 40
+  },
+  "model": {
+    "name": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "training": {
+    "source": "Newly authored fictional claims",
+    "unique_claims": 256,
+    "optimizer_steps": 64,
+    "benchmark_examples_used_for_training": 0
+  },
+  "accepted_claim_source_support": {
+    "base": {"supported": 66, "accepted": 78},
+    "candidate": {"supported": 58, "accepted": 61}
+  },
+  "useful_reference_claims_retained": {
+    "base": {"retained": 28, "total": 28},
+    "candidate": {"retained": 28, "total": 28}
+  },
+  "protocol_sha256": "b895cb6e5a4fbccbe78a1990ddc01c5ff46840cf6b3c316a73e0927a8c12201b"
+}

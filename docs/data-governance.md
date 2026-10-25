@@ -26,10 +26,14 @@ the trained extractor over those conversations or add them to training.
 No actual ChatGPT export was read. The adapters and retrieval implementation
 have synthetic tests; those tests do not establish quality on the private corpus.
 
-The [LongMemEval dataset metadata audit](longmemeval-rights.md) pins the official
-cleaned dataset's public card and tree. The card declares MIT; constituent provenance
-and third-party permissions remain unresolved. Only metadata was fetched. The format
-adapter uses newly authored fictional conversations, with no benchmark data imported.
+The historical [LongMemEval dataset metadata audit](longmemeval-rights.md) pins
+the official cleaned dataset's public card and tree. That audit fetched metadata
+only; the format adapter uses newly authored fictional conversations. A later
+authorized, bounded comparison used selected oracle benchmark evidence on
+personal Modal. Its [aggregate snapshot](benchmark-snapshot.md) contains counts
+only. Benchmark source bodies and derived evaluation packets remain outside
+GitHub. The card declares MIT; constituent provenance and third-party permissions
+remain unresolved.
 
 ## Two data lanes
 

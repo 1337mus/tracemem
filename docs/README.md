@@ -4,6 +4,10 @@ Paths in this index are relative to this `docs/` directory.
 
 ## Start here
 
+- [Project overview and quick start](../README.md): architecture, the end goal,
+  and a local demo.
+- [Benchmark snapshot](benchmark-snapshot.md): reviewed claim-checking highlights
+  from the completed October 23 comparison, with [exact counts](benchmark-snapshot.json).
 - [Project status and design](project-status.md): current system boundary,
   architecture, measurements, and open research gates.
 - [Roadmap](roadmap.md): phase status and acceptance boundaries.

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">The goal for TraceMem</title>
+  <desc id="desc">Conversation history leads to proposed facts, checks whether each source supports them and whether they are worth keeping, then durable facts and source-backed answers.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 L9 5 L1 9 Z" fill="#168C91"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { font-size: 29px; font-weight: 700; fill: #14243A; }
+      .subtitle { font-size: 18px; fill: #53657A; }
+      .step { font-size: 14px; font-weight: 700; letter-spacing: 1.1px; fill: #55708C; }
+      .card-title { font-size: 22px; font-weight: 700; fill: #162A42; }
+      .body { font-size: 18px; fill: #40546B; }
+      .foot { font-size: 18px; fill: #667A90; }
+    </style>
+  </defs>
+  <rect width="1200" height="390" rx="24" fill="#F4F8FC"/>
+  <text class="sans title" x="40" y="49">The goal</text>
+  <text class="sans subtitle" x="40" y="78">A careful path from conversation history to durable, source-backed answers.</text>
+
+  <g fill="none" stroke="#168C91" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M220 220 H256"/>
+    <path d="M460 220 H496"/>
+    <path d="M700 220 H736"/>
+    <path d="M940 220 H976"/>
+  </g>
+
+  <g class="sans">
+    <g>
+      <rect x="24" y="110" width="196" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="24" y="110" width="196" height="7" rx="3.5" fill="#4A78B8"/>
+      <text class="step" x="44" y="145">01 | START</text>
+      <text class="card-title" x="44" y="177">Conversation</text>
+      <text class="card-title" x="44" y="203">history</text>
+      <text class="body" x="44" y="240">Messages with</text>
+      <text class="body" x="44" y="267">speaker and date</text>
+    </g>
+    <g>
+      <rect x="264" y="110" width="196" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="264" y="110" width="196" height="7" rx="3.5" fill="#3A8E92"/>
+      <text class="step" x="284" y="145">02 | PROPOSE</text>
+      <text class="card-title" x="284" y="177">Facts and</text>
+      <text class="card-title" x="284" y="203">preferences</text>
+      <text class="body" x="284" y="240">Key decisions</text>
+      <text class="body" x="284" y="267">Personal choices</text>
+    </g>
+    <g>
+      <rect x="504" y="110" width="196" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="504" y="110" width="196" height="7" rx="3.5" fill="#7766B4"/>
+      <text class="step" x="524" y="145">03 | CHECK</text>
+      <text class="card-title" x="524" y="177">Check each</text>
+      <text class="card-title" x="524" y="203">proposed fact</text>
+      <text class="body" x="524" y="237">Does the source</text>
+      <text class="body" x="524" y="260">agree?</text>
+      <text class="body" x="524" y="289">Is it worth</text>
+      <text class="body" x="524" y="312">keeping?</text>
+    </g>
+    <g>
+      <rect x="744" y="110" width="196" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="744" y="110" width="196" height="7" rx="3.5" fill="#D18A42"/>
+      <text class="step" x="764" y="145">04 | KEEP</text>
+      <text class="card-title" x="764" y="177">Durable facts</text>
+      <text class="card-title" x="764" y="203">with history</text>
+      <text class="body" x="764" y="240">Version history</text>
+      <text class="body" x="764" y="267">Linked source</text>
+    </g>
+    <g>
+      <rect x="984" y="110" width="192" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="984" y="110" width="192" height="7" rx="3.5" fill="#39816A"/>
+      <text class="step" x="1004" y="145">05 | ANSWER</text>
+      <text class="card-title" x="1004" y="177">Answers with</text>
+      <text class="card-title" x="1004" y="203">source links</text>
+      <text class="body" x="1004" y="240">Use checked facts</text>
+      <text class="body" x="1004" y="267">Cite original</text>
+      <text class="body" x="1004" y="294">source passage</text>
+    </g>
+  </g>
+  <text class="sans foot" x="40" y="369">Each durable fact keeps the evidence trail needed to check where it came from.</text>
+</svg>

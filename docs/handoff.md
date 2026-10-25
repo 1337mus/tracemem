@@ -1,10 +1,19 @@
 # TraceMem handoff
 
-Updated 2026-10-19 UTC. Start with `.local/active-cycle.json` for current
-operational state, approvals and delivery. Verify the live inventory is idle
-before any remote launch. Historical experiment records are immutable.
+Updated 2026-10-25 UTC. The project wrap-up preserves the local search tool,
+reviewed code, fictional fixtures and aggregate documentation in the personal
+repository. The [README](../README.md) has the quick start, architecture and
+end goal. The [benchmark snapshot](benchmark-snapshot.md) records the October 23
+claim-checking highlights.
 
-## Current bounded validation milestone
+Both bounded research milestones are closed. Recurring work is PAUSED; no
+training or model work is planned. Local research packets, original messages,
+raw receipts and model artifacts stay outside GitHub. The exact final
+decisions, protocol and artifact hashes are saved in `.local/active-cycle.json`
+and `.local/benchmark-expansion-20261023/HANDOFF.md` on the owner's machine.
+Historical experiment records remain unchanged below.
+
+## Historical October 19 validation milestone
 
 **COMPLETED — NO_GO_INSUFFICIENT_EVIDENCE (2026-10-19).** No model was
 selected. The automation is PAUSED. All four authorized GPU calls were used:
