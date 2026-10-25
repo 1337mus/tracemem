@@ -14,9 +14,12 @@ The first [private inference pilot](private-pilot-results.md) evaluated seven
 real user messages and 14 candidate claims on personal Modal. Since that
 inference-only pilot, owner-authorized private training and evaluation have also
 run on personal Modal. Private-trained checkpoints remain restricted to that
-remote environment and are not publishable. Raw inputs, receipts and checkpoints
-remain outside GitHub; no model weights have been downloaded to this Mac, and no
-public release has occurred. Check
+remote environment and are not publishable. Private inputs, raw private receipts
+and private-trained checkpoints remain outside GitHub; no model weights have
+been downloaded to this Mac. The public repository contains reviewed code,
+authored fictional examples and aggregate reports; private conversations,
+derived records, raw private receipts and private-trained checkpoints are
+excluded. Check
 `.local/active-cycle.json` and live Modal state before any new call. Code
 licensing does not grant rights to private conversations.
 
