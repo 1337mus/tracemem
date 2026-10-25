@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">TraceMem trained model experiment</title>
+  <desc id="desc">Source messages and a proposed fact go to Qwen3-4B with a LoRA adapter. The model returns separate source-support and worth-keeping labels, with the source link retained for review.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 L9 5 L1 9 Z" fill="#168C91"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { font-size: 29px; font-weight: 700; fill: #14243A; }
+      .subtitle { font-size: 18px; fill: #53657A; }
+      .step { font-size: 14px; font-weight: 700; letter-spacing: 1.1px; fill: #55708C; }
+      .card-title { font-size: 22px; font-weight: 700; fill: #162A42; }
+      .body { font-size: 18px; fill: #40546B; }
+      .label { font-size: 18px; font-weight: 700; fill: #2F6870; }
+      .foot { font-size: 18px; fill: #667A90; }
+    </style>
+  </defs>
+  <rect width="1200" height="390" rx="24" fill="#F4F8FC"/>
+  <text class="sans title" x="40" y="49">The trained model</text>
+  <text class="sans subtitle" x="40" y="78">Checks whether a proposed fact is supported and worth remembering.</text>
+
+  <g fill="none" stroke="#168C91" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M252 220 H292"/>
+    <path d="M528 220 H568"/>
+    <path d="M896 220 H936"/>
+  </g>
+
+  <g class="sans">
+    <g>
+      <rect x="24" y="110" width="228" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="24" y="110" width="228" height="7" rx="3.5" fill="#4A78B8"/>
+      <text class="step" x="44" y="145">01 | INPUT</text>
+      <text class="card-title" x="44" y="177">Evidence and</text>
+      <text class="card-title" x="44" y="203">proposed fact</text>
+      <text class="body" x="44" y="245">Source messages</text>
+      <text class="body" x="44" y="274">Claim to check</text>
+    </g>
+    <g>
+      <rect x="300" y="110" width="228" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="300" y="110" width="228" height="7" rx="3.5" fill="#3A8E92"/>
+      <text class="step" x="320" y="145">02 | MODEL</text>
+      <text class="card-title" x="320" y="177">Qwen3-4B</text>
+      <text class="body" x="320" y="215">Pretrained model</text>
+      <text class="body" x="320" y="244">LoRA adapter</text>
+      <text class="body" x="320" y="273">Base stays frozen</text>
+    </g>
+    <g>
+      <rect x="576" y="110" width="320" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="576" y="110" width="320" height="7" rx="3.5" fill="#7766B4"/>
+      <text class="step" x="596" y="145">03 | TWO CHECKS</text>
+      <text class="label" x="596" y="177">Source support</text>
+      <text class="body" x="596" y="202">Supported / unsupported</text>
+      <text class="body" x="596" y="224">Uncertain</text>
+      <text class="label" x="596" y="259">Worth keeping</text>
+      <text class="body" x="596" y="284">Eligible / ineligible</text>
+      <text class="body" x="596" y="306">Uncertain</text>
+    </g>
+    <g>
+      <rect x="944" y="110" width="232" height="224" rx="18" fill="#FFFFFF" stroke="#CFDCEB" stroke-width="1.5"/>
+      <rect x="944" y="110" width="232" height="7" rx="3.5" fill="#39816A"/>
+      <text class="step" x="964" y="145">04 | REVIEW</text>
+      <text class="card-title" x="964" y="177">Fact + two</text>
+      <text class="card-title" x="964" y="203">labels</text>
+      <text class="body" x="964" y="247">Source link</text>
+      <text class="body" x="964" y="274">retained for</text>
+      <text class="body" x="964" y="301">review</text>
+    </g>
+  </g>
+  <text class="sans foot" x="40" y="369">Help assistants remember lasting facts and preferences with source evidence.</text>
+</svg>
